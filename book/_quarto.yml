@@ -3,13 +3,13 @@ project:
   output-dir: _book
 
 book:
-  title: "WLM 2023"
-  subtitle: "Анализ данных и машинное обучение для исследователей"
+  title: "WLM SDAR"
+  subtitle: "Статистика и анализ данных в R"
   author:
     - name: "Антон Ангельгардт"
       email: "anton.angelgardt@gmail.com"
       affiliations:
-        - name: "HSE UX LAB, HSE University"
+        - name: "HSE University"
   date: last-modified
   date-format: "MMM D, YYYY"
   # downloads: [pdf, epub]
@@ -129,21 +129,19 @@ book:
     - references.qmd
   favicon: pics/favicon.png
   navbar: 
-    title: "WLM 2023 // HSE UX LAB"
+    title: "WLM SDAR"
     logo: pics/logo.png
-    left:
-      # - text: "Хаб"
-      #   href: ../hub/index.html
-      - text: "Книга"
-        href: ../book/index.html
-      - text: "Лекции"
-        href: ../lectures/index.html
-      - text: "Практики"
-        href: ../practice/index.html
-      - text: "Домашки"
-        href: ../homeworks/index.html
-      - text: "Проекты"
-        href: ../projects/index.html
+    # left:
+    # - text: "Книга"
+    #   href: ../book/index.html
+    # - text: "Лекции"
+    #   href: ../lectures/index.html
+    # - text: "Практики"
+    #   href: ../practice/index.html
+    # - text: "Домашки"
+    #   href: ../homeworks/index.html
+    # - text: "Проекты"
+    #   href: ../projects/index.html
     collapse: true
     background: gray-700
 
@@ -160,6 +158,8 @@ format:
       dark: [css/darkstyle.scss, css/custom.scss, css/taskdark.scss]
   pdf:
     documentclass: scrreprt
+    include-in-header: 
+      - file: _symbols.tex
 
 highlight-style: github
 
