@@ -17,6 +17,8 @@ a & b & c & d & e & f & g & h & i & j & k & l & m & n & o & p & q & r & s & t & 
 \end{matrix}
 $$
 
+$A, B, E, Z, H, I, K, M, N, O, P, T, X$ --- совпадают с латинскими, не используются.
+
 $$
 \begin{matrix}
  &  & \Gamma & \Delta &  &  &  & \Theta &  &  & \Lambda &  &  & \Xi &  & \Pi &  & \Sigma &  & \Upsilon & \Phi &  & \Psi & \Omega \\

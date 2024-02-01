@@ -158,7 +158,10 @@ format:
   #     light: [css/lightstyle.scss, css/custom.scss, css/tasklight.scss]
   #     dark: [css/darkstyle.scss, css/custom.scss, css/taskdark.scss]
   pdf:
-    documentclass: scrreprt
+    toc: true
+    documentclass: scrbook
+    papersize: letter
+    cite-method: biblatex
     include-in-header: 
       - file: _symbols.tex
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.510">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -99,6 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Отмена",
     "search-submit-button-title": "Отправить",
     "search-label": "Search"
@@ -113,6 +114,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -861,6 +889,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!--- Distributions --->
 <!--- Other --->
 <!--- Trig --->
+<!--- Stats --->
 <p>Мы оказываемся в сложной, но интересной ситуации. Мы хотим знать что-то про генеральную совокупность — значение некоторого <em>параметра</em>. Но мы его никогда не узнаем, потому что не можем работать с целой генеральной совокупностью. Нам остаётся работать только с <em>выборочной совокупность (выборкой)</em> и опираться на статистические данные, которые мы собираем на ней.</p>
 <p>Выборка извлекается из генеральной совокупности случайным образом, поэтому что там именно — с точки зрения данных — в нашей выборке будет нам также неизвестно. Отсюда происходят два ключевых свойства статистических данных — <em>неопредлённость</em> и <em>вариативность</em>.</p>
 <p><strong>Неопределённость</strong> нам говорит о том, что мы не знаем, что именно мы получим в результате наших измерений для конкретной выборки. В том числе потому, что мы работаем на просторах случайных величин.</p>
@@ -886,23 +915,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 6 × 2
      id    IQ
   &lt;int&gt; &lt;dbl&gt;
-1     1   120
-2     2   102
-3     3    99
-4     4   103
-5     5    91
-6     6   116</code></pre>
+1     1    99
+2     2    83
+3     3   112
+4     4   107
+5     5    96
+6     6   120</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(iq)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
      id    IQ
   &lt;int&gt; &lt;dbl&gt;
-1  9995    93
-2  9996    79
-3  9997    86
-4  9998    80
-5  9999    70
+1  9995    83
+2  9996   111
+3  9997   111
+4  9998    95
+5  9999   101
 6 10000   112</code></pre>
 </div>
 </div>
@@ -910,7 +939,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(iq<span class="sc">$</span>IQ)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 99.8459</code></pre>
+<pre><code>[1] 100.0974</code></pre>
 </div>
 </div>
 <p>Вполне ожидаемое значение<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Теперь попробуем наизвлекать выборок человек по 50 и посчитать <em>оценки среднего (выборочные средние)</em> <span class="math inline">\(\hat \mu\)</span> на них:</p>
@@ -996,7 +1025,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="проверка-среднего-как-оценки-математического-ожидания-на-несмещенность" class="level5" data-number="24.1.4.1.1">
 <h5 data-number="24.1.4.1.1" class="anchored" data-anchor-id="проверка-среднего-как-оценки-математического-ожидания-на-несмещенность"><span class="header-section-number">24.1.4.1.1</span> Проверка среднего как оценки математического ожидания на несмещенность</h5>
 <p><span class="math display">\[
-X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
+X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
 \]</span></p>
 <p><span class="math display">\[
 \hat \mu = \frac{1}{m}\sum_{j=1}^m x_j = \bar X
@@ -1005,13 +1034,13 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
 \mathbb{E}(\hat \mu) = \mathbb{E}(\bar X) \overset{?}{=} \mu
 \]</span></p>
 <p><span class="math display">\[
-\mathbb{E}(\bar X) = \mathbb{E}\big (\frac{1}{n} \sum_{i=1}^n X_i \big ) = \frac{1}{n} \mathbb{E}\Big( \sum_{i=1}^n X_i \Big) = \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i \overset{X_i \overset{\text{i.i.d}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X = \frac{n}{n} \cdot \mu = \mu
+\mathbb{E}(\bar X) = \mathbb{E}\big (\frac{1}{n} \sum_{i=1}^n X_i \big ) = \frac{1}{n} \mathbb{E}\Big( \sum_{i=1}^n X_i \Big) = \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i \overset{X_i \overset{\text{i.i.d.}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X = \frac{n}{n} \cdot \mu = \mu
 \]</span></p>
 </section>
 <section id="проверка-дисперсии-генеральной-совокупности-как-оценки-дисперсии-на-несмещенность" class="level5" data-number="24.1.4.1.2">
 <h5 data-number="24.1.4.1.2" class="anchored" data-anchor-id="проверка-дисперсии-генеральной-совокупности-как-оценки-дисперсии-на-несмещенность"><span class="header-section-number">24.1.4.1.2</span> Проверка дисперсии генеральной совокупности как оценки дисперсии на несмещенность</h5>
 <p><span class="math display">\[
-X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
+X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
 \]</span></p>
 <p><span class="math display">\[
 \begin{split}
@@ -1035,22 +1064,21 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
 &amp; = \overline{X^2} - 2 \bar X^2 + \bar X^2 = \overline{X^2} - \bar X^2
 \end{split}
 \]</span></p>
+<p>TEXT</p>
 <p><span class="math display">\[
 \mathbb{E}(\hat \sigma^2) = \mathbb{E}(\overline {X^2} - \bar X^2) = \underset{[1]}{\mathbb{E}\overline{X^2}} - \underset{[2]}{\mathbb{E}\bar X^2}
 \]</span></p>
-$$
-<span class="math display">\[\begin{split}
+<p>TEXT</p>
+<p><span class="math display">\[
+\begin{split}
 [1] \, \mathbb{E}\overline{X^2} : &amp; \\
-
 \mathbb{E}\overline{X^2} &amp; = \mathbb{E}\left(\frac{\sum_{i=1}^n X_i^2}{n} \right)= \frac{1}{n} \mathbb{E}\left(\sum_{i=1}^n X_i^2 \right)= \\
-&amp; = \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i^2] \overset{X_i \overset{\text{i.i.d}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X^2 = \mathbb{E}X^2
-
-\end{split}\]</span>
-<p>$$</p>
-$$
-<span class="math display">\[\begin{split}
+&amp; = \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i^2] \overset{X_i \overset{\text{i.i.d.}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X^2 = \mathbb{E}X^2
+\end{split}
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
 [2] \, \mathbb{E}\bar X^2 : &amp; \\
-
 \mathbb{E}\bar X^2 &amp; =
 \mathbb{E}\left[
     \left(\frac{\sum_{i=1}^n X_i}{n} \right)^2
@@ -1071,15 +1099,15 @@ $$
         \substack{i=1, j=1 \\ i \neq j}
       }^n \mathbb{E}(X_i X_j)
     \right]= \\
-&amp; \overset{X_i \overset{\text{i.i.d}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n^2} \left[
+&amp; \overset{X_i \overset{\text{i.i.d.}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n^2} \left[
     n \cdot \mathbb{E}X^2 +
     2 \sum_{
       \substack{i=1, j=1 \\ i \neq j}
     }^n \mathbb{E}(X_i) \mathbb{E}(X_j) \right]= \\
 &amp; = \frac{1}{n} \left[n \cdot \mathbb{E}X2 + 2 \cdot \frac{n(n-1)}{2} \mathbb{E}^2 X \right]= \\
 &amp; = \frac{1}{n} \mathbb{E}X^2 + \frac{n-1}{n} \mathbb{E}^2 X
-\end{split}\]</span>
-<p>$$</p>
+\end{split}
+\]</span></p>
 <p><span class="math display">\[
 \begin{split}
 \mathbb{E}(\hat \sigma^2)
@@ -1203,25 +1231,25 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_cl_normal</span>(iq<span class="sc">$</span>IQ)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>        y     ymin     ymax
-1 99.8459 99.55336 100.1384</code></pre>
+<pre><code>         y     ymin     ymax
+1 100.0974 99.80195 100.3929</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_cl_boot</span>(iq<span class="sc">$</span>IQ)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>        y     ymin     ymax
-1 99.8459 99.54483 100.1385</code></pre>
+<pre><code>         y     ymin     ymax
+1 100.0974 99.78549 100.4086</code></pre>
 </div>
 </div>
 
 
 </section>
 </section>
-<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Шкала IQ устроена так, что её среднее значение равно 100, а стандартное отклонение 15.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1496,27 +1524,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1531,10 +1538,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1543,8 +1554,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

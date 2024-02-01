@@ -1,12 +1,10 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
   letterpaper,
-  DIV=11,
-  numbers=noendperiod]{scrreprt}
+]{scrbook}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -40,6 +38,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage[left=1in,marginparwidth=2.0666666666667in,textwidth=4.1333333333333in,marginparsep=0.3in]{geometry}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
@@ -115,43 +114,11 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 %% Packages
-\usepackage[T2A]{fontenc}
-\usepackage[english, russian]{babel}
+\usepackage[russian, english]{babel}
+\usepackage[default]{droidserif}
+\usepackage[defaultsans]{droidsans}
 
 \usepackage{xcolor}
 \usepackage{soul}
@@ -212,7 +179,6 @@
 \newcommand{\mean}{\mathbb{M}}
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
-\KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -273,6 +239,8 @@
 \AtBeginDocument{\renewcommand*{\proofname}{Доказательство}}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Решение}
+\newtheorem{refremark}{Remark}[chapter]
+\newtheorem{refsolution}{Решение}[chapter]
 \makeatother
 \makeatletter
 \makeatother
@@ -280,20 +248,23 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\makeatletter
+\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
+\makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={WLM SDAR},
   pdfauthor={Антон Ангельгардт},
-  colorlinks=true,
-  linkcolor={blue},
-  filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
+  hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{WLM SDAR}
@@ -308,13 +279,15 @@
 \date{Feb 1, 2024}
 
 \begin{document}
+\frontmatter
 \maketitle
+
 \renewcommand*\contentsname{Содержание}
 {
-\hypersetup{linkcolor=}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
+\mainmatter
 \bookmarksetup{startatroot}
 
 \chapter*{Вступление}\label{preface}
@@ -403,33 +376,33 @@ loaded via a namespace (and not attached):
 
 \markright{Блоки}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Заметка}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Заметка}, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm]
 
 Здесь написано что-то интересное. Почитайте на досуге.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-warning-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm]
 
 Тут написано что-то важное. Обратите на этот блок внимание.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-caution-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution with Title}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-caution-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution with Title}, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm]
 
 Тут описано что-то, что потенциально может сломать ваш код. Чтобы он не
 сломался, стоит это изучить.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-important-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Важно!}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-important-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Важно!}, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm]
 
 Тут написано что-то очень важное! Обратите на этот блок пристальное
 внимание!
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Совет}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-tip-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Совет}, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
 
 Здесь советы из собственного опыта. Возможно, они вам пригодятся.
 
@@ -768,7 +741,11 @@ R --- популярный язык программирования среди 
   \end{itemize}
 \end{itemize}
 
+\marginnote{\begin{footnotesize}
+
 \href{https://1d4chan.org/wiki/Linear_Warriors,_Quadratic_Wizards}{Источник}
+
+\end{footnotesize}}
 
 \begin{itemize}
 \tightlist
@@ -1297,7 +1274,7 @@ BFI студента-психолога} или \emph{индекс индиви�
 статистика. Далее это обрастёт содержанием и уложится, я надеюсь, в
 достаточно стройную систему.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-warning-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm]
 
 Статистика помогает нам делать выводы о нашей генеральной совокупности
 по выборке.
@@ -1563,12 +1540,12 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 # A tibble: 6 x 2
      id    IQ
   <int> <dbl>
-1     1   112
-2     2   130
-3     3   122
-4     4   105
-5     5   100
-6     6   127
+1     1    94
+2     2   107
+3     3    96
+4     4    82
+5     5   106
+6     6    79
 \end{verbatim}
 
 \begin{Shaded}
@@ -1581,12 +1558,12 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 # A tibble: 6 x 2
      id    IQ
   <int> <dbl>
-1  9995    95
-2  9996    70
-3  9997    73
-4  9998    50
-5  9999   114
-6 10000   143
+1  9995   112
+2  9996   100
+3  9997   110
+4  9998   110
+5  9999    92
+6 10000    78
 \end{verbatim}
 
 Так как мы предположили, что это генеральная совокупность, то мы можем
@@ -1600,7 +1577,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 \end{Shaded}
 
 \begin{verbatim}
-[1] 99.9472
+[1] 100.0063
 \end{verbatim}
 
 Вполне ожидаемое значение\footnote{Шкала IQ устроена так, что её среднее
@@ -4209,23 +4186,17 @@ X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
 \expect (\hat \sigma^2) = \expect (\overline {X^2} - \bar X^2) = \underset{[1]}{\expect \overline{X^2}} - \underset{[2]}{\expect \bar X^2}
 \]
 
-\$\$
-
+\[
 \begin{split}
 [1] \, \expect \overline{X^2} : & \\
-
 \expect \overline{X^2} & = \expect \lp \frac{\sum_{i=1}^n X_i^2}{n} \rp = \frac{1}{n} \expect \lp \sum_{i=1}^n X_i^2 \rp = \\
 & = \frac{1}{n} \sum_{i=1}^n \expect X_i^2] \overset{X_i \overset{\iid}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \expect X^2 = \expect X^2
-
 \end{split}
+\]
 
-\$\$
-
-\$\$
-
+\[
 \begin{split}
 [2] \, \expect \bar X^2 : & \\
-
 \expect \bar X^2 & = 
 \expect \lb 
     \lp \frac{\sum_{i=1}^n X_i}{n} \rp ^2 
@@ -4254,8 +4225,7 @@ X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
 & = \frac{1}{n} \lb n \cdot \expect X2 + 2 \cdot \frac{n(n-1)}{2} \expect^2 X \rb  = \\
 & = \frac{1}{n} \expect X^2 + \frac{n-1}{n} \expect^2 X
 \end{split}
-
-\$\$
+\]
 
 \[
 \begin{split}
@@ -4433,8 +4403,8 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 \end{Shaded}
 
 \begin{verbatim}
-        y     ymin     ymax
-1 99.9472 99.65522 100.2392
+         y     ymin     ymax
+1 100.0063 99.71275 100.2999
 \end{verbatim}
 
 \begin{Shaded}
@@ -4444,8 +4414,8 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 \end{Shaded}
 
 \begin{verbatim}
-        y     ymin     ymax
-1 99.9472 99.64983 100.2219
+         y     ymin     ymax
+1 100.0063 99.72359 100.3098
 \end{verbatim}
 
 \bookmarksetup{startatroot}
@@ -4810,7 +4780,7 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 
 \section{Статистическая мощность}\label{stats-testing-power}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Статистическая мощность Post hoc}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Статистическая мощность Post hoc}, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm]
 
 НАПИСАТЬ
 
@@ -4947,7 +4917,7 @@ p < \frac{\alpha}{n} \Rightarrow np < \alpha
   \end{itemize}
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Замечание о машинном обучении}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Замечание о машинном обучении}, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm]
 
 В названии книги упомянуто «машинное обучение». Иногда его причисляют к
 статистике, иногда рассматривают отдельно. На самом же деле,
@@ -4993,8 +4963,8 @@ p < \frac{\alpha}{n} \Rightarrow np < \alpha
 распределения.
 
 Как мы будем искать, что там в центре распределения? Зависит от
-\href{}{шкалы} (Stevens 1946), в которой измерена конкретная переменная
-(Таблица~\ref{tbl-scales-cental-tendencies}).
+\href{}{шкалы} \autocite{stevens46}, в которой измерена конкретная
+переменная (Таблица~\ref{tbl-scales-cental-tendencies}).
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2500}}
@@ -6404,7 +6374,7 @@ for <82>
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: мода}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-warning-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: мода}, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -6593,7 +6563,7 @@ n~=~30). \texttt{set.seed(314)}. Пунктирной линией обозна�
 игнорировать её, по-видимому, нельзя, поскольку она влияет на
 вариатиность данных.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Соцдем лишним не бывает}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-tip-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Соцдем лишним не бывает}, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm]
 
 На этапе планирования исследования подумайте о том, чем могут отличаться
 ваши респонденты или испытуемые между собой, помимо индивидуальных
@@ -6603,7 +6573,7 @@ n~=~30). \texttt{set.seed(314)}. Пунктирной линией обозна�
 \tightlist
 \item
   Если в эксперименте используете задачу мысленного вращения (mental
-  rotation, (Shepard and Metzler 1971)), вполне возможно, испытуемые,
+  rotation, \autocite{shepard71}), вполне возможно, испытуемые,
   работающие в сфере 3D-моделирования или дизайна интерьеров, могут
   сформировать подвыборку.
 \item
@@ -6628,7 +6598,7 @@ n~=~30). \texttt{set.seed(314)}. Пунктирной линией обозна�
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: бимодальное распределение}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-warning-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: бимодальное распределение}, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -7431,7 +7401,7 @@ conversion failure on 'это медиана' in 'mbcsToSbcs': dot substituted f
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: медиана}, left=2mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, opacityback=0, opacitybacktitle=0.6, breakable, coltitle=black, colframe=quarto-callout-warning-color-frame, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, leftrule=.75mm, toptitle=1mm, left=2mm, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: медиана}, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -10535,20 +10505,10 @@ a, &a \geq 0 \\
 
 \markboth{Источники}{Источники}
 
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-shepard71}
-Shepard, Roger N., and Jacqueline Metzler. 1971. {``Mental Rotation of
-Three-Dimensional Objects.''} \emph{Science} 171 (3972): 701--3.
-\url{https://doi.org/10.1126/science.171.3972.701}.
+\printbibliography[heading=none]
 
-\bibitem[\citeproctext]{ref-stevens46}
-Stevens, S. S. 1946. {``On the Theory of Scales of Measurement.''}
-\emph{Science} 103 (2684): 677--80.
-\url{https://doi.org/10.1126/science.103.2684.677}.
 
-\end{CSLReferences}
-
+\backmatter
 
 
 \end{document}

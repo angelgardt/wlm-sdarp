@@ -3,6 +3,7 @@ project:
 
 book:
   title: "test-pdf-book"
+  language: ru
   author: "Norah Jones"
   date: "2/1/2024"
   chapters:
@@ -17,7 +18,11 @@ format:
   # html:
   #   theme: cosmo
   pdf:
-    documentclass: scrreprt
+    toc: true
+    documentclass: scrbook
+    papersize: letter
+    # template: template.tex
+    cite-method: biblatex
     include-in-header: 
       - file: _symbols.tex
 

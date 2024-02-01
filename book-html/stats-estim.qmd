@@ -179,24 +179,25 @@ $$
 \end{split}
 $$
 
+TEXT
+
 $$
 \expect (\hat \sigma^2) = \expect (\overline {X^2} - \bar X^2) = \underset{[1]}{\expect \overline{X^2}} - \underset{[2]}{\expect \bar X^2}
 $$
 
+TEXT
+
 $$
 \begin{split}
 [1] \, \expect \overline{X^2} : & \\
-
 \expect \overline{X^2} & = \expect \lp \frac{\sum_{i=1}^n X_i^2}{n} \rp = \frac{1}{n} \expect \lp \sum_{i=1}^n X_i^2 \rp = \\
 & = \frac{1}{n} \sum_{i=1}^n \expect X_i^2] \overset{X_i \overset{\iid}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \expect X^2 = \expect X^2
-
 \end{split}
 $$
 
 $$
 \begin{split}
 [2] \, \expect \bar X^2 : & \\
-
 \expect \bar X^2 & = 
 \expect \lb 
     \lp \frac{\sum_{i=1}^n X_i}{n} \rp ^2 
