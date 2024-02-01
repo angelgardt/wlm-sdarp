@@ -1,4 +1,4 @@
-# Формулы {#formulas}
+# Формулы {#appendix-formulas}
 
 {{< include _symbols.qmd >}}
 
@@ -13,9 +13,9 @@ library(latex2exp)
 theme_set(theme_bw())
 ```
 
-## Степени и корни {#formulas_power}
+## Степени и корни {#appendix-formulas-power}
 
-### Определения {#formulas_power_def}
+### Определения {#appendix-formulas-power-def}
 
 $$
 a^b \defin \prod_{i=1}^b a_i
@@ -25,7 +25,7 @@ $$
 \sqrt[n]a \defin b \Leftrightarrow b^n = a
 $$
 
-### Свойства {#formulas_power_identities}
+### Свойства {#appendix-formulas-power-identities}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -57,14 +57,14 @@ x^n = a \Rightarrow x =
 \end{cases}
 $$
 
-## Логарифмы {#formulas_log}
+## Логарифмы {#appendix-formulas-log}
 
-### Определение {#formulas_log_def}
+### Определение {#appendix-formulas-log-def}
 
 $$\log_b a \defin c \Leftrightarrow a^c = b, a > 0, b > 0, b \neq 1$$
 
 
-### Свойства {#formulas_log_identities}
+### Свойства {#appendix-formulas-log-identities}
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
     <td width="50%" valign="top">
@@ -81,7 +81,7 @@ $$\log_b a \defin c \Leftrightarrow a^c = b, a > 0, b > 0, b \neq 1$$
 </table>
 
 
-## Модуль {#formulas_abs}
+## Модуль {#appendix-formulas-abs}
 
 $$
 |a| = 
@@ -95,9 +95,9 @@ $$|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]$$
 
 $$|x| \geq a \Rightarrow x \leq -a \wedge x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)$$
 
-## Производная {#formulas_deriv}
+## Производная {#appendix-formulas-deriv}
 
-### Свойства производной {#formulas_deriv_props}
+### Свойства производной {#appendix-formulas-deriv-props}
 
 $$c' = 0, \, c = \const$$
 $$(cu)' = cu', \, c = \const$$
@@ -107,7 +107,7 @@ $$\Big( \frac{u}{v} \Big)' = \frac{u'v - uv'}{v^2}$$
 $$\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)$$
 
 
-### Производные элементарных функций {#formulas_deriv_funcs}
+### Производные элементарных функций {#appendix-formulas-deriv-funcs}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -155,7 +155,7 @@ $$\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)$$
 </table>
 
 
-## Тригонометрия {#formulas_trig}
+## Тригонометрия {#appendix-formulas-trig}
 
 ```{r trig_circle}
 # set angle
@@ -274,7 +274,7 @@ tibble(
 gridExtra::grid.arrange(acute, obtuse, ncol=2)
 ```
 
-### Производные тригонометрические функции {#trig_funs_def}
+### Производные тригонометрические функции {#appendix-formulas-trig-funs-def}
 
 $$
 \sec \alpha = \frac{1}{\cos \alpha} \qquad
@@ -283,7 +283,7 @@ $$
 \cot \alpha = \frac{\cos \alpha}{\sin \alpha}
 $$
 
-### Основное тригонометрическое тождество {#trig_pythagorean_identities}
+### Основное тригонометрическое тождество {#appendix-trig-pythagorean-identities}
 
 $$
 \sin^2 \alpha + \cos^2 \alpha = 1
@@ -302,7 +302,7 @@ $$
 \sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \cdot \csc^2 \alpha
 $$
 
-### Отражения {#trig_reflections}
+### Отражения {#appendix-formulas-trig-reflections}
 
 ```{r trig_reflections_circle}
 x = cos(pi/6); y = sin(pi/6)
@@ -427,7 +427,7 @@ ggplot() +
   labs(x = NULL, y = NULL)
 ```
 
-#### Относительно $\varphi = 0$ {#trig_reflections_0}
+#### Относительно $\varphi = 0$ {#appendix-formulas-trig-reflections-0}
 
 Выражает свойство чётности функции[^trig_odd_even_funs].
 
@@ -449,7 +449,7 @@ ggplot() +
 </table>
 
 
-#### Относительно $\varphi = \frac{\pi}{4}$ {#trig_reflections_pi4}
+#### Относительно $\varphi = \frac{\pi}{4}$ {#appendix-formulas-trig-reflections-pi4}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -466,7 +466,7 @@ ggplot() +
    </tr>
 </table>
 
-#### Относительно $\varphi = \frac{\pi}{2}$ {#trig_reflections_pi2}
+#### Относительно $\varphi = \frac{\pi}{2}$ {#appendix-formulas-trig-reflections-pi2}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -483,7 +483,7 @@ ggplot() +
    </tr>
 </table>
 
-#### Относительно $\varphi = \frac{3\pi}{4}$ {#trig_reflections_3pi2}
+#### Относительно $\varphi = \frac{3\pi}{4}$ {#appendix-formulas-trig-reflections-3pi2}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -500,7 +500,7 @@ ggplot() +
    </tr>
 </table>
 
-#### Относительно $\varphi = \pi$ {#trig_reflections_pi}
+#### Относительно $\varphi = \pi$ {#appendix-formulas-trig-reflections-pi}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -517,7 +517,7 @@ ggplot() +
    </tr>
 </table>
 
-### Сдвиг {#trig_shift}
+### Сдвиг {#appendix-formulas-trig-shift}
 
 ```{r trig_shift_circle}
 x = cos(pi/6); y = sin(pi/6)
@@ -627,7 +627,7 @@ ggplot(data = graphs,
 
 Так как все тригонометрические функции периодические, результат сдвига функции определяется её периодом. Для функций $\sin, \cos, \sec$ и $\csc$ период равен $2\pi$. Для $\tan$ и $\cot$ он составляет $\pi$.
 
-#### На четверть периода {#trig_shift_by_one_quarter}
+#### На четверть периода {#appendix-formulas-trig-shift-one-quarter}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -645,7 +645,7 @@ ggplot(data = graphs,
 </table>
 
 
-#### На половину периода {#trig_shift_by_half}
+#### На половину периода {#appendix-formulas-trig-shift-half}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -663,7 +663,7 @@ ggplot(data = graphs,
 </table>
 
 
-#### На полный период {#trig_shift_by_full}
+#### На полный период {#appendix-formulas-trig-shift-full}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -680,7 +680,7 @@ ggplot(data = graphs,
    </tr>
 </table>
 
-### Соотношение знаков {#trig_sgn}
+### Соотношение знаков {#appendix-formulas-trig-sgn}
 
 $$
 \sgn \sin \alpha = \sgn \csc \alpha \qquad \sgn \cos \alpha = \sgn \sec \alpha
@@ -689,7 +689,7 @@ $$
 \sgn \tan \alpha = \sgn \cot \alpha
 $$
 
-### Функции суммы с разности аргументов {#trig_angle_sum}
+### Функции суммы с разности аргументов {#appendix-formulas-trig-angle-sum}
 $$
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
 $$
@@ -713,7 +713,7 @@ $$
 \csc (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\sec \alpha \csc \beta \pm \sec \alpha \sec \beta}
 $$
 
-### Формулы двойного аргумента {#trig_double_arg}
+### Формулы двойного аргумента {#appendix-formulas-trig-double-arg}
 
 $$
 \sin 2\alpha = 2\sin \alpha \cos \alpha = (\sin \alpha + \cos \alpha)^2 -1 = \frac{2\tan \alpha}{1 + \tan^2 \alpha}
@@ -739,7 +739,7 @@ $$
 \csc 2\alpha = \frac{\sec \alpha \csc \alpha}{2} = \frac{1 + \tan^2 \alpha}{2 \tan \alpha}
 $$
 
-### Формулы тройного аргумента {#trig_triple_arg}
+### Формулы тройного аргумента {#appendix-formulas-trig-triple-arg}
 
 $$
 \sin 3\alpha = 3\sin \alpha - 4 \sin^3 \alpha = 4\sin \alpha \sin \Big( \frac{\pi}{3} - \alpha\Big) \sin \Big( \frac{\pi}{3} + \alpha \Big)
@@ -766,7 +766,7 @@ $$
 $$
 
 
-### Формулы половинного аргумента {#trig_half_arg}
+### Формулы половинного аргумента {#appendix-formulas-trig-half-arg}
 
 $$
 \sin \frac{\alpha}{2} = \sgn \Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
@@ -792,7 +792,7 @@ $$
 \csc \frac{\alpha}{2} = \sgn \Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
 $$
 
-### Формулы понижения степени {#trig_power_reduction}
+### Формулы понижения степени {#appendix-formulas-trig-power-reduction}
 
 <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
@@ -835,7 +835,7 @@ $$
 </table>
 
 
-### Преобразование произведения в сумму {#trig_prod_to_sum}
+### Преобразование произведения в сумму {#appendix-formulas-trig-prod-to-sum}
 
 $$
 \cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
@@ -862,7 +862,7 @@ $$
 $$
 
 
-### Преобразование суммы в произведение {#trig_sum_to_prod}
+### Преобразование суммы в произведение {#appendix-trig-sum-to-prod}
 
 $$
 \sin \alpha \pm \sin \beta = 2 \sin \Big(\frac{\alpha \pm \beta}{2}\Big) \cos \Big(\frac{\alpha \mp \beta}{2}\Big)

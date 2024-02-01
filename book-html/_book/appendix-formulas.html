@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-design.html" rel="next">
+<link href="./appendix-math-letters.html" rel="next">
 <link href="./appendix-git.html" rel="prev">
 <link href="./pics/design/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -150,7 +150,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Вступление</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -239,8 +239,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -259,36 +265,36 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#formulas_power" id="toc-formulas_power" class="nav-link active" data-scroll-target="#formulas_power"><span class="header-section-number">7.1</span> Степени и корни</a>
+  <li><a href="#appendix-formulas-power" id="toc-appendix-formulas-power" class="nav-link active" data-scroll-target="#appendix-formulas-power"><span class="header-section-number">7.1</span> Степени и корни</a>
   <ul class="collapse">
-  <li><a href="#formulas_power_def" id="toc-formulas_power_def" class="nav-link" data-scroll-target="#formulas_power_def"><span class="header-section-number">7.1.1</span> Определения</a></li>
-  <li><a href="#formulas_power_identities" id="toc-formulas_power_identities" class="nav-link" data-scroll-target="#formulas_power_identities"><span class="header-section-number">7.1.2</span> Свойства</a></li>
+  <li><a href="#appendix-formulas-power-def" id="toc-appendix-formulas-power-def" class="nav-link" data-scroll-target="#appendix-formulas-power-def"><span class="header-section-number">7.1.1</span> Определения</a></li>
+  <li><a href="#appendix-formulas-power-identities" id="toc-appendix-formulas-power-identities" class="nav-link" data-scroll-target="#appendix-formulas-power-identities"><span class="header-section-number">7.1.2</span> Свойства</a></li>
   </ul></li>
-  <li><a href="#formulas_log" id="toc-formulas_log" class="nav-link" data-scroll-target="#formulas_log"><span class="header-section-number">7.2</span> Логарифмы</a>
+  <li><a href="#appendix-formulas-log" id="toc-appendix-formulas-log" class="nav-link" data-scroll-target="#appendix-formulas-log"><span class="header-section-number">7.2</span> Логарифмы</a>
   <ul class="collapse">
-  <li><a href="#formulas_log_def" id="toc-formulas_log_def" class="nav-link" data-scroll-target="#formulas_log_def"><span class="header-section-number">7.2.1</span> Определение</a></li>
-  <li><a href="#formulas_log_identities" id="toc-formulas_log_identities" class="nav-link" data-scroll-target="#formulas_log_identities"><span class="header-section-number">7.2.2</span> Свойства</a></li>
+  <li><a href="#appendix-formulas-log-def" id="toc-appendix-formulas-log-def" class="nav-link" data-scroll-target="#appendix-formulas-log-def"><span class="header-section-number">7.2.1</span> Определение</a></li>
+  <li><a href="#appendix-formulas-log-identities" id="toc-appendix-formulas-log-identities" class="nav-link" data-scroll-target="#appendix-formulas-log-identities"><span class="header-section-number">7.2.2</span> Свойства</a></li>
   </ul></li>
-  <li><a href="#formulas_abs" id="toc-formulas_abs" class="nav-link" data-scroll-target="#formulas_abs"><span class="header-section-number">7.3</span> Модуль</a></li>
-  <li><a href="#formulas_deriv" id="toc-formulas_deriv" class="nav-link" data-scroll-target="#formulas_deriv"><span class="header-section-number">7.4</span> Производная</a>
+  <li><a href="#appendix-formulas-abs" id="toc-appendix-formulas-abs" class="nav-link" data-scroll-target="#appendix-formulas-abs"><span class="header-section-number">7.3</span> Модуль</a></li>
+  <li><a href="#appendix-formulas-deriv" id="toc-appendix-formulas-deriv" class="nav-link" data-scroll-target="#appendix-formulas-deriv"><span class="header-section-number">7.4</span> Производная</a>
   <ul class="collapse">
-  <li><a href="#formulas_deriv_props" id="toc-formulas_deriv_props" class="nav-link" data-scroll-target="#formulas_deriv_props"><span class="header-section-number">7.4.1</span> Свойства производной</a></li>
-  <li><a href="#formulas_deriv_funcs" id="toc-formulas_deriv_funcs" class="nav-link" data-scroll-target="#formulas_deriv_funcs"><span class="header-section-number">7.4.2</span> Производные элементарных функций</a></li>
+  <li><a href="#appendix-formulas-deriv-props" id="toc-appendix-formulas-deriv-props" class="nav-link" data-scroll-target="#appendix-formulas-deriv-props"><span class="header-section-number">7.4.1</span> Свойства производной</a></li>
+  <li><a href="#appendix-formulas-deriv-funcs" id="toc-appendix-formulas-deriv-funcs" class="nav-link" data-scroll-target="#appendix-formulas-deriv-funcs"><span class="header-section-number">7.4.2</span> Производные элементарных функций</a></li>
   </ul></li>
-  <li><a href="#formulas_trig" id="toc-formulas_trig" class="nav-link" data-scroll-target="#formulas_trig"><span class="header-section-number">7.5</span> Тригонометрия</a>
+  <li><a href="#appendix-formulas-trig" id="toc-appendix-formulas-trig" class="nav-link" data-scroll-target="#appendix-formulas-trig"><span class="header-section-number">7.5</span> Тригонометрия</a>
   <ul class="collapse">
-  <li><a href="#trig_funs_def" id="toc-trig_funs_def" class="nav-link" data-scroll-target="#trig_funs_def"><span class="header-section-number">7.5.1</span> Производные тригонометрические функции</a></li>
-  <li><a href="#trig_pythagorean_identities" id="toc-trig_pythagorean_identities" class="nav-link" data-scroll-target="#trig_pythagorean_identities"><span class="header-section-number">7.5.2</span> Основное тригонометрическое тождество</a></li>
-  <li><a href="#trig_reflections" id="toc-trig_reflections" class="nav-link" data-scroll-target="#trig_reflections"><span class="header-section-number">7.5.3</span> Отражения</a></li>
-  <li><a href="#trig_shift" id="toc-trig_shift" class="nav-link" data-scroll-target="#trig_shift"><span class="header-section-number">7.5.4</span> Сдвиг</a></li>
-  <li><a href="#trig_sgn" id="toc-trig_sgn" class="nav-link" data-scroll-target="#trig_sgn"><span class="header-section-number">7.5.5</span> Соотношение знаков</a></li>
-  <li><a href="#trig_angle_sum" id="toc-trig_angle_sum" class="nav-link" data-scroll-target="#trig_angle_sum"><span class="header-section-number">7.5.6</span> Функции суммы с разности аргументов</a></li>
-  <li><a href="#trig_double_arg" id="toc-trig_double_arg" class="nav-link" data-scroll-target="#trig_double_arg"><span class="header-section-number">7.5.7</span> Формулы двойного аргумента</a></li>
-  <li><a href="#trig_triple_arg" id="toc-trig_triple_arg" class="nav-link" data-scroll-target="#trig_triple_arg"><span class="header-section-number">7.5.8</span> Формулы тройного аргумента</a></li>
-  <li><a href="#trig_half_arg" id="toc-trig_half_arg" class="nav-link" data-scroll-target="#trig_half_arg"><span class="header-section-number">7.5.9</span> Формулы половинного аргумента</a></li>
-  <li><a href="#trig_power_reduction" id="toc-trig_power_reduction" class="nav-link" data-scroll-target="#trig_power_reduction"><span class="header-section-number">7.5.10</span> Формулы понижения степени</a></li>
-  <li><a href="#trig_prod_to_sum" id="toc-trig_prod_to_sum" class="nav-link" data-scroll-target="#trig_prod_to_sum"><span class="header-section-number">7.5.11</span> Преобразование произведения в сумму</a></li>
-  <li><a href="#trig_sum_to_prod" id="toc-trig_sum_to_prod" class="nav-link" data-scroll-target="#trig_sum_to_prod"><span class="header-section-number">7.5.12</span> Преобразование суммы в произведение</a></li>
+  <li><a href="#appendix-formulas-trig-funs-def" id="toc-appendix-formulas-trig-funs-def" class="nav-link" data-scroll-target="#appendix-formulas-trig-funs-def"><span class="header-section-number">7.5.1</span> Производные тригонометрические функции</a></li>
+  <li><a href="#appendix-trig-pythagorean-identities" id="toc-appendix-trig-pythagorean-identities" class="nav-link" data-scroll-target="#appendix-trig-pythagorean-identities"><span class="header-section-number">7.5.2</span> Основное тригонометрическое тождество</a></li>
+  <li><a href="#appendix-formulas-trig-reflections" id="toc-appendix-formulas-trig-reflections" class="nav-link" data-scroll-target="#appendix-formulas-trig-reflections"><span class="header-section-number">7.5.3</span> Отражения</a></li>
+  <li><a href="#appendix-formulas-trig-shift" id="toc-appendix-formulas-trig-shift" class="nav-link" data-scroll-target="#appendix-formulas-trig-shift"><span class="header-section-number">7.5.4</span> Сдвиг</a></li>
+  <li><a href="#appendix-formulas-trig-sgn" id="toc-appendix-formulas-trig-sgn" class="nav-link" data-scroll-target="#appendix-formulas-trig-sgn"><span class="header-section-number">7.5.5</span> Соотношение знаков</a></li>
+  <li><a href="#appendix-formulas-trig-angle-sum" id="toc-appendix-formulas-trig-angle-sum" class="nav-link" data-scroll-target="#appendix-formulas-trig-angle-sum"><span class="header-section-number">7.5.6</span> Функции суммы с разности аргументов</a></li>
+  <li><a href="#appendix-formulas-trig-double-arg" id="toc-appendix-formulas-trig-double-arg" class="nav-link" data-scroll-target="#appendix-formulas-trig-double-arg"><span class="header-section-number">7.5.7</span> Формулы двойного аргумента</a></li>
+  <li><a href="#appendix-formulas-trig-triple-arg" id="toc-appendix-formulas-trig-triple-arg" class="nav-link" data-scroll-target="#appendix-formulas-trig-triple-arg"><span class="header-section-number">7.5.8</span> Формулы тройного аргумента</a></li>
+  <li><a href="#appendix-formulas-trig-half-arg" id="toc-appendix-formulas-trig-half-arg" class="nav-link" data-scroll-target="#appendix-formulas-trig-half-arg"><span class="header-section-number">7.5.9</span> Формулы половинного аргумента</a></li>
+  <li><a href="#appendix-formulas-trig-power-reduction" id="toc-appendix-formulas-trig-power-reduction" class="nav-link" data-scroll-target="#appendix-formulas-trig-power-reduction"><span class="header-section-number">7.5.10</span> Формулы понижения степени</a></li>
+  <li><a href="#appendix-formulas-trig-prod-to-sum" id="toc-appendix-formulas-trig-prod-to-sum" class="nav-link" data-scroll-target="#appendix-formulas-trig-prod-to-sum"><span class="header-section-number">7.5.11</span> Преобразование произведения в сумму</a></li>
+  <li><a href="#appendix-trig-sum-to-prod" id="toc-appendix-trig-sum-to-prod" class="nav-link" data-scroll-target="#appendix-trig-sum-to-prod"><span class="header-section-number">7.5.12</span> Преобразование суммы в произведение</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -298,7 +304,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="formulas" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Формулы</span></span></h1>
+<h1 class="title"><span id="appendix-formulas" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Формулы</span></span></h1>
 </div>
 
 
@@ -325,10 +331,10 @@ window.Quarto = {
 <!--- Other --->
 <!--- Trig --->
 <!--- Stats --->
-<section id="formulas_power" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="formulas_power"><span class="header-section-number">7.1</span> Степени и корни</h2>
-<section id="formulas_power_def" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="formulas_power_def"><span class="header-section-number">7.1.1</span> Определения</h3>
+<section id="appendix-formulas-power" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="appendix-formulas-power"><span class="header-section-number">7.1</span> Степени и корни</h2>
+<section id="appendix-formulas-power-def" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="appendix-formulas-power-def"><span class="header-section-number">7.1.1</span> Определения</h3>
 <p><span class="math display">\[
 a^b \overset{\text{def}}{=}\prod_{i=1}^b a_i
 \]</span></p>
@@ -336,8 +342,8 @@ a^b \overset{\text{def}}{=}\prod_{i=1}^b a_i
 \sqrt[n]a \overset{\text{def}}{=}b \Leftrightarrow b^n = a
 \]</span></p>
 </section>
-<section id="formulas_power_identities" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="formulas_power_identities"><span class="header-section-number">7.1.2</span> Свойства</h3>
+<section id="appendix-formulas-power-identities" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="appendix-formulas-power-identities"><span class="header-section-number">7.1.2</span> Свойства</h3>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -357,14 +363,14 @@ x^n = a \Rightarrow x =
 \]</span></p>
 </section>
 </section>
-<section id="formulas_log" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="formulas_log"><span class="header-section-number">7.2</span> Логарифмы</h2>
-<section id="formulas_log_def" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="formulas_log_def"><span class="header-section-number">7.2.1</span> Определение</h3>
+<section id="appendix-formulas-log" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="appendix-formulas-log"><span class="header-section-number">7.2</span> Логарифмы</h2>
+<section id="appendix-formulas-log-def" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="appendix-formulas-log-def"><span class="header-section-number">7.2.1</span> Определение</h3>
 <p><span class="math display">\[\log_b a \overset{\text{def}}{=}c \Leftrightarrow a^c = b, a &gt; 0, b &gt; 0, b \neq 1\]</span></p>
 </section>
-<section id="formulas_log_identities" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="formulas_log_identities"><span class="header-section-number">7.2.2</span> Свойства</h3>
+<section id="appendix-formulas-log-identities" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="appendix-formulas-log-identities"><span class="header-section-number">7.2.2</span> Свойства</h3>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -377,8 +383,8 @@ x^n = a \Rightarrow x =
 </tbody></table>
 </section>
 </section>
-<section id="formulas_abs" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="formulas_abs"><span class="header-section-number">7.3</span> Модуль</h2>
+<section id="appendix-formulas-abs" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="appendix-formulas-abs"><span class="header-section-number">7.3</span> Модуль</h2>
 <p><span class="math display">\[
 |a| =
 \begin{cases}
@@ -389,14 +395,14 @@ a, &amp;a \geq 0 \\
 <p><span class="math display">\[|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]\]</span></p>
 <p><span class="math display">\[|x| \geq a \Rightarrow x \leq -a \wedge x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)\]</span></p>
 </section>
-<section id="formulas_deriv" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="formulas_deriv"><span class="header-section-number">7.4</span> Производная</h2>
-<section id="formulas_deriv_props" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="formulas_deriv_props"><span class="header-section-number">7.4.1</span> Свойства производной</h3>
+<section id="appendix-formulas-deriv" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="appendix-formulas-deriv"><span class="header-section-number">7.4</span> Производная</h2>
+<section id="appendix-formulas-deriv-props" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="appendix-formulas-deriv-props"><span class="header-section-number">7.4.1</span> Свойства производной</h3>
 <p><span class="math display">\[c' = 0, \, c = \text{const}\]</span> <span class="math display">\[(cu)' = cu', \, c = \text{const}\]</span> <span class="math display">\[(u + v)' = u' + v'\]</span> <span class="math display">\[(uv)' = u'v + uv'\]</span> <span class="math display">\[\Big( \frac{u}{v} \Big)' = \frac{u'v - uv'}{v^2}\]</span> <span class="math display">\[\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)\]</span></p>
 </section>
-<section id="formulas_deriv_funcs" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="formulas_deriv_funcs"><span class="header-section-number">7.4.2</span> Производные элементарных функций</h3>
+<section id="appendix-formulas-deriv-funcs" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="appendix-formulas-deriv-funcs"><span class="header-section-number">7.4.2</span> Производные элементарных функций</h3>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -429,8 +435,8 @@ a, &amp;a \geq 0 \\
 </tbody></table>
 </section>
 </section>
-<section id="formulas_trig" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="formulas_trig"><span class="header-section-number">7.5</span> Тригонометрия</h2>
+<section id="appendix-formulas-trig" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="appendix-formulas-trig"><span class="header-section-number">7.5</span> Тригонометрия</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -440,8 +446,8 @@ a, &amp;a \geq 0 \\
 </div>
 </div>
 </div>
-<section id="trig_funs_def" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="trig_funs_def"><span class="header-section-number">7.5.1</span> Производные тригонометрические функции</h3>
+<section id="appendix-formulas-trig-funs-def" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="appendix-formulas-trig-funs-def"><span class="header-section-number">7.5.1</span> Производные тригонометрические функции</h3>
 <p><span class="math display">\[
 \sec \alpha = \frac{1}{\cos \alpha} \qquad
 \csc \alpha = \frac{1}{\sin \alpha} \qquad
@@ -449,8 +455,8 @@ a, &amp;a \geq 0 \\
 \cot \alpha = \frac{\cos \alpha}{\sin \alpha}
 \]</span></p>
 </section>
-<section id="trig_pythagorean_identities" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="trig_pythagorean_identities"><span class="header-section-number">7.5.2</span> Основное тригонометрическое тождество</h3>
+<section id="appendix-trig-pythagorean-identities" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="appendix-trig-pythagorean-identities"><span class="header-section-number">7.5.2</span> Основное тригонометрическое тождество</h3>
 <p><span class="math display">\[
 \sin^2 \alpha + \cos^2 \alpha = 1
 \]</span></p>
@@ -465,8 +471,8 @@ a, &amp;a \geq 0 \\
 \sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \cdot \csc^2 \alpha
 \]</span></p>
 </section>
-<section id="trig_reflections" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="trig_reflections"><span class="header-section-number">7.5.3</span> Отражения</h3>
+<section id="appendix-formulas-trig-reflections" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="appendix-formulas-trig-reflections"><span class="header-section-number">7.5.3</span> Отражения</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -476,8 +482,8 @@ a, &amp;a \geq 0 \\
 </div>
 </div>
 </div>
-<section id="trig_reflections_0" class="level4" data-number="7.5.3.1">
-<h4 data-number="7.5.3.1" class="anchored" data-anchor-id="trig_reflections_0"><span class="header-section-number">7.5.3.1</span> Относительно <span class="math inline">\(\varphi = 0\)</span></h4>
+<section id="appendix-formulas-trig-reflections-0" class="level4" data-number="7.5.3.1">
+<h4 data-number="7.5.3.1" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-0"><span class="header-section-number">7.5.3.1</span> Относительно <span class="math inline">\(\varphi = 0\)</span></h4>
 <p>Выражает свойство чётности функции<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
@@ -490,8 +496,8 @@ a, &amp;a \geq 0 \\
 </tr>
 </tbody></table>
 </section>
-<section id="trig_reflections_pi4" class="level4" data-number="7.5.3.2">
-<h4 data-number="7.5.3.2" class="anchored" data-anchor-id="trig_reflections_pi4"><span class="header-section-number">7.5.3.2</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{4}\)</span></h4>
+<section id="appendix-formulas-trig-reflections-pi4" class="level4" data-number="7.5.3.2">
+<h4 data-number="7.5.3.2" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi4"><span class="header-section-number">7.5.3.2</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{4}\)</span></h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -503,8 +509,8 @@ a, &amp;a \geq 0 \\
 </tr>
 </tbody></table>
 </section>
-<section id="trig_reflections_pi2" class="level4" data-number="7.5.3.3">
-<h4 data-number="7.5.3.3" class="anchored" data-anchor-id="trig_reflections_pi2"><span class="header-section-number">7.5.3.3</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{2}\)</span></h4>
+<section id="appendix-formulas-trig-reflections-pi2" class="level4" data-number="7.5.3.3">
+<h4 data-number="7.5.3.3" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi2"><span class="header-section-number">7.5.3.3</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{2}\)</span></h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -516,8 +522,8 @@ a, &amp;a \geq 0 \\
 </tr>
 </tbody></table>
 </section>
-<section id="trig_reflections_3pi2" class="level4" data-number="7.5.3.4">
-<h4 data-number="7.5.3.4" class="anchored" data-anchor-id="trig_reflections_3pi2"><span class="header-section-number">7.5.3.4</span> Относительно <span class="math inline">\(\varphi = \frac{3\pi}{4}\)</span></h4>
+<section id="appendix-formulas-trig-reflections-3pi2" class="level4" data-number="7.5.3.4">
+<h4 data-number="7.5.3.4" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-3pi2"><span class="header-section-number">7.5.3.4</span> Относительно <span class="math inline">\(\varphi = \frac{3\pi}{4}\)</span></h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -529,8 +535,8 @@ a, &amp;a \geq 0 \\
 </tr>
 </tbody></table>
 </section>
-<section id="trig_reflections_pi" class="level4" data-number="7.5.3.5">
-<h4 data-number="7.5.3.5" class="anchored" data-anchor-id="trig_reflections_pi"><span class="header-section-number">7.5.3.5</span> Относительно <span class="math inline">\(\varphi = \pi\)</span></h4>
+<section id="appendix-formulas-trig-reflections-pi" class="level4" data-number="7.5.3.5">
+<h4 data-number="7.5.3.5" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi"><span class="header-section-number">7.5.3.5</span> Относительно <span class="math inline">\(\varphi = \pi\)</span></h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -543,8 +549,8 @@ a, &amp;a \geq 0 \\
 </tbody></table>
 </section>
 </section>
-<section id="trig_shift" class="level3" data-number="7.5.4">
-<h3 data-number="7.5.4" class="anchored" data-anchor-id="trig_shift"><span class="header-section-number">7.5.4</span> Сдвиг</h3>
+<section id="appendix-formulas-trig-shift" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="appendix-formulas-trig-shift"><span class="header-section-number">7.5.4</span> Сдвиг</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -564,8 +570,8 @@ a, &amp;a \geq 0 \\
 </div>
 </div>
 <p>Так как все тригонометрические функции периодические, результат сдвига функции определяется её периодом. Для функций <span class="math inline">\(\sin, \cos, \sec\)</span> и <span class="math inline">\(\csc\)</span> период равен <span class="math inline">\(2\pi\)</span>. Для <span class="math inline">\(\tan\)</span> и <span class="math inline">\(\cot\)</span> он составляет <span class="math inline">\(\pi\)</span>.</p>
-<section id="trig_shift_by_one_quarter" class="level4" data-number="7.5.4.1">
-<h4 data-number="7.5.4.1" class="anchored" data-anchor-id="trig_shift_by_one_quarter"><span class="header-section-number">7.5.4.1</span> На четверть периода</h4>
+<section id="appendix-formulas-trig-shift-one-quarter" class="level4" data-number="7.5.4.1">
+<h4 data-number="7.5.4.1" class="anchored" data-anchor-id="appendix-formulas-trig-shift-one-quarter"><span class="header-section-number">7.5.4.1</span> На четверть периода</h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -577,8 +583,8 @@ a, &amp;a \geq 0 \\
 </tr>
 </tbody></table>
 </section>
-<section id="trig_shift_by_half" class="level4" data-number="7.5.4.2">
-<h4 data-number="7.5.4.2" class="anchored" data-anchor-id="trig_shift_by_half"><span class="header-section-number">7.5.4.2</span> На половину периода</h4>
+<section id="appendix-formulas-trig-shift-half" class="level4" data-number="7.5.4.2">
+<h4 data-number="7.5.4.2" class="anchored" data-anchor-id="appendix-formulas-trig-shift-half"><span class="header-section-number">7.5.4.2</span> На половину периода</h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -590,8 +596,8 @@ a, &amp;a \geq 0 \\
 </tr>
 </tbody></table>
 </section>
-<section id="trig_shift_by_full" class="level4" data-number="7.5.4.3">
-<h4 data-number="7.5.4.3" class="anchored" data-anchor-id="trig_shift_by_full"><span class="header-section-number">7.5.4.3</span> На полный период</h4>
+<section id="appendix-formulas-trig-shift-full" class="level4" data-number="7.5.4.3">
+<h4 data-number="7.5.4.3" class="anchored" data-anchor-id="appendix-formulas-trig-shift-full"><span class="header-section-number">7.5.4.3</span> На полный период</h4>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -604,16 +610,16 @@ a, &amp;a \geq 0 \\
 </tbody></table>
 </section>
 </section>
-<section id="trig_sgn" class="level3" data-number="7.5.5">
-<h3 data-number="7.5.5" class="anchored" data-anchor-id="trig_sgn"><span class="header-section-number">7.5.5</span> Соотношение знаков</h3>
+<section id="appendix-formulas-trig-sgn" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="appendix-formulas-trig-sgn"><span class="header-section-number">7.5.5</span> Соотношение знаков</h3>
 <p><span class="math display">\[
 \text{sgn}\sin \alpha = \text{sgn}\csc \alpha \qquad \text{sgn}\cos \alpha = \text{sgn}\sec \alpha
 \]</span> <span class="math display">\[
 \text{sgn}\tan \alpha = \text{sgn}\cot \alpha
 \]</span></p>
 </section>
-<section id="trig_angle_sum" class="level3" data-number="7.5.6">
-<h3 data-number="7.5.6" class="anchored" data-anchor-id="trig_angle_sum"><span class="header-section-number">7.5.6</span> Функции суммы с разности аргументов</h3>
+<section id="appendix-formulas-trig-angle-sum" class="level3" data-number="7.5.6">
+<h3 data-number="7.5.6" class="anchored" data-anchor-id="appendix-formulas-trig-angle-sum"><span class="header-section-number">7.5.6</span> Функции суммы с разности аргументов</h3>
 <p><span class="math display">\[
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
 \]</span></p>
@@ -632,8 +638,8 @@ a, &amp;a \geq 0 \\
 \csc (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\sec \alpha \csc \beta \pm \sec \alpha \sec \beta}
 \]</span></p>
 </section>
-<section id="trig_double_arg" class="level3" data-number="7.5.7">
-<h3 data-number="7.5.7" class="anchored" data-anchor-id="trig_double_arg"><span class="header-section-number">7.5.7</span> Формулы двойного аргумента</h3>
+<section id="appendix-formulas-trig-double-arg" class="level3" data-number="7.5.7">
+<h3 data-number="7.5.7" class="anchored" data-anchor-id="appendix-formulas-trig-double-arg"><span class="header-section-number">7.5.7</span> Формулы двойного аргумента</h3>
 <p><span class="math display">\[
 \sin 2\alpha = 2\sin \alpha \cos \alpha = (\sin \alpha + \cos \alpha)^2 -1 = \frac{2\tan \alpha}{1 + \tan^2 \alpha}
 \]</span></p>
@@ -653,8 +659,8 @@ a, &amp;a \geq 0 \\
 \csc 2\alpha = \frac{\sec \alpha \csc \alpha}{2} = \frac{1 + \tan^2 \alpha}{2 \tan \alpha}
 \]</span></p>
 </section>
-<section id="trig_triple_arg" class="level3" data-number="7.5.8">
-<h3 data-number="7.5.8" class="anchored" data-anchor-id="trig_triple_arg"><span class="header-section-number">7.5.8</span> Формулы тройного аргумента</h3>
+<section id="appendix-formulas-trig-triple-arg" class="level3" data-number="7.5.8">
+<h3 data-number="7.5.8" class="anchored" data-anchor-id="appendix-formulas-trig-triple-arg"><span class="header-section-number">7.5.8</span> Формулы тройного аргумента</h3>
 <p><span class="math display">\[
 \sin 3\alpha = 3\sin \alpha - 4 \sin^3 \alpha = 4\sin \alpha \sin \Big( \frac{\pi}{3} - \alpha\Big) \sin \Big( \frac{\pi}{3} + \alpha \Big)
 \]</span></p>
@@ -674,8 +680,8 @@ a, &amp;a \geq 0 \\
 \csc 3\alpha = \frac{\csc^3 \alpha}{3\csc^2 \alpha -4}
 \]</span></p>
 </section>
-<section id="trig_half_arg" class="level3" data-number="7.5.9">
-<h3 data-number="7.5.9" class="anchored" data-anchor-id="trig_half_arg"><span class="header-section-number">7.5.9</span> Формулы половинного аргумента</h3>
+<section id="appendix-formulas-trig-half-arg" class="level3" data-number="7.5.9">
+<h3 data-number="7.5.9" class="anchored" data-anchor-id="appendix-formulas-trig-half-arg"><span class="header-section-number">7.5.9</span> Формулы половинного аргумента</h3>
 <p><span class="math display">\[
 \sin \frac{\alpha}{2} = \text{sgn}\Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
 \]</span></p>
@@ -695,8 +701,8 @@ a, &amp;a \geq 0 \\
 \csc \frac{\alpha}{2} = \text{sgn}\Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
 \]</span></p>
 </section>
-<section id="trig_power_reduction" class="level3" data-number="7.5.10">
-<h3 data-number="7.5.10" class="anchored" data-anchor-id="trig_power_reduction"><span class="header-section-number">7.5.10</span> Формулы понижения степени</h3>
+<section id="appendix-formulas-trig-power-reduction" class="level3" data-number="7.5.10">
+<h3 data-number="7.5.10" class="anchored" data-anchor-id="appendix-formulas-trig-power-reduction"><span class="header-section-number">7.5.10</span> Формулы понижения степени</h3>
 <table width="100%" cellspacing="0" cellpadding="5">
 <tbody><tr>
 <td width="50%" valign="top">
@@ -737,8 +743,8 @@ a, &amp;a \geq 0 \\
 </td></tr>
 </tbody></table>
 </section>
-<section id="trig_prod_to_sum" class="level3" data-number="7.5.11">
-<h3 data-number="7.5.11" class="anchored" data-anchor-id="trig_prod_to_sum"><span class="header-section-number">7.5.11</span> Преобразование произведения в сумму</h3>
+<section id="appendix-formulas-trig-prod-to-sum" class="level3" data-number="7.5.11">
+<h3 data-number="7.5.11" class="anchored" data-anchor-id="appendix-formulas-trig-prod-to-sum"><span class="header-section-number">7.5.11</span> Преобразование произведения в сумму</h3>
 <p><span class="math display">\[
 \cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
 \]</span></p>
@@ -758,8 +764,8 @@ a, &amp;a \geq 0 \\
 \tan \alpha \cot \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{\sin (\alpha + \beta) - \sin (\alpha - \beta)}
 \]</span></p>
 </section>
-<section id="trig_sum_to_prod" class="level3" data-number="7.5.12">
-<h3 data-number="7.5.12" class="anchored" data-anchor-id="trig_sum_to_prod"><span class="header-section-number">7.5.12</span> Преобразование суммы в произведение</h3>
+<section id="appendix-trig-sum-to-prod" class="level3" data-number="7.5.12">
+<h3 data-number="7.5.12" class="anchored" data-anchor-id="appendix-trig-sum-to-prod"><span class="header-section-number">7.5.12</span> Преобразование суммы в произведение</h3>
 <p><span class="math display">\[
 \sin \alpha \pm \sin \beta = 2 \sin \Big(\frac{\alpha \pm \beta}{2}\Big) \cos \Big(\frac{\alpha \mp \beta}{2}\Big)
 \]</span></p>
@@ -1322,8 +1328,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-design.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Дизайн</span>">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дизайн</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./appendix-math-letters.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Математические буквы</span>">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Математические буквы</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

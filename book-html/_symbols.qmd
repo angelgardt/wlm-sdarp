@@ -52,7 +52,6 @@
 \newcommand{\sgn}{\text{sgn}}
 
 <!--- Trig --->
-\usepackage{amsmath}
 \DeclareMathOperator\artanh{artanh}
 
 <!--- Stats --->

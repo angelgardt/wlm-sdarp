@@ -1,21 +1,21 @@
-# Числа и железо {#appendix_numbers}
+# Числа и железо {#appendix-numbers}
 
 *В ходе анализа данных мы непрерывно работаем с числами. Попробуем разобраться, как они храняться в памяти компа, и почему* `0.9 + 0.5 == 1.4` *далеко не во всех языках програмирования даёт результат* `TRUE`.
 
-## Целые числа {#integer_iron}
+## Целые числа {#appendix-numbers-integer-iron}
 
-### Системы счисления {#number_systems}
+### Системы счисления {#appendix-numbers-number-systems}
 
-### Перевод числа из одной системы счисления в другую {#system_to_system}
+### Перевод числа из одной системы счисления в другую {#appendix-numbers-system-to-system}
 
-### Целочисленные типы {#integer_types}
+### Целочисленные типы {#appendix-numbers-integer-types}
 
-## Отрицательные числа {#negative_iron}
+## Отрицательные числа {#appendix-numbers-negative-iron}
 
-### Знаковые и беззнаковые типы {#unsigned_type}
+### Знаковые и беззнаковые типы {#appendix-numbers-unsigned-type}
 
-## Числа с плавающей точкой {#float_iron}
+## Числа с плавающей точкой {#appendix-numbers-float-iron}
 
-### Экспоненциальная запись числа {#scientific_notation}
+### Экспоненциальная запись числа {#appendix-numbers-scientific-notation}
 
-### Типы чисел c плавающей точкой {#float_types}
+### Типы чисел c плавающей точкой {#appendix-numbers-float-types}

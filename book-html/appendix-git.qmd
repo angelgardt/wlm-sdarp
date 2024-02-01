@@ -1,10 +1,10 @@
-# Git {#appendix_git}
+# Git {#appendix-git}
 
-## Концепция Git
+## Концепция Git {#appendix-git-concept}
 
-## Source Tree
+## RStudio Git {#appendix-git-rstudio}
 
-## CLI
+## CLI {#appendix-git-cli}
 
 ### `git clone`
 
