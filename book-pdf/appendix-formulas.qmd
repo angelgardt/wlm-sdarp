@@ -1,7 +1,5 @@
 # Формулы {#formulas}
 
-{{< include _symbols.qmd >}}
-
 ```{r require_tidyverse, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(ggforce)

@@ -1,5 +1,4 @@
-# Корреляционный анализ {#andan-corr}
-{{< include _symbols.qmd >}}
+# Корреляционный анализ {#andan-corr}}
 
 ```{r andan-corr-opts, eval=TRUE, echo=FALSE}
 knitr::opts_chunk$set(include = FALSE, eval = FALSE)

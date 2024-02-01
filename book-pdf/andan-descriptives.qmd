@@ -8,8 +8,6 @@ theme_set(theme_bw())
 library(latex2exp)
 ```
 
-{{< include _symbols.qmd >}}
-
 ## Виды статистики {#andan-descriptives-kinds-of-stats}
 ::: {.lab-chapter .lab-junior}
 :::

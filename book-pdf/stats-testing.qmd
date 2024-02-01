@@ -1,6 +1,5 @@
 # Тестирование статистических гипотез {#stats-testing}
 
-{{< include _symbols.qmd >}}
 
 ```{r stats-testing-pkgs, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)

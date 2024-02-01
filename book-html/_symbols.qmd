@@ -38,7 +38,7 @@
 \newcommand{\cor}{\text{cor}}
 \newcommand{\se}{\text{se}}
 \newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
+\newcommand{\iid}{\text{i.i.d.}}
 
 \newsavebox{\MBox}
 \newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%

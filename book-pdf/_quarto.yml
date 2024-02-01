@@ -151,12 +151,12 @@ comments:
   hypothesis: true
 
 format:
-  html:
-    # include-in-header: 
-    cover-image: pics/book-cover.png
-    theme: 
-      light: [css/lightstyle.scss, css/custom.scss, css/tasklight.scss]
-      dark: [css/darkstyle.scss, css/custom.scss, css/taskdark.scss]
+  # html:
+  #   # include-in-header: 
+  #   cover-image: pics/book-cover.png
+  #   theme: 
+  #     light: [css/lightstyle.scss, css/custom.scss, css/tasklight.scss]
+  #     dark: [css/darkstyle.scss, css/custom.scss, css/taskdark.scss]
   pdf:
     documentclass: scrreprt
     include-in-header: 

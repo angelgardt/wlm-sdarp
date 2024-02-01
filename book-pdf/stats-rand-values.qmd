@@ -1,6 +1,5 @@
 # Случайные величины {#stats-rand-values}
 
-{{< include _symbols.qmd >}}
 
 ```{r stats-rand-values-opts, echo=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)

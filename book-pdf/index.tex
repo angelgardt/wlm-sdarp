@@ -150,6 +150,9 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 %% Packages
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}
+
 \usepackage{xcolor}
 \usepackage{soul}
 \usepackage{amsmath, amsfonts}
@@ -183,12 +186,12 @@
 \newcommand{\prob}{\mathbb{P}}
 \newcommand{\expect}{\mathbb{E}}
 \newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\mathrm{var}}
-\newcommand{\cov}{\mathrm{cov}}
-\newcommand{\cor}{\mathrm{cor}}
-\newcommand{\se}{\mathrm{se}}
-\newcommand{\sd}{\mathrm{sd}}
-\newcommand{\iid}{\text{i.i.d}}
+\newcommand{\var}{\text{var}}
+\newcommand{\cov}{\text{cov}}
+\newcommand{\cor}{\text{cor}}
+\newcommand{\se}{\text{se}}
+\newcommand{\sd}{\text{sd}}
+\newcommand{\iid}{\text{i.i.d.}}
 
 \newsavebox{\MBox}
 \newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
@@ -198,17 +201,17 @@
 \newcommand{\norm}{\mathcal{N}}
 
 %% Other
-\newcommand{\def}{\overset{\text{def}}{=}}
+\newcommand{\defin}{\overset{\text{def}}{=}}
 \newcommand{\sgn}{\mathrm{sgn}}
 
 %% Trig
 \newcommand{\artanh}{\text{artanh}}
 
 %% Stats
-\newcommand{\median}{\mathrm{median}}
+\newcommand{\median}{\text{median}}
 \newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
+\newcommand{\skewness}{\text{skew}}
+\newcommand{\kurtosis}{\text{kurt}}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
@@ -300,9 +303,9 @@
   \apptocmd{\@title}{\par {\large #1 \par}}{}{}
 }
 \makeatother
-\subtitle{Статистика и анализ данных в R}
+\subtitle{World of Linear Models: Statistics \& Data Analysis in R}
 \author{Антон Ангельгардт}
-\date{Jan 24, 2024}
+\date{Feb 1, 2024}
 
 \begin{document}
 \maketitle
@@ -400,33 +403,33 @@ loaded via a namespace (and not attached):
 
 \markright{Блоки}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Заметка}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Заметка}, left=2mm, opacityback=0]
 
 Здесь написано что-то интересное. Почитайте на досуге.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, left=2mm, opacityback=0]
 
 Тут написано что-то важное. Обратите на этот блок внимание.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution with Title}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-caution-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution with Title}, left=2mm, opacityback=0]
 
 Тут описано что-то, что потенциально может сломать ваш код. Чтобы он не
 сломался, стоит это изучить.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-important-color-frame, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Важно!}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-important-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Важно!}, left=2mm, opacityback=0]
 
 Тут написано что-то очень важное! Обратите на этот блок пристальное
 внимание!
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Совет}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Совет}, left=2mm, opacityback=0]
 
 Здесь советы из собственного опыта. Возможно, они вам пригодятся.
 
@@ -452,71 +455,19 @@ loaded via a namespace (and not attached):
 
 \markright{Символы}
 
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
-
 \begin{itemize}
 \item
-  \(\mathbb{N}\) --- множество натуральных чисел
+  \(\setN\) --- множество натуральных чисел
 \item
-  \(\mathbb{N}_{0}\) --- множество натуральных чисел, включая ноль
+  \(\setNo\) --- множество натуральных чисел, включая ноль
 \item
-  \(\mathbb{Z}\) --- множество целых чисел
+  \(\setZ\) --- множество целых чисел
 \item
-  \(\mathbb{Q}\) --- множество рациональных чисел
+  \(\setQ\) --- множество рациональных чисел
 \item
-  \(\mathbb{R}\) --- множество вещественных (действительных) чисел
+  \(\setR\) --- множество вещественных (действительных) чисел
 \item
-  \(\mathbb{C}\) --- множество комплексных чисел
+  \(\setC\) --- множество комплексных чисел
 \item
   \(\alpha, \beta, \gamma, \dots\) --- числа, коэффициенты
 \item
@@ -524,19 +475,17 @@ loaded via a namespace (and not attached):
 \item
   \(x, y, z\) --- числа, значения случайной величины
 \item
-  \(\mathbf{a}, \mathbf{b}, \mathbf{c}, \dots, \mathbf{x}, \mathbf{y}, \mathbf{z}\)
-  --- векторы
+  \(\vm a, \vm b, \vm c, \dots, \vm x, \vm y, \vm z\) --- векторы
 \item
-  \(\mathbf{A}, \mathbf{B}, \mathbf{C}, \dots, \mathbf{X}, \mathbf{Y}, \mathbf{Z}\)
-  --- матрицы
+  \(\vm A, \vm B, \vm C, \dots, \vm X, \vm Y, \vm Z\) --- матрицы
 \item
-  \(\mathbb{P}\) --- вероятность
+  \(\prob\) --- вероятность
 \item
   \(\sum\) --- сумма
 \item
   \(\prod\) --- произведение
 \item
-  \(\overset{\text{def}}{=}\) --- равно по определению
+  \(\def\) --- равно по определению
 \end{itemize}
 
 \part{R}
@@ -1348,7 +1297,7 @@ BFI студента-психолога} или \emph{индекс индиви�
 статистика. Далее это обрастёт содержанием и уложится, я надеюсь, в
 достаточно стройную систему.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Важно}, left=2mm, opacityback=0]
 
 Статистика помогает нам делать выводы о нашей генеральной совокупности
 по выборке.
@@ -1444,58 +1393,6 @@ Cтатистика же как набор методов и инструмен�
 
 \chapter{Случайные величины}\label{stats-rand-values}
 
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
-
 \section{Дискретные случайные
 величины}\label{stats-rand-values-discrete}
 
@@ -1527,7 +1424,7 @@ Cтатистика же как набор методов и инструмен�
 \subsection{Нормальное распределение}\label{stats-rand-values-norm}
 
 \[
-X \sim \mathcal{N}(\mu, \sigma^2)
+X \sim \norm(\mu, \sigma^2)
 \]
 
 \[
@@ -1539,15 +1436,15 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 интервалы стандартных отклонений (Рисунок~\ref{fig-norm}):
 
 \[
-\mathbb{P}\big( X \in (\mu\!-\!\sigma, \mu\!+\!\sigma) \big) = 0.682
+\prob \big( X \in (\mu\!-\!\sigma, \mu\!+\!\sigma) \big) = 0.682
 \]
 
 \[
-\mathbb{P}\big( X \in (\mu\!-\!2\sigma, \mu\!+\!2\sigma) \big) = 0.954
+\prob \big( X \in (\mu\!-\!2\sigma, \mu\!+\!2\sigma) \big) = 0.954
 \]
 
 \[
-\mathbb{P}\big( X \in (\mu\!-\!3\sigma, \mu\!+\!3\sigma) \big) = 0.996
+\prob \big( X \in (\mu\!-\!3\sigma, \mu\!+\!3\sigma) \big) = 0.996
 \]
 
 \begin{figure}
@@ -1602,58 +1499,6 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 \bookmarksetup{startatroot}
 
 \chapter{Оценивание статистических параметров}\label{stats-estim}
-
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
 
 Мы оказываемся в сложной, но интересной ситуации. Мы хотим знать что-то
 про генеральную совокупность --- значение некоторого \emph{параметра}.
@@ -1718,12 +1563,12 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 # A tibble: 6 x 2
      id    IQ
   <int> <dbl>
-1     1    90
-2     2   102
-3     3    97
-4     4   106
-5     5    84
-6     6    93
+1     1   112
+2     2   130
+3     3   122
+4     4   105
+5     5   100
+6     6   127
 \end{verbatim}
 
 \begin{Shaded}
@@ -1736,12 +1581,12 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 # A tibble: 6 x 2
      id    IQ
   <int> <dbl>
-1  9995    74
-2  9996    93
-3  9997    93
-4  9998    68
-5  9999    92
-6 10000    80
+1  9995    95
+2  9996    70
+3  9997    73
+4  9998    50
+5  9999   114
+6 10000   143
 \end{verbatim}
 
 Так как мы предположили, что это генеральная совокупность, то мы можем
@@ -1755,7 +1600,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}\big(\frac{x - \mu}{\sigma}\bi
 \end{Shaded}
 
 \begin{verbatim}
-[1] 99.6602
+[1] 99.9472
 \end{verbatim}
 
 Вполне ожидаемое значение\footnote{Шкала IQ устроена так, что её среднее
@@ -4311,7 +4156,7 @@ conversion failure on 'Количество' in 'mbcsToSbcs': dot substituted fo
 несмещенность}\label{ux43fux440ux43eux432ux435ux440ux43aux430-ux441ux440ux435ux434ux43dux435ux433ux43e-ux43aux430ux43a-ux43eux446ux435ux43dux43aux438-ux43cux430ux442ux435ux43cux430ux442ux438ux447ux435ux441ux43aux43eux433ux43e-ux43eux436ux438ux434ux430ux43dux438ux44f-ux43dux430-ux43dux435ux441ux43cux435ux449ux435ux43dux43dux43eux441ux442ux44c}
 
 \[ 
-X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
+X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
 \]
 
 \[
@@ -4319,11 +4164,11 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
 \]
 
 \[
-\mathbb{E}(\hat \mu) = \mathbb{E}(\bar X) \overset{?}{=} \mu
+\expect (\hat \mu) = \expect (\bar X) \overset{?}{=} \mu
 \]
 
 \[
-\mathbb{E}(\bar X) = \mathbb{E}\big (\frac{1}{n} \sum_{i=1}^n X_i \big ) = \frac{1}{n} \mathbb{E}\Big( \sum_{i=1}^n X_i \Big) = \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i \overset{X_i \overset{\text{i.i.d}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X = \frac{n}{n} \cdot \mu = \mu
+\expect (\bar X) = \expect \big (\frac{1}{n} \sum_{i=1}^n X_i \big ) = \frac{1}{n} \expect \Big( \sum_{i=1}^n X_i \Big) = \frac{1}{n} \sum_{i=1}^n \expect X_i \overset{X_i \overset{\iid}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \expect X = \frac{n}{n} \cdot \mu = \mu
 \]
 
 \paragraph{Проверка дисперсии генеральной совокупности как оценки
@@ -4331,14 +4176,14 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
 несмещенность}\label{ux43fux440ux43eux432ux435ux440ux43aux430-ux434ux438ux441ux43fux435ux440ux441ux438ux438-ux433ux435ux43dux435ux440ux430ux43bux44cux43dux43eux439-ux441ux43eux432ux43eux43aux443ux43fux43dux43eux441ux442ux438-ux43aux430ux43a-ux43eux446ux435ux43dux43aux438-ux434ux438ux441ux43fux435ux440ux441ux438ux438-ux43dux430-ux43dux435ux441ux43cux435ux449ux435ux43dux43dux43eux441ux442ux44c}
 
 \[ 
-X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
+X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
 \]
 
 \[
 \begin{split}
-\mathbb{D}X & = \sigma^2 = \mathbb{E}(X - \mathbb{E}X)^2 = \mathbb{E}(X^2 - 2 X \mathbb{E}X + \mathbb{E}^2 X) = \\
-& = \mathbb{E}X^2 - 2\mathbb{E}X \mathbb{E}X + \mathbb{E}^2 X = \mathbb{E}X^2 - 2\mathbb{E}^2 X + \mathbb{E}^2 X = \\
-& = \mathbb{E}X^2 - \mathbb{E}^2 X
+\disp X & = \sigma^2 = \expect(X - \expect X)^2 = \expect (X^2 - 2 X \expect X + \expect^2 X) = \\
+& = \expect X^2 - 2\expect X \expect X + \expect^2 X = \expect X^2 - 2\expect^2 X + \expect^2 X = \\
+& = \expect X^2 - \expect^2 X
 \end{split}
 \]
 
@@ -4347,30 +4192,30 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
 \]
 
 \[
-\mathbb{E}(\hat \sigma^2) \overset{?}{=} \sigma^2
+\expect (\hat \sigma^2) \overset{?}{=} \sigma^2
 \]
 
 \[
 \begin{split}
-\mathbb{E}(\hat \sigma^2) & = \frac{\sum_{i=1}^n (x_i - \bar X)^2}{n} = \\
-& = \frac{1}{n} \left(\sum_{i=1}^n x_i^2 - 2 \sum_{i=1}^n x_i \bar X  + \sum_{i=1}^n \bar X \right)\\ 
-& = \frac{1}{n} \left(\sum_{i=1}^n x_i^2 - 2 \bar X \sum_{i=1}^n x_i + n \bar X \right)= \\
+\expect (\hat \sigma^2) & = \frac{\sum_{i=1}^n (x_i - \bar X)^2}{n} = \\
+& = \frac{1}{n} \lp \sum_{i=1}^n x_i^2 - 2 \sum_{i=1}^n x_i \bar X  + \sum_{i=1}^n \bar X \rp \\ 
+& = \frac{1}{n} \lp \sum_{i=1}^n x_i^2 - 2 \bar X \sum_{i=1}^n x_i + n \bar X \rp = \\
 & = \frac{\sum_{i=1}^n x_i^2}{n} - 2 \bar X \frac{\sum_{i=1}^n x_i}{n} + \bar X^2 = \\
 & = \overline{X^2} - 2 \bar X^2 + \bar X^2 = \overline{X^2} - \bar X^2
 \end{split}
 \]
 
 \[
-\mathbb{E}(\hat \sigma^2) = \mathbb{E}(\overline {X^2} - \bar X^2) = \underset{[1]}{\mathbb{E}\overline{X^2}} - \underset{[2]}{\mathbb{E}\bar X^2}
+\expect (\hat \sigma^2) = \expect (\overline {X^2} - \bar X^2) = \underset{[1]}{\expect \overline{X^2}} - \underset{[2]}{\expect \bar X^2}
 \]
 
 \$\$
 
 \begin{split}
-[1] \, \mathbb{E}\overline{X^2} : & \\
+[1] \, \expect \overline{X^2} : & \\
 
-\mathbb{E}\overline{X^2} & = \mathbb{E}\left(\frac{\sum_{i=1}^n X_i^2}{n} \right)= \frac{1}{n} \mathbb{E}\left(\sum_{i=1}^n X_i^2 \right)= \\
-& = \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i^2] \overset{X_i \overset{\text{i.i.d}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X^2 = \mathbb{E}X^2
+\expect \overline{X^2} & = \expect \lp \frac{\sum_{i=1}^n X_i^2}{n} \rp = \frac{1}{n} \expect \lp \sum_{i=1}^n X_i^2 \rp = \\
+& = \frac{1}{n} \sum_{i=1}^n \expect X_i^2] \overset{X_i \overset{\iid}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \expect X^2 = \expect X^2
 
 \end{split}
 
@@ -4379,46 +4224,46 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d}}{\thicksim} (\mu, \sigma^2)
 \$\$
 
 \begin{split}
-[2] \, \mathbb{E}\bar X^2 : & \\
+[2] \, \expect \bar X^2 : & \\
 
-\mathbb{E}\bar X^2 & = 
-\mathbb{E}\left[
-    \left(\frac{\sum_{i=1}^n X_i}{n} \right)^2 
-  \right]= 
+\expect \bar X^2 & = 
+\expect \lb 
+    \lp \frac{\sum_{i=1}^n X_i}{n} \rp ^2 
+  \rb = 
 \frac{1}{n^2} 
-\mathbb{E}\left[
-    \left(\sum_{i=1}^n X_i^2 \right)
-  \right]= \\
-& = \frac{1}{n^2} \mathbb{E}\left[
-    \sum_{i=1}^n \mathbb{E}X_i^2 + 
+\expect \lb 
+    \lp \sum_{i=1}^n X_i^2 \rp 
+  \rb = \\
+& = \frac{1}{n^2} \expect \lb 
+    \sum_{i=1}^n \expect X_i^2 + 
     2 \sum_{
       \substack{i=1, j=1 \\ i \neq j}
       }^n X_i X_j 
-    \right]= \\
-& = \frac{1}{n^2} \left[
-      \sum_{i=1}^n \mathbb{E}(X_i^2) + 
+    \rb = \\
+& = \frac{1}{n^2} \lb
+      \sum_{i=1}^n \expect (X_i^2) + 
       2 \sum_{
         \substack{i=1, j=1 \\ i \neq j}
-      }^n \mathbb{E}(X_i X_j)
-    \right]= \\
-& \overset{X_i \overset{\text{i.i.d}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n^2} \left[
-    n \cdot \mathbb{E}X^2 + 
+      }^n \expect (X_i X_j)
+    \rb = \\
+& \overset{X_i \overset{\iid}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n^2} \lb 
+    n \cdot \expect X^2 + 
     2 \sum_{
       \substack{i=1, j=1 \\ i \neq j}
-    }^n \mathbb{E}(X_i) \mathbb{E}(X_j) \right]= \\
-& = \frac{1}{n} \left[n \cdot \mathbb{E}X2 + 2 \cdot \frac{n(n-1)}{2} \mathbb{E}^2 X \right]= \\
-& = \frac{1}{n} \mathbb{E}X^2 + \frac{n-1}{n} \mathbb{E}^2 X
+    }^n \expect (X_i) \expect (X_j) \rb = \\
+& = \frac{1}{n} \lb n \cdot \expect X2 + 2 \cdot \frac{n(n-1)}{2} \expect^2 X \rb  = \\
+& = \frac{1}{n} \expect X^2 + \frac{n-1}{n} \expect^2 X
 \end{split}
 
 \$\$
 
 \[
 \begin{split}
-\mathbb{E}(\hat \sigma^2) 
-& = \mathbb{E}\overline{X^2} - \mathbb{E}\bar X^2 = \\
-& = \mathbb{E}X^2 - \left(\frac{1}{n} \mathbb{E}X^2 + \frac{n-1}{n} \mathbb{E}^2 X \right)= \\
-& = \frac{n}{n} \mathbb{E}X^2 - \frac{1}{n} \mathbb{E}X^2 - \frac{n-1}{n} \mathbb{E}^2 X = \\
-& = \frac{n-1}{n} \mathbb{E}X^2 - \frac{n-1}{n} \mathbb{E}^2 X = \frac{n-1}{n} \left(\mathbb{E}X^2 - \mathbb{E}^2 X \right)\\ 
+\expect (\hat \sigma^2) 
+& = \expect \overline{X^2} - \expect \bar X^2 = \\
+& = \expect X^2 - \lp \frac{1}{n} \expect X^2 + \frac{n-1}{n} \expect^2 X \rp = \\
+& = \frac{n}{n} \expect X^2 - \frac{1}{n} \expect X^2 - \frac{n-1}{n} \expect^2 X = \\
+& = \frac{n-1}{n} \expect X^2 - \frac{n-1}{n} \expect^2 X = \frac{n-1}{n} \lp \expect X^2 - \expect ^2 X \rp \\ 
 & = \frac{n-1}{n} \sigma^2
 \end{split}
 \]
@@ -4432,7 +4277,7 @@ s^2 = \frac{n}{n-1} \sigma^2 = \frac{n}{n-1} \cdot \frac{1}{n} \cdot \sum_{i=1}^
 Математически \textbf{состоятельность} определяется следующим образом:
 
 \[
-\lim_{n \rightarrow \infty} \mathbb{P}(|\hat \theta - \theta| < \varepsilon) = 1, \, \varepsilon > 0
+\lim_{n \rightarrow \infty} \prob (|\hat \theta - \theta| < \varepsilon) = 1, \, \varepsilon > 0
 \]
 
 Содержательно эта запись нам говорит следующее, что при неограниченном
@@ -4484,29 +4329,29 @@ s^2 = \frac{n}{n-1} \sigma^2 = \frac{n}{n-1} \cdot \frac{1}{n} \cdot \sum_{i=1}^
 ошибка}\label{ux441ux442ux430ux43dux434ux430ux440ux442ux43dux430ux44f-ux43eux448ux438ux431ux43aux430}
 
 \subsubsection{\texorpdfstring{Почему
-\(\text{se}(X) = \frac{\text{sd}(X)}{\sqrt{n}}\)}{Почему \textbackslash text\{se\}(X) = \textbackslash frac\{\textbackslash text\{sd\}(X)\}\{\textbackslash sqrt\{n\}\}}}\label{ux43fux43eux447ux435ux43cux443-textsex-fractextsdxsqrtn}
+\(\se(X) = \frac{\sd(X)}{\sqrt{n}}\)}{Почему \textbackslash se(X) = \textbackslash frac\{\textbackslash sd(X)\}\{\textbackslash sqrt\{n\}\}}}\label{ux43fux43eux447ux435ux43cux443-sex-fracsdxsqrtn}
 
 \[
-\text{var}(X + Y) = \text{var}(X) + \text{var}(Y) + 2 \text{cov}(X, Y)
+\var (X + Y) = \var (X) + \var(Y) + 2 \cov (X, Y)
 \]
 
 \[
-\text{var}(aX) = a^2 \text{var}(X)
+\var (aX) = a^2 \var (X)
 \]
 
 Так как наблюдения извлекаются из независимых одинаково распределенных
 величин (independent identically distributed, iid), то
 
 \[
-\text{cov}(X_i, X_j) = 0, \sigma_{X_i} = \sigma_{X_j} = \sigma
+\cov (X_i, X_j) = 0, \sigma_{X_i} = \sigma_{X_j} = \sigma
 \]
 
 \[
-\text{var}\Big( \frac{1}{n} \sum X_i \Big) = \frac{1}{n^2} \sum \text{var}(X_i) = \frac{1}{n^2} \sum \sigma^2 = \frac{n}{n^2} \sigma^2 = \frac{\sigma^2}{n}
+\var \Big( \frac{1}{n} \sum X_i \Big) = \frac{1}{n^2} \sum \var(X_i) = \frac{1}{n^2} \sum \sigma^2 = \frac{n}{n^2} \sigma^2 = \frac{\sigma^2}{n}
 \]
 
 \[
-\text{se}_X = \sqrt{ \text{var}\Big( \frac{1}{n} \sum X_i \Big)} = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}
+\se_X = \sqrt{ \var \Big( \frac{1}{n} \sum X_i \Big)} = \sqrt{\frac{\sigma^2}{n}} = \frac{\sigma}{\sqrt{n}}
 \]
 
 \subsection{Доверительный
@@ -4589,7 +4434,7 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 
 \begin{verbatim}
         y     ymin     ymax
-1 99.6602 99.36663 99.95377
+1 99.9472 99.65522 100.2392
 \end{verbatim}
 
 \begin{Shaded}
@@ -4600,64 +4445,12 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 
 \begin{verbatim}
         y     ymin     ymax
-1 99.6602 99.36294 99.96042
+1 99.9472 99.64983 100.2219
 \end{verbatim}
 
 \bookmarksetup{startatroot}
 
 \chapter{Тестирование статистических гипотез}\label{stats-testing}
-
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
 
 В ходе статистического анализа мы, главным образом, заняты тем, что
 тестируем статистические гипотезы. Ведь на какого рода вопросы мы
@@ -5017,7 +4810,7 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 
 \section{Статистическая мощность}\label{stats-testing-power}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Статистическая мощность Post hoc}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Статистическая мощность Post hoc}, left=2mm, opacityback=0]
 
 НАПИСАТЬ
 
@@ -5045,7 +4838,7 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 бы в одном сравнении:
 
 \[
-\mathbb{P}^′ = 1 - (1 - \alpha)^m
+\prob^′ = 1 - (1 - \alpha)^m
 \]
 
 Пусть у нас есть три группы, которые нам надо сравнить друг с другом ---
@@ -5053,7 +4846,7 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 ошибиться получается:
 
 \[
-\mathbb{P}^′ = 1 - (1 - 0.05)^3 \approx 0.143
+\prob^′ = 1 - (1 - 0.05)^3 \approx 0.143
 \]
 
 Значительно больше, чем \(0.05\), что нехорошо. И дальше только хуже.
@@ -5116,58 +4909,6 @@ p < \frac{\alpha}{n} \Rightarrow np < \alpha
 
 \chapter{Описательные статистики}\label{andan-descriptives}
 
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
-
 \section{Виды статистики}\label{andan-descriptives-kinds-of-stats}
 
 Напомним себе, что статистика {[}как набор методов и инструментов{]}
@@ -5206,7 +4947,7 @@ p < \frac{\alpha}{n} \Rightarrow np < \alpha
   \end{itemize}
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Замечание о машинном обучении}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Замечание о машинном обучении}, left=2mm, opacityback=0]
 
 В названии книги упомянуто «машинное обучение». Иногда его причисляют к
 статистике, иногда рассматривают отдельно. На самом же деле,
@@ -5351,7 +5092,7 @@ function, PMF)}, то мы можем определить моду, основ�
 \end{definition}
 
 \begin{equation}\phantomsection\label{eq-mode-pmf}{
-\text{mode}(X) = \arg \max(\text{PMF}(X)) = \arg \max_{x_i}(\mathbb{P}(X = x_i)),
+\text{mode}(X) = \arg \max(\text{PMF}(X)) = \arg \max_{x_i}(\prob (X = x_i)),
 }\end{equation}
 
 где \(X\) --- дискретная случайная величина, \(x_i\) --- значение этой
@@ -6663,7 +6404,7 @@ for <82>
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: мода}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: мода}, left=2mm, opacityback=0]
 
 \begin{itemize}
 \tightlist
@@ -6852,7 +6593,7 @@ n~=~30). \texttt{set.seed(314)}. Пунктирной линией обозна�
 игнорировать её, по-видимому, нельзя, поскольку она влияет на
 вариатиность данных.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Соцдем лишним не бывает}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-tip-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Соцдем лишним не бывает}, left=2mm, opacityback=0]
 
 На этапе планирования исследования подумайте о том, чем могут отличаться
 ваши респонденты или испытуемые между собой, помимо индивидуальных
@@ -6887,7 +6628,7 @@ n~=~30). \texttt{set.seed(314)}. Пунктирной линией обозна�
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: бимодальное распределение}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: бимодальное распределение}, left=2mm, opacityback=0]
 
 \begin{itemize}
 \tightlist
@@ -7690,7 +7431,7 @@ conversion failure on 'это медиана' in 'mbcsToSbcs': dot substituted f
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, breakable, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white, toprule=.15mm, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: медиана}, toptitle=1mm, colback=white, rightrule=.15mm, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, coltitle=black, rightrule=.15mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, titlerule=0mm, leftrule=.75mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Take-home: медиана}, left=2mm, opacityback=0]
 
 \begin{itemize}
 \tightlist
@@ -9290,59 +9031,8 @@ IQR)}.
 
 \bookmarksetup{startatroot}
 
-\chapter{Корреляционный анализ}\label{andan-corr}
-
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
+\chapter{Корреляционный анализ
+\{\#andan-corr\}\}}\label{ux43aux43eux440ux440ux435ux43bux44fux446ux438ux43eux43dux43dux44bux439-ux430ux43dux430ux43bux438ux437-andan-corr}
 
 До этого момента мы рассматривали только отдельные переменные и их
 характерики, однако в практике мы редко работаем только с одной
@@ -9806,7 +9496,7 @@ r = \frac{2(\bar x_1 - \bar x_2)}{N},
 \section{Преобразование Фишера}\label{andan-cor-fisher-transform}
 
 \[
-z_i = \frac{1}{2} \ln \frac{1 + r_i}{1 - r_i} = \mathop{\mathrm{artanh}}(r_i)
+z_i = \frac{1}{2} \ln \frac{1 + r_i}{1 - r_i} = \artanh (r_i)
 \]
 
 \[
@@ -9821,58 +9511,6 @@ r_P = \dfrac{e^{2z_P} - 1}{e^{2z_P} + 1} = \tanh(z_P)
 
 \chapter{Общие линейные модели. Простая линейная
 регрессия}\label{andan-simplelinear}
-
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
 
 \section{Вычисление коэффициентов линейной
 регрессии}\label{ux432ux44bux447ux438ux441ux43bux435ux43dux438ux435-ux43aux43eux44dux444ux444ux438ux446ux438ux435ux43dux442ux43eux432-ux43bux438ux43dux435ux439ux43dux43eux439-ux440ux435ux433ux440ux435ux441ux441ux438ux438}
@@ -10476,68 +10114,16 @@ Git}\label{ux43aux43eux43dux446ux435ux43fux446ux438ux44f-git}
 
 \chapter{Формулы}\label{formulas}
 
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{amsmath, amsfonts}
-
-\newcommand{\const}{\text{const}}
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-\newcommand{\lb}{\left[}
-\newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\newcommand{\xor}{\,\text{XOR}\,}
-
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-
-\newcommand{\vm}[1]{\mathbf{#1}}
-
-\newcommand{\Falg}{\mathcal{F}}
-\newcommand{\prob}{\mathbb{P}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
-\newcommand{\cov}{\text{cov}}
-\newcommand{\cor}{\text{cor}}
-\newcommand{\se}{\text{se}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\iid}{\text{i.i.d}}
-
-\newsavebox{\MBox}
-\newcommand{\Cline}[2][red]{{\sbox\MBox{$#2$}%
-  \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
-
-\newcommand{\norm}{\mathcal{N}}
-
-\newcommand{\def}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
-
-\usepackage{amsmath}
-\DeclareMathOperator\artanh{artanh}
-
-\newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
-\newcommand{\skew}{\mathrm{skew}}
-\newcommand{\kurt}{\mathrm{kurt}}
-
 \section{Степени и корни}\label{formulas_power}
 
 \subsection{Определения}\label{formulas_power_def}
 
 \[
-a^b \overset{\text{def}}{=}\prod_{i=1}^b a_i
+a^b \def \prod_{i=1}^b a_i
 \]
 
 \[
-\sqrt[n]a \overset{\text{def}}{=}b \Leftrightarrow b^n = a
+\sqrt[n]a \def b \Leftrightarrow b^n = a
 \]
 
 \subsection{Свойства}\label{formulas_power_identities}
@@ -10565,7 +10151,7 @@ x^n = a \Rightarrow x =
 
 \subsection{Определение}\label{formulas_log_def}
 
-\[\log_b a \overset{\text{def}}{=}c \Leftrightarrow a^c = b, a > 0, b > 0, b \neq 1\]
+\[\log_b a \def c \Leftrightarrow a^c = b, a > 0, b > 0, b \neq 1\]
 
 \subsection{Свойства}\label{formulas_log_identities}
 
@@ -10593,7 +10179,7 @@ a, &a \geq 0 \\
 
 \subsection{Свойства производной}\label{formulas_deriv_props}
 
-\[c' = 0, \, c = \text{const}\] \[(Cu)' = Cu'\] \[(u + v)' = u' + v'\]
+\[c' = 0, \, c = \const\] \[(Cu)' = Cu'\] \[(u + v)' = u' + v'\]
 \[(uv)' = u'v + uv'\]
 \[\Big( \frac{u}{v} \Big)' = \frac{u'v - uv'}{v^2}\]
 \[\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)\]
@@ -10755,9 +10341,9 @@ a, &a \geq 0 \\
 \subsection{Соотношение знаков}\label{trig_sgn}
 
 \[
-\text{sgn}\sin \alpha = \text{sgn}\csc \alpha \qquad \text{sgn}\cos \alpha = \text{sgn}\sec \alpha
+\sgn \sin \alpha = \sgn \csc \alpha \qquad \sgn \cos \alpha = \sgn \sec \alpha
 \] \[
-\text{sgn}\tan \alpha = \text{sgn}\cot \alpha
+\sgn \tan \alpha = \sgn \cot \alpha
 \]
 
 \subsection{Функции суммы с разности аргументов}\label{trig_angle_sum}
@@ -10839,27 +10425,27 @@ a, &a \geq 0 \\
 \subsection{Формулы половинного аргумента}\label{trig_half_arg}
 
 \[
-\sin \frac{\alpha}{2} = \text{sgn}\Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
+\sin \frac{\alpha}{2} = \sgn \Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
 \]
 
 \[
-\cos \frac{\alpha}{2} = \text{sgn}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
+\cos \frac{\alpha}{2} = \sgn \Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
 \]
 
 \[
-\tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \text{sgn}(\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
+\tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \sgn (\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
 \]
 
 \[
-\cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \text{sgn}(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
+\cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \sgn(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
 \]
 
 \[
-\sec \frac{\alpha}{2} = \text{sgn}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
+\sec \frac{\alpha}{2} = \sgn \Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
 \]
 
 \[
-\csc \frac{\alpha}{2} = \text{sgn}\Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
+\csc \frac{\alpha}{2} = \sgn \Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
 \]
 
 \subsection{Формулы понижения степени}\label{trig_power_reduction}
