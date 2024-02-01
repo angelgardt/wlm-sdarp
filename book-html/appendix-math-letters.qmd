@@ -1,0 +1,107 @@
+# Математические буквы {#math_letters}
+
+В математике используются символы нескольких алфавитов, а для латинского используются ещё и разные начертания букв. Большинство достаточно легко опознаются, однако с некоторыми могут возникнуть трудности. Ниже приведены символы, которые могут встретиться в разных математических текстах.
+
+
+## Латинский алфавит {#math-letters-latin}
+
+Строго говоря, в математике используется набор букв английского алфавита, но с латинскими названиями --- в латинском алфавите не было буквы $W$.
+
+|Обычное начертание|Вертикальное начертание|Полужирное начертание|Начертание без засечек|Рукописное начертание[^mathcal_small]|Контурное начертание[^mathbb_small]|Готическое начертание|Название|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|$A$ $a$|$\mathrm A$ $\mathrm a$|$\mathbf A$ $\mathbf a$|$\mathsf A$ $\mathsf a$|$\mathcal A$|$\mathbb A$|$\mathfrak A$ $\mathfrak a$|а|
+|$B$ $b$|$\mathrm B$ $\mathrm b$|$\mathbf B$ $\mathbf b$|$\mathsf B$ $\mathsf b$|$\mathcal B$|$\mathbb B$|$\mathfrak B$ $\mathfrak b$|бэ|
+|$C$ $c$|$\mathrm C$ $\mathrm c$|$\mathbf C$ $\mathbf c$|$\mathsf C$ $\mathsf c$|$\mathcal C$|$\mathbb C$|$\mathfrak C$ $\mathfrak c$|цэ|
+|$D$ $d$|$\mathrm D$ $\mathrm d$|$\mathbf D$ $\mathbf d$|$\mathsf D$ $\mathsf d$|$\mathcal D$|$\mathbb D$|$\mathfrak D$ $\mathfrak d$|дэ|
+|$E$ $e$|$\mathrm E$ $\mathrm e$|$\mathbf E$ $\mathbf e$|$\mathsf E$ $\mathsf e$|$\mathcal E$|$\mathbb E$|$\mathfrak E$ $\mathfrak e$|е|
+|$F$ $f$|$\mathrm F$ $\mathrm f$|$\mathbf F$ $\mathbf f$|$\mathsf F$ $\mathsf f$|$\mathcal F$|$\mathbb F$|$\mathfrak F$ $\mathfrak f$|эф|
+|$G$ $g$|$\mathrm G$ $\mathrm g$|$\mathbf G$ $\mathbf g$|$\mathsf G$ $\mathsf g$|$\mathcal G$|$\mathbb G$|$\mathfrak G$ $\mathfrak g$|жэ|
+|$H$ $h$|$\mathrm H$ $\mathrm h$|$\mathbf H$ $\mathbf h$|$\mathsf H$ $\mathsf h$|$\mathcal H$|$\mathbb H$|$\mathfrak H$ $\mathfrak h$|аш|
+|$I$ $i$|$\mathrm I$ $\mathrm i$|$\mathbf I$ $\mathbf i$|$\mathsf I$ $\mathsf i$|$\mathcal I$|$\mathbb I$|$\mathfrak I$ $\mathfrak i$|и|
+|$J$ $j$|$\mathrm J$ $\mathrm j$|$\mathbf J$ $\mathbf j$|$\mathsf J$ $\mathsf j$|$\mathcal J$|$\mathbb J$|$\mathfrak J$ $\mathfrak j$|йот|
+|$K$ $k$|$\mathrm K$ $\mathrm k$|$\mathbf K$ $\mathbf k$|$\mathsf K$ $\mathsf k$|$\mathcal K$|$\mathbb K$|$\mathfrak K$ $\mathfrak k$|ка|
+|$L$ $l$|$\mathrm L$ $\mathrm l$|$\mathbf L$ $\mathbf l$|$\mathsf L$ $\mathsf l$|$\mathcal L$|$\mathbb L$|$\mathfrak L$ $\mathfrak l$|эль|
+|$M$ $m$|$\mathrm M$ $\mathrm m$|$\mathbf M$ $\mathbf m$|$\mathsf M$ $\mathsf m$|$\mathcal M$|$\mathbb M$|$\mathfrak M$ $\mathfrak m$|эм|
+|$N$ $n$|$\mathrm N$ $\mathrm n$|$\mathbf N$ $\mathbf n$|$\mathsf N$ $\mathsf n$|$\mathcal N$|$\mathbb N$|$\mathfrak N$ $\mathfrak n$|эн|
+|$O$ $o$|$\mathrm O$ $\mathrm o$|$\mathbf O$ $\mathbf o$|$\mathsf O$ $\mathsf o$|$\mathcal O$|$\mathbb O$|$\mathfrak O$ $\mathfrak o$|о|
+|$P$ $p$|$\mathrm P$ $\mathrm p$|$\mathbf P$ $\mathbf p$|$\mathsf P$ $\mathsf p$|$\mathcal P$|$\mathbb P$|$\mathfrak P$ $\mathfrak p$|пэ|
+|$Q$ $q$|$\mathrm Q$ $\mathrm q$|$\mathbf Q$ $\mathbf q$|$\mathsf Q$ $\mathsf q$|$\mathcal Q$|$\mathbb Q$|$\mathfrak Q$ $\mathfrak q$|ку|
+|$R$ $r$|$\mathrm R$ $\mathrm r$|$\mathbf R$ $\mathbf r$|$\mathsf R$ $\mathsf r$|$\mathcal R$|$\mathbb R$|$\mathfrak R$ $\mathfrak r$|эр|
+|$S$ $s$|$\mathrm S$ $\mathrm s$|$\mathbf S$ $\mathbf s$|$\mathsf S$ $\mathsf s$|$\mathcal S$|$\mathbb S$|$\mathfrak S$ $\mathfrak s$|эс|
+|$T$ $t$|$\mathrm T$ $\mathrm t$|$\mathbf T$ $\mathbf t$|$\mathsf T$ $\mathsf t$|$\mathcal T$|$\mathbb T$|$\mathfrak T$ $\mathfrak t$|тэ|
+|$U$ $u$|$\mathrm U$ $\mathrm u$|$\mathbf U$ $\mathbf u$|$\mathsf U$ $\mathsf u$|$\mathcal U$|$\mathbb U$|$\mathfrak U$ $\mathfrak u$|у|
+|$V$ $v$|$\mathrm V$ $\mathrm v$|$\mathbf V$ $\mathbf v$|$\mathsf V$ $\mathsf v$|$\mathcal V$|$\mathbb V$|$\mathfrak V$ $\mathfrak v$|вэ|
+|$W$ $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathsf W$ $\mathsf w$|$\mathcal W$|$\mathbb W$|$\mathfrak W$ $\mathfrak w$|дубль вэ|
+|$X$ $x$|$\mathrm X$ $\mathrm x$|$\mathbf X$ $\mathbf x$|$\mathsf X$ $\mathsf x$|$\mathcal X$|$\mathbb X$|$\mathfrak X$ $\mathfrak x$|икс|
+|$Y$ $y$|$\mathrm Y$ $\mathrm y$|$\mathbf Y$ $\mathbf y$|$\mathsf Y$ $\mathsf y$|$\mathcal Y$|$\mathbb Y$|$\mathfrak Y$ $\mathfrak y$|игрек|
+|$Z$ $z$|$\mathrm Z$ $\mathrm z$|$\mathbf Z$ $\mathbf z$|$\mathsf Z$ $\mathsf z$|$\mathcal Z$|$\mathbb Z$|$\mathfrak Z$ $\mathfrak z$|зет|
+
+[^mathcal_small]: Начертание строчных латинских рукописных букв совпадает с начертанием курсивных, поэтому не используется.
+[^mathbb_small]: Контурное начертание латинских строчных букв существует --- $\mathbb a$
+$\mathbb b$,
+$\mathbb c$,
+$\mathbb d$,
+$\mathbb e$,
+$\mathbb f$,
+$\mathbb g$,
+$\mathbb h$,
+$\mathbb i$,
+$\mathbb j$,
+$\mathbb k$,
+$\mathbb l$,
+$\mathbb m$,
+$\mathbb n$,
+$\mathbb o$,
+$\mathbb p$,
+$\mathbb q$,
+$\mathbb r$,
+$\mathbb s$,
+$\mathbb t$,
+$\mathbb u$,
+$\mathbb v$,
+$\mathbb w$,
+$\mathbb x$,
+$\mathbb y$,
+$\mathbb z$ --- но используется крайне редко.
+
+
+## Греческий алфавит {#math-letters-greek}
+
+|Начертание|Название|
+|:---:|:---:|
+|$\mathrm A$ $\alpha$|альфа|
+|$\mathrm B$ $\beta$|бета|
+|$\Gamma$ $\gamma$|гамма|
+|$\Delta$ $\delta$|дельта|
+|$\mathrm E$ $\epsilon$ $\varepsilon$|эпсилон|
+|$\mathrm Z$ $\zeta$|дзета|
+|$\mathrm H$ $\eta$|эта|
+|$\Theta$ $\theta$ $\vartheta$|тета|
+|$\mathrm I$ $\iota$|иота|
+|$\mathrm K$ $\kappa$ $\varkappa$|каппа|
+|$\Lambda$ $\lambda$|лямбда|
+|$\mathrm M$ $\mu$|мю|
+|$\mathrm N$ $\nu$|ню|
+|$\Xi$ $\xi$|кси|
+|$\mathrm O$ $\omicron$|омикрон|
+|$\Pi$ $\pi$ $\varpi$|фи|
+|$\mathrm P$ $\rho$|ро|
+|$\Sigma$ $\sigma$ $\varsigma$|сигма|
+|$\mathrm T$ $\tau$|тау|
+|$\Upsilon$ $\upsilon$|ипсилон|
+|$\Phi$ $\phi$ $\varphi$|фи|
+|$\mathrm X$ $\chi$|хи|
+|$\Psi$ $\psi$|пси|
+|$\Omega$ $\omega$|омега|
+
+Ряд букв греческого алфавита не используется, так как они дублируют по начертанию латинские буквы:
+
+* прописные альфа ($\mathrm A$), бета ($\mathrm B$), эпсилон ($\mathrm E$), дзета ($\mathrm Z$), эта ($\mathrm H$), иота ($\mathrm I$), каппа ($\mathrm K$), мю ($\mathrm M$), ню ($\mathrm N$), омикрон ($\mathrm O$), ро ($\mathrm P$), тау ($\mathrm T$), хи ($\mathrm X$)
+* строчные омикрон ($\omicron$) и ипсилон ($\upsilon$)
+
+
+## Еврейский алфавит
+
+Из еврейсокго алфавита используются первые четыре буквы --- алеф ($\aleph$), бет ($\beth$), гимель ($\gimel$) и далет ($\daleth$). 
+
+Их использование весьма ограничено (только в теории множеств), и наиболее популярная из них первая --- алеф ($\aleph$) --- применяется для обозначения мощностей бесконечных множеств (кардинальные числа).
