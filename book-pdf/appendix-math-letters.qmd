@@ -1,0 +1,27 @@
+# Математические буквы {#math_letters}
+
+{{< include _symbols.qmd >}}
+
+$$
+\begin{matrix}
+A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z \\
+a & b & c & d & e & f & g & h & i & j & k & l & m & n & o & p & q & r & s & t & u & v & w & x & y & z \\
+\mathrm A & \mathrm B & \mathrm C & \mathrm D & \mathrm E & \mathrm F & \mathrm G & \mathrm H & \mathrm I & \mathrm J & \mathrm K & \mathrm L & \mathrm M & \mathrm N & \mathrm O & \mathrm P & \mathrm Q & \mathrm R & \mathrm S & \mathrm T & \mathrm U & \mathrm V & \mathrm W & \mathrm X & \mathrm Y & \mathrm Z \\
+\mathrm a & \mathrm b & \mathrm c & \mathrm d & \mathrm e & \mathrm f & \mathrm g & \mathrm h & \mathrm i & \mathrm j & \mathrm k & \mathrm l & \mathrm m & \mathrm n & \mathrm o & \mathrm p & \mathrm q & \mathrm r & \mathrm s & \mathrm t & \mathrm u & \mathrm v & \mathrm w & \mathrm x & \mathrm y & \mathrm z \\
+\mathbf A & \mathbf B & \mathbf C & \mathbf D & \mathbf E & \mathbf F & \mathbf G & \mathbf H & \mathbf I & \mathbf J & \mathbf K & \mathbf L & \mathbf M & \mathbf N & \mathbf O & \mathbf P & \mathbf Q & \mathbf R & \mathbf S & \mathbf T & \mathbf U & \mathbf V & \mathbf W & \mathbf X & \mathbf Y & \mathbf Z \\
+\mathbf a & \mathbf b & \mathbf c & \mathbf d & \mathbf e & \mathbf f & \mathbf g & \mathbf h & \mathbf i & \mathbf j & \mathbf k & \mathbf l & \mathbf m & \mathbf n & \mathbf o & \mathbf p & \mathbf q & \mathbf r & \mathbf s & \mathbf t & \mathbf u & \mathbf v & \mathbf w & \mathbf x & \mathbf y & \mathbf z \\
+\mathcal A & \mathcal B & \mathcal C & \mathcal D & \mathcal E & \mathcal F & \mathcal G & \mathcal H & \mathcal I & \mathcal J & \mathcal K & \mathcal L & \mathcal M & \mathcal N & \mathcal O & \mathcal P & \mathcal Q & \mathcal R & \mathcal S & \mathcal T & \mathcal U & \mathcal V & \mathcal W & \mathcal X & \mathcal Y & \mathcal Z \\
+\mathbb A & \mathbb B & \mathbb C & \mathbb D & \mathbb E & \mathbb F & \mathbb G & \mathbb H & \mathbb I & \mathbb J & \mathbb K & \mathbb L & \mathbb M & \mathbb N & \mathbb O & \mathbb P & \mathbb Q & \mathbb R & \mathbb S & \mathbb T & \mathbb U & \mathbb V & \mathbb W & \mathbb X & \mathbb Y & \mathbb Z \\
+\mathfrak A & \mathfrak B & \mathfrak C & \mathfrak D & \mathfrak E & \mathfrak F & \mathfrak G & \mathfrak H & \mathfrak I & \mathfrak J & \mathfrak K & \mathfrak L & \mathfrak M & \mathfrak N & \mathfrak O & \mathfrak P & \mathfrak Q & \mathfrak R & \mathfrak S & \mathfrak T & \mathfrak U & \mathfrak V & \mathfrak W & \mathfrak X & \mathfrak Y & \mathfrak Z \\
+\mathfrak a & \mathfrak b & \mathfrak c & \mathfrak d & \mathfrak e & \mathfrak f & \mathfrak g & \mathfrak h & \mathfrak i & \mathfrak j & \mathfrak k & \mathfrak l & \mathfrak m & \mathfrak n & \mathfrak o & \mathfrak p & \mathfrak q & \mathfrak r & \mathfrak s & \mathfrak t & \mathfrak u & \mathfrak v & \mathfrak w & \mathfrak x & \mathfrak y & \mathfrak z \\
+\mathsf A & \mathsf B & \mathsf C & \mathsf D & \mathsf E & \mathsf F & \mathsf G & \mathsf H & \mathsf I & \mathsf J & \mathsf K & \mathsf L & \mathsf M & \mathsf N & \mathsf O & \mathsf P & \mathsf Q & \mathsf R & \mathsf S & \mathsf T & \mathsf U & \mathsf V & \mathsf W & \mathsf X & \mathsf Y & \mathsf Z \\
+\mathsf a & \mathsf b & \mathsf c & \mathsf d & \mathsf e & \mathsf f & \mathsf g & \mathsf h & \mathsf i & \mathsf j & \mathsf k & \mathsf l & \mathsf m & \mathsf n & \mathsf o & \mathsf p & \mathsf q & \mathsf r & \mathsf s & \mathsf t & \mathsf u & \mathsf v & \mathsf w & \mathsf x & \mathsf y & \mathsf z \\
+\end{matrix}
+$$
+
+$$
+\begin{matrix}
+ &  & \Gamma & \Delta &  &  &  & \Theta &  &  & \Lambda &  &  & \Xi &  & \Pi &  & \Sigma &  & \Upsilon & \Phi &  & \Psi & \Omega \\
+\alpha & \beta & \gamma & \delta & \varepsilon & \zeta & \eta & \theta & \iota & \kappa & \lambda & \mu & \nu & \xi & o & \pi & \rho & \sigma & \tau & \upsilon & \varphi & \chi & \psi & \omega \\
+\end{matrix}
+$$
