@@ -1,23 +1,32 @@
 project:
   type: book
+  output-dir: _book
 
 book:
-  title: "book"
-  author: "Norah Jones"
+  title: "WLM SDAR"
+  subtitle: "World of Linear Models: Statistics & Data Analysis in R"
+  author: 
+    - name: "Anton Angelgardt"
+      email: "anton.angelgardt@gmail.com"
+  version: "0.0.1"
   date: "5/8/2024"
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
+  favicon: img/other/favicon.png
 
 bibliography: references.bib
 
+comments:
+  hypothesis: true
+
 format:
   html:
+    cover-image: img/other/cover.png
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+      #light: [css/lightstyle.scss]
+      #dark: [css/darkstyle.scss]
 
-
-
+editor: source
