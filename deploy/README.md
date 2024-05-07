@@ -12,7 +12,7 @@ To deploy the book for proofreading:
 deploy/run.sh deploy book
 ```
 
-Results will be saved to `docs/_dpl/`.
+Results will be saved to `docs/dpl/`.
 
 
 To release the book:
@@ -21,7 +21,7 @@ To release the book:
 deploy/run.sh release book
 ```
 
-Results will be saved to `docs/_cr/`.
+Results will be saved to `docs/cr/`. Previous release moved to prev.
 
 
 ```
