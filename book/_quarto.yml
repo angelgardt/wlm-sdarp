@@ -12,6 +12,7 @@ book:
   date: "5/8/2024"
   chapters:
     - index.qmd
+    - teststyle.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
@@ -22,11 +23,15 @@ bibliography: references.bib
 comments:
   hypothesis: true
 
+highlight-style: 
+  light: ../style/theme/light.theme
+  dark: ../style/theme/dark.theme
+
 format:
   html:
-    cover-image: img/other/cover.png
-    theme: cosmo
-      #light: [css/lightstyle.scss]
-      #dark: [css/darkstyle.scss]
+    cover-image: img/other/cover.jpg
+    theme:
+      light: ../style/css/light.scss
+      dark: ../style/css/dark.scss
 
 editor: source

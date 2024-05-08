@@ -4,27 +4,79 @@
     "href": "index.html",
     "title": "WLM SDAR",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "2  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "3 Acknowledgements",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "2  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
   },
   {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "teststyle.html",
+    "href": "teststyle.html",
+    "title": "1  Отладка стилевых файлов",
+    "section": "",
+    "text": "1.1 Заголовок раздела\nРазнообразный и богатый опыт постоянный количественный рост и сфера нашей активности требуют от нас анализа модели развития. С другой стороны постоянный количественный рост и сфера нашей активности требуют определения и уточнения существенных финансовых и административных условий. С другой стороны постоянный количественный рост и сфера нашей активности позволяет оценить значение направлений прогрессивного развития.\nРавным образом новая модель организационной деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации соответствующий условий активизации.\nИдейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений. Товарищи! рамки и место обучения кадров влечет за собой процесс внедрения и модернизации систем массового участия.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Отладка стилевых файлов</span>"
+    ]
+  },
+  {
+    "objectID": "teststyle.html#heading-2-1",
+    "href": "teststyle.html#heading-2-1",
+    "title": "1  Отладка стилевых файлов",
+    "section": "1.2 Heading 2",
+    "text": "1.2 Heading 2\n\n1.2.1 Heading 3\n\n1.2.1.1 Heading 4\n\n1.2.1.1.1 Heading 5\n\n1.2.1.1.1.1 Heading 6",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Отладка стилевых файлов</span>"
+    ]
+  },
+  {
+    "objectID": "teststyle.html#заголовок-раздела-1",
+    "href": "teststyle.html#заголовок-раздела-1",
+    "title": "1  Отладка стилевых файлов",
+    "section": "1.2 Заголовок раздела",
+    "text": "1.2 Заголовок раздела\nНе следует, однако забывать, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n1.2.1 Заголовок подраздела\nРавным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. Таким образом сложившаяся структура организации играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что новая модель организационной деятельности позволяет оценить значение модели развития. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа направлений прогрессивного развития.\nС другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (Figure 1.1).\n\ndiamonds %&gt;% \n  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n  right_join(diamonds, join_by(cut)) %&gt;% \n  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n  ggplot(aes(clarity, price, \n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\nWarning: Removed 15 rows containing missing values (`geom_segment()`).\n\n\n\n\n\n\n\n\nFigure 1.1: Это картинка, нарисованная большим кодом\n\n\n\n\n\n\n1.2.1.1 Заголовок 4 уровня\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n1.2.1.1.1 Заголовок 5 уровня with code\nА тут вставляется картинка (Figure 1.2):\n\n\n\n\n\n\nFigure 1.2: Превью репозитория\n\n\n\n\n\n\n1.2.1.2 Заголовок 4 уровня with code\n\n1.2.1.2.1 Заголовок 5 уровня\n\n1.2.1.2.1.1 Совсем мелкий заголовок",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Отладка стилевых файлов</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#session_info",
+    "href": "intro.html#session_info",
+    "title": "2  Introduction",
+    "section": "3.1 Session Info",
+    "text": "3.1 Session Info\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-pc-linux-gnu (64-bit)\nRunning under: Ubuntu 22.04.2 LTS\n\nMatrix products: default\nBLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 \nLAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0\n\nlocale:\n [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              \n [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_US.UTF-8    \n [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_US.UTF-8   \n [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 \n [9] LC_ADDRESS=C               LC_TELEPHONE=C            \n[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       \n\ntime zone: Europe/Moscow\ntzcode source: system (glibc)\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.7   rstudioapi_0.16.0 rmarkdown_2.25   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.41         digest_0.6.34    \n[13] rlang_1.1.3       evaluate_0.23    \n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   }
 ]
