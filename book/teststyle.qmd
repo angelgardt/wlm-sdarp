@@ -1,4 +1,6 @@
-# Отладка стилевых файлов
+# Отладка стилёвых файлов
+
+{{< include other/_symbols.qmd >}}
 
 Значимость этих проблем настолько очевидна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подготовки и реализации существенных финансовых и административных условий.
 
@@ -95,7 +97,84 @@ diamonds %>%
 
 #### Заголовок 4 уровня `with code`
 
+Согласно @thm-nonbiasmean:
+
+::: {#thm-nonbiasmean}
+Среднее арифметическое является несмещенной оценкой математического ожидания.
+:::
+
+:::{.proof}
+$$ 
+X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
+$$
+
+$$
+\hat \mu = \frac{1}{m}\sum_{j=1}^m x_j = \bar X 
+$$
+
+$$
+\expect (\hat \mu) = \expect (\bar X) \overset{?}{=} \mu
+$$
+
+$$
+\begin{split}
+\expect (\bar X) &= \\
+&= \expect \big (\frac{1}{n} \sum_{i=1}^n X_i \big ) = \\
+&= \frac{1}{n} \expect \Big( \sum_{i=1}^n X_i \Big) = \\
+&= \frac{1}{n} \sum_{i=1}^n \expect X_i \overset{X_i \overset{\iid}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \expect X = \\
+& = \frac{n}{n} \cdot \mu = \mu
+\end{split}
+$$
+
+:::
+
+::: {#lem-test}
+Это лемма.
+:::
+
+::: {#cor-test}
+Это следствие.
+:::
+
+::: {#prp-test}
+Это утверждение.
+:::
+
+::: {#cnj-test}
+Это conjecutre.
+:::
+
+::: {#def-test}
+Это определение.
+:::
+
+::: {#exm-test}
+Это пример.
+:::
+
+::: {#exr-test}
+Это упражнение.
+:::
+
+::: {#sol-test}
+Это решение.
+:::
+
+::: {#rem-test}
+Это замечание.
+:::
+
+
+
 ##### Заголовок 5 уровня
 
 ###### Совсем мелкий заголовок
 
+```{r leaflet-map}
+#| column: screen
+
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+```

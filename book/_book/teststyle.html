@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDAR - 1&nbsp; Отладка стилевых файлов</title>
+<title>WLM SDAR - 1&nbsp; Отладка стилёвых файлов</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,16 +92,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
+    "search-no-results-text": "Ничего не найдено",
     "search-matching-documents-text": "matching documents",
     "search-copy-link-title": "Copy link to search",
     "search-hide-matches-text": "Hide additional matches",
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-clear-button-title": "Очистить",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
+    "search-detached-cancel-button-title": "Отмена",
+    "search-submit-button-title": "Отправить",
     "search-label": "Search"
   }
 }</script>
@@ -111,7 +111,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.2.1/leaflet.js"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -124,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teststyle.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилевых файлов</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teststyle.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./teststyle.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилевых файлов</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Содержание</h2>
    
   <ul>
   <li><a href="#заголовок-раздела" id="toc-заголовок-раздела" class="nav-link active" data-scroll-target="#заголовок-раздела"><span class="header-section-number">1.1</span> Заголовок раздела</a></li>
@@ -201,11 +239,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилевых файлов</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></h1>
 </div>
 
 
@@ -222,6 +260,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<!---  --->
+<!--- Logic --->
+<!--- Number sets--->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
 <p>Значимость этих проблем настолько очевидна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подготовки и реализации существенных финансовых и административных условий.</p>
 <blockquote class="blockquote">
 <p>Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения дальнейших направлений развития.</p>
@@ -232,12 +280,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Равным образом новая модель организационной деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации соответствующий условий активизации.</p>
 <p>Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений. Товарищи! рамки и место обучения кадров влечет за собой процесс внедрения и модернизации систем массового участия.</p>
 </section>
-<section id="заголовок-раздела-1" class="level2" data-number="1.2">
+<section id="заголовок-раздела-1" class="level2 page-columns page-full" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="заголовок-раздела-1"><span class="header-section-number">1.2</span> Заголовок раздела</h2>
 <p>Не следует, однако забывать, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации дальнейших <a href="./intro.html#session_info">направлений развития</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## подключаем самую лучшую библиотеку</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -252,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="do">## устанавливаем тему</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 10
   carat cut       color clarity depth table price     x     y     z
@@ -265,10 +313,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
 </div>
 </div>
-<section id="заголовок-подраздела" class="level3" data-number="1.2.1">
+<section id="заголовок-подраздела" class="level3 page-columns page-full" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="заголовок-подраздела"><span class="header-section-number">1.2.1</span> Заголовок подраздела</h3>
 <p>Равным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. Таким образом сложившаяся структура организации играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что новая модель организационной деятельности позволяет оценить значение модели развития. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа направлений прогрессивного развития.</p>
-<p>С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (<a href="#fig-huge-chunk" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>).</p>
+<p>С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (<a href="#fig-huge-chunk" class="quarto-xref">Рисунок&nbsp;<span>1.1</span></a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
@@ -284,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">fun.data =</span> mean_cl_boot,</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">3</span>)) <span class="sc">+</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>)) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 15 rows containing missing values (`geom_segment()`).</code></pre>
 </div>
@@ -295,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <img src="teststyle_files/figure-html/fig-huge-chunk-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-huge-chunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Это картинка, нарисованная большим кодом
+Рисунок&nbsp;1.1: Это картинка, нарисованная большим кодом
 </figcaption>
 </figure>
 </div>
@@ -373,25 +421,86 @@ Figure&nbsp;1.1: Это картинка, нарисованная больши�
 </div>
 <section id="заголовок-5-уровня-with-code" class="level5" data-number="1.2.1.1.1">
 <h5 data-number="1.2.1.1.1" class="anchored" data-anchor-id="заголовок-5-уровня-with-code"><span class="header-section-number">1.2.1.1.1</span> Заголовок 5 уровня <code>with code</code></h5>
-<p>А тут вставляется картинка (<a href="#fig-gh-soc-preview" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>):</p>
+<p>А тут вставляется картинка (<a href="#fig-gh-soc-preview" class="quarto-xref">Рисунок&nbsp;<span>1.2</span></a>):</p>
 <div id="fig-gh-soc-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/test-gh-social-preview.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Превью репозитория
+Рисунок&nbsp;1.2: Превью репозитория
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="заголовок-4-уровня-with-code" class="level4" data-number="1.2.1.2">
+<section id="заголовок-4-уровня-with-code" class="level4 page-columns page-full" data-number="1.2.1.2">
 <h4 data-number="1.2.1.2" class="anchored" data-anchor-id="заголовок-4-уровня-with-code"><span class="header-section-number">1.2.1.2</span> Заголовок 4 уровня <code>with code</code></h4>
-<section id="заголовок-5-уровня" class="level5" data-number="1.2.1.2.1">
+<p>Согласно <a href="#thm-nonbiasmean" class="quarto-xref">Теорема&nbsp;<span>1.1</span></a>:</p>
+<div id="thm-nonbiasmean" class="theorem">
+<p><span class="theorem-title"><strong>Теорема 1.1</strong></span> Среднее арифметическое является несмещенной оценкой математического ожидания.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
+X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
+\]</span></p>
+<p><span class="math display">\[
+\hat \mu = \frac{1}{m}\sum_{j=1}^m x_j = \bar X
+\]</span></p>
+<p><span class="math display">\[
+\mathbb{E}(\hat \mu) = \mathbb{E}(\bar X) \overset{?}{=} \mu
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+\mathbb{E}(\bar X) &amp;= \\
+&amp;= \mathbb{E}\big (\frac{1}{n} \sum_{i=1}^n X_i \big ) = \\
+&amp;= \frac{1}{n} \mathbb{E}\Big( \sum_{i=1}^n X_i \Big) = \\
+&amp;= \frac{1}{n} \sum_{i=1}^n \mathbb{E}X_i \overset{X_i \overset{\text{i.i.d.}}{\sim} (\mu, \sigma^2)}{=} \frac{1}{n} \cdot n \cdot \mathbb{E}X = \\
+&amp; = \frac{n}{n} \cdot \mu = \mu
+\end{split}
+\]</span></p>
+</div>
+<div id="lem-test" class="theorem lemma">
+<p><span class="theorem-title"><strong>Лемма 1.1</strong></span> Это лемма.</p>
+</div>
+<div id="cor-test" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1.1</strong></span> Это следствие.</p>
+</div>
+<div id="prp-test" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1.1</strong></span> Это утверждение.</p>
+</div>
+<div id="cnj-test" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Conjecture 1.1</strong></span> Это conjecutre.</p>
+</div>
+<div id="def-test" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 1.1</strong></span> Это определение.</p>
+</div>
+<div id="exm-test" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 1.1</strong></span> Это пример.</p>
+</div>
+<div id="exr-test" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 1.1</strong></span> Это упражнение.</p>
+</div>
+<div id="sol-test" class="proof solution">
+<p><span class="proof-title"><em>Решение 1.1</em>. </span>Это решение.</p>
+</div>
+<div id="rem-test" class="proof remark">
+<p><span class="proof-title"><em>Remark 1.1</em>. </span>Это замечание.</p>
+</div>
+<section id="заголовок-5-уровня" class="level5 page-columns page-full" data-number="1.2.1.2.1">
 <h5 data-number="1.2.1.2.1" class="anchored" data-anchor-id="заголовок-5-уровня"><span class="header-section-number">1.2.1.2.1</span> Заголовок 5 уровня</h5>
-<section id="совсем-мелкий-заголовок" class="level6" data-number="1.2.1.2.1.1">
+<section id="совсем-мелкий-заголовок" class="level6 page-columns page-full" data-number="1.2.1.2.1.1">
 <h6 data-number="1.2.1.2.1.1" class="anchored" data-anchor-id="совсем-мелкий-заголовок"><span class="header-section-number">1.2.1.2.1.1</span> Совсем мелкий заголовок</h6>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span>  <span class="co"># Add default OpenStreetMap map tiles</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="fl">174.768</span>, <span class="at">lat=</span><span class="sc">-</span><span class="fl">36.852</span>, <span class="at">popup=</span><span class="st">"The birthplace of R"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display column-screen">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-883abee8b7c2fce5efef" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-883abee8b7c2fce5efef">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
 </section>
@@ -599,12 +708,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Скопировано!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Скопировано!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
