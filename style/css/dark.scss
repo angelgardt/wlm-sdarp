@@ -7,27 +7,27 @@ $theme: "darkly" !default;
 //
 
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #ebebeb !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #888 !default;
-$gray-700: #444 !default;
-$gray-800: #303030 !default;
+$gray-100: #f5f5f5 !default;
+$gray-200: #e6e6e6 !default;
+$gray-300: #b4b4b4 !default;
+$gray-400: #828282 !default;
+$gray-500: #4b4b4b !default;
+$gray-600: #4b4b4b !default;
+$gray-700: #1e1e1e !default;
+$gray-800: #050505 !default;
 $gray-900: #222 !default;
 $black:    #000 !default;
 
-$blue:    #375a7f !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #e74c3c !default;
-$orange:  #fd7e14 !default;
-$yellow:  #f39c12 !default;
-$green:   #00bc8c !default;
-$teal:    #20c997 !default;
-$cyan:    #3498db !default;
+$blue:    #28299a !default;
+$indigo:  #4142ce !default;
+$purple:  #6635d2 !default;
+$pink:    #eb316e !default;
+$red:     #d33e36 !default;
+$orange:  #e57e39 !default;
+$yellow:  #e5d439 !default;
+$green:   #35d250 !default;
+$teal:    #36d38c !default;
+$cyan:    #359dd2 !default;
 
 // Body
 
@@ -53,16 +53,48 @@ $min-contrast-ratio:   1.9 !default;
 
 // Links
 
-$link-color:                $success !default;
+$link-color:                $teal !default;
 
 // Fonts
 
 // stylelint-disable-next-line value-keyword-case
-$font-family-sans-serif:      Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$montserrat-font-path: "../style/fonts/Montserrat/webfonts";
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Medium.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Regular.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Light.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+
+$font-family-sans-serif:      Montserrat !default;
 $h1-font-size:                3rem !default;
+$h1-font-weight:              600;
 $h2-font-size:                2.5rem !default;
+$h2-font-weight:              500;
 $h3-font-size:                2rem !default;
+$body-font-weight:            400;
 $text-muted:                  body-mix(75%) !default;
+$intro-font-weight:           300;
 
 // Tables
 
@@ -194,6 +226,16 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   @import url($web-font-path);
 }
 
+// Headers
+
+h1 {
+  font-weight: $h1-font-weight;
+}
+
+h2, h3 {
+  font-weight: $h2-font-weight;
+}
+
 // Typography
 
 .blockquote {
@@ -271,3 +313,49 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   --bs-tooltip-color: var(--bs-emphasis-color);
 }
 
+
+// Custom
+
+.theorem {
+  border: 1px solid $gray-600;
+  margin: 1% 0%;
+  padding: 1% 1% 1% 2%;
+  border-radius: 10px;
+}
+
+.proof {
+  margin-top: 1%;
+}
+
+code {
+  color: $gray-200;
+  background-color: $gray-800;
+}
+
+.intro {
+  font-weight: $intro-font-weight;
+  margin: 1% 0%;
+  padding: 0 0 0 5%;
+}
+
+.lab-junior {
+  content: url("img/labs/lab_junior.png");
+}
+
+.lab-middle {
+  content: url("img/labs/lab_middle.png");
+}
+
+.lab-senior {
+  content: url("img/labs/lab_senior.png");
+}
+
+.lab-guru {
+  content: url("img/labs/lab_guru.png");
+}
+
+.lab-junior, .lab-middle, .lab-senior, .lab-guru {
+  display: inline-block;
+  height: 1em;
+  margin: -1% 0 2% 0;
+}

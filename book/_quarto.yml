@@ -29,6 +29,10 @@ highlight-style:
 
 format:
   html:
+    grid: 
+      body-width: 900px
+      sidebar-width: 210px
+      margin-width: 210px
     cover-image: img/other/cover.jpg
     theme:
       light: ../style/css/light.scss
