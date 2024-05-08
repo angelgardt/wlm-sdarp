@@ -60,6 +60,7 @@ $link-color:                $teal !default;
 // stylelint-disable-next-line value-keyword-case
 
 $montserrat-font-path: "../style/fonts/Montserrat/webfonts";
+$courierprime-font-path: "../style/fonts/CourierPrime";
 
 @font-face {
   src: url("#{$montserrat-font-path}/Montserrat-SemiBold.woff2") format("woff2");
@@ -95,6 +96,7 @@ $h3-font-size:                2rem !default;
 $body-font-weight:            400;
 $text-muted:                  body-mix(75%) !default;
 $intro-font-weight:           300;
+
 
 // Tables
 
