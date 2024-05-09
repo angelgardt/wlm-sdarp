@@ -46,24 +46,28 @@ fi
 
 if [ "$mode" = "render" ]
 then
-  render 2>&1 | tee deploy/last.log
+  echo "render mode"
+  # render 2>&1 | tee deploy/last.log
 fi
 
 if [ "$mode" = "deploy" ]
 then
-  deploy 2>&1 | tee deploy/last.log
+  echo "deploy mode"
+  # deploy 2>&1 | tee deploy/last.log
 fi
 
 if [ "$mode" = "release" ]
 then
-  release 2>&1 | tee deploy/last.log
+  echo "release mode"
+  # release 2>&1 | tee deploy/last.log
 fi
 
 if [ "$mode" = "restore" ]
 then
-  restore 2>&1 | tee deploy/last.log
+  echo "restore mode"
+  # restore 2>&1 | tee deploy/last.log
 fi
 
 
 ## add deployment info to docs/REAMDE.md
-logger # $mode
+# logger # $mode
