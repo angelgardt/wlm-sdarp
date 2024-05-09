@@ -67,7 +67,7 @@ toggle-navigation: "Toggle navigation"
 
 crossref-fig-title: "Рисунок"
 crossref-tbl-title: "Таблица"
-crossref-lst-title: "Listing"
+crossref-lst-title: "Список"
 crossref-thm-title: "Теорема"
 crossref-lem-title: "Лемма"
 crossref-cor-title: "Следствие"

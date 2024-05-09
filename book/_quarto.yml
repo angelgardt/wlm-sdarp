@@ -4,20 +4,41 @@ project:
 
 book:
   title: "WLM SDAR"
+  language: ru
   subtitle: "World of Linear Models: Statistics & Data Analysis in R"
   author: 
     - name: "Anton Angelgardt"
       email: "anton.angelgardt@gmail.com"
   version: "0.0.1"
-  date: "5/8/2024"
+  date: today
   chapters:
     - index.qmd
-    - teststyle.qmd
-    - testquiz.qmd
-    - testsheet.qmd
-    - intro.qmd
-    - summary.qmd
+    - part: Testing
+      chapters: 
+      - teststyle.qmd
+      - testquiz.qmd
+      - testsheet.qmd
+    - part: R
+      # chapters: 
+      # - n.qmd
+    - part: part-math.qmd
+      # chapters: 
+      # - n.qmd
+    - part: part-measures.qmd
+      # chapters: 
+      # - n.qmd
+    - part: part-prob.qmd
+      # chapters: 
+      # - n.qmd
+    - part: part-desc.qmd
+      # chapters: 
+      # - n.qmd
+    - part: part-andan.qmd
+      # chapters: 
+      # - n.qmd
     - references.qmd
+  appendices:
+    - appendix-numbers.qmd
   favicon: img/other/favicon.png
 
 bibliography: references.bib
@@ -31,6 +52,8 @@ highlight-style:
 
 format:
   html:
+    toc: true
+    toc-depth: 4
     grid: 
       body-width: 900px
       sidebar-width: 210px
