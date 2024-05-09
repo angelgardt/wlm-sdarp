@@ -1,0 +1,26 @@
+[0;32m
+=====
+RUN RELEASE
+=====
+
+[0m[0;37mWhat is a current version?
+[0mCurrent version: [0;37mWhat is a previous version?
+[0mPrevious version: [0;31m
+
+You said, that
+[0m[0;37mCurrent version: 0.0.0[0m
+[0;37mPrevious version: 0.0.00[0m
+Is it correct? (Y/N) [0;31m
+
+Did you deploy all changes after proofreading, debugging, etc?
+[0mYou did? (Y/N) [0;31mnew [0;37mdocs/cr[0;31m created
+[0m[0;34mprevious release archived
+[0m[0;34mold [0;37mdocs/cr[0;34m removed
+[0m[0;32m
+=====
+DEPLOY COMPLETED
+=====
+
+[0m[0;37mDocument this release in README.md
+Commit and push to save changes.
+[0m

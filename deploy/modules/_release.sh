@@ -60,7 +60,6 @@ function release() {
   printf "${BLUE}old ${GRAY}docs/cr${BLUE} removed\n${NC}"
   
   mkdir docs/cr
-  cp docs/prev/`echo "${previous_version}"`/README.md docs/cr/README.md
   
   ## copy all files recursively
   {
@@ -74,6 +73,8 @@ function release() {
 		printf "${RED}=====\n\n${NC}"
 		exit
   }
+  
+  cp docs/prev/`echo "${previous_version}"`/README.md docs/cr/README.md
   
   printf "${GREEN}\n=====\nDEPLOY COMPLETED\n=====\n\n${NC}"
   printf "${GRAY}Document this release in README.md\nCommit and push to save changes.\n${NC}"
