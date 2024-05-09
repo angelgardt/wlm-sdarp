@@ -39,6 +39,7 @@ book:
     - references.qmd
   appendices:
     - appendix-numbers.qmd
+    - appendix-answers.qmd
   favicon: img/other/favicon.png
 
 bibliography: references.bib
