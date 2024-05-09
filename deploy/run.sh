@@ -34,7 +34,7 @@ if [ "$mode" = "none" ]; then
 elif [ "$mode" = "render" ]; then
   
   ## render with logging
-  render 2>&1 | tee deploy/logs/`echo "$dt"`.log
+  render 2>&1 | tee deploy/logs/render_`echo "$dt"`.log
 
 elif [ "$mode" = "deploy" ]; then
 
