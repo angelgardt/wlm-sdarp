@@ -13,6 +13,8 @@ book:
   chapters:
     - index.qmd
     - teststyle.qmd
+    - testquiz.qmd
+    - testsheet.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
