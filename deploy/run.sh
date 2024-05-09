@@ -1,19 +1,17 @@
 #!/bin/bash
 
 ## import functions and colors
-source deploy/modules/_set-colors.sh
-source deploy/modules/_render.sh
-source dpelo/modules/_deploy.sh
-source deploy/modules/_restore.sh
-source deploy/modules/_release.sh
-source deploy/modules/_logger.sh
+# source deploy/modules/_set-colors.sh
+# source deploy/modules/_render.sh
+# source dpelo/modules/_deploy.sh
+# source deploy/modules/_restore.sh
+# source deploy/modules/_release.sh
+# source deploy/modules/_logger.sh
 
 ## make modes array
-
 modes=( "none" "render" "deploy" "release" "restore" )
 
 ## assing inline args to vars, if no --- assign default
-
 mode="${1:-${modes[0]}}"
 
 ## check mode
@@ -21,7 +19,7 @@ mode="${1:-${modes[0]}}"
 
 mode_check="\<${mode}\>" # extract a regex that matches the exact value of the argument
 
-if [[ ! ${modes[@]} =~ $mode_check]]
+if [[ ! ${modes[@]} =~ $mode_check ]]
 then
 
   echo -e "${RED}\n=====\n=====${NC}"
