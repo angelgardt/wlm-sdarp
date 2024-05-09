@@ -8,12 +8,19 @@ source deploy/modules/_render.sh
 # source deploy/modules/_release.sh
 # source deploy/modules/_logger.sh
 
+# check if no logs folder
+if [ ! -d deploy/logs ]; then
+  mkdir deploy/logs
+fi
+
 ## make modes array
 modes=( "none" "render" "deploy" "release" "restore" )
 
 ## assing inline args to vars, if no --- assign default
 mode="${1:-${modes[0]}}"
 
+## save datetime
+dt=$(date '+%Y-%m-%d_%H-%M-%S')
 
 ## main flow
 if [ "$mode" = "none" ]; then
@@ -25,8 +32,9 @@ if [ "$mode" = "none" ]; then
   exit
   
 elif [ "$mode" = "render" ]; then
-
-  render # 2>&1 | tee deploy/logs/last.log
+  
+  ## render with logging
+  render 2>&1 | tee deploy/logs/`echo "$dt"`.log
 
 elif [ "$mode" = "deploy" ]; then
 
