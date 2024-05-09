@@ -10,6 +10,13 @@ deploy/run.sh render
 
 This command remove old `_book` directory from the `book` folder and render the whole book. Also it creates a log file in `deploy/logs` named by rendering date and time with `render` prefix.
 
+
+
+
+
+
+
+
 To deploy the book for proofreading:
 
 ```

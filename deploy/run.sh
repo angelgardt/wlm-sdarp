@@ -39,6 +39,7 @@ elif [ "$mode" = "render" ]; then
 elif [ "$mode" = "deploy" ]; then
 
   echo "deploy mode"
+  ## deploy with logging
   # deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`.log
 
 elif [ "$mode" = "release" ]; then
