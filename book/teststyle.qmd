@@ -296,6 +296,8 @@ $$ {#eq-line}
 ```{r leaflet-map}
 #| column: page
 #| code-fold: true
+#| label: fig-rbirthplace
+#| fig-cap: "Тут родился R"
 
 library(leaflet)
 leaflet() %>%
@@ -303,3 +305,14 @@ leaflet() %>%
   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
 ```
 
+
+Тут (@fig-razbor) видео, на которые ссылка как на рисунок.
+
+:::{#fig-razbor}
+
+{{< video https://youtu.be/WoffShoneY8?si=Du9xHiOVBHZaOYuE >}}
+
+Разбор третьей домашки
+:::
+
+Выше была карта (@fig-rbirthplace) с местом рождения R.
