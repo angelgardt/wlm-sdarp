@@ -14,7 +14,7 @@ if [ ! -d deploy/logs ]; then
 fi
 
 ## make modes array
-modes=( "none" "render" "deploy" "release" "restore" )
+modes=( "none" "render" "deploy" "release" )
 
 ## assing inline args to vars, if no --- assign default
 mode="${1:-${modes[0]}}"
@@ -39,16 +39,11 @@ elif [ "$mode" = "render" ]; then
 elif [ "$mode" = "deploy" ]; then
 
   echo "deploy mode"
-  # deploy 2>&1 | tee deploy/last.log
+  # deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`.log
 
 elif [ "$mode" = "release" ]; then
   echo "release mode"
-  # release 2>&1 | tee deploy/last.log
-
-elif [ "$mode" = "restore" ]; then
-
-  echo "restore mode"
-  # restore 2>&1 | tee deploy/last.log
+  # release 2>&1 | tee deploy/logs/release_`echo "$dt"`.log
 
 else
 
