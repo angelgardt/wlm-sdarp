@@ -72,7 +72,7 @@
 </form>
 
 ```{=html}
-<!--- CHANGE quiz1 TO quiz<n> IN THE LINES BELOW--->
+<!--- CHANGE quiz1 TO quiz<n> IN THE LINES BELOW --->
 <!-- <script type="text/javascript" src="./js/hw1.json"></script> -->
 <script type="text/javascript" src="./js/quiz.js"></script>
 ```
