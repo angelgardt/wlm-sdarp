@@ -2,7 +2,7 @@
 
 ## import functions and colors
 source deploy/modules/_set-colors.sh
-# source deploy/modules/_render.sh
+source deploy/modules/_render.sh
 # source dpelo/modules/_deploy.sh
 # source deploy/modules/_restore.sh
 # source deploy/modules/_release.sh
@@ -26,8 +26,7 @@ if [ "$mode" = "none" ]; then
   
 elif [ "$mode" = "render" ]; then
 
-  echo "render mode"
-  # render 2>&1 | tee deploy/last.log
+  render # 2>&1 | tee deploy/logs/last.log
 
 elif [ "$mode" = "deploy" ]; then
 
