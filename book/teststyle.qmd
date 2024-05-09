@@ -47,6 +47,66 @@ head(diamonds)
 
 С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (@fig-huge-chunk).
 
+```{XML xml-example, eval=FALSE}
+<breakfast_menu>
+  <food>
+    <name>Belgian Waffles</name>
+    <price>$5.95</price>
+    <description>Two of our famous Belgian Waffles with plenty of real maple syrup</description>
+    <calories>650</calories>
+  </food>
+  <food>
+    <name>Strawberry Belgian Waffles</name>
+    <price>$7.95</price>
+    <description>Light Belgian waffles covered with strawberries and whipped cream</description>
+    <calories>900</calories>
+  </food>
+  <food>
+    <name>Berry-Berry Belgian Waffles</name>
+    <price>$8.95</price>
+    <description>Light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+    <calories>900</calories>
+  </food>
+  <food>
+    <name>French Toast</name>
+    <price>$4.50</price>
+    <description>Thick slices made from our homemade sourdough bread</description>
+    <calories>600</calories>
+  </food>
+  <food>
+    <name>Homestyle Breakfast</name>
+    <price>$6.95</price>
+    <description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+    <calories>950</calories>
+  </food>
+</breakfast_menu>
+```
+
+```{json json-example}
+{
+    "glossary": {
+        "title": "example glossary",
+		"GlossDiv": {
+            "title": "S",
+			"GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+					"SortAs": "SGML",
+					"GlossTerm": "Standard Generalized Markup Language",
+					"Acronym": "SGML",
+					"Abbrev": "ISO 8879:1986",
+					"GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+						"GlossSeeAlso": ["GML", "XML"]
+                    },
+					"GlossSee": "markup"
+                }
+            }
+        }
+    }
+}
+
+```
 
 ```{r, eval=FALSE}
 ds <- tibble()
@@ -56,6 +116,7 @@ for (i in 1:100) {
     read_csv(files[i]) %>% 
       bind_rows(ds) -> ds
   } else {
+    print('a')
     stop()
   }
 }
@@ -64,6 +125,8 @@ for (i in 1:100) {
 ```{r huge-chunk}
 #| label: fig-huge-chunk
 #| fig-cap: "Это картинка, нарисованная большим кодом"
+
+## большой код для графика
 
 diamonds %>% 
   summarise(mean_price_cut = mean(price),
@@ -125,6 +188,27 @@ diamonds %>%
 
 
 ![Превью репозитория](img/test-gh-social-preview.png){#fig-gh-soc-preview}
+
+Объединяющие джойны (@fig-merging-joins):
+
+- левый джойн (@fig-left-join)
+- правый джойн (@fig-right-join)
+- полный джойн (@fig-full-join)
+- внутренний джойн (@fig-inner-join).
+
+
+
+:::{#fig-merging-joins layout-nrow=2}
+![left_join(x, y)](img/data-wrangling/left_join.png){#fig-left-join}
+
+![right_join(x, y)](img/data-wrangling/right_join.png){#fig-right-join}
+
+![full_join(x, y)](img/data-wrangling/full_join.png){#fig-full-join}
+
+![inner_join(x, y)](img/data-wrangling/inner_join.png){#fig-inner-join}
+
+Объединяющие джойны
+:::
 
 
 #### Заголовок 4 уровня `with code`

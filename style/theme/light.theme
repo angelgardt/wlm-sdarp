@@ -123,16 +123,16 @@
             "text-color": "#005cc5"
         },
         "ControlFlow": {
-            "selected-text-color": "#d73a49",
-            "text-color": "#d73a49"
+            "selected-text-color": "#741EB0",
+            "text-color": "#741EB0"
         },
         "DataType": {
             "selected-text-color": "#d73a49",
             "text-color": "#d73a49"
         },
         "DecVal": {
-            "selected-text-color": "#005cc5",
-            "text-color": "#005cc5"
+            "selected-text-color": "#289E3B",
+            "text-color": "#289E3B"
         },
         "Documentation": {
             "selected-text-color": "#6a737d",
@@ -153,8 +153,8 @@
             "text-color": "#005cc5"
         },
         "Function": {
-            "selected-text-color": "#6f42c1",
-            "text-color": "#6f42c1"
+            "selected-text-color": "#AD7D0E",
+            "text-color": "#AD7D0E"
         },
         "Import": {
             "selected-text-color": "#032f62",
@@ -189,16 +189,16 @@
             "text-color": "#6a737d"
         },
         "SpecialChar": {
-            "selected-text-color": "#005cc5",
-            "text-color": "#005cc5"
+            "selected-text-color": "#B3622D",
+            "text-color": "#B3622D"
         },
         "SpecialString": {
             "selected-text-color": "#032f62",
             "text-color": "#032f62"
         },
         "String": {
-            "selected-text-color": "#032f62",
-            "text-color": "#032f62"
+            "selected-text-color": "#2C45DE",
+            "text-color": "#2C45DE"
         },
         "Variable": {
             "selected-text-color": "#e36209",

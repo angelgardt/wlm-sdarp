@@ -94,8 +94,8 @@
             "text-color": "#6a737d"
         },
         "Attribute": {
-            "selected-text-color": "#F2E2CB",
-            "text-color": "#F2E2CB"
+            "selected-text-color": "#AA8558",
+            "text-color": "#AA8558"
         },
         "BaseN": {
             "selected-text-color": "#79b8ff",
@@ -122,8 +122,8 @@
             "text-color": "#9CF0AA"
         },
         "ControlFlow": {
-            "selected-text-color": "#9BD2FA",
-            "text-color": "#9BD2FA"
+            "selected-text-color": "#D599FF",
+            "text-color": "#D599FF"
         },
         "DataType": {
             "selected-text-color": "#f97583",
@@ -188,8 +188,8 @@
             "text-color": "#6a737d"
         },
         "SpecialChar": {
-            "selected-text-color": "#79b8ff",
-            "text-color": "#79b8ff"
+            "selected-text-color": "#EAAB81",
+            "text-color": "#EAAB81"
         },
         "SpecialString": {
             "selected-text-color": "#9ecbff",
