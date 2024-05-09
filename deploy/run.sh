@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## import functions and colors
-# source deploy/modules/_set-colors.sh
+source deploy/modules/_set-colors.sh
 # source deploy/modules/_render.sh
 # source dpelo/modules/_deploy.sh
 # source deploy/modules/_restore.sh
