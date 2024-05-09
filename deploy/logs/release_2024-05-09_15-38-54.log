@@ -1,0 +1,11 @@
+[0;32m
+=====
+RUN RELEASE
+=====
+
+[0m\033[0;37mWhat is a current version? \033[0m\033[0;37mWhat is a previous version? \033[0m[0;34m
+
+You said, that
+[0m[0;37mCurrent version: 0.0[0m
+[0;37mPrevious version: 0.0[0m
+\033[0;31mIs it correct? (Y/N): \033[0mOK

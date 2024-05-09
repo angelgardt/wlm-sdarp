@@ -7,8 +7,6 @@ function deploy() {
   
   printf "${GREEN}\n=====\nRUN DEPLOY\n=====\n\n${NC}"
   
-  ## save datetime
-  
   render
   
   ## check if no docs/dlp folder

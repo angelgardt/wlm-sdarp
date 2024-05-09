@@ -4,13 +4,18 @@
 source deploy/modules/_set-colors.sh
 source deploy/modules/_render.sh
 source deploy/modules/_deploy.sh
-# source deploy/modules/_restore.sh
-# source deploy/modules/_release.sh
-# source deploy/modules/_logger.sh
+source deploy/modules/_release.sh
 
 # check if no logs folder
 if [ ! -d deploy/logs ]; then
   mkdir deploy/logs
+  printf "${BLUE}new ${GRAY}deploy/logs${BLUE} created\n${NC}"
+fi
+
+# check if no docs folder
+if [ ! -d docs ]; then
+  mkdir docs
+  printf "${RED}new ${GRAY}docs${RED} created\n${NC}"
 fi
 
 ## make modes array
@@ -42,8 +47,9 @@ elif [ "$mode" = "deploy" ]; then
   deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`.log
 
 elif [ "$mode" = "release" ]; then
-  echo "release mode"
-  # release 2>&1 | tee deploy/logs/release_`echo "$dt"`.log
+  
+  ## release with logging
+  release 2>&1 | tee deploy/logs/release_`echo "$dt"`.log
 
 else
 

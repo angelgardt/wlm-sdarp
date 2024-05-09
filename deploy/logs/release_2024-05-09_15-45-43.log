@@ -1,0 +1,13 @@
+[0;32m
+=====
+RUN RELEASE
+=====
+
+[0m[0;37mWhat is a current version?
+[0mCurrent version: [0;37mWhat is a previous version?
+[0mPrevious version: [0;31m
+
+You said, that
+[0m[0;37mCurrent version: 0.0[0m
+[0;37mPrevious version: 0.1[0m
+Is it correct? (Y/N) OK
