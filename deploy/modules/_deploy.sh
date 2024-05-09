@@ -25,9 +25,8 @@ function deploy() {
   ## remove old backup
   if [ -d deploy/backup ]; then
     rm -r deploy/backup
+    printf "${BLUE}old ${GRAY}deploy/backup${BLUE} removed\n${NC}"
   fi
-  
-  printf "${BLUE}old ${GRAY}deploy/backup${BLUE} removed\n${NC}"
   
   ## make new backup
   mkdir deploy/backup
@@ -42,7 +41,7 @@ function deploy() {
   printf "${BLUE}old ${GRAY}docs/dpl${BLUE} removed\n${NC}"
   
   mkdir docs/dpl
-  cp deploy/dackup/README.md docs/dpl/README.md
+  cp deploy/backup/README.md docs/dpl/README.md
   
   ## copy all files recursively
   {
@@ -58,7 +57,7 @@ function deploy() {
   }
   
   printf "${GREEN}\n=====\nDEPLOY COMPLETED\n=====\n\n${NC}"
-  printf "${GRAY}\nDocument this deployment in README.md\n${NC}"
+  printf "${GRAY}Document this deployment in README.md\nCommit and push to save changes.\n${NC}"
   
   open docs/dpl/README.md
   

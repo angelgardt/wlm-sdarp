@@ -3,7 +3,7 @@
 ## import functions and colors
 source deploy/modules/_set-colors.sh
 source deploy/modules/_render.sh
-# source dpelo/modules/_deploy.sh
+source deploy/modules/_deploy.sh
 # source deploy/modules/_restore.sh
 # source deploy/modules/_release.sh
 # source deploy/modules/_logger.sh
@@ -37,10 +37,9 @@ elif [ "$mode" = "render" ]; then
   render 2>&1 | tee deploy/logs/render_`echo "$dt"`.log
 
 elif [ "$mode" = "deploy" ]; then
-
-  echo "deploy mode"
+  
   ## deploy with logging
-  # deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`.log
+  deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`.log
 
 elif [ "$mode" = "release" ]; then
   echo "release mode"
