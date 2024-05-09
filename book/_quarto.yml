@@ -11,6 +11,7 @@ book:
       email: "anton.angelgardt@gmail.com"
   version: "0.0.1"
   date: today
+  
   chapters:
     - index.qmd
     - part: Testing
@@ -18,28 +19,86 @@ book:
       - teststyle.qmd
       - testquiz.qmd
       - testsheet.qmd
-    - part: R
+    - part: part-r.qmd
       # chapters: 
       # - n.qmd
     - part: part-math.qmd
-      # chapters: 
-      # - n.qmd
+      chapters:
+      - math-logic.qmd
+      - math-set.qmd
+      - math-comb.qmd
+      - math-calculusI.qmd
+      - math-calculusII.qmd
+      - math-linalI.qmd
+      - math-linalII.qmd
     - part: part-measures.qmd
-      # chapters: 
-      # - n.qmd
+      chapters:
+      - measures-scales.qmd
+      - measures-psymetI.qmd
+      - measures-psymetII.qmd
+      - measures-psymetIII.qmd
+    - part: part-desc.qmd
+      chapters:
+      - desc-centrtend.qmd
+      - desc-variance.qmd
+      - desc-distshape.qmd
+      - desc-prodmetrics.qmd
     - part: part-prob.qmd
       # chapters: 
       # - n.qmd
-    - part: part-desc.qmd
-      # chapters: 
-      # - n.qmd
     - part: part-andan.qmd
-      # chapters: 
-      # - n.qmd
+      chapters:
+      - andan-means.qmd
+      - andan-categorical.qmd
+      - andan-cor.qmd
+      - andan-nonparam.qmd
+      - andan-simplelinear.qmd
+      - andan-multiplelinear.qmd
+      - andan-polynomialreg.qmd
+      - andan-svr.qmd
+      - andan-regreg.qmd
+      - andan-anova.qmd
+      - andan-ancova.qmd
+      - andan-manova.qmd
+      - andan-regtrees.qmd
+      - andan-regforest.qmd
+      - andan-dist.qmd
+      - andan-glm.qmd
+      - andan-logreg.qmd
+      - andan-multinomreg.qmd
+      - andan-poisreg.qmd
+      - andan-gam.qmd
+      - andan-glmm.qmd
+      - andan-glogmm.qmd
+      - andan-gmultinommm.qmd
+      - andan-svm.qmd
+      - andan-classtrees.qmd
+      - andan-classforest.qmd
+      - andan-cluster.qmd
+      - andan-fuzzycluster.qmd
+      - andan-lda.qmd
+      - andan-pca.qmd
+      - andan-ica.qmd
+      - andan-cca.qmd
+      - andan-efa.qmd
+      - andan-cfa.qmd
+      - andan-sem.qmd
+      - andan-path.qmd
+      - andan-timeseries.qmd
     - references.qmd
   appendices:
     - appendix-numbers.qmd
+    - appendix-numbers-iron.qmd
+    - appendix-strings-iron.qmd
+    - appendix-memory-iron.qmd
+    - appendix-proglang.qmd
+    - appendix-formulas.qmd
+    - appendix-git.qmd
+    - appendix-research-design.qmd
+    - appendix-design.qmd
+    - appendix-math-letters.qmd
     - appendix-answers.qmd
+    
   favicon: img/other/favicon.png
 
 bibliography: references.bib

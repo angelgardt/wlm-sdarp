@@ -65,22 +65,43 @@
   {
     "objectID": "appendix-answers.html#листок-1",
     "href": "appendix-answers.html#листок-1",
-    "title": "Приложение B — Ответы на листки",
-    "section": "B.1 Листок 1",
-    "text": "B.1 Листок 1"
+    "title": "Приложение K — Ответы на листки",
+    "section": "K.1 Листок 1",
+    "text": "K.1 Листок 1"
   },
   {
     "objectID": "appendix-answers.html#листок-2",
     "href": "appendix-answers.html#листок-2",
-    "title": "Приложение B — Ответы на листки",
-    "section": "B.2 Листок 2",
-    "text": "B.2 Листок 2"
+    "title": "Приложение K — Ответы на листки",
+    "section": "K.2 Листок 2",
+    "text": "K.2 Листок 2"
   },
   {
     "objectID": "appendix-answers.html#листок-3",
     "href": "appendix-answers.html#листок-3",
-    "title": "Приложение B — Ответы на листки",
-    "section": "B.3 Листок 3",
-    "text": "B.3 Листок 3"
+    "title": "Приложение K — Ответы на листки",
+    "section": "K.3 Листок 3",
+    "text": "K.3 Листок 3"
+  },
+  {
+    "objectID": "measures-psymetI.html",
+    "href": "measures-psymetI.html",
+    "title": "12  Психометрические измерения I",
+    "section": "",
+    "text": "Test Dev"
+  },
+  {
+    "objectID": "measures-psymetII.html",
+    "href": "measures-psymetII.html",
+    "title": "13  Психометрические измерения II",
+    "section": "",
+    "text": "CTT"
+  },
+  {
+    "objectID": "measures-psymetIII.html",
+    "href": "measures-psymetIII.html",
+    "title": "14  Психометрические измерения III",
+    "section": "",
+    "text": "G-theory IRT"
   }
 ]
