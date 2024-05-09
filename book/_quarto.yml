@@ -47,8 +47,8 @@ comments:
   hypothesis: true
 
 highlight-style: 
-  light: ../style/theme/light.theme
-  dark: ../style/theme/dark.theme
+  light: style/theme/light.theme
+  dark: style/theme/dark.theme
 
 format:
   html:
@@ -60,7 +60,7 @@ format:
       margin-width: 210px
     cover-image: img/other/cover.jpg
     theme:
-      light: ../style/css/light.scss
-      dark: ../style/css/dark.scss
+      light: style/css/light.scss
+      dark: style/css/dark.scss
 
 editor: source

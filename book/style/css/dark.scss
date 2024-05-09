@@ -59,8 +59,7 @@ $link-color:                $teal !default;
 
 // stylelint-disable-next-line value-keyword-case
 
-$montserrat-font-path: "../style/fonts/Montserrat/webfonts";
-$courierprime-font-path: "../style/fonts/CourierPrime";
+$montserrat-font-path: "./style/fonts/Montserrat/webfonts";
 
 @font-face {
   src: url("#{$montserrat-font-path}/Montserrat-SemiBold.woff2") format("woff2");
@@ -364,4 +363,8 @@ code {
   display: inline-block;
   height: 1em;
   margin: -1% 0 2% 0;
+}
+
+.submit-button {
+  background-color: $gray-200;
 }
