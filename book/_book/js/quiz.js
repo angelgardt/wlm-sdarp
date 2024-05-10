@@ -2,7 +2,7 @@
 
 var info_json = JSON.parse(quiz_json);
 
-console.log(info_json)
+console.log(info_json);
 
 let info = {};
 
@@ -40,14 +40,66 @@ for (let i = 1; i <= 20; i++) {
   } else {
     document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
   }
-  
 }
-
-
 
 
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", check_quiz);
+
+const answers = document.getElementsByClassName("in-alternative");
+
+// console.log(answers)
+
+let ans = {};
+
+function get_answers() {
+  for (let i = 1; i <= 20; i++) {
+    ans["q"+i] = {};
+    ans["q"+i]["type"] = info["type"]["q"+i];
+    ans["q"+i]["opt1"] = {};
+    ans["q"+i]["opt1"]["correct"] = info["option1_correct"]["q"+i];
+    ans["q"+i]["opt1"]["checked"] = answers["q"+i+"-option1"]["checked"];
+    ans["q"+i]["opt2"] = {};
+    ans["q"+i]["opt2"]["correct"] = info["option2_correct"]["q"+i];
+    ans["q"+i]["opt2"]["checked"] = answers["q"+i+"-option2"]["checked"];
+    ans["q"+i]["opt3"] = {};
+    ans["q"+i]["opt3"]["correct"] = info["option3_correct"]["q"+i];
+    ans["q"+i]["opt3"]["checked"] = answers["q"+i+"-option3"]["checked"];
+    ans["q"+i]["opt4"] = {};
+    ans["q"+i]["opt4"]["correct"] = info["option4_correct"]["q"+i];
+    ans["q"+i]["opt4"]["checked"] = answers["q"+i+"-option4"]["checked"];
+  }
+  for (let i = 1; i <= 20; i++) {
+    if (ans["q"+i]["type"] == "radio") {
+      for (let j = 1; j <= 4; j++) {
+        if (ans["q"+i]["opt"+j]["correct"] == "true" && ans["q"+i]["opt"+j]["checked"]) {
+          ans["q"+i]["correct"] = true;
+        }
+        if (!ans["q"+i]["correct"]) {
+          ans["q"+i]["correct"] = false;
+        }
+      }
+    } else {
+      let counter = 0;
+      for (let j = 1; j <= 4; j++) {
+        if (ans["q"+i]["opt"+j]["correct"] == "true" && ans["q"+i]["opt"+j]["checked"]) {
+          counter += 1;
+        } else if (ans["q"+i]["opt"+j]["correct"] == "false" && !ans["q"+i]["opt"+j]["checked"]) {
+          counter += 1;
+        }
+        if (counter == 4) {
+          ans["q"+i]["correct"] = true;
+        } else {
+          ans["q"+i]["correct"] = false;
+        }
+      }
+    }
+  }
+}
+
+
+// console.log(ans);
+
 
 function show_feedback() {
   for (let i = 1; i <= 20; i++) {
@@ -56,9 +108,11 @@ function show_feedback() {
 }
 
 function check_quiz() {
-  console.log("Clicked!")
-  const answers = document.getElementsByName("quiz1-q3");
+  // console.log("Clicked!")
+  const answers = document.getElementsByClassName("in-alternative");
   console.log(answers);
+  get_answers();
   show_feedback();
+  console.log(ans)
   document.getElementById("submit-button").disabled = true;
 }

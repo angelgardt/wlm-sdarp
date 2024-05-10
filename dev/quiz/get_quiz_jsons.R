@@ -11,6 +11,7 @@ for (quiz_name in quizes_names) {
              skip = 2) -> quizes[[quiz_name]]
 }
 
+
 quizes[[1]] %>% 
   mutate(
     across(everything(), ~replace_na(.x, ""))
