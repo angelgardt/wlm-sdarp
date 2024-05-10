@@ -154,3 +154,8 @@ form.quiz fieldset div.lvl-hard {
 form.quiz fieldset div.lvl-extreme {
   content: url("img/labs/lab_extreme.png");
 }
+
+form.quiz div.message {
+  text-align: center;
+  color: $red;
+}

@@ -333,10 +333,20 @@ code {
   padding: 0 0 0 5%;
 }
 
-div.submit-button {
+// Quiz
+
+form.quiz fieldset {
+  background-color: $gray-700;
+}
+
+form.quiz div.submit-button {
   background-color: $gray-900;
 }
 
-input.submit-button {
+form.quiz input.submit-button {
   background-color: $gray-200;
+}
+
+form.quiz input.submit-button:hover {
+  background-color: $gray-300;
 }
