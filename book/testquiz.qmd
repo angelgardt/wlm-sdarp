@@ -9,7 +9,7 @@
 <fieldset class="question" id="quiz1-q1">
 <div class="level" id="lvl-q1"></div>
 <legend class="question-title" id="title-q1">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q1-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q1-option1" name="alternative-q1" value="Option 1">
 <label for="q1-option1" id="q1-opt1-label">Option 1</label><br>
@@ -33,7 +33,7 @@
 <fieldset class="question" id="quiz1-q2">
 <div class="level" id="lvl-q2"></div>
 <legend class="question-title" id="title-q2">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q2-image"src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q2-option1" name="alternative-q2" value="Option 1">
 <label for="q2-option1" id="q2-opt1-label">Option 1</label><br>
@@ -57,7 +57,7 @@
 <fieldset class="question" id="quiz1-q3">
 <div class="level" id="lvl-q3"></div>
 <legend class="question-title" id="title-q3">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q3-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q3-option1" name="alternative-q3" value="Option 1">
 <label for="q3-option1" id="q3-opt1-label">Option 1</label><br>
@@ -81,7 +81,7 @@
 <fieldset class="question" id="quiz1-q4">
 <div class="level" id="lvl-q4"></div>
 <legend class="question-title" id="title-q4">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q4-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q4-option1" name="alternative-q4" value="Option 1">
 <label for="q4-option1" id="q4-opt1-label">Option 1</label><br>
@@ -105,7 +105,7 @@
 <fieldset class="question" id="quiz1-q5">
 <div class="level" id="lvl-q5"></div>
 <legend class="question-title" id="title-q5">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q5-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q5-option1" name="alternative-q5" value="Option 1">
 <label for="q5-option1" id="q5-opt1-label">Option 1</label><br>
@@ -129,7 +129,7 @@
 <fieldset class="question" id="quiz1-q6">
 <div class="level" id="lvl-q6"></div>
 <legend class="question-title" id="title-q6">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q6-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q6-option1" name="alternative-q6" value="Option 1">
 <label for="option1" id="q6-opt1-label">Option 1</label><br>
@@ -153,7 +153,7 @@
 <fieldset class="question" id="quiz1-q7">
 <div class="level" id="lvl-q7"></div>
 <legend class="question-title" id="title-q7">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q7-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q7-option1" name="alternative-q7" value="Option 1">
 <label for="q7-option1" id="q7-opt1-label">Option 1</label><br>
@@ -177,7 +177,7 @@
 <fieldset class="question" id="quiz1-q8">
 <div class="level" id="lvl-q8"></div>
 <legend class="question-title" id="title-q8">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q8-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q8-option1" name="alternative-q8" value="Option 1">
 <label for="q8-option1" id="q8-opt1-label">Option 1</label><br>
@@ -201,7 +201,7 @@
 <fieldset class="question" id="quiz1-q9">
 <div class="level" id="lvl-q9"></div>
 <legend class="question-title" id="title-q9">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q9-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q9-option1" name="alternative-q9" value="Option 1">
 <label for="q9-option1" id="q9-opt1-label">Option 1</label><br>
@@ -225,7 +225,7 @@
 <fieldset class="question" id="quiz1-q10">
 <div class="level" id="lvl-q10"></div>
 <legend class="question-title" id="title-q10">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q10-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q10-option1" name="alternative-q10" value="Option 1">
 <label for="q10-option1" id="q10-opt1-label">Option 1</label><br>
@@ -249,7 +249,7 @@
 <fieldset class="question" id="quiz1-q11">
 <div class="level" id="lvl-q11"></div>
 <legend class="question-title" id="title-q11">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q11-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q11-option1" name="alternative-q11" value="Option 1">
 <label for="q11-option1" id="q11-opt1-label">Option 1</label><br>
@@ -273,7 +273,7 @@
 <fieldset class="question" id="quiz1-q12">
 <div class="level" id="lvl-q12"></div>
 <legend class="question-title" id="title-q12">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q12-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q12-option1" name="alternative-q12" value="Option 1">
 <label for="q12-option1" id="q12-opt1-label">Option 1</label><br>
@@ -297,7 +297,7 @@
 <fieldset class="question" id="quiz1-q13">
 <div class="level" id="lvl-q13"></div>
 <legend class="question-title" id="title-q13">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q13-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q13-option1" name="alternative-q13" value="Option 1">
 <label for="q13-option1" id="q13-opt1-label">Option 1</label><br>
@@ -321,7 +321,7 @@
 <fieldset class="question" id="quiz1-q14">
 <div class="level" id="lvl-q14"></div>
 <legend class="question-title" id="title-q14">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q14-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q14-option1" name="alternative-q14" value="Option 1">
 <label for="q14-option1" id="q14-opt1-label">Option 1</label><br>
@@ -345,7 +345,7 @@
 <fieldset class="question" id="quiz1-q15">
 <div class="level" id="lvl-q15"></div>
 <legend class="question-title" id="title-q15">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q15-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q15-option1" name="alternative-q15" value="Option 1">
 <label for="q15-option1" id="q15-opt1-label">Option 1</label><br>
@@ -369,7 +369,7 @@
 <fieldset class="question" id="quiz1-q16">
 <div class="level" id="lvl-q16"></div>
 <legend class="question-title" id="title-q16">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q16-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q16-option1" name="alternative-q16" value="Option 1">
 <label for="q16-option1" id="q16-opt1-label">Option 1</label><br>
@@ -393,7 +393,7 @@
 <fieldset class="question" id="quiz1-q17">
 <div class="level" id="lvl-q17"></div>
 <legend class="question-title" id="title-q17">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q17-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q17-option1" name="alternative-q17" value="Option 1">
 <label for="q17-option1" id="q17-opt1-label">Option 1</label><br>
@@ -417,7 +417,7 @@
 <fieldset class="question" id="quiz1-q18">
 <div class="level" id="lvl-q18"></div>
 <legend class="question-title" id="title-q18">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q18-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q18-option1" name="alternative-q18" value="Option 1">
 <label for="q18-option1" id="q18-opt1-label">Option 1</label><br>
@@ -441,7 +441,7 @@
 <fieldset class="question" id="quiz1-q19">
 <div class="level" id="lvl-q19"></div>
 <legend class="question-title" id="title-q19">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q19-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q19-option1" name="alternative-q19" value="Option 1">
 <label for="q19-option1" id="q19-opt1-label">Option 1</label><br>
@@ -465,7 +465,7 @@
 <fieldset class="question" id="quiz1-q20">
 <div class="level" id="lvl-q20"></div>
 <legend class="question-title" id="title-q20">Question 1</legend>
-<img class="question-image" src="./img/data-wrangling/full_join.png">
+<img class="question-image" id="q20-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
 <input type="radio" id="q20-option1" name="alternative-q20" value="Option 1">
 <label for="q20-option1" id="q20-opt1-label">Opt 1</label><br>
