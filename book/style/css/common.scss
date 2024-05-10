@@ -1,0 +1,132 @@
+/*-- scss:defaults --*/
+
+$intro-font-weight:           300;
+
+
+/*-- scss:rules --*/
+
+
+// Chapters
+
+.theorem {
+  margin: 1% 0%;
+  padding: 1% 1% 1% 2%;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+.proof {
+  margin-top: 1%;
+}
+
+.intro {
+  font-weight: $intro-font-weight;
+  margin: 2% 0%;
+  padding: 0 0 0 5%;
+  border-bottom: solid 1px;
+}
+
+.leaflet {
+  margin-bottom: 1%;
+}
+
+.lab-junior {
+  content: url("img/labs/lab_junior.png");
+}
+
+.lab-middle {
+  content: url("img/labs/lab_middle.png");
+}
+
+.lab-senior {
+  content: url("img/labs/lab_senior.png");
+}
+
+.lab-guru {
+  content: url("img/labs/lab_guru.png");
+}
+
+.lab-junior, .lab-middle, .lab-senior, .lab-guru {
+  display: inline-block;
+  height: 1em;
+  margin: -1% 0 2% 0;
+}
+
+
+// Quiz
+
+form.quiz {
+  margin: 2% 0;
+}
+
+form.quiz fieldset.question {
+  margin: 2% 0;
+  border: solid 1px;
+  border-radius: 10px;
+}
+
+form.quiz fieldset legend.question-title {
+  padding: 1% 2% 2% 2%;
+}
+
+form.quiz fieldset img.question-image {
+  padding: 1% 1%;
+  width: 100%;
+}
+
+form.quiz fieldset div.alternative {
+  margin: 1% 4% 0 4%;
+}
+
+form.quiz fieldset div.alternative input {
+  vertical-align: middle;
+  // -webkit-transform:scale(2, 2);
+  // -moz-transform:scale(2, 2);
+  // -ms-transform:scale(2, 2);
+  // -o-transform:scale(2, 2);
+  transform:scale(2, 2) !important;
+  // border: 0px;
+  // width: 100%;
+  // height: 1.5em;
+}
+
+form.quiz fieldset div.alternative label {
+  margin: 0 2%;
+}
+
+form.quiz div.submit-button {
+  margin: 4% 0;
+}
+
+form.quiz div.submit-button input.submit-button {
+  font-weight: $h2-font-weight;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 2% 0;
+}
+
+form.quiz div.submit-button input.submit-button:hover {
+  cursor: pointer;
+}
+
+form.quiz div.results {
+  font-weight: $h2-font-weight;
+  font-size: 1.5rem;
+}
+
+form.quiz div.message {
+  font-weight: $h2-font-weight;
+  font-size: 1rem;
+}
+
+form.quiz fieldset div.feedback {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  margin: 2% 2%;
+  padding: 1% 2%;
+  font-size: .9em;
+}

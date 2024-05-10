@@ -1,4 +1,4 @@
-# Preface {.unnumbered}
+# Intro {.unnumbered}
 
 This is a Quarto book.
 
@@ -9,6 +9,8 @@ To learn more about Quarto books visit <https://quarto.org/docs/books>.
 ```
 
 ## Session Info {#session_info}
+
+Данная версия книги сверстана в следующей версии R.
 
 ```{r}
 sessionInfo()

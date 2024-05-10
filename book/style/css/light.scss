@@ -253,51 +253,13 @@ h2, h3 {
 
 // Custom
 
+// Chapter
+
 .theorem {
-  border: 1px solid $gray-400;
-  margin: 1% 0%;
-  padding: 1% 1% 1% 2%;
-  border-radius: 10px;
+  border-color: $gray-400;
 }
-
-.proof {
-  margin-top: 1%;
-}
-
 
 code {
   color: $gray-700;
   // background-color: $gray-800;
-}
-
-.intro {
-  font-weight: $intro-font-weight;
-  margin: 1% 0%;
-  padding: 0 0 0 5%;
-}
-
-.leaflet {
-  margin-bottom: 1%;
-}
-
-.lab-junior {
-  content: url("img/labs/lab_junior.png");
-}
-
-.lab-middle {
-  content: url("img/labs/lab_middle.png");
-}
-
-.lab-senior {
-  content: url("img/labs/lab_senior.png");
-}
-
-.lab-guru {
-  content: url("img/labs/lab_guru.png");
-}
-
-.lab-junior, .lab-middle, .lab-senior, .lab-guru {
-  display: inline-block;
-  height: 1em;
-  margin: -1% 0 2% 0;
 }

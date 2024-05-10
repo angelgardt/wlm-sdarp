@@ -1,78 +1,487 @@
 # Отладка квиза {#sec-testquiz}
 
-<form>
+```{=html}
+<!--- CHANGE quiz1 TO quiz<n> IN THE LINES BELOW --->
+```
 
-<fieldset>
+<form class="quiz">
+
+<fieldset class="question" id="quiz1-q1">
 <legend class="question-title" id="quiz1-q1">Question 1</legend>
-<div>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
 <input type="radio" id="option1" name="quiz1-q1" value="Option 1">
 <label for="option1">Option 1</label><br>
 </div>
-<div>
+<div class="alternative">
 <input type="radio" id="option2" name="quiz1-q1" value="Option 2">
 <label for="option2">Option 2</label><br>
 </div>
-<div>
+<div class="alternative">
 <input type="radio" id="option3" name="quiz1-q1" value="Option 3">
 <label for="option3">Option 3</label>
 </div>
-<div>
+<div class="alternative">
 <input type="radio" id="option4" name="quiz1-q1" value="Option 4">
 <label for="option4">Option 4</label>
 </div>
+<div class="feedback" id="feedback-q1">Feedback</div>
 </fieldset>
 
 
-<fieldset>
-<legend class="question-title" id="quiz1-q2">Question 2</legend>
-<div>
+<fieldset class="question" id="quiz1-q2">
+<legend class="question-title" id="quiz1-q2">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
 <input type="radio" id="option1" name="quiz1-q2" value="Option 1">
 <label for="option1">Option 1</label><br>
 </div>
-<div>
+<div class="alternative">
 <input type="radio" id="option2" name="quiz1-q2" value="Option 2">
 <label for="option2">Option 2</label><br>
 </div>
-<div>
+<div class="alternative">
 <input type="radio" id="option3" name="quiz1-q2" value="Option 3">
 <label for="option3">Option 3</label>
 </div>
-<div>
+<div class="alternative">
 <input type="radio" id="option4" name="quiz1-q2" value="Option 4">
 <label for="option4">Option 4</label>
 </div>
+<div class="feedback" id="feedback-q2">Feedback</div>
 </fieldset>
 
 
-<fieldset>
-<legend class="question-title" id="quiz1-q3">Question 3</legend>
-<div>
-<input type="checkbox" id="option1" name="quiz1-q3" value="Option 1">
+<fieldset class="question" id="quiz1-q3">
+<legend class="question-title" id="quiz1-q3">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q3" value="Option 1">
 <label for="option1">Option 1</label><br>
 </div>
-<div>
-<input type="checkbox" id="option2" name="quiz1-q3" value="Option 2">
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q3" value="Option 2">
 <label for="option2">Option 2</label><br>
 </div>
-<div>
-<input type="checkbox" id="option3" name="quiz1-q3" value="Option 3">
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q3" value="Option 3">
 <label for="option3">Option 3</label>
 </div>
-<div>
-<input type="checkbox" id="option4" name="quiz1-q3" value="Option 4">
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q3" value="Option 4">
 <label for="option4">Option 4</label>
 </div>
+<div class="feedback" id="feedback-q3">Feedback</div>
 </fieldset>
 
 
-<div>
-<input type="button" class="submit-button" id="submit-button" name="submit-button" value="Submit">
+<fieldset class="question" id="quiz1-q4">
+<legend class="question-title" id="quiz1-q4">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q4" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q4" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q4" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q4" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q4">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q5">
+<legend class="question-title" id="quiz1-q5">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q5" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q5" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q5" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q5" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q5">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q6">
+<legend class="question-title" id="quiz1-q6">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q6" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q6" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q6" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q6" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q6">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q7">
+<legend class="question-title" id="quiz1-q7">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q7" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q7" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q7" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q7" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q7">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q8">
+<legend class="question-title" id="quiz1-q8">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q8" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q8" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q8" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q8" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q8">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q9">
+<legend class="question-title" id="quiz1-q9">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q9" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q9" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q9" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q9" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q9">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q10">
+<legend class="question-title" id="quiz1-q10">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q10" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q10" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q10" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q10" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q10">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q11">
+<legend class="question-title" id="quiz1-q11">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q11" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q11" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q11" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q11" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q11">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q12">
+<legend class="question-title" id="quiz1-q12">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q12" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q12" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q12" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q12" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q12">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q13">
+<legend class="question-title" id="quiz1-q13">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q13" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q13" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q13" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q13" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q13">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q14">
+<legend class="question-title" id="quiz1-q14">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q14" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q14" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q14" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q14" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q14">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q15">
+<legend class="question-title" id="quiz1-q15">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q15" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q15" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q15" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q15" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q15">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q16">
+<legend class="question-title" id="quiz1-q16">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q16" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q16" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q16" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q16" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q16">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q17">
+<legend class="question-title" id="quiz1-q17">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q17" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q17" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q17" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q17" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q17">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q18">
+<legend class="question-title" id="quiz1-q18">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q18" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q18" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q18" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q18" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q18">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q19">
+<legend class="question-title" id="quiz1-q19">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q19" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q19" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q19" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q19" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q19">Feedback</div>
+</fieldset>
+
+
+<fieldset class="question" id="quiz1-q20">
+<legend class="question-title" id="quiz1-q20">Question 1</legend>
+<img class="question-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" id="option1" name="quiz1-q20" value="Option 1">
+<label for="option1">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option2" name="quiz1-q20" value="Option 2">
+<label for="option2">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" id="option3" name="quiz1-q20" value="Option 3">
+<label for="option3">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" id="option4" name="quiz1-q20" value="Option 4">
+<label for="option4">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q20">Feedback</div>
+</fieldset>
+
+
+<div class="results">
+Результат
+</div>
+
+<div class="message">
+Некоторые вопросы остались без ответа ((
+</div>
+
+<div class="submit-button">
+<input type="button" class="submit-button" id="submit-button" name="submit-button" value="Проверить квиз">
 </div>
 
 </form>
 
 ```{=html}
 <!--- CHANGE quiz1 TO quiz<n> IN THE LINES BELOW --->
-<!-- <script type="text/javascript" src="./js/hw1.json"></script> -->
+<!-- <script type="text/javascript" src="./js/quiz1.json"></script> -->
 <script type="text/javascript" src="./js/quiz.js"></script>
 ```

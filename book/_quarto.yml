@@ -20,8 +20,23 @@ book:
       - testquiz.qmd
       - testsheet.qmd
     - part: part-r.qmd
-      # chapters: 
-      # - n.qmd
+      chapters:
+      - r-intro.qmd
+      - r-datatypes.qmd
+      - r-datastructures.qmd
+      - r-functionsI.qmd
+      - r-controlworkflow.qmd
+      - r-functionsII.qmd
+      - r-strings.qmd
+      - r-datetime.qmd
+      - r-data.qmd
+      - r-preprocessbasic.qmd
+      - r-preprocessadvanced.qmd
+      - r-visbaser.qmd
+      - r-visbasic.qmd
+      - r-visadvanced.qmd
+      - r-rmd.qmd
+      - r-qmd.qmd
     - part: part-math.qmd
       chapters:
       - math-logic.qmd
@@ -39,6 +54,7 @@ book:
       - measures-psymetIII.qmd
     - part: part-desc.qmd
       chapters:
+      - desc-statintro.qmd
       - desc-centrtend.qmd
       - desc-variance.qmd
       - desc-distshape.qmd
@@ -85,6 +101,7 @@ book:
       - andan-sem.qmd
       - andan-path.qmd
       - andan-timeseries.qmd
+    - outro.qmd
     - references.qmd
   appendices:
     - appendix-numbers.qmd
@@ -119,8 +136,10 @@ format:
       sidebar-width: 210px
       margin-width: 210px
     cover-image: img/other/cover.jpg
+    cover-image-alt: |
+      Тут должна быть обложка книги, но что-то пошло не так...
     theme:
-      light: style/css/light.scss
-      dark: style/css/dark.scss
+      light: [style/css/light.scss, style/css/common.scss]
+      dark: [style/css/dark.scss, style/css/common.scss]
 
 editor: source

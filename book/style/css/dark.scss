@@ -94,7 +94,6 @@ $h2-font-weight:              500;
 $h3-font-size:                2rem !default;
 $body-font-weight:            400;
 $text-muted:                  body-mix(75%) !default;
-$intro-font-weight:           300;
 
 
 // Tables
@@ -317,15 +316,10 @@ h2, h3 {
 
 // Custom
 
-.theorem {
-  border: 1px solid $gray-600;
-  margin: 1% 0%;
-  padding: 1% 1% 1% 2%;
-  border-radius: 10px;
-}
+// Chapter
 
-.proof {
-  margin-top: 1%;
+.theorem {
+  border-color: $gray-600;
 }
 
 code {
@@ -337,32 +331,6 @@ code {
   font-weight: $intro-font-weight;
   margin: 1% 0%;
   padding: 0 0 0 5%;
-}
-
-.leaflet {
-  margin-bottom: 1%;
-}
-
-.lab-junior {
-  content: url("img/labs/lab_junior.png");
-}
-
-.lab-middle {
-  content: url("img/labs/lab_middle.png");
-}
-
-.lab-senior {
-  content: url("img/labs/lab_senior.png");
-}
-
-.lab-guru {
-  content: url("img/labs/lab_guru.png");
-}
-
-.lab-junior, .lab-middle, .lab-senior, .lab-guru {
-  display: inline-block;
-  height: 1em;
-  margin: -1% 0 2% 0;
 }
 
 .submit-button {
