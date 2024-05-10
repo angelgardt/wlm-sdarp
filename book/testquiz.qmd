@@ -490,7 +490,7 @@
 Результат
 </div>
 
-<div class="message" hidden>
+<div class="message" id="filled-message" hidden>
 Некоторые вопросы остались без ответа ((
 </div>
 

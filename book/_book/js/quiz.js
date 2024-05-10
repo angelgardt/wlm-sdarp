@@ -14,7 +14,7 @@ for (let i = 0; i < info_json.length; i++) {
   }
 }
 
-console.log(info)
+// console.log(info)
 
 // Add content
 
@@ -46,13 +46,11 @@ for (let i = 1; i <= 20; i++) {
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", check_quiz);
 
-const answers = document.getElementsByClassName("in-alternative");
+// const answers = document.getElementsByClassName("in-alternative");
 
 // console.log(answers)
 
-let ans = {};
-
-function get_answers() {
+function get_answers(ans, answers) {
   for (let i = 1; i <= 20; i++) {
     ans["q"+i] = {};
     ans["q"+i]["type"] = info["type"]["q"+i];
@@ -69,6 +67,33 @@ function get_answers() {
     ans["q"+i]["opt4"]["correct"] = info["option4_correct"]["q"+i];
     ans["q"+i]["opt4"]["checked"] = answers["q"+i+"-option4"]["checked"];
   }
+  return ans
+}
+
+function check_fill(ans) {
+  let counter = 20;
+  for (let i = 1; i <= 20; i++) {
+    ans["q"+i]["filled"] = false;
+    for (let j = 1; j <= 4; j++) {
+      if (ans["q"+i]["opt"+j]["checked"]) {
+        ans["q"+i]["filled"] = true;
+        counter -= 1;
+      }
+    }
+  }
+  if (counter > 0) {
+    ans["filled"] = false;
+  } else {
+    ans["filled"] = true;
+  }
+  return ans
+}
+
+function set_colors_filled(ans) {
+  return 0
+}
+
+function check_answers(ans) {
   for (let i = 1; i <= 20; i++) {
     if (ans["q"+i]["type"] == "radio") {
       for (let j = 1; j <= 4; j++) {
@@ -95,11 +120,8 @@ function get_answers() {
       }
     }
   }
+  return ans
 }
-
-
-// console.log(ans);
-
 
 function show_feedback() {
   for (let i = 1; i <= 20; i++) {
@@ -108,11 +130,22 @@ function show_feedback() {
 }
 
 function check_quiz() {
-  // console.log("Clicked!")
   const answers = document.getElementsByClassName("in-alternative");
-  console.log(answers);
-  get_answers();
+  let ans = {};
+  // console.log("answers");
+  // console.log(answers);
+  ans = check_fill(get_answers(ans, answers));
+  // console.log("check_fill");
+  // console.log(ans);
+  if (!ans["filled"]) {
+    document.getElementById("filled-message").hidden = false;
+    set_colors_filled(ans);
+    return 0;
+  }
+  console.log("check_answers");
+  ans = check_answers(ans);
+  console.log(ans);
   show_feedback();
-  console.log(ans)
+  // console.log(ans)
   document.getElementById("submit-button").disabled = true;
 }
