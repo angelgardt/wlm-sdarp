@@ -123,6 +123,10 @@ function check_answers(ans) {
   return ans
 }
 
+function set_colors_checked(ans) {
+  return 0
+}
+
 function show_feedback() {
   for (let i = 1; i <= 20; i++) {
     document.getElementById("feedback-q"+i).hidden = false;
@@ -142,10 +146,10 @@ function check_quiz() {
     set_colors_filled(ans);
     return 0;
   }
-  console.log("check_answers");
   ans = check_answers(ans);
+  console.log("check_answers");
   console.log(ans);
+  set_colors_checked(ans);
   show_feedback();
-  // console.log(ans)
   document.getElementById("submit-button").disabled = true;
 }
