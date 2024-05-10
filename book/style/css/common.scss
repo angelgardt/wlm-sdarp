@@ -130,3 +130,27 @@ form.quiz fieldset div.feedback {
   padding: 1% 2%;
   font-size: .9em;
 }
+
+form.quiz fieldset div.lvl-easy,
+form.quiz fieldset div.lvl-medium,
+form.quiz fieldset div.lvl-hard,
+form.quiz fieldset div.lvl-extreme {
+  height: 1em;
+  margin: 1% 0 0 1%;
+}
+
+form.quiz fieldset div.lvl-easy {
+  content: url("img/labs/lab_easy.png");
+}
+
+form.quiz fieldset div.lvl-medium {
+  content: url("img/labs/lab_medium.png");
+}
+
+form.quiz fieldset div.lvl-hard {
+  content: url("img/labs/lab_hard.png");
+}
+
+form.quiz fieldset div.lvl-extreme {
+  content: url("img/labs/lab_extreme.png");
+}
