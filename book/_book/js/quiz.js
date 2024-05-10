@@ -1,3 +1,5 @@
+// Parse JSON
+
 var info_json = JSON.parse(quiz_json);
 
 console.log(info_json)
@@ -14,22 +16,26 @@ for (let i = 0; i < info_json.length; i++) {
 
 console.log(info)
 
-const levels = document.getElementsByClassName("level");
-
-console.log(levels)
-console.log(levels)
-console.log(levels.length)
+// Add content
 
 for (let i = 1; i <= 20; i++) {
-  document.getElementById("lvl-q"+i).className += (" lvl-" + info["level"]["q"+i]);
+  if (info["level"]["q"+i] == "") {
+    document.getElementById("lvl-q"+i).hidden += true;
+  } else {
+    document.getElementById("lvl-q"+i).className += (" lvl-" + info["level"]["q"+i]);
+  }
   document.getElementById("title-q"+i).innerHTML = info["text"]["q"+i];
   document.getElementById("q"+i+"-opt1-label").innerHTML = info["option1_label"]["q"+i];
   document.getElementById("q"+i+"-opt2-label").innerHTML = info["option2_label"]["q"+i];
   document.getElementById("q"+i+"-opt3-label").innerHTML = info["option3_label"]["q"+i];
   document.getElementById("q"+i+"-opt4-label").innerHTML = info["option4_label"]["q"+i];
+  if (info["img"]["q"+i] == "") {
+    document.getElementById("q"+i+"-image").hidden = true;
+  } else {
+    document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
+  }
 }
 
-console.log(levels)
 
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", check_quiz);
