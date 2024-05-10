@@ -25,6 +25,12 @@ for (let i = 1; i <= 20; i++) {
     document.getElementById("lvl-q"+i).className += (" lvl-" + info["level"]["q"+i]);
   }
   document.getElementById("title-q"+i).innerHTML = info["text"]["q"+i];
+  if (info["type"]["q"+i] == "checkbox") {
+    document.getElementById("q"+i+"-option1").type = "checkbox";
+    document.getElementById("q"+i+"-option2").type = "checkbox";
+    document.getElementById("q"+i+"-option3").type = "checkbox";
+    document.getElementById("q"+i+"-option4").type = "checkbox";
+  }
   document.getElementById("q"+i+"-opt1-label").innerHTML = info["option1_label"]["q"+i];
   document.getElementById("q"+i+"-opt2-label").innerHTML = info["option2_label"]["q"+i];
   document.getElementById("q"+i+"-opt3-label").innerHTML = info["option3_label"]["q"+i];
@@ -34,14 +40,25 @@ for (let i = 1; i <= 20; i++) {
   } else {
     document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
   }
+  
 }
+
+
 
 
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", check_quiz);
 
+function show_feedback() {
+  for (let i = 1; i <= 20; i++) {
+    document.getElementById("feedback-q"+i).hidden = false;
+  }
+}
+
 function check_quiz() {
   console.log("Clicked!")
   const answers = document.getElementsByName("quiz1-q3");
   console.log(answers);
+  show_feedback();
+  document.getElementById("submit-button").disabled = true;
 }
