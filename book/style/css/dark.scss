@@ -333,6 +333,10 @@ code {
   padding: 0 0 0 5%;
 }
 
-.submit-button {
+div.submit-button {
+  background-color: $gray-900;
+}
+
+input.submit-button {
   background-color: $gray-200;
 }
