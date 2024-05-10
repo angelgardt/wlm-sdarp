@@ -26,7 +26,7 @@
 <input type="radio" class="in-alternative" id="q1-option4" name="alternative-q1" value="Option 4">
 <label for="q1-option4" id="q1-opt4-label">Option 4</label>
 </div>
-<div class="feedback" id="feedback-q1" hidden>Feedback</div>
+<div class="feedback" id="feedback-q1">Feedback</div>
 </fieldset>
 
 

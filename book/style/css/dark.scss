@@ -345,8 +345,13 @@ form.quiz div.submit-button {
 
 form.quiz input.submit-button {
   background-color: $gray-200;
+  color: $black;
 }
 
 form.quiz input.submit-button:hover {
   background-color: $gray-300;
+}
+
+form.quiz div.feedback {
+  background-color: $gray-800;
 }
