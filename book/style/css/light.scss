@@ -29,6 +29,11 @@ $green:   #35d250 !default;
 $teal:    #36d38c !default;
 $cyan:    #359dd2 !default;
 
+$quiz-correct-background:   #C2FFE3 !default;
+$quiz-correct-border:       #229A64 !default;
+$quiz-incorrect-background: #FFB3B0 !default;
+$quiz-incorrect-border:     #E53B32 !default;
+
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
@@ -278,10 +283,34 @@ form.quiz input.submit-button {
   color: $white;
 }
 
+form.quiz input.submit-button[disabled],
+form.quiz input.submit-button:hover[disabled] {
+  background-color: $gray-200;
+  color: $gray-500;
+}
+
 form.quiz input.submit-button:hover {
   background-color: $gray-400;
 }
 
 form.quiz div.feedback {
   background-color: $gray-200;
+}
+
+form.quiz fieldset.correct {
+  background-color: $quiz-correct-background;
+  border-color: $quiz-correct-border !important;
+}
+
+form.quiz fieldset.incorrect {
+  background-color: $quiz-incorrect-background;
+  border-color: $quiz-incorrect-border !important;
+}
+
+form.quiz fieldset div.check-tick {
+  content: url("img/labs/check_tick_light.png");
+}
+
+form.quiz fieldset div.check-cross {
+  content: url("img/labs/check_cross_light.png");
 }

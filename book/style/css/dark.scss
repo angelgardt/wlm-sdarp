@@ -29,6 +29,12 @@ $green:   #35d250 !default;
 $teal:    #36d38c !default;
 $cyan:    #359dd2 !default;
 
+$quiz-correct-background:   #0E5245 !default;
+$quiz-correct-border:       #229A64 !default;
+$quiz-incorrect-background: #4D0C02 !default;
+$quiz-incorrect-border:     #9A2822 !default;
+
+
 // Body
 
 $body-bg:                   $gray-900 !default;
@@ -348,10 +354,34 @@ form.quiz input.submit-button {
   color: $black;
 }
 
+form.quiz input.submit-button[disabled],
+form.quiz input.submit-button:hover[disabled] {
+  background-color: $gray-700;
+  color: $gray-500;
+}
+
 form.quiz input.submit-button:hover {
   background-color: $gray-300;
 }
 
 form.quiz div.feedback {
   background-color: $gray-800;
+}
+
+form.quiz fieldset.correct {
+  background-color: $quiz-correct-background;
+  border-color: $quiz-correct-border !important;
+}
+
+form.quiz fieldset.incorrect {
+  background-color: $quiz-incorrect-background;
+  border-color: $quiz-incorrect-border !important;
+}
+
+form.quiz fieldset div.check-tick {
+  content: url("img/labs/check_tick_dark.png");
+}
+
+form.quiz fieldset div.check-cross {
+  content: url("img/labs/check_cross_dark.png");
 }

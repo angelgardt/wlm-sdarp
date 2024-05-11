@@ -112,6 +112,13 @@ form.quiz div.submit-button input.submit-button:hover {
   cursor: pointer;
 }
 
+form.quiz div.submit-button input.submit-button[disabled],
+form.quiz div.submit-button input.submit-button:hover[disabled] {
+  cursor: default
+}
+
+
+
 form.quiz div.results {
   font-weight: $h2-font-weight;
   font-size: 1.5rem;
@@ -158,4 +165,25 @@ form.quiz fieldset div.lvl-extreme {
 form.quiz div.message {
   text-align: center;
   color: $red;
+}
+
+form.quiz label.incorrect {
+  color: $gray-600;
+}
+
+form.quiz fieldset div.check-tick,
+form.quiz fieldset div.check-cross,
+form.quiz fieldset div.level {
+  display: inline-block;
+}
+
+form.quiz fieldset div.check-tick,
+form.quiz fieldset div.check-cross {
+  float: right;
+  height: 2em;
+  padding: 1% 1% 0 0;
+}
+
+form.quiz fieldset.non-filled {
+  border-color: $red;
 }

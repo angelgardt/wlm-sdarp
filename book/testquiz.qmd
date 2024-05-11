@@ -6,8 +6,65 @@
 
 <form class="quiz">
 
-<fieldset class="question" id="quiz1-q1">
+<!---
+<fieldset class="question non-filled" id="q0">
+<div class="level lvl-easy" id="lvl-q0"></div>
+<div class="check-tick" id="check-tick-q0" hidden></div>
+<div class="check-cross" id="check-cross-q0" hidden></div>
+<legend class="question-title" id="title-q0">Question 1</legend>
+<img class="question-image" id="q0-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" class="in-alternative correct" id="q0-option1" name="alternative-q0" value="Option 1" disabled checked>
+<label for="q0-option1" class="correct" id="q0-opt1-label">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" class="in-alternative incorrect" id="q0-option2" name="alternative-q0" value="Option 2" disabled>
+<label for="q0-option2" class="incorrect" id="q0-opt2-label">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" class="in-alternative incorrect" id="q0-option3" name="alternative-q0" value="Option 3">
+<label for="q0-option3" class="incorrect" id="q0-opt3-label">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" class="in-alternative incorrect" id="q0-option4" name="alternative-q0" value="Option 4">
+<label for="q0-option4" class="incorrect" id="q0-opt4-label">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q0">Feedback</div>
+</fieldset>
+
+<fieldset class="question incorrect" id="q0">
+<div class="level lvl-medium" id="lvl-q0"></div>
+<div class="check-tick" id="check-tick-q0" hidden></div>
+<div class="check-cross" id="check-cross-q0" hidden></div>
+<legend class="question-title" id="title-q0">Question 1</legend>
+<img class="question-image" id="q0-image" src="./img/data-wrangling/full_join.png">
+<div class="alternative">
+<input type="radio" class="in-alternative correct" id="q0-option1" name="alternative-q0" value="Option 1" disabled checked>
+<label for="q0-option1" class="correct" id="q0-opt1-label">Option 1</label><br>
+</div>
+<div class="alternative">
+<input type="radio" class="in-alternative incorrect" id="q0-option2" name="alternative-q0" value="Option 2" disabled>
+<label for="q0-option2" class="incorrect" id="q0-opt2-label">Option 2</label><br>
+</div>
+<div class="alternative">
+<input type="radio" class="in-alternative incorrect" id="q0-option3" name="alternative-q0" value="Option 3">
+<label for="q0-option3" class="incorrect" id="q0-opt3-label">Option 3</label>
+</div>
+<div class="alternative">
+<input type="radio" class="in-alternative incorrect" id="q0-option4" name="alternative-q0" value="Option 4">
+<label for="q0-option4" class="incorrect" id="q0-opt4-label">Option 4</label>
+</div>
+<div class="feedback" id="feedback-q0">Feedback</div>
+</fieldset>
+
+--->
+
+
+
+<fieldset class="question" id="q1">
 <div class="level" id="lvl-q1"></div>
+<div class="check-tick" id="check-tick-q1" hidden></div>
+<div class="check-cross" id="check-cross-q1" hidden></div>
 <legend class="question-title" id="title-q1">Question 1</legend>
 <img class="question-image" id="q1-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -26,12 +83,14 @@
 <input type="radio" class="in-alternative" id="q1-option4" name="alternative-q1" value="Option 4">
 <label for="q1-option4" id="q1-opt4-label">Option 4</label>
 </div>
-<div class="feedback" id="feedback-q1">Feedback</div>
+<div class="feedback" id="feedback-q1" hidden>Feedback</div>
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q2">
+<fieldset class="question" id="q2">
 <div class="level" id="lvl-q2"></div>
+<div class="check-tick" id="check-tick-q2" hidden></div>
+<div class="check-cross" id="check-cross-q2" hidden></div>
 <legend class="question-title" id="title-q2">Question 1</legend>
 <img class="question-image" id="q2-image"src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -54,8 +113,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q3">
+<fieldset class="question" id="q3">
 <div class="level" id="lvl-q3"></div>
+<div class="check-tick" id="check-tick-q3" hidden></div>
+<div class="check-cross" id="check-cross-q3" hidden></div>
 <legend class="question-title" id="title-q3">Question 1</legend>
 <img class="question-image" id="q3-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -78,8 +139,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q4">
+<fieldset class="question" id="q4">
 <div class="level" id="lvl-q4"></div>
+<div class="check-tick" id="check-tick-q4" hidden></div>
+<div class="check-cross" id="check-cross-q4" hidden></div>
 <legend class="question-title" id="title-q4">Question 1</legend>
 <img class="question-image" id="q4-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -102,8 +165,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q5">
+<fieldset class="question" id="q5">
 <div class="level" id="lvl-q5"></div>
+<div class="check-tick" id="check-tick-q5" hidden></div>
+<div class="check-cross" id="check-cross-q5" hidden></div>
 <legend class="question-title" id="title-q5">Question 1</legend>
 <img class="question-image" id="q5-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -126,8 +191,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q6">
+<fieldset class="question" id="q6">
 <div class="level" id="lvl-q6"></div>
+<div class="check-tick" id="check-tick-q6" hidden></div>
+<div class="check-cross" id="check-cross-q6" hidden></div>
 <legend class="question-title" id="title-q6">Question 1</legend>
 <img class="question-image" id="q6-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -150,8 +217,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q7">
+<fieldset class="question" id="q7">
 <div class="level" id="lvl-q7"></div>
+<div class="check-tick" id="check-tick-q7" hidden></div>
+<div class="check-cross" id="check-cross-q7" hidden></div>
 <legend class="question-title" id="title-q7">Question 1</legend>
 <img class="question-image" id="q7-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -174,8 +243,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q8">
+<fieldset class="question" id="q8">
 <div class="level" id="lvl-q8"></div>
+<div class="check-tick" id="check-tick-q8" hidden></div>
+<div class="check-cross" id="check-cross-q8" hidden></div>
 <legend class="question-title" id="title-q8">Question 1</legend>
 <img class="question-image" id="q8-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -198,8 +269,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q9">
+<fieldset class="question" id="q9">
 <div class="level" id="lvl-q9"></div>
+<div class="check-tick" id="check-tick-q9" hidden></div>
+<div class="check-cross" id="check-cross-q9" hidden></div>
 <legend class="question-title" id="title-q9">Question 1</legend>
 <img class="question-image" id="q9-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -222,8 +295,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q10">
+<fieldset class="question" id="q10">
 <div class="level" id="lvl-q10"></div>
+<div class="check-tick" id="check-tick-q10" hidden></div>
+<div class="check-cross" id="check-cross-q10" hidden></div>
 <legend class="question-title" id="title-q10">Question 1</legend>
 <img class="question-image" id="q10-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -246,8 +321,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q11">
+<fieldset class="question" id="q11">
 <div class="level" id="lvl-q11"></div>
+<div class="check-tick" id="check-tick-q11" hidden></div>
+<div class="check-cross" id="check-cross-q11" hidden></div>
 <legend class="question-title" id="title-q11">Question 1</legend>
 <img class="question-image" id="q11-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -270,8 +347,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q12">
+<fieldset class="question" id="q12">
 <div class="level" id="lvl-q12"></div>
+<div class="check-tick" id="check-tick-q12" hidden></div>
+<div class="check-cross" id="check-cross-q12" hidden></div>
 <legend class="question-title" id="title-q12">Question 1</legend>
 <img class="question-image" id="q12-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -294,8 +373,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q13">
+<fieldset class="question" id="q13">
 <div class="level" id="lvl-q13"></div>
+<div class="check-tick" id="check-tick-q13" hidden></div>
+<div class="check-cross" id="check-cross-q13" hidden></div>
 <legend class="question-title" id="title-q13">Question 1</legend>
 <img class="question-image" id="q13-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -318,8 +399,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q14">
+<fieldset class="question" id="q14">
 <div class="level" id="lvl-q14"></div>
+<div class="check-tick" id="check-tick-q14" hidden></div>
+<div class="check-cross" id="check-cross-q14" hidden></div>
 <legend class="question-title" id="title-q14">Question 1</legend>
 <img class="question-image" id="q14-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -342,8 +425,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q15">
+<fieldset class="question" id="q15">
 <div class="level" id="lvl-q15"></div>
+<div class="check-tick" id="check-tick-q15" hidden></div>
+<div class="check-cross" id="check-cross-q15" hidden></div>
 <legend class="question-title" id="title-q15">Question 1</legend>
 <img class="question-image" id="q15-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -366,8 +451,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q16">
+<fieldset class="question" id="q16">
 <div class="level" id="lvl-q16"></div>
+<div class="check-tick" id="check-tick-q16" hidden></div>
+<div class="check-cross" id="check-cross-q16" hidden></div>
 <legend class="question-title" id="title-q16">Question 1</legend>
 <img class="question-image" id="q16-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -390,8 +477,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q17">
+<fieldset class="question" id="q17">
 <div class="level" id="lvl-q17"></div>
+<div class="check-tick" id="check-tick-q17" hidden></div>
+<div class="check-cross" id="check-cross-q17" hidden></div>
 <legend class="question-title" id="title-q17">Question 1</legend>
 <img class="question-image" id="q17-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -414,8 +503,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q18">
+<fieldset class="question" id="q18">
 <div class="level" id="lvl-q18"></div>
+<div class="check-tick" id="check-tick-q18" hidden></div>
+<div class="check-cross" id="check-cross-q18" hidden></div>
 <legend class="question-title" id="title-q18">Question 1</legend>
 <img class="question-image" id="q18-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -438,8 +529,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q19">
+<fieldset class="question" id="q19">
 <div class="level" id="lvl-q19"></div>
+<div class="check-tick" id="check-tick-q19" hidden></div>
+<div class="check-cross" id="check-cross-q19" hidden></div>
 <legend class="question-title" id="title-q19">Question 1</legend>
 <img class="question-image" id="q19-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">
@@ -462,8 +555,10 @@
 </fieldset>
 
 
-<fieldset class="question" id="quiz1-q20">
+<fieldset class="question" id="q20">
 <div class="level" id="lvl-q20"></div>
+<div class="check-tick" id="check-tick-q20" hidden></div>
+<div class="check-cross" id="check-cross-q20" hidden></div>
 <legend class="question-title" id="title-q20">Question 1</legend>
 <img class="question-image" id="q20-image" src="./img/data-wrangling/full_join.png">
 <div class="alternative">

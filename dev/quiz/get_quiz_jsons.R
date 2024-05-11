@@ -32,21 +32,21 @@ quizes[[1]] %>%
 
 
 
-get_json <- function(hwn, hws_table) {
-  hws_table %>% 
-    filter(hw == hwn) %>%
-    mutate(
-      across(everything(), ~replace_na(.x, ""))
-    ) %>% 
-    select(-hw, -n) %>%
-    pivot_longer(cols = -task) %>% 
-    pivot_wider(names_from = task,
-                values_from = value) %>% 
-    jsonlite::toJSON(dataframe = "rows") %>%
-    paste0("hw_json='", ., "'", 
-           "\nN_TASKS=15",
-           "\nID='", hwn, "'") %>% 
-    write(paste0("js/", hwn, ".json"))
-}
-
-unique(hws_table$hw) %>% map(get_json, hws_table = hws_table)
+# get_json <- function(hwn, hws_table) {
+#   hws_table %>% 
+#     filter(hw == hwn) %>%
+#     mutate(
+#       across(everything(), ~replace_na(.x, ""))
+#     ) %>% 
+#     select(-hw, -n) %>%
+#     pivot_longer(cols = -task) %>% 
+#     pivot_wider(names_from = task,
+#                 values_from = value) %>% 
+#     jsonlite::toJSON(dataframe = "rows") %>%
+#     paste0("hw_json='", ., "'", 
+#            "\nN_TASKS=15",
+#            "\nID='", hwn, "'") %>% 
+#     write(paste0("js/", hwn, ".json"))
+# }
+# 
+# unique(hws_table$hw) %>% map(get_json, hws_table = hws_table)
