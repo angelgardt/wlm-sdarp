@@ -78,14 +78,22 @@ form.quiz fieldset img.question-image {
 
 form.quiz fieldset div.alternative {
   margin: 1% 4% 0 4%;
+  // padding: 1% 4% 0 4%;
+}
+
+form.quiz fieldset div.alternative input,
+form.quiz fieldset div.alternative label {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 form.quiz fieldset div.alternative input {
   vertical-align: middle;
-  // -webkit-transform:scale(2, 2);
-  // -moz-transform:scale(2, 2);
-  // -ms-transform:scale(2, 2);
-  // -o-transform:scale(2, 2);
+  margin: auto;
+  -webkit-transform:scale(2, 2);
+  -moz-transform:scale(2, 2);
+  -ms-transform:scale(2, 2);
+  -o-transform:scale(2, 2);
   transform:scale(2, 2) !important;
   // border: 0px;
   // width: 100%;
@@ -94,6 +102,8 @@ form.quiz fieldset div.alternative input {
 
 form.quiz fieldset div.alternative label {
   margin: 0 2%;
+  width: 90%;
+  // padding: 0 2%;
 }
 
 form.quiz div.submit-button {
