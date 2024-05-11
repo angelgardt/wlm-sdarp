@@ -1,6 +1,6 @@
 # Отладка листка
 
-{{< include ../other/_symbols.qmd >}}
+{{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -691,9 +691,8 @@ b. `1:3 + 1:10`
 </details>
 :::
 
-## Дополнительные задания {#pr1_add}
 
-### #1 {#pr1-21}
+### #21 {#pr1-21}
 
 <img id="pr1-21-level" class="level"/>
 
@@ -722,7 +721,7 @@ sam1[-seq(5, length(sam1), by = 5)]
 
 
 
-### #2 {#pr1-22}
+### #22 {#pr1-22}
 
 <img id="pr1-22-level" class="level"/>
 
@@ -736,7 +735,7 @@ sam5[!is.na(sam5) & abs(sam5) <= mean(sam5, na.rm = TRUE)]
 :::
 
 
-### #3 {#pr1-23}
+### #23 {#pr1-23}
 
 <img id="pr1-23-level" class="level"/>
 
@@ -752,7 +751,7 @@ abs(sam3 - mean(sam3))
 :::
 
 
-### #4 {#pr1-24}
+### #24 {#pr1-24}
 
 <img id="pr1-24-level" class="level"/>
 
@@ -780,7 +779,7 @@ cond
 :::
 
 
-### #5 {#pr1-25}
+### #25 {#pr1-25}
 
 <img id="pr1-25-level" class="level"/>
 
@@ -806,7 +805,7 @@ cond
 </details>
 :::
 
-### #6 {#pr1-26}
+### #26 {#pr1-26}
 
 <img id="pr1-26-level" class="level"/>
 
@@ -830,7 +829,7 @@ table(cond)
 </details>
 :::
 
-### #7 {#pr1-27}
+### #27 {#pr1-27}
 
 <img id="pr1-27-level" class="level"/>
 
@@ -856,7 +855,7 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 
 
 
-### #8 {#pr1-28}
+### #28 {#pr1-28}
 
 <img id="pr1-28-level" class="level"/>
 
@@ -882,7 +881,7 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 </details>
 :::
 
-### #9 {#pr1-29}
+### #29 {#pr1-29}
 
 <img id="pr1-29-level" class="level"/>
 
@@ -917,7 +916,7 @@ $$
 </details>
 :::
 
-### #10 {#pr1-30}
+### #30 {#pr1-30}
 
 <img id="pr1-30-level" class="level"/>
 
