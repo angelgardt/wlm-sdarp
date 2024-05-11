@@ -171,6 +171,10 @@ form.quiz label.incorrect {
   color: $gray-600;
 }
 
+form.quiz label.correct {
+  font-weight: 500;
+}
+
 form.quiz fieldset div.check-tick,
 form.quiz fieldset div.check-cross,
 form.quiz fieldset div.level {

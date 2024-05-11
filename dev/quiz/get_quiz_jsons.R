@@ -12,6 +12,27 @@ for (quiz_name in quizes_names) {
 }
 
 
+# get_json <- function(quiz_name, quizes) {
+#   quizes[[quiz_name]] %>% 
+#     mutate(
+#       across(everything(), ~replace_na(.x, ""))
+#     ) %>% 
+#     mutate(
+#       across(matches("^option\\d_correct$"), tolower)
+#     ) %>% 
+#     mutate(text = paste0(n, ". ", ques),
+#            qn = paste0("q", n)) %>% 
+#     pivot_longer(cols = -qn) %>% 
+#     pivot_wider(names_from = qn,
+#                 values_from = value) %>% 
+#     jsonlite::toJSON(dataframe = "rows") %>%
+#     paste0("quiz_json='", ., "'", 
+#            "\nquiz='", quiz_name, "'") %>% 
+#     write(paste0("js/", quiz_name, ".json"))
+# }
+
+
+
 quizes[[1]] %>% 
   mutate(
     across(everything(), ~replace_na(.x, ""))

@@ -42,6 +42,7 @@ for (let i = 1; i <= 20; i++) {
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", check_quiz);
 
+/*
 const alternatives = document.getElementsByClassName("in-alternatives");
 for (i = 0; i < alternatives.length; i++) {
   alternatives[i].addEventListener("click", set_colors_filled(ans));
@@ -50,6 +51,9 @@ for (i = 0; i < alternatives.length; i++) {
 function test() {
   console.log("Click!");
 }
+
+*/
+
 
 function get_answers(ans, answers) {
   for (let i = 1; i <= 20; i++) {
@@ -75,8 +79,12 @@ function check_fill(ans) {
       }
     }
   }
-  if (counter > 0) {
+  if (counter == 20) {
     ans["filled"] = false;
+    document.getElementById("filled-message").innerHTML = "Нет ни одного ответа :’(";
+  } else if (counter > 0) {
+    ans["filled"] = false;
+    document.getElementById("filled-message").innerHTML = "Некоторые вопросы остались без ответа ((";
   } else {
     ans["filled"] = true;
   }
@@ -124,10 +132,12 @@ function check_answers(ans) {
   return ans
 }
 
-function set_colors_checked(ans) {
+function show_results(ans) {
+  let score = 0;
   for (i = 1; i <= 20; i++) {
     document.getElementById("feedback-q"+i).hidden = false;
     if (ans["q"+i]["correct"]) {
+      score += 1;
       document.getElementById("q"+i).classList.add("correct");
       document.getElementById("check-tick-q"+i).hidden = false;
       document.getElementById("feedback-q"+i).innerHTML = info["feedback_correct"]["q"+i]
@@ -137,8 +147,23 @@ function set_colors_checked(ans) {
       document.getElementById("feedback-q"+i).innerHTML = info["feedback_incorrect"]["q"+i]
     }
   }
+  document.getElementById("results").hidden = false;
+  document.getElementById("results").innerHTML = "Результат: " + score + " / 20";
 }
 
+
+function show_answers(ans) {
+  for (i = 1; i <= 20; i++) {
+    for (j = 1; j <= 4; j++) {
+      document.getElementById("q"+i+"-option"+j).disabled = true;
+      if (ans["q"+i]["opt"+j]["correct"] == "true") {
+        document.getElementById("q"+i+"-opt"+j+"-label").classList.add("correct");
+      } else {
+        document.getElementById("q"+i+"-opt"+j+"-label").classList.add("incorrect");
+      }
+    }
+  }
+}
 
 function check_quiz() {
   const answers = document.getElementsByClassName("in-alternative");
@@ -160,6 +185,8 @@ function check_quiz() {
   ans = check_answers(ans);
   console.log("check_answers");
   console.log(ans);
-  set_colors_checked(ans);
+  show_results(ans);
+  show_answers(ans);
   document.getElementById("submit-button").disabled = true;
+  return 0;
 }
