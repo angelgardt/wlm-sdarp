@@ -174,7 +174,7 @@ function check_quiz() {
   // console.log("check_fill");
   // console.log(ans);
   if (!ans["filled"]) {
-    console.log(ans);
+    // console.log(ans);
     document.getElementById("filled-message").hidden = false;
     set_colors_filled(ans);
     return 0;
@@ -183,8 +183,8 @@ function check_quiz() {
     set_colors_filled(ans);
   }
   ans = check_answers(ans);
-  console.log("check_answers");
-  console.log(ans);
+  // console.log("check_answers");
+  // console.log(ans);
   show_results(ans);
   show_answers(ans);
   document.getElementById("submit-button").disabled = true;
