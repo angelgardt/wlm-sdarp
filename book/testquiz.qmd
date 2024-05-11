@@ -1,8 +1,5 @@
 # Отладка квиза {#sec-testquiz}
 
-```{=html}
-<!--- CHANGE quiz1 TO quiz<n> IN THE LINES BELOW --->
-```
 
 <form class="quiz">
 
@@ -728,7 +725,7 @@
 </form>
 
 ```{=html}
-<!--- CHANGE quiz1 TO quiz<n> IN THE LINES BELOW --->
-<script type="text/javascript" src="./js/quiz1.json"></script>
+<!--- CHANGE quiz0 TO quiz<n> IN THE LINES BELOW --->
+<script type="text/javascript" src="./js/quiz0.json"></script>
 <script type="text/javascript" src="./js/quiz.js"></script>
 ```

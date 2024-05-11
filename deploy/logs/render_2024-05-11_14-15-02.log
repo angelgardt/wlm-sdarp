@@ -1,0 +1,43 @@
+[0;32m
+=====
+RUN RENDER
+=====
+
+[0m[0;34mold [0;37m_book/ [0;34mremoved[0m
+Fatal error: cannot open file '../dev/quiz/get_quiz_jsons.R': No such file or directory
+[1m[34m[ 1/92] index.qmd[39m[22m
+[31m
+
+processing file: index.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |.............                                       |  25%                    |                                                            |..........................                          |  50% [unnamed-chunk-1]  |                                                            |.......................................             |  75%                    |                                                            |....................................................| 100% [unnamed-chunk-2]                                                                                                            
+[31moutput file: index.knit.md
+
+[39m[1m[34m[ 2/92] teststyle.qmd[39m[22m
+[31m
+
+processing file: teststyle.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |...                                                 |   7%                    |                                                            |.......                                             |  13% [simple-chunk]     |                                                            |..........                                          |  20%                    |                                                            |..............                                      |  27% [xml-example]      |                                                            |.................                                   |  33%                    |                                                            |.....................                               |  40% [json-example]     |                                                            |........................                            |  47%                    |                                                            |............................                        |  53% [unnamed-chunk-1]  |                                                            |...............................                     |  60%                    |                                                            |...................................                 |  67% [fig-huge-chunk]   |                                                            |......................................              |  73%                    |                                                            |..........................................          |  80% [unnamed-chunk-2]  |                                                            |.............................................       |  87%                    |                                                            |.................................................   |  93% [fig-rbirthplace]  |                                                            |....................................................| 100%                                                                                                                              
+[31moutput file: teststyle.knit.md
+
+[39m[31mWarning messages:
+1: In get_engine(options$engine) :
+  Unknown language engine 'xml' (must be registered via knit_engines$set()).
+2: In get_engine(options$engine) :
+  Unknown language engine 'json' (must be registered via knit_engines$set()).
+[39m[1m[34m[ 3/92] testquiz.qmd[39m[22m
+[1m[34m[ 4/92] testsheet.qmd[39m[22m
+[1m[34m[ 5/92] part-r.qmd[39m[22m
+[1m[34m[ 6/92] r-intro.qmd[39m[22m
+[1m[34m[ 7/92] r-datatypes.qmd[39m[22m
+[1m[34m[ 8/92] r-datastructures.qmd[39m[22m
+[1m[34m[ 9/92] r-functionsI.qmd[39m[22m
+[1m[34m[10/92] r-controlworkflow.qmd[39m[22m
+[1m[34m[11/92] r-functionsII.qmd[39m[22m
+[1m[34m[12/92] r-strings.qmd[39m[22m
+[1m[34m[13/92] r-datetime.qmd[39m[22m
+[1m[34m[14/92] r-data.qmd[39m[22m
+[1m[34m[15/92] r-preprocessbasic.qmd[39m[22m
+[1m[34m[16/92] r-preprocessadvanced.qmd[39m[22m
+[1m[34m[17/92] r-visbaser.qmd[39m[22m
+[1m[34m[18/92] r-visbasic.qmd[39m[22m
+[1m[34m[19/92] r-visadvanced.qmd[39m[22m

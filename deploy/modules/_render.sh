@@ -19,6 +19,18 @@ function render() {
   ## render book
   {
     # try
+    if [ -f dev/quiz/get_quiz_jsons.R ]; then
+      Rscript dev/quiz/get_quiz_jsons.R
+    else
+      printf "${BLUE}no ${GRAY}dev/quiz/get_quiz_jsons.R ${BLUE}file{NC}\n"
+    fi
+    
+    if [ -f dev/sheet/get_sheet_jsons.R ]; then
+      Rscript dev/sheet/get_sheet_jsons.R
+    else
+      printf "${BLUE}no ${GRAY}dev/sheet/get_sheet_jsons.R ${BLUE}file{NC}\n"
+    fi
+    
     quarto render book --to html
   } || {
     # catch

@@ -37,7 +37,8 @@ get_json <- function(quiz_name, quizzes, tags) {
     jsonlite::toJSON(dataframe = "rows") %>%
     paste0("quiz_json='", ., "'", 
            "\nquiz='", quiz_name, "'") %>% 
-    write(paste0("js/", quiz_name, ".json"))
+    write(paste0("book/js/", quiz_name, ".json"))
 }
 
 quizzes_names %>% map(get_json, quizzes = quizzes, tags = tags)
+

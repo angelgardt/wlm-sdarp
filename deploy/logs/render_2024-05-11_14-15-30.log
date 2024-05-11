@@ -1,0 +1,19 @@
+[0;32m
+=====
+RUN RENDER
+=====
+
+[0m[0;34mold [0;37m_book/ [0;34mremoved[0m
+Fatal error: cannot open file '../dev/quiz/get_quiz_jsons.R': No such file or directory
+[1m[34m[ 1/92] index.qmd[39m[22m
+[31m
+
+processing file: index.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |.............                                       |  25%                    |                                                            |..........................                          |  50% [unnamed-chunk-1]  |                                                            |.......................................             |  75%                    |                                                            |....................................................| 100% [unnamed-chunk-2]                                                                                                            
+[31moutput file: index.knit.md
+
+[39m[1m[34m[ 2/92] teststyle.qmd[39m[22m
+[31m
+
+processing file: teststyle.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |...                                                 |   7%                    |                                                            |.......                                             |  13% [simple-chunk]     |                                                            |..........                                          |  20%                    |                                                            |..............                                      |  27% [xml-example]      |                                                            |.................                                   |  33%                    |                                                            |.....................                               |  40% [json-example]     |                                                            |........................                            |  47%                    |                                                            |............................                        |  53% [unnamed-chunk-1]  |                                                            |...............................                     |  60%                    |                                                            |...................................                 |  67% [fig-huge-chunk] 
