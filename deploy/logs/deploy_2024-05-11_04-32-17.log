@@ -1,0 +1,150 @@
+[0;32m
+=====
+RUN DEPLOY
+=====
+
+[0m[0;32m
+=====
+RUN RENDER
+=====
+
+[0m[0;34mold [0;37m_book/ [0;34mremoved[0m
+[1m[34m[ 1/92] index.qmd[39m[22m
+[31m
+
+processing file: index.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |.............                                       |  25%                    |                                                            |..........................                          |  50% [unnamed-chunk-1]  |                                                            |.......................................             |  75%                    |                                                            |....................................................| 100% [unnamed-chunk-2]                                                                                                            
+[31moutput file: index.knit.md
+
+[39m[1m[34m[ 2/92] teststyle.qmd[39m[22m
+[31m
+
+processing file: teststyle.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |...                                                 |   7%                    |                                                            |.......                                             |  13% [simple-chunk]     |                                                            |..........                                          |  20%                    |                                                            |..............                                      |  27% [xml-example]      |                                                            |.................                                   |  33%                    |                                                            |.....................                               |  40% [json-example]     |                                                            |........................                            |  47%                    |                                                            |............................                        |  53% [unnamed-chunk-1]  |                                                            |...............................                     |  60%                    |                                                            |...................................                 |  67% [fig-huge-chunk]   |                                                            |......................................              |  73%                    |                                                            |..........................................          |  80% [unnamed-chunk-2]  |                                                            |.............................................       |  87%                    |                                                            |.................................................   |  93% [fig-rbirthplace]  |                                                            |....................................................| 100%                                                                                                                              
+[31moutput file: teststyle.knit.md
+
+[39m[31mWarning messages:
+1: In get_engine(options$engine) :
+  Unknown language engine 'xml' (must be registered via knit_engines$set()).
+2: In get_engine(options$engine) :
+  Unknown language engine 'json' (must be registered via knit_engines$set()).
+[39m[1m[34m[ 3/92] testquiz.qmd[39m[22m
+[1m[34m[ 4/92] testsheet.qmd[39m[22m
+[1m[34m[ 5/92] part-r.qmd[39m[22m
+[1m[34m[ 6/92] r-intro.qmd[39m[22m
+[1m[34m[ 7/92] r-datatypes.qmd[39m[22m
+[1m[34m[ 8/92] r-datastructures.qmd[39m[22m
+[1m[34m[ 9/92] r-functionsI.qmd[39m[22m
+[1m[34m[10/92] r-controlworkflow.qmd[39m[22m
+[1m[34m[11/92] r-functionsII.qmd[39m[22m
+[1m[34m[12/92] r-strings.qmd[39m[22m
+[1m[34m[13/92] r-datetime.qmd[39m[22m
+[1m[34m[14/92] r-data.qmd[39m[22m
+[1m[34m[15/92] r-preprocessbasic.qmd[39m[22m
+[1m[34m[16/92] r-preprocessadvanced.qmd[39m[22m
+[1m[34m[17/92] r-visbaser.qmd[39m[22m
+[1m[34m[18/92] r-visbasic.qmd[39m[22m
+[1m[34m[19/92] r-visadvanced.qmd[39m[22m
+[1m[34m[20/92] r-rmd.qmd[39m[22m
+[1m[34m[21/92] r-qmd.qmd[39m[22m
+[1m[34m[22/92] part-math.qmd[39m[22m
+[1m[34m[23/92] math-logic.qmd[39m[22m
+[1m[34m[24/92] math-set.qmd[39m[22m
+[1m[34m[25/92] math-comb.qmd[39m[22m
+[1m[34m[26/92] math-calculusI.qmd[39m[22m
+[1m[34m[27/92] math-calculusII.qmd[39m[22m
+[1m[34m[28/92] math-linalI.qmd[39m[22m
+[1m[34m[29/92] math-linalII.qmd[39m[22m
+[1m[34m[30/92] part-measures.qmd[39m[22m
+[1m[34m[31/92] measures-scales.qmd[39m[22m
+[1m[34m[32/92] measures-psymetI.qmd[39m[22m
+[1m[34m[33/92] measures-psymetII.qmd[39m[22m
+[1m[34m[34/92] measures-psymetIII.qmd[39m[22m
+[1m[34m[35/92] part-desc.qmd[39m[22m
+[1m[34m[36/92] desc-statintro.qmd[39m[22m
+[1m[34m[37/92] desc-centrtend.qmd[39m[22m
+[1m[34m[38/92] desc-variance.qmd[39m[22m
+[1m[34m[39/92] desc-distshape.qmd[39m[22m
+[1m[34m[40/92] desc-prodmetrics.qmd[39m[22m
+[1m[34m[41/92] part-prob.qmd[39m[22m
+[1m[34m[42/92] part-andan.qmd[39m[22m
+[1m[34m[43/92] andan-means.qmd[39m[22m
+[1m[34m[44/92] andan-categorical.qmd[39m[22m
+[1m[34m[45/92] andan-cor.qmd[39m[22m
+[1m[34m[46/92] andan-nonparam.qmd[39m[22m
+[1m[34m[47/92] andan-simplelinear.qmd[39m[22m
+[1m[34m[48/92] andan-multiplelinear.qmd[39m[22m
+[1m[34m[49/92] andan-polynomialreg.qmd[39m[22m
+[1m[34m[50/92] andan-svr.qmd[39m[22m
+[1m[34m[51/92] andan-regreg.qmd[39m[22m
+[1m[34m[52/92] andan-anova.qmd[39m[22m
+[1m[34m[53/92] andan-ancova.qmd[39m[22m
+[1m[34m[54/92] andan-manova.qmd[39m[22m
+[1m[34m[55/92] andan-regtrees.qmd[39m[22m
+[1m[34m[56/92] andan-regforest.qmd[39m[22m
+[1m[34m[57/92] andan-dist.qmd[39m[22m
+[1m[34m[58/92] andan-glm.qmd[39m[22m
+[1m[34m[59/92] andan-logreg.qmd[39m[22m
+[1m[34m[60/92] andan-multinomreg.qmd[39m[22m
+[1m[34m[61/92] andan-poisreg.qmd[39m[22m
+[1m[34m[62/92] andan-gam.qmd[39m[22m
+[1m[34m[63/92] andan-glmm.qmd[39m[22m
+[1m[34m[64/92] andan-glogmm.qmd[39m[22m
+[1m[34m[65/92] andan-gmultinommm.qmd[39m[22m
+[1m[34m[66/92] andan-svm.qmd[39m[22m
+[1m[34m[67/92] andan-classtrees.qmd[39m[22m
+[1m[34m[68/92] andan-classforest.qmd[39m[22m
+[1m[34m[69/92] andan-cluster.qmd[39m[22m
+[1m[34m[70/92] andan-fuzzycluster.qmd[39m[22m
+[1m[34m[71/92] andan-lda.qmd[39m[22m
+[1m[34m[72/92] andan-pca.qmd[39m[22m
+[1m[34m[73/92] andan-ica.qmd[39m[22m
+[1m[34m[74/92] andan-cca.qmd[39m[22m
+[1m[34m[75/92] andan-efa.qmd[39m[22m
+[1m[34m[76/92] andan-cfa.qmd[39m[22m
+[1m[34m[77/92] andan-sem.qmd[39m[22m
+[1m[34m[78/92] andan-path.qmd[39m[22m
+[1m[34m[79/92] andan-timeseries.qmd[39m[22m
+[1m[34m[80/92] outro.qmd[39m[22m
+[1m[34m[81/92] references.qmd[39m[22m
+[1m[34m[82/92] appendix-numbers.qmd[39m[22m
+[1m[34m[83/92] appendix-numbers-iron.qmd[39m[22m
+[1m[34m[84/92] appendix-strings-iron.qmd[39m[22m
+[1m[34m[85/92] appendix-memory-iron.qmd[39m[22m
+[1m[34m[86/92] appendix-proglang.qmd[39m[22m
+[1m[34m[87/92] appendix-formulas.qmd[39m[22m
+[1m[34m[88/92] appendix-git.qmd[39m[22m
+[1m[34m[89/92] appendix-research-design.qmd[39m[22m
+[1m[34m[90/92] appendix-design.qmd[39m[22m
+[1m[34m[91/92] appendix-math-letters.qmd[39m[22m
+[1m[34m[92/92] appendix-answers.qmd[39m[22m
+
+Output created: _book/index.html
+
+[0;34mbook rendered[0m
+[0;32m
+=====
+RENDER COMPLETED
+=====
+
+[0m[0;32m
+-----
+BACKUP PREVIOUS DEPLOY
+-----
+
+[0m[0;34mold [0;37mdeploy/backup[0;34m removed
+[0m[0;34mnew [0;37mdeploy/backup[0;34m created
+[0m[0;32m
+-----
+BACKUP COMPLETED
+-----
+
+[0m[0;34mold [0;37mdocs/dpl[0;34m removed
+[0m[0;32m
+=====
+DEPLOY COMPLETED
+=====
+
+[0m[0;37mDocument this deployment in README.md
+Commit and push to save changes.
+[0m

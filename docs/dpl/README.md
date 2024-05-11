@@ -1,3 +1,8 @@
 # Deploy info
 
-Test hypothesis saving. Will it stays or removed?
+Версия 0.0.1:1.
+
+**Задачи**
+
+- Тестирование квиза
+- Просмотр шаблоны главы
