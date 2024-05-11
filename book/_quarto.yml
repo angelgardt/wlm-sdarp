@@ -14,6 +14,7 @@ book:
   
   chapters:
     - index.qmd
+    - signs.qmd
     - part: Testing
       chapters: 
       - teststyle.qmd
