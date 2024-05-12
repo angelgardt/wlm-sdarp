@@ -153,6 +153,10 @@ diamonds %>%
 :::
 
 ```{mermaid}
+%%| label: fig-mermaidtest
+%%| fig-cap: Это схема из Mermaid
+%%| fig-align: center
+
 flowchart LR
   A(Step 1) --> B(Step 2)
   B --> C(Step 3)

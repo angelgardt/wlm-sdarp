@@ -39,17 +39,23 @@ if [ "$mode" = "none" ]; then
 elif [ "$mode" = "render" ]; then
   
   ## render with logging
-  render 2>&1 | tee deploy/logs/render_`echo "$dt"`.log
-
+  render 2>&1 | tee deploy/logs/render_`echo "$dt"`_raw.log
+  sed -e 's/\x1b\[[0-9;]*m//g' deploy/logs/render_`echo "$dt"`_raw.log >> deploy/logs/render_`echo "$dt"`.log
+  rm deploy/logs/render_`echo "$dt"`_raw.log
+  
 elif [ "$mode" = "deploy" ]; then
   
   ## deploy with logging
-  deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`.log
+  deploy 2>&1 | tee deploy/logs/deploy_`echo "$dt"`_raw.log
+  sed -e 's/\x1b\[[0-9;]*m//g' deploy/logs/deploy_`echo "$dt"`_raw.log >> deploy/logs/deploy_`echo "$dt"`.log
+  rm deploy/logs/deploy_`echo "$dt"`_raw.log
 
 elif [ "$mode" = "release" ]; then
   
   ## release with logging
-  release 2>&1 | tee deploy/logs/release_`echo "$dt"`.log
+  release 2>&1 | tee deploy/logs/release_`echo "$dt"`_raw.log
+  sed -e 's/\x1b\[[0-9;]*m//g' deploy/logs/release_`echo "$dt"`_raw.log >> deploy/logs/release_`echo "$dt"`.log
+  rm deploy/logs/release_`echo "$dt"`_raw.log
 
 else
 
@@ -61,7 +67,3 @@ else
   exit
   
 fi
-
-
-## add deployment info to docs/REAMDE.md
-# logger # $mode

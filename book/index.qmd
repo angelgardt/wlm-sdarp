@@ -1,17 +1,18 @@
-# Intro {.unnumbered}
+# Intro {#intro .unnumbered}
 
-This is a Quarto book.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## Благодарности {#acknowledgement .unnumbered}
 
-```{r}
-1 + 1
-```
 
-## Session Info {#session_info}
 
-Данная версия книги сверстана в следующей версии R.
+## Зачем изучать анализ данных в эпоху нейросетей? {#andan_neuralnetworks .unnumbered}
 
-```{r}
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
 sessionInfo()
 ```

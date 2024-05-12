@@ -65,6 +65,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -110,6 +113,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./signs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Обозначения</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -709,7 +718,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#desc-statintro-research-types" id="toc-desc-statintro-research-types" class="nav-link active" data-scroll-target="#desc-statintro-research-types"><span class="header-section-number">31.1</span> Виды исследований</a></li>
+  <li><a href="#desc-statintro-research-process" id="toc-desc-statintro-research-process" class="nav-link" data-scroll-target="#desc-statintro-research-process"><span class="header-section-number">31.2</span> Исследовательский процесс</a></li>
+  <li><a href="#desc-statintro-sample" id="toc-desc-statintro-sample" class="nav-link" data-scroll-target="#desc-statintro-sample"><span class="header-section-number">31.3</span> Выборка</a>
+  <ul>
+  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">31.3.1</span> Способы формирования репрезентативной выборки</a>
+  <ul class="collapse">
+  <li><a href="#desc-statintro-simple-random-sample" id="toc-desc-statintro-simple-random-sample" class="nav-link" data-scroll-target="#desc-statintro-simple-random-sample"><span class="header-section-number">31.3.1.1</span> Простая случайная выборка</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -731,8 +754,162 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Logic --->
+<!--- Number sets--->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<div class="intro">
+<p>Итак, мы вплотную подошли к изучению статистики, однако прежде чем мы начнем разговор собственно о статистике, нам необходимо разобраться, что вообще это такое, когда оно нам жизненно необходимо и зачем оно нам жизненно необходимо, чтобы первично сориентироваться в том, о чем мы будем говорить на протяжении всех последующих глав.</p>
+<p>Так и поступим.</p>
+</div>
+<section id="desc-statintro-research-types" class="level2" data-number="31.1">
+<h2 data-number="31.1" class="anchored" data-anchor-id="desc-statintro-research-types"><span class="header-section-number">31.1</span> Виды исследований</h2>
+<div class="lab-junior">
+
+</div>
+<p>Статистика неразрывно связана с исследованиями, поэтому нам надо произвести некоторый рекап того, какие исследования у нас бывают. Общую классификацию исследований можно представить так (<a href="#fig-research-types">Рисунок&nbsp;<span>31.1</span></a>):</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-research-types" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-research-types">flowchart TD
+  research(Исследования)
+  theor(Теоретические)
+  empir(Эмпирические)
+  cab(Кабинетные)
+  qual(Качественные)
+  quan(Количественные)
+  meta(Мета-анализы)
+  exp("Доэкспериментальные
+      Квазиэспериментальные
+      Экспериментальные")
+  
+  research --&gt; theor
+  research --&gt; empir
+  theor -.-&gt; cab
+  empir -.-&gt; cab
+  empir --&gt; qual
+  empir --&gt; quan
+  quan --&gt; exp
+  quan --&gt; meta
+</pre>
+</div>
+<figcaption class="figure-caption">Рисунок&nbsp;31.1: Способ классификации исследований</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="desc-statintro-research-process" class="level2" data-number="31.2">
+<h2 data-number="31.2" class="anchored" data-anchor-id="desc-statintro-research-process"><span class="header-section-number">31.2</span> Исследовательский процесс</h2>
+<div class="lab-junior">
+
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-research-process-qq" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-research-process-qq">flowchart TD
+  idea("Идея исследования")
+  resques("Исследовательский вопрос 1
+          Исследовательский вопрос 2
+          …
+          Исследовательский вопрос N")
+  qualres("Качественное исследование")
+  hyps("Гипотеза 1
+        Гипотеза 2
+        …
+        Гипотеза M")
+  quanres("Количественное исследование")
+  results1("Осмысление результатов")
+  results2("Осмысление результатов")
+  newresq("Новые
+          исследовательские вопросы")
+  newhyp("Новые гипотезы")
+  
+  idea --&gt; resques
+  resques --&gt; qualres
+  qualres --&gt; results1
+  results1 --&gt; hyps
+  hyps --&gt; quanres
+  quanres --&gt; results2
+  results2 --&gt; newresq
+  results2 --&gt; newhyp
+  newresq --&gt; qualres
+  newresq --&gt; quanres
+  newhyp --&gt; quanres
+</pre>
+</div>
+<figcaption class="figure-caption">Рисунок&nbsp;31.2: Сотношение качественных и количественных исследований в исследовательском процессе</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="desc-statintro-sample" class="level2" data-number="31.3">
+<h2 data-number="31.3" class="anchored" data-anchor-id="desc-statintro-sample"><span class="header-section-number">31.3</span> Выборка</h2>
+<div class="lab-junior">
+
+</div>
+<section id="desc-statintro-sample-types" class="level3" data-number="31.3.1">
+<h3 data-number="31.3.1" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">31.3.1</span> Способы формирования репрезентативной выборки</h3>
+<section id="desc-statintro-simple-random-sample" class="level4" data-number="31.3.1.1">
+<h4 data-number="31.3.1.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">31.3.1.1</span> Простая случайная выборка</h4>
+<p>Самый просто способ, которым можно набрать репрезентативную выборку — это <strong>простая случайная выборка (simple random sample)</strong>.</p>
+<div id="fig-simple-random-sample" class="cell quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-simple-random-sample-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="desc-statintro_files/figure-html/fig-simple-random-sample-1.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></p>
+<figcaption class="figure-caption">(a) Генеральная совокупность</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-simple-random-sample-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="desc-statintro_files/figure-html/fig-simple-random-sample-2.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></p>
+<figcaption class="figure-caption">(b) Выборка малого объема</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-simple-random-sample-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="desc-statintro_files/figure-html/fig-simple-random-sample-3.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></p>
+<figcaption class="figure-caption">(c) Выборка среднего объема</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-simple-random-sample-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="desc-statintro_files/figure-html/fig-simple-random-sample-4.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></p>
+<figcaption class="figure-caption">(d) Выборка большого объема</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Рисунок&nbsp;31.3: Простая случайная выборка</figcaption><p></p>
+</figure>
+</div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

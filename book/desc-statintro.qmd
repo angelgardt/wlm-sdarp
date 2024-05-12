@@ -1,1 +1,168 @@
 # Введение в статистику {#desc-statintro}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, error = FALSE)
+```
+
+```{r pkgs}
+library(tidyverse)
+theme_set(theme_bw())
+# library(plotly)
+```
+
+:::{.intro}
+Итак, мы вплотную подошли к изучению статистики, однако прежде чем мы начнем разговор собственно о статистике, нам необходимо разобраться, что вообще это такое, когда оно нам жизненно необходимо и зачем оно нам жизненно необходимо, чтобы первично сориентироваться в том, о чем мы будем говорить на протяжении всех последующих глав.
+
+Так и поступим.
+:::
+
+## Виды исследований {#desc-statintro-research-types}
+
+:::{.lab-junior}
+:::
+
+Статистика неразрывно связана с исследованиями, поэтому нам надо произвести некоторый рекап того, какие исследования у нас бывают. Общую классификацию исследований можно представить так (@fig-research-types):
+
+```{mermaid}
+%%| label: fig-research-types
+%%| fig-cap: Способ классификации исследований
+%%| fig-align: center
+
+flowchart TD
+  research(Исследования)
+  theor(Теоретические)
+  empir(Эмпирические)
+  cab(Кабинетные)
+  qual(Качественные)
+  quan(Количественные)
+  meta(Мета-анализы)
+  exp("Доэкспериментальные
+      Квазиэспериментальные
+      Экспериментальные")
+  
+  research --> theor
+  research --> empir
+  theor -.-> cab
+  empir -.-> cab
+  empir --> qual
+  empir --> quan
+  quan --> exp
+  quan --> meta
+```
+
+
+## Исследовательский процесс {#desc-statintro-research-process}
+
+:::{.lab-junior}
+:::
+
+```{mermaid}
+%%| label: fig-research-process-qq
+%%| fig-cap: Сотношение качественных и количественных исследований в исследовательском процессе
+%%| fig-align: center
+
+flowchart TD
+  idea("Идея исследования")
+  resques("Исследовательский вопрос 1
+          Исследовательский вопрос 2
+          …
+          Исследовательский вопрос N")
+  qualres("Качественное исследование")
+  hyps("Гипотеза 1
+        Гипотеза 2
+        …
+        Гипотеза M")
+  quanres("Количественное исследование")
+  results1("Осмысление результатов")
+  results2("Осмысление результатов")
+  newresq("Новые
+          исследовательские вопросы")
+  newhyp("Новые гипотезы")
+  
+  idea --> resques
+  resques --> qualres
+  qualres --> results1
+  results1 --> hyps
+  hyps --> quanres
+  quanres --> results2
+  results2 --> newresq
+  results2 --> newhyp
+  newresq --> qualres
+  newresq --> quanres
+  newhyp --> quanres
+```
+
+
+
+## Выборка {#desc-statintro-sample}
+
+:::{.lab-junior}
+:::
+
+### Способы формирования репрезентативной выборки {#desc-statintro-sample-types}
+
+#### Простая случайная выборка {#desc-statintro-simple-random-sample}
+
+Самый просто способ, которым можно набрать репрезентативную выборку --- это **простая случайная выборка (simple random sample)**.
+
+```{r desc-statintro-simple-random-sample-data}
+n_pop <- 600
+set.seed(100)
+tibble(x = sample(0:1000, n_pop),
+  y = sample(0:1000, n_pop),
+  little_sample = sample(c(TRUE, FALSE), n_pop, prob = c(1, 9), replace = TRUE),
+  medium_sample = sample(c(TRUE, FALSE), n_pop, prob = c(2, 8), replace = TRUE),
+  big_sample = sample(c(TRUE, FALSE), n_pop, prob = c(4, 6), replace = TRUE)) -> data_simple_random_sample
+
+data_simple_random_sample %>% 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  guides(x = "none",
+  y = "none") +
+  labs(x = "", y = "") -> simple_random_sample_graph
+
+data_simple_random_sample %>% 
+  ggplot(aes(x, y, color = little_sample)) +
+  geom_point() +
+  scale_color_manual(values = c(`TRUE` = "#000000", `FALSE` = "#b4b4b4")) +
+  guides(x = "none",
+  y = "none",
+  color = "none") +
+  labs(x = "", y = "") -> simple_random_sample_little_sample_graph
+
+data_simple_random_sample %>% 
+  ggplot(aes(x, y, color = medium_sample)) +
+  geom_point() +
+  scale_color_manual(values = c(`TRUE` = "#000000", `FALSE` = "#b4b4b4")) +
+  guides(x = "none",
+  y = "none",
+  color = "none") +
+  labs(x = "", y = "") -> simple_random_sample_medium_sample_graph
+
+data_simple_random_sample %>% 
+  ggplot(aes(x, y, color = big_sample)) +
+  geom_point() +
+  scale_color_manual(values = c(`TRUE` = "#000000", `FALSE` = "#b4b4b4")) +
+  guides(x = "none",
+  y = "none",
+  color = "none") +
+  labs(x = "", y = "") -> simple_random_sample_big_sample_graph
+```
+
+```{r desc-statintro-simple-random-sample}
+#| label: fig-simple-random-sample
+#| fig-cap: "Простая случайная выборка"
+#| fig-subcap:
+#|   - "Генеральная совокупность"
+#|   - "Выборка малого объема"
+#|   - "Выборка среднего объема"
+#|   - "Выборка большого объема"
+#| layout-ncol: 2
+
+print(simple_random_sample_graph)
+print(simple_random_sample_little_sample_graph)
+print(simple_random_sample_medium_sample_graph)
+print(simple_random_sample_big_sample_graph)
+```

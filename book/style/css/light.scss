@@ -260,6 +260,10 @@ h2, h3 {
 
 // Chapter
 
+.intro {
+  border-bottom-color: $gray-400 !important;
+}
+
 .theorem {
   border-color: $gray-400;
 }
@@ -269,8 +273,6 @@ code {
   // background-color: $gray-800;
 }
 
-
-// Quiz
 
 // Quiz
 
