@@ -1,6 +1,6 @@
 # Введение в статистику {#desc-statintro}
 
-{{< include other/_symbols.qmd >}}
+{{< include ../other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, error = FALSE)

@@ -31,6 +31,8 @@ get_json <- function(quiz_name, quizzes, tags) {
     ) %>% 
     mutate(text = paste0(n, ". ", ques),
            qn = paste0("q", n)) %>% 
+    # mutate(text = paste0(n, ". ", ques),
+    #        qn = paste0("q", n)) %>% 
     pivot_longer(cols = -qn) %>% 
     pivot_wider(names_from = qn,
                 values_from = value) %>% 

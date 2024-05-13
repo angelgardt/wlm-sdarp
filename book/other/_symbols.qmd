@@ -1,4 +1,4 @@
-<!--- {{< include other/_symbols.qmd >}} --->
+<!--- {{< include ../other/_symbols.qmd >}} --->
 
 \usepackage{xcolor}
 \usepackage{soul}

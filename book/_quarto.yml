@@ -24,7 +24,7 @@ book:
       - _test_/teststyle.qmd
       - _test_/testquiz.qmd
       - _test_/testsheet.qmd
-    - part: part-r.qmd
+    - part: _part-r/part-r.qmd
       chapters:
       - _part-r/r-intro.qmd
       - _part-r/r-datatypes.qmd
@@ -42,7 +42,7 @@ book:
       - _part-r/r-visadvanced.qmd
       - _part-r/r-rmd.qmd
       - _part-r/r-qmd.qmd
-    - part: part-math.qmd
+    - part: _part-math/part-math.qmd
       chapters:
       - _part-math/math-logic.qmd
       - _part-math/math-set.qmd
@@ -51,21 +51,21 @@ book:
       - _part-math/math-calculusII.qmd
       - _part-math/math-linalI.qmd
       - _part-math/math-linalII.qmd
-    - part: part-measures.qmd
+    - part: _part-measures/part-measures.qmd
       chapters:
       - _part-measures/measures-scales.qmd
       - _part-measures/measures-psymetI.qmd
       - _part-measures/measures-psymetII.qmd
       - _part-measures/measures-psymetIII.qmd
-    - part: part-desc.qmd
+    - part: _part-desc/part-desc.qmd
       chapters:
       - _part-desc/desc-statintro.qmd
       - _part-desc/desc-centrtend.qmd
       - _part-desc/desc-variance.qmd
       - _part-desc/desc-distshape.qmd
       - _part-desc/desc-prodmetrics.qmd
-    - part: part-prob.qmd
-    - part: part-andan.qmd
+    - part: _part-prob/part-prob.qmd
+    - part: _part-andan/part-andan.qmd
       chapters:
       - _part-andan/andan-means.qmd
       - _part-andan/andan-categorical.qmd
@@ -107,17 +107,17 @@ book:
     - _common/outro.qmd
     - references.qmd
   appendices:
-    - _part_appendices/appendix-numbers.qmd
-    - _part_appendices/appendix-numbers-iron.qmd
-    - _part_appendices/appendix-strings-iron.qmd
-    - _part_appendices/appendix-memory-iron.qmd
-    - _part_appendices/appendix-proglang.qmd
-    - _part_appendices/appendix-formulas.qmd
-    - _part_appendices/appendix-git.qmd
-    - _part_appendices/appendix-research-design.qmd
-    - _part_appendices/appendix-design.qmd
-    - _part_appendices/appendix-math-letters.qmd
-    - _part_appendices/appendix-answers.qmd
+    - _part-appendices/appendix-numbers.qmd
+    - _part-appendices/appendix-numbers-iron.qmd
+    - _part-appendices/appendix-strings-iron.qmd
+    - _part-appendices/appendix-memory-iron.qmd
+    - _part-appendices/appendix-proglang.qmd
+    - _part-appendices/appendix-formulas.qmd
+    - _part-appendices/appendix-git.qmd
+    - _part-appendices/appendix-research-design.qmd
+    - _part-appendices/appendix-design.qmd
+    - _part-appendices/appendix-math-letters.qmd
+    - _part-appendices/appendix-answers.qmd
     
   favicon: img/other/favicon.png
 
