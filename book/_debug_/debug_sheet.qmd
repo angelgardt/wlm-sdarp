@@ -6,21 +6,15 @@
 knitr::opts_chunk$set(echo = FALSE, eval=FALSE)
 ```
 
-```{=html}
-<!--
-REPLACE ALL pr1 TO pr<n> WITH MATCH CASE
--->
-```
-
 
 
 
 
 ## #1 {.unnumbered}
 
-<div class="level" id="lvl-q1"></div>
+<div class="level" id="lvl-t1"></div>
 
-::: {#pr1-1-task .task}
+::: {#t1-title .task}
 Вычислите:
 
 a. $-14^7 - 6 \times 2^{11}$
@@ -28,11 +22,10 @@ b. $\sin^2 64$
 c. $e^{8 + \pi}$
 d. $\log_{12} 34$
 e. $\sqrt{5\!+\!2i}$
-
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-4-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-4-hints">
 
 <summary>Подсказка</summary>
 
@@ -43,11 +36,13 @@ e. $\sqrt{5\!+\!2i}$
 
 
 
+
+
 ## #2 {.unnumbered}
 
-<img id="pr1-2-level" class="level"/>
+<img id="t1-2-level" class="level"/>
 
-::: {#pr1-2-task .task}
+::: {#t1-title .task}
 Присвойте переменным `x` и `y` значения `3` и `-1.44` соответственно.
 
 Вычислите:
@@ -59,8 +54,8 @@ d. $\sin \big( \dfrac{\pi}{4x} \big) + \cos \big( \dfrac{2\pi}{\sqrt{y} - 1} \bi
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-4-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-4-hints">
 
 <summary>Подсказки</summary>
 
@@ -71,11 +66,14 @@ d. $\sin \big( \dfrac{\pi}{4x} \big) + \cos \big( \dfrac{2\pi}{\sqrt{y} - 1} \bi
 :::
 
 
+
+
+
 ## #3 {.unnumbered}
 
-<img id="pr1-3-level" class="level"/>
+<img id="t1-3-level" class="level"/>
 
-::: {#pr1-3-task .task}
+::: {#t1-title .task}
 Создайте следующие векторы:
 
 a. $\pmatrix{4 & 8 & 12}$
@@ -105,8 +103,8 @@ c(1:10, 9:1)
 :::
 
 
-::: hints-wrapper
-<details class="hints" id="pr1-3-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-3-hints">
 
 <summary>Подсказка</summary>
 
@@ -117,11 +115,13 @@ c(1:10, 9:1)
 
 
 
+
+
 ## #4 {.unnumbered}
 
-<img id="pr1-4-level" class="level"/>
+<img id="t1-4-level" class="level"/>
 
-::: {#pr1-4-task .task}
+::: {#t1-title .task}
 Создайте следующие векторы:
 
 a. $\pmatrix{2 & 4 & 8 & 10 & 12 & \dots & 26 & 28 & 30}$
@@ -144,8 +144,8 @@ seq(-3, 3, by = .25)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-4-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-4-hints">
 
 <summary>Подсказка</summary>
 
@@ -156,12 +156,14 @@ seq(-3, 3, by = .25)
 
 
 
+
+
 ## #5 {.unnumbered}
 
-<img id="pr1-5-level" class="level"/>
+<img id="t1-5-level" class="level"/>
 
-::: {#pr1-5-task .task}
-Возьмите вектор (a) из [задания 3](#pr1-3) и на основе него создайте следующие векторы:
+::: {#t1-title .task}
+Возьмите вектор (a) из [задания 3](#t1-3) и на основе него создайте следующие векторы:
 
 a. $\pmatrix{4 & 8 & 12 & 4 & 8 & 12 & \dots & 4 & 8 & 12}$, где $4$ повторяется 8 раз
 
@@ -183,8 +185,8 @@ rep(c(4, 8, 12), times = c(10, 20, 30))
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-5-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-5-hints">
 
 <summary>Подсказка</summary>
 
@@ -194,12 +196,14 @@ rep(c(4, 8, 12), times = c(10, 20, 30))
 
 
 
+
+
 ## #6 {.unnumbered}
 
-<img id="pr1-6-level" class="level"/>
+<img id="t1-6-level" class="level"/>
 
-::: {#pr1-6-task .task}
-Пусть вектор (а) из [предыдущего задания](#pr1-5) --- это количество стимулов в пробах эксперимента. Сохраните его в переменную `setsize` и приведите к текстовому типу данных, чтобы он корректно интерпретировался статистическими функциями.
+::: {#t1-6-task .task}
+Пусть вектор (а) из [предыдущего задания](#t1-5) --- это количество стимулов в пробах эксперимента. Сохраните его в переменную `setsize` и приведите к текстовому типу данных, чтобы он корректно интерпретировался статистическими функциями.
 :::
 
 ```{r 6}
@@ -207,8 +211,8 @@ setsize <- rep(c(4, 8, 12), times = 8)
 as.character(setsize)
 ```
 
-::: hints-wrapper
-<details class="hints" id="pr1-6-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-6-hints">
 
 <summary>Подсказка</summary>
 
@@ -218,11 +222,13 @@ as.character(setsize)
 
 
 
+
+
 ## #7 {.unnumbered}
 
-<img id="pr1-7-level" class="level"/>
+<img id="t1-7-level" class="level"/>
 
-::: {#pr1-7-task .task}
+::: {#t1-7-task .task}
 
 a. Пусть в нашем исследовании есть три группы респондентов --- `group 1`, `group 2` и `group 3`. Создайте вектор из 90 значений (по 30 для каждой группы), который будет описывать принадлежность респондентов к какой-либо группе.
 
@@ -246,8 +252,8 @@ b. Пробелы в переменной --- это не очень хорош�
 
 
 
-::: hints-wrapper
-<details class="hints" id="pr1-7-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-7-hints">
 
 <summary>Подсказка</summary>
 
@@ -262,17 +268,19 @@ b. Пробелы в переменной --- это не очень хорош�
 
 
 
+
+
 ## #8 {.unnumbered}
 
-<img id="pr1-8-level" class="level"/>
+<img id="t1-8-level" class="level"/>
 
-::: {#pr1-8-task .task}
+::: {#t1-8-task .task}
 
 С помощью функции `rnorm()` сгенерируйте генеральную совокупность из 100 000 объектов с параметрами `mean = 4` и `sd = 5`. Сохраните результат генерации в переменную `pop`.
 
 :::
 
-::: {.callout-note}
+::: {.callout-note appearance="simple"}
 ###### Управляем случайностью
 
 Мы начали использовать функции, которые генерируют случайные значения. На самом деле --- псевдослучайные. Эти функции все равно берут для старта генерации некоторое число, которые называется **зерно датчика случайных чисел**. При каждой генерации выбирается новое зерно, поэтому чтобы получать вопроизводимые генерации, используйте команду
@@ -291,11 +299,28 @@ pop <- rnorm(10^5, mean = 4, sd = 5)
 head(pop)
 ```
 
+::: {.hints-wrapper}
+<details class="hints" id="t1-7-hints">
+
+<summary>Подсказка</summary>
+
+Есть полезные функци
+
+```paste()``` и ```paste0()```
+
+</details>
+
+</details>
+:::
+
+
+
+
 ## #9 {.unnumbered}
 
-<img id="pr1-9-level" class="level"/>
+<img id="t1-9-level" class="level"/>
 
-::: {#pr1-9-task .task}
+::: {#t1-9-task .task}
 
 Извлеките из полученной генеральной совокупности 5 случайных выборок по 100 наблюдений. Сохраните результаты в переменные `sam1`, `sam2`, `sam3`, `sam4`, `sam5`.
 
@@ -310,8 +335,8 @@ sam5 <- sample(pop, 100)
 ```
 
 
-::: hints-wrapper
-<details class="hints" id="pr1-9-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-9-hints">
 
 <summary>Подсказки</summary>
 
@@ -320,11 +345,15 @@ sam5 <- sample(pop, 100)
 </details>
 :::
 
+
+
+
+
 ## #10 {.unnumbered}
 
-<img id="pr1-10-level" class="level"/>
+<img id="t1-10-level" class="level"/>
 
-::: {#pr1-10-task .task}
+::: {#t1-10-task .task}
 
 a. Вычислите сумму по вектору `sam1`.
 
@@ -346,8 +375,8 @@ median(sam3)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-9-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-9-hints">
 
 <summary>Подсказки</summary>
 
@@ -357,11 +386,14 @@ median(sam3)
 :::
 
 
+
+
+
 ## #11 {.unnumbered}
 
-<img id="pr1-11-level" class="level"/>
+<img id="t1-11-level" class="level"/>
 
-::: {#pr1-11-task .task}
+::: {#t1-11-task .task}
 Вытащите из вектора `sam4`
 
 a. первое значение
@@ -390,13 +422,19 @@ sam4[seq(3, length(sam4), by = 3)]
 
 :::
 
+::: {.hints-wrapper}
+
+:::
+
+
+
 
 
 ## #12 {.unnumbered}
 
-<img id="pr1-12-level" class="level"/>
+<img id="t1-12-level" class="level"/>
 
-::: {#pr1-12-task .task}
+::: {#t1-12-task .task}
 a. Отберите из вектора `sam1` отрицательные значения.
 
 ```{r 12a}
@@ -417,8 +455,8 @@ sum(sam2 > mean(sam2))
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-12-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-12-hints">
 
 <summary>Подсказки</summary>
 
@@ -428,11 +466,15 @@ sum(sam2 > mean(sam2))
 </details>
 :::
 
+
+
+
+
 ## #13 {.unnumbered}
 
-<img id="pr1-13-level" class="level"/>
+<img id="t1-13-level" class="level"/>
 
-::: {#pr1-13-task .task}
+::: {#t1-13-task .task}
 a. Отберите из вектора `sam3` значения, которые больше $3$ и меньше $8$.
 
 ```{r 13a}
@@ -447,8 +489,8 @@ sam3[sam3 < .5 | sam3 > 9.3]
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-13-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-13-hints">
 
 <summary>Подсказки</summary>
 
@@ -457,11 +499,15 @@ Choose your fighter: `&` or `|`!
 </details>
 :::
 
+
+
+
+
 ## #14 {.unnumbered}
 
-<img id="pr1-14-level" class="level"/>
+<img id="t1-14-level" class="level"/>
 
-::: {#pr1-14-task .task}
+::: {#t1-14-task .task}
 
 a. Какое максимальное значение по вектору `sam1`?
 
@@ -477,8 +523,8 @@ min(sam1)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-14-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-14-hints">
 
 <summary>Подсказки</summary>
 
@@ -488,11 +534,16 @@ min(sam1)
 </details>
 :::
 
+
+
+
+
+
 ## #15 {.unnumbered}
 
-<img id="pr1-15-level" class="level"/>
+<img id="t1-15-level" class="level"/>
 
-::: {#pr1-15-task .task}
+::: {#t1-15-task .task}
 
 a. На каком месте в векторе `sam1` стоит его максимальное значение?
 
@@ -508,8 +559,8 @@ which.min(sam1)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-15-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-15-hints">
 
 <summary>Подсказки</summary>
 
@@ -518,11 +569,15 @@ which.min(sam1)
 </details>
 :::
 
+
+
+
+
 ## #16 {.unnumbered}
 
-<img id="pr1-16-level" class="level"/>
+<img id="t1-16-level" class="level"/>
 
-::: {#pr1-16-task .task}
+::: {#t1-16-task .task}
 
 Выполните следующую команду:
 
@@ -546,8 +601,8 @@ which(is.na(sam5))
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-16-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-16-hints">
 
 <summary>Подсказки</summary>
 
@@ -556,11 +611,15 @@ which(is.na(sam5))
 </details>
 :::
 
+
+
+
+
 ## #17 {.unnumbered}
 
-<img id="pr1-17-level" class="level"/>
+<img id="t1-17-level" class="level"/>
 
-::: {#pr1-17-task .task}
+::: {#t1-17-task .task}
 Нам надо разделить выборку на две части. Отберите каждое второе значение из вектора `sam2`.
 
 ::: {.callout-warning}
@@ -572,8 +631,8 @@ sam2[c(FALSE, TRUE)]
 ```
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-17-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-17-hints">
 
 <summary>Подсказки</summary>
 
@@ -582,11 +641,15 @@ sam2[c(FALSE, TRUE)]
 </details>
 :::
 
+
+
+
+
 ## #18 {.unnumbered}
 
-<img id="pr1-18-level" class="level"/>
+<img id="t1-18-level" class="level"/>
 
-::: {#pr1-18-task .task}
+::: {#t1-18-task .task}
 Мы хотим трансформировать наши переменные для последующего анализа:
 
 a. умножьте каждое значение вектора `sam1` на $20$
@@ -610,8 +673,8 @@ log10(sam3)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-18-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-18-hints">
 
 <summary>Подсказки</summary>
 
@@ -620,11 +683,15 @@ log10(sam3)
 </details>
 :::
 
+
+
+
+
 ## #19 {.unnumbered}
 
-<img id="pr1-19-level" class="level"/>
+<img id="t1-19-level" class="level"/>
 
-::: {#pr1-19-task .task}
+::: {#t1-19-task .task}
 Выполните преобразования из предыдущего задания на векторе `sam5`.
 
 ```{r 19, eval=FALSE}
@@ -637,8 +704,8 @@ log10(sam5)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-19-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-19-hints">
 
 <summary>Подсказки</summary>
 
@@ -647,11 +714,15 @@ log10(sam5)
 </details>
 :::
 
+
+
+
+
 ## #20 {.unnumbered}
 
-<img id="pr1-20-level" class="level"/>
+<img id="t1-20-level" class="level"/>
 
-::: {#pr1-20-task .task}
+::: {#t1-20-task .task}
 Выполните две операции:
 
 a. `1:2 + 1:10`
@@ -665,8 +736,8 @@ b. `1:3 + 1:10`
 ```
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-20-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-20-hints">
 
 <summary>Подсказки</summary>
 
@@ -692,11 +763,14 @@ b. `1:3 + 1:10`
 :::
 
 
+
+
+
 ## #21 {.unnumbered}
 
-<img id="pr1-21-level" class="level"/>
+<img id="t1-21-level" class="level"/>
 
-::: {#pr1-21-task .task}
+::: {#t1-21-task .task}
 Выберите из вектора `sam1` все значения, кроме:
 
 a. первого
@@ -719,13 +793,19 @@ sam1[-seq(5, length(sam1), by = 5)]
 
 :::
 
+::: {.hints-wrapper}
+
+:::
+
+
+
 
 
 ## #22 {.unnumbered}
 
-<img id="pr1-22-level" class="level"/>
+<img id="t1-22-level" class="level"/>
 
-::: {#pr1-22-task .task}
+::: {#t1-22-task .task}
 Удалите из вектора `sam5` пропущенные значения, а затем выбрите из оставшихся те, которые по абсолютному значению не превосходят среднего по исходному вектору.
 
 ```{r 22}
@@ -737,9 +817,9 @@ sam5[!is.na(sam5) & abs(sam5) <= mean(sam5, na.rm = TRUE)]
 
 ## #23 {.unnumbered}
 
-<img id="pr1-23-level" class="level"/>
+<img id="t1-23-level" class="level"/>
 
-::: {#pr1-23-task .task}
+::: {#t1-23-task .task}
 Создайте вектор абсолютных отклонений от среднего для переменной `sam3`.
 
 Отклонение --- это разность между средним значением и конкретным наблюдением.
@@ -750,12 +830,19 @@ abs(sam3 - mean(sam3))
 
 :::
 
+::: {.hints-wrapper}
+
+:::
+
+
+
+
 
 ## #24 {.unnumbered}
 
-<img id="pr1-24-level" class="level"/>
+<img id="t1-24-level" class="level"/>
 
-::: {#pr1-24-task .task}
+::: {#t1-24-task .task}
 
 Представим себя ненадолго исследователями эмоций. Сгенерируем переменную, описывающую условия в нашем эксперименте --- случайный вектор из 120 элементов, значения которых могут быть `positive`, `negative` или `control`.
 
@@ -778,12 +865,19 @@ cond
 
 :::
 
+::: {.hints-wrapper}
+
+:::
+
+
+
+
 
 ## #25 {.unnumbered}
 
-<img id="pr1-25-level" class="level"/>
+<img id="t1-25-level" class="level"/>
 
-::: {#pr1-25-task .task}
+::: {#t1-25-task .task}
 Значения созданной переменной, несмотря на категориальный характер, можно упорядочить. Например, `negative < control < positive`. Такой порядок отличается от алфавитного.
 
 Создайте упорядоченный фактор, в котором порядок категорий будет соответствовать приведенному (`negative < control < positive`).
@@ -795,8 +889,8 @@ cond
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-25-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-25-hints">
 
 <summary>Подсказка</summary>
 
@@ -805,11 +899,15 @@ cond
 </details>
 :::
 
+
+
+
+
 ## #26 {.unnumbered}
 
-<img id="pr1-26-level" class="level"/>
+<img id="t1-26-level" class="level"/>
 
-::: {#pr1-26-task .task}
+::: {#t1-26-task .task}
 
 Постройте частотную таблицу по вектору `cond`, чтобы оценить уравнивание условий в исследовании.
 
@@ -819,8 +917,8 @@ table(cond)
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-26-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-26-hints">
 
 <summary>Подсказка</summary>
 
@@ -829,22 +927,26 @@ table(cond)
 </details>
 :::
 
+
+
+
+
 ## #27 {.unnumbered}
 
-<img id="pr1-27-level" class="level"/>
+<img id="t1-27-level" class="level"/>
 
-::: {#pr1-27-task .task}
+::: {#t1-27-task .task}
 
 Выполните следующие команды для создания двух векторов `x1` и `x2`.
 
 ```{r 27-data}
 x1 <- sample(-100:100, 26); x2 <- sample(0:1, 26, replace = TRUE, prob = c(1, 3))
-data.frame(x1 = x1, x2 = x2) |> write.csv("../data/pr1-27.csv")
+data.frame(x1 = x1, x2 = x2) |> write.csv("../data/t1-27.csv")
 ```
 
 ```{r 27, echo=TRUE}
-x1 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data/pr1-27.csv")$x1
-x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data/pr1-27.csv")$x2
+x1 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data/t1-27.csv")$x1
+x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data/t1-27.csv")$x2
 ```
 
 Вычислите результат выражения `x1 / x2`.
@@ -853,13 +955,19 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 
 :::
 
+::: {.hints-wrapper}
+
+:::
+
+
+
 
 
 ## #28 {.unnumbered}
 
-<img id="pr1-28-level" class="level"/>
+<img id="t1-28-level" class="level"/>
 
-::: {#pr1-28-task .task}
+::: {#t1-28-task .task}
 
 Возьмите вектор от $1$ до $30$ с шагом $1$ и отберите из него все числа, кроме тех, которые одновременно кратны двум и трем.
 
@@ -869,8 +977,8 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-28-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-28-hints">
 
 <summary>Подсказки</summary>
 
@@ -881,11 +989,15 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 </details>
 :::
 
+
+
+
+
 ## #29 {.unnumbered}
 
-<img id="pr1-29-level" class="level"/>
+<img id="t1-29-level" class="level"/>
 
-::: {#pr1-29-task .task}
+::: {#t1-29-task .task}
 Возьмите всё тот же вектор от $1$ до $30$ с шагом $1$ и преобразуйте его по следующей схеме:
 
 $$
@@ -905,8 +1017,8 @@ $$
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-29-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-29-hints">
 
 <summary>Подсказки</summary>
 
@@ -916,11 +1028,15 @@ $$
 </details>
 :::
 
+
+
+
+
 ## #30 {.unnumbered}
 
-<img id="pr1-30-level" class="level"/>
+<img id="t1-30-level" class="level"/>
 
-::: {#pr1-30-task .task}
+::: {#t1-30-task .task}
 И напоследок. Мы можем умножать векторы на число и умножать их друг на друга поэлементно. Однако в линале под перемножением вектором понимается их скалярное произведение.
 
 Найдите скалярное произведение векторов `sam1` и `sam2`.
@@ -931,8 +1047,8 @@ sam1 %*% sam2
 
 :::
 
-::: hints-wrapper
-<details class="hints" id="pr1-30-hints">
+::: {.hints-wrapper}
+<details class="hints" id="t1-30-hints">
 
 <summary>Подсказка</summary>
 
@@ -941,6 +1057,10 @@ sam1 %*% sam2
 </details>
 :::
 
+
+
+
+
 ***
 
 Некоторые задания, а также форматы заданий, подсмотрены у @moroz-dh4dl и @grinberg-rexercises.
@@ -948,7 +1068,7 @@ sam1 %*% sam2
 ***
 
 ```{=html}
-<!--- CHANGE pr1 TO pr<n> IN THE LINES BELOW--->
-<!-- <script type="text/javascript" src="./js/pr1.json"></script> -->
-<!-- <script type="text/javascript" src="./js/pr.js"></script> -->
+<!--- CHANGE t1 TO pr<n> IN THE LINES BELOW--->
+<!-- <script type="text/javascript" src="../js/sheet0.json"></script> -->
+<!-- <script type="text/javascript" src="../js/sheet.js"></script> -->
 ```
