@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -84,7 +84,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Ничего не найдено",
     "search-matching-documents-text": "matching documents",
@@ -93,12 +99,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Отмена",
     "search-submit-button-title": "Отправить",
     "search-label": "Search"
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -116,6 +128,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -124,12 +163,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teststyle.html">Testing</a></li><li class="breadcrumb-item"><a href="./teststyle.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teststyle.html">Testing</a></li><li class="breadcrumb-item"><a href="./teststyle.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -139,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">WLM SDAR</a> 
@@ -767,7 +806,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -789,7 +828,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./teststyle.html">Testing</a></li><li class="breadcrumb-item"><a href="./teststyle.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Отладка стилёвых файлов</span></h1>
 </div>
@@ -804,7 +843,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <!--- {{< include other/_symbols.qmd >}} --->
 <!--- Logic --->
@@ -874,7 +915,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 <p>Равным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. Таким образом сложившаяся структура организации играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что новая модель организационной деятельности позволяет оценить значение модели развития. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа направлений прогрессивного развития.</p>
-<p>С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (<a href="#fig-huge-chunk">Рисунок&nbsp;<span>1.1</span></a>).</p>
+<p>С другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (<a href="#fig-huge-chunk" class="quarto-xref">Рисунок&nbsp;<span>1.1</span></a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">breakfast_menu</span>&gt;</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">food</span>&gt;</span>
@@ -909,7 +950,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">food</span>&gt;</span>
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">breakfast_menu</span>&gt;</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="lst-json-example">
+<div id="lst-json-example" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-json-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Список&nbsp;1.1: Пример файла JSON.
+</figcaption>
+<div aria-describedby="lst-json-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"glossary"</span><span class="fu">:</span> <span class="fu">{</span></span>
@@ -934,10 +980,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Пример файла JSON.</p>
 </div>
-<p><span class="quarto-unresolved-ref">?lst-json-example</span></p>
-<div id="lst-for-example">
+</figure>
+</div>
+<p><a href="#lst-json-example" class="quarto-xref">Список&nbsp;<span>1.1</span></a></p>
+<div id="lst-for-example" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-for-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Список&nbsp;1.2: Пример цикла <code>for</code>
+</figcaption>
+<div aria-describedby="lst-for-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -951,9 +1003,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Пример цикла <code>for</code></p>
 </div>
-<p><span class="quarto-unresolved-ref">?lst-for-example</span></p>
+</figure>
+</div>
+<p><a href="#lst-for-example" class="quarto-xref">Список&nbsp;<span>1.2</span></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для графика</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -977,20 +1030,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 (`geom_segment()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="fig-huge-chunk" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="teststyle_files/figure-html/fig-huge-chunk-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Рисунок&nbsp;1.1: Это картинка, нарисованная большим кодом</figcaption>
+<div id="fig-huge-chunk" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-huge-chunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="teststyle_files/figure-html/fig-huge-chunk-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-huge-chunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1.1: Это картинка, нарисованная большим кодом
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div id="tbl-knitrtable" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Это knitr-таблица</p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div id="tbl-knitrtable" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-knitrtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;1.1: Это knitr-таблица
+</figcaption>
+<div aria-describedby="tbl-knitrtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -1017,13 +1075,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</figure>
 </div>
-<div id="tbl-normaltable" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Это обычная таблица</p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div id="tbl-normaltable" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-normaltable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;1.2: Это обычная таблица
+</figcaption>
+<div aria-describedby="tbl-normaltable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <thead>
 <tr class="header">
@@ -1047,10 +1106,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-</div>
+</figure>
 </div>
 <p>Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.</p>
-<p>Ссылка на knirt-таблицу (<span class="quarto-unresolved-ref">?tbl-knitrtable</span>). Ссылка на нормальную таблицу (<span class="quarto-unresolved-ref">?tbl-normaltable</span>).</p>
+<p>Ссылка на knirt-таблицу (<a href="#tbl-knitrtable" class="quarto-xref">Таблица&nbsp;<span>1.1</span></a>). Ссылка на нормальную таблицу (<a href="#tbl-normaltable" class="quarto-xref">Таблица&nbsp;<span>1.2</span></a>).</p>
 <section id="заголовок-4-уровня" class="level4" data-number="1.2.1.1">
 <h4 data-number="1.2.1.1" class="anchored" data-anchor-id="заголовок-4-уровня"><span class="header-section-number">1.2.1.1</span> Заголовок 4 уровня</h4>
 <div class="lab-guru">
@@ -1058,8 +1117,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-mermaidtest" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-mermaidtest" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaidtest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mermaidtest">flowchart LR
   A(Step 1) --&gt; B(Step 2)
@@ -1069,7 +1129,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   E --&gt; A
 </pre>
 </div>
-<figcaption class="figure-caption">Рисунок&nbsp;1.2: Это схема из Mermaid</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaidtest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1.2: Это схема из Mermaid
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1084,7 +1147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Здесь схема из Mermaid (<a href="#fig-mermaidtest">Рисунок&nbsp;<span>1.2</span></a>).</p>
+<p>Здесь схема из Mermaid (<a href="#fig-mermaidtest" class="quarto-xref">Рисунок&nbsp;<span>1.2</span></a>).</p>
 <p>Значимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.</p>
 </div>
 </div>
@@ -1145,68 +1208,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="заголовок-5-уровня-with-code" class="level5" data-number="1.2.1.1.1">
 <h5 data-number="1.2.1.1.1" class="anchored" data-anchor-id="заголовок-5-уровня-with-code"><span class="header-section-number">1.2.1.1.1</span> Заголовок 5 уровня <code>with code</code></h5>
-<p>А тут вставляется картинка (<a href="#fig-gh-soc-preview">Рисунок&nbsp;<span>1.3</span></a>):</p>
-<div id="fig-gh-soc-preview" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="img/test-gh-social-preview.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Рисунок&nbsp;1.3: Превью репозитория</figcaption>
+<p>А тут вставляется картинка (<a href="#fig-gh-soc-preview" class="quarto-xref">Рисунок&nbsp;<span>1.3</span></a>):</p>
+<div id="fig-gh-soc-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/test-gh-social-preview.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1.3: Превью репозитория
+</figcaption>
 </figure>
 </div>
-<p>Объединяющие джойны (<a href="#fig-merging-joins">Рисунок&nbsp;<span>1.4</span></a>):</p>
+<p>Объединяющие джойны (<a href="#fig-merging-joins" class="quarto-xref">Рисунок&nbsp;<span>1.4</span></a>):</p>
 <ul>
-<li>левый джойн (<a href="#fig-left-join">Рисунок&nbsp;<span>1.4 (a)</span></a>)</li>
-<li>правый джойн (<a href="#fig-right-join">Рисунок&nbsp;<span>1.4 (b)</span></a>)</li>
-<li>полный джойн (<a href="#fig-full-join">Рисунок&nbsp;<span>1.4 (c)</span></a>)</li>
-<li>внутренний джойн (<a href="#fig-inner-join">Рисунок&nbsp;<span>1.4 (d)</span></a>).</li>
+<li>левый джойн (<a href="#fig-left-join" class="quarto-xref">Рисунок&nbsp;<span>1.4 (a)</span></a>)</li>
+<li>правый джойн (<a href="#fig-right-join" class="quarto-xref">Рисунок&nbsp;<span>1.4 (b)</span></a>)</li>
+<li>полный джойн (<a href="#fig-full-join" class="quarto-xref">Рисунок&nbsp;<span>1.4 (c)</span></a>)</li>
+<li>внутренний джойн (<a href="#fig-inner-join" class="quarto-xref">Рисунок&nbsp;<span>1.4 (d)</span></a>).</li>
 </ul>
 <div id="fig-merging-joins" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-left-join" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="img/data-wrangling/left_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins"></p>
-<figcaption class="figure-caption">(a) left_join(x, y)</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-merging-joins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-left-join" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-left-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/data-wrangling/left_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-left-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) left_join(x, y)
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-right-join" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="img/data-wrangling/right_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins"></p>
-<figcaption class="figure-caption">(b) right_join(x, y)</figcaption>
-</figure>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-right-join" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-right-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/data-wrangling/right_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
 </div>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-full-join" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="img/data-wrangling/full_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins"></p>
-<figcaption class="figure-caption">(c) full_join(x, y)</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-inner-join" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="img/data-wrangling/inner_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins"></p>
-<figcaption class="figure-caption">(d) inner_join(x, y)</figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-right-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) right_join(x, y)
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Рисунок&nbsp;1.4: Объединяющие джойны</figcaption><p></p>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-full-join" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-full-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/data-wrangling/full_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-full-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) full_join(x, y)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-inner-join" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-inner-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/data-wrangling/inner_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inner-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) inner_join(x, y)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-merging-joins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1.4: Объединяющие джойны
+</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="заголовок-4-уровня-with-code" class="level4" data-number="1.2.1.2">
 <h4 data-number="1.2.1.2" class="anchored" data-anchor-id="заголовок-4-уровня-with-code"><span class="header-section-number">1.2.1.2</span> Заголовок 4 уровня <code>with code</code></h4>
-<p>Согласно <a href="#thm-nonbiasmean">Теорема&nbsp;<span>1.1</span></a>:</p>
+<p>Согласно <a href="#thm-nonbiasmean" class="quarto-xref">Теорема&nbsp;<span>1.1</span></a>:</p>
 <div id="thm-nonbiasmean" class="theorem">
-<p><span class="theorem-title"><strong>Теорема 1.1 </strong></span>Среднее арифметическое является несмещенной оценкой математического ожидания.</p>
+<p><span class="theorem-title"><strong>Теорема 1.1</strong></span> Среднее арифметическое является несмещенной оценкой математического ожидания.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
@@ -1229,64 +1316,72 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
 \]</span></p>
 </div>
 <div id="lem-test" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 1.1 </strong></span>Это лемма.</p>
+<p><span class="theorem-title"><strong>Лемма 1.1</strong></span> Это лемма.</p>
 </div>
 <div id="cor-test" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 1.1 </strong></span>Это следствие.</p>
+<p><span class="theorem-title"><strong>Следствие 1.1</strong></span> Это следствие.</p>
 </div>
 <div id="prp-test" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 1.1 </strong></span>Это утверждение.</p>
+<p><span class="theorem-title"><strong>Утверждение 1.1</strong></span> Это утверждение.</p>
 </div>
 <div id="cnj-test" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Предположение 1.1 </strong></span>Это conjecutre.</p>
+<p><span class="theorem-title"><strong>Предположение 1.1</strong></span> Это conjecutre.</p>
 </div>
 <div id="def-test" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 1.1 </strong></span>Это определение.</p>
+<p><span class="theorem-title"><strong>Определение 1.1</strong></span> Это определение.</p>
 </div>
 <div id="exm-test" class="theorem example">
-<p><span class="theorem-title"><strong>Пример 1.1 </strong></span>Это пример.</p>
+<p><span class="theorem-title"><strong>Пример 1.1</strong></span> Это пример.</p>
 </div>
 <div id="exr-test" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 1.1 </strong></span>Это задание.</p>
+<p><span class="theorem-title"><strong>Задание 1.1</strong></span> Это задание.</p>
 </div>
-<div class="solution proof">
+<div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span>Это решение.</p>
 </div>
-<div class="remark proof">
+<div class="proof remark">
 <p><span class="proof-title"><em>Замечание</em>. </span>Это замечание.</p>
 </div>
 <section id="заголовок-5-уровня" class="level5" data-number="1.2.1.2.1">
 <h5 data-number="1.2.1.2.1" class="anchored" data-anchor-id="заголовок-5-уровня"><span class="header-section-number">1.2.1.2.1</span> Заголовок 5 уровня</h5>
-<p>Это уравнение прямой (<a href="#eq-line">Уравнение&nbsp;<span>1.1</span></a>):</p>
+<p>Это уравнение прямой (<a href="#eq-line" class="quarto-xref">Уравнение&nbsp;<span>1.1</span></a>):</p>
 <p><span id="eq-line"><span class="math display">\[
 y = kx + b
 \tag{1.1}\]</span></span></p>
 <section id="совсем-мелкий-заголовок" class="level6" data-number="1.2.1.2.1.1">
 <h6 data-number="1.2.1.2.1.1" class="anchored" data-anchor-id="совсем-мелкий-заголовок"><span class="header-section-number">1.2.1.2.1.1</span> Совсем мелкий заголовок</h6>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Код</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span>  <span class="co"># Add default OpenStreetMap map tiles</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="fl">174.768</span>, <span class="at">lat=</span><span class="sc">-</span><span class="fl">36.852</span>, <span class="at">popup=</span><span class="st">"The birthplace of R"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-rbirthplace" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-cc5ae4ea4a7276943113" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-cc5ae4ea4a7276943113">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
-<figcaption class="figure-caption">Рисунок&nbsp;1.5: Тут родился R</figcaption>
+<div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-db1c22c6edbe3c09d2f0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-db1c22c6edbe3c09d2f0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1.5: Тут родился R
+</figcaption>
 </figure>
 </div>
 </div>
-<p>Тут (<a href="#fig-razbor">Рисунок&nbsp;<span>1.6</span></a>) видео, на которые ссылка как на рисунок.</p>
-<div id="fig-razbor" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<p>Тут (<a href="#fig-razbor" class="quarto-xref">Рисунок&nbsp;<span>1.6</span></a>) видео, на которые ссылка как на рисунок.</p>
+<div id="fig-razbor" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-razbor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<figcaption class="figure-caption">Рисунок&nbsp;1.6: Разбор третьей домашки</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-razbor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1.6: Разбор третьей домашки
+</figcaption>
 </figure>
 </div>
-<p>Выше была карта (<a href="#fig-rbirthplace">Рисунок&nbsp;<span>1.5</span></a>) с местом рождения R.</p>
+<p>Выше была карта (<a href="#fig-rbirthplace" class="quarto-xref">Рисунок&nbsp;<span>1.5</span></a>) с местом рождения R.</p>
 
 
 </section>
@@ -1337,6 +1432,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1405,13 +1527,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1490,10 +1614,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1503,8 +1644,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1516,7 +1666,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1560,6 +1833,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1585,6 +1859,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1646,17 +1946,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./signs.html" class="pagination-link">
+      <a href="./signs.html" class="pagination-link" aria-label="Обозначения">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Обозначения</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./testquiz.html" class="pagination-link">
+      <a href="./testquiz.html" class="pagination-link" aria-label="Отладка квиза">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Отладка квиза</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
