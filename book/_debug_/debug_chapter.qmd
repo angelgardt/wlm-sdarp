@@ -182,9 +182,11 @@ knitr::kable()
 
 ::: {#tbl-normaltable}
 
-| Значение | 1 | 2 | 3 | 4 | 6 |
-|:--------:|:-:|:-:|:-:|:-:|:-:|
-|  Частота | 2 | 2 | 4 | 2 | 1 |
+| A 	|  B  	|  C  	|          D         	|
+|---	|:---:	|:---:	|:------------------:	|
+| 1 	| abc 	|  да 	|     $\sin (2)$     	|
+| 2 	| def 	| нет 	|   $\sqrt {4+2i}$   	|
+| 3 	| ghi 	|  да 	| $e^{i\pi} + 1 = 0$ 	|
 
 Это обычная таблица
 
@@ -363,7 +365,7 @@ $$ {#eq-line}
 
 library(leaflet)
 leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addProviderTiles(providers$Stadia.AlidadeSmooth) %>% 
   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
 ```
 
