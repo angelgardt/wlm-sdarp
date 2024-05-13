@@ -309,6 +309,10 @@ form.quiz fieldset.incorrect {
   border-color: $quiz-incorrect-border !important;
 }
 
+form.quiz label.incorrect code {
+  color: $gray-300 !important;
+}
+
 form.quiz fieldset div.check-tick {
   content: url("img/labs/check_tick_light.png");
 }
