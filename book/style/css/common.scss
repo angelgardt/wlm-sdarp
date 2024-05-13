@@ -8,6 +8,24 @@ $intro-font-weight:           300;
 
 // Chapters
 
+header {
+  background-color: $black;
+}
+
+.callout-note.version {
+  width: 50%;
+}
+
+.quarto-float-lst {
+  font-size: .8em;
+  margin-bottom: -.5em;
+}
+
+header div.quarto-title-banner {
+  margin-bottom: 0;
+}
+
+
 .theorem {
   margin: 1% 0%;
   padding: 1% 1% 1% 2%;
@@ -22,7 +40,7 @@ $intro-font-weight:           300;
 
 .intro {
   font-weight: $intro-font-weight;
-  margin: 2% 0%;
+  margin: 0 0 2% 0;
   padding: 0 0 0 5%;
   border-bottom: solid 1px;
 }
