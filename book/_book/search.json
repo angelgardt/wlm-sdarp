@@ -454,8 +454,8 @@
     "objectID": "r-intro.html#r-intro-cli",
     "href": "r-intro.html#r-intro-cli",
     "title": "4  Знакомство с R",
-    "section": "4.8 Работа в R из командной строки",
-    "text": "4.8 Работа в R из командной строки\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Sonoma 14.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
+    "section": "4.9 Работа в R из командной строки",
+    "text": "4.9 Работа в R из командной строки\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Sonoma 14.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
     "crumbs": [
       "R",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
@@ -542,6 +542,137 @@
     "text": "Зачем изучать анализ данных?",
     "crumbs": [
       "Введение"
+    ]
+  },
+  {
+    "objectID": "outro.html",
+    "href": "outro.html",
+    "title": "Заключение",
+    "section": "",
+    "text": "Пока что ещё рано заключать….",
+    "crumbs": [
+      "Заключение"
+    ]
+  },
+  {
+    "objectID": "r-intro.html#r-intro-updates",
+    "href": "r-intro.html#r-intro-updates",
+    "title": "4  Знакомство с R",
+    "section": "4.8 Обновления",
+    "text": "4.8 Обновления",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html",
+    "href": "part-r/r-intro.html",
+    "title": "4  Знакомство с R",
+    "section": "",
+    "text": "4.1 Сверхкраткая история R",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-installation",
+    "href": "part-r/r-intro.html#r-intro-installation",
+    "title": "4  Знакомство с R",
+    "section": "4.2 Установка",
+    "text": "4.2 Установка\n\n\n\nМы сейчас будем устанавливать все программы…1\n\n\n\n\n\n\nПоследовательность установки\n\n\n\nНам необходимо будет установить две вещи — R и RStudio. Во избежании возможных ошибок необходимо их ставить именно в этом порядке: сначала — R, затем — RStudio. Иначе RStudio может не найти R на компе и будет ругаться.\n\n\n\n4.2.1 Установка R\n\n\n\nУстановить R можно с репозитория основного репозитория CRAN (The Comprehensive R Archive Network). Существуют версии R для всех трёх наиболее распространенных десктопных операционных систем:\n\nдля Win\nдля macOS\nдля Linux\n\nВ целом, установщики операционных систем обычно хорошо справляются со своей задачей, и в 90% случаев всё встаёт без багов. Однако ниже я оставлю некоторые комментарии о проблемах, с которыми сталкивался сам или о которых говорили знакомые и коллеги.\n\n4.2.1.1 Win\n\n\n\nНиже есть пример установки R на Win (Иллюстрация 4.1), если вдруг у вас возникли какие-то проблемы при установке. Скорее всего всё прошло достаточно ровно.\nСамая частая проблема — имя пользователя на кириллице. Компьютер вообще достаточно плохо переваривает кириллические символы. Особенную же проблему составляют такие символы в путях к файлам. Поскольку на Win папка пользователя называется именем пользователя, то в случае кириллического имени, естественно, её имя будет на кириллице. Это можно пережить, перезадав некоторое дефолтные пути в настройках, однако если есть возможность переименовать пользователя и папку, я бы рекомендовал это сделать. Ну, так, чтобы не было неожиданных внезапностей.\n\n\n\n\n\n\nИллюстрация 4.1: Установка R на Windows (на примере Windows 10 Pro)\n\n\n\n\n\n4.2.1.2 macOS\n\n\n\n\n\n\n\n\n\nApple silicon vs Intel Macs\n\n\n\nОбратите внимание на разные версии для Apple silicon (M1) и Intel Macs.\n\n\nНиже есть пример установки R на Mac (Иллюстрация 4.2), если вдруг у вас возникли какие-то проблемы при установке.\nТут в 99.9% случаев всё ровно. Бывает, что уже в процессе работы некоторые пакеты жалуются на недоустановленное что-то или на какие-либо несовместимости, но это случается невероятно редко и обычно достаточно легко лечится.\n\n\n\n\n\n\nИллюстрация 4.2: Установка R на macOS (на примере macOS Sonoma 14.1.1)\n\n\n\n\n\n4.2.1.3 Linux\n\n\n\n\n\n\n\n\n\nОбилие дистрибутивов\n\n\n\nКонечно, если вы работете на Linux, то прекрасно знаете о дистрибутивах и их особеностях. Однако отмечу, что на разные дистрибутивы Linux устанавливаются разные версии.\n\n\n\n\n\n\n\n\nПримеры на Linux\n\n\n\nЯ работаю на Ubuntu (ВЕРСИЯ), поэтому примеры для Linux будут приводится именно для этого дистрибутива. На других дистрибутивах могут быть свои особенности.\n\n\nНиже есть пример установки R на Linux (Ubuntu) (Иллюстрация 4.3), если вы только начинаете знакомство с Linux и у вас возникли какие-то проблемы при установке.\nЕсли вы пользователь Linux, значит R вы, вероятно, ставите через Terminal. Например, с помощью такой команды:\nsudo apt install r-base-dev\nСкорее всего, всё пройдет хорошо, и базовый R будет работать. Проблемки могут случиться чуть дальше, когда мы будем ставить дополнительные пакеты, в которых будет идти основная наша работа — R может не найти некоторые системные пакеты. Такая проблема возникла у меня возникла (на Ubuntu 22.04) — помогла команда ниже:\nsudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev linfreetype6-dev libpng-dev libtiff5-dev libjpeg-deva\nСначала мы будем знакомиться с базовым R и работать только в нём, но имейте в виду, что тут есть некая команда, которая может пригодиться.\n\n\n\n\n\n\nИллюстрация 4.3: Установка R на Linux (на примере Ubuntu ВЕРСИЯ)\n\n\n\n\n\n\n4.2.2 Установка RStudio\n\n\n\nКазалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — можно работать и просто в R. Однако для упрощения и увеличения приятности работы стоит установить RStudio2. Установочные файлы лежат тут. На всякий случай, прикреплены примеры установки RStudio для Win, macOS и Linux (Иллюстрация 4.4).\nRStudio — это интегрированная среда разработки (IDE) (подробнее см. тут). Она расширяет возможности R, предоставляет более юзабельный интерфейс для взаимодействия с языком и в целом делает работу с R радостной и приятной.\nRStudio это не единственная среда для работы с R, но определенно самая удобная и популярная, поэтому мы будем пользоваться именно ею. RStudio является IDE, разработанной специально для работы в R, однако это вовсе не значит, что в ней нельзя использовать другие языки программирования. Например, книжка, которуя вы сейчас читаете, написана с использованием R, Python, HTML, SASS, JavaScript, YAML и других языков — при этом вся работа велась в RStudio. Вот такая мощная вещь.\n\n\n\n\n\n\nИллюстрация 4.4: Установка RStudio на основные операционные системы\n\n\n\n\n4.2.2.1 Что такое IDE?\n\n\n\nИнтегрированная среда разработки (IDE, integrated development environment) — это специальная программа, которое предоставляет широкий спектр возможностей для разработки программного обеспечения. Возможно, вы слышали такие слова, как PyCharm или Visual Studio Code — это всё варианты IDE.\nОбычно IDE содержит несколько ключевых компонентов:\n\nтекстовый редактор для написания скриптов\nтранслятор языка\nотладчик (debugger)\nсредства автоматизации сборки (build automation tools)\n\nОбычно IDE позволяют работать с несколькими языками программирования, но бывают и специализированные.\n\nИ хотя всё ещё присутствует холивар относительного того, является ли R языком программирования (ССЫЛКА), RStudio однозначно можно назвать полноценной IDE, так как разработка в ней вполне может вестить. Пример продукта разработки прямо перед вами — книжка, которую вы сейчас читаете.\n\n\n\n\n4.2.3 Posit Cloud\n\n\n\nВ подавлающем большинстве случаев работа в R происходит на десктопной версии. Однако это не единственный вариант. Например, если вам нужно резко, быстро и несложно обработать небольшие данные, а вы в отпуске без своего любимого персонального компа, можно поработать в облачной версии RStudio — Posit Cloud.\nВ Posit Cloud используются RStudio Projects3, интерфейс полностью совпадает с десктопной версией RStudio, доступны дополнительные пакеты. Однако объем доступной оперативной памяти существенно ограничен, что, безусловно, может создать существенные сложности. Тем не менее, такой вариант работы вполне можно рассмотреть в каких-то ограниченных условиях.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-rinterface",
+    "href": "part-r/r-intro.html#r-intro-rinterface",
+    "title": "4  Знакомство с R",
+    "section": "4.3 Интерфейс R",
+    "text": "4.3 Интерфейс R",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-rstudiointerface",
+    "href": "part-r/r-intro.html#r-intro-rstudiointerface",
+    "title": "4  Знакомство с R",
+    "section": "4.4 Интерфейс RStudio",
+    "text": "4.4 Интерфейс RStudio",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-console",
+    "href": "part-r/r-intro.html#r-intro-console",
+    "title": "4  Знакомство с R",
+    "section": "4.5 Работа в консоли",
+    "text": "4.5 Работа в консоли",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-script",
+    "href": "part-r/r-intro.html#r-intro-script",
+    "title": "4  Знакомство с R",
+    "section": "4.6 Работа в скрипте",
+    "text": "4.6 Работа в скрипте",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-citation",
+    "href": "part-r/r-intro.html#r-intro-citation",
+    "title": "4  Знакомство с R",
+    "section": "4.7 Цитирование R",
+    "text": "4.7 Цитирование R\n\n\n\nНа R, как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться — цитировать в разделе References. Для этого существует удобная команда:\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2023). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2023},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\nВ аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в \\(\\LaTeX\\) или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями4, _) , а сами андерскоры удалите5.\nКроме базового R, мы будем активно использовать разные дополнительные пакеты для расширения его возможностей. На использованные в работе пакеты также необходимо ссылаться. Чтобы получить цитирование конкретного пакета6, надо передать его название внутрь функции citation(). Ниже приведен пример для пакета ggplot2, которые мы будем использоваться для построения визуализаций:\n\ncitation(\"ggplot2\")\n\nTo cite ggplot2 in publications, please use\n\n  H. Wickham. ggplot2: Elegant Graphics for Data Analysis.\n  Springer-Verlag New York, 2016.\n\nA BibTeX entry for LaTeX users is\n\n  @Book{,\n    author = {Hadley Wickham},\n    title = {ggplot2: Elegant Graphics for Data Analysis},\n    publisher = {Springer-Verlag New York},\n    year = {2016},\n    isbn = {978-3-319-24277-4},\n    url = {https://ggplot2.tidyverse.org},\n  }",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-updates",
+    "href": "part-r/r-intro.html#r-intro-updates",
+    "title": "4  Знакомство с R",
+    "section": "4.8 Обновления",
+    "text": "4.8 Обновления",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#r-intro-cli",
+    "href": "part-r/r-intro.html#r-intro-cli",
+    "title": "4  Знакомство с R",
+    "section": "4.9 Работа в R из командной строки",
+    "text": "4.9 Работа в R из командной строки\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Sonoma 14.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "part-r/r-intro.html#footnotes",
+    "href": "part-r/r-intro.html#footnotes",
+    "title": "4  Знакомство с R",
+    "section": "",
+    "text": "На случай, если новое поколение утратило связь с культурным прошлым, а старое поколение желает, чтобы ему подсвело олдскулы — источник.↩︎\nПо пути надо ещё не перепутать её с R-Studio, которая восстанавливает данные с диска. Критическое сходство названий двух программ обязывает к повышенной внимательности при написании работ/статей/отчётов/заявок на гранты, в которых вы упоминаете RStudio — иногда рецензенты весьма недоумевают, как исследователи анализировали данные с помощью ПО для восстановления данных. Хотя это может звучать несколько странно, такой случай имел место быть в реальности…↩︎\nИх мы будем обсуждать в разделе о работе с данными.↩︎\nСогласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами подчерк и underscore, поэтому использую его и я.↩︎\nТакой синтаксис используется в Markdown — в частности, R Markdown.↩︎\nЧтобы функция citation(\"pkgname\") работала, пакет pkgname должен быть установлен на ваш компьютер. Здесь pkgname — название какого-либо дополнительного пакета.↩︎",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Знакомство с R</span>"
     ]
   }
 ]
