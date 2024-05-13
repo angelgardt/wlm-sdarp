@@ -19,11 +19,11 @@ book:
     - index.qmd
     - _common/intro.qmd
     - _common/signs.qmd
-    - part: Testing
+    - part: Debug
       chapters: 
-      - _test_/teststyle.qmd
-      - _test_/testquiz.qmd
-      - _test_/testsheet.qmd
+      - _debug_/debug_chapter.qmd
+      - _debug_/debug_quiz.qmd
+      - _debug_/debug_sheet.qmd
     - part: _part-r/part-r.qmd
       chapters:
       - _part-r/r-intro.qmd
