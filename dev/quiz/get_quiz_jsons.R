@@ -29,7 +29,7 @@ get_json <- function(quiz_name, quizzes, tags) {
       across(matches("ques|^option\\d_label$|^feedback_\\.+correct$"),
              function(x) {x %>% str_replace_all(setNames(tags$replacement, tags$pattern))})
     ) %>% 
-    mutate(text = paste0(n, ". ", ques),
+    mutate(text = ques,
            qn = paste0("q", n)) %>% 
     # mutate(text = paste0(n, ". ", ques),
     #        qn = paste0("q", n)) %>% 
@@ -39,7 +39,11 @@ get_json <- function(quiz_name, quizzes, tags) {
     jsonlite::toJSON(dataframe = "rows") %>%
     paste0("quiz_json='", ., "'", 
            "\nquiz='", quiz_name, "'") %>% 
-    write(paste0("book/js/", quiz_name, ".json"))
+    write(paste0(
+      "book/", 
+      "js/", 
+      quiz_name, 
+      ".json"))
 }
 
 quizzes_names %>% map(get_json, quizzes = quizzes, tags = tags)

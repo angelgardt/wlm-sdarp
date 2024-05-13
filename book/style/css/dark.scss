@@ -329,10 +329,12 @@ h2, h3 {
   border-color: $gray-600;
 }
 
-code {
-  color: $gray-200;
-  background-color: $gray-800;
+
+code:not(.sourceCode) {
+  color: $gray-200 !important;
+  background-color: $gray-800 !important;
 }
+
 
 .intro {
   border-bottom-color: $gray-400 !important;
