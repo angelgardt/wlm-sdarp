@@ -1,4 +1,4 @@
-# Отладка листка
+# Отладка листка {.unnumbered}
 
 {{< include ../other/_symbols.qmd >}}
 
@@ -16,7 +16,7 @@ REPLACE ALL pr1 TO pr<n> WITH MATCH CASE
 
 
 
-## 1 {#pr1-1}
+## #1 {.unnumbered}
 
 <div class="level" id="lvl-q1"></div>
 
@@ -43,7 +43,7 @@ e. $\sqrt{5\!+\!2i}$
 
 
 
-### #2 {#pr1-2}
+## #2 {.unnumbered}
 
 <img id="pr1-2-level" class="level"/>
 
@@ -71,7 +71,7 @@ d. $\sin \big( \dfrac{\pi}{4x} \big) + \cos \big( \dfrac{2\pi}{\sqrt{y} - 1} \bi
 :::
 
 
-### #3 {#pr1-3}
+## #3 {.unnumbered}
 
 <img id="pr1-3-level" class="level"/>
 
@@ -117,7 +117,7 @@ c(1:10, 9:1)
 
 
 
-### #4 {#pr1-4}
+## #4 {.unnumbered}
 
 <img id="pr1-4-level" class="level"/>
 
@@ -156,7 +156,7 @@ seq(-3, 3, by = .25)
 
 
 
-### #5 {#pr1-5}
+## #5 {.unnumbered}
 
 <img id="pr1-5-level" class="level"/>
 
@@ -194,7 +194,7 @@ rep(c(4, 8, 12), times = c(10, 20, 30))
 
 
 
-### #6 {#pr1-6}
+## #6 {.unnumbered}
 
 <img id="pr1-6-level" class="level"/>
 
@@ -218,7 +218,7 @@ as.character(setsize)
 
 
 
-### #7 {#pr1-7}
+## #7 {.unnumbered}
 
 <img id="pr1-7-level" class="level"/>
 
@@ -262,7 +262,7 @@ b. Пробелы в переменной --- это не очень хорош�
 
 
 
-### #8 {#pr1-8}
+## #8 {.unnumbered}
 
 <img id="pr1-8-level" class="level"/>
 
@@ -273,7 +273,7 @@ b. Пробелы в переменной --- это не очень хорош�
 :::
 
 ::: {.callout-note}
-#### Управляем случайностью
+###### Управляем случайностью
 
 Мы начали использовать функции, которые генерируют случайные значения. На самом деле --- псевдослучайные. Эти функции все равно берут для старта генерации некоторое число, которые называется **зерно датчика случайных чисел**. При каждой генерации выбирается новое зерно, поэтому чтобы получать вопроизводимые генерации, используйте команду
 
@@ -291,7 +291,7 @@ pop <- rnorm(10^5, mean = 4, sd = 5)
 head(pop)
 ```
 
-### #9 {#pr1-9}
+## #9 {.unnumbered}
 
 <img id="pr1-9-level" class="level"/>
 
@@ -320,7 +320,7 @@ sam5 <- sample(pop, 100)
 </details>
 :::
 
-### #10 {#pr1-10}
+## #10 {.unnumbered}
 
 <img id="pr1-10-level" class="level"/>
 
@@ -357,7 +357,7 @@ median(sam3)
 :::
 
 
-### #11 {#pr1-11}
+## #11 {.unnumbered}
 
 <img id="pr1-11-level" class="level"/>
 
@@ -392,7 +392,7 @@ sam4[seq(3, length(sam4), by = 3)]
 
 
 
-### #12 {#pr1-12}
+## #12 {.unnumbered}
 
 <img id="pr1-12-level" class="level"/>
 
@@ -428,7 +428,7 @@ sum(sam2 > mean(sam2))
 </details>
 :::
 
-### #13 {#pr1-13}
+## #13 {.unnumbered}
 
 <img id="pr1-13-level" class="level"/>
 
@@ -457,7 +457,7 @@ Choose your fighter: `&` or `|`!
 </details>
 :::
 
-### #14 {#pr1-14}
+## #14 {.unnumbered}
 
 <img id="pr1-14-level" class="level"/>
 
@@ -488,7 +488,7 @@ min(sam1)
 </details>
 :::
 
-### #15 {#pr1-15}
+## #15 {.unnumbered}
 
 <img id="pr1-15-level" class="level"/>
 
@@ -518,7 +518,7 @@ which.min(sam1)
 </details>
 :::
 
-### #16 {#pr1-16}
+## #16 {.unnumbered}
 
 <img id="pr1-16-level" class="level"/>
 
@@ -556,7 +556,7 @@ which(is.na(sam5))
 </details>
 :::
 
-### #17 {#pr1-17}
+## #17 {.unnumbered}
 
 <img id="pr1-17-level" class="level"/>
 
@@ -582,7 +582,7 @@ sam2[c(FALSE, TRUE)]
 </details>
 :::
 
-### #18 {#pr1-18}
+## #18 {.unnumbered}
 
 <img id="pr1-18-level" class="level"/>
 
@@ -620,7 +620,7 @@ log10(sam3)
 </details>
 :::
 
-### #19 {#pr1-19}
+## #19 {.unnumbered}
 
 <img id="pr1-19-level" class="level"/>
 
@@ -647,7 +647,7 @@ log10(sam5)
 </details>
 :::
 
-### #20 {#pr1-20}
+## #20 {.unnumbered}
 
 <img id="pr1-20-level" class="level"/>
 
@@ -692,7 +692,7 @@ b. `1:3 + 1:10`
 :::
 
 
-### #21 {#pr1-21}
+## #21 {.unnumbered}
 
 <img id="pr1-21-level" class="level"/>
 
@@ -721,7 +721,7 @@ sam1[-seq(5, length(sam1), by = 5)]
 
 
 
-### #22 {#pr1-22}
+## #22 {.unnumbered}
 
 <img id="pr1-22-level" class="level"/>
 
@@ -735,7 +735,7 @@ sam5[!is.na(sam5) & abs(sam5) <= mean(sam5, na.rm = TRUE)]
 :::
 
 
-### #23 {#pr1-23}
+## #23 {.unnumbered}
 
 <img id="pr1-23-level" class="level"/>
 
@@ -751,7 +751,7 @@ abs(sam3 - mean(sam3))
 :::
 
 
-### #24 {#pr1-24}
+## #24 {.unnumbered}
 
 <img id="pr1-24-level" class="level"/>
 
@@ -779,7 +779,7 @@ cond
 :::
 
 
-### #25 {#pr1-25}
+## #25 {.unnumbered}
 
 <img id="pr1-25-level" class="level"/>
 
@@ -805,7 +805,7 @@ cond
 </details>
 :::
 
-### #26 {#pr1-26}
+## #26 {.unnumbered}
 
 <img id="pr1-26-level" class="level"/>
 
@@ -829,7 +829,7 @@ table(cond)
 </details>
 :::
 
-### #27 {#pr1-27}
+## #27 {.unnumbered}
 
 <img id="pr1-27-level" class="level"/>
 
@@ -855,7 +855,7 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 
 
 
-### #28 {#pr1-28}
+## #28 {.unnumbered}
 
 <img id="pr1-28-level" class="level"/>
 
@@ -881,7 +881,7 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 </details>
 :::
 
-### #29 {#pr1-29}
+## #29 {.unnumbered}
 
 <img id="pr1-29-level" class="level"/>
 
@@ -916,7 +916,7 @@ $$
 </details>
 :::
 
-### #30 {#pr1-30}
+## #30 {.unnumbered}
 
 <img id="pr1-30-level" class="level"/>
 
