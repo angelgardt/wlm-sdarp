@@ -27,7 +27,7 @@ $orange:  #e57e39 !default;
 $yellow:  #e5d439 !default;
 $green:   #35d250 !default;
 $teal:    #36d38c !default;
-$cyan:    #B8E1FF !default;
+$cyan:    #50B4FB !default;
 
 $quiz-correct-background:   #0E5245 !default;
 $quiz-correct-border:       #229A64 !default;
@@ -108,16 +108,15 @@ $text-muted:                  body-mix(75%) !default;
 // Mermaid
 
 $mermaid-bg-color: $body-bg;
-$mermaid-edge-color: $blue;
-$mermaid-node-fg-color: $body-color;
+$mermaid-edge-color: $cyan;
 $mermaid-fg-color: $body-color;
 $mermaid-fg-color--lighter: lighten($body-color, 10%);
 $mermaid-fg-color--lightest: lighten($body-color, 20%);
 $mermaid-font-family: $font-family-sans-serif;
 $mermaid-label-bg-color: $body-bg;
-$mermaid-label-fg-color: $cyan;
-$mermaid-node-bg-color: rgba($primary, 0.1);
-$mermaid-node-fg-color: $primary;
+$mermaid-label-fg-color: $gray-200;
+$mermaid-node-bg-color: $gray-700;
+$mermaid-node-fg-color: $cyan;
 
 
 
