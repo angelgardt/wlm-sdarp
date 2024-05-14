@@ -1,21 +1,30 @@
 
 
-## Abstract {#abstract .unnumbered}
+## Аннотация {#abstract .unnumbered}
 
 :::{.callout-note .version appearance="simple"}
-###### Version {.unnumbered}
+###### Текущая версия {.unnumbered}
 
-**Текущая версия книги: 0.0.1**
+**0.0.1**
 :::
 
 
-## Acknowledgement {#acknowledgement .unnumbered}
+## Благодарности {#acknowledgement .unnumbered}
 
 
 #### Attribution {#attribution .unnumbered}
 
 
 
+
+***
+
+:::{.callout-note appearance="simple" collapse="true"}
+###### Предыдущие версии {.unnumbered}
+
+* [0.0.00](../prev/0.0.00)
+
+:::
 
 ***
 
