@@ -76,7 +76,7 @@
     "href": "_debug_/debug_quiz.html#section",
     "title": "Отладка квиза",
     "section": "#1",
-    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
@@ -87,7 +87,7 @@
     "href": "_debug_/debug_quiz.html#section-1",
     "title": "Отладка квиза",
     "section": "#2",
-    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with bold and italic  \n\n  \\[\\text{Option} \\sin x = 0\\] \n\n\n  \\[\\text{Option} \\cos 2 = \\text{var}(X + Y)\\] \n\n\n  \\[\\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\] \n\n\n  \\[\\text{Option} \\exp(4) = \\mathbb{E}X\\] \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
@@ -98,7 +98,7 @@
     "href": "_debug_/debug_quiz.html#section-2",
     "title": "Отладка квиза",
     "section": "#3",
-    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
@@ -109,7 +109,7 @@
     "href": "_debug_/debug_quiz.html#section-3",
     "title": "Отладка квиза",
     "section": "#4",
-    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
@@ -120,7 +120,7 @@
     "href": "_debug_/debug_quiz.html#section-4",
     "title": "Отладка квиза",
     "section": "#5",
-    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n \n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n \n\nx &lt;- 1\n\n\n\n\n \n\nsave.image(\"hihik.RData\")\n\n\n\n\n \n\ninstalled.packages()\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
@@ -131,7 +131,7 @@
     "href": "_debug_/debug_quiz.html#section-5",
     "title": "Отладка квиза",
     "section": "#6",
-    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
@@ -285,7 +285,7 @@
     "href": "_debug_/debug_quiz.html#section-19",
     "title": "Отладка квиза",
     "section": "#20",
-    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nРезультат\n\n\nMessage",
+    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
     "crumbs": [
       "Debug",
       "Отладка квиза"

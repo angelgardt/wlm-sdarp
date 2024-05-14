@@ -36,6 +36,10 @@ for (let i = 1; i <= 20; i++) {
   // } else {
   //   document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
   // }
+  let question_image = document.getElementById("q"+i+"-image");
+  if (question_image.src == "none") {
+    question_image.hidden = true;
+  }
 }
 
 
@@ -160,8 +164,10 @@ function show_answers(ans) {
       document.getElementById("q"+i+"-option"+j).disabled = true;
       if (ans["q"+i]["opt"+j]["correct"] == "true") {
         document.getElementById("q"+i+"-opt"+j+"-label").classList.add("correct");
+        document.getElementById("q"+i+"-opt"+j+"-alternative").classList.add("correct");
       } else {
         document.getElementById("q"+i+"-opt"+j+"-label").classList.add("incorrect");
+        document.getElementById("q"+i+"-opt"+j+"-alternative").classList.add("incorrect");
       }
     }
   }

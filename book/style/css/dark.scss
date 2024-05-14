@@ -394,10 +394,6 @@ form.quiz fieldset.correct {
   border-color: $quiz-correct-border !important;
 }
 
-form.quiz label.incorrect code {
-  color: $gray-600 !important;
-}
-
 form.quiz fieldset.incorrect {
   background-color: $quiz-incorrect-background;
   border-color: $quiz-incorrect-border !important;

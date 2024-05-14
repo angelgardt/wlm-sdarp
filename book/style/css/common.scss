@@ -105,6 +105,11 @@ form.quiz fieldset img.question-image {
   width: 100%;
 }
 
+form.quiz fieldset div.sourceCode {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 form.quiz fieldset div.alternative {
   margin: 1% 4% 0 4%;
   // padding: 1% 4% 0 4%;
@@ -133,6 +138,10 @@ form.quiz fieldset div.alternative label {
   margin: 0 2%;
   width: 90%;
   // padding: 0 2%;
+}
+
+form.quiz fieldset div.alternative label img {
+  width: 70%;
 }
 
 form.quiz div.submit-button {
@@ -208,7 +217,11 @@ form.quiz div.message {
 }
 
 form.quiz label.incorrect {
-  color: $gray-600;
+  opacity: .3;
+}
+
+form.quiz div.alternative.incorrect div.cell {
+  opacity: .3 !important;
 }
 
 form.quiz label.correct {
