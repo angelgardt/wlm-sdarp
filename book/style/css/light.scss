@@ -256,6 +256,8 @@ h2, h3 {
   }
 }
 
+
+
 // Custom
 
 // Chapter
@@ -271,6 +273,12 @@ h2, h3 {
 code {
   color: $gray-700;
   // background-color: $gray-800;
+}
+
+li.breadcrumb-item {
+  &:before {
+   color: #6c757d !important;
+  }
 }
 
 
