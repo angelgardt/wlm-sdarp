@@ -4,10 +4,10 @@ library(googlesheets4)
 quizzes_names <- sheet_names("https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing")[-1]
 quizzes <- list()
 
-read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
-           sheet = "tags",
-           col_types = "c",
-           skip = 1) -> tags
+# read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
+#            sheet = "tags",
+#            col_types = "c",
+#            skip = 1) -> tags
 
 for (quiz_name in quizzes_names) {
   read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
@@ -17,7 +17,8 @@ for (quiz_name in quizzes_names) {
 }
 
 
-get_json <- function(quiz_name, quizzes, tags) {
+get_json <- function(quiz_name, 
+                     quizzes, tags = NULL) {
   quizzes[[quiz_name]] %>% 
     mutate(
       across(everything(), ~replace_na(.x, ""))
@@ -25,10 +26,10 @@ get_json <- function(quiz_name, quizzes, tags) {
     mutate(
       across(matches("^option\\d_correct$"), tolower)
     ) %>% 
-    mutate(
-      across(matches("ques|^option\\d_label$|^feedback_\\.+correct$"),
-             function(x) {x %>% str_replace_all(setNames(tags$replacement, tags$pattern))})
-    ) %>% 
+    # mutate(
+    #   across(matches("ques|^option\\d_label$|^feedback_\\.+correct$"),
+    #          function(x) {x %>% str_replace_all(setNames(tags$replacement, tags$pattern))})
+    # ) %>% 
     mutate(text = ques,
            qn = paste0("q", n)) %>% 
     # mutate(text = paste0(n, ". ", ques),
@@ -46,5 +47,6 @@ get_json <- function(quiz_name, quizzes, tags) {
       ".json"))
 }
 
-quizzes_names %>% map(get_json, quizzes = quizzes, tags = tags)
+# quizzes_names %>% map(get_json, quizzes = quizzes, tags = tags)
+quizzes_names %>% map(get_json, quizzes = quizzes)
 

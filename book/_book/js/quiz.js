@@ -20,22 +20,22 @@ for (let i = 1; i <= 20; i++) {
   } else {
     document.getElementById("lvl-q"+i).className += (" lvl-" + info["level"]["q"+i]);
   }
-  document.getElementById("title-q"+i).innerHTML = info["text"]["q"+i];
+  // document.getElementById("title-q"+i).innerHTML = info["text"]["q"+i];
   if (info["type"]["q"+i] == "checkbox") {
     document.getElementById("q"+i+"-option1").type = "checkbox";
     document.getElementById("q"+i+"-option2").type = "checkbox";
     document.getElementById("q"+i+"-option3").type = "checkbox";
     document.getElementById("q"+i+"-option4").type = "checkbox";
   }
-  document.getElementById("q"+i+"-opt1-label").innerHTML = info["option1_label"]["q"+i];
-  document.getElementById("q"+i+"-opt2-label").innerHTML = info["option2_label"]["q"+i];
-  document.getElementById("q"+i+"-opt3-label").innerHTML = info["option3_label"]["q"+i];
-  document.getElementById("q"+i+"-opt4-label").innerHTML = info["option4_label"]["q"+i];
-  if (info["img"]["q"+i] == "") {
-    document.getElementById("q"+i+"-image").hidden = true;
-  } else {
-    document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
-  }
+  // document.getElementById("q"+i+"-opt1-label").innerHTML = info["option1_label"]["q"+i];
+  // document.getElementById("q"+i+"-opt2-label").innerHTML = info["option2_label"]["q"+i];
+  // document.getElementById("q"+i+"-opt3-label").innerHTML = info["option3_label"]["q"+i];
+  // document.getElementById("q"+i+"-opt4-label").innerHTML = info["option4_label"]["q"+i];
+  // if (info["img"]["q"+i] == "") {
+  //   document.getElementById("q"+i+"-image").hidden = true;
+  // } else {
+  //   document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
+  // }
 }
 
 
@@ -135,16 +135,18 @@ function check_answers(ans) {
 function show_results(ans) {
   let score = 0;
   for (i = 1; i <= 20; i++) {
-    document.getElementById("feedback-q"+i).hidden = false;
+    // document.getElementById("feedback-q"+i).hidden = false;
     if (ans["q"+i]["correct"]) {
       score += 1;
       document.getElementById("q"+i).classList.add("correct");
       document.getElementById("check-tick-q"+i).hidden = false;
-      document.getElementById("feedback-q"+i).innerHTML = info["feedback_correct"]["q"+i]
+      document.getElementById("feedback-q"+i+"-correct").hidden = false;
+      // document.getElementById("feedback-q"+i).innerHTML = info["feedback_correct"]["q"+i]
     } else {
       document.getElementById("q"+i).classList.add("incorrect");
       document.getElementById("check-cross-q"+i).hidden = false;
-      document.getElementById("feedback-q"+i).innerHTML = info["feedback_incorrect"]["q"+i]
+      document.getElementById("feedback-q"+i+"-incorrect").hidden = false;
+      // document.getElementById("feedback-q"+i).innerHTML = info["feedback_incorrect"]["q"+i]
     }
   }
   document.getElementById("results").hidden = false;
