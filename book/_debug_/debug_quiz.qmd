@@ -75,35 +75,38 @@ Incorrect Feedback
 <div class="check-cross" id="check-cross-q2" hidden></div>
 
 <legend class="question-title" id="title-q2">
-Question 2 with **bold** and _italic_
+Question 2 with equation
+$$
+\expect X = \frac{1}{n} \sum_{i=1}^n x_i
+$$
 </legend>
 <img class="question-image" id="q2-image" src="" hidden>
 
 <div class="alternative" id="q2-opt1-alternative">
 <input type="radio" class="in-alternative" id="q2-option1" name="alternative-q2" value="Option 1">
 <label for="q2-option1" id="q2-opt1-label">
-$$\text{Option} \sin x = 0$$
+$\displaystyle \text{Option} \sin x = 0$
 </label>
 </div>
 
 <div class="alternative" id="q2-opt2-alternative">
 <input type="radio" class="in-alternative" id="q2-option2" name="alternative-q2" value="Option 2">
 <label for="q2-option2" id="q2-opt2-label">
-$$\text{Option} \cos 2 = \var (X + Y)$$
+$\displaystyle \text{Option} \cos 2 = \var (X + Y)$
 </label>
 </div>
 
 <div class="alternative" id="q2-opt3-alternative">
 <input type="radio" class="in-alternative" id="q2-option3" name="alternative-q2" value="Option 3">
 <label for="q2-option3" id="q2-opt3-label">
-$$\text{Option} \tan 3 \defin \frac{\sin 3}{\cos 3}$$
+$\displaystyle \text{Option} \tan 3 \defin \frac{\sin 3}{\cos 3}$
 </label>
 </div>
 
 <div class="alternative" id="q2-opt4-alternative">
 <input type="radio" class="in-alternative" id="q2-option4" name="alternative-q2" value="Option 4">
 <label for="q2-option4" id="q2-opt4-label">
-$$\text{Option} \exp(4) = \expect X$$
+$\displaystyle \text{Option} \exp(4) = \expect X$
 </label>
 </div>
 

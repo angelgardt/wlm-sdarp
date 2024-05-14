@@ -87,7 +87,7 @@
     "href": "_debug_/debug_quiz.html#section-1",
     "title": "Отладка квиза",
     "section": "#2",
-    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with bold and italic  \n\n  \\[\\text{Option} \\sin x = 0\\] \n\n\n  \\[\\text{Option} \\cos 2 = \\text{var}(X + Y)\\] \n\n\n  \\[\\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\] \n\n\n  \\[\\text{Option} \\exp(4) = \\mathbb{E}X\\] \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"
