@@ -1,0 +1,8 @@
+Обновление названия ветки в локальном репозитория (здесь: dev -> angelgardt/dev)
+
+git branch -m dev angelgardt/dev
+git fetch origin
+git branch -u origin/angelgardt/dev angelgardt/dev
+git remote set-head origin -a
+
+
