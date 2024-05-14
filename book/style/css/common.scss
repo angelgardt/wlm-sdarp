@@ -9,8 +9,14 @@ $intro-font-weight:           300;
 // Chapters
 
 header {
-  background-color: $black;
+  background-color: $body-bg;
 }
+
+/*
+div.quarto-title-meta {
+  padding-bottom: 1%;
+}
+*/
 
 .callout-note.version {
   width: 50%;
