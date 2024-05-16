@@ -12,24 +12,31 @@ knitr::opts_chunk$set(echo = FALSE, eval=FALSE)
 
 ## #1 {.unnumbered}
 
-<div class="level" id="lvl-t1"></div>
+<div class="level lvl-easy" id="lvl-t1"></div>
 
 ::: {#t1-title .task}
-Вычислите:
+Task with `inline_code`.
+:::
 
-a. $-14^7 - 6 \times 2^{11}$
-b. $\sin^2 64$
-c. $e^{8 + \pi}$
-d. $\log_{12} 34$
-e. $\sqrt{5\!+\!2i}$
+::: {#t1-autocheck .autocheck}
+::: {#t1-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t1-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-4-hints">
+<details class="hints" id="t1-hints">
+<summary>Подсказки</summary>
 
-<summary>Подсказка</summary>
-
-* `?exp()`
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -40,27 +47,28 @@ e. $\sqrt{5\!+\!2i}$
 
 ## #2 {.unnumbered}
 
-<img id="t1-2-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t2"></div>
 
-::: {#t1-title .task}
-Присвойте переменным `x` и `y` значения `3` и `-1.44` соответственно.
-
-Вычислите:
-
-a. $\log_{\sqrt[x]{24}} 17^{\sin{4.8\pi}}$
-b. $\dfrac{e^{x + y^2}}{1 + e^{x+y^2}}$
-c. $\sqrt{\ln \Bigg( \dfrac{\cos\Big( \dfrac{2}{3x^2} \Big)}{|y| + x} \Bigg)}$
-d. $\sin \big( \dfrac{\pi}{4x} \big) + \cos \big( \dfrac{2\pi}{\sqrt{y} - 1} \big)$
+::: {#t2-title .task}
 
 :::
 
+::: {#t2-autocheck .autocheck}
+::: {#t2-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t2-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-4-hints">
-
+<details class="hints" id="t2-hints">
 <summary>Подсказки</summary>
-
-* $\sqrt[x]{a} = a^{\frac{1}{x}}$
-* `?log()`
 
 </details>
 :::
@@ -71,44 +79,28 @@ d. $\sin \big( \dfrac{\pi}{4x} \big) + \cos \big( \dfrac{2\pi}{\sqrt{y} - 1} \bi
 
 ## #3 {.unnumbered}
 
-<img id="t1-3-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t3"></div>
 
-::: {#t1-title .task}
-Создайте следующие векторы:
-
-a. $\pmatrix{4 & 8 & 12}$
-
-```{r 3a}
-c(4, 8, 12)
-```
-
-b. $\pmatrix{1 & 2 & 3 & \dots & 9 & 10}$
-
-```{r 3b}
-1:10
-
-```
-c. $\pmatrix{10 & 9 & 8 & \dots & 2 & 1 & 0 & -1 & -2 & \dots & -9 & -10}$
-
-```{r 3c}
-10:-10
-
-```
-d. $\pmatrix{1 & 2 & 3 & \dots & 9 & 10 & 9 & \dots  & 3 & 2 & 1}$
-
-```{r 3d}
-c(1:10, 9:1)
-```
+::: {#t3-title .task}
 
 :::
 
+::: {#t3-autocheck .autocheck}
+::: {#t3-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t3-fb .autocheck-feedback}
+:::
+:::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-3-hints">
-
+<details class="hints" id="t3-hints">
 <summary>Подсказка</summary>
-
-`` ?`:` ``
 
 </details>
 :::
@@ -119,37 +111,28 @@ c(1:10, 9:1)
 
 ## #4 {.unnumbered}
 
-<img id="t1-4-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t4"></div>
 
-::: {#t1-title .task}
-Создайте следующие векторы:
-
-a. $\pmatrix{2 & 4 & 8 & 10 & 12 & \dots & 26 & 28 & 30}$
-
-```{r 4a}
-seq(2, 30, by = 2)
-```
-
-b. $\pmatrix{0 & 0.5 & 1 & 1.5 & 2 \dots & 8.5 & 9 & 9.5 & 10}$
-
-```{r 4b}
-seq(0, 10, by = .5)
-```
-
-c. $\pmatrix{-3 & -2.75 & -2.5 & -2.25 & \dots & 2.25 & 2.5 & 2.75 & 3}$
-
-```{r 4c}
-seq(-3, 3, by = .25)
-```
+::: {#t4-title .task}
 
 :::
 
+::: {#t4-autocheck .autocheck}
+::: {#t4-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t4-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-4-hints">
-
+<details class="hints" id="t4-hints">
 <summary>Подсказка</summary>
-
-`` ?seq() ``
 
 </details>
 :::
@@ -160,37 +143,29 @@ seq(-3, 3, by = .25)
 
 ## #5 {.unnumbered}
 
-<img id="t1-5-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t5"></div>
 
-::: {#t1-title .task}
-Возьмите вектор (a) из [задания 3](#t1-3) и на основе него создайте следующие векторы:
-
-a. $\pmatrix{4 & 8 & 12 & 4 & 8 & 12 & \dots & 4 & 8 & 12}$, где $4$ повторяется 8 раз
-
-```{r 5a}
-rep(c(4, 8, 12), times = 8)
-```
-
-b. $\pmatrix{4 & 8 & 12 & 4 & 8 & 12 & \dots & 4 & 8 & 12 & 8 & 12}$, где $4$ повторяется 8 раз, а $8$ и $12$ повторяются по 9 раз
-
-```{r 5b}
-c(rep(c(4, 8, 12), times = 8), 8, 12)
-```
-
-c. $\pmatrix{4 & 4 & \dots & 4 & 8 & 8 & \dots & 8 & 12 & 12 & \dots & 12}$, где $4$ повторяется 10 раз, $8$ --- 20 раз, а $12$ --- 30 раз.
-
-```{r 5c}
-rep(c(4, 8, 12), times = c(10, 20, 30))
-```
+::: {#t5-title .task}
 
 :::
 
+::: {#t5-autocheck .autocheck}
+::: {#t5-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t5-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-5-hints">
+<details class="hints" id="t5-hints">
+<summary>Подсказки</summary>
 
-<summary>Подсказка</summary>
-
-`` ?rep() ``
 </details>
 :::
 
@@ -200,23 +175,29 @@ rep(c(4, 8, 12), times = c(10, 20, 30))
 
 ## #6 {.unnumbered}
 
-<img id="t1-6-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t6"></div>
 
-::: {#t1-6-task .task}
-Пусть вектор (а) из [предыдущего задания](#t1-5) --- это количество стимулов в пробах эксперимента. Сохраните его в переменную `setsize` и приведите к текстовому типу данных, чтобы он корректно интерпретировался статистическими функциями.
+::: {#t6-title .task}
+
 :::
 
-```{r 6}
-setsize <- rep(c(4, 8, 12), times = 8)
-as.character(setsize)
-```
+::: {#t6-autocheck .autocheck}
+::: {#t6-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t6-fb .autocheck-feedback}
+:::
+:::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-6-hints">
-
+<details class="hints" id="t6-hints">
 <summary>Подсказка</summary>
 
-`` ?character() ``
 </details>
 :::
 
@@ -226,42 +207,28 @@ as.character(setsize)
 
 ## #7 {.unnumbered}
 
-<img id="t1-7-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t7"></div>
 
-::: {#t1-7-task .task}
-
-a. Пусть в нашем исследовании есть три группы респондентов --- `group 1`, `group 2` и `group 3`. Создайте вектор из 90 значений (по 30 для каждой группы), который будет описывать принадлежность респондентов к какой-либо группе.
-
-Возможны два варинта результата:
-
-* так
-
-```{r, echo=FALSE}
-paste("group", rep(1:3, each = 30))
-```
-
-* или так
-
-```{r, echo=FALSE}
-paste("group", rep(1:3, times = 30))
-```
-
-b. Пробелы в переменной --- это не очень хорошо. С ними порой бывает трудно совладать, особенно если это название переменной. Поправьте код так, чтобы значения получившегося вектора были `group1`, `group2` и `group3`.
+::: {#t7-title .task}
 
 :::
 
+::: {#t7-autocheck .autocheck}
+::: {#t7-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t7-fb .autocheck-feedback}
+:::
+:::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-7-hints">
-
+<details class="hints" id="t7-hints">
 <summary>Подсказка</summary>
-
-Есть полезные функци
-
-```paste()``` и ```paste0()```
-
-</details>
 
 </details>
 :::
@@ -272,75 +239,60 @@ b. Пробелы в переменной --- это не очень хорош�
 
 ## #8 {.unnumbered}
 
-<img id="t1-8-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t8"></div>
 
-::: {#t1-8-task .task}
-
-С помощью функции `rnorm()` сгенерируйте генеральную совокупность из 100 000 объектов с параметрами `mean = 4` и `sd = 5`. Сохраните результат генерации в переменную `pop`.
+::: {#t8-title .task}
 
 :::
 
-::: {.callout-note appearance="simple"}
-###### Управляем случайностью
+::: {#t8-autocheck .autocheck}
+::: {#t8-ir .input-format}
 
-Мы начали использовать функции, которые генерируют случайные значения. На самом деле --- псевдослучайные. Эти функции все равно берут для старта генерации некоторое число, которые называется **зерно датчика случайных чисел**. При каждой генерации выбирается новое зерно, поэтому чтобы получать вопроизводимые генерации, используйте команду
-
-```{r set-seed, echo=TRUE}
-set.seed(123) # аргументом может быть любое число
-```
-
-для фиксации зерна датчика.
 :::
 
-Здесь для примера выведены первые 6 значений получившегося вектора с зерном датчика `123`:
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
 
-```{r 8}
-pop <- rnorm(10^5, mean = 4, sd = 5)
-head(pop)
-```
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t8-fb .autocheck-feedback}
+:::
+:::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-7-hints">
-
+<details class="hints" id="t8-hints">
 <summary>Подсказка</summary>
-
-Есть полезные функци
-
-```paste()``` и ```paste0()```
-
-</details>
 
 </details>
 :::
+
 
 
 
 
 ## #9 {.unnumbered}
 
-<img id="t1-9-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t9"></div>
 
-::: {#t1-9-task .task}
-
-Извлеките из полученной генеральной совокупности 5 случайных выборок по 100 наблюдений. Сохраните результаты в переменные `sam1`, `sam2`, `sam3`, `sam4`, `sam5`.
+::: {#t9-title .task}
 
 :::
 
-```{r 9}
-sam1 <- sample(pop, 100)
-sam2 <- sample(pop, 100)
-sam3 <- sample(pop, 100)
-sam4 <- sample(pop, 100)
-sam5 <- sample(pop, 100)
-```
+::: {#t9-autocheck .autocheck}
+::: {#t9-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t9-fb .autocheck-feedback}
+:::
+:::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-9-hints">
-
+<details class="hints" id="t9-hints">
 <summary>Подсказки</summary>
-
-```sample()```
 
 </details>
 :::
@@ -351,36 +303,28 @@ sam5 <- sample(pop, 100)
 
 ## #10 {.unnumbered}
 
-<img id="t1-10-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t10"></div>
 
-::: {#t1-10-task .task}
-
-a. Вычислите сумму по вектору `sam1`.
-
-```{r 10a}
-sum(sam1)
-```
-
-b. Вычислите среднее по вектору `sam2`.
-
-```{r 10b}
-mean(sam2)
-```
-
-c. Вычислите медиану по вектору `sam3`.
-
-```{r 10c}
-median(sam3)
-```
+::: {#t10-title .task}
 
 :::
 
+::: {#t10-autocheck .autocheck}
+::: {#t10-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t10-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-9-hints">
-
+<details class="hints" id="t10-hints">
 <summary>Подсказки</summary>
-
-`sum()`, `mean()`, `median()`
 
 </details>
 :::
@@ -391,39 +335,30 @@ median(sam3)
 
 ## #11 {.unnumbered}
 
-<img id="t1-11-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t11"></div>
 
-::: {#t1-11-task .task}
-Вытащите из вектора `sam4`
-
-a. первое значение
-
-```{r 11a}
-sam4[1]
-```
-
-b. последнее значение
-
-```{r 11b}
-sam4[length(sam4)]
-```
-
-c. значения с 20 по 45
-
-```{r 11c}
-sam4[20:45]
-```
-
-d. все значения на каждой третьей позиции
-
-```{r 11d}
-sam4[seq(3, length(sam4), by = 3)]
-```
+::: {#t11-title .task}
 
 :::
 
-::: {.hints-wrapper}
+::: {#t11-autocheck .autocheck}
+::: {#t11-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t11-fb .autocheck-feedback}
+:::
+:::
+
+::: {.hints-wrapper}
+<details class="hints" id="t11-hints">
+<summary>Подсказки</summary>
+
+</details>
 :::
 
 
@@ -432,36 +367,28 @@ sam4[seq(3, length(sam4), by = 3)]
 
 ## #12 {.unnumbered}
 
-<img id="t1-12-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t12"></div>
 
-::: {#t1-12-task .task}
-a. Отберите из вектора `sam1` отрицательные значения.
-
-```{r 12a}
-sam1[sam1 < 0]
-```
-
-b. Сколько отрицательных значений получилось?
-
-```{r 12b}
-length(sam1[sam1 < 0])
-```
-
-c. Сколько в векторе `sam2` значений, которые больше среднего по этому вектору?
-
-```{r 12c}
-sum(sam2 > mean(sam2))
-```
+::: {#t12-title .task}
 
 :::
 
+::: {#t12-autocheck .autocheck}
+::: {#t12-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t12-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-12-hints">
-
+<details class="hints" id="t12-hints">
 <summary>Подсказки</summary>
-
-* Как проверить, является ли значение отрицательным?
-* Что будет, если применить функцию `sum()` к логическому вектору?
 
 </details>
 :::
@@ -472,29 +399,28 @@ sum(sam2 > mean(sam2))
 
 ## #13 {.unnumbered}
 
-<img id="t1-13-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t13"></div>
 
-::: {#t1-13-task .task}
-a. Отберите из вектора `sam3` значения, которые больше $3$ и меньше $8$.
-
-```{r 13a}
-sam3[sam3 > 3 & sam3 < 8]
-```
-
-b. Отберите из вектора `sam3` значения, которые меньше $0.5$ и больше $9.3$.
-
-```{r 13b}
-sam3[sam3 < .5 | sam3 > 9.3]
-```
+::: {#t13-title .task}
 
 :::
 
+::: {#t13-autocheck .autocheck}
+::: {#t13-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t13-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-13-hints">
-
+<details class="hints" id="t13-hints">
 <summary>Подсказки</summary>
-
-Choose your fighter: `&` or `|`!
 
 </details>
 :::
@@ -505,31 +431,28 @@ Choose your fighter: `&` or `|`!
 
 ## #14 {.unnumbered}
 
-<img id="t1-14-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t14"></div>
 
-::: {#t1-14-task .task}
-
-a. Какое максимальное значение по вектору `sam1`?
-
-```{r 14a}
-max(sam1)
-```
-
-b. Какое минимальное значение по вектору `sam1`?
-
-```{r 14b}
-min(sam1)
-```
+::: {#t14-title .task}
 
 :::
 
+::: {#t14-autocheck .autocheck}
+::: {#t14-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t14-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-14-hints">
-
+<details class="hints" id="t14-hints">
 <summary>Подсказки</summary>
-
-`max()`
-`min()`
 
 </details>
 :::
@@ -538,33 +461,30 @@ min(sam1)
 
 
 
-
 ## #15 {.unnumbered}
 
-<img id="t1-15-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t15"></div>
 
-::: {#t1-15-task .task}
-
-a. На каком месте в векторе `sam1` стоит его максимальное значение?
-
-```{r}
-which.max(sam1)
-```
-
-b. На каком месте в векторе `sam1` стоит его минимальное значение?
-
-```{r}
-which.min(sam1)
-```
+::: {#t15-title .task}
 
 :::
 
+::: {#t15-autocheck .autocheck}
+::: {#t15-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t15-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-15-hints">
-
+<details class="hints" id="t15-hints">
 <summary>Подсказки</summary>
-
-`?which`
 
 </details>
 :::
@@ -575,38 +495,28 @@ which.min(sam1)
 
 ## #16 {.unnumbered}
 
-<img id="t1-16-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t16"></div>
 
-::: {#t1-16-task .task}
-
-Выполните следующую команду:
-
-```{r add-na, echo=TRUE}
-set.seed(5); sam5[sample(1:100, sample(100, 1))] <- NA
-```
-
-Она добавит несколько пропущенных значений в вектор `sam5`, чтобы бы познакомились с ними поближе.
-
-a. Сколько пропущенных значений получилос в векторе `sam5`?
-
-```{r 16a}
-sum(is.na(sam5))
-```
-
-b. На каких местах они стоят?
-
-```{r 16b}
-which(is.na(sam5))
-```
+::: {#t16-title .task}
 
 :::
 
+::: {#t16-autocheck .autocheck}
+::: {#t16-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t16-fb .autocheck-feedback}
+:::
+:::
+
 ::: {.hints-wrapper}
-<details class="hints" id="t1-16-hints">
-
+<details class="hints" id="t16-hints">
 <summary>Подсказки</summary>
-
-`is.na()`, `sum()`, `which()`
 
 </details>
 :::
@@ -617,26 +527,28 @@ which(is.na(sam5))
 
 ## #17 {.unnumbered}
 
-<img id="t1-17-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t17"></div>
 
-::: {#t1-17-task .task}
-Нам надо разделить выборку на две части. Отберите каждое второе значение из вектора `sam2`.
+::: {#t17-title .task}
 
-::: {.callout-warning}
-Сделайте это без использования функции `seq()`.
 :::
 
-```{r 17}
-sam2[c(FALSE, TRUE)]
-```
+::: {#t17-autocheck .autocheck}
+::: {#t17-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t17-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-17-hints">
-
 <summary>Подсказки</summary>
-
-`c(FALSE, TRUE)`
 
 </details>
 :::
@@ -647,38 +559,29 @@ sam2[c(FALSE, TRUE)]
 
 ## #18 {.unnumbered}
 
-<img id="t1-18-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t18"></div>
 
-::: {#t1-18-task .task}
-Мы хотим трансформировать наши переменные для последующего анализа:
+::: {#t18-title .task}
 
-a. умножьте каждое значение вектора `sam1` на $20$
+:::
 
-```{r 18a, eval=FALSE}
-sam1 * 20
-```
+::: {#t18-autocheck .autocheck}
+::: {#t18-ir .input-format}
 
-b. вычтите из каждого значения вектора `sam2` среднее по этому вектору
+:::
 
-```{r 18b, eval=FALSE}
-sam2 - mean(sam2)
-```
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
 
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
 
-c. прологорифмируйте все значения вектора `sam3` (используйте десятичный логарифм)
-
-```{r 18c, eval=FALSE}
-log10(sam3)
-```
-
+::: {#t18-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-18-hints">
-
 <summary>Подсказки</summary>
 
-`log10()`
 
 </details>
 :::
@@ -689,27 +592,28 @@ log10(sam3)
 
 ## #19 {.unnumbered}
 
-<img id="t1-19-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t19"></div>
 
-::: {#t1-19-task .task}
-Выполните преобразования из предыдущего задания на векторе `sam5`.
+::: {#t19-title .task}
 
-```{r 19, eval=FALSE}
-sam5 * 20
-sam5 - mean(sam5)
-log10(sam5)
-```
+:::
 
-Возникли ли проблемы? Можно ли их поправить?
+::: {#t19-autocheck .autocheck}
+::: {#t19-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t19-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-19-hints">
-
 <summary>Подсказки</summary>
-
-`mean(x, na.rm = TRUE)`
 
 </details>
 :::
@@ -720,44 +624,28 @@ log10(sam5)
 
 ## #20 {.unnumbered}
 
-<img id="t1-20-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t20"></div>
 
-::: {#t1-20-task .task}
-Выполните две операции:
+::: {#t20-title .task}
 
-a. `1:2 + 1:10`
-b. `1:3 + 1:10`
+:::
 
-Что получается? Почему так?
+::: {#t20-autocheck .autocheck}
+::: {#t20-ir .input-format}
 
-```{r 20, eval=FALSE}
-1:2 + 1:10
-1:3 + 1:10
-```
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t20-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-20-hints">
-
 <summary>Подсказки</summary>
-
-<details class="hint">
-
-<summary>Как делать задание?</summary>
-
-</details>
-
-<details class="hint">
-
-<summary>Что надо сделать?</summary>
-
-</details>
-
-<details class="hint">
-
-<summary>Ответ неверный</summary>
-
-</details>
 
 </details>
 :::
@@ -768,33 +656,30 @@ b. `1:3 + 1:10`
 
 ## #21 {.unnumbered}
 
-<img id="t1-21-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t21"></div>
 
-::: {#t1-21-task .task}
-Выберите из вектора `sam1` все значения, кроме:
-
-a. первого
-
-```{r 21a}
-sam1[-1]
-```
-
-b. последнего
-
-```{r 21b}
-sam1[-length(sam1)]
-```
-
-c. каждого пятого
-
-```{r 21c}
-sam1[-seq(5, length(sam1), by = 5)]
-```
+::: {#t21-title .task}
 
 :::
 
-::: {.hints-wrapper}
+::: {#t21-autocheck .autocheck}
+::: {#t21-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t21-fb .autocheck-feedback}
+:::
+:::
+
+::: {.hints-wrapper}
+<details class="hints" id="t1-21-hints">
+<summary>Подсказки</summary>
+
+</details>
 :::
 
 
@@ -803,35 +688,62 @@ sam1[-seq(5, length(sam1), by = 5)]
 
 ## #22 {.unnumbered}
 
-<img id="t1-22-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t22"></div>
 
-::: {#t1-22-task .task}
-Удалите из вектора `sam5` пропущенные значения, а затем выбрите из оставшихся те, которые по абсолютному значению не превосходят среднего по исходному вектору.
-
-```{r 22}
-sam5[!is.na(sam5) & abs(sam5) <= mean(sam5, na.rm = TRUE)]
-```
+::: {#t22-title .task}
 
 :::
+
+::: {#t22-autocheck .autocheck}
+::: {#t22-ir .input-format}
+
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t22-fb .autocheck-feedback}
+:::
+:::
+
+::: {.hints-wrapper}
+<details class="hints" id="t1-22-hints">
+<summary>Подсказки</summary>
+
+</details>
+:::
+
+
+
 
 
 ## #23 {.unnumbered}
 
-<img id="t1-23-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t23"></div>
 
-::: {#t1-23-task .task}
-Создайте вектор абсолютных отклонений от среднего для переменной `sam3`.
-
-Отклонение --- это разность между средним значением и конкретным наблюдением.
-
-```{r 23}
-abs(sam3 - mean(sam3))
-```
+::: {#t23-title .task}
 
 :::
 
-::: {.hints-wrapper}
+::: {#t23-autocheck .autocheck}
+::: {#t23-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t23-fb .autocheck-feedback}
+:::
+:::
+
+::: {.hints-wrapper}
+<details class="hints" id="t1-22-hints">
+<summary>Подсказки</summary>
+
+</details>
 :::
 
 
@@ -840,33 +752,30 @@ abs(sam3 - mean(sam3))
 
 ## #24 {.unnumbered}
 
-<img id="t1-24-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t24"></div>
 
-::: {#t1-24-task .task}
-
-Представим себя ненадолго исследователями эмоций. Сгенерируем переменную, описывающую условия в нашем эксперименте --- случайный вектор из 120 элементов, значения которых могут быть `positive`, `negative` или `control`.
-
-a. Сохраните результаты генрации в переменную `cond`.
-
-Для примеры выведены 10 первых значений вектора, сгенерированного при `set.seed(616)`.
-
-```{r 24a}
-set.seed(616)
-cond <- sample(c("positive", "negative", "control"), 120, replace = TRUE)
-head(cond, 10)
-```
-
-b. Поскольку данная переменная является группирующей, то есть задает группы наблюдений, давайте превратим её из текстовой в факторную.
-
-```{r 24b}
-cond <- as.factor(cond)
-cond
-```
+::: {#t24-title .task}
 
 :::
 
-::: {.hints-wrapper}
+::: {#t24-autocheck .autocheck}
+::: {#t24-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t24-fb .autocheck-feedback}
+:::
+:::
+
+::: {.hints-wrapper}
+<details class="hints" id="t1-22-hints">
+<summary>Подсказки</summary>
+
+</details>
 :::
 
 
@@ -875,26 +784,28 @@ cond
 
 ## #25 {.unnumbered}
 
-<img id="t1-25-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t25"></div>
 
-::: {#t1-25-task .task}
-Значения созданной переменной, несмотря на категориальный характер, можно упорядочить. Например, `negative < control < positive`. Такой порядок отличается от алфавитного.
+::: {#t25-title .task}
 
-Создайте упорядоченный фактор, в котором порядок категорий будет соответствовать приведенному (`negative < control < positive`).
+:::
 
-```{r 25}
-cond <- factor(cond, ordered = TRUE, levels = c("negative", "control", "positive"))
-cond
-```
+::: {#t25-autocheck .autocheck}
+::: {#t25-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t25-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-25-hints">
-
 <summary>Подсказка</summary>
-
-`?factor()`
 
 </details>
 :::
@@ -905,24 +816,28 @@ cond
 
 ## #26 {.unnumbered}
 
-<img id="t1-26-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t26"></div>
 
-::: {#t1-26-task .task}
+::: {#t26-title .task}
 
-Постройте частотную таблицу по вектору `cond`, чтобы оценить уравнивание условий в исследовании.
+:::
 
-```{r 26}
-table(cond)
-```
+::: {#t26-autocheck .autocheck}
+::: {#t26-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t26-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-26-hints">
-
 <summary>Подсказка</summary>
-
-`?table()`
 
 </details>
 :::
@@ -933,30 +848,30 @@ table(cond)
 
 ## #27 {.unnumbered}
 
-<img id="t1-27-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t27"></div>
 
-::: {#t1-27-task .task}
-
-Выполните следующие команды для создания двух векторов `x1` и `x2`.
-
-```{r 27-data}
-x1 <- sample(-100:100, 26); x2 <- sample(0:1, 26, replace = TRUE, prob = c(1, 3))
-data.frame(x1 = x1, x2 = x2) |> write.csv("../data/t1-27.csv")
-```
-
-```{r 27, echo=TRUE}
-x1 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data/t1-27.csv")$x1
-x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data/t1-27.csv")$x2
-```
-
-Вычислите результат выражения `x1 / x2`.
-
-Что получилось? Почему так?
+::: {#t27-title .task}
 
 :::
 
-::: {.hints-wrapper}
+::: {#t27-autocheck .autocheck}
+::: {#t27-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t27-fb .autocheck-feedback}
+:::
+:::
+
+::: {.hints-wrapper}
+<details class="hints" id="t1-22-hints">
+<summary>Подсказки</summary>
+
+</details>
 :::
 
 
@@ -965,26 +880,28 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 
 ## #28 {.unnumbered}
 
-<img id="t1-28-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t28"></div>
 
-::: {#t1-28-task .task}
+::: {#t28-title .task}
 
-Возьмите вектор от $1$ до $30$ с шагом $1$ и отберите из него все числа, кроме тех, которые одновременно кратны двум и трем.
+:::
 
-```{r 28}
-(1:30)[((1:30) %% 2 & (1:30) %% 3)]
-```
+::: {#t28-autocheck .autocheck}
+::: {#t28-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t28-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-28-hints">
-
 <summary>Подсказки</summary>
-
-* Логические операторы приводят числовые значения к логическому типу
-* `` ?`!` ``
-
 
 </details>
 :::
@@ -995,35 +912,28 @@ x2 <- read.csv("https://raw.githubusercontent.com/angelgardt/wlm2023/master/data
 
 ## #29 {.unnumbered}
 
-<img id="t1-29-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t29"></div>
 
-::: {#t1-29-task .task}
-Возьмите всё тот же вектор от $1$ до $30$ с шагом $1$ и преобразуйте его по следующей схеме:
+::: {#t29-title .task}
 
-$$
-\matrix{
-x_1 & \rightarrow & x_1 \\
-x_2 & \rightarrow & \sqrt{x_2} \\
-x_3  & \rightarrow & \sqrt[3]{x_3} \\
-x_4  & \rightarrow & x_4 \\
-x_5 & \rightarrow & \sqrt{x_5} \\
-... & &
-}
-$$
+:::
 
-```{r 29}
-(1:30)^c(1, .5, 1/3)
-```
+::: {#t29-autocheck .autocheck}
+::: {#t29-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t29-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-29-hints">
-
 <summary>Подсказки</summary>
-
-* $\sqrt[x]{a} = a^{\frac{1}{x}}$
-* Операция возведения в степень, как и другие, тоже может зацикливать вектор.
 
 </details>
 :::
@@ -1034,25 +944,28 @@ $$
 
 ## #30 {.unnumbered}
 
-<img id="t1-30-level" class="level"/>
+<div class="level lvl-easy" id="lvl-t30"></div>
 
-::: {#t1-30-task .task}
-И напоследок. Мы можем умножать векторы на число и умножать их друг на друга поэлементно. Однако в линале под перемножением вектором понимается их скалярное произведение.
+::: {#t30-title .task}
 
-Найдите скалярное произведение векторов `sam1` и `sam2`.
+:::
 
-```{r 30}
-sam1 %*% sam2
-```
+::: {#t30-autocheck .autocheck}
+::: {#t30-ir .input-format}
 
+:::
+
+<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+
+<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+
+::: {#t30-fb .autocheck-feedback}
+:::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-30-hints">
-
 <summary>Подсказка</summary>
-
-```%*%```
 
 </details>
 :::
@@ -1063,12 +976,12 @@ sam1 %*% sam2
 
 ***
 
-Некоторые задания, а также форматы заданий, подсмотрены у @moroz-dh4dl и @grinberg-rexercises.
+References & Attribution
 
 ***
 
 ```{=html}
 <!--- CHANGE t1 TO pr<n> IN THE LINES BELOW--->
 <!-- <script type="text/javascript" src="../js/sheet0.json"></script> -->
-<!-- <script type="text/javascript" src="../js/sheet.js"></script> -->
+<script type="text/javascript" src="../js/sheet.js"></script>
 ```

@@ -195,19 +195,31 @@ form.quiz fieldset div.lvl-extreme {
   margin: 1% 0 0 1%;
 }
 
-form.quiz fieldset div.lvl-easy {
+div.lvl-easy,
+div.lvl-medium,
+div.lvl-hard,
+div.lvl-extreme {
+  height: 1em;
+  margin: 0 0 2% 0;
+}
+
+form.quiz fieldset div.lvl-easy,
+div.lvl-easy {
   content: url("img/labs/lab_easy.png");
 }
 
-form.quiz fieldset div.lvl-medium {
+form.quiz fieldset div.lvl-medium,
+div.lvl-medium {
   content: url("img/labs/lab_medium.png");
 }
 
-form.quiz fieldset div.lvl-hard {
+form.quiz fieldset div.lvl-hard,
+div.lvl-hard {
   content: url("img/labs/lab_hard.png");
 }
 
-form.quiz fieldset div.lvl-extreme {
+form.quiz fieldset div.lvl-extreme,
+div.lvl-extreme {
   content: url("img/labs/lab_extreme.png");
 }
 
