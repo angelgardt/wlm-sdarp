@@ -2,8 +2,8 @@
 
 {{< include ../other/_symbols.qmd >}}
 
-```{r opts, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval=FALSE)
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
 ```
 
 
@@ -12,22 +12,22 @@ knitr::opts_chunk$set(echo = FALSE, eval=FALSE)
 
 ## #1 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t1"></div>
+<div class="level" id="t1-level"></div>
 
-::: {#t1-title .task}
+::: {.task #t1-title}
 Task with `inline_code`.
 :::
 
-::: {#t1-autocheck .autocheck}
-::: {#t1-ir .input-format}
+::: {.autocheck #t1-autocheck}
+::: {.input-format #t1-input-format}
 
 :::
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
+<input class="input-autocheck" type="text" id="t1-input" placeholder="Введите ответ…">
 
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t1-input')">
 
-::: {#t1-fb .autocheck-feedback}
+::: {.feedback-autocheck #t1-feedback}
 :::
 :::
 
@@ -47,28 +47,31 @@ Task with `inline_code`.
 
 ## #2 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t2"></div>
+<div class="level" id="t2-level"></div>
 
-::: {#t2-title .task}
+::: {.task #t2-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t2-autocheck}
+::: {.input-format #t2-input-format}
 
 :::
 
-::: {#t2-autocheck .autocheck}
-::: {#t2-ir .input-format}
+<input class="input-autocheck" type="text" id="t2-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t2-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t2-fb .autocheck-feedback}
+::: {.feedback-autocheck #t1-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t2-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -79,28 +82,31 @@ Task with `inline_code`.
 
 ## #3 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t3"></div>
+<div class="level" id="t3-level"></div>
 
-::: {#t3-title .task}
+::: {.task #t3-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t3-autocheck}
+::: {.input-format #t3-input-format}
 
 :::
 
-::: {#t3-autocheck .autocheck}
-::: {#t3-ir .input-format}
+<input class="input-autocheck" type="text" id="t3-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t3-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t3-fb .autocheck-feedback}
+::: {.feedback-autocheck #t3-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t3-hints">
-<summary>Подсказка</summary>
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -111,28 +117,31 @@ Task with `inline_code`.
 
 ## #4 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t4"></div>
+<div class="level" id="t4-level"></div>
 
-::: {#t4-title .task}
+::: {.task #t4-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t4-autocheck}
+::: {.input-format #t4-input-format}
 
 :::
 
-::: {#t4-autocheck .autocheck}
-::: {#t4-ir .input-format}
+<input class="input-autocheck" type="text" id="t4-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t4-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t4-fb .autocheck-feedback}
+::: {.feedback-autocheck #t4-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t4-hints">
-<summary>Подсказка</summary>
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -143,28 +152,31 @@ Task with `inline_code`.
 
 ## #5 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t5"></div>
+<div class="level" id="t5-level"></div>
 
-::: {#t5-title .task}
+::: {.task #t5-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t5-autocheck}
+::: {.input-format #t5-input-format}
 
 :::
 
-::: {#t5-autocheck .autocheck}
-::: {#t5-ir .input-format}
+<input class="input-autocheck" type="text" id="t5-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t5-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t5-fb .autocheck-feedback}
+::: {.feedback-autocheck #t1-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t5-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -175,28 +187,31 @@ Task with `inline_code`.
 
 ## #6 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t6"></div>
+<div class="level" id="t6-level"></div>
 
-::: {#t6-title .task}
+::: {.task #t6-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t6-autocheck}
+::: {.input-format #t6-input-format}
 
 :::
 
-::: {#t6-autocheck .autocheck}
-::: {#t6-ir .input-format}
+<input class="input-autocheck" type="text" id="t6-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t6-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t6-fb .autocheck-feedback}
+::: {.feedback-autocheck #t1-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t6-hints">
-<summary>Подсказка</summary>
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -207,28 +222,31 @@ Task with `inline_code`.
 
 ## #7 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t7"></div>
+<div class="level" id="t7-level"></div>
 
-::: {#t7-title .task}
+::: {.task #t7-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t1-autocheck}
+::: {.input-format #t1-input-format}
 
 :::
 
-::: {#t7-autocheck .autocheck}
-::: {#t7-ir .input-format}
+<input class="input-autocheck" type="text" id="t7-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t7-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t7-fb .autocheck-feedback}
+::: {.feedback-autocheck #t7-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t7-hints">
-<summary>Подсказка</summary>
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -239,28 +257,31 @@ Task with `inline_code`.
 
 ## #8 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t8"></div>
+<div class="level" id="t8-level"></div>
 
-::: {#t8-title .task}
+::: {.task #t8-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t8-autocheck}
+::: {.input-format #t8-input-format}
 
 :::
 
-::: {#t8-autocheck .autocheck}
-::: {#t8-ir .input-format}
+<input class="input-autocheck" type="text" id="t8-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t8-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t8-fb .autocheck-feedback}
+::: {.feedback-autocheck #t8-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t8-hints">
-<summary>Подсказка</summary>
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -271,28 +292,31 @@ Task with `inline_code`.
 
 ## #9 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t9"></div>
+<div class="level" id="t9-level"></div>
 
-::: {#t9-title .task}
+::: {.task #t9-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t9-autocheck}
+::: {.input-format #t9-input-format}
 
 :::
 
-::: {#t9-autocheck .autocheck}
-::: {#t9-ir .input-format}
+<input class="input-autocheck" type="text" id="t9-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t9-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t9-fb .autocheck-feedback}
+::: {.feedback-autocheck #t9-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t9-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -303,28 +327,31 @@ Task with `inline_code`.
 
 ## #10 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t10"></div>
+<div class="level" id="t10-level"></div>
 
-::: {#t10-title .task}
+::: {.task #t10-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t10-autocheck}
+::: {.input-format #t10-input-format}
 
 :::
 
-::: {#t10-autocheck .autocheck}
-::: {#t10-ir .input-format}
+<input class="input-autocheck" type="text" id="t10-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t10-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t10-fb .autocheck-feedback}
+::: {.feedback-autocheck #t10-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t10-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -335,28 +362,31 @@ Task with `inline_code`.
 
 ## #11 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t11"></div>
+<div class="level" id="t11-level"></div>
 
-::: {#t11-title .task}
+::: {.task #t11-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t11-autocheck}
+::: {.input-format #t11-input-format}
 
 :::
 
-::: {#t11-autocheck .autocheck}
-::: {#t11-ir .input-format}
+<input class="input-autocheck" type="text" id="t11-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t11-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t11-fb .autocheck-feedback}
+::: {.feedback-autocheck #t11-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t11-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -367,28 +397,31 @@ Task with `inline_code`.
 
 ## #12 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t12"></div>
+<div class="level" id="t12-level"></div>
 
-::: {#t12-title .task}
+::: {.task #t12-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t12-autocheck}
+::: {.input-format #t12-input-format}
 
 :::
 
-::: {#t12-autocheck .autocheck}
-::: {#t12-ir .input-format}
+<input class="input-autocheck" type="text" id="t12-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t12-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t12-fb .autocheck-feedback}
+::: {.feedback-autocheck #t12-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t12-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -399,28 +432,31 @@ Task with `inline_code`.
 
 ## #13 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t13"></div>
+<div class="level" id="t13-level"></div>
 
-::: {#t13-title .task}
+::: {.task #t13-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t13-autocheck}
+::: {.input-format #t13-input-format}
 
 :::
 
-::: {#t13-autocheck .autocheck}
-::: {#t13-ir .input-format}
+<input class="input-autocheck" type="text" id="t13-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t13-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t13-fb .autocheck-feedback}
+::: {.feedback-autocheck #t13-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t13-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -431,28 +467,31 @@ Task with `inline_code`.
 
 ## #14 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t14"></div>
+<div class="level" id="t14-level"></div>
 
-::: {#t14-title .task}
+::: {.task #t14-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t14-autocheck}
+::: {.input-format #t14-input-format}
 
 :::
 
-::: {#t14-autocheck .autocheck}
-::: {#t14-ir .input-format}
+<input class="input-autocheck" type="text" id="t14-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t14-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t14-fb .autocheck-feedback}
+::: {.feedback-autocheck #t14-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t14-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -463,28 +502,31 @@ Task with `inline_code`.
 
 ## #15 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t15"></div>
+<div class="level" id="t15-level"></div>
 
-::: {#t15-title .task}
+::: {.task #t15-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t15-autocheck}
+::: {.input-format #t15-input-format}
 
 :::
 
-::: {#t15-autocheck .autocheck}
-::: {#t15-ir .input-format}
+<input class="input-autocheck" type="text" id="t15-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t15-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t15-fb .autocheck-feedback}
+::: {.feedback-autocheck #t15-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t15-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -495,28 +537,31 @@ Task with `inline_code`.
 
 ## #16 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t16"></div>
+<div class="level" id="t16-level"></div>
 
-::: {#t16-title .task}
+::: {.task #t16-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t16-autocheck}
+::: {.input-format #t16-input-format}
 
 :::
 
-::: {#t16-autocheck .autocheck}
-::: {#t16-ir .input-format}
+<input class="input-autocheck" type="text" id="t16-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t16-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t16-fb .autocheck-feedback}
+::: {.feedback-autocheck #t16-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
 <details class="hints" id="t16-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -527,28 +572,31 @@ Task with `inline_code`.
 
 ## #17 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t17"></div>
+<div class="level" id="t17-level"></div>
 
-::: {#t17-title .task}
+::: {.task #t17-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t17-autocheck}
+::: {.input-format #t17-input-format}
 
 :::
 
-::: {#t17-autocheck .autocheck}
-::: {#t17-ir .input-format}
+<input class="input-autocheck" type="text" id="t17-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t17-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t17-fb .autocheck-feedback}
+::: {.feedback-autocheck #t17-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-17-hints">
+<details class="hints" id="t17-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -559,29 +607,31 @@ Task with `inline_code`.
 
 ## #18 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t18"></div>
+<div class="level" id="t18-level"></div>
 
-::: {#t18-title .task}
+::: {.task #t18-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t18-autocheck}
+::: {.input-format #t18-input-format}
 
 :::
 
-::: {#t18-autocheck .autocheck}
-::: {#t18-ir .input-format}
+<input class="input-autocheck" type="text" id="t18-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t18-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t18-fb .autocheck-feedback}
+::: {.feedback-autocheck #t18-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-18-hints">
+<details class="hints" id="t18-hints">
 <summary>Подсказки</summary>
 
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -592,28 +642,31 @@ Task with `inline_code`.
 
 ## #19 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t19"></div>
+<div class="level" id="t19-level"></div>
 
-::: {#t19-title .task}
+::: {.task #t19-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t19-autocheck}
+::: {.input-format #t19-input-format}
 
 :::
 
-::: {#t19-autocheck .autocheck}
-::: {#t19-ir .input-format}
+<input class="input-autocheck" type="text" id="t19-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t19-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t19-fb .autocheck-feedback}
+::: {.feedback-autocheck #t19-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-19-hints">
+<details class="hints" id="t19-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -624,28 +677,31 @@ Task with `inline_code`.
 
 ## #20 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t20"></div>
+<div class="level" id="t20-level"></div>
 
-::: {#t20-title .task}
+::: {.task #t20-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t20-autocheck}
+::: {.input-format #t20-input-format}
 
 :::
 
-::: {#t20-autocheck .autocheck}
-::: {#t20-ir .input-format}
+<input class="input-autocheck" type="text" id="t20-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t20-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t20-fb .autocheck-feedback}
+::: {.feedback-autocheck #t1-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-20-hints">
+<details class="hints" id="t20-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -656,28 +712,31 @@ Task with `inline_code`.
 
 ## #21 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t21"></div>
+<div class="level" id="t21-level"></div>
 
-::: {#t21-title .task}
+::: {.task #t21-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t21-autocheck}
+::: {.input-format #t1-input-format}
 
 :::
 
-::: {#t21-autocheck .autocheck}
-::: {#t21-ir .input-format}
+<input class="input-autocheck" type="text" id="t21-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t21-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t21-fb .autocheck-feedback}
+::: {.feedback-autocheck #t21-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-21-hints">
+<details class="hints" id="t21-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -688,28 +747,31 @@ Task with `inline_code`.
 
 ## #22 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t22"></div>
+<div class="level" id="t22-level"></div>
 
-::: {#t22-title .task}
+::: {.task #t22-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t22-autocheck}
+::: {.input-format #t22-input-format}
 
 :::
 
-::: {#t22-autocheck .autocheck}
-::: {#t22-ir .input-format}
+<input class="input-autocheck" type="text" id="t22-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t22-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t22-fb .autocheck-feedback}
+::: {.feedback-autocheck #t1-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-22-hints">
+<details class="hints" id="t22-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -720,28 +782,31 @@ Task with `inline_code`.
 
 ## #23 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t23"></div>
+<div class="level" id="t23-level"></div>
 
-::: {#t23-title .task}
+::: {.task #t23-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t23-autocheck}
+::: {.input-format #t23-input-format}
 
 :::
 
-::: {#t23-autocheck .autocheck}
-::: {#t23-ir .input-format}
+<input class="input-autocheck" type="text" id="t23-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t23-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t23-fb .autocheck-feedback}
+::: {.feedback-autocheck #t23-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-22-hints">
+<details class="hints" id="t23-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -752,28 +817,31 @@ Task with `inline_code`.
 
 ## #24 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t24"></div>
+<div class="level" id="t24-level"></div>
 
-::: {#t24-title .task}
+::: {.task #t24-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t24-autocheck}
+::: {.input-format #t24-input-format}
 
 :::
 
-::: {#t24-autocheck .autocheck}
-::: {#t24-ir .input-format}
+<input class="input-autocheck" type="text" id="t24-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t24-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t24-fb .autocheck-feedback}
+::: {.feedback-autocheck #t24-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-22-hints">
+<details class="hints" id="t24-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -784,28 +852,31 @@ Task with `inline_code`.
 
 ## #25 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t25"></div>
+<div class="level" id="t25-level"></div>
 
-::: {#t25-title .task}
+::: {.task #t25-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t25-autocheck}
+::: {.input-format #t25-input-format}
 
 :::
 
-::: {#t25-autocheck .autocheck}
-::: {#t25-ir .input-format}
+<input class="input-autocheck" type="text" id="t25-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t25-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t25-fb .autocheck-feedback}
+::: {.feedback-autocheck #t25-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-25-hints">
-<summary>Подсказка</summary>
+<details class="hints" id="t25-hints">
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -816,28 +887,31 @@ Task with `inline_code`.
 
 ## #26 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t26"></div>
+<div class="level" id="t26-level"></div>
 
-::: {#t26-title .task}
+::: {.task #t26-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t26-autocheck}
+::: {.input-format #t26-input-format}
 
 :::
 
-::: {#t26-autocheck .autocheck}
-::: {#t26-ir .input-format}
+<input class="input-autocheck" type="text" id="t26-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t26-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t26-fb .autocheck-feedback}
+::: {.feedback-autocheck #t26-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-26-hints">
-<summary>Подсказка</summary>
+<details class="hints" id="t26-hints">
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -848,28 +922,31 @@ Task with `inline_code`.
 
 ## #27 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t27"></div>
+<div class="level" id="t27-level"></div>
 
-::: {#t27-title .task}
+::: {.task #t27-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t27-autocheck}
+::: {.input-format #t27-input-format}
 
 :::
 
-::: {#t27-autocheck .autocheck}
-::: {#t27-ir .input-format}
+<input class="input-autocheck" type="text" id="t27-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t27-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t27-fb .autocheck-feedback}
+::: {.feedback-autocheck #t27-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-22-hints">
+<details class="hints" id="t27-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -880,28 +957,31 @@ Task with `inline_code`.
 
 ## #28 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t28"></div>
+<div class="level" id="t28-level"></div>
 
-::: {#t28-title .task}
+::: {.task #t28-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t28-autocheck}
+::: {.input-format #t28-input-format}
 
 :::
 
-::: {#t28-autocheck .autocheck}
-::: {#t28-ir .input-format}
+<input class="input-autocheck" type="text" id="t28-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t28-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t28-fb .autocheck-feedback}
+::: {.feedback-autocheck #t28-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-28-hints">
+<details class="hints" id="t28-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -912,28 +992,31 @@ Task with `inline_code`.
 
 ## #29 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t29"></div>
+<div class="level" id="t29-level"></div>
 
-::: {#t29-title .task}
+::: {.task #t29-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t29-autocheck}
+::: {.input-format #t29-input-format}
 
 :::
 
-::: {#t29-autocheck .autocheck}
-::: {#t29-ir .input-format}
+<input class="input-autocheck" type="text" id="t29-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t29-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t29-fb .autocheck-feedback}
+::: {.feedback-autocheck #t29-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-29-hints">
+<details class="hints" id="t29-hints">
 <summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::
@@ -944,28 +1027,31 @@ Task with `inline_code`.
 
 ## #30 {.unnumbered}
 
-<div class="level lvl-easy" id="lvl-t30"></div>
+<div class="level" id="t30-level"></div>
 
-::: {#t30-title .task}
+::: {.task #t30-title}
+Task with `inline_code`.
+:::
+
+::: {.autocheck #t30-autocheck}
+::: {.input-format #t30-input-format}
 
 :::
 
-::: {#t30-autocheck .autocheck}
-::: {#t30-ir .input-format}
+<input class="input-autocheck" type="text" id="t30-input" placeholder="Введите ответ…">
 
-:::
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t30-input')">
 
-<input class="autocheck-input" type="text" id="hw1-1" placeholder="Введите ответ…">
-
-<input class="autocheck-button" type="button" value="Проверить" onclick="check('hw1-1')">
-
-::: {#t30-fb .autocheck-feedback}
+::: {.feedback-autocheck #t30-feedback}
 :::
 :::
 
 ::: {.hints-wrapper}
-<details class="hints" id="t1-30-hints">
-<summary>Подсказка</summary>
+<details class="hints" id="t30-hints">
+<summary>Подсказки</summary>
+
+* Hint 1
+* `Hint 2`
 
 </details>
 :::

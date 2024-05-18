@@ -1,7 +1,8 @@
 /*-- scss:defaults --*/
 
 $intro-font-weight:           300;
-
+$hint-font-size:              0.8em;
+$hint-font-weight:            300;
 
 /*-- scss:rules --*/
 
@@ -255,4 +256,26 @@ form.quiz fieldset div.check-cross {
 
 form.quiz fieldset.non-filled {
   border-color: $red;
+}
+
+
+
+// Sheet
+
+.input-autocheck {
+  padding: .2em;
+  width: 100%;
+  padding-inline: .5em;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-bottom: 1%;
+}
+
+.button-autocheck {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 1%;
+  padding-inline: 2% 
 }
