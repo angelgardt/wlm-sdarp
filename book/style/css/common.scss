@@ -1,5 +1,48 @@
 /*-- scss:defaults --*/
 
+$montserrat-font-path: "./style/fonts/Montserrat/webfonts";
+$sourcecodepro-font-path: "./style/fonts/Source_Code_Pro";
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Medium.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Regular.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Light.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+@font-face {
+  src: url("#{$sourcecodepro-font-path}/SourceCodePro-VariableFont_wght.ttf");
+  font-family: "SourceCodePro";
+  font-weight: 500;
+}
+
+
+$font-family-sans-serif:      Montserrat !default;
+$font-family-code:            SourceCodePro !default;
+$h1-font-size:                3rem !default;
+$h1-font-weight:              600;
+$h2-font-size:                2.5rem !default;
+$h2-font-weight:              500;
+$h3-font-size:                2rem !default;
+$body-font-weight:            400;
+$text-muted:                  body-mix(75%) !default;
 $intro-font-weight:           300;
 $hint-font-size:              0.8em;
 $hint-font-weight:            300;
@@ -24,8 +67,11 @@ div.quarto-title-meta {
 }
 
 .quarto-float-lst {
-  font-size: .8em;
   margin-bottom: -.5em;
+}
+
+.quarto-float-lst figcaption {
+  font-size: .7em;
 }
 
 header div.quarto-title-banner {
@@ -80,6 +126,10 @@ header div.quarto-title-banner {
 
 figcaption {
   font-family: Montserrat;
+}
+
+code {
+  font-family: $font-family-code;
 }
 
 

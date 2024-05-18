@@ -53,42 +53,7 @@ $link-color:                $teal !default;
 
 // stylelint-disable-next-line value-keyword-case
 
-$montserrat-font-path: "./style/fonts/Montserrat/webfonts";
 
-
-@font-face {
-  src: url("#{$montserrat-font-path}/Montserrat-SemiBold.woff2") format("woff2");
-  font-family: "Montserrat";
-  font-weight: 600;
-}
-
-@font-face {
-  src: url("#{$montserrat-font-path}/Montserrat-Medium.woff2") format("woff2");
-  font-family: "Montserrat";
-  font-weight: 500;
-}
-
-@font-face {
-  src: url("#{$montserrat-font-path}/Montserrat-Regular.woff2") format("woff2");
-  font-family: "Montserrat";
-  font-weight: 400;
-}
-
-@font-face {
-  src: url("#{$montserrat-font-path}/Montserrat-Light.woff2") format("woff2");
-  font-family: "Montserrat";
-  font-weight: 300;
-}
-
-
-$font-family-sans-serif:      Montserrat !default;
-$h1-font-size:                3rem !default;
-$h1-font-weight:              600;
-$h2-font-size:                2.5rem !default;
-$h2-font-weight:              500;
-$h3-font-size:                2rem !default;
-$body-font-weight:            400;
-$intro-font-weight:           300;
 
 // Tables
 
