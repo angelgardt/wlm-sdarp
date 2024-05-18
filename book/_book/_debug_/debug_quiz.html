@@ -878,33 +878,45 @@ window.Quarto = {
 <section id="section" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="section">#1</h2>
 <fieldset class="question" id="q1">
-<div id="lvl-q1" class="level">
+<div id="q1-level" class="level">
 
 </div>
-<div id="check-tick-q1" class="check-tick" hidden="">
+<div id="q1-check-tick" class="check-tick" hidden="">
 
 </div>
-<div id="check-cross-q1" class="check-cross" hidden="">
+<div id="q1-check-cross" class="check-cross" hidden="">
 
 </div>
-<p><legend class="question-title" id="title-q1"> Question 1 with inline equation <span class="math inline">\(x^2 + y^2 = R^2\)</span> </legend> <img class="question-image" id="q1-image" src="" hidden=""></p>
-<div id="q1-opt1-alternative" class="alternative">
-<p><input type="radio" class="in-alternative" id="q1-option1" name="alternative-q1" value="Option 1"> <label for="q1-option1" id="q1-opt1-label"> Option <span class="math inline">\(\sin 1\)</span> </label></p>
+<p><legend class="question-title" id="q1-title"> Question 1 with inline equation <span class="math inline">\(x^2 + y^2 = R^2\)</span> </legend> <img class="question-image" id="q1-image" src="" hidden=""></p>
+<div id="q1-option1-alternative" class="alternative">
+<pre><code>&lt;input type="radio" class="input-alternative" id="q1-option1" name="q1-alternative" value="Option 1"&gt;
+&lt;label for="q1-option1" id="q1-option1-label"&gt;
+  Option $\sin 1$
+&lt;/label&gt;</code></pre>
 </div>
-<div id="q1-opt2-alternative" class="alternative">
-<p><input type="radio" class="in-alternative" id="q1-option2" name="alternative-q1" value="Option 2"> <label for="q1-option2" id="q1-opt2-label"> Option <span class="math inline">\(\cos 2\)</span> </label></p>
+<div id="q1-option2-alternative" class="alternative">
+<pre><code>&lt;input type="radio" class="input-alternative" id="q1-option2" name="q1-alternative" value="Option 2"&gt;
+&lt;label for="q1-option2" id="q1-option2-label"&gt;
+  Option $\cos 2$
+&lt;/label&gt;</code></pre>
 </div>
-<div id="q1-opt3-alternative" class="alternative">
-<p><input type="radio" class="in-alternative" id="q1-option3" name="alternative-q1" value="Option 3"> <label for="q1-option3" id="q1-opt3-label"> Option <span class="math inline">\(\tan 3\)</span> </label></p>
+<div id="q1-option3-alternative" class="alternative">
+<pre><code>&lt;input type="radio" class="input-alternative" id="q1-option3" name="q1-alternative" value="Option 3"&gt;
+&lt;label for="q1-option3" id="q1-option3-label"&gt;
+  Option $\tan 3$
+&lt;/label&gt;</code></pre>
 </div>
-<div id="q1-opt4-alternative" class="alternative">
-<p><input type="radio" class="in-alternative" id="q1-option4" name="alternative-q1" value="Option 4"> <label for="q1-option4" id="q1-opt4-label"> Option <span class="math inline">\(\exp(4)\)</span> </label></p>
+<div id="q1-option4-alternative" class="alternative">
+<pre><code>&lt;input type="radio" class="input-alternative" id="q1-option4" name="q1-alternative" value="Option 4"&gt;
+&lt;label for="q1-option4" id="q1-option4-label"&gt;
+  Option $\exp(4)$
+&lt;/label&gt;</code></pre>
 </div>
 <div id="feedback-q1-correct" class="feedback" hidden="">
-<p>Correct Feedback</p>
+<pre><code>Correct Feedback</code></pre>
 </div>
 <div id="feedback-q1-incorrect" class="feedback" hidden="">
-<p>Incorrect Feedback</p>
+<pre><code>Incorrect Feedback</code></pre>
 </div>
 </fieldset>
 </section>
@@ -1023,40 +1035,40 @@ window.Quarto = {
 </div>
 <p><legend class="question-title" id="title-q5"> Question 5 with code </legend></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> vec) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> vec) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img class="question-image" id="q5-image" src="" hidden=""></p>
 <div id="q5-opt1-alternative" class="alternative">
 <p><input type="radio" class="in-alternative" id="q5-option1" name="alternative-q5" value="Option 1"> <label for="q5-option1" id="q5-opt1-label"></label></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"no"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"yes"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"no"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"yes"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p></p>
 </div>
 <div id="q5-opt2-alternative" class="alternative">
 <p><input type="radio" class="in-alternative" id="q5-option2" name="alternative-q5" value="Option 2"> <label for="q5-option2" id="q5-opt2-label"></label></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p></p>
 </div>
 <div id="q5-opt3-alternative" class="alternative">
 <p><input type="radio" class="in-alternative" id="q5-option3" name="alternative-q5" value="Option 3"> <label for="q5-option3" id="q5-opt3-label"></label></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="st">"hihik.RData"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="st">"hihik.RData"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p></p>
 </div>
 <div id="q5-opt4-alternative" class="alternative">
 <p><input type="radio" class="in-alternative" id="q5-option4" name="alternative-q5" value="Option 4"> <label for="q5-option4" id="q5-opt4-label"></label></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">installed.packages</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">installed.packages</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p></p>
 </div>

@@ -76,7 +76,7 @@
     "href": "_debug_/debug_quiz.html#section",
     "title": "Отладка квиза",
     "section": "#1",
-    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n&lt;input type=\"radio\" class=\"input-alternative\" id=\"q1-option1\" name=\"q1-alternative\" value=\"Option 1\"&gt;\n&lt;label for=\"q1-option1\" id=\"q1-option1-label\"&gt;\n  Option $\\sin 1$\n&lt;/label&gt;\n\n\n&lt;input type=\"radio\" class=\"input-alternative\" id=\"q1-option2\" name=\"q1-alternative\" value=\"Option 2\"&gt;\n&lt;label for=\"q1-option2\" id=\"q1-option2-label\"&gt;\n  Option $\\cos 2$\n&lt;/label&gt;\n\n\n&lt;input type=\"radio\" class=\"input-alternative\" id=\"q1-option3\" name=\"q1-alternative\" value=\"Option 3\"&gt;\n&lt;label for=\"q1-option3\" id=\"q1-option3-label\"&gt;\n  Option $\\tan 3$\n&lt;/label&gt;\n\n\n&lt;input type=\"radio\" class=\"input-alternative\" id=\"q1-option4\" name=\"q1-alternative\" value=\"Option 4\"&gt;\n&lt;label for=\"q1-option4\" id=\"q1-option4-label\"&gt;\n  Option $\\exp(4)$\n&lt;/label&gt;\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Отладка квиза"

@@ -16,49 +16,49 @@ knitr::opts_chunk$set(echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE, error
 
 <fieldset class="question" id="q1">
 
-<div class="level" id="lvl-q1"></div>
-<div class="check-tick" id="check-tick-q1" hidden></div>
-<div class="check-cross" id="check-cross-q1" hidden></div>
+  <div class="level" id="q1-level"></div>
+  <div class="check-tick" id="q1-check-tick" hidden></div>
+  <div class="check-cross" id="q1-check-cross" hidden></div>
 
-<legend class="question-title" id="title-q1">
-Question 1 with inline equation $x^2 + y^2 = R^2$
-</legend>
-<img class="question-image" id="q1-image" src="" hidden>
+  <legend class="question-title" id="q1-title">
+    Question 1 with inline equation $x^2 + y^2 = R^2$
+  </legend>
+  <img class="question-image" id="q1-image" src="" hidden>
 
-<div class="alternative" id="q1-opt1-alternative">
-<input type="radio" class="in-alternative" id="q1-option1" name="alternative-q1" value="Option 1">
-<label for="q1-option1" id="q1-opt1-label">
-Option $\sin 1$
-</label>
-</div>
+  <div class="alternative" id="q1-option1-alternative">
+    <input type="radio" class="input-alternative" id="q1-option1" name="q1-alternative" value="Option 1">
+    <label for="q1-option1" id="q1-option1-label">
+      Option $\sin 1$
+    </label>
+  </div>
 
-<div class="alternative" id="q1-opt2-alternative">
-<input type="radio" class="in-alternative" id="q1-option2" name="alternative-q1" value="Option 2">
-<label for="q1-option2" id="q1-opt2-label">
-Option $\cos 2$
-</label>
-</div>
+  <div class="alternative" id="q1-option2-alternative">
+    <input type="radio" class="input-alternative" id="q1-option2" name="q1-alternative" value="Option 2">
+    <label for="q1-option2" id="q1-option2-label">
+      Option $\cos 2$
+    </label>
+  </div>
 
-<div class="alternative" id="q1-opt3-alternative">
-<input type="radio" class="in-alternative" id="q1-option3" name="alternative-q1" value="Option 3">
-<label for="q1-option3" id="q1-opt3-label">
-Option $\tan 3$
-</label>
-</div>
+  <div class="alternative" id="q1-option3-alternative">
+    <input type="radio" class="input-alternative" id="q1-option3" name="q1-alternative" value="Option 3">
+    <label for="q1-option3" id="q1-option3-label">
+      Option $\tan 3$
+    </label>
+  </div>
 
-<div class="alternative" id="q1-opt4-alternative">
-<input type="radio" class="in-alternative" id="q1-option4" name="alternative-q1" value="Option 4">
-<label for="q1-option4" id="q1-opt4-label">
-Option $\exp(4)$
-</label>
-</div>
+  <div class="alternative" id="q1-option4-alternative">
+    <input type="radio" class="input-alternative" id="q1-option4" name="q1-alternative" value="Option 4">
+    <label for="q1-option4" id="q1-option4-label">
+      Option $\exp(4)$
+    </label>
+  </div>
 
-<div class="feedback" id="feedback-q1-correct" hidden>
-Correct Feedback
-</div>
-<div class="feedback" id="feedback-q1-incorrect" hidden>
-Incorrect Feedback
-</div>
+  <div class="feedback" id="feedback-q1-correct" hidden>
+    Correct Feedback
+  </div>
+  <div class="feedback" id="feedback-q1-incorrect" hidden>
+    Incorrect Feedback
+  </div>
 
 </fieldset>
 
