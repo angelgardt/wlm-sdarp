@@ -79,9 +79,9 @@
         "copyright": [
             "SPDX-FileCopyrightText: 2024 Anton Angelgardt <anton.angelgardt@gmail.com>"
         ],
-        "license": "SPDX-License-Identifier: MIT",
+        "license": "CC BY-NC-SA 4.0",
         "name": "WLM SDAR Dark",
-        "revision": 3
+        "revision": 1
     },
     "text-styles": {
         "Alert": {
