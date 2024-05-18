@@ -148,15 +148,15 @@ for (i in 1:100) {
 
 ## большой код для графика
 
-diamonds %>% 
-  summarise(mean_price_cut = mean(price),
+diamonds %>% # <1>
+  summarise(mean_price_cut = mean(price), # <2>
             sd_price_cut = sd(price),
             .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>% 
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive",
+  right_join(diamonds, join_by(cut)) %>% # <3>
+  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive", # <4>
                               ifelse(price < mean_price_cut - sd_price_cut, "cheap",
                                      "average"))) %>% 
-  ggplot(aes(clarity, price, 
+  ggplot(aes(clarity, price, # <5>
              shape = price_group, color = color)) +
   stat_summary(geom = "pointrange", 
                fun.data = mean_cl_boot,
@@ -164,6 +164,11 @@ diamonds %>%
   scale_shape_manual(values = c(21, 22, 23)) +
   theme(legend.position = "bottom")
 ```
+1. Берем датасет `diamonds`, что нарисовать график про бриллианты
+2. Рассчитываем базовые описательные статистики
+3. Объединяем агрегированные данные с исходными
+4. Разделяем наблюдения на группы
+5. Начинаем рисовать
 
 
 ::: {#tbl-knitrtable}
@@ -358,7 +363,7 @@ $$ {#eq-line}
 
 ###### Совсем мелкий заголовок
 
-```{r leaflet-map}
+```{r leaflet-map, echo=FALSE}
 #| code-fold: true
 #| label: fig-rbirthplace
 #| fig-cap: "Тут родился R"
@@ -370,7 +375,7 @@ leaflet() %>%
 ```
 
 
-Тут (@fig-razbor) видео, на которые ссылка как на рисунок.
+Тут (@fig-razbor) видео, на которое ссылка как на рисунок.
 
 :::{#fig-razbor}
 
