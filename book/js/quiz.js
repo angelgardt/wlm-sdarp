@@ -16,16 +16,15 @@ for (let i = 0; i < info_json.length; i++) {
 
 for (let i = 1; i <= 20; i++) {
   if (info["level"]["q"+i] == "") {
-    document.getElementById("lvl-q"+i).hidden = true;
+    document.getElementById("q"+i+"-level").hidden = true;
   } else {
-    document.getElementById("lvl-q"+i).className += (" lvl-" + info["level"]["q"+i]);
+    document.getElementById("q"+i+"-level").classList.add("level-" + info["level"]["q"+i]);
   }
   // document.getElementById("title-q"+i).innerHTML = info["text"]["q"+i];
   if (info["type"]["q"+i] == "checkbox") {
-    document.getElementById("q"+i+"-option1").type = "checkbox";
-    document.getElementById("q"+i+"-option2").type = "checkbox";
-    document.getElementById("q"+i+"-option3").type = "checkbox";
-    document.getElementById("q"+i+"-option4").type = "checkbox";
+    for (let j = 1; j <= 4; j++) {
+      document.getElementById("q"+i+"-option"+j).type = "checkbox";
+    }
   }
   // document.getElementById("q"+i+"-opt1-label").innerHTML = info["option1_label"]["q"+i];
   // document.getElementById("q"+i+"-opt2-label").innerHTML = info["option2_label"]["q"+i];
@@ -36,10 +35,6 @@ for (let i = 1; i <= 20; i++) {
   // } else {
   //   document.getElementById("q"+i+"-image").src = info["img"]["q"+i];
   // }
-  let question_image = document.getElementById("q"+i+"-image");
-  if (question_image.src == "none") {
-    question_image.hidden = true;
-  }
 }
 
 
@@ -143,13 +138,13 @@ function show_results(ans) {
     if (ans["q"+i]["correct"]) {
       score += 1;
       document.getElementById("q"+i).classList.add("correct");
-      document.getElementById("check-tick-q"+i).hidden = false;
-      document.getElementById("feedback-q"+i+"-correct").hidden = false;
+      document.getElementById("q"+i+"-check-tick").hidden = false;
+      document.getElementById("q"+i+"-feedback-correct").hidden = false;
       // document.getElementById("feedback-q"+i).innerHTML = info["feedback_correct"]["q"+i]
     } else {
       document.getElementById("q"+i).classList.add("incorrect");
-      document.getElementById("check-cross-q"+i).hidden = false;
-      document.getElementById("feedback-q"+i+"-incorrect").hidden = false;
+      document.getElementById("q"+i+"-check-cross").hidden = false;
+      document.getElementById("q"+i+"-feedback-incorrect").hidden = false;
       // document.getElementById("feedback-q"+i).innerHTML = info["feedback_incorrect"]["q"+i]
     }
   }
@@ -163,18 +158,18 @@ function show_answers(ans) {
     for (j = 1; j <= 4; j++) {
       document.getElementById("q"+i+"-option"+j).disabled = true;
       if (ans["q"+i]["opt"+j]["correct"] == "true") {
-        document.getElementById("q"+i+"-opt"+j+"-label").classList.add("correct");
-        document.getElementById("q"+i+"-opt"+j+"-alternative").classList.add("correct");
+        document.getElementById("q"+i+"-option"+j+"-label").classList.add("correct");
+        document.getElementById("q"+i+"-option"+j+"-alternative").classList.add("correct");
       } else {
-        document.getElementById("q"+i+"-opt"+j+"-label").classList.add("incorrect");
-        document.getElementById("q"+i+"-opt"+j+"-alternative").classList.add("incorrect");
+        document.getElementById("q"+i+"-option"+j+"-label").classList.add("incorrect");
+        document.getElementById("q"+i+"-option"+j+"-alternative").classList.add("incorrect");
       }
     }
   }
 }
 
 function check_quiz() {
-  const answers = document.getElementsByClassName("in-alternative");
+  const answers = document.getElementsByClassName("input-alternative");
   let ans = {};
   // console.log("answers");
   // console.log(answers);

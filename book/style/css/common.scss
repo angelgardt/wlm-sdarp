@@ -187,10 +187,10 @@ form.quiz fieldset div.feedback {
   font-size: .9em;
 }
 
-form.quiz fieldset div.lvl-easy,
-form.quiz fieldset div.lvl-medium,
-form.quiz fieldset div.lvl-hard,
-form.quiz fieldset div.lvl-extreme {
+form.quiz fieldset div.level-easy,
+form.quiz fieldset div.level-medium,
+form.quiz fieldset div.level-hard,
+form.quiz fieldset div.level-extreme {
   height: 1em;
   margin: 1% 0 0 1%;
 }
@@ -203,23 +203,23 @@ div.lvl-extreme {
   margin: 0 0 2% 0;
 }
 
-form.quiz fieldset div.lvl-easy,
-div.lvl-easy {
+form.quiz fieldset div.level-easy,
+div.level-easy {
   content: url("img/labs/lab_easy.png");
 }
 
-form.quiz fieldset div.lvl-medium,
-div.lvl-medium {
+form.quiz fieldset div.level-medium,
+div.level-medium {
   content: url("img/labs/lab_medium.png");
 }
 
-form.quiz fieldset div.lvl-hard,
-div.lvl-hard {
+form.quiz fieldset div.level-hard,
+div.level-hard {
   content: url("img/labs/lab_hard.png");
 }
 
-form.quiz fieldset div.lvl-extreme,
-div.lvl-extreme {
+form.quiz fieldset div.level-extreme,
+div.level-extreme {
   content: url("img/labs/lab_extreme.png");
 }
 
