@@ -1,13 +1,30 @@
-# Intro {#intro .unnumbered}
+
+
+## Аннотация {#abstract .unnumbered}
+
+:::{.callout-note .version appearance="simple"}
+###### Текущая версия {.unnumbered}
+
+**0.0.1**
+:::
 
 
 ## Благодарности {#acknowledgement .unnumbered}
 
 
+#### Attribution {#attribution .unnumbered}
 
-## Зачем изучать анализ данных в эпоху нейросетей? {#andan_neuralnetworks .unnumbered}
 
 
+
+***
+
+:::{.callout-note appearance="simple" collapse="true"}
+###### Предыдущие версии {.unnumbered}
+
+* [0.0.00](../prev/0.0.00)
+
+:::
 
 ***
 

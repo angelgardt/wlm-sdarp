@@ -2,9 +2,12 @@ project:
   type: book
   output-dir: _book
 
+metadata-files:
+  - _metadata.yml
+
 book:
   title: "WLM SDAR"
-  language: ru
+  # language: ru
   subtitle: "World of Linear Models: Statistics & Data Analysis in R"
   author: 
     - name: "Anton Angelgardt"
@@ -14,108 +17,107 @@ book:
   
   chapters:
     - index.qmd
-    - signs.qmd
-    - part: Testing
+    - _common/intro.qmd
+    - _common/signs.qmd
+    - part: Debug
       chapters: 
-      - teststyle.qmd
-      - testquiz.qmd
-      - testsheet.qmd
-    - part: part-r.qmd
+      - _debug_/debug_chapter.qmd
+      - _debug_/debug_quiz.qmd
+      - _debug_/debug_sheet.qmd
+    - part: _part-r/part-r.qmd
       chapters:
-      - r-intro.qmd
-      - r-datatypes.qmd
-      - r-datastructures.qmd
-      - r-functionsI.qmd
-      - r-controlworkflow.qmd
-      - r-functionsII.qmd
-      - r-strings.qmd
-      - r-datetime.qmd
-      - r-data.qmd
-      - r-preprocessbasic.qmd
-      - r-preprocessadvanced.qmd
-      - r-visbaser.qmd
-      - r-visbasic.qmd
-      - r-visadvanced.qmd
-      - r-rmd.qmd
-      - r-qmd.qmd
-    - part: part-math.qmd
+      - _part-r/r-intro.qmd
+      - _part-r/r-datatypes.qmd
+      - _part-r/r-datastructures.qmd
+      - _part-r/r-functionsI.qmd
+      - _part-r/r-controlworkflow.qmd
+      - _part-r/r-functionsII.qmd
+      - _part-r/r-strings.qmd
+      - _part-r/r-datetime.qmd
+      - _part-r/r-data.qmd
+      - _part-r/r-preprocessbasic.qmd
+      - _part-r/r-preprocessadvanced.qmd
+      - _part-r/r-visbaser.qmd
+      - _part-r/r-visbasic.qmd
+      - _part-r/r-visadvanced.qmd
+      - _part-r/r-rmd.qmd
+      - _part-r/r-qmd.qmd
+    - part: _part-math/part-math.qmd
       chapters:
-      - math-logic.qmd
-      - math-set.qmd
-      - math-comb.qmd
-      - math-calculusI.qmd
-      - math-calculusII.qmd
-      - math-linalI.qmd
-      - math-linalII.qmd
-    - part: part-measures.qmd
+      - _part-math/math-logic.qmd
+      - _part-math/math-set.qmd
+      - _part-math/math-comb.qmd
+      - _part-math/math-calculusI.qmd
+      - _part-math/math-calculusII.qmd
+      - _part-math/math-linalI.qmd
+      - _part-math/math-linalII.qmd
+    - part: _part-measures/part-measures.qmd
       chapters:
-      - measures-scales.qmd
-      - measures-psymetI.qmd
-      - measures-psymetII.qmd
-      - measures-psymetIII.qmd
-    - part: part-desc.qmd
+      - _part-measures/measures-scales.qmd
+      - _part-measures/measures-psymetI.qmd
+      - _part-measures/measures-psymetII.qmd
+      - _part-measures/measures-psymetIII.qmd
+    - part: _part-desc/part-desc.qmd
       chapters:
-      - desc-statintro.qmd
-      - desc-centrtend.qmd
-      - desc-variance.qmd
-      - desc-distshape.qmd
-      - desc-prodmetrics.qmd
-    - part: part-prob.qmd
-      # chapters: 
-      # - n.qmd
-    - part: part-andan.qmd
+      - _part-desc/desc-statintro.qmd
+      - _part-desc/desc-centrtend.qmd
+      - _part-desc/desc-variance.qmd
+      - _part-desc/desc-distshape.qmd
+      - _part-desc/desc-prodmetrics.qmd
+    - part: _part-prob/part-prob.qmd
+    - part: _part-andan/part-andan.qmd
       chapters:
-      - andan-means.qmd
-      - andan-categorical.qmd
-      - andan-cor.qmd
-      - andan-nonparam.qmd
-      - andan-simplelinear.qmd
-      - andan-multiplelinear.qmd
-      - andan-polynomialreg.qmd
-      - andan-svr.qmd
-      - andan-regreg.qmd
-      - andan-anova.qmd
-      - andan-ancova.qmd
-      - andan-manova.qmd
-      - andan-regtrees.qmd
-      - andan-regforest.qmd
-      - andan-dist.qmd
-      - andan-glm.qmd
-      - andan-logreg.qmd
-      - andan-multinomreg.qmd
-      - andan-poisreg.qmd
-      - andan-gam.qmd
-      - andan-glmm.qmd
-      - andan-glogmm.qmd
-      - andan-gmultinommm.qmd
-      - andan-svm.qmd
-      - andan-classtrees.qmd
-      - andan-classforest.qmd
-      - andan-cluster.qmd
-      - andan-fuzzycluster.qmd
-      - andan-lda.qmd
-      - andan-pca.qmd
-      - andan-ica.qmd
-      - andan-cca.qmd
-      - andan-efa.qmd
-      - andan-cfa.qmd
-      - andan-sem.qmd
-      - andan-path.qmd
-      - andan-timeseries.qmd
-    - outro.qmd
+      - _part-andan/andan-means.qmd
+      - _part-andan/andan-categorical.qmd
+      - _part-andan/andan-cor.qmd
+      - _part-andan/andan-nonparam.qmd
+      - _part-andan/andan-simplelinear.qmd
+      - _part-andan/andan-multiplelinear.qmd
+      - _part-andan/andan-polynomialreg.qmd
+      - _part-andan/andan-svr.qmd
+      - _part-andan/andan-regreg.qmd
+      - _part-andan/andan-anova.qmd
+      - _part-andan/andan-ancova.qmd
+      - _part-andan/andan-manova.qmd
+      - _part-andan/andan-regtrees.qmd
+      - _part-andan/andan-regforest.qmd
+      - _part-andan/andan-dist.qmd
+      - _part-andan/andan-glm.qmd
+      - _part-andan/andan-logreg.qmd
+      - _part-andan/andan-multinomreg.qmd
+      - _part-andan/andan-poisreg.qmd
+      - _part-andan/andan-gam.qmd
+      - _part-andan/andan-glmm.qmd
+      - _part-andan/andan-glogmm.qmd
+      - _part-andan/andan-gmultinommm.qmd
+      - _part-andan/andan-svm.qmd
+      - _part-andan/andan-classtrees.qmd
+      - _part-andan/andan-classforest.qmd
+      - _part-andan/andan-cluster.qmd
+      - _part-andan/andan-fuzzycluster.qmd
+      - _part-andan/andan-lda.qmd
+      - _part-andan/andan-pca.qmd
+      - _part-andan/andan-ica.qmd
+      - _part-andan/andan-cca.qmd
+      - _part-andan/andan-efa.qmd
+      - _part-andan/andan-cfa.qmd
+      - _part-andan/andan-sem.qmd
+      - _part-andan/andan-path.qmd
+      - _part-andan/andan-timeseries.qmd
+    - _common/outro.qmd
     - references.qmd
   appendices:
-    - appendix-numbers.qmd
-    - appendix-numbers-iron.qmd
-    - appendix-strings-iron.qmd
-    - appendix-memory-iron.qmd
-    - appendix-proglang.qmd
-    - appendix-formulas.qmd
-    - appendix-git.qmd
-    - appendix-research-design.qmd
-    - appendix-design.qmd
-    - appendix-math-letters.qmd
-    - appendix-answers.qmd
+    - _part-appendices/appendix-numbers.qmd
+    - _part-appendices/appendix-numbers-iron.qmd
+    - _part-appendices/appendix-strings-iron.qmd
+    - _part-appendices/appendix-memory-iron.qmd
+    - _part-appendices/appendix-proglang.qmd
+    - _part-appendices/appendix-formulas.qmd
+    - _part-appendices/appendix-git.qmd
+    - _part-appendices/appendix-research-design.qmd
+    - _part-appendices/appendix-design.qmd
+    - _part-appendices/appendix-math-letters.qmd
+    - _part-appendices/appendix-answers.qmd
     
   favicon: img/other/favicon.png
 
@@ -130,6 +132,8 @@ highlight-style:
 
 format:
   html:
+    title-block-banner: img/other/title-block-banner.jpg
+    title-block-banner-color: "#f5f5f5"
     toc: true
     toc-depth: 4
     grid: 
@@ -142,5 +146,6 @@ format:
     theme:
       light: [style/css/light.scss, style/css/common.scss]
       dark: [style/css/dark.scss, style/css/common.scss]
+    code-overflow: scroll
 
 editor: source

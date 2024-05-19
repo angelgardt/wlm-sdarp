@@ -79,9 +79,9 @@
         "copyright": [
             "SPDX-FileCopyrightText: 2024 Anton Angelgardt <anton.angelgardt@gmail.com>"
         ],
-        "license": "SPDX-License-Identifier: MIT",
+        "license": "CC BY-NC-SA 4.0",
         "name": "WLM SDAR Dark",
-        "revision": 3
+        "revision": 1
     },
     "text-styles": {
         "Alert": {
@@ -94,8 +94,8 @@
             "text-color": "#6a737d"
         },
         "Attribute": {
-            "selected-text-color": "#AA8558",
-            "text-color": "#AA8558"
+            "selected-text-color": "#E4A479",
+            "text-color": "#E4A479"
         },
         "BaseN": {
             "selected-text-color": "#79b8ff",
@@ -110,8 +110,8 @@
             "text-color": "#2E79E8"
         },
         "Comment": {
-            "selected-text-color": "#6a737d",
-            "text-color": "#6a737d"
+            "selected-text-color": "#6A737D",
+            "text-color": "#6A737D"
         },
         "CommentVar": {
             "selected-text-color": "#6a737d",
@@ -122,16 +122,16 @@
             "text-color": "#9CF0AA"
         },
         "ControlFlow": {
-            "selected-text-color": "#D599FF",
-            "text-color": "#D599FF"
+            "selected-text-color": "#B276FF",
+            "text-color": "#B276FF"
         },
         "DataType": {
             "selected-text-color": "#f97583",
             "text-color": "#f97583"
         },
         "DecVal": {
-            "selected-text-color": "#9CF0AA",
-            "text-color": "#9CF0AA"
+            "selected-text-color": "#7AF6A4",
+            "text-color": "#7AF6A4"
         },
         "Documentation": {
             "selected-text-color": "#6a737d",
@@ -152,8 +152,8 @@
             "text-color": "#9CF0AA"
         },
         "Function": {
-            "selected-text-color": "#F0E790",
-            "text-color": "#F0E790"
+            "selected-text-color": "#EBE180",
+            "text-color": "#EBE180"
         },
         "Import": {
             "selected-text-color": "#9ecbff",
@@ -188,16 +188,16 @@
             "text-color": "#6a737d"
         },
         "SpecialChar": {
-            "selected-text-color": "#EAAB81",
-            "text-color": "#EAAB81"
+            "selected-text-color": "#E47979",
+            "text-color": "#E47979"
         },
         "SpecialString": {
             "selected-text-color": "#9ecbff",
             "text-color": "#9ecbff"
         },
         "String": {
-            "selected-text-color": "#9BD2FA",
-            "text-color": "#9BD2FA"
+            "selected-text-color": "#5EBCFF",
+            "text-color": "#5EBCFF"
         },
         "Variable": {
             "selected-text-color": "#ffab70",

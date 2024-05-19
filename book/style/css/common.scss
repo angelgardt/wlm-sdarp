@@ -1,12 +1,83 @@
 /*-- scss:defaults --*/
 
-$intro-font-weight:           300;
+$montserrat-font-path: "./style/fonts/Montserrat/webfonts";
+$sourcecodepro-font-path: "./style/fonts/Source_Code_Pro";
 
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Medium.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Regular.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("#{$montserrat-font-path}/Montserrat-Light.woff2") format("woff2");
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+@font-face {
+  src: url("#{$sourcecodepro-font-path}/SourceCodePro-VariableFont_wght.ttf");
+  font-family: "SourceCodePro";
+  font-weight: 500;
+}
+
+
+$font-family-sans-serif:      Montserrat !default;
+$font-family-code:            SourceCodePro !default;
+$h1-font-size:                3rem !default;
+$h1-font-weight:              600;
+$h2-font-size:                2.5rem !default;
+$h2-font-weight:              500;
+$h3-font-size:                2rem !default;
+$body-font-weight:            400;
+$text-muted:                  body-mix(75%) !default;
+$intro-font-weight:           300;
+$hint-font-size:              0.8em;
+$hint-font-weight:            300;
 
 /*-- scss:rules --*/
 
 
 // Chapters
+
+header {
+  background-color: $body-bg;
+}
+
+/*
+div.quarto-title-meta {
+  padding-bottom: 1%;
+}
+*/
+
+.callout-note.version {
+  width: 50%;
+}
+
+.quarto-float-lst {
+  margin-bottom: -.5em;
+}
+
+.quarto-float-lst figcaption {
+  font-size: .7em;
+}
+
+header div.quarto-title-banner {
+  margin-bottom: 0;
+}
+
 
 .theorem {
   margin: 1% 0%;
@@ -22,7 +93,7 @@ $intro-font-weight:           300;
 
 .intro {
   font-weight: $intro-font-weight;
-  margin: 2% 0%;
+  margin: 0 0 2% 0;
   padding: 0 0 0 5%;
   border-bottom: solid 1px;
 }
@@ -57,6 +128,10 @@ figcaption {
   font-family: Montserrat;
 }
 
+code {
+  font-family: $font-family-code;
+}
+
 
 
 // Quiz
@@ -79,6 +154,11 @@ form.quiz fieldset legend.question-title {
 form.quiz fieldset img.question-image {
   padding: 1% 1%;
   width: 100%;
+}
+
+form.quiz fieldset div.sourceCode {
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 form.quiz fieldset div.alternative {
@@ -109,6 +189,10 @@ form.quiz fieldset div.alternative label {
   margin: 0 2%;
   width: 90%;
   // padding: 0 2%;
+}
+
+form.quiz fieldset div.alternative label img {
+  width: 70%;
 }
 
 form.quiz div.submit-button {
@@ -154,27 +238,39 @@ form.quiz fieldset div.feedback {
   font-size: .9em;
 }
 
-form.quiz fieldset div.lvl-easy,
-form.quiz fieldset div.lvl-medium,
-form.quiz fieldset div.lvl-hard,
-form.quiz fieldset div.lvl-extreme {
+form.quiz fieldset div.level-easy,
+form.quiz fieldset div.level-medium,
+form.quiz fieldset div.level-hard,
+form.quiz fieldset div.level-extreme {
   height: 1em;
   margin: 1% 0 0 1%;
 }
 
-form.quiz fieldset div.lvl-easy {
+div.level-easy,
+div.level-medium,
+div.level-hard,
+div.level-extreme {
+  height: 1em;
+  margin: 0 0 2% 0;
+}
+
+form.quiz fieldset div.level-easy,
+div.level-easy {
   content: url("img/labs/lab_easy.png");
 }
 
-form.quiz fieldset div.lvl-medium {
+form.quiz fieldset div.level-medium,
+div.level-medium {
   content: url("img/labs/lab_medium.png");
 }
 
-form.quiz fieldset div.lvl-hard {
+form.quiz fieldset div.level-hard,
+div.level-hard {
   content: url("img/labs/lab_hard.png");
 }
 
-form.quiz fieldset div.lvl-extreme {
+form.quiz fieldset div.level-extreme,
+div.level-extreme {
   content: url("img/labs/lab_extreme.png");
 }
 
@@ -184,7 +280,11 @@ form.quiz div.message {
 }
 
 form.quiz label.incorrect {
-  color: $gray-600;
+  opacity: .3;
+}
+
+form.quiz div.alternative.incorrect div.cell {
+  opacity: .3 !important;
 }
 
 form.quiz label.correct {
@@ -206,4 +306,44 @@ form.quiz fieldset div.check-cross {
 
 form.quiz fieldset.non-filled {
   border-color: $red;
+}
+
+
+
+// Sheet
+
+.autocheck {
+  margin-top: 1em;
+}
+
+.input-format {
+  font-size: 0.8em;
+  font-family: Montserrat;
+  font-weight: 300;
+}
+
+.feedback-autocheck {
+  font-size: 0.9em;
+}
+
+.input-autocheck {
+  padding: .2em;
+  width: 100%;
+  padding-inline: .5em;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-bottom: 1%;
+}
+
+.button-autocheck {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 1%;
+  padding-inline: 2% 
+}
+
+.hint-wrapper {
+  margin-top: 2%;
 }

@@ -1,0 +1,173 @@
+
+=====
+RUN RENDER
+=====
+
+old _book/ removed
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+! Using an auto-discovered, cached token.
+  To suppress this message, modify your code or options to clearly consent to
+  the use of a cached token.
+  See gargle's "Non-interactive auth" vignette for more details:
+  <https://gargle.r-lib.org/articles/non-interactive-auth.html>
+ℹ The googlesheets4 package is using a cached token for
+  'a.n.angelgardt@gmail.com'.
+Auto-refreshing stale OAuth token.
+✔ Reading from "Quizzes // WLM SDAR".
+✔ Range ''tags'!2:10000000'.
+✔ Reading from "Quizzes // WLM SDAR".
+✔ Range ''quiz0'!3:10000000'.
+[[1]]
+NULL
+
+no dev/sheet/get_sheet_jsons.R file{NC}
+[ 1/94] index.qmd
+
+
+processing file: index.qmd
+  |                                                               |                                                       |   0%  |                                                               |..................                                     |  33%                 |                                                               |.....................................                  |  67% [session-info]  |                                                               |.......................................................| 100%                                                                                                                        
+output file: index.knit.md
+
+[ 2/94] _common/intro.qmd
+[ 3/94] _common/signs.qmd
+[ 4/94] _debug_/debug_chapter.qmd
+
+
+processing file: debug_chapter.qmd
+  |                                                            |                                                    |   0%  |                                                            |...                                                 |   6%                    |                                                            |......                                              |  12% [simple-chunk]     |                                                            |.........                                           |  18%                    |                                                            |............                                        |  24% [xml-example]      |                                                            |...............                                     |  29%                    |                                                            |..................                                  |  35% [unnamed-chunk-1]  |                                                            |.....................                               |  41%                    |                                                            |........................                            |  47% [unnamed-chunk-2]  |                                                            |............................                        |  53%                    |                                                            |...............................                     |  59% [fig-huge-chunk]   |                                                            |..................................                  |  65%                    |                                                            |.....................................               |  71% [unnamed-chunk-3]  |                                                            |........................................            |  76%                    |                                                            |...........................................         |  82% [fig-mermaidtest]  |                                                            |..............................................      |  88%                    |                                                            |.................................................   |  94% [fig-rbirthplace]  |                                                            |....................................................| 100%                                                                                                                              
+output file: debug_chapter.knit.md
+
+Warning messages:
+1: In get_engine(options$engine) :
+  Unknown language engine 'xml' (must be registered via knit_engines$set()).
+2: In get_engine(options$engine) :
+  Unknown language engine 'json' (must be registered via knit_engines$set()).
+[ 5/94] _debug_/debug_quiz.qmd
+[ 6/94] _debug_/debug_sheet.qmd
+
+
+processing file: debug_sheet.qmd
+  |                                                            |                                                    |   0%  |                                                            |                                                    |   1%                    |                                                            |.                                                   |   2% [opts]             |                                                            |.                                                   |   3%                    |                                                            |..                                                  |   4% [3a]                                 |                                                            |...                                                 |   5% [3b]               |                                                            |...                                                 |   6%                    |                                                            |....                                                |   7% [3c]               |                                                            |....                                                |   8%                    |                                                            |.....                                               |   9% [3d]               |                                                            |.....                                               |  10%                    |                                                            |......                                              |  11% [4a]               |                                                            |......                                              |  12%                   [4b]               |                                                            |.......                                             |  13%                    |                                                            |.......                                             |  14% [4c]               |                                                            |........                                            |  15%                    |                                                            |........                                            |  16% [5a]               |                                                            |.........                                           |  17%                    |                                                            |.........                                           |  18% [5b]               |                                                            |..........                                          |  19%                   [5c]               |                                                            |...........                                         |  20%                    |                                                            |...........                                         |  21% [6]                |                                                            |............                                        |  22%                    |                                                            |............                                        |  23% [unnamed-chunk-1]  |                                                            |............                                        |  24%                    |                                                            |.............                                       |  25% [unnamed-chunk-2]  |                                                            |.............                                       |  26%                    |                                                            |..............                                      |  27% [set-seed]                           |                                                            |...............                                     |  28% [8]                |                                                            |...............                                     |  29%                    |                                                            |................                                    |  30% [9]                |                                                            |................                                    |  31%                    |                                                            |.................                                   |  32% [10a]              |                                                            |.................                                   |  33%                    |                                                            |.................                                   |  34% [10b]              |                                                            |..................                                  |  35%                   [10c]              |                                                            |...................                                 |  36%                    |                                                            |...................                                 |  37% [11a]              |                                                            |....................                                |  38%                    |                                                            |....................                                |  39% [11b]              |                                                            |.....................                               |  40%                    |                                                            |.....................                               |  41% [11c]              |                                                            |......................                              |  42%                   [11d]              |                                                            |.......................                             |  43%                    |                                                            |.......................                             |  44% [12a]              |                                                            |.......................                             |  45%                    |                                                            |........................                            |  46% [12b]              |                                                            |........................                            |  47%                    |                                                            |.........................                           |  48% [12c]              |                                                            |.........................                           |  49%                    |                                                            |..........................                          |  50% [13a]                                |                                                            |...........................                         |  51% [13b]              |                                                            |...........................                         |  52%                    |                                                            |............................                        |  53% [14a]              |                                                            |............................                        |  54%                    |                                                            |.............................                       |  55% [14b]              |                                                            |.............................                       |  56%                    |                                                            |.............................                       |  57% [unnamed-chunk-3]  |                                                            |..............................                      |  58%                   [unnamed-chunk-4]  |                                                            |...............................                     |  59%                    |                                                            |...............................                     |  60% [add-na]           |                                                            |................................                    |  61%                    |                                                            |................................                    |  62% [16a]              |                                                            |.................................                   |  63%                    |                                                            |.................................                   |  64% [16b]              |                                                            |..................................                  |  65%                   [17]               |                                                            |...................................                 |  66%                    |                                                            |...................................                 |  67% [18a]              |                                                            |...................................                 |  68%                    |                                                            |....................................                |  69% [18b]              |                                                            |....................................                |  70%                    |                                                            |.....................................               |  71% [18c]              |                                                            |.....................................               |  72%                    |                                                            |......................................              |  73% [19]                                 |                                                            |.......................................             |  74% [20]               |                                                            |.......................................             |  75%                    |                                                            |........................................            |  76% [21a]              |                                                            |........................................            |  77%                    |                                                            |........................................            |  78% [21b]              |                                                            |.........................................           |  79%                    |                                                            |.........................................           |  80% [21c]              |                                                            |..........................................          |  81%                   [22]               |                                                            |...........................................         |  82%                    |                                                            |...........................................         |  83% [23]               |                                                            |............................................        |  84%                    |                                                            |............................................        |  85% [24a]              |                                                            |.............................................       |  86%                    |                                                            |.............................................       |  87% [24b]              |                                                            |..............................................      |  88%                   [25]               |                                                            |..............................................      |  89%                    |                                                            |...............................................     |  90% [26]               |                                                            |...............................................     |  91%                    |                                                            |................................................    |  92% [27-data]          |                                                            |................................................    |  93%                    |                                                            |.................................................   |  94% [27]               |                                                            |.................................................   |  95%                    |                                                            |..................................................  |  96% [28]                                 |                                                            |................................................... |  97% [29]               |                                                            |................................................... |  98%                    |                                                            |....................................................|  99% [30]               |                                                            |....................................................| 100%                                                                                                                              
+output file: debug_sheet.knit.md
+
+[WARNING] Citeproc: citation grinberg-rexercises not found
+[WARNING] Citeproc: citation moroz-dh4dl not found
+[ 7/94] _part-r/part-r.qmd
+[ 8/94] _part-r/r-intro.qmd
+
+
+processing file: r-intro.qmd
+  |                                                         |                                                 |   0%  |                                                         |.....                                            |  11%                       |                                                         |...........                                      |  22% [opts]                |                                                         |................                                 |  33%                       |                                                         |......................                           |  44% [r-citation]          |                                                         |...........................                      |  56%                       |                                                         |.................................                |  67% [r-citation-ggplot2]  |                                                         |......................................           |  78%                       |                                                         |............................................     |  89% [session-info]        |                                                         |.................................................| 100%                                                                                                                                    
+output file: r-intro.knit.md
+
+WARNING: Unable to resolve link target: appendices/appendix-proglang.qmd
+[ 9/94] _part-r/r-datatypes.qmd
+[10/94] _part-r/r-datastructures.qmd
+[11/94] _part-r/r-functionsI.qmd
+[12/94] _part-r/r-controlworkflow.qmd
+[13/94] _part-r/r-functionsII.qmd
+[14/94] _part-r/r-strings.qmd
+[15/94] _part-r/r-datetime.qmd
+[16/94] _part-r/r-data.qmd
+[17/94] _part-r/r-preprocessbasic.qmd
+[18/94] _part-r/r-preprocessadvanced.qmd
+[19/94] _part-r/r-visbaser.qmd
+[20/94] _part-r/r-visbasic.qmd
+[21/94] _part-r/r-visadvanced.qmd
+[22/94] _part-r/r-rmd.qmd
+[23/94] _part-r/r-qmd.qmd
+[24/94] _part-math/part-math.qmd
+[25/94] _part-math/math-logic.qmd
+[26/94] _part-math/math-set.qmd
+[27/94] _part-math/math-comb.qmd
+[28/94] _part-math/math-calculusI.qmd
+[29/94] _part-math/math-calculusII.qmd
+[30/94] _part-math/math-linalI.qmd
+[31/94] _part-math/math-linalII.qmd
+[32/94] _part-measures/part-measures.qmd
+[33/94] _part-measures/measures-scales.qmd
+[34/94] _part-measures/measures-psymetI.qmd
+[35/94] _part-measures/measures-psymetII.qmd
+[36/94] _part-measures/measures-psymetIII.qmd
+[37/94] _part-desc/part-desc.qmd
+[38/94] _part-desc/desc-statintro.qmd
+
+
+processing file: desc-statintro.qmd
+  |                                   |                           |   0%  |                                   |..                         |   8%                                             |                                   |....                       |  15% [opts]                                      |                                   |......                     |  23%                                             |                                   |........                   |  31% [pkgs]                                      |                                   |..........                 |  38%                                             |                                   |............               |  46% [fig-research-types]                        |                                   |...............            |  54%                                             |                                   |.................          |  62% [fig-research-process-qq]                   |                                   |...................        |  69%                                             |                                   |.....................      |  77% [desc-statintro-simple-random-sample-data]  |                                   |.......................    |  85%                                             |                                   |.........................  |  92% [fig-simple-random-sample]                  |                                   |...........................| 100%                                                                                                                                                                                
+output file: desc-statintro.knit.md
+
+[39/94] _part-desc/desc-centrtend.qmd
+[40/94] _part-desc/desc-variance.qmd
+[41/94] _part-desc/desc-distshape.qmd
+[42/94] _part-desc/desc-prodmetrics.qmd
+[43/94] _part-prob/part-prob.qmd
+[44/94] _part-andan/part-andan.qmd
+[45/94] _part-andan/andan-means.qmd
+[46/94] _part-andan/andan-categorical.qmd
+[47/94] _part-andan/andan-cor.qmd
+[48/94] _part-andan/andan-nonparam.qmd
+[49/94] _part-andan/andan-simplelinear.qmd
+[50/94] _part-andan/andan-multiplelinear.qmd
+[51/94] _part-andan/andan-polynomialreg.qmd
+[52/94] _part-andan/andan-svr.qmd
+[53/94] _part-andan/andan-regreg.qmd
+[54/94] _part-andan/andan-anova.qmd
+[55/94] _part-andan/andan-ancova.qmd
+[56/94] _part-andan/andan-manova.qmd
+[57/94] _part-andan/andan-regtrees.qmd
+[58/94] _part-andan/andan-regforest.qmd
+[59/94] _part-andan/andan-dist.qmd
+[60/94] _part-andan/andan-glm.qmd
+[61/94] _part-andan/andan-logreg.qmd
+[62/94] _part-andan/andan-multinomreg.qmd
+[63/94] _part-andan/andan-poisreg.qmd
+[64/94] _part-andan/andan-gam.qmd
+[65/94] _part-andan/andan-glmm.qmd
+[66/94] _part-andan/andan-glogmm.qmd
+[67/94] _part-andan/andan-gmultinommm.qmd
+[68/94] _part-andan/andan-svm.qmd
+[69/94] _part-andan/andan-classtrees.qmd
+[70/94] _part-andan/andan-classforest.qmd
+[71/94] _part-andan/andan-cluster.qmd
+[72/94] _part-andan/andan-fuzzycluster.qmd
+[73/94] _part-andan/andan-lda.qmd
+[74/94] _part-andan/andan-pca.qmd
+[75/94] _part-andan/andan-ica.qmd
+[76/94] _part-andan/andan-cca.qmd
+[77/94] _part-andan/andan-efa.qmd
+[78/94] _part-andan/andan-cfa.qmd
+[79/94] _part-andan/andan-sem.qmd
+[80/94] _part-andan/andan-path.qmd
+[81/94] _part-andan/andan-timeseries.qmd
+[82/94] _common/outro.qmd
+[83/94] references.qmd
+[84/94] _part-appendices/appendix-numbers.qmd
+[85/94] _part-appendices/appendix-numbers-iron.qmd
+[86/94] _part-appendices/appendix-strings-iron.qmd
+[87/94] _part-appendices/appendix-memory-iron.qmd
+[88/94] _part-appendices/appendix-proglang.qmd
+[89/94] _part-appendices/appendix-formulas.qmd
+[90/94] _part-appendices/appendix-git.qmd
+[91/94] _part-appendices/appendix-research-design.qmd
+[92/94] _part-appendices/appendix-design.qmd
+[93/94] _part-appendices/appendix-math-letters.qmd
+[94/94] _part-appendices/appendix-answers.qmd
+
+Output created: _book/index.html
+
+book rendered
+
+=====
+RENDER COMPLETED
+=====
+
