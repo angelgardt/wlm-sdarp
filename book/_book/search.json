@@ -830,6 +830,16 @@
     ]
   },
   {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Источники",
+    "section": "",
+    "text": "Posit team. (2024). RStudio: Integrated development environment for\nr. Posit Software, PBC. http://www.posit.co/\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/",
+    "crumbs": [
+      "Источники"
+    ]
+  },
+  {
     "objectID": "appendix-answers.html",
     "href": "appendix-answers.html",
     "title": "Приложение K — Ответы на листки",
@@ -860,16 +870,6 @@
     "crumbs": [
       "Приложения",
       "<span class='chapter-number'>K</span>  <span class='chapter-title'>Ответы на листки</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "Источники",
-    "section": "",
-    "text": "Posit team. (2024). RStudio: Integrated development environment for\nr. Posit Software, PBC. http://www.posit.co/\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/",
-    "crumbs": [
-      "Источники"
     ]
   }
 ]
