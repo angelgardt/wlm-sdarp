@@ -122,6 +122,7 @@ book:
   favicon: img/other/favicon.png
 
 bibliography: references.bib
+csl: style/refs/apa.csl
 
 comments:
   hypothesis: true

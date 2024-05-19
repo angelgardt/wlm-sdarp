@@ -6,28 +6,28 @@ $theme: "darkly" !default;
 // Color system
 //
 
-$white:    #fff !default;
-$gray-100: #f5f5f5 !default;
-$gray-200: #e6e6e6 !default;
-$gray-300: #b4b4b4 !default;
-$gray-400: #828282 !default;
-$gray-500: #4b4b4b !default;
-$gray-600: #4b4b4b !default;
-$gray-700: #1e1e1e !default;
-$gray-800: #050505 !default;
-$gray-900: #222 !default;
-$black:    #000 !default;
+// $white:    #fff !default;
+// $gray-100: #f5f5f5 !default;
+// $gray-200: #e6e6e6 !default;
+// $gray-300: #b4b4b4 !default;
+// $gray-400: #828282 !default;
+// $gray-500: #4b4b4b !default;
+// $gray-600: #4b4b4b !default;
+// $gray-700: #1e1e1e !default;
+// $gray-800: #050505 !default;
+// $gray-900: #222 !default;
+// $black:    #000 !default;
 
-$blue:    #28299a !default;
-$indigo:  #4142ce !default;
-$purple:  #6635d2 !default;
-$pink:    #eb316e !default;
-$red:     #d33e36 !default;
-$orange:  #e57e39 !default;
-$yellow:  #e5d439 !default;
-$green:   #35d250 !default;
-$teal:    #36d38c !default;
-$cyan:    #50B4FB !default;
+$blue:    #518EE8 !default;
+$indigo:  #4A4BCE !default;
+$purple:  #9C2EE8 !default;
+$pink:    #FD88EF !default;
+$red:     #FA9794 !default;
+$orange:  #E5B477 !default;
+$yellow:  #F0E790 !default;
+$green:   #A3F09C !default;
+$teal:    #9AEBC9 !default;
+$cyan:    #9EF5FF !default;
 
 $quiz-correct-background:   #0E5245 !default;
 $quiz-correct-border:       #229A64 !default;
@@ -312,8 +312,8 @@ h2, h3 {
 
 
 code:not(.sourceCode) {
-  color: $gray-200 !important;
-  background-color: $gray-800 !important;
+  color: $gray-100 !important;
+  background-color: $gray-900 !important;
 }
 
 .cell-output code {
@@ -325,7 +325,6 @@ code.sourceCode a.code-annotation-anchor {
   color: $gray-200 !important;
   border-color: $gray-200 !important;
 }
-
 
 .intro {
   border-bottom-color: $gray-400 !important;
