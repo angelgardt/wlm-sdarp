@@ -208,7 +208,7 @@ RStudio это не единственная среда для работы с R
 :::{.lab-junior}
 :::
 
-На R, как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться — цитировать в разделе References. Для этого существует удобная команда:
+На R [@r-core-team], как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться --- цитировать в разделе References. Для этого существует удобная команда:
 
 ```{r r-citation}
 citation()
@@ -220,12 +220,43 @@ citation()
 
 [^underscore_md]: Такой синтаксис используется в Markdown --- в частности, R Markdown.
 
-Кроме базового R, мы будем активно использовать разные дополнительные пакеты для расширения его возможностей. На использованные в работе пакеты также необходимо ссылаться. Чтобы получить цитирование конкретного пакета[^citation_package], надо передать его название внутрь функции `citation()`. Ниже приведен пример для пакета `ggplot2`, которые мы будем использоваться для построения визуализаций:
+Хорошим тоном будет сослаться и на RStudio [@rstudio-core-team]:
 
-[^citation_package]: Чтобы функция `citation("pkgname")` работала, пакет `pkgname` должен быть установлен на ваш компьютер. _Здесь_ `pkgname` _--- название какого-либо дополнительного пакета._
 
-```{r r-citation-ggplot2}
-citation("ggplot2")
+```{r rstudio-citation, echo=TRUE, eval=FALSE}
+RStudio.Version()
+```
+
+```
+$citation
+To cite RStudio in publications use:
+
+  Posit team (2024). RStudio: Integrated Development Environment for R. Posit Software,
+  PBC, Boston, MA. URL http://www.posit.co/.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {RStudio: Integrated Development Environment for R},
+    author = {{Posit team}},
+    organization = {Posit Software, PBC},
+    address = {Boston, MA},
+    year = {2024},
+    url = {http://www.posit.co/},
+  }
+
+$mode
+[1] "desktop"
+
+$version
+[1] ‘2024.4.1.748’
+
+$long_version
+[1] "2024.04.1+748"
+
+$release_name
+[1] "Chocolate Cosmos"
+
 ```
 
 

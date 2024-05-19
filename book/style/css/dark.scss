@@ -312,8 +312,8 @@ h2, h3 {
 
 
 code:not(.sourceCode) {
-  color: $gray-200 !important;
-  background-color: $gray-800 !important;
+  color: $gray-100 !important;
+  background-color: $gray-900 !important;
 }
 
 .cell-output code {
@@ -325,7 +325,6 @@ code.sourceCode a.code-annotation-anchor {
   color: $gray-200 !important;
   border-color: $gray-200 !important;
 }
-
 
 .intro {
   border-bottom-color: $gray-400 !important;
