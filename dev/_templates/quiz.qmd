@@ -1136,6 +1136,6 @@ Message
 
 ```{=html}
 <!--- CHANGE quiz0 TO quiz<n> IN THE LINES BELOW --->
-<script type="text/javascript" src="../js/quiz0.json"></script>
-<script type="text/javascript" src="../js/quiz.js"></script>
+<script type="text/javascript" src="./js/quiz0.json"></script>
+<script type="text/javascript" src="./js/quiz.js"></script>
 ```
