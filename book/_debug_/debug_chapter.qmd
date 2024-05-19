@@ -117,7 +117,6 @@ head(diamonds)
 
 @lst-json-example
 
-
 ::: {#lst-for-example}
 
 ```{r, eval=FALSE}
@@ -141,6 +140,28 @@ for (i in 1:100) {
 @lst-for-example
 
 
+::: {#lst-code-annotated}
+
+```{r annotated-chunk}
+## большой код для аггрегации
+
+diamonds %>% # <1>
+  summarise(mean_price_cut = mean(price), # <2>
+            sd_price_cut = sd(price),
+            .by = cut) %>% 
+  right_join(diamonds, join_by(cut)) %>% # <3>
+  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive", # <4>
+                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
+                                     "average")))
+```
+1. Берем датасет `diamonds`, что нарисовать график про бриллианты
+2. Рассчитываем базовые описательные статистики
+3. Объединяем агрегированные данные с исходными
+4. Разделяем наблюдения на группы
+
+Аннотированный чанк.
+
+:::
 
 ```{r huge-chunk}
 #| label: fig-huge-chunk

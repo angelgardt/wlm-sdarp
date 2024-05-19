@@ -1067,7 +1067,7 @@ References & Attribution
 ***
 
 ```{=html}
-<!--- CHANGE t1 TO pr<n> IN THE LINES BELOW--->
+<!--- CHANGE sheet0 TO sheet<n> IN THE LINES BELOW--->
 <script type="text/javascript" src="../js/sheet0.json"></script>
 <script type="text/javascript" src="../js/sheet.js"></script>
 ```
