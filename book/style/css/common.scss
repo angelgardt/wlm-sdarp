@@ -246,10 +246,10 @@ form.quiz fieldset div.level-extreme {
   margin: 1% 0 0 1%;
 }
 
-div.lvl-easy,
-div.lvl-medium,
-div.lvl-hard,
-div.lvl-extreme {
+div.level-easy,
+div.level-medium,
+div.level-hard,
+div.level-extreme {
   height: 1em;
   margin: 0 0 2% 0;
 }
@@ -312,6 +312,20 @@ form.quiz fieldset.non-filled {
 
 // Sheet
 
+.autocheck {
+  margin-top: 1em;
+}
+
+.input-format {
+  font-size: 0.8em;
+  font-family: Montserrat;
+  font-weight: 300;
+}
+
+.feedback-autocheck {
+  font-size: 0.9em;
+}
+
 .input-autocheck {
   padding: .2em;
   width: 100%;
@@ -328,4 +342,8 @@ form.quiz fieldset.non-filled {
   border-radius: 5px;
   padding: 1%;
   padding-inline: 2% 
+}
+
+.hints-wrapper {
+  margin-top: 2%;
 }

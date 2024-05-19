@@ -20,12 +20,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t1-autocheck}
 ::: {.input-format #t1-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t1-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t1-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t1')">
 
 ::: {.feedback-autocheck #t1-feedback}
 :::
@@ -55,14 +55,14 @@ Task with `inline_code`.
 
 ::: {.autocheck #t2-autocheck}
 ::: {.input-format #t2-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t2-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t2-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t2')">
 
-::: {.feedback-autocheck #t1-feedback}
+::: {.feedback-autocheck #t2-feedback}
 :::
 :::
 
@@ -90,12 +90,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t3-autocheck}
 ::: {.input-format #t3-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t3-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t3-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t3')">
 
 ::: {.feedback-autocheck #t3-feedback}
 :::
@@ -125,12 +125,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t4-autocheck}
 ::: {.input-format #t4-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t4-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t4-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t4')">
 
 ::: {.feedback-autocheck #t4-feedback}
 :::
@@ -160,14 +160,14 @@ Task with `inline_code`.
 
 ::: {.autocheck #t5-autocheck}
 ::: {.input-format #t5-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t5-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t5-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t5')">
 
-::: {.feedback-autocheck #t1-feedback}
+::: {.feedback-autocheck #t5-feedback}
 :::
 :::
 
@@ -195,14 +195,14 @@ Task with `inline_code`.
 
 ::: {.autocheck #t6-autocheck}
 ::: {.input-format #t6-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t6-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t6-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t6')">
 
-::: {.feedback-autocheck #t1-feedback}
+::: {.feedback-autocheck #t6-feedback}
 :::
 :::
 
@@ -228,14 +228,14 @@ Task with `inline_code`.
 Task with `inline_code`.
 :::
 
-::: {.autocheck #t1-autocheck}
-::: {.input-format #t1-input-format}
-
+::: {.autocheck #t7-autocheck}
+::: {.input-format #t7-input-format}
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t7-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t7-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t7')">
 
 ::: {.feedback-autocheck #t7-feedback}
 :::
@@ -265,12 +265,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t8-autocheck}
 ::: {.input-format #t8-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t8-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t8-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t8')">
 
 ::: {.feedback-autocheck #t8-feedback}
 :::
@@ -300,12 +300,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t9-autocheck}
 ::: {.input-format #t9-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t9-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t9-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t9')">
 
 ::: {.feedback-autocheck #t9-feedback}
 :::
@@ -335,12 +335,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t10-autocheck}
 ::: {.input-format #t10-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t10-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t10-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t10')">
 
 ::: {.feedback-autocheck #t10-feedback}
 :::
@@ -370,12 +370,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t11-autocheck}
 ::: {.input-format #t11-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t11-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t11-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t11')">
 
 ::: {.feedback-autocheck #t11-feedback}
 :::
@@ -405,12 +405,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t12-autocheck}
 ::: {.input-format #t12-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t12-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t12-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t12')">
 
 ::: {.feedback-autocheck #t12-feedback}
 :::
@@ -440,12 +440,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t13-autocheck}
 ::: {.input-format #t13-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t13-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t13-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t13')">
 
 ::: {.feedback-autocheck #t13-feedback}
 :::
@@ -475,12 +475,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t14-autocheck}
 ::: {.input-format #t14-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t14-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t14-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t14')">
 
 ::: {.feedback-autocheck #t14-feedback}
 :::
@@ -510,12 +510,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t15-autocheck}
 ::: {.input-format #t15-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t15-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t15-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t15')">
 
 ::: {.feedback-autocheck #t15-feedback}
 :::
@@ -545,12 +545,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t16-autocheck}
 ::: {.input-format #t16-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t16-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t16-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t16')">
 
 ::: {.feedback-autocheck #t16-feedback}
 :::
@@ -580,12 +580,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t17-autocheck}
 ::: {.input-format #t17-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t17-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t17-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t17')">
 
 ::: {.feedback-autocheck #t17-feedback}
 :::
@@ -615,12 +615,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t18-autocheck}
 ::: {.input-format #t18-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t18-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t18-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t18')">
 
 ::: {.feedback-autocheck #t18-feedback}
 :::
@@ -650,12 +650,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t19-autocheck}
 ::: {.input-format #t19-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t19-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t19-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t19')">
 
 ::: {.feedback-autocheck #t19-feedback}
 :::
@@ -685,14 +685,14 @@ Task with `inline_code`.
 
 ::: {.autocheck #t20-autocheck}
 ::: {.input-format #t20-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t20-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t20-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t20')">
 
-::: {.feedback-autocheck #t1-feedback}
+::: {.feedback-autocheck #t20-feedback}
 :::
 :::
 
@@ -719,13 +719,13 @@ Task with `inline_code`.
 :::
 
 ::: {.autocheck #t21-autocheck}
-::: {.input-format #t1-input-format}
-
+::: {.input-format #t21-input-format}
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t21-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t21-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t21')">
 
 ::: {.feedback-autocheck #t21-feedback}
 :::
@@ -755,14 +755,14 @@ Task with `inline_code`.
 
 ::: {.autocheck #t22-autocheck}
 ::: {.input-format #t22-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t22-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t22-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t22')">
 
-::: {.feedback-autocheck #t1-feedback}
+::: {.feedback-autocheck #t22-feedback}
 :::
 :::
 
@@ -790,12 +790,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t23-autocheck}
 ::: {.input-format #t23-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t23-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t23-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t23')">
 
 ::: {.feedback-autocheck #t23-feedback}
 :::
@@ -825,12 +825,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t24-autocheck}
 ::: {.input-format #t24-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t24-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t24-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t24')">
 
 ::: {.feedback-autocheck #t24-feedback}
 :::
@@ -860,12 +860,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t25-autocheck}
 ::: {.input-format #t25-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t25-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t25-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t25')">
 
 ::: {.feedback-autocheck #t25-feedback}
 :::
@@ -895,12 +895,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t26-autocheck}
 ::: {.input-format #t26-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t26-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t26-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t26')">
 
 ::: {.feedback-autocheck #t26-feedback}
 :::
@@ -930,12 +930,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t27-autocheck}
 ::: {.input-format #t27-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t27-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t27-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t27')">
 
 ::: {.feedback-autocheck #t27-feedback}
 :::
@@ -965,12 +965,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t28-autocheck}
 ::: {.input-format #t28-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t28-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t28-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t28')">
 
 ::: {.feedback-autocheck #t28-feedback}
 :::
@@ -1000,12 +1000,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t29-autocheck}
 ::: {.input-format #t29-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t29-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t29-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t29')">
 
 ::: {.feedback-autocheck #t29-feedback}
 :::
@@ -1035,12 +1035,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t30-autocheck}
 ::: {.input-format #t30-input-format}
-
+Input format
 :::
 
 <input class="input-autocheck" type="text" id="t30-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t30-input')">
+<input class="button-autocheck" type="button" value="Проверить" onclick="check('t30')">
 
 ::: {.feedback-autocheck #t30-feedback}
 :::

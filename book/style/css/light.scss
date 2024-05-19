@@ -338,3 +338,15 @@ form.quiz fieldset div.check-cross {
   font-weight: $h2-font-weight;
   color: $gray-700;
 }
+
+.feedback-autocheck.empty {
+  color: $blue;
+}
+
+.feedback-autocheck.incorrect {
+  color: $red;
+}
+
+.feedback-autocheck.correct {
+  color: $green;
+}
