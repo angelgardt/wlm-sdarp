@@ -96,6 +96,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -767,7 +796,14 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#math-letters-latin" id="toc-math-letters-latin" class="nav-link active" data-scroll-target="#math-letters-latin"><span class="header-section-number">J.1</span> Латинский алфавит</a></li>
+  <li><a href="#math-letters-greek" id="toc-math-letters-greek" class="nav-link" data-scroll-target="#math-letters-greek"><span class="header-section-number">J.2</span> Греческий алфавит</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -776,8 +812,426 @@ background-size: cover;
 
 
 
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Logic --->
+<!--- Number sets--->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<section id="math-letters-latin" class="level2" data-number="J.1">
+<h2 data-number="J.1" class="anchored" data-anchor-id="math-letters-latin"><span class="header-section-number">J.1</span> Латинский алфавит</h2>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Начертание</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Название</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Обычное</td>
+<td style="text-align: center;">Романское</td>
+<td style="text-align: center;">Полужирное</td>
+<td style="text-align: center;">Рукописное</td>
+<td style="text-align: center;">Контурное</td>
+<td style="text-align: center;">Готическое</td>
+<td style="text-align: center;">Без засечек</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(A\)</span> <span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm A\)</span> <span class="math inline">\(\mathrm a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf A\)</span> <span class="math inline">\(\mathbf a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak A\)</span> <span class="math inline">\(\mathfrak a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf A\)</span> <span class="math inline">\(\mathsf a\)</span></td>
+<td style="text-align: center;">а</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(B\)</span> <span class="math inline">\(b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm B\)</span> <span class="math inline">\(\mathrm b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf B\)</span> <span class="math inline">\(\mathbf b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak B\)</span> <span class="math inline">\(\mathfrak b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf B\)</span> <span class="math inline">\(\mathsf b\)</span></td>
+<td style="text-align: center;">бэ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(C\)</span> <span class="math inline">\(c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm C\)</span> <span class="math inline">\(\mathrm c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf C\)</span> <span class="math inline">\(\mathbf c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal C\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb C\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak C\)</span> <span class="math inline">\(\mathfrak c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf C\)</span> <span class="math inline">\(\mathsf c\)</span></td>
+<td style="text-align: center;">цэ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(D\)</span> <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm D\)</span> <span class="math inline">\(\mathrm d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf D\)</span> <span class="math inline">\(\mathbf d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal D\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb D\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak D\)</span> <span class="math inline">\(\mathfrak d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf D\)</span> <span class="math inline">\(\mathsf d\)</span></td>
+<td style="text-align: center;">дэ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(E\)</span> <span class="math inline">\(e\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm E\)</span> <span class="math inline">\(\mathrm e\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf E\)</span> <span class="math inline">\(\mathbf e\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal E\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb E\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak E\)</span> <span class="math inline">\(\mathfrak e\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf E\)</span> <span class="math inline">\(\mathsf e\)</span></td>
+<td style="text-align: center;">е</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(F\)</span> <span class="math inline">\(f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm F\)</span> <span class="math inline">\(\mathrm f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf F\)</span> <span class="math inline">\(\mathbf f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal F\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb F\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak F\)</span> <span class="math inline">\(\mathfrak f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf F\)</span> <span class="math inline">\(\mathsf f\)</span></td>
+<td style="text-align: center;">эф</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(G\)</span> <span class="math inline">\(g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm G\)</span> <span class="math inline">\(\mathrm g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf G\)</span> <span class="math inline">\(\mathbf g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal G\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb G\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak G\)</span> <span class="math inline">\(\mathfrak g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf G\)</span> <span class="math inline">\(\mathsf g\)</span></td>
+<td style="text-align: center;">жэ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H\)</span> <span class="math inline">\(h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm H\)</span> <span class="math inline">\(\mathrm h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf H\)</span> <span class="math inline">\(\mathbf h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal H\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb H\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak H\)</span> <span class="math inline">\(\mathfrak h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf H\)</span> <span class="math inline">\(\mathsf h\)</span></td>
+<td style="text-align: center;">аш</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(I\)</span> <span class="math inline">\(i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm I\)</span> <span class="math inline">\(\mathrm i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf I\)</span> <span class="math inline">\(\mathbf i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal I\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb I\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak I\)</span> <span class="math inline">\(\mathfrak i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf I\)</span> <span class="math inline">\(\mathsf i\)</span></td>
+<td style="text-align: center;">и</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(J\)</span> <span class="math inline">\(j\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm J\)</span> <span class="math inline">\(\mathrm j\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf J\)</span> <span class="math inline">\(\mathbf j\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal J\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb J\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak J\)</span> <span class="math inline">\(\mathfrak j\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf J\)</span> <span class="math inline">\(\mathsf j\)</span></td>
+<td style="text-align: center;">жи</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(K\)</span> <span class="math inline">\(k\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm K\)</span> <span class="math inline">\(\mathrm k\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf K\)</span> <span class="math inline">\(\mathbf k\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal K\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb K\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak K\)</span> <span class="math inline">\(\mathfrak k\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf K\)</span> <span class="math inline">\(\mathsf k\)</span></td>
+<td style="text-align: center;">ка</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(L\)</span> <span class="math inline">\(l\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm L\)</span> <span class="math inline">\(\mathrm l\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf L\)</span> <span class="math inline">\(\mathbf l\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal L\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb L\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak L\)</span> <span class="math inline">\(\mathfrak l\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf L\)</span> <span class="math inline">\(\mathsf l\)</span></td>
+<td style="text-align: center;">эль</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(M\)</span> <span class="math inline">\(m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm M\)</span> <span class="math inline">\(\mathrm m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf M\)</span> <span class="math inline">\(\mathbf m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal M\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb M\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak M\)</span> <span class="math inline">\(\mathfrak m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf M\)</span> <span class="math inline">\(\mathsf m\)</span></td>
+<td style="text-align: center;">эм</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(N\)</span> <span class="math inline">\(n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm N\)</span> <span class="math inline">\(\mathrm n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf N\)</span> <span class="math inline">\(\mathbf n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak N\)</span> <span class="math inline">\(\mathfrak n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf N\)</span> <span class="math inline">\(\mathsf n\)</span></td>
+<td style="text-align: center;">эн</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(O\)</span> <span class="math inline">\(o\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm O\)</span> <span class="math inline">\(\mathrm o\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf O\)</span> <span class="math inline">\(\mathbf o\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb O\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak O\)</span> <span class="math inline">\(\mathfrak o\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf O\)</span> <span class="math inline">\(\mathsf o\)</span></td>
+<td style="text-align: center;">о</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(P\)</span> <span class="math inline">\(p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm P\)</span> <span class="math inline">\(\mathrm p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf P\)</span> <span class="math inline">\(\mathbf p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal P\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb P\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak P\)</span> <span class="math inline">\(\mathfrak p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf P\)</span> <span class="math inline">\(\mathsf p\)</span></td>
+<td style="text-align: center;">пэ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(Q\)</span> <span class="math inline">\(q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm Q\)</span> <span class="math inline">\(\mathrm q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf Q\)</span> <span class="math inline">\(\mathbf q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal Q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb Q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak Q\)</span> <span class="math inline">\(\mathfrak q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf Q\)</span> <span class="math inline">\(\mathsf q\)</span></td>
+<td style="text-align: center;">ку</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(R\)</span> <span class="math inline">\(r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm R\)</span> <span class="math inline">\(\mathrm r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf R\)</span> <span class="math inline">\(\mathbf r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak R\)</span> <span class="math inline">\(\mathfrak r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf R\)</span> <span class="math inline">\(\mathsf r\)</span></td>
+<td style="text-align: center;">эр</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(S\)</span> <span class="math inline">\(s\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm S\)</span> <span class="math inline">\(\mathrm s\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf S\)</span> <span class="math inline">\(\mathbf s\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal S\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb S\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak S\)</span> <span class="math inline">\(\mathfrak s\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf S\)</span> <span class="math inline">\(\mathsf s\)</span></td>
+<td style="text-align: center;">эс</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(T\)</span> <span class="math inline">\(t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm T\)</span> <span class="math inline">\(\mathrm t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf T\)</span> <span class="math inline">\(\mathbf t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal T\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb T\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak T\)</span> <span class="math inline">\(\mathfrak t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf T\)</span> <span class="math inline">\(\mathsf t\)</span></td>
+<td style="text-align: center;">тэ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(U\)</span> <span class="math inline">\(u\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm U\)</span> <span class="math inline">\(\mathrm u\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf U\)</span> <span class="math inline">\(\mathbf u\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal U\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb U\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak U\)</span> <span class="math inline">\(\mathfrak u\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf U\)</span> <span class="math inline">\(\mathsf u\)</span></td>
+<td style="text-align: center;">у</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(V\)</span> <span class="math inline">\(v\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm V\)</span> <span class="math inline">\(\mathrm v\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf V\)</span> <span class="math inline">\(\mathbf v\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak V\)</span> <span class="math inline">\(\mathfrak v\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf V\)</span> <span class="math inline">\(\mathsf v\)</span></td>
+<td style="text-align: center;">вэ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(W\)</span> <span class="math inline">\(w\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm W\)</span> <span class="math inline">\(\mathrm w\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf W\)</span> <span class="math inline">\(\mathbf w\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal W\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb W\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak W\)</span> <span class="math inline">\(\mathfrak w\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf W\)</span> <span class="math inline">\(\mathsf w\)</span></td>
+<td style="text-align: center;">дубль вэ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(X\)</span> <span class="math inline">\(x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm X\)</span> <span class="math inline">\(\mathrm x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf X\)</span> <span class="math inline">\(\mathbf x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak X\)</span> <span class="math inline">\(\mathfrak x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf X\)</span> <span class="math inline">\(\mathsf x\)</span></td>
+<td style="text-align: center;">икс</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(Y\)</span> <span class="math inline">\(y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm Y\)</span> <span class="math inline">\(\mathrm y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf Y\)</span> <span class="math inline">\(\mathbf y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal Y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb Y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak Y\)</span> <span class="math inline">\(\mathfrak y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf Y\)</span> <span class="math inline">\(\mathsf y\)</span></td>
+<td style="text-align: center;">игрек</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(Z\)</span> <span class="math inline">\(z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm Z\)</span> <span class="math inline">\(\mathrm z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbf Z\)</span> <span class="math inline">\(\mathbf z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal Z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb Z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathfrak Z\)</span> <span class="math inline">\(\mathfrak z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf Z\)</span> <span class="math inline">\(\mathsf z\)</span></td>
+<td style="text-align: center;">зет</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="math-letters-greek" class="level2" data-number="J.2">
+<h2 data-number="J.2" class="anchored" data-anchor-id="math-letters-greek"><span class="header-section-number">J.2</span> Греческий алфавит</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Буква</th>
+<th style="text-align: center;">Название</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(A\)</span> <span class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;">альфа</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(B\)</span> <span class="math inline">\(\beta\)</span></td>
+<td style="text-align: center;">бета</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\gamma\)</span></td>
+<td style="text-align: center;">гамма</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Delta\)</span> <span class="math inline">\(\delta\)</span></td>
+<td style="text-align: center;">дельта</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(E\)</span> <span class="math inline">\(\varepsilon\)</span></td>
+<td style="text-align: center;">эпсилон</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(Z\)</span> <span class="math inline">\(\zeta\)</span></td>
+<td style="text-align: center;">дзета</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H\)</span> <span class="math inline">\(\eta\)</span></td>
+<td style="text-align: center;">эта</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Theta\)</span> <span class="math inline">\(\theta\)</span></td>
+<td style="text-align: center;">тета</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(I\)</span> <span class="math inline">\(\iota\)</span></td>
+<td style="text-align: center;">йота</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(K\)</span> <span class="math inline">\(\kappa\)</span></td>
+<td style="text-align: center;">каппа</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\Lambda\)</span> <span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: center;">лямбда</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(M\)</span> <span class="math inline">\(\mu\)</span></td>
+<td style="text-align: center;">мю</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(N\)</span> <span class="math inline">\(\nu\)</span></td>
+<td style="text-align: center;">ню</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Xi\)</span> <span class="math inline">\(\xi\)</span></td>
+<td style="text-align: center;">кси</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(O\)</span> <span class="math inline">\(o\)</span></td>
+<td style="text-align: center;">омикрон</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Pi\)</span> <span class="math inline">\(\pi\)</span></td>
+<td style="text-align: center;">пи</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(P\)</span> <span class="math inline">\(\rho\)</span></td>
+<td style="text-align: center;">ро</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Sigma\)</span> <span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: center;">сигма</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(T\)</span> <span class="math inline">\(\tau\)</span></td>
+<td style="text-align: center;">тау</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(Y\)</span> <span class="math inline">\(\upsilon\)</span></td>
+<td style="text-align: center;">ипсилон</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\Phi\)</span> <span class="math inline">\(\varphi\)</span></td>
+<td style="text-align: center;">фи</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(X\)</span> <span class="math inline">\(\chi\)</span></td>
+<td style="text-align: center;">хи</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\Psi\)</span> <span class="math inline">\(\psi\)</span></td>
+<td style="text-align: center;">пси</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\Omega\)</span> <span class="math inline">\(\omega\)</span></td>
+<td style="text-align: center;">омега</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
