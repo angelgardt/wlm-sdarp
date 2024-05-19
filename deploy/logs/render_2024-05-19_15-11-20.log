@@ -1,0 +1,68 @@
+
+=====
+RUN RENDER
+=====
+
+old _book/ removed
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+! Using an auto-discovered, cached token.
+  To suppress this message, modify your code or options to clearly consent to
+  the use of a cached token.
+  See gargle's "Non-interactive auth" vignette for more details:
+  <https://gargle.r-lib.org/articles/non-interactive-auth.html>
+ℹ The googlesheets4 package is using a cached token for
+  'a.n.angelgardt@gmail.com'.
+Auto-refreshing stale OAuth token.
+✔ Reading from "Quizzes // WLM SDAR".
+✔ Range ''quiz0'!3:10000000'.
+[[1]]
+NULL
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+! Using an auto-discovered, cached token.
+  To suppress this message, modify your code or options to clearly consent to
+  the use of a cached token.
+  See gargle's "Non-interactive auth" vignette for more details:
+  <https://gargle.r-lib.org/articles/non-interactive-auth.html>
+ℹ The googlesheets4 package is using a cached token for
+  'a.n.angelgardt@gmail.com'.
+✔ Reading from "Sheets // WLM SDAR".
+✔ Range ''sheet0'!3:10000000'.
+[[1]]
+NULL
+
+ERROR: Include directive failed.
+  in file /Users/antonangelgardt/wlm-sdar/book/debug_chapter.qmd, 
+  could not find file /Users/antonangelgardt/wlm-sdar/other/_symbols.qmd.
+
+Stack trace:
+  in file /Users/antonangelgardt/wlm-sdar/book/debug_chapter.qmd, 
+  could not find file /Users/antonangelgardt/wlm-sdar/other/_symbols.qmd.
+    at retrieveInclude (file:///Applications/quarto/bin/quarto.js:40167:19)
+    at standaloneInclude (file:///Applications/quarto/bin/quarto.js:40199:11)
+    at Object.directive (file:///Applications/quarto/bin/quarto.js:74053:22)
+    at handleLanguageCells (file:///Applications/quarto/bin/quarto.js:40488:82)
+    at eventLoopTick (ext:core/01_core.js:183:11)
+    at async renderContexts (file:///Applications/quarto/bin/quarto.js:72221:43)
+    at async Object.renderFormats (file:///Applications/quarto/bin/quarto.js:72239:22)
+    at async readBaseInputIndex (file:///Applications/quarto/bin/quarto.js:73385:21)
+    at async inputTargetIndex (file:///Applications/quarto/bin/quarto.js:73373:19)
+    at async resolveInputTarget (file:///Applications/quarto/bin/quarto.js:73487:19)
