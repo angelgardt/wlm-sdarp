@@ -4,76 +4,862 @@
     "href": "index.html",
     "title": "WLM SDAR",
     "section": "",
-    "text": "Intro\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n1 + 1\n\n[1] 2"
+    "text": "Аннотация",
+    "crumbs": [
+      "Аннотация"
+    ]
   },
   {
-    "objectID": "index.html#session_info",
-    "href": "index.html#session_info",
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
     "title": "WLM SDAR",
-    "section": "Session Info",
-    "text": "Session Info\nДанная версия книги сверстана в следующей версии R.\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Sonoma 14.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23"
+    "section": "",
+    "text": "Текущая версия\n\n\n\n0.0.1",
+    "crumbs": [
+      "Аннотация"
+    ]
   },
   {
-    "objectID": "teststyle.html#заголовок-раздела",
-    "href": "teststyle.html#заголовок-раздела",
-    "title": "1  Отладка стилёвых файлов",
-    "section": "1.1 Заголовок раздела",
-    "text": "1.1 Заголовок раздела\n\n\n\nРазнообразный testquiz и богатый опыт постоянный количественный рост и сфера нашей активности требуют от нас анализа модели развития. С другой стороны постоянный количественный рост и сфера нашей активности требуют определения и уточнения существенных финансовых и административных условий. С другой стороны постоянный количественный рост и сфера нашей активности позволяет оценить значение направлений прогрессивного развития.\nРавным образом новая модель организационной деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации соответствующий условий активизации.\nИдейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений. Товарищи! рамки и место обучения кадров влечет за собой процесс внедрения и модернизации систем массового участия."
+    "objectID": "index.html#acknowledgement",
+    "href": "index.html#acknowledgement",
+    "title": "WLM SDAR",
+    "section": "Благодарности",
+    "text": "Благодарности\n\nAttribution\n\n\n\n\n\n\n\nПредыдущие версии\n\n\n\n\n\n\n0.0.00\n\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Sonoma 14.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
+    "crumbs": [
+      "Аннотация"
+    ]
   },
   {
-    "objectID": "teststyle.html#заголовок-раздела-1",
-    "href": "teststyle.html#заголовок-раздела-1",
-    "title": "1  Отладка стилёвых файлов",
+    "objectID": "_common/intro.html",
+    "href": "_common/intro.html",
+    "title": "Введение",
+    "section": "",
+    "text": "Зачем изучать анализ данных?",
+    "crumbs": [
+      "Введение"
+    ]
+  },
+  {
+    "objectID": "_common/intro.html#intro-andan-nn",
+    "href": "_common/intro.html#intro-andan-nn",
+    "title": "Введение",
+    "section": "Зачем изучать анализ данных в эпоху нейросетей?",
+    "text": "Зачем изучать анализ данных в эпоху нейросетей?",
+    "crumbs": [
+      "Введение"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_chapter.html",
+    "href": "_debug_/debug_chapter.html",
+    "title": "1  Глава книги [отладка]",
+    "section": "",
+    "text": "1.1 Заголовок раздела\nРазнообразный testquiz и богатый опыт постоянный количественный рост и сфера нашей активности требуют от нас анализа модели развития. С другой стороны постоянный количественный рост и сфера нашей активности требуют определения и уточнения существенных финансовых и административных условий. С другой стороны постоянный количественный рост и сфера нашей активности позволяет оценить значение направлений прогрессивного развития.\nРавным образом новая модель организационной деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации соответствующий условий активизации.\nИдейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений. Товарищи! рамки и место обучения кадров влечет за собой процесс внедрения и модернизации систем массового участия.",
+    "crumbs": [
+      "Debug",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Глава книги [отладка]</span>"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_chapter.html#заголовок-раздела-1",
+    "href": "_debug_/debug_chapter.html#заголовок-раздела-1",
+    "title": "1  Глава книги [отладка]",
     "section": "1.2 Заголовок раздела",
-    "text": "1.2 Заголовок раздела\n\n\n\nНе следует, однако забывать, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n1.2.1 Заголовок подраздела\n\n\n\nРавным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. Таким образом сложившаяся структура организации играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что новая модель организационной деятельности позволяет оценить значение модели развития. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа направлений прогрессивного развития.\nС другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (Рисунок 1.1).\n\n&lt;breakfast_menu&gt;\n  &lt;food&gt;\n    &lt;name&gt;Belgian Waffles&lt;/name&gt;\n    &lt;price&gt;$5.95&lt;/price&gt;\n    &lt;description&gt;Two of our famous Belgian Waffles with plenty of real maple syrup&lt;/description&gt;\n    &lt;calories&gt;650&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;Strawberry Belgian Waffles&lt;/name&gt;\n    &lt;price&gt;$7.95&lt;/price&gt;\n    &lt;description&gt;Light Belgian waffles covered with strawberries and whipped cream&lt;/description&gt;\n    &lt;calories&gt;900&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;Berry-Berry Belgian Waffles&lt;/name&gt;\n    &lt;price&gt;$8.95&lt;/price&gt;\n    &lt;description&gt;Light Belgian waffles covered with an assortment of fresh berries and whipped cream&lt;/description&gt;\n    &lt;calories&gt;900&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;French Toast&lt;/name&gt;\n    &lt;price&gt;$4.50&lt;/price&gt;\n    &lt;description&gt;Thick slices made from our homemade sourdough bread&lt;/description&gt;\n    &lt;calories&gt;600&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;Homestyle Breakfast&lt;/name&gt;\n    &lt;price&gt;$6.95&lt;/price&gt;\n    &lt;description&gt;Two eggs, bacon or sausage, toast, and our ever-popular hash browns&lt;/description&gt;\n    &lt;calories&gt;950&lt;/calories&gt;\n  &lt;/food&gt;\n&lt;/breakfast_menu&gt;\n\n\n{\n    \"glossary\": {\n        \"title\": \"example glossary\",\n        \"GlossDiv\": {\n            \"title\": \"S\",\n            \"GlossList\": {\n                \"GlossEntry\": {\n                    \"ID\": \"SGML\",\n                    \"SortAs\": \"SGML\",\n                    \"GlossTerm\": \"Standard Generalized Markup Language\",\n                    \"Acronym\": \"SGML\",\n                    \"Abbrev\": \"ISO 8879:1986\",\n                    \"GlossDef\": {\n                        \"para\": \"A meta-markup language, used to create markup languages such as DocBook.\",\n                        \"GlossSeeAlso\": [\"GML\", \"XML\"]\n                    },\n                    \"GlossSee\": \"markup\"\n                }\n            }\n        }\n    }\n}\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n## большой код для графика\n\ndiamonds %&gt;% \n  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n  right_join(diamonds, join_by(cut)) %&gt;% \n  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n  ggplot(aes(clarity, price, \n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\nWarning: Removed 15 rows containing missing values or values outside the scale range\n(`geom_segment()`).\n\n\n\n\n\nРисунок 1.1: Это картинка, нарисованная большим кодом\n\n\n\n\nРавным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n1.2.1.1 Заголовок 4 уровня\n\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\n\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n1.2.1.1.1 Заголовок 5 уровня with code\nА тут вставляется картинка (Рисунок 1.2):\n\n\n\nРисунок 1.2: Превью репозитория\n\n\nОбъединяющие джойны (Рисунок 1.3):\n\nлевый джойн (Рисунок 1.3 (a))\nправый джойн (Рисунок 1.3 (b))\nполный джойн (Рисунок 1.3 (c))\nвнутренний джойн (Рисунок 1.3 (d)).\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\nРисунок 1.3: Объединяющие джойны\n\n\n\n\n\n1.2.1.2 Заголовок 4 уровня with code\nСогласно Теорема 1.1:\n\nТеорема 1.1 Среднее арифметическое является несмещенной оценкой математического ожидания.\n\n\nДоказательство. \\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\\[\n\\hat \\mu = \\frac{1}{m}\\sum_{j=1}^m x_j = \\bar X\n\\]\n\\[\n\\mathbb{E}(\\hat \\mu) = \\mathbb{E}(\\bar X) \\overset{?}{=} \\mu\n\\]\n\\[\n\\begin{split}\n\\mathbb{E}(\\bar X) &= \\\\\n&= \\mathbb{E}\\big (\\frac{1}{n} \\sum_{i=1}^n X_i \\big ) = \\\\\n&= \\frac{1}{n} \\mathbb{E}\\Big( \\sum_{i=1}^n X_i \\Big) = \\\\\n&= \\frac{1}{n} \\sum_{i=1}^n \\mathbb{E}X_i \\overset{X_i \\overset{\\text{i.i.d.}}{\\sim} (\\mu, \\sigma^2)}{=} \\frac{1}{n} \\cdot n \\cdot \\mathbb{E}X = \\\\\n& = \\frac{n}{n} \\cdot \\mu = \\mu\n\\end{split}\n\\]\n\n\nЛемма 1.1 Это лемма.\n\n\nСледствие 1.1 Это следствие.\n\n\nУтверждение 1.1 Это утверждение.\n\n\nПредположение 1.1 Это conjecutre.\n\n\nОпределение 1.1 Это определение.\n\n\nПример 1.1 Это пример.\n\n\nЗадание 1.1 Это задание.\n\n\nРешение. Это решение.\n\n\nЗамечание. Это замечание.\n\n\n1.2.1.2.1 Заголовок 5 уровня\nЭто уравнение прямой (Уравнение 1.1):\n\\[\ny = kx + b\n\\tag{1.1}\\]\n\n1.2.1.2.1.1 Совсем мелкий заголовок\n\n\nКод\nlibrary(leaflet)\nleaflet() %&gt;%\n  addTiles() %&gt;%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n\n\n\n\n\nРисунок 1.4: Тут родился R\n\n\n\nТут (Рисунок 1.5) видео, на которые ссылка как на рисунок.\n\n\n\nРисунок 1.5: Разбор третьей домашки\n\n\nВыше была карта (Рисунок 1.4) с местом рождения R."
+    "text": "1.2 Заголовок раздела\n\n\n\nНе следует, однако забывать, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n1.2.1 Заголовок подраздела\n\n\n\nРавным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. Таким образом сложившаяся структура организации играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что новая модель организационной деятельности позволяет оценить значение модели развития. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа направлений прогрессивного развития.\nС другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (Иллюстрация 1.1).\n\n&lt;breakfast_menu&gt;\n  &lt;food&gt;\n    &lt;name&gt;Belgian Waffles&lt;/name&gt;\n    &lt;price&gt;$5.95&lt;/price&gt;\n    &lt;description&gt;Two of our famous Belgian Waffles with plenty of real maple syrup&lt;/description&gt;\n    &lt;calories&gt;650&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;Strawberry Belgian Waffles&lt;/name&gt;\n    &lt;price&gt;$7.95&lt;/price&gt;\n    &lt;description&gt;Light Belgian waffles covered with strawberries and whipped cream&lt;/description&gt;\n    &lt;calories&gt;900&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;Berry-Berry Belgian Waffles&lt;/name&gt;\n    &lt;price&gt;$8.95&lt;/price&gt;\n    &lt;description&gt;Light Belgian waffles covered with an assortment of fresh berries and whipped cream&lt;/description&gt;\n    &lt;calories&gt;900&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;French Toast&lt;/name&gt;\n    &lt;price&gt;$4.50&lt;/price&gt;\n    &lt;description&gt;Thick slices made from our homemade sourdough bread&lt;/description&gt;\n    &lt;calories&gt;600&lt;/calories&gt;\n  &lt;/food&gt;\n  &lt;food&gt;\n    &lt;name&gt;Homestyle Breakfast&lt;/name&gt;\n    &lt;price&gt;$6.95&lt;/price&gt;\n    &lt;description&gt;Two eggs, bacon or sausage, toast, and our ever-popular hash browns&lt;/description&gt;\n    &lt;calories&gt;950&lt;/calories&gt;\n  &lt;/food&gt;\n&lt;/breakfast_menu&gt;\n\n\n\n\nКод 1.1: Пример файла JSON.\n\n\n\n{\n    \"glossary\": {\n        \"title\": \"example glossary\",\n        \"GlossDiv\": {\n            \"title\": \"S\",\n            \"GlossList\": {\n                \"GlossEntry\": {\n                    \"ID\": \"SGML\",\n                    \"SortAs\": \"SGML\",\n                    \"GlossTerm\": \"Standard Generalized Markup Language\",\n                    \"Acronym\": \"SGML\",\n                    \"Abbrev\": \"ISO 8879:1986\",\n                    \"GlossDef\": {\n                        \"para\": \"A meta-markup language, used to create markup languages such as DocBook.\",\n                        \"GlossSeeAlso\": [\"GML\", \"XML\"]\n                    },\n                    \"GlossSee\": \"markup\"\n                }\n            }\n        }\n    }\n}\n\n\n\n\nКод 1.1\n\n\n\nКод 1.2: Пример цикла for\n\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n\n\nКод 1.2\n\n\n\nКод 1.3: Аннотированный чанк.\n\n\n\n## большой код для аггрегации\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\")))\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n\n\n\n# A tibble: 53,940 × 13\n   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x\n   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95\n 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93\n 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35\n 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31\n 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49\n 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49\n 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49\n 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93\n 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45\n10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 \n# ℹ 53,930 more rows\n# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;\n\n\n\n\n\n\n## большой код для графика\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n5  ggplot(aes(clarity, price,\n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n5\n\nНачинаем рисовать\n\n\n\n\n\n\n\n\n\n\nИллюстрация 1.1: Это картинка, нарисованная большим кодом\n\n\n\n\n\n\n\n\nТаблица 1.1: Это knitr-таблица\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n1\nakjsfv\n\n\n2\nakejrhvae\n\n\n3\nkvuhaefrv\n\n\n\n\n\n\n\n\n\n\n\nТаблица 1.2: Это обычная таблица\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n1\nabc\nда\n\\(\\sin (2)\\)\n\n\n2\ndef\nнет\n\\(\\sqrt {4+2i}\\)\n\n\n3\nghi\nда\n\\(e^{i\\pi} + 1 = 0\\)\n\n\n\n\n\n\nРавным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\nСсылка на knirt-таблицу (Таблица 1.1). Ссылка на нормальную таблицу (Таблица 1.2).\n\n1.2.1.1 Заголовок 4 уровня\n\n\n\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\nИллюстрация 1.2: Это схема из Mermaid\n\n\n\n\n\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nЗдесь схема из Mermaid (Иллюстрация 1.2).\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n1.2.1.1.1 Заголовок 5 уровня with code\nА тут вставляется картинка (Иллюстрация 1.3):\n\n\n\n\n\n\nИллюстрация 1.3: Превью репозитория\n\n\n\nОбъединяющие джойны (Иллюстрация 1.4):\n\nлевый джойн (Иллюстрация 1.4 (a))\nправый джойн (Иллюстрация 1.4 (b))\nполный джойн (Иллюстрация 1.4 (c))\nвнутренний джойн (Иллюстрация 1.4 (d)).\n\n\n\n\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\n\n\n\nИллюстрация 1.4: Объединяющие джойны\n\n\n\n\n\n\n1.2.1.2 Заголовок 4 уровня with code\nСогласно Теорема 1.1:\n\nТеорема 1.1 Среднее арифметическое является несмещенной оценкой математического ожидания.\n\n\nДоказательство. \\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\\[\n\\hat \\mu = \\frac{1}{m}\\sum_{j=1}^m x_j = \\bar X\n\\]\n\\[\n\\mathbb{E}(\\hat \\mu) = \\mathbb{E}(\\bar X) \\overset{?}{=} \\mu\n\\]\n\\[\n\\begin{split}\n\\mathbb{E}(\\bar X) &= \\\\\n&= \\mathbb{E}\\big (\\frac{1}{n} \\sum_{i=1}^n X_i \\big ) = \\\\\n&= \\frac{1}{n} \\mathbb{E}\\Big( \\sum_{i=1}^n X_i \\Big) = \\\\\n&= \\frac{1}{n} \\sum_{i=1}^n \\mathbb{E}X_i \\overset{X_i \\overset{\\text{i.i.d.}}{\\sim} (\\mu, \\sigma^2)}{=} \\frac{1}{n} \\cdot n \\cdot \\mathbb{E}X = \\\\\n& = \\frac{n}{n} \\cdot \\mu = \\mu\n\\end{split}\n\\]\n\n\nЛемма 1.1 Это лемма.\n\n\nСледствие 1.1 Это следствие.\n\n\nУтверждение 1.1 Это утверждение.\n\n\nПредположение 1.1 Это conjecutre.\n\n\nОпределение 1.1 Это определение.\n\n\nПример 1.1 Это пример.\n\n\nЗадание 1.1 Это задание.\n\n\nРешение. Это решение.\n\n\nЗамечание. Это замечание.\n\n\n1.2.1.2.1 Заголовок 5 уровня\nЭто уравнение прямой (Уравнение 1.1):\n\\[\ny = kx + b\n\\tag{1.1}\\]\n\n1.2.1.2.1.1 Совсем мелкий заголовок\n\n\n\n\n\n\n\n\nИллюстрация 1.5: Тут родился R\n\n\n\n\nТут (Иллюстрация 1.6) видео, на которое ссылка как на рисунок.\n\n\n\n\n\n\nИллюстрация 1.6: Разбор третьей домашки\n\n\n\nВыше была карта (Иллюстрация 1.5) с местом рождения R.",
+    "crumbs": [
+      "Debug",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Глава книги [отладка]</span>"
+    ]
   },
   {
-    "objectID": "testquiz.html",
-    "href": "testquiz.html",
-    "title": "2  Отладка квиза",
+    "objectID": "_debug_/debug_quiz.html#section",
+    "href": "_debug_/debug_quiz.html#section",
+    "title": "Квиз 0 [отладка]",
+    "section": "#1",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-1",
+    "href": "_debug_/debug_quiz.html#section-1",
+    "title": "Квиз 0 [отладка]",
+    "section": "#2",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-2",
+    "href": "_debug_/debug_quiz.html#section-2",
+    "title": "Квиз 0 [отладка]",
+    "section": "#3",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-3",
+    "href": "_debug_/debug_quiz.html#section-3",
+    "title": "Квиз 0 [отладка]",
+    "section": "#4",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-4",
+    "href": "_debug_/debug_quiz.html#section-4",
+    "title": "Квиз 0 [отладка]",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-5",
+    "href": "_debug_/debug_quiz.html#section-5",
+    "title": "Квиз 0 [отладка]",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-6",
+    "href": "_debug_/debug_quiz.html#section-6",
+    "title": "Квиз 0 [отладка]",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-7",
+    "href": "_debug_/debug_quiz.html#section-7",
+    "title": "Квиз 0 [отладка]",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-8",
+    "href": "_debug_/debug_quiz.html#section-8",
+    "title": "Квиз 0 [отладка]",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-9",
+    "href": "_debug_/debug_quiz.html#section-9",
+    "title": "Квиз 0 [отладка]",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-10",
+    "href": "_debug_/debug_quiz.html#section-10",
+    "title": "Квиз 0 [отладка]",
+    "section": "#11",
+    "text": "#11\n\n\n\n\n\n\n\n\n\n\n Question 11  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-11",
+    "href": "_debug_/debug_quiz.html#section-11",
+    "title": "Квиз 0 [отладка]",
+    "section": "#12",
+    "text": "#12\n\n\n\n\n\n\n\n\n\n\n Question 12  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-12",
+    "href": "_debug_/debug_quiz.html#section-12",
+    "title": "Квиз 0 [отладка]",
+    "section": "#13",
+    "text": "#13\n\n\n\n\n\n\n\n\n\n\n Question 13  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-13",
+    "href": "_debug_/debug_quiz.html#section-13",
+    "title": "Квиз 0 [отладка]",
+    "section": "#14",
+    "text": "#14\n\n\n\n\n\n\n\n\n\n\n Question 14  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-14",
+    "href": "_debug_/debug_quiz.html#section-14",
+    "title": "Квиз 0 [отладка]",
+    "section": "#15",
+    "text": "#15\n\n\n\n\n\n\n\n\n\n\n Question 15  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-15",
+    "href": "_debug_/debug_quiz.html#section-15",
+    "title": "Квиз 0 [отладка]",
+    "section": "#16",
+    "text": "#16\n\n\n\n\n\n\n\n\n\n\n Question 16  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-16",
+    "href": "_debug_/debug_quiz.html#section-16",
+    "title": "Квиз 0 [отладка]",
+    "section": "#17",
+    "text": "#17\n\n\n\n\n\n\n\n\n\n\n Question 17  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-17",
+    "href": "_debug_/debug_quiz.html#section-17",
+    "title": "Квиз 0 [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\n\n\n\n\n\n\n Question 18  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-18",
+    "href": "_debug_/debug_quiz.html#section-18",
+    "title": "Квиз 0 [отладка]",
+    "section": "#19",
+    "text": "#19\n\n\n\n\n\n\n\n\n\n\n Question 19  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_quiz.html#section-19",
+    "href": "_debug_/debug_quiz.html#section-19",
+    "title": "Квиз 0 [отладка]",
+    "section": "#20",
+    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html",
+    "href": "_debug_/debug_sheet.html",
+    "title": "Листок 0 [отладка]",
     "section": "",
-    "text": "Question 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Option 1\n\n\n Option 2\n\n\n Option 3\n\n\n Option 4\n\n\nFeedback\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion 1 \n\n Opt 1\n\n\n Opt 2\n\n\n Opt 3\n\n\n Opt 4\n\n\nFeedback\n\n\n\nРезультат\n\n\nНекоторые вопросы остались без ответа (("
+    "text": "#1",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
   },
   {
-    "objectID": "measures-psymetI.html",
-    "href": "measures-psymetI.html",
-    "title": "28  Психометрические измерения I",
+    "objectID": "_debug_/debug_sheet.html#section",
+    "href": "_debug_/debug_sheet.html#section",
+    "title": "Листок 0 [отладка]",
     "section": "",
-    "text": "Test Dev"
+    "text": "Task with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
   },
   {
-    "objectID": "measures-psymetII.html",
-    "href": "measures-psymetII.html",
-    "title": "29  Психометрические измерения II",
+    "objectID": "_debug_/debug_sheet.html#section-1",
+    "href": "_debug_/debug_sheet.html#section-1",
+    "title": "Листок 0 [отладка]",
+    "section": "#2",
+    "text": "#2\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-2",
+    "href": "_debug_/debug_sheet.html#section-2",
+    "title": "Листок 0 [отладка]",
+    "section": "#3",
+    "text": "#3\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-3",
+    "href": "_debug_/debug_sheet.html#section-3",
+    "title": "Листок 0 [отладка]",
+    "section": "#4",
+    "text": "#4\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-4",
+    "href": "_debug_/debug_sheet.html#section-4",
+    "title": "Листок 0 [отладка]",
+    "section": "#5",
+    "text": "#5\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-5",
+    "href": "_debug_/debug_sheet.html#section-5",
+    "title": "Листок 0 [отладка]",
+    "section": "#6",
+    "text": "#6\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-6",
+    "href": "_debug_/debug_sheet.html#section-6",
+    "title": "Листок 0 [отладка]",
+    "section": "#7",
+    "text": "#7\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-7",
+    "href": "_debug_/debug_sheet.html#section-7",
+    "title": "Листок 0 [отладка]",
+    "section": "#8",
+    "text": "#8\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-8",
+    "href": "_debug_/debug_sheet.html#section-8",
+    "title": "Листок 0 [отладка]",
+    "section": "#9",
+    "text": "#9\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-9",
+    "href": "_debug_/debug_sheet.html#section-9",
+    "title": "Листок 0 [отладка]",
+    "section": "#10",
+    "text": "#10\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-10",
+    "href": "_debug_/debug_sheet.html#section-10",
+    "title": "Листок 0 [отладка]",
+    "section": "#11",
+    "text": "#11\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-11",
+    "href": "_debug_/debug_sheet.html#section-11",
+    "title": "Листок 0 [отладка]",
+    "section": "#12",
+    "text": "#12\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-12",
+    "href": "_debug_/debug_sheet.html#section-12",
+    "title": "Листок 0 [отладка]",
+    "section": "#13",
+    "text": "#13\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-13",
+    "href": "_debug_/debug_sheet.html#section-13",
+    "title": "Листок 0 [отладка]",
+    "section": "#14",
+    "text": "#14\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-14",
+    "href": "_debug_/debug_sheet.html#section-14",
+    "title": "Листок 0 [отладка]",
+    "section": "#15",
+    "text": "#15\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-15",
+    "href": "_debug_/debug_sheet.html#section-15",
+    "title": "Листок 0 [отладка]",
+    "section": "#16",
+    "text": "#16\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-16",
+    "href": "_debug_/debug_sheet.html#section-16",
+    "title": "Листок 0 [отладка]",
+    "section": "#17",
+    "text": "#17\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-17",
+    "href": "_debug_/debug_sheet.html#section-17",
+    "title": "Листок 0 [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-18",
+    "href": "_debug_/debug_sheet.html#section-18",
+    "title": "Листок 0 [отладка]",
+    "section": "#19",
+    "text": "#19\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-19",
+    "href": "_debug_/debug_sheet.html#section-19",
+    "title": "Листок 0 [отладка]",
+    "section": "#20",
+    "text": "#20\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-20",
+    "href": "_debug_/debug_sheet.html#section-20",
+    "title": "Листок 0 [отладка]",
+    "section": "#21",
+    "text": "#21\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-21",
+    "href": "_debug_/debug_sheet.html#section-21",
+    "title": "Листок 0 [отладка]",
+    "section": "#22",
+    "text": "#22\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-22",
+    "href": "_debug_/debug_sheet.html#section-22",
+    "title": "Листок 0 [отладка]",
+    "section": "#23",
+    "text": "#23\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-23",
+    "href": "_debug_/debug_sheet.html#section-23",
+    "title": "Листок 0 [отладка]",
+    "section": "#24",
+    "text": "#24\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-24",
+    "href": "_debug_/debug_sheet.html#section-24",
+    "title": "Листок 0 [отладка]",
+    "section": "#25",
+    "text": "#25\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-25",
+    "href": "_debug_/debug_sheet.html#section-25",
+    "title": "Листок 0 [отладка]",
+    "section": "#26",
+    "text": "#26\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-26",
+    "href": "_debug_/debug_sheet.html#section-26",
+    "title": "Листок 0 [отладка]",
+    "section": "#27",
+    "text": "#27\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-27",
+    "href": "_debug_/debug_sheet.html#section-27",
+    "title": "Листок 0 [отладка]",
+    "section": "#28",
+    "text": "#28\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-28",
+    "href": "_debug_/debug_sheet.html#section-28",
+    "title": "Листок 0 [отладка]",
+    "section": "#29",
+    "text": "#29\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_debug_/debug_sheet.html#section-29",
+    "href": "_debug_/debug_sheet.html#section-29",
+    "title": "Листок 0 [отладка]",
+    "section": "#30",
+    "text": "#30\n\n\n\n\nTask with inline_code.\n\n\n\nInput format\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2\n\n\n\n\nReferences & Attribution",
+    "crumbs": [
+      "Debug",
+      "Листок 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html",
+    "href": "_part-r/r-intro.html",
+    "title": "2  Знакомство с R",
     "section": "",
-    "text": "CTT"
+    "text": "2.1 Сверхкраткая история R",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
   },
   {
-    "objectID": "measures-psymetIII.html",
-    "href": "measures-psymetIII.html",
-    "title": "30  Психометрические измерения III",
+    "objectID": "_part-r/r-intro.html#r-intro-installation",
+    "href": "_part-r/r-intro.html#r-intro-installation",
+    "title": "2  Знакомство с R",
+    "section": "2.2 Установка",
+    "text": "2.2 Установка\n\n\n\nМы сейчас будем устанавливать все программы…1\n\n\n\n\n\n\nПоследовательность установки\n\n\n\nНам необходимо будет установить две вещи — R и RStudio. Во избежании возможных ошибок необходимо их ставить именно в этом порядке: сначала — R, затем — RStudio. Иначе RStudio может не найти R на компе и будет ругаться.\n\n\n\n2.2.1 Установка R\n\n\n\nУстановить R можно с репозитория основного репозитория CRAN (The Comprehensive R Archive Network). Существуют версии R для всех трёх наиболее распространенных десктопных операционных систем:\n\nдля Win\nдля macOS\nдля Linux\n\nВ целом, установщики операционных систем обычно хорошо справляются со своей задачей, и в 90% случаев всё встаёт без багов. Однако ниже я оставлю некоторые комментарии о проблемах, с которыми сталкивался сам или о которых говорили знакомые и коллеги.\n\n2.2.1.1 Win\n\n\n\nНиже есть пример установки R на Win (Иллюстрация 2.1), если вдруг у вас возникли какие-то проблемы при установке. Скорее всего всё прошло достаточно ровно.\nСамая частая проблема — имя пользователя на кириллице. Компьютер вообще достаточно плохо переваривает кириллические символы. Особенную же проблему составляют такие символы в путях к файлам. Поскольку на Win папка пользователя называется именем пользователя, то в случае кириллического имени, естественно, её имя будет на кириллице. Это можно пережить, перезадав некоторое дефолтные пути в настройках, однако если есть возможность переименовать пользователя и папку, я бы рекомендовал это сделать. Ну, так, чтобы не было неожиданных внезапностей.\n\n\n\n\n\n\nИллюстрация 2.1: Установка R на Windows (на примере Windows 10 Pro)\n\n\n\n\n\n2.2.1.2 macOS\n\n\n\n\n\n\n\n\n\nApple silicon vs Intel Macs\n\n\n\nОбратите внимание на разные версии для Apple silicon (M1) и Intel Macs.\n\n\nНиже есть пример установки R на Mac (Иллюстрация 2.2), если вдруг у вас возникли какие-то проблемы при установке.\nТут в 99.9% случаев всё ровно. Бывает, что уже в процессе работы некоторые пакеты жалуются на недоустановленное что-то или на какие-либо несовместимости, но это случается невероятно редко и обычно достаточно легко лечится.\n\n\n\n\n\n\nИллюстрация 2.2: Установка R на macOS (на примере macOS Sonoma 14.1.1)\n\n\n\n\n\n2.2.1.3 Linux\n\n\n\n\n\n\n\n\n\nОбилие дистрибутивов\n\n\n\nКонечно, если вы работете на Linux, то прекрасно знаете о дистрибутивах и их особеностях. Однако отмечу, что на разные дистрибутивы Linux устанавливаются разные версии.\n\n\n\n\n\n\n\n\nПримеры на Linux\n\n\n\nЯ работаю на Ubuntu (ВЕРСИЯ), поэтому примеры для Linux будут приводится именно для этого дистрибутива. На других дистрибутивах могут быть свои особенности.\n\n\nНиже есть пример установки R на Linux (Ubuntu) (Иллюстрация 2.3), если вы только начинаете знакомство с Linux и у вас возникли какие-то проблемы при установке.\nЕсли вы пользователь Linux, значит R вы, вероятно, ставите через Terminal. Например, с помощью такой команды:\nsudo apt install r-base-dev\nСкорее всего, всё пройдет хорошо, и базовый R будет работать. Проблемки могут случиться чуть дальше, когда мы будем ставить дополнительные пакеты, в которых будет идти основная наша работа — R может не найти некоторые системные пакеты. Такая проблема возникла у меня возникла (на Ubuntu 22.04) — помогла команда ниже:\nsudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev linfreetype6-dev libpng-dev libtiff5-dev libjpeg-deva\nСначала мы будем знакомиться с базовым R и работать только в нём, но имейте в виду, что тут есть некая команда, которая может пригодиться.\n\n\n\n\n\n\nИллюстрация 2.3: Установка R на Linux (на примере Ubuntu ВЕРСИЯ)\n\n\n\n\n\n\n2.2.2 Установка RStudio\n\n\n\nКазалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — можно работать и просто в R. Однако для упрощения и увеличения приятности работы стоит установить RStudio2. Установочные файлы лежат тут. На всякий случай, прикреплены примеры установки RStudio для Win, macOS и Linux (Иллюстрация 2.4).\nRStudio — это интегрированная среда разработки (IDE) (подробнее см. тут). Она расширяет возможности R, предоставляет более юзабельный интерфейс для взаимодействия с языком и в целом делает работу с R радостной и приятной.\nRStudio это не единственная среда для работы с R, но определенно самая удобная и популярная, поэтому мы будем пользоваться именно ею. RStudio является IDE, разработанной специально для работы в R, однако это вовсе не значит, что в ней нельзя использовать другие языки программирования. Например, книжка, которуя вы сейчас читаете, написана с использованием R, Python, HTML, SASS, JavaScript, YAML и других языков — при этом вся работа велась в RStudio. Вот такая мощная вещь.\n\n\n\n\n\n\nИллюстрация 2.4: Установка RStudio на основные операционные системы\n\n\n\n\n2.2.2.1 Что такое IDE?\n\n\n\nИнтегрированная среда разработки (IDE, integrated development environment) — это специальная программа, которое предоставляет широкий спектр возможностей для разработки программного обеспечения. Возможно, вы слышали такие слова, как PyCharm или Visual Studio Code — это всё варианты IDE.\nОбычно IDE содержит несколько ключевых компонентов:\n\nтекстовый редактор для написания скриптов\nтранслятор языка\nотладчик (debugger)\nсредства автоматизации сборки (build automation tools)\n\nОбычно IDE позволяют работать с несколькими языками программирования, но бывают и специализированные.\n\nИ хотя всё ещё присутствует холивар относительного того, является ли R языком программирования (ССЫЛКА), RStudio однозначно можно назвать полноценной IDE, так как разработка в ней вполне может вестить. Пример продукта разработки прямо перед вами — книжка, которую вы сейчас читаете.\n\n\n\n\n2.2.3 Posit Cloud\n\n\n\nВ подавлающем большинстве случаев работа в R происходит на десктопной версии. Однако это не единственный вариант. Например, если вам нужно резко, быстро и несложно обработать небольшие данные, а вы в отпуске без своего любимого персонального компа, можно поработать в облачной версии RStudio — Posit Cloud.\nВ Posit Cloud используются RStudio Projects3, интерфейс полностью совпадает с десктопной версией RStudio, доступны дополнительные пакеты. Однако объем доступной оперативной памяти существенно ограничен, что, безусловно, может создать существенные сложности. Тем не менее, такой вариант работы вполне можно рассмотреть в каких-то ограниченных условиях.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-rinterface",
+    "href": "_part-r/r-intro.html#r-intro-rinterface",
+    "title": "2  Знакомство с R",
+    "section": "2.3 Интерфейс R",
+    "text": "2.3 Интерфейс R",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-rstudiointerface",
+    "href": "_part-r/r-intro.html#r-intro-rstudiointerface",
+    "title": "2  Знакомство с R",
+    "section": "2.4 Интерфейс RStudio",
+    "text": "2.4 Интерфейс RStudio",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-console",
+    "href": "_part-r/r-intro.html#r-intro-console",
+    "title": "2  Знакомство с R",
+    "section": "2.5 Работа в консоли",
+    "text": "2.5 Работа в консоли",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-script",
+    "href": "_part-r/r-intro.html#r-intro-script",
+    "title": "2  Знакомство с R",
+    "section": "2.6 Работа в скрипте",
+    "text": "2.6 Работа в скрипте",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-citation",
+    "href": "_part-r/r-intro.html#r-intro-citation",
+    "title": "2  Знакомство с R",
+    "section": "2.7 Цитирование R",
+    "text": "2.7 Цитирование R\n\n\n\nНа R, как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться — цитировать в разделе References. Для этого существует удобная команда:\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2023). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2023},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\nВ аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в \\(\\LaTeX\\) или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями4, _) , а сами андерскоры удалите5.\nКроме базового R, мы будем активно использовать разные дополнительные пакеты для расширения его возможностей. На использованные в работе пакеты также необходимо ссылаться. Чтобы получить цитирование конкретного пакета6, надо передать его название внутрь функции citation(). Ниже приведен пример для пакета ggplot2, которые мы будем использоваться для построения визуализаций:\n\ncitation(\"ggplot2\")\n\nTo cite ggplot2 in publications, please use\n\n  H. Wickham. ggplot2: Elegant Graphics for Data Analysis.\n  Springer-Verlag New York, 2016.\n\nA BibTeX entry for LaTeX users is\n\n  @Book{,\n    author = {Hadley Wickham},\n    title = {ggplot2: Elegant Graphics for Data Analysis},\n    publisher = {Springer-Verlag New York},\n    year = {2016},\n    isbn = {978-3-319-24277-4},\n    url = {https://ggplot2.tidyverse.org},\n  }",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-updates",
+    "href": "_part-r/r-intro.html#r-intro-updates",
+    "title": "2  Знакомство с R",
+    "section": "2.8 Обновления",
+    "text": "2.8 Обновления",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#r-intro-cli",
+    "href": "_part-r/r-intro.html#r-intro-cli",
+    "title": "2  Знакомство с R",
+    "section": "2.9 Работа в R из командной строки",
+    "text": "2.9 Работа в R из командной строки\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.3.2 (2023-10-31)\nPlatform: x86_64-apple-darwin20 (64-bit)\nRunning under: macOS Sonoma 14.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.3.2    fastmap_1.1.1     cli_3.6.2        \n [5] tools_4.3.2       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.26   \n [9] knitr_1.45        jsonlite_1.8.8    xfun_0.43         digest_0.6.35    \n[13] rlang_1.1.3       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
+  },
+  {
+    "objectID": "_part-r/r-intro.html#footnotes",
+    "href": "_part-r/r-intro.html#footnotes",
+    "title": "2  Знакомство с R",
     "section": "",
-    "text": "G-theory IRT"
+    "text": "На случай, если новое поколение утратило связь с культурным прошлым, а старое поколение желает, чтобы ему подсвело олдскулы — источник.↩︎\nПо пути надо ещё не перепутать её с R-Studio, которая восстанавливает данные с диска. Критическое сходство названий двух программ обязывает к повышенной внимательности при написании работ/статей/отчётов/заявок на гранты, в которых вы упоминаете RStudio — иногда рецензенты весьма недоумевают, как исследователи анализировали данные с помощью ПО для восстановления данных. Хотя это может звучать несколько странно, такой случай имел место быть в реальности…↩︎\nИх мы будем обсуждать в разделе о работе с данными.↩︎\nСогласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами подчерк и underscore, поэтому использую его и я.↩︎\nТакой синтаксис используется в Markdown — в частности, R Markdown.↩︎\nЧтобы функция citation(\"pkgname\") работала, пакет pkgname должен быть установлен на ваш компьютер. Здесь pkgname — название какого-либо дополнительного пакета.↩︎",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Знакомство с R</span>"
+    ]
   },
   {
-    "objectID": "appendix-answers.html#листок-1",
-    "href": "appendix-answers.html#листок-1",
+    "objectID": "_part-r/r-data.html",
+    "href": "_part-r/r-data.html",
+    "title": "10  Работа с данными",
+    "section": "",
+    "text": "10.1 RStudio Projects",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Работа с данными</span>"
+    ]
+  },
+  {
+    "objectID": "_part-measures/measures-psymetI.html",
+    "href": "_part-measures/measures-psymetI.html",
+    "title": "26  Психометрические измерения I",
+    "section": "",
+    "text": "Test Dev",
+    "crumbs": [
+      "Теория измерений",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Психометрические измерения I</span>"
+    ]
+  },
+  {
+    "objectID": "_part-measures/measures-psymetII.html",
+    "href": "_part-measures/measures-psymetII.html",
+    "title": "27  Психометрические измерения II",
+    "section": "",
+    "text": "CTT",
+    "crumbs": [
+      "Теория измерений",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Психометрические измерения II</span>"
+    ]
+  },
+  {
+    "objectID": "_part-measures/measures-psymetIII.html",
+    "href": "_part-measures/measures-psymetIII.html",
+    "title": "28  Психометрические измерения III",
+    "section": "",
+    "text": "G-theory IRT",
+    "crumbs": [
+      "Теория измерений",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Психометрические измерения III</span>"
+    ]
+  },
+  {
+    "objectID": "_part-desc/desc-statintro.html",
+    "href": "_part-desc/desc-statintro.html",
+    "title": "29  Введение в статистику",
+    "section": "",
+    "text": "29.1 Виды исследований\nСтатистика неразрывно связана с исследованиями, поэтому нам надо произвести некоторый рекап того, какие исследования у нас бывают. Общую классификацию исследований можно представить так (Иллюстрация 29.1):\nflowchart TD\n  research(Исследования)\n  theor(Теоретические)\n  empir(Эмпирические)\n  cab(Кабинетные)\n  qual(Качественные)\n  quan(Количественные)\n  meta(Мета-анализы)\n  exp(\"Доэкспериментальные\n      Квазиэспериментальные\n      Экспериментальные\")\n  \n  research --&gt; theor\n  research --&gt; empir\n  theor -.-&gt; cab\n  empir -.-&gt; cab\n  empir --&gt; qual\n  empir --&gt; quan\n  quan --&gt; exp\n  quan --&gt; meta\n\n\n\n\nИллюстрация 29.1: Способ классификации исследований",
+    "crumbs": [
+      "Описательная статистика",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Введение в статистику</span>"
+    ]
+  },
+  {
+    "objectID": "_part-desc/desc-statintro.html#desc-statintro-research-process",
+    "href": "_part-desc/desc-statintro.html#desc-statintro-research-process",
+    "title": "29  Введение в статистику",
+    "section": "29.2 Исследовательский процесс",
+    "text": "29.2 Исследовательский процесс\n\n\n\n\n\n\n\n\n\nflowchart TD\n  idea(\"Идея исследования\")\n  resques(\"Исследовательский вопрос 1\n          Исследовательский вопрос 2\n          …\n          Исследовательский вопрос N\")\n  qualres(\"Качественное исследование\")\n  hyps(\"Гипотеза 1\n        Гипотеза 2\n        …\n        Гипотеза M\")\n  quanres(\"Количественное исследование\")\n  results1(\"Осмысление результатов\")\n  results2(\"Осмысление результатов\")\n  newresq(\"Новые\n          исследовательские вопросы\")\n  newhyp(\"Новые гипотезы\")\n  \n  idea --&gt; resques\n  resques --&gt; qualres\n  qualres --&gt; results1\n  results1 --&gt; hyps\n  hyps --&gt; quanres\n  quanres --&gt; results2\n  results2 --&gt; newresq\n  results2 --&gt; newhyp\n  newresq --&gt; qualres\n  newresq --&gt; quanres\n  newhyp --&gt; quanres\n\n\n\n\nИллюстрация 29.2: Сотношение качественных и количественных исследований в исследовательском процессе",
+    "crumbs": [
+      "Описательная статистика",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Введение в статистику</span>"
+    ]
+  },
+  {
+    "objectID": "_part-desc/desc-statintro.html#desc-statintro-sample",
+    "href": "_part-desc/desc-statintro.html#desc-statintro-sample",
+    "title": "29  Введение в статистику",
+    "section": "29.3 Выборка",
+    "text": "29.3 Выборка\n\n\n\n\n29.3.1 Способы формирования репрезентативной выборки\n\n29.3.1.1 Простая случайная выборка\nСамый просто способ, которым можно набрать репрезентативную выборку — это простая случайная выборка (simple random sample).\n\n\n\n\n\n\n\n\n\n\n\n(a) Генеральная совокупность\n\n\n\n\n\n\n\n\n\n\n\n(b) Выборка малого объема\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Выборка среднего объема\n\n\n\n\n\n\n\n\n\n\n\n(d) Выборка большого объема\n\n\n\n\n\n\n\nИллюстрация 29.3: Простая случайная выборка",
+    "crumbs": [
+      "Описательная статистика",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Введение в статистику</span>"
+    ]
+  },
+  {
+    "objectID": "_common/outro.html",
+    "href": "_common/outro.html",
+    "title": "Заключение",
+    "section": "",
+    "text": "Пока что ещё рано заключать….",
+    "crumbs": [
+      "Заключение"
+    ]
+  },
+  {
+    "objectID": "_part-appendices/appendix-answers.html",
+    "href": "_part-appendices/appendix-answers.html",
     "title": "Приложение K — Ответы на листки",
-    "section": "K.1 Листок 1",
-    "text": "K.1 Листок 1"
+    "section": "",
+    "text": "K.1 Листок 1",
+    "crumbs": [
+      "Приложения",
+      "<span class='chapter-number'>K</span>  <span class='chapter-title'>Ответы на листки</span>"
+    ]
   },
   {
-    "objectID": "appendix-answers.html#листок-2",
-    "href": "appendix-answers.html#листок-2",
+    "objectID": "_part-appendices/appendix-answers.html#листок-2",
+    "href": "_part-appendices/appendix-answers.html#листок-2",
     "title": "Приложение K — Ответы на листки",
     "section": "K.2 Листок 2",
-    "text": "K.2 Листок 2"
+    "text": "K.2 Листок 2",
+    "crumbs": [
+      "Приложения",
+      "<span class='chapter-number'>K</span>  <span class='chapter-title'>Ответы на листки</span>"
+    ]
   },
   {
-    "objectID": "appendix-answers.html#листок-3",
-    "href": "appendix-answers.html#листок-3",
+    "objectID": "_part-appendices/appendix-answers.html#листок-3",
+    "href": "_part-appendices/appendix-answers.html#листок-3",
     "title": "Приложение K — Ответы на листки",
     "section": "K.3 Листок 3",
-    "text": "K.3 Листок 3"
+    "text": "K.3 Листок 3",
+    "crumbs": [
+      "Приложения",
+      "<span class='chapter-number'>K</span>  <span class='chapter-title'>Ответы на листки</span>"
+    ]
   }
 ]
