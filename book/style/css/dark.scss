@@ -338,23 +338,40 @@ form.quiz fieldset {
   background-color: $gray-700;
 }
 
+.remove-answer-button {
+  float: right;
+  background-color: $gray-700;
+  border: 1px solid $gray-800;
+  border-radius: 5px;
+  color: $gray-300;
+  font-size: .8em;
+  margin: .5% 1%;
+  padding: .5% 1%;
+}
+
 form.quiz div.submit-button {
   background-color: $gray-900;
 }
 
 form.quiz input.submit-button {
-  background-color: $gray-200;
-  color: $black;
+  background-color: $gray-700;
+  border-color: $gray-200;
+  color: $gray-100;
 }
 
 form.quiz input.submit-button[disabled],
 form.quiz input.submit-button:hover[disabled] {
-  background-color: $gray-700;
-  color: $gray-500;
+  background-color: $gray-900;
+  color: $gray-800;
 }
 
 form.quiz input.submit-button:hover {
-  background-color: $gray-300;
+  background-color: $gray-800;
+  color: $gray-200;
+}
+
+form.quiz input.submit-button:active {
+  background-color: $gray-600;
 }
 
 form.quiz div.feedback {
@@ -379,6 +396,15 @@ form.quiz fieldset div.check-cross {
   content: url("img/labs/check_cross_dark.png");
 }
 
+.toc-correct {
+  background-color: $quiz-correct-background !important;
+}
+
+.toc-incorrect {
+  background-color: $quiz-incorrect-background !important;
+}
+
+
 
 
 // Sheet
@@ -391,16 +417,17 @@ form.quiz fieldset div.check-cross {
 
 .button-autocheck {
   background-color: $gray-700;
-  color: $gray-100;
   border-color: $gray-800;
+  color: $gray-100;
 }
 
 .button-autocheck:hover {
-  background-color: $gray-500;
+  background-color: $gray-800;
+  color: $gray-200;
 }
 
 .button-autocheck:active {
-  background-color: $gray-400;
+  background-color: $gray-600;
 }
 
 .hints {
@@ -428,7 +455,7 @@ form.quiz fieldset div.check-cross {
 }
 
 .feedback-autocheck.empty {
-  color: $cyan;
+  color: $blue;
 }
 
 .feedback-autocheck.incorrect {

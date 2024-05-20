@@ -325,6 +325,10 @@ form.quiz fieldset.non-filled {
   border-color: $red;
 }
 
+.toc-non-filled {
+  border-color: $red !important;
+}
+
 
 
 // Sheet
@@ -341,6 +345,7 @@ form.quiz fieldset.non-filled {
 
 .feedback-autocheck {
   font-size: 0.9em;
+  margin-bottom: 1em;
 }
 
 .input-autocheck {
@@ -357,7 +362,7 @@ form.quiz fieldset.non-filled {
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
-  padding: 1%;
+  padding: .5%;
   padding-inline: 2% 
 }
 
