@@ -326,13 +326,13 @@ form.quiz fieldset div.check-cross {
 }
 
 .button-autocheck {
-  background-color: $gray-700;
-  color: $gray-100;
-  border-color: $gray-800;
+  background-color: $gray-100;
+  color: $black;
+  // border-color: $gray-800;
 }
 
 .button-autocheck:hover {
-  background-color: $gray-500;
+  background-color: $gray-300;
 }
 
 .button-autocheck:active {
