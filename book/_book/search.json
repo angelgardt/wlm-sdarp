@@ -75,8 +75,8 @@
     "objectID": "debug_quiz.html#section",
     "href": "debug_quiz.html#section",
     "title": "Квиз 0 [отладка]",
-    "section": "#1",
-    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -86,8 +86,8 @@
     "objectID": "debug_quiz.html#section-1",
     "href": "debug_quiz.html#section-1",
     "title": "Квиз 0 [отладка]",
-    "section": "#2",
-    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -97,8 +97,8 @@
     "objectID": "debug_quiz.html#section-2",
     "href": "debug_quiz.html#section-2",
     "title": "Квиз 0 [отладка]",
-    "section": "#3",
-    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -108,8 +108,8 @@
     "objectID": "debug_quiz.html#section-3",
     "href": "debug_quiz.html#section-3",
     "title": "Квиз 0 [отладка]",
-    "section": "#4",
-    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -119,8 +119,8 @@
     "objectID": "debug_quiz.html#section-4",
     "href": "debug_quiz.html#section-4",
     "title": "Квиз 0 [отладка]",
-    "section": "#5",
-    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -130,8 +130,8 @@
     "objectID": "debug_quiz.html#section-5",
     "href": "debug_quiz.html#section-5",
     "title": "Квиз 0 [отладка]",
-    "section": "#6",
-    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -141,8 +141,8 @@
     "objectID": "debug_quiz.html#section-6",
     "href": "debug_quiz.html#section-6",
     "title": "Квиз 0 [отладка]",
-    "section": "#7",
-    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#11",
+    "text": "#11\n\n\n\n\n\n\n\n\n\n\n Question 11  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -152,8 +152,8 @@
     "objectID": "debug_quiz.html#section-7",
     "href": "debug_quiz.html#section-7",
     "title": "Квиз 0 [отладка]",
-    "section": "#8",
-    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#12",
+    "text": "#12\n\n\n\n\n\n\n\n\n\n\n Question 12  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -163,8 +163,8 @@
     "objectID": "debug_quiz.html#section-8",
     "href": "debug_quiz.html#section-8",
     "title": "Квиз 0 [отладка]",
-    "section": "#9",
-    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#13",
+    "text": "#13\n\n\n\n\n\n\n\n\n\n\n Question 13  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -174,8 +174,8 @@
     "objectID": "debug_quiz.html#section-9",
     "href": "debug_quiz.html#section-9",
     "title": "Квиз 0 [отладка]",
-    "section": "#10",
-    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#14",
+    "text": "#14\n\n\n\n\n\n\n\n\n\n\n Question 14  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -185,8 +185,8 @@
     "objectID": "debug_quiz.html#section-10",
     "href": "debug_quiz.html#section-10",
     "title": "Квиз 0 [отладка]",
-    "section": "#11",
-    "text": "#11\n\n\n\n\n\n\n\n\n\n\n Question 11  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#15",
+    "text": "#15\n\n\n\n\n\n\n\n\n\n\n Question 15  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -196,8 +196,8 @@
     "objectID": "debug_quiz.html#section-11",
     "href": "debug_quiz.html#section-11",
     "title": "Квиз 0 [отладка]",
-    "section": "#12",
-    "text": "#12\n\n\n\n\n\n\n\n\n\n\n Question 12  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#16",
+    "text": "#16\n\n\n\n\n\n\n\n\n\n\n Question 16  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -207,8 +207,8 @@
     "objectID": "debug_quiz.html#section-12",
     "href": "debug_quiz.html#section-12",
     "title": "Квиз 0 [отладка]",
-    "section": "#13",
-    "text": "#13\n\n\n\n\n\n\n\n\n\n\n Question 13  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#17",
+    "text": "#17\n\n\n\n\n\n\n\n\n\n\n Question 17  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -218,8 +218,8 @@
     "objectID": "debug_quiz.html#section-13",
     "href": "debug_quiz.html#section-13",
     "title": "Квиз 0 [отладка]",
-    "section": "#14",
-    "text": "#14\n\n\n\n\n\n\n\n\n\n\n Question 14  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#18",
+    "text": "#18\n\n\n\n\n\n\n\n\n\n\n Question 18  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -229,8 +229,8 @@
     "objectID": "debug_quiz.html#section-14",
     "href": "debug_quiz.html#section-14",
     "title": "Квиз 0 [отладка]",
-    "section": "#15",
-    "text": "#15\n\n\n\n\n\n\n\n\n\n\n Question 15  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#19",
+    "text": "#19\n\n\n\n\n\n\n\n\n\n\n Question 19  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -240,8 +240,8 @@
     "objectID": "debug_quiz.html#section-15",
     "href": "debug_quiz.html#section-15",
     "title": "Квиз 0 [отладка]",
-    "section": "#16",
-    "text": "#16\n\n\n\n\n\n\n\n\n\n\n Question 16  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "section": "#20",
+    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
     "crumbs": [
       "Debug",
       "Квиз 0 [отладка]"
@@ -958,6 +958,457 @@
     "crumbs": [
       "Приложения",
       "<span class='chapter-number'>J</span>  <span class='chapter-title'>Математические буквы</span>"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q1-title",
+    "href": "debug_quiz.html#q1-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#1",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q2-title",
+    "href": "debug_quiz.html#q2-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#2",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q3-title",
+    "href": "debug_quiz.html#q3-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#3",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q4-title",
+    "href": "debug_quiz.html#q4-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#4",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q1",
+    "href": "debug_quiz.html#q1",
+    "title": "Квиз 0 [отладка]",
+    "section": "#1",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q2",
+    "href": "debug_quiz.html#q2",
+    "title": "Квиз 0 [отладка]",
+    "section": "#2",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q3",
+    "href": "debug_quiz.html#q3",
+    "title": "Квиз 0 [отладка]",
+    "section": "#3",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q4",
+    "href": "debug_quiz.html#q4",
+    "title": "Квиз 0 [отладка]",
+    "section": "#4",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q5",
+    "href": "debug_quiz.html#q5",
+    "title": "Квиз 0 [отладка]",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q6",
+    "href": "debug_quiz.html#q6",
+    "title": "Квиз 0 [отладка]",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q7",
+    "href": "debug_quiz.html#q7",
+    "title": "Квиз 0 [отладка]",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q8",
+    "href": "debug_quiz.html#q8",
+    "title": "Квиз 0 [отладка]",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q9",
+    "href": "debug_quiz.html#q9",
+    "title": "Квиз 0 [отладка]",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q10",
+    "href": "debug_quiz.html#q10",
+    "title": "Квиз 0 [отладка]",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q11",
+    "href": "debug_quiz.html#q11",
+    "title": "Квиз 0 [отладка]",
+    "section": "#11",
+    "text": "#11\n\n\n\n\n\n\n\n\n\n\n Question 11  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q12",
+    "href": "debug_quiz.html#q12",
+    "title": "Квиз 0 [отладка]",
+    "section": "#12",
+    "text": "#12\n\n\n\n\n\n\n\n\n\n\n Question 12  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q13",
+    "href": "debug_quiz.html#q13",
+    "title": "Квиз 0 [отладка]",
+    "section": "#13",
+    "text": "#13\n\n\n\n\n\n\n\n\n\n\n Question 13  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q14",
+    "href": "debug_quiz.html#q14",
+    "title": "Квиз 0 [отладка]",
+    "section": "#14",
+    "text": "#14\n\n\n\n\n\n\n\n\n\n\n Question 14  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q15",
+    "href": "debug_quiz.html#q15",
+    "title": "Квиз 0 [отладка]",
+    "section": "#15",
+    "text": "#15\n\n\n\n\n\n\n\n\n\n\n Question 15  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q16",
+    "href": "debug_quiz.html#q16",
+    "title": "Квиз 0 [отладка]",
+    "section": "#16",
+    "text": "#16\n\n\n\n\n\n\n\n\n\n\n Question 16  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q17",
+    "href": "debug_quiz.html#q17",
+    "title": "Квиз 0 [отладка]",
+    "section": "#17",
+    "text": "#17\n\n\n\n\n\n\n\n\n\n\n Question 17  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#18",
+    "href": "debug_quiz.html#18",
+    "title": "Квиз 0 [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\n\n\n\n\n\n\n Question 18  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q19",
+    "href": "debug_quiz.html#q19",
+    "title": "Квиз 0 [отладка]",
+    "section": "#19",
+    "text": "#19\n\n\n\n\n\n\n\n\n\n\n Question 19  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q20",
+    "href": "debug_quiz.html#q20",
+    "title": "Квиз 0 [отладка]",
+    "section": "#20",
+    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q18",
+    "href": "debug_quiz.html#q18",
+    "title": "Квиз 0 [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\n\n\n\n\n\n\n Question 18  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q5-title",
+    "href": "debug_quiz.html#q5-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q6-title",
+    "href": "debug_quiz.html#q6-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q7-title",
+    "href": "debug_quiz.html#q7-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q8-title",
+    "href": "debug_quiz.html#q8-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q9-title",
+    "href": "debug_quiz.html#q9-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q10-title",
+    "href": "debug_quiz.html#q10-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q11-title",
+    "href": "debug_quiz.html#q11-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#11",
+    "text": "#11\n\n\n\n\n\n\n\n\n\n\n Question 11  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q12-title",
+    "href": "debug_quiz.html#q12-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#12",
+    "text": "#12\n\n\n\n\n\n\n\n\n\n\n Question 12  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q13-title",
+    "href": "debug_quiz.html#q13-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#13",
+    "text": "#13\n\n\n\n\n\n\n\n\n\n\n Question 13  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q14-title",
+    "href": "debug_quiz.html#q14-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#14",
+    "text": "#14\n\n\n\n\n\n\n\n\n\n\n Question 14  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q15-title",
+    "href": "debug_quiz.html#q15-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#15",
+    "text": "#15\n\n\n\n\n\n\n\n\n\n\n Question 15  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q16-title",
+    "href": "debug_quiz.html#q16-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#16",
+    "text": "#16\n\n\n\n\n\n\n\n\n\n\n Question 16  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q17-title",
+    "href": "debug_quiz.html#q17-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#17",
+    "text": "#17\n\n\n\n\n\n\n\n\n\n\n Question 17  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q18-title",
+    "href": "debug_quiz.html#q18-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\n\n\n\n\n\n\n Question 18  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q19-title",
+    "href": "debug_quiz.html#q19-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#19",
+    "text": "#19\n\n\n\n\n\n\n\n\n\n\n Question 19  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q20-title",
+    "href": "debug_quiz.html#q20-title",
+    "title": "Квиз 0 [отладка]",
+    "section": "#20",
+    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
+    "crumbs": [
+      "Debug",
+      "Квиз 0 [отладка]"
     ]
   }
 ]
