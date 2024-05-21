@@ -42,7 +42,6 @@ const SUBMIT_BUTTON = document.getElementById("submit-button");
 SUBMIT_BUTTON.addEventListener("click", click_submit);
 
 const REMOVE_ANSWER_BUTTONS = document.getElementsByClassName("remove-answer-button");
-console.log(REMOVE_ANSWER_BUTTONS);
 for (let i = 0; i < N_tasks; i++) {
   REMOVE_ANSWER_BUTTONS[i].addEventListener("click", remove_answer);
 }
@@ -73,9 +72,9 @@ function click_submit() {
   console.log("Submit clicked");
   if (STATUS != "filled") {
     get_answers();
-    check_filled();
-    set_status();
+    set_status(check_filled());
     show_status();
+    show_non_filled();
   }
   if (STATUS == "filled") {
     check_quiz();
@@ -89,11 +88,22 @@ function click_option() {
   console.log(this.name);
   show_remove_answer_button(this.name);
   remove_non_filled(this.name);
+  if (STATUS != "initial") {
+    get_answers();
+    set_status(check_filled());
+    show_status();
+    show_non_filled();
+  }
 }
 
 function show_remove_answer_button(id) {
   console.log("Show remove answer button");
   document.getElementById(id+"-remove-answer").classList.add("shown");
+}
+
+function add_non_filled(id) {
+  document.getElementById(id).classList.add("non-filled");
+  document.getElementById("toc-"+id+"-title").classList.add("toc-non-filled");
 }
 
 function remove_non_filled(id) {
@@ -106,6 +116,13 @@ function remove_answer() {
   console.log(this.name);
   set_options_unchecked(this.name);
   hide_remove_answer_button(this.name);
+  add_non_filled(this.name);
+  if (STATUS != "initial") {
+    get_answers();
+    set_status(check_filled());
+    show_status();
+    show_non_filled();
+  }
 }
 
 function set_options_unchecked(id) {
@@ -132,14 +149,52 @@ function get_answers() {
 
 function check_filled() {
   console.log("Check filled");
+  let n_non_filled = N_tasks;
+  for (let i = 1; i <= N_tasks; i++) {
+    ANSWERS["q"+i]["filled"] = false;
+    for (let j = 1; j <= N_options; j++) {
+      ANSWERS["q"+i]["filled"] = ANSWERS["q"+i]["filled"] || ANSWERS["q"+i]["opt"+j]["checked"];
+    }
+    if (ANSWERS["q"+i]["filled"]) {
+      n_non_filled -= 1;
+    }
+    console.log(n_non_filled);
+  }
+  return n_non_filled;
 }
   
-function set_status() {
+function set_status(n_non_filled) {
   console.log("Set status");
+  if (n_non_filled == N_tasks) {
+    STATUS = "non_filled";
+  } else if (n_non_filled > 0) {
+    STATUS = "partially_filled";
+  } else {
+    STATUS = "filled";
+  }
 }
 
 function show_status() {
   console.log("Show status");
+  if (STATUS != "filled") {
+    document.getElementById("filled-message").innerHTML = MESSAGES[STATUS];
+    document.getElementById("filled-message").classList.add("shown");
+    console.log(STATUS);
+  } else {
+    document.getElementById("filled-message").classList.remove("shown");
+    console.log(STATUS);
+  }
+}
+
+function show_non_filled() {
+  console.log("Show status");
+  for (let i = 1; i <= N_tasks; i++) {
+    if (ANSWERS["q"+i]["filled"]) {
+      remove_non_filled("q"+i);
+    } else {
+      add_non_filled("q"+i);
+    }
+  }
 }
 
 

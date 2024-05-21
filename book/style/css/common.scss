@@ -263,8 +263,15 @@ form.quiz div.results {
 }
 
 form.quiz div.message {
+  display: none;
   font-weight: $h2-font-weight;
   font-size: 1rem;
+  text-align: center;
+  color: $red;
+}
+
+form.quiz div.message.shown {
+  display: block;
 }
 
 form.quiz fieldset div.feedback {
@@ -311,12 +318,6 @@ div.level-hard {
 form.quiz fieldset div.level-extreme,
 div.level-extreme {
   content: url("img/labs/lab_extreme.png");
-}
-
-form.quiz div.message {
-  display: none;
-  text-align: center;
-  color: $red;
 }
 
 form.quiz label.incorrect {
