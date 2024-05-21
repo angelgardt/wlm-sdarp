@@ -1,5 +1,4 @@
 // Parse JSON
-
 var INFO_JSON = JSON.parse(quiz_json);
 let INFO = {};
 let N = 20;
@@ -14,7 +13,6 @@ for (let i = 0; i < INFO_JSON.length; i++) {
 
 
 // Add labels and checkboxes
-
 for (let i = 1; i <= N; i++) {
   if (INFO["level"]["q"+i] == "") {
     document.getElementById("q"+i+"-level").hidden = true;
@@ -30,7 +28,6 @@ for (let i = 1; i <= N; i++) {
 
 
 // Change TOC title
-
 document.getElementById("toc-title").innerHTML = "Вопросы";
 
 
@@ -39,6 +36,12 @@ const SUBMIT_BUTTON = document.getElementById("submit-button");
 SUBMIT_BUTTON.addEventListener("click", click_submit);
 
 let STATUS = "initial";
+const MESSAGES = {
+  non_filled: "Нет ни одного ответа :'(",
+  partially_filled: "Некоторые вопросы остались без ответа ((",
+  filled: ""
+};
+
 
 function click_submit() {
   console.log("Submit clicked");
