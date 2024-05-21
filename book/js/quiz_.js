@@ -57,6 +57,9 @@ const MESSAGES = {
   filled: ""
 };
 
+// Set a set for answers
+let ANS = {};
+
 
 function click_submit() {
   console.log("Submit clicked");
@@ -86,6 +89,7 @@ function show_remove_answer_button(id) {
 
 function remove_non_filled(id) {
   document.getElementById(id).classList.remove("non-filled");
+  document.getElementById("toc-"+id+"-title").classList.remove("toc-non-filled");
 }
 
 function remove_answer() {
@@ -113,10 +117,6 @@ function set_status() {
 
 function show_status() {
   console.log("Show status");
-}
-
-function remove_non_filled() {
-  console.log("Remove non-filled");
 }
 
 function check_filled() {
