@@ -58,12 +58,21 @@ const MESSAGES = {
 };
 
 // Set a set for answers
-let ANS = {};
+let ANSWERS = {};
+for (let i = 1; i <= N_tasks; i++) {
+  ANSWERS["q"+i] = {};
+  ANSWERS["q"+i]["type"] = INFO["type"]["q"+i];
+  for (let j = 1; j <= N_options; j++) {
+    ANSWERS["q"+i]["opt"+j] = {};
+    ANSWERS["q"+i]["opt"+j]["correct"] = INFO["option"+j+"_correct"]["q"+i];
+  }
+}
 
 
 function click_submit() {
   console.log("Submit clicked");
   if (STATUS != "filled") {
+    get_answers();
     check_filled();
     set_status();
     show_status();
@@ -110,6 +119,20 @@ function hide_remove_answer_button(id) {
   console.log("Hide remove answer button");
   document.getElementById(id+"-remove-answer").classList.remove("shown");
 }
+
+function get_answers() {
+  console.log("Get checked");
+  const answers = document.getElementsByClassName("input-alternative");
+  for (let i = 1; i <= N_tasks; i++) {
+    for (let j = 1; j <= N_options; j++){
+      ANSWERS["q"+i]["opt"+j]["checked"] = answers["q"+i+"-option"+j]["checked"];
+    }
+  }
+}
+
+function check_filled() {
+  console.log("Check filled");
+}
   
 function set_status() {
   console.log("Set status");
@@ -119,9 +142,6 @@ function show_status() {
   console.log("Show status");
 }
 
-function check_filled() {
-  console.log("Check filled");
-}
 
 function check_quiz() {
   console.log("Check quiz");
