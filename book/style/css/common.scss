@@ -215,12 +215,21 @@ form.quiz fieldset div.alternative label img {
 
 form.quiz fieldset .remove-answer-button {
   display: none;
+  float: right;
+  height: auto;
+  font-size: .8em;
+  margin: .5% 1%;
+  padding: .5% 1%;
+  // visibility: hidden;
+  // opacity: 0;
+  // transition: visibility .3s, opacity .3s linear;
 }
 
 form.quiz fieldset .remove-answer-button.shown {
   display: block;
-  transition-property: display;
-  transition-duration: 1s;
+  // visibility: visible;
+  // opacity: 1;
+  // transition: visibility .3s, opacity .3s linear;
 }
 
 form.quiz div.submit-button {

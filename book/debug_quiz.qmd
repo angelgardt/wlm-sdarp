@@ -53,7 +53,7 @@ Option $\exp(4)$
 </label>
 </div>
 
-<input type="button" class="remove-answer-button shown" id="q1-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q1')">
+<input type="button" class="remove-answer-button" id="q1-remove-answer" name="q1" value="Удалить ответ">
 
 <div class="feedback" id="q1-feedback-correct">
 Correct Feedback
@@ -112,7 +112,7 @@ $\displaystyle \text{Option} \exp(4) = \expect X$
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q2-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q2')">
+<input type="button" class="remove-answer-button" id="q2-remove-answer" name="q2" value="Удалить ответ" onclick="remove_answer('q2')">
 
 <div class="feedback" id="q2-feedback-correct">
 Correct Feedback
@@ -168,7 +168,7 @@ Question 3 with `inline_code`
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q3-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q3')">
+<input type="button" class="remove-answer-button" id="q3-remove-answer" name="q3" value="Удалить ответ" onclick="remove_answer('q3')">
 
 <div class="feedback" id="q3-feedback-correct">
 Correct Feedback
@@ -224,7 +224,7 @@ Option 4 → 5
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q4-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q4')">
+<input type="button" class="remove-answer-button" id="q4-remove-answer" name="q4" value="Удалить ответ" onclick="remove_answer('q4')">
 
 <div class="feedback" id="q4-feedback-correct">
 Correct Feedback
@@ -303,7 +303,7 @@ installed.packages()
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q5-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q5')">
+<input type="button" class="remove-answer-button" id="q5-remove-answer" name="q5" value="Удалить ответ" onclick="remove_answer('q5')">
 
 <div class="feedback" id="q5-feedback-correct">
 Correct Feedback
@@ -359,7 +359,7 @@ Question 6
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q6-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q6')">
+<input type="button" class="remove-answer-button" id="q6-remove-answer" name="q6" value="Удалить ответ" onclick="remove_answer('q6')">
 
 <div class="feedback" id="q6-feedback-correct">
 Correct Feedback
@@ -415,7 +415,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q7-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q7')">
+<input type="button" class="remove-answer-button" id="q7-remove-answer" name="q7" value="Удалить ответ" onclick="remove_answer('q7')">
 
 <div class="feedback" id="q7-feedback-correct">
 Correct Feedback
@@ -471,7 +471,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q8-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q8')">
+<input type="button" class="remove-answer-button" id="q8-remove-answer" name="q8" value="Удалить ответ" onclick="remove_answer('q8')">
 
 <div class="feedback" id="q8-feedback-correct">
 Correct Feedback
@@ -527,7 +527,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q9-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q9')">
+<input type="button" class="remove-answer-button" id="q9-remove-answer" name="q9" value="Удалить ответ" onclick="remove_answer('q9')">
 
 <div class="feedback" id="q9-feedback-correct">
 Correct Feedback
@@ -583,7 +583,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q10-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q10')">
+<input type="button" class="remove-answer-button" id="q10-remove-answer" name="q10" value="Удалить ответ" onclick="remove_answer('q10')">
 
 <div class="feedback" id="q10-feedback-correct">
 Correct Feedback
@@ -639,7 +639,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q11-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q11')">
+<input type="button" class="remove-answer-button" id="q11-remove-answer" name="q11" value="Удалить ответ" onclick="remove_answer('q11')">
 
 <div class="feedback" id="q11-feedback-correct">
 Correct Feedback
@@ -695,7 +695,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q12-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q12')">
+<input type="button" class="remove-answer-button" id="q12-remove-answer" name="q12" value="Удалить ответ" onclick="remove_answer('q12')">
 
 <div class="feedback" id="q12-feedback-correct">
 Correct Feedback
@@ -751,7 +751,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q13-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q13')">
+<input type="button" class="remove-answer-button" id="q13-remove-answer" name="q13" value="Удалить ответ" onclick="remove_answer('q13')">
 
 <div class="feedback" id="q13-feedback-correct">
 Correct Feedback
@@ -807,7 +807,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q14-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q14')">
+<input type="button" class="remove-answer-button" id="q14-remove-answer" name="q14" value="Удалить ответ" onclick="remove_answer('q14')">
 
 <div class="feedback" id="q14-feedback-correct">
 Correct Feedback
@@ -863,7 +863,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q15-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q15')">
+<input type="button" class="remove-answer-button" id="q15-remove-answer" name="q15" value="Удалить ответ" onclick="remove_answer('q15')">
 
 <div class="feedback" id="q15-feedback-correct">
 Correct Feedback
@@ -919,7 +919,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q16-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q16')">
+<input type="button" class="remove-answer-button" id="q16-remove-answer" name="q16" value="Удалить ответ" onclick="remove_answer('q16')">
 
 <div class="feedback" id="q16-feedback-correct">
 Correct Feedback
@@ -975,7 +975,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q17-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q17')">
+<input type="button" class="remove-answer-button" id="q17-remove-answer" name="q17" value="Удалить ответ" onclick="remove_answer('q17')">
 
 <div class="feedback" id="q17-feedback-correct">
 Correct Feedback
@@ -1031,7 +1031,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q18-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q18')">
+<input type="button" class="remove-answer-button" id="q18-remove-answer" name="q18" value="Удалить ответ" onclick="remove_answer('q18')">
 
 <div class="feedback" id="q18-feedback-correct">
 Correct Feedback
@@ -1087,7 +1087,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q19-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q19')">
+<input type="button" class="remove-answer-button" id="q19-remove-answer" name="q19" value="Удалить ответ" onclick="remove_answer('q19')">
 
 <div class="feedback" id="q19-feedback-correct">
 Correct Feedback
@@ -1143,7 +1143,7 @@ Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q20-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q20')">
+<input type="button" class="remove-answer-button" id="q20-remove-answer" name="q20" value="Удалить ответ" onclick="remove_answer('q20')">
 
 <div class="feedback" id="q20-feedback-correct">
 Correct Feedback

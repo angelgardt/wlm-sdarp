@@ -256,14 +256,10 @@ form.quiz fieldset {
 }
 
 .remove-answer-button {
-  float: right;
   background-color: $gray-100;
   border: 1px solid $gray-300;
   border-radius: 5px;
   color: $gray-700;
-  font-size: .8em;
-  margin: .5% 1%;
-  padding: .5% 1%;
 }
 
 form.quiz input.submit-button {

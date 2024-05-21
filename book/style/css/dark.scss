@@ -339,14 +339,10 @@ form.quiz fieldset {
 }
 
 .remove-answer-button {
-  float: right;
   background-color: $gray-700;
   border: 1px solid $gray-800;
   border-radius: 5px;
   color: $gray-300;
-  font-size: .8em;
-  margin: .5% 1%;
-  padding: .5% 1%;
 }
 
 form.quiz div.submit-button {

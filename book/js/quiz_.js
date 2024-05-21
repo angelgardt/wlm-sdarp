@@ -34,13 +34,18 @@ document.getElementById("toc-title").innerHTML = "Вопросы";
 
 // Add events
 const ALTERNATIVES_OPTIONS = document.getElementsByClassName("input-alternative");
-console.log(ALTERNATIVES_OPTIONS);
 for (let i = 0; i < N_tasks*N_options; i++) {
   ALTERNATIVES_OPTIONS[i].addEventListener("click", click_option);
 }
 
 const SUBMIT_BUTTON = document.getElementById("submit-button");
 SUBMIT_BUTTON.addEventListener("click", click_submit);
+
+const REMOVE_ANSWER_BUTTONS = document.getElementsByClassName("remove-answer-button");
+console.log(REMOVE_ANSWER_BUTTONS);
+for (let i = 0; i < N_tasks; i++) {
+  REMOVE_ANSWER_BUTTONS[i].addEventListener("click", remove_answer);
+}
 
 // Set initial status
 let STATUS = "initial";
@@ -70,20 +75,38 @@ function click_submit() {
 function click_option() {
   console.log("Option clicked");
   console.log(this.name);
-  show_remove_answer_button();
-  remove_non_filled();
+  show_remove_answer_button(this.name);
+  remove_non_filled(this.name);
+}
+
+function show_remove_answer_button(id) {
+  console.log("Show remove answer button");
+  document.getElementById(id+"-remove-answer").classList.add("shown");
+}
+
+function remove_non_filled(id) {
+  document.getElementById(id).classList.remove("non-filled");
 }
 
 function remove_answer() {
   console.log("Remove answer clicked");
-  set_options_unchecked();
-  hide_remove_answer_button();
+  console.log(this.name);
+  set_options_unchecked(this.name);
+  hide_remove_answer_button(this.name);
 }
 
-function show_remove_answer_button() {
-  console.log("Show remove answer button");
+function set_options_unchecked(id) {
+  console.log("Set options unchecked");
+  for (let i = 1; i <= N_options; i++) {
+    document.getElementById(id+"-option"+i).checked = false;
+  }
 }
 
+function hide_remove_answer_button(id) {
+  console.log("Hide remove answer button");
+  document.getElementById(id+"-remove-answer").classList.remove("shown");
+}
+  
 function set_status() {
   console.log("Set status");
 }
