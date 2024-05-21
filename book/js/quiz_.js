@@ -200,9 +200,37 @@ function show_non_filled() {
 
 function check_quiz() {
   console.log("Check quiz");
+  for (let i = 1; i <= N_tasks; i++) {
+    if (ANSWERS["q"+i]["type"] == "radio") {
+      for (let j = 1; j <= N_options; j++) {
+        if (ANSWERS["q"+i]["opt"+j]["correct"] == "true" && ANSWERS["q"+i]["opt"+j]["checked"]) {
+          ANSWERS["q"+i]["correct"] = true;
+        }
+        if (!ANSWERS["q"+i]["correct"]) {
+          ANSWERS["q"+i]["correct"] = false;
+        }
+      }
+    } else {
+      let counter = 0;
+      for (let j = 1; j <= N_options; j++) {
+        if (ANSWERS["q"+i]["opt"+j]["correct"] == "true" && ANSWERS["q"+i]["opt"+j]["checked"]) {
+          counter += 1;
+        } else if (ANSWERS["q"+i]["opt"+j]["correct"] == "false" && !ANSWERS["q"+i]["opt"+j]["checked"]) {
+          counter += 1;
+        }
+        if (counter == 4) {
+          ANSWERS["q"+i]["correct"] = true;
+        } else {
+          ANSWERS["q"+i]["correct"] = false;
+        }
+      }
+    }
+  }
+  console.log(ANSWERS);
 }
 
 function show_results() {
+  
   console.log("Show results");
 }
 
