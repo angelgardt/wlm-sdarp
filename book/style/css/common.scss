@@ -166,6 +166,7 @@ form.quiz fieldset.question {
 
 form.quiz fieldset legend.question-title {
   padding: 1% 2% 2% 2%;
+  font-size: 1.3em;
 }
 
 form.quiz fieldset img.question-image {
@@ -212,6 +213,16 @@ form.quiz fieldset div.alternative label img {
   width: 70%;
 }
 
+form.quiz fieldset .remove-answer-button {
+  display: none;
+}
+
+form.quiz fieldset .remove-answer-button.shown {
+  display: block;
+  transition-property: display;
+  transition-duration: 1s;
+}
+
 form.quiz div.submit-button {
   margin: 4% 0;
 }
@@ -237,6 +248,7 @@ form.quiz div.submit-button input.submit-button:hover[disabled] {
 
 
 form.quiz div.results {
+  display: none;
   font-weight: $h2-font-weight;
   font-size: 1.5rem;
 }
@@ -247,6 +259,7 @@ form.quiz div.message {
 }
 
 form.quiz fieldset div.feedback {
+  display: none;
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
@@ -292,6 +305,7 @@ div.level-extreme {
 }
 
 form.quiz div.message {
+  display: none;
   text-align: center;
   color: $red;
 }
@@ -316,10 +330,13 @@ form.quiz fieldset div.level {
 
 form.quiz fieldset div.check-tick,
 form.quiz fieldset div.check-cross {
+  display: none;
   float: right;
   height: 2em;
   padding: 1% 1% 0 0;
 }
+
+
 
 form.quiz fieldset.non-filled {
   border-color: $red;

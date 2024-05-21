@@ -17,48 +17,48 @@ knitr::opts_chunk$set(echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE, error
 <fieldset class="question" id="q1">
 
 <div class="level" id="q1-level"></div>
-<div class="check-tick" id="q1-check-tick" hidden></div>
-<div class="check-cross" id="q1-check-cross" hidden></div>
+<div class="check-tick" id="q1-check-tick"></div>
+<div class="check-cross" id="q1-check-cross"></div>
 
 <legend class="question-title" id="q1-title">
 Question 1 with inline equation $x^2 + y^2 = R^2$
 </legend>
-<img class="question-image" id="q1-image" src="" hidden>
+<!--<img class="question-image" id="q1-image" src="">-->
 
 <div class="alternative" id="q1-option1-alternative">
-<input type="radio" class="input-alternative" id="q1-option1" name="q1-alternative" value="Option 1" onclick="fill('q1')">
+<input type="radio" class="input-alternative" id="q1-option1" name="q1" value="Option 1">
 <label for="q1-option1" id="q1-option1-label">
 Option $\sin 1$
 </label>
 </div>
 
 <div class="alternative" id="q1-option2-alternative">
-<input type="radio" class="input-alternative" id="q1-option2" name="q1-alternative" value="Option 2" onclick="fill('q1')">
+<input type="radio" class="input-alternative" id="q1-option2" name="q1" value="Option 2">
 <label for="q1-option2" id="q1-option2-label">
 Option $\cos 2$
 </label>
 </div>
 
 <div class="alternative" id="q1-option3-alternative">
-<input type="radio" class="input-alternative" id="q1-option3" name="q1-alternative" value="Option 3" onclick="fill('q1')">
+<input type="radio" class="input-alternative" id="q1-option3" name="q1" value="Option 3">
 <label for="q1-option3" id="q1-option3-label">
 Option $\tan 3$
 </label>
 </div>
 
 <div class="alternative" id="q1-option4-alternative">
-<input type="radio" class="input-alternative" id="q1-option4" name="q1-alternative" value="Option 4" onclick="fill('q1')">
+<input type="radio" class="input-alternative" id="q1-option4" name="q1" value="Option 4">
 <label for="q1-option4" id="q1-option4-label">
 Option $\exp(4)$
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q1-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q1')" hidden>
+<input type="button" class="remove-answer-button shown" id="q1-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q1')">
 
-<div class="feedback" id="q1-feedback-correct" hidden>
+<div class="feedback" id="q1-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q1-feedback-incorrect" hidden>
+<div class="feedback" id="q1-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -73,8 +73,8 @@ Incorrect Feedback
 <fieldset class="question" id="q2">
 
 <div class="level" id="q2-level"></div>
-<div class="check-tick" id="q2-check-tick" hidden></div>
-<div class="check-cross" id="q2-check-cross" hidden></div>
+<div class="check-tick" id="q2-check-tick"></div>
+<div class="check-cross" id="q2-check-cross"></div>
 
 <legend class="question-title" id="q2-title">
 Question 2 with equation
@@ -82,42 +82,42 @@ $$
 \expect X = \frac{1}{n} \sum_{i=1}^n x_i
 $$
 </legend>
-<img class="question-image" id="q2-image" src="" hidden>
+<!--<img class="question-image" id="q2-image" src="">-->
 
 <div class="alternative" id="q2-option1-alternative">
-<input type="radio" class="input-alternative" id="q2-option1" name="q2-alternative" value="Option 1" onclick="fill('q2')">
+<input type="radio" class="input-alternative" id="q2-option1" name="q2" value="Option 1">
 <label for="q2-option1" id="q2-option1-label">
 $\displaystyle \text{Option} \sin x = 0$
 </label>
 </div>
 
 <div class="alternative" id="q2-option2-alternative">
-<input type="radio" class="input-alternative" id="q2-option2" name="q2-alternative" value="Option 2" onclick="fill('q2')">
+<input type="radio" class="input-alternative" id="q2-option2" name="q2" value="Option 2">
 <label for="q2-option2" id="q2-option2-label">
 $\displaystyle \text{Option} \cos 2 = \var (X + Y)$
 </label>
 </div>
 
 <div class="alternative" id="q2-option3-alternative">
-<input type="radio" class="input-alternative" id="q2-option3" name="q2-alternative" value="Option 3" onclick="fill('q2')">
+<input type="radio" class="input-alternative" id="q2-option3" name="q2" value="Option 3">
 <label for="q2-option3" id="q2-option3-label">
 $\displaystyle \text{Option} \tan 3 \defin \frac{\sin 3}{\cos 3}$
 </label>
 </div>
 
 <div class="alternative" id="q2-option4-alternative">
-<input type="radio" class="input-alternative" id="q2-option4" name="q2-alternative" value="Option 4" onclick="fill('q2')">
+<input type="radio" class="input-alternative" id="q2-option4" name="q2" value="Option 4">
 <label for="q2-option4" id="q2-option4-label">
 $\displaystyle \text{Option} \exp(4) = \expect X$
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q2-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q2')" hidden>
+<input type="button" class="remove-answer-button" id="q2-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q2')">
 
-<div class="feedback" id="q2-feedback-correct" hidden>
+<div class="feedback" id="q2-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q2-feedback-incorrect" hidden>
+<div class="feedback" id="q2-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -132,48 +132,48 @@ Incorrect Feedback
 <fieldset class="question" id="q3">
 
 <div class="level" id="q3-level"></div>
-<div class="check-tick" id="q3-check-tick" hidden></div>
-<div class="check-cross" id="q3-check-cross" hidden></div>
+<div class="check-tick" id="q3-check-tick"></div>
+<div class="check-cross" id="q3-check-cross"></div>
 
 <legend class="question-title" id="q3-title">
 Question 3 with `inline_code`
 </legend>
-<img class="question-image" id="q3-image" src="" hidden>
+<!--<img class="question-image" id="q3-image" src="">-->
 
 <div class="alternative" id="q3-option1-alternative">
-<input type="radio" class="input-alternative" id="q3-option1" name="q3-alternative" value="Option 1" onclick="fill('q3')">
+<input type="radio" class="input-alternative" id="q3-option1" name="q3" value="Option 1">
 <label for="q3-option1" id="q3-option1-label">
 `Option 1`
 </label>
 </div>
 
 <div class="alternative" id="q3-option2-alternative">
-<input type="radio" class="input-alternative" id="q3-option2" name="q3-alternative" value="Option 2" onclick="fill('q3')">
+<input type="radio" class="input-alternative" id="q3-option2" name="q3" value="Option 2">
 <label for="q3-option2" id="q3-option2-label">
 `Option 2`
 </label>
 </div>
 
 <div class="alternative" id="q3-option3-alternative">
-<input type="radio" class="input-alternative" id="q3-option3" name="q3-alternative" value="Option 3" onclick="fill('q3')">
+<input type="radio" class="input-alternative" id="q3-option3" name="q3" value="Option 3">
 <label for="q3-option3" id="q3-option3-label">
 `Option 3`
 </label>
 </div>
 
 <div class="alternative" id="q3-option4-alternative">
-<input type="radio" class="input-alternative" id="q3-option4" name="q3-alternative" value="Option 4" onclick="fill('q3')">
+<input type="radio" class="input-alternative" id="q3-option4" name="q3" value="Option 4">
 <label for="q3-option4" id="q3-option4-label">
 `Option 4`
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q3-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q3')" hidden>
+<input type="button" class="remove-answer-button" id="q3-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q3')">
 
-<div class="feedback" id="q3-feedback-correct" hidden>
+<div class="feedback" id="q3-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q3-feedback-incorrect" hidden>
+<div class="feedback" id="q3-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -188,48 +188,48 @@ Incorrect Feedback
 <fieldset class="question" id="q4">
 
 <div class="level" id="q4-level"></div>
-<div class="check-tick" id="q4-check-tick" hidden></div>
-<div class="check-cross" id="q4-check-cross" hidden></div>
+<div class="check-tick" id="q4-check-tick"></div>
+<div class="check-cross" id="q4-check-cross"></div>
 
 <legend class="question-title" id="q4-title">
 Question 4 with **bold** and _italic_
 </legend>
-<img class="question-image" id="q4-image" src="" hidden>
+<!--<img class="question-image" id="q4-image" src="">-->
 
 <div class="alternative" id="q4-option1-alternative">
-<input type="radio" class="input-alternative" id="q4-option1" name="q4-alternative" value="Option 1" onclick="fill('q4')">
+<input type="radio" class="input-alternative" id="q4-option1" name="q4" value="Option 1">
 <label for="q4-option1" id="q4-option1-label">
 Option 1 **bold**
 </label>
 </div>
 
 <div class="alternative" id="q4-option2-alternative">
-<input type="radio" class="input-alternative" id="q4-option2" name="q4-alternative" value="Option 2" onclick="fill('q4')">
+<input type="radio" class="input-alternative" id="q4-option2" name="q4" value="Option 2">
 <label for="q4-option2" id="q4-option2-label">
 Option 2 _italic_
 </label>
 </div>
 
 <div class="alternative" id="q4-option3-alternative">
-<input type="radio" class="input-alternative" id="q4-option3" name="q4-alternative" value="Option 3" onclick="fill('q4')">
+<input type="radio" class="input-alternative" id="q4-option3" name="q4" value="Option 3">
 <label for="q4-option3" id="q4-option3-label">
 Option 3 ~~strike~~
 </label>
 </div>
 
 <div class="alternative" id="q4-option4-alternative">
-<input type="radio" class="input-alternative" id="q4-option4" name="q4-alternative" value="Option 4" onclick="fill('q4')">
+<input type="radio" class="input-alternative" id="q4-option4" name="q4" value="Option 4">
 <label for="q4-option4" id="q4-option4-label">
 Option 4 → 5
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q4-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q4')" hidden>
+<input type="button" class="remove-answer-button" id="q4-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q4')">
 
-<div class="feedback" id="q4-feedback-correct" hidden>
+<div class="feedback" id="q4-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q4-feedback-incorrect" hidden>
+<div class="feedback" id="q4-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -244,8 +244,8 @@ Incorrect Feedback
 <fieldset class="question" id="q5">
 
 <div class="level" id="q5-level"></div>
-<div class="check-tick" id="q5-check-tick" hidden></div>
-<div class="check-cross" id="q5-check-cross" hidden></div>
+<div class="check-tick" id="q5-check-tick"></div>
+<div class="check-cross" id="q5-check-cross"></div>
 
 <legend class="question-title" id="q5-title">
 Question 5 with code
@@ -257,10 +257,10 @@ for (i in vec) {
 }
 ```
 
-<img class="question-image" id="q5-image" src="" hidden>
+<!--<img class="question-image" id="q5-image" src="">-->
 
 <div class="alternative" id="q5-option1-alternative">
-<input type="radio" class="input-alternative" id="q5-option1" name="q5-alternative" value="Option 1" onclick="fill('q5')">
+<input type="radio" class="input-alternative" id="q5-option1" name="q5" value="Option 1">
 <label for="q5-option1" id="q5-option1-label">
 A
 ```{r}
@@ -274,7 +274,7 @@ if (x > 5) {
 </div>
 
 <div class="alternative" id="q5-option2-alternative">
-<input type="radio" class="input-alternative" id="q5-option2" name="q5-alternative" value="Option 2" onclick="fill('q5')">
+<input type="radio" class="input-alternative" id="q5-option2" name="q5" value="Option 2">
 <label for="q5-option2" id="q5-option2-label">
 B
 ```{r}
@@ -284,7 +284,7 @@ x <- 1
 </div>
 
 <div class="alternative" id="q5-option3-alternative">
-<input type="radio" class="input-alternative" id="q5-option3" name="q5-alternative" value="Option 3" onclick="fill('q5')">
+<input type="radio" class="input-alternative" id="q5-option3" name="q5" value="Option 3">
 <label for="q5-option3" id="q5-option3-label">
 C
 ```{r}
@@ -294,7 +294,7 @@ save.image("hihik.RData")
 </div>
 
 <div class="alternative" id="q5-option4-alternative">
-<input type="radio" class="input-alternative" id="q5-option4" name="q5-alternative" value="Option 4" onclick="fill('q5')">
+<input type="radio" class="input-alternative" id="q5-option4" name="q5" value="Option 4">
 <label for="q5-option4" id="q5-option4-label">
 D
 ```{r}
@@ -303,12 +303,12 @@ installed.packages()
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q5-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q5')" hidden>
+<input type="button" class="remove-answer-button" id="q5-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q5')">
 
-<div class="feedback" id="q5-feedback-correct" hidden>
+<div class="feedback" id="q5-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q5-feedback-incorrect" hidden>
+<div class="feedback" id="q5-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -323,48 +323,48 @@ Incorrect Feedback
 <fieldset class="question" id="q6">
 
 <div class="level" id="q6-level"></div>
-<div class="check-tick" id="q6-check-tick" hidden></div>
-<div class="check-cross" id="q6-check-cross" hidden></div>
+<div class="check-tick" id="q6-check-tick"></div>
+<div class="check-cross" id="q6-check-cross"></div>
 
 <legend class="question-title" id="q6-title">
 Question 6
 </legend>
-<img class="question-image" id="q6-image" src="./img/data-wrangling/full_join.png">
+<!--<img class="question-image" id="q6-image" src="./img/data-wrangling/full_join.png">-->
 
 <div class="alternative" id="q6-option1-alternative">
-<input type="radio" class="input-alternative" id="q6-option1" name="q6-alternative" value="Option 1" onclick="fill('q6')">
+<input type="radio" class="input-alternative" id="q6-option1" name="q6" value="Option 1">
 <label for="q6-option1" id="q6-option1-label">
 <img src="./img/data-wrangling/full_join.png">
 </label>
 </div>
 
 <div class="alternative" id="q6-option2-alternative">
-<input type="radio" class="input-alternative" id="q6-option2" name="q6-alternative" value="Option 2" onclick="fill('q6')">
+<input type="radio" class="input-alternative" id="q6-option2" name="q6" value="Option 2">
 <label for="q6-option2" id="q6-option2-label">
 <img src="./img/data-wrangling/inner_join.png">
 </label>
 </div>
 
 <div class="alternative" id="q6-option3-alternative">
-<input type="radio" class="input-alternative" id="q6-option3" name="q6-alternative" value="Option 3" onclick="fill('q6')">
+<input type="radio" class="input-alternative" id="q6-option3" name="q6" value="Option 3">
 <label for="q6-option3" id="q6-option3-label">
 <img src="./img/data-wrangling/left_join.png">
 </label>
 </div>
 
 <div class="alternative" id="q6-option4-alternative">
-<input type="radio" class="input-alternative" id="q6-option4" name="q6-alternative" value="Option 4" onclick="fill('q6')">
+<input type="radio" class="input-alternative" id="q6-option4" name="q6" value="Option 4">
 <label for="q6-option4" id="q6-option4-label">
 <img src="./img/data-wrangling/right_join.png">
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q6-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q6')" hidden>
+<input type="button" class="remove-answer-button" id="q6-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q6')">
 
-<div class="feedback" id="q6-feedback-correct" hidden>
+<div class="feedback" id="q6-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q6-feedback-incorrect" hidden>
+<div class="feedback" id="q6-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -379,48 +379,48 @@ Incorrect Feedback
 <fieldset class="question" id="q7">
 
 <div class="level" id="q7-level"></div>
-<div class="check-tick" id="q7-check-tick" hidden></div>
-<div class="check-cross" id="q7-check-cross" hidden></div>
+<div class="check-tick" id="q7-check-tick"></div>
+<div class="check-cross" id="q7-check-cross"></div>
 
 <legend class="question-title" id="q7-title">
 Question 7
 </legend>
-<img class="question-image" id="q7-image" src="" hidden>
+<!--<img class="question-image" id="q7-image" src="">-->
 
 <div class="alternative" id="q7-option1-alternative">
-<input type="radio" class="input-alternative" id="q7-option1" name="q7-alternative" value="Option 1" onclick="fill('q7')">
+<input type="radio" class="input-alternative" id="q7-option1" name="q7" value="Option 1">
 <label for="q7-option1" id="q7-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q7-option2-alternative">
-<input type="radio" class="input-alternative" id="q7-option2" name="q7-alternative" value="Option 2" onclick="fill('q7')">
+<input type="radio" class="input-alternative" id="q7-option2" name="q7" value="Option 2">
 <label for="q7-option2" id="q7-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q7-option3-alternative">
-<input type="radio" class="input-alternative" id="q7-option3" name="q7-alternative" value="Option 3" onclick="fill('q7')">
+<input type="radio" class="input-alternative" id="q7-option3" name="q7" value="Option 3">
 <label for="q7-option3" id="q7-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative"  id="q7-option4-alternative">
-<input type="radio" class="input-alternative" id="q7-option4" name="q7-alternative" value="Option 4" onclick="fill('q7')">
+<input type="radio" class="input-alternative" id="q7-option4" name="q7" value="Option 4">
 <label for="q7-option4" id="q7-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q7-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q7')" hidden>
+<input type="button" class="remove-answer-button" id="q7-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q7')">
 
-<div class="feedback" id="q7-feedback-correct" hidden>
+<div class="feedback" id="q7-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q7-feedback-incorrect" hidden>
+<div class="feedback" id="q7-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -435,48 +435,48 @@ Incorrect Feedback
 <fieldset class="question" id="q8">
 
 <div class="level" id="q8-level"></div>
-<div class="check-tick" id="q8-check-tick" hidden></div>
-<div class="check-cross" id="q8-check-cross" hidden></div>
+<div class="check-tick" id="q8-check-tick"></div>
+<div class="check-cross" id="q8-check-cross"></div>
 
 <legend class="question-title" id="q8-title">
 Question 8
 </legend>
-<img class="question-image" id="q8-image" src="" hidden>
+<!--<img class="question-image" id="q8-image" src="">-->
 
 <div class="alternative" id="q8-option1-alternative">
-<input type="radio" class="input-alternative" id="q8-option1" name="q8-alternative" value="Option 1" onclick="fill('q8')">
+<input type="radio" class="input-alternative" id="q8-option1" name="q8" value="Option 1">
 <label for="q8-option1" id="q8-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q8-option2-alternative">
-<input type="radio" class="input-alternative" id="q8-option2" name="q8-alternative" value="Option 2" onclick="fill('q8')">
+<input type="radio" class="input-alternative" id="q8-option2" name="q8" value="Option 2">
 <label for="q8-option2" id="q8-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q8-option3-alternative">
-<input type="radio" class="input-alternative" id="q8-option3" name="q8-alternative" value="Option 3" onclick="fill('q8')">
+<input type="radio" class="input-alternative" id="q8-option3" name="q8" value="Option 3">
 <label for="q8-option3" id="q8-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q8-option4-alternative">
-<input type="radio" class="input-alternative" id="q8-option4" name="q8-alternative" value="Option 4" onclick="fill('q8')">
+<input type="radio" class="input-alternative" id="q8-option4" name="q8" value="Option 4">
 <label for="q8-option4" id="q8-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q8-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q8')" hidden>
+<input type="button" class="remove-answer-button" id="q8-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q8')">
 
-<div class="feedback" id="q8-feedback-correct" hidden>
+<div class="feedback" id="q8-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q8-feedback-incorrect" hidden>
+<div class="feedback" id="q8-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -491,48 +491,48 @@ Incorrect Feedback
 <fieldset class="question" id="q9">
 
 <div class="level" id="q9-level"></div>
-<div class="check-tick" id="q9-check-tick" hidden></div>
-<div class="check-cross" id="q9-check-cross" hidden></div>
+<div class="check-tick" id="q9-check-tick"></div>
+<div class="check-cross" id="q9-check-cross"></div>
 
 <legend class="question-title" id="q9-title">
 Question 9
 </legend>
-<img class="question-image" id="q9-image" src="" hidden>
+<!--<img class="question-image" id="q9-image" src="">-->
 
 <div class="alternative" id="q9-option1-alternative">
-<input type="radio" class="input-alternative" id="q9-option1" name="q9-alternative" value="Option 1" onclick="fill('q9')">
+<input type="radio" class="input-alternative" id="q9-option1" name="q9" value="Option 1">
 <label for="q9-option1" id="q9-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q9-option2-alternative">
-<input type="radio" class="input-alternative" id="q9-option2" name="q9-alternative" value="Option 2" onclick="fill('q9')">
+<input type="radio" class="input-alternative" id="q9-option2" name="q9" value="Option 2">
 <label for="q9-option2" id="q9-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q9-option3-alternative">
-<input type="radio" class="input-alternative" id="q9-option3" name="q9-alternative" value="Option 3" onclick="fill('q9')">
+<input type="radio" class="input-alternative" id="q9-option3" name="q9" value="Option 3">
 <label for="q9-option3" id="q9-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q9-option4-alternative">
-<input type="radio" class="input-alternative" id="q9-option4" name="q9-alternative" value="Option 4" onclick="fill('q9')">
+<input type="radio" class="input-alternative" id="q9-option4" name="q9" value="Option 4">
 <label for="q9-option4" id="q9-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q9-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q9')" hidden>
+<input type="button" class="remove-answer-button" id="q9-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q9')">
 
-<div class="feedback" id="q9-feedback-correct" hidden>
+<div class="feedback" id="q9-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q9-feedback-incorrect" hidden>
+<div class="feedback" id="q9-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -547,48 +547,48 @@ Incorrect Feedback
 <fieldset class="question" id="q10">
 
 <div class="level" id="q10-level"></div>
-<div class="check-tick" id="q10-check-tick" hidden></div>
-<div class="check-cross" id="q10-check-cross" hidden></div>
+<div class="check-tick" id="q10-check-tick"></div>
+<div class="check-cross" id="q10-check-cross"></div>
 
 <legend class="question-title" id="q10-title">
 Question 10
 </legend>
-<img class="question-image" id="q10-image" src="" hidden>
+<!--<img class="question-image" id="q10-image" src="">-->
 
 <div class="alternative" id="q10-option1-alternative">
-<input type="radio" class="input-alternative" id="q10-option1" name="q10-alternative" value="Option 1" onclick="fill('q10')">
+<input type="radio" class="input-alternative" id="q10-option1" name="q10" value="Option 1">
 <label for="q10-option1" id="q10-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q10-option2-alternative">
-<input type="radio" class="input-alternative" id="q10-option2" name="q10-alternative" value="Option 2" onclick="fill('q10')">
+<input type="radio" class="input-alternative" id="q10-option2" name="q10" value="Option 2">
 <label for="q10-option2" id="q10-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q10-option3-alternative">
-<input type="radio" class="input-alternative" id="q10-option3" name="q10-alternative" value="Option 3" onclick="fill('q10')">
+<input type="radio" class="input-alternative" id="q10-option3" name="q10" value="Option 3">
 <label for="q10-option3" id="q10-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q10-option4-alternative">
-<input type="radio" class="input-alternative" id="q10-option4" name="q10-alternative" value="Option 4" onclick="fill('q10')">
+<input type="radio" class="input-alternative" id="q10-option4" name="q10" value="Option 4">
 <label for="q10-option4" id="q10-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q10-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q10')" hidden>
+<input type="button" class="remove-answer-button" id="q10-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q10')">
 
-<div class="feedback" id="q10-feedback-correct" hidden>
+<div class="feedback" id="q10-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q10-feedback-incorrect" hidden>
+<div class="feedback" id="q10-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -603,48 +603,48 @@ Incorrect Feedback
 <fieldset class="question" id="q11">
 
 <div class="level" id="q11-level"></div>
-<div class="check-tick" id="q11-check-tick" hidden></div>
-<div class="check-cross" id="q11-check-cross" hidden></div>
+<div class="check-tick" id="q11-check-tick"></div>
+<div class="check-cross" id="q11-check-cross"></div>
 
 <legend class="question-title" id="q11-title">
 Question 11
 </legend>
-<img class="question-image" id="q11-image" src="" hidden>
+<!--<img class="question-image" id="q11-image" src="">-->
 
 <div class="alternative" id="q11-option1-alternative">
-<input type="radio" class="input-alternative" id="q11-option1" name="q11-alternative" value="Option 1" onclick="fill('q11')">
+<input type="radio" class="input-alternative" id="q11-option1" name="q11" value="Option 1">
 <label for="q11-option1" id="q11-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q11-option2-alternative">
-<input type="radio" class="input-alternative" id="q11-option2" name="q11-alternative" value="Option 2" onclick="fill('q11')">
+<input type="radio" class="input-alternative" id="q11-option2" name="q11" value="Option 2">
 <label for="q11-option2" id="q11-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q11-option3-alternative">
-<input type="radio" class="input-alternative" id="q11-option3" name="q11-alternative" value="Option 3" onclick="fill('q11')">
+<input type="radio" class="input-alternative" id="q11-option3" name="q11" value="Option 3">
 <label for="q11-option3" id="q11-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q11-option4-alternative">
-<input type="radio" class="input-alternative" id="q11-option4" name="q11-alternative" value="Option 4" onclick="fill('q11')">
+<input type="radio" class="input-alternative" id="q11-option4" name="q11" value="Option 4">
 <label for="q11-option4" id="q11-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q11-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q11')" hidden>
+<input type="button" class="remove-answer-button" id="q11-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q11')">
 
-<div class="feedback" id="q11-feedback-correct" hidden>
+<div class="feedback" id="q11-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q11-feedback-incorrect" hidden>
+<div class="feedback" id="q11-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -659,48 +659,48 @@ Incorrect Feedback
 <fieldset class="question" id="q12">
 
 <div class="level" id="q12-level"></div>
-<div class="check-tick" id="q12-check-tick" hidden></div>
-<div class="check-cross" id="q12-check-cross" hidden></div>
+<div class="check-tick" id="q12-check-tick"></div>
+<div class="check-cross" id="q12-check-cross"></div>
 
 <legend class="question-title" id="q12-title">
 Question 12
 </legend>
-<img class="question-image" id="q12-image" src="" hidden>
+<!--<img class="question-image" id="q12-image" src="">-->
 
 <div class="alternative" id="q12-option1-alternative">
-<input type="radio" class="input-alternative" id="q12-option1" name="q12-alternative" value="Option 1" onclick="fill('q12')">
+<input type="radio" class="input-alternative" id="q12-option1" name="q12" value="Option 1">
 <label for="q12-option1" id="q12-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q12-option2-alternative">
-<input type="radio" class="input-alternative" id="q12-option2" name="q12-alternative" value="Option 2" onclick="fill('q12')">
+<input type="radio" class="input-alternative" id="q12-option2" name="q12" value="Option 2">
 <label for="q12-option2" id="q12-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q12-option3-alternative">
-<input type="radio" class="input-alternative" id="q12-option3" name="q12-alternative" value="Option 3" onclick="fill('q12')">
+<input type="radio" class="input-alternative" id="q12-option3" name="q12" value="Option 3">
 <label for="q12-option3" id="q12-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q12-option4-alternative">
-<input type="radio" class="input-alternative" id="q12-option4" name="q12-alternative" value="Option 4" onclick="fill('q12')">
+<input type="radio" class="input-alternative" id="q12-option4" name="q12" value="Option 4">
 <label for="q12-option4" id="q12-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q12-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q12')" hidden>
+<input type="button" class="remove-answer-button" id="q12-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q12')">
 
-<div class="feedback" id="q12-feedback-correct" hidden>
+<div class="feedback" id="q12-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q12-feedback-incorrect" hidden>
+<div class="feedback" id="q12-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -715,48 +715,48 @@ Incorrect Feedback
 <fieldset class="question" id="q13">
 
 <div class="level" id="q13-level"></div>
-<div class="check-tick" id="q13-check-tick" hidden></div>
-<div class="check-cross" id="q13-check-cross" hidden></div>
+<div class="check-tick" id="q13-check-tick"></div>
+<div class="check-cross" id="q13-check-cross"></div>
 
 <legend class="question-title" id="q13-title">
 Question 13
 </legend>
-<img class="question-image" id="q13-image" src="" hidden>
+<!--<img class="question-image" id="q13-image" src="">-->
 
 <div class="alternative" id="q13-option1-alternative">
-<input type="radio" class="input-alternative" id="q13-option1" name="q13-alternative" value="Option 1" onclick="fill('q13')">
+<input type="radio" class="input-alternative" id="q13-option1" name="q13" value="Option 1">
 <label for="q13-option1" id="q13-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q13-option2-alternative">
-<input type="radio" class="input-alternative" id="q13-option2" name="q13-alternative" value="Option 2" onclick="fill('q13')">
+<input type="radio" class="input-alternative" id="q13-option2" name="q13" value="Option 2">
 <label for="q13-option2" id="q13-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q13-option3-alternative">
-<input type="radio" class="input-alternative" id="q13-option3" name="q13-alternative" value="Option 3" onclick="fill('q13')">
+<input type="radio" class="input-alternative" id="q13-option3" name="q13" value="Option 3">
 <label for="q13-option3" id="q13-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q13-option4-alternative">
-<input type="radio" class="input-alternative" id="q13-option4" name="q13-alternative" value="Option 4" onclick="fill('q13')">
+<input type="radio" class="input-alternative" id="q13-option4" name="q13" value="Option 4">
 <label for="q13-option4" id="q13-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q13-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q13')" hidden>
+<input type="button" class="remove-answer-button" id="q13-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q13')">
 
-<div class="feedback" id="q13-feedback-correct" hidden>
+<div class="feedback" id="q13-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q13-feedback-incorrect" hidden>
+<div class="feedback" id="q13-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -771,48 +771,48 @@ Incorrect Feedback
 <fieldset class="question" id="q14">
 
 <div class="level" id="q14-level"></div>
-<div class="check-tick" id="q14-check-tick" hidden></div>
-<div class="check-cross" id="q14-check-cross" hidden></div>
+<div class="check-tick" id="q14-check-tick"></div>
+<div class="check-cross" id="q14-check-cross"></div>
 
 <legend class="question-title" id="q14-title">
 Question 14
 </legend>
-<img class="question-image" id="q14-image" src="" hidden>
+<!--<img class="question-image" id="q14-image" src="">-->
 
 <div class="alternative" id="q14-option1-alternative">
-<input type="radio" class="input-alternative" id="q14-option1" name="q14-alternative" value="Option 1" onclick="fill('q14')">
+<input type="radio" class="input-alternative" id="q14-option1" name="q14" value="Option 1">
 <label for="q14-option1" id="q14-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q14-option2-alternative">
-<input type="radio" class="input-alternative" id="q14-option2" name="q14-alternative" value="Option 2" onclick="fill('q14')">
+<input type="radio" class="input-alternative" id="q14-option2" name="q14" value="Option 2">
 <label for="q14-option2" id="q14-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q14-option3-alternative">
-<input type="radio" class="input-alternative" id="q14-option3" name="q14-alternative" value="Option 3" onclick="fill('q14')">
+<input type="radio" class="input-alternative" id="q14-option3" name="q14" value="Option 3">
 <label for="q14-option3" id="q14-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q14-option4-alternative">
-<input type="radio" class="input-alternative" id="q14-option4" name="q14-alternative" value="Option 4" onclick="fill('q14')">
+<input type="radio" class="input-alternative" id="q14-option4" name="q14" value="Option 4">
 <label for="q14-option4" id="q14-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q14-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q14')" hidden>
+<input type="button" class="remove-answer-button" id="q14-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q14')">
 
-<div class="feedback" id="q14-feedback-correct" hidden>
+<div class="feedback" id="q14-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q14-feedback-incorrect" hidden>
+<div class="feedback" id="q14-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -827,48 +827,48 @@ Incorrect Feedback
 <fieldset class="question" id="q15">
 
 <div class="level" id="q15-level"></div>
-<div class="check-tick" id="q15-check-tick" hidden></div>
-<div class="check-cross" id="q15-check-cross" hidden></div>
+<div class="check-tick" id="q15-check-tick"></div>
+<div class="check-cross" id="q15-check-cross"></div>
 
 <legend class="question-title" id="q15-title">
 Question 15
 </legend>
-<img class="question-image" id="q15-image" src="" hidden>
+<!--<img class="question-image" id="q15-image" src="">-->
 
 <div class="alternative" id="q15-option1-alternative">
-<input type="radio" class="input-alternative" id="q15-option1" name="q15-alternative" value="Option 1" onclick="fill('q15')">
+<input type="radio" class="input-alternative" id="q15-option1" name="q15" value="Option 1">
 <label for="q15-option1" id="q15-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q15-option2-alternative">
-<input type="radio" class="input-alternative" id="q15-option2" name="q15-alternative" value="Option 2" onclick="fill('q15')">
+<input type="radio" class="input-alternative" id="q15-option2" name="q15" value="Option 2">
 <label for="q15-option2" id="q15-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q15-option3-alternative">
-<input type="radio" class="input-alternative" id="q15-option3" name="q15-alternative" value="Option 3" onclick="fill('q15')">
+<input type="radio" class="input-alternative" id="q15-option3" name="q15" value="Option 3">
 <label for="q15-option3" id="q15-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q15-option4-alternative">
-<input type="radio" class="input-alternative" id="q15-option4" name="q15-alternative" value="Option 4" onclick="fill('q15')">
+<input type="radio" class="input-alternative" id="q15-option4" name="q15" value="Option 4">
 <label for="q15-option4" id="q15-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q15-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q15')" hidden>
+<input type="button" class="remove-answer-button" id="q15-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q15')">
 
-<div class="feedback" id="q15-feedback-correct" hidden>
+<div class="feedback" id="q15-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q15-feedback-incorrect" hidden>
+<div class="feedback" id="q15-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -883,48 +883,48 @@ Incorrect Feedback
 <fieldset class="question" id="q16">
 
 <div class="level" id="q16-level"></div>
-<div class="check-tick" id="q16-check-tick" hidden></div>
-<div class="check-cross" id="q16-check-cross" hidden></div>
+<div class="check-tick" id="q16-check-tick"></div>
+<div class="check-cross" id="q16-check-cross"></div>
 
 <legend class="question-title" id="q16-title">
 Question 16
 </legend>
-<img class="question-image" id="q16-image" src="" hidden>
+<!--<img class="question-image" id="q16-image" src="">-->
 
 <div class="alternative" id="q16-option1-alternative">
-<input type="radio" class="input-alternative" id="q16-option1" name="q16-alternative" value="Option 1" onclick="fill('q16')">
+<input type="radio" class="input-alternative" id="q16-option1" name="q16" value="Option 1">
 <label for="q16-option1" id="q16-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q16-option2-alternative">
-<input type="radio" class="input-alternative" id="q16-option2" name="q16-alternative" value="Option 2" onclick="fill('q16')">
+<input type="radio" class="input-alternative" id="q16-option2" name="q16" value="Option 2">
 <label for="q16-option2" id="q16-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q16-option3-alternative">
-<input type="radio" class="input-alternative" id="q16-option3" name="q16-alternative" value="Option 3" onclick="fill('q16')">
+<input type="radio" class="input-alternative" id="q16-option3" name="q16" value="Option 3">
 <label for="q16-option3" id="q16-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q16-option4-alternative">
-<input type="radio" class="input-alternative" id="q16-option4" name="q16-alternative" value="Option 4" onclick="fill('q16')">
+<input type="radio" class="input-alternative" id="q16-option4" name="q16" value="Option 4">
 <label for="q16-option4" id="q16-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q16-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q16')" hidden>
+<input type="button" class="remove-answer-button" id="q16-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q16')">
 
-<div class="feedback" id="q16-feedback-correct" hidden>
+<div class="feedback" id="q16-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q16-feedback-incorrect" hidden>
+<div class="feedback" id="q16-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -939,48 +939,48 @@ Incorrect Feedback
 <fieldset class="question" id="q17">
 
 <div class="level" id="q17-level"></div>
-<div class="check-tick" id="q17-check-tick" hidden></div>
-<div class="check-cross" id="q17-check-cross" hidden></div>
+<div class="check-tick" id="q17-check-tick"></div>
+<div class="check-cross" id="q17-check-cross"></div>
 
 <legend class="question-title" id="q17-title">
 Question 17
 </legend>
-<img class="question-image" id="q17-image" src="" hidden>
+<!--<img class="question-image" id="q17-image" src="">-->
 
 <div class="alternative" id="q17-option1-alternative">
-<input type="radio" class="input-alternative" id="q17-option1" name="q17-alternative" value="Option 1" onclick="fill('q17')">
+<input type="radio" class="input-alternative" id="q17-option1" name="q17" value="Option 1">
 <label for="q17-option1" id="q17-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q17-option2-alternative">
-<input type="radio" class="input-alternative" id="q17-option2" name="q17-alternative" value="Option 2" onclick="fill('q17')">
+<input type="radio" class="input-alternative" id="q17-option2" name="q17" value="Option 2">
 <label for="q17-option2" id="q17-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q17-option3-alternative">
-<input type="radio" class="input-alternative" id="q17-option3" name="q17-alternative" value="Option 3" onclick="fill('q17')">
+<input type="radio" class="input-alternative" id="q17-option3" name="q17" value="Option 3">
 <label for="q17-option3" id="q17-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q17-option4-alternative">
-<input type="radio" class="input-alternative" id="q17-option4" name="q17-alternative" value="Option 4" onclick="fill('q17')">
+<input type="radio" class="input-alternative" id="q17-option4" name="q17" value="Option 4">
 <label for="q17-option4" id="q17-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q17-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q17')" hidden>
+<input type="button" class="remove-answer-button" id="q17-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q17')">
 
-<div class="feedback" id="q17-feedback-correct" hidden>
+<div class="feedback" id="q17-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q17-feedback-incorrect" hidden>
+<div class="feedback" id="q17-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -995,48 +995,48 @@ Incorrect Feedback
 <fieldset class="question" id="q18">
 
 <div class="level" id="q18-level"></div>
-<div class="check-tick" id="q18-check-tick" hidden></div>
-<div class="check-cross" id="q18-check-cross" hidden></div>
+<div class="check-tick" id="q18-check-tick"></div>
+<div class="check-cross" id="q18-check-cross"></div>
 
 <legend class="question-title" id="q18-title">
 Question 18
 </legend>
-<img class="question-image" id="q18-image" src="" hidden>
+<!--<img class="question-image" id="q18-image" src="">-->
 
 <div class="alternative" id="q18-option1-alternative">
-<input type="radio" class="input-alternative" id="q18-option1" name="q18-alternative" value="Option 1" onclick="fill('q18')">
+<input type="radio" class="input-alternative" id="q18-option1" name="q18" value="Option 1">
 <label for="q18-option1" id="q18-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q18-option2-alternative">
-<input type="radio" class="input-alternative" id="q18-option2" name="q18-alternative" value="Option 2" onclick="fill('q18')">
+<input type="radio" class="input-alternative" id="q18-option2" name="q18" value="Option 2">
 <label for="q18-option2" id="q18-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q18-option3-alternative">
-<input type="radio" class="input-alternative" id="q18-option3" name="q18-alternative" value="Option 3" onclick="fill('q18')">
+<input type="radio" class="input-alternative" id="q18-option3" name="q18" value="Option 3">
 <label for="q18-option3" id="q18-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q18-option4-alternative">
-<input type="radio" class="input-alternative" id="q18-option4" name="q18-alternative" value="Option 4" onclick="fill('q18')">
+<input type="radio" class="input-alternative" id="q18-option4" name="q18" value="Option 4">
 <label for="q18-option4" id="q18-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q18-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q18')" hidden>
+<input type="button" class="remove-answer-button" id="q18-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q18')">
 
-<div class="feedback" id="q18-feedback-correct" hidden>
+<div class="feedback" id="q18-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q18-feedback-incorrect" hidden>
+<div class="feedback" id="q18-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -1051,48 +1051,48 @@ Incorrect Feedback
 <fieldset class="question" id="q19">
 
 <div class="level" id="q19-level"></div>
-<div class="check-tick" id="q19-check-tick" hidden></div>
-<div class="check-cross" id="q19-check-cross" hidden></div>
+<div class="check-tick" id="q19-check-tick"></div>
+<div class="check-cross" id="q19-check-cross"></div>
 
 <legend class="question-title" id="q19-title">
 Question 19
 </legend>
-<img class="question-image" id="q19-image" src="" hidden>
+<!--<img class="question-image" id="q19-image" src="">-->
 
 <div class="alternative" id="q19-option1-alternative">
-<input type="radio" class="input-alternative" id="q19-option1" name="q19-alternative" value="Option 1" onclick="fill('q19')">
+<input type="radio" class="input-alternative" id="q19-option1" name="q19" value="Option 1">
 <label for="q19-option1" id="q19-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q19-option2-alternative">
-<input type="radio" class="input-alternative" id="q19-option2" name="q19-alternative" value="Option 2" onclick="fill('q19')">
+<input type="radio" class="input-alternative" id="q19-option2" name="q19" value="Option 2">
 <label for="q19-option2" id="q19-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q19-option3-alternative">
-<input type="radio" class="input-alternative" id="q19-option3" name="q19-alternative" value="Option 3" onclick="fill('q19')">
+<input type="radio" class="input-alternative" id="q19-option3" name="q19" value="Option 3">
 <label for="q19-option3" id="q19-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q19-option4-alternative">
-<input type="radio" class="input-alternative" id="q19-option4" name="q19-alternative" value="Option 4" onclick="fill('q19')">
+<input type="radio" class="input-alternative" id="q19-option4" name="q19" value="Option 4">
 <label for="q19-option4" id="q19-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q19-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q19')" hidden>
+<input type="button" class="remove-answer-button" id="q19-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q19')">
 
-<div class="feedback" id="q19-feedback-correct" hidden>
+<div class="feedback" id="q19-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q19-feedback-incorrect" hidden>
+<div class="feedback" id="q19-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -1107,48 +1107,48 @@ Incorrect Feedback
 <fieldset class="question" id="q20">
 
 <div class="level" id="q20-level"></div>
-<div class="check-tick" id="q20-check-tick" hidden></div>
-<div class="check-cross" id="q20-check-cross" hidden></div>
+<div class="check-tick" id="q20-check-tick"></div>
+<div class="check-cross" id="q20-check-cross"></div>
 
 <legend class="question-title" id="q20-title">
 Question 20
 </legend>
-<img class="question-image" id="q20-image" src="" hidden>
+<!--<img class="question-image" id="q20-image" src="">-->
 
 <div class="alternative" id="q20-option1-alternative">
-<input type="radio" class="input-alternative" id="q20-option1" name="q20-alternative" value="Option 1" onclick="fill('q20')">
+<input type="radio" class="input-alternative" id="q20-option1" name="q20" value="Option 1">
 <label for="q20-option1" id="q20-option1-label">
 Option 1
 </label>
 </div>
 
 <div class="alternative" id="q20-option2-alternative">
-<input type="radio" class="input-alternative" id="q20-option2" name="q20-alternative" value="Option 2" onclick="fill('q20')">
+<input type="radio" class="input-alternative" id="q20-option2" name="q20" value="Option 2">
 <label for="q20-option2" id="q20-option2-label">
 Option 2
 </label>
 </div>
 
 <div class="alternative" id="q20-option3-alternative">
-<input type="radio" class="input-alternative" id="q20-option3" name="q20-alternative" value="Option 3" onclick="fill('q20')">
+<input type="radio" class="input-alternative" id="q20-option3" name="q20" value="Option 3">
 <label for="q20-option3" id="q20-option3-label">
 Option 3
 </label>
 </div>
 
 <div class="alternative" id="q20-option4-alternative">
-<input type="radio" class="input-alternative" id="q20-option4" name="q20-alternative" value="Option 4" onclick="fill('q20')">
+<input type="radio" class="input-alternative" id="q20-option4" name="q20" value="Option 4">
 <label for="q20-option4" id="q20-option4-label">
 Option 4
 </label>
 </div>
 
-<input type="button" class="remove-answer-button" id="q20-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q20')" hidden>
+<input type="button" class="remove-answer-button" id="q20-remove-answer" name="remove-answer-button" value="Удалить ответ" onclick="remove_answer('q20')">
 
-<div class="feedback" id="q20-feedback-correct" hidden>
+<div class="feedback" id="q20-feedback-correct">
 Correct Feedback
 </div>
-<div class="feedback" id="q20-feedback-incorrect" hidden>
+<div class="feedback" id="q20-feedback-incorrect">
 Incorrect Feedback
 </div>
 
@@ -1156,11 +1156,11 @@ Incorrect Feedback
 
 
 
-<div class="results" id="results" hidden>
+<div class="results" id="results">
 Result
 </div>
 
-<div class="message" id="filled-message" hidden>
+<div class="message" id="filled-message">
 Message
 </div>
 
@@ -1177,5 +1177,5 @@ Message
 ```{=html}
 <!--- CHANGE quiz0 TO quiz<n> IN THE LINES BELOW --->
 <script type="text/javascript" src="./js/quiz0.json"></script>
-<script type="text/javascript" src="./js/quiz.js"></script>
+<script type="text/javascript" src="./js/quiz_.js"></script>
 ```
