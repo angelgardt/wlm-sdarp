@@ -262,6 +262,10 @@ form.quiz div.results {
   font-size: 1.5rem;
 }
 
+form.quiz div.results.shown {
+  display: block;
+}
+
 form.quiz div.message {
   display: none;
   font-weight: $h2-font-weight;
@@ -282,6 +286,10 @@ form.quiz fieldset div.feedback {
   margin: 2% 2%;
   padding: 1% 2%;
   font-size: .9em;
+}
+
+form.quiz fieldset div.feedback.shown {
+  display: block;
 }
 
 form.quiz fieldset div.level-easy,
@@ -332,8 +340,6 @@ form.quiz label.correct {
   font-weight: 500;
 }
 
-form.quiz fieldset div.check-tick,
-form.quiz fieldset div.check-cross,
 form.quiz fieldset div.level {
   display: inline-block;
 }
@@ -344,6 +350,11 @@ form.quiz fieldset div.check-cross {
   float: right;
   height: 2em;
   padding: 1% 1% 0 0;
+}
+
+form.quiz fieldset div.check-tick.shown,
+form.quiz fieldset div.check-cross.shown {
+  display: inline-block;
 }
 
 

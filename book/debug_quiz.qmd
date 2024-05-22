@@ -329,7 +329,7 @@ Incorrect Feedback
 <legend class="question-title" id="q6-title">
 Question 6
 </legend>
-<!--<img class="question-image" id="q6-image" src="./img/data-wrangling/full_join.png">-->
+<img class="question-image" id="q6-image" src="./img/data-wrangling/full_join.png">
 
 <div class="alternative" id="q6-option1-alternative">
 <input type="radio" class="input-alternative" id="q6-option1" name="q6" value="Option 1">

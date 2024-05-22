@@ -63,10 +63,10 @@ for (let i = 1; i <= N_tasks; i++) {
   ANSWERS["q"+i]["type"] = INFO["type"]["q"+i];
   for (let j = 1; j <= N_options; j++) {
     ANSWERS["q"+i]["opt"+j] = {};
-    ANSWERS["q"+i]["opt"+j]["correct"] = INFO["option"+j+"_correct"]["q"+i];
+    ANSWERS["q"+i]["opt"+j]["correct"] = (INFO["option"+j+"_correct"]["q"+i] === "true");
   }
 }
-
+console.log(ANSWERS);
 
 function click_submit() {
   console.log("Submit clicked");
@@ -200,26 +200,29 @@ function show_non_filled() {
 
 function check_quiz() {
   console.log("Check quiz");
+  ANSWERS["n_correct"] = 0;
   for (let i = 1; i <= N_tasks; i++) {
     if (ANSWERS["q"+i]["type"] == "radio") {
       for (let j = 1; j <= N_options; j++) {
-        if (ANSWERS["q"+i]["opt"+j]["correct"] == "true" && ANSWERS["q"+i]["opt"+j]["checked"]) {
+        if (ANSWERS["q"+i]["opt"+j]["correct"] && ANSWERS["q"+i]["opt"+j]["checked"]) {
           ANSWERS["q"+i]["correct"] = true;
+          ANSWERS["n_correct"]++;
         }
-        //if (!ANSWERS["q"+i]["correct"]) {
-        //  ANSWERS["q"+i]["correct"] = false;
-        //}
+        if (!ANSWERS["q"+i]["correct"]) {
+          ANSWERS["q"+i]["correct"] = false;
+        }
       }
     } else {
       let counter = 0;
       for (let j = 1; j <= N_options; j++) {
-        if (ANSWERS["q"+i]["opt"+j]["correct"] == "true" && ANSWERS["q"+i]["opt"+j]["checked"]) {
+        if (ANSWERS["q"+i]["opt"+j]["correct"] && ANSWERS["q"+i]["opt"+j]["checked"]) {
           counter += 1;
-        } else if (ANSWERS["q"+i]["opt"+j]["correct"] == "false" && !ANSWERS["q"+i]["opt"+j]["checked"]) {
+        } else if (!ANSWERS["q"+i]["opt"+j]["correct"] && !ANSWERS["q"+i]["opt"+j]["checked"]) {
           counter += 1;
         }
         if (counter == 4) {
           ANSWERS["q"+i]["correct"] = true;
+          ANSWERS["n_correct"]++;
         } else {
           ANSWERS["q"+i]["correct"] = false;
         }
@@ -231,8 +234,53 @@ function check_quiz() {
 
 function show_results() {
   console.log("Show results");
+  document.getElementById("results").innerHTML = "Результат: " + ANSWERS["n_correct"] + " / " + N_tasks;
+  document.getElementById("results").classList.add("shown");
 }
 
 function show_answers() {
   console.log("Show answers");
+  document.getElementById("submit-button").disabled = true;
+  for (let i = 1; i <= N_tasks; i++) {
+    hide_remove_answer_button("q"+i);
+    set_task_style("q"+i, ANSWERS["q"+i]["correct"]);
+    show_feedback("q"+i, ANSWERS["q"+i]["correct"]);
+    for (let j = 1; j <= N_options; j++) {
+      set_option_style("q"+i+"-option"+j, ANSWERS["q"+i]["opt"+j]["correct"]);
+    }
+  }
+}
+
+function set_task_style(id, correct) {
+  console.log("Set task style");
+  if (correct) {
+    document.getElementById(id).classList.add("correct")
+    document.getElementById("toc-"+id+"-title").classList.add("toc-correct");
+    document.getElementById(id+"-check-tick").classList.add("shown");
+  } else {
+    document.getElementById(id).classList.add("incorrect")
+    document.getElementById("toc-"+id+"-title").classList.add("toc-incorrect");
+    document.getElementById(id+"-check-cross").classList.add("shown");
+  }
+}
+
+function set_option_style(id, correct) {
+  console.log("Set option style");
+  document.getElementById(id).disabled = true;
+  if (correct) {
+    document.getElementById(id+"-label").classList.add("correct");
+    document.getElementById(id+"-alternative").classList.add("correct");
+  } else {
+    document.getElementById(id+"-label").classList.add("incorrect");
+    document.getElementById(id+"-alternative").classList.add("incorrect");
+  }
+}
+
+function show_feedback(id, correct) {
+  console.log("Show feedback");
+  if (correct) {
+    document.getElementById(id+"-feedback-correct").classList.add("shown");
+  } else {
+    document.getElementById(id+"-feedback-incorrect").classList.add("shown");
+  }
 }
