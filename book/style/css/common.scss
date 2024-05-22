@@ -69,6 +69,12 @@ $hint-font-weight:            300;
 
 // Chapters
 
+@media (max-width: 991.98px) {
+  .quarto-banner nav.quarto-secondary-nav {
+    background-color: $body-bg;
+  }
+}
+
 header {
   background-color: $body-bg;
 }
