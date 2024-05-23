@@ -11,6 +11,9 @@ for (let i = 0; i < info_json.length; i++) {
   }
 }
 
+// Visible remove answer
+// for (let i = 1; i <= 20; i++) { document.getElementById("q"+i+"-remove-answer").hidden = false; }
+
 
 // Add content
 
@@ -37,9 +40,15 @@ for (let i = 1; i <= 20; i++) {
   // }
 }
 
+// Change TOC title
+document.getElementById("toc-title").innerHTML = "Вопросы";
 
+
+// Add events to check button
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", check_quiz);
+
+
 
 /*
 const alternatives = document.getElementsByClassName("in-alternatives");
@@ -53,6 +62,12 @@ function test() {
 
 */
 
+function remove_answer(id) {
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById(id+"-option"+i).checked = false;
+    document.getElementById(id+"-remove-answer").hidden = true;
+  }
+}
 
 function get_answers(ans, answers) {
   for (let i = 1; i <= 20; i++) {
@@ -71,11 +86,12 @@ function check_fill(ans) {
   let counter = 20;
   for (let i = 1; i <= 20; i++) {
     ans["q"+i]["filled"] = false;
-    for (let j = 1; j <= 4; j++) {
-      if (ans["q"+i]["opt"+j]["checked"]) {
-        ans["q"+i]["filled"] = true;
-        counter -= 1;
-      }
+    if (ans["q"+i]["opt1"]["checked"] || 
+        ans["q"+i]["opt2"]["checked"] ||
+        ans["q"+i]["opt3"]["checked"] ||
+        ans["q"+i]["opt4"]["checked"]) {
+      ans["q"+i]["filled"] = true;
+      counter -= 1;
     }
   }
   if (counter == 20) {
@@ -94,10 +110,18 @@ function set_colors_filled(ans) {
   for (i = 1; i <= 20; i++) {
     if (!ans["q"+i]["filled"]) {
       document.getElementById("q"+i).classList.add("non-filled");
+      document.getElementById("toc-q"+i+"-title").classList.add("toc-non-filled");
     } else {
       document.getElementById("q"+i).classList.remove("non-filled");
+      document.getElementById("toc-q"+i+"-title").classList.remove("toc-non-filled");
     }
   }
+}
+
+function fill(id) {
+  document.getElementById(id).classList.remove("non-filled");
+  document.getElementById("toc-"+id+"-title").classList.remove("toc-non-filled");
+  document.getElementById(id+"-remove-answer").hidden = false;
 }
 
 
@@ -138,11 +162,13 @@ function show_results(ans) {
     if (ans["q"+i]["correct"]) {
       score += 1;
       document.getElementById("q"+i).classList.add("correct");
+      document.getElementById("toc-q"+i+"-title").classList.add("toc-correct");
       document.getElementById("q"+i+"-check-tick").hidden = false;
       document.getElementById("q"+i+"-feedback-correct").hidden = false;
       // document.getElementById("feedback-q"+i).innerHTML = info["feedback_correct"]["q"+i]
     } else {
       document.getElementById("q"+i).classList.add("incorrect");
+      document.getElementById("toc-q"+i+"-title").classList.add("toc-incorrect");
       document.getElementById("q"+i+"-check-cross").hidden = false;
       document.getElementById("q"+i+"-feedback-incorrect").hidden = false;
       // document.getElementById("feedback-q"+i).innerHTML = info["feedback_incorrect"]["q"+i]
@@ -155,6 +181,7 @@ function show_results(ans) {
 
 function show_answers(ans) {
   for (i = 1; i <= 20; i++) {
+    document.getElementById("q"+i+"-remove-answer").hidden = true;
     for (j = 1; j <= 4; j++) {
       document.getElementById("q"+i+"-option"+j).disabled = true;
       if (ans["q"+i]["opt"+j]["correct"] == "true") {

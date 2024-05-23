@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -149,7 +149,8 @@ background-image: url(img/other/title-block-banner.jpg);
 background-size: cover;
       }
 </style>
-<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
 <script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
@@ -914,8 +915,8 @@ window.Quarto = {
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="htmlwidget-29106697c8fe05405948" style="width:100%;height:464px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-29106697c8fe05405948">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stadia.AlidadeSmooth",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-3d4aa20fa3e39e9f418b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3d4aa20fa3e39e9f418b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stadia.AlidadeSmooth",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -1213,12 +1214,11 @@ Apple silicon vs Intel Macs
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-To cite R in publications use:
+<pre><code>To cite R in publications use:
 
-  R Core Team (2022). R: A language and environment for statistical
-  computing. R Foundation for Statistical Computing, Vienna, Austria.
-  URL https://www.R-project.org/.
+  R Core Team (2023). _R: A Language and Environment for Statistical
+  Computing_. R Foundation for Statistical Computing, Vienna, Austria.
+  &lt;https://www.R-project.org/&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -1227,7 +1227,7 @@ A BibTeX entry for LaTeX users is
     author = {{R Core Team}},
     organization = {R Foundation for Statistical Computing},
     address = {Vienna, Austria},
-    year = {2022},
+    year = {2023},
     url = {https://www.R-project.org/},
   }
 
@@ -1288,41 +1288,44 @@ $release_name
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.2 (2022-10-31)
-Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Catalina 10.15.7
+<pre><code>R version 4.3.2 (2023-10-31)
+Platform: x86_64-apple-darwin20 (64-bit)
+Running under: macOS Sonoma 14.4.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Moscow
+tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] leaflet_2.2.2   rvest_1.0.3     lubridate_1.9.2 forcats_1.0.0  
- [5] stringr_1.5.0   dplyr_1.1.2     purrr_1.0.1     readr_2.1.4    
- [9] tidyr_1.3.0     tibble_3.2.1    ggplot2_3.5.0   tidyverse_2.0.0
+ [1] leaflet_2.2.2   rvest_1.0.4     lubridate_1.9.3 forcats_1.0.0  
+ [5] stringr_1.5.1   dplyr_1.1.4     purrr_1.0.2     readr_2.1.5    
+ [9] tidyr_1.3.1     tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] jquerylib_0.1.4         compiler_4.2.2          pillar_1.9.0           
- [4] tools_4.2.2             digest_0.6.29           timechange_0.2.0       
- [7] jsonlite_1.8.5          evaluate_0.16           lifecycle_1.0.3        
-[10] gtable_0.3.0            pkgconfig_2.0.3         rlang_1.1.1            
-[13] cli_3.6.1               rstudioapi_0.14         crosstalk_1.2.0        
-[16] curl_4.3.2              yaml_2.3.5              xfun_0.32              
-[19] fastmap_1.1.0           xml2_1.3.3              httr_1.4.4             
-[22] withr_2.5.0             knitr_1.40              leaflet.providers_2.0.0
-[25] hms_1.1.2               generics_0.1.3          vctrs_0.6.3            
-[28] htmlwidgets_1.5.4       grid_4.2.2              tidyselect_1.2.0       
-[31] glue_1.6.2              R6_2.5.1                fansi_1.0.3            
-[34] rmarkdown_2.16          farver_2.1.1            tzdb_0.3.0             
-[37] magrittr_2.0.3          ellipsis_0.3.2          scales_1.3.0           
-[40] htmltools_0.5.3         colorspace_2.0-3        labeling_0.4.2         
-[43] utf8_1.2.2              stringi_1.7.8           munsell_0.5.0          </code></pre>
+ [1] utf8_1.2.4              generics_0.1.3          xml2_1.3.6             
+ [4] stringi_1.8.4           hms_1.1.3               digest_0.6.35          
+ [7] magrittr_2.0.3          evaluate_0.23           grid_4.3.2             
+[10] timechange_0.3.0        fastmap_1.1.1           jsonlite_1.8.8         
+[13] httr_1.4.7              fansi_1.0.6             crosstalk_1.2.1        
+[16] scales_1.3.0            jquerylib_0.1.4         cli_3.6.2              
+[19] rlang_1.1.3             munsell_0.5.1           withr_3.0.0            
+[22] yaml_2.3.8              tools_4.3.2             tzdb_0.4.0             
+[25] colorspace_2.1-0        curl_5.2.1              vctrs_0.6.5            
+[28] R6_2.5.1                lifecycle_1.0.4         leaflet.providers_2.0.0
+[31] htmlwidgets_1.6.4       pkgconfig_2.0.3         pillar_1.9.0           
+[34] gtable_0.3.5            glue_1.7.0              xfun_0.43              
+[37] tidyselect_1.2.1        rstudioapi_0.16.0       knitr_1.45             
+[40] farver_2.1.1            htmltools_0.5.8.1       rmarkdown_2.26         
+[43] labeling_0.4.3          compiler_4.3.2         </code></pre>
 </div>
 </div>
 
