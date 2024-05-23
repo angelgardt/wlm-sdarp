@@ -53,9 +53,17 @@ let STATUS = "initial";
 
 // Set messages text
 const MESSAGES = {
-  non_filled: "Нет ни одного ответа :'(",
-  partially_filled: "Некоторые вопросы остались без ответа ((",
-  filled: ""
+  non_filled: 
+  [
+    "Нет ни одного ответа :'(",
+    "Нечего проверять, все вопросы пусты..."
+  ],
+  partially_filled: 
+  [
+    "Некоторые вопросы остались без ответа ((",
+    "Надо ответить на все вопросы..."
+  ],
+  filled: [""]
 };
 
 // Extract answers from parsed JSON
@@ -165,9 +173,14 @@ function set_status(n_non_filled) {
   }
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function show_status() {
   if (STATUS != "filled") {
-    document.getElementById("filled-message").innerHTML = MESSAGES[STATUS];
+    opt_message = getRandomInt(MESSAGES[STATUS].length)
+    document.getElementById("filled-message").innerHTML = MESSAGES[STATUS][opt_message];
     document.getElementById("filled-message").classList.add("shown");
   } else {
     document.getElementById("filled-message").classList.remove("shown");

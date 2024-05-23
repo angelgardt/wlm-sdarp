@@ -392,8 +392,25 @@ form.quiz fieldset.non-filled {
 }
 
 .feedback-autocheck {
+  display: none;
   font-size: 0.9em;
   margin-bottom: 1em;
+}
+
+.feedback-autocheck.shown {
+  display: block;
+}
+
+.feedback-autocheck.empty {
+  color: $blue;
+}
+
+.feedback-autocheck.incorrect {
+  color: $red;
+}
+
+.feedback-autocheck.correct {
+  color: $teal;
 }
 
 .input-autocheck {
@@ -447,24 +464,3 @@ form.quiz fieldset.non-filled {
 .hints-wrapper details > summary {
   list-style: none;
 }
-
-
-/* Add custom marker for close state */
-/*
-details summary:before {
-  content: '→';
-  margin-right: .3em;
-  // padding: 0 .25em;
-  // border: solid 1px $gray-600;
-  // border-radius: 5px;
-  text-align: center;
-  vertical-align: middle;
-}
-*/
-
-/* Add custom marker for open state */
-/*
-details[open] summary:before {
-  content: '↓';
-}
-*/

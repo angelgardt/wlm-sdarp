@@ -426,6 +426,12 @@ form.quiz fieldset div.check-cross {
   background-color: $gray-600;
 }
 
+.button-autocheck[disabled],
+.button-autocheck:hover[disabled] {
+  background-color: $gray-900;
+  color: $gray-800;
+}
+
 .hints {
   background-color: $gray-700;
   color: $gray-500;
@@ -433,16 +439,4 @@ form.quiz fieldset div.check-cross {
 
 .hints>summary {
   color: $gray-200;
-}
-
-.feedback-autocheck.empty {
-  color: $blue;
-}
-
-.feedback-autocheck.incorrect {
-  color: $red;
-}
-
-.feedback-autocheck.correct {
-  color: $teal;
 }
