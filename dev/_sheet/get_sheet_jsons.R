@@ -1,7 +1,8 @@
 library(tidyverse)
 library(googlesheets4)
 
-sheets_names <- sheet_names("https://docs.google.com/spreadsheets/d/1v9XWnb7DfJawpn4FOV2SxSy3nmBIG4t_7OK3OIeS6WE/edit?usp=sharing")
+sheets_names <- sheet_names("https://docs.google.com/spreadsheets/d/1v9XWnb7DfJawpn4FOV2SxSy3nmBIG4t_7OK3OIeS6WE/edit?usp=sharing") %>% 
+  str_extract("^sheet\\d+") %>% na.omit() %>% as.vector()
 sheets <- list()
 
 # read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
@@ -20,15 +21,17 @@ for (sheet_name in sheets_names) {
 get_json <- function(sheet_name, 
                      sheets, tags = NULL) {
   sheets[[sheet_name]] %>% 
+    select(n, level, has_autocheck, autocheck_answer) %>% 
     mutate(
       across(everything(), ~replace_na(.x, ""))
     ) %>% 
-    mutate(has_autocheck = tolower(has_autocheck)) %>% 
+    mutate(has_autocheck = tolower(has_autocheck),
+           autocheck_answer = str_remove_all(autocheck_answer, " ")) %>% 
     # mutate(
     #   across(matches("ques|^option\\d_label$|^feedback_\\.+correct$"),
     #          function(x) {x %>% str_replace_all(setNames(tags$replacement, tags$pattern))})
     # ) %>% 
-    mutate(text = task,
+    mutate(# text = task,
            tn = paste0("t", n)) %>% 
     # mutate(text = paste0(n, ". ", ques),
     #        qn = paste0("q", n)) %>% 
