@@ -21,6 +21,7 @@ for (quiz_name in quizzes_names) {
 get_json <- function(quiz_name, 
                      quizzes, tags = NULL) {
   quizzes[[quiz_name]] %>% 
+    select(n, level, type, option1_correct, option2_correct, option3_correct, option4_correct) %>% 
     mutate(
       across(everything(), ~replace_na(.x, ""))
     ) %>% 

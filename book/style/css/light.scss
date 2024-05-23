@@ -337,25 +337,10 @@ form.quiz fieldset div.check-cross {
 
 .hints {
   background-color: $gray-100;
-  padding: 1% 3%;
-  border-radius: 10px;
-  font-size: $hint-font-size;
   color: $gray-700;
 }
 
 .hints>summary {
-  color: $gray-700;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-.hint {
-  font-weight: $hint-font-weight;
-  padding-left: 3%;
-}
-
-.hint>summary {
-  font-weight: $h2-font-weight;
   color: $gray-700;
 }
 

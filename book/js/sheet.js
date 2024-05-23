@@ -1,36 +1,44 @@
 // Parse JSON
+INFO_JSON = JSON.parse(sheet_json);
+let INFO = {};
+let N_tasks = 30;
 
-// Parse JSON
-
-var info_json = JSON.parse(sheet_json);
-let info = {};
-
-for (let i = 0; i < info_json.length; i++) {
-  info[info_json[i].name] = {};
-  for (let t = 1; t <= 30; t++) {
+for (let i = 0; i < INFO_JSON.length; i++) {
+  INFO[INFO_JSON[i].name] = {};
+  for (let t = 1; t <= N_tasks; t++) {
     id = "t" + t;
-    info[info_json[i].name][id] = info_json[i][id];
+    INFO[INFO_JSON[i].name][id] = INFO_JSON[i][id];
   }
 }
 
-console.log(info)
+delete INFO_JSON;
 
-// Add content
 
-for (let i = 1; i <= 30; i++) {
-  if (info["level"]["t"+i] == "") {
+// Add labels
+for (let i = 1; i <= N_tasks; i++) {
+  if (INFO.level["t"+i] == "") {
     document.getElementById("t"+i+"-level").hidden = true;
   } else {
-    document.getElementById("t"+i+"-level").classList.add("level-" + info["level"]["t"+i]);
+    document.getElementById("t"+i+"-level").classList.add("level-" + INFO.level["t"+i]);
   }
-  if (info["has_autocheck"]["t"+i] == "false") {
+  if (INFO.has_autocheck["t"+i] == "false") {
     document.getElementById("t"+i+"-autocheck").hidden = true;
   }
 }
 
+// Change TOC title
+document.getElementById("toc-title").innerHTML = "Задания";
+
+
+// Open hints
+
+
+for (let i = 1; i <= N_tasks; i++) {
+  document.getElementById("t"+i+"-hints").open = true;
+}
+
 
 // Check answers
-
 function checker(id, ans)
   {
     let input_task = document.getElementById(id+"-input").value;
@@ -62,12 +70,3 @@ function checker(id, ans)
 function check(id) {
   checker(id = id, ans = info["autocheck_answer"][id]);
 }
-
-
-
-// Open hints
-
-for (let i = 1; i <= 30; i++) {
-  document.getElementById("t"+i+"-hints").open = true;
-}
-

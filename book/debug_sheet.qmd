@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error
 
 
 
-## #1 {.unnumbered}
+## #1 {#t1-title .unnumbered}
 
 <div class="level" id="t1-level"></div>
 
@@ -33,7 +33,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-hints">
-<summary>Подсказки</summary>
+<summary id="t1-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -45,7 +45,7 @@ Input format
 
 
 
-## #2 {.unnumbered}
+## #2 {#t2-title .unnumbered}
 
 <div class="level" id="t2-level"></div>
 
@@ -68,7 +68,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t2-hints">
-<summary>Подсказки</summary>
+<summary id="t2-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -80,7 +80,7 @@ Input format
 
 
 
-## #3 {.unnumbered}
+## #3 {#t3-title .unnumbered}
 
 <div class="level" id="t3-level"></div>
 
@@ -103,7 +103,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t3-hints">
-<summary>Подсказки</summary>
+<summary id="t3-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -115,7 +115,7 @@ Input format
 
 
 
-## #4 {.unnumbered}
+## #4 {#t4-title .unnumbered}
 
 <div class="level" id="t4-level"></div>
 
@@ -138,7 +138,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t4-hints">
-<summary>Подсказки</summary>
+<summary id="t4-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -150,7 +150,7 @@ Input format
 
 
 
-## #5 {.unnumbered}
+## #5 {#t5-title .unnumbered}
 
 <div class="level" id="t5-level"></div>
 
@@ -173,7 +173,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t5-hints">
-<summary>Подсказки</summary>
+<summary id="t5-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -185,7 +185,7 @@ Input format
 
 
 
-## #6 {.unnumbered}
+## #6 {#t6-title .unnumbered}
 
 <div class="level" id="t6-level"></div>
 
@@ -208,7 +208,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t6-hints">
-<summary>Подсказки</summary>
+<summary id="t6-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -220,7 +220,7 @@ Input format
 
 
 
-## #7 {.unnumbered}
+## #7 {#t7-title .unnumbered}
 
 <div class="level" id="t7-level"></div>
 
@@ -243,7 +243,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t7-hints">
-<summary>Подсказки</summary>
+<summary id="t7-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -255,7 +255,7 @@ Input format
 
 
 
-## #8 {.unnumbered}
+## #8 {#t8-title .unnumbered}
 
 <div class="level" id="t8-level"></div>
 
@@ -278,7 +278,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t8-hints">
-<summary>Подсказки</summary>
+<summary id="t8-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -290,7 +290,7 @@ Input format
 
 
 
-## #9 {.unnumbered}
+## #9 {#t9-title .unnumbered}
 
 <div class="level" id="t9-level"></div>
 
@@ -313,7 +313,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t9-hints">
-<summary>Подсказки</summary>
+<summary id="t9-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -325,7 +325,7 @@ Input format
 
 
 
-## #10 {.unnumbered}
+## #10 {#t10-title .unnumbered}
 
 <div class="level" id="t10-level"></div>
 
@@ -348,7 +348,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t10-hints">
-<summary>Подсказки</summary>
+<summary id="t10-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -360,7 +360,7 @@ Input format
 
 
 
-## #11 {.unnumbered}
+## #11 {#t11-title .unnumbered}
 
 <div class="level" id="t11-level"></div>
 
@@ -383,7 +383,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t11-hints">
-<summary>Подсказки</summary>
+<summary id="t11-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -395,7 +395,7 @@ Input format
 
 
 
-## #12 {.unnumbered}
+## #12 {#t12-title .unnumbered}
 
 <div class="level" id="t12-level"></div>
 
@@ -418,7 +418,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t12-hints">
-<summary>Подсказки</summary>
+<summary id="t12-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -430,7 +430,7 @@ Input format
 
 
 
-## #13 {.unnumbered}
+## #13 {#t13-title .unnumbered}
 
 <div class="level" id="t13-level"></div>
 
@@ -453,7 +453,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t13-hints">
-<summary>Подсказки</summary>
+<summary id="t13-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -465,7 +465,7 @@ Input format
 
 
 
-## #14 {.unnumbered}
+## #14 {#t14-title .unnumbered}
 
 <div class="level" id="t14-level"></div>
 
@@ -488,7 +488,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t14-hints">
-<summary>Подсказки</summary>
+<summary id="t14-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -500,7 +500,7 @@ Input format
 
 
 
-## #15 {.unnumbered}
+## #15 {#t15-title .unnumbered}
 
 <div class="level" id="t15-level"></div>
 
@@ -523,7 +523,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t15-hints">
-<summary>Подсказки</summary>
+<summary id="t15-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -535,7 +535,7 @@ Input format
 
 
 
-## #16 {.unnumbered}
+## #16 {#t16-title .unnumbered}
 
 <div class="level" id="t16-level"></div>
 
@@ -558,7 +558,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t16-hints">
-<summary>Подсказки</summary>
+<summary id="t16-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -570,7 +570,7 @@ Input format
 
 
 
-## #17 {.unnumbered}
+## #17 {#t17-title .unnumbered}
 
 <div class="level" id="t17-level"></div>
 
@@ -593,7 +593,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t17-hints">
-<summary>Подсказки</summary>
+<summary id="t17-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -605,7 +605,7 @@ Input format
 
 
 
-## #18 {.unnumbered}
+## #18 {#t18-title .unnumbered}
 
 <div class="level" id="t18-level"></div>
 
@@ -628,7 +628,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t18-hints">
-<summary>Подсказки</summary>
+<summary id="t18-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -640,7 +640,7 @@ Input format
 
 
 
-## #19 {.unnumbered}
+## #19 {#t19-title .unnumbered}
 
 <div class="level" id="t19-level"></div>
 
@@ -663,7 +663,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t19-hints">
-<summary>Подсказки</summary>
+<summary id="t19-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -675,7 +675,7 @@ Input format
 
 
 
-## #20 {.unnumbered}
+## #20 {#t20-title .unnumbered}
 
 <div class="level" id="t20-level"></div>
 
@@ -698,7 +698,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t20-hints">
-<summary>Подсказки</summary>
+<summary id="t20-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -710,7 +710,7 @@ Input format
 
 
 
-## #21 {.unnumbered}
+## #21 {#t21-title .unnumbered}
 
 <div class="level" id="t21-level"></div>
 
@@ -733,7 +733,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t21-hints">
-<summary>Подсказки</summary>
+<summary id="t21-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -745,7 +745,7 @@ Input format
 
 
 
-## #22 {.unnumbered}
+## #22 {#t22-title .unnumbered}
 
 <div class="level" id="t22-level"></div>
 
@@ -768,7 +768,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t22-hints">
-<summary>Подсказки</summary>
+<summary id="t22-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -780,7 +780,7 @@ Input format
 
 
 
-## #23 {.unnumbered}
+## #23 {#t23-title .unnumbered}
 
 <div class="level" id="t23-level"></div>
 
@@ -803,7 +803,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t23-hints">
-<summary>Подсказки</summary>
+<summary id="t23-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -815,7 +815,7 @@ Input format
 
 
 
-## #24 {.unnumbered}
+## #24 {#t24-title .unnumbered}
 
 <div class="level" id="t24-level"></div>
 
@@ -838,7 +838,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t24-hints">
-<summary>Подсказки</summary>
+<summary id="t24-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -850,7 +850,7 @@ Input format
 
 
 
-## #25 {.unnumbered}
+## #25 {#t15-title .unnumbered}
 
 <div class="level" id="t25-level"></div>
 
@@ -873,7 +873,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t25-hints">
-<summary>Подсказки</summary>
+<summary id="t25-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -885,7 +885,7 @@ Input format
 
 
 
-## #26 {.unnumbered}
+## #26 {#t26-title .unnumbered}
 
 <div class="level" id="t26-level"></div>
 
@@ -908,7 +908,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t26-hints">
-<summary>Подсказки</summary>
+<summary id="t26-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -920,7 +920,7 @@ Input format
 
 
 
-## #27 {.unnumbered}
+## #27 {#t27-title .unnumbered}
 
 <div class="level" id="t27-level"></div>
 
@@ -943,7 +943,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t27-hints">
-<summary>Подсказки</summary>
+<summary id="t27-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -955,7 +955,7 @@ Input format
 
 
 
-## #28 {.unnumbered}
+## #28 {#t28-title .unnumbered}
 
 <div class="level" id="t28-level"></div>
 
@@ -978,7 +978,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t28-hints">
-<summary>Подсказки</summary>
+<summary id="t28-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -990,7 +990,7 @@ Input format
 
 
 
-## #29 {.unnumbered}
+## #29 {#t29-title .unnumbered}
 
 <div class="level" id="t29-level"></div>
 
@@ -1013,7 +1013,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t29-hints">
-<summary>Подсказки</summary>
+<summary id="t29-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -1025,7 +1025,7 @@ Input format
 
 
 
-## #30 {.unnumbered}
+## #30 {#t30-title .unnumbered}
 
 <div class="level" id="t30-level"></div>
 
@@ -1048,7 +1048,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t30-hints">
-<summary>Подсказки</summary>
+<summary id="t30-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
