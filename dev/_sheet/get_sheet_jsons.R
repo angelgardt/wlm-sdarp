@@ -23,7 +23,8 @@ get_json <- function(sheet_name,
     mutate(
       across(everything(), ~replace_na(.x, ""))
     ) %>% 
-    mutate(has_autocheck = tolower(has_autocheck)) %>% 
+    mutate(has_autocheck = tolower(has_autocheck),
+           autocheck_answer = str_remove_all(autocheck_answer, " ")) %>% 
     # mutate(
     #   across(matches("ques|^option\\d_label$|^feedback_\\.+correct$"),
     #          function(x) {x %>% str_replace_all(setNames(tags$replacement, tags$pattern))})
