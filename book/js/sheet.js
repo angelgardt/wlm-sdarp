@@ -72,10 +72,10 @@ function click_hints() {
   if (DEBUG) { console.log("CLICK HINTS") }
   if (this.open) {
     document.getElementById(this.id+"-summary").innerHTML = "Показать подсказки";
-    if (DEBUG) { console.log("CLOSE HINTS " + this.id) }
+    if (DEBUG) { console.log("close hints " + this.id) }
   } else {
     document.getElementById(this.id+"-summary").innerHTML = "Скрыть подсказки";
-    if (DEBUG) { console.log("OPEN HINTS " + this.id) }
+    if (DEBUG) { console.log("open hints " + this.id) }
   }
 }
 
@@ -88,9 +88,12 @@ function getRandomInt(max) {
 function check() {
   if (DEBUG) { console.log("CLICK CHECK " + this.name) }
   result = checker(get_answer(this.name), this.name);
+  if (DEBUG) { console.log("result: " + result) }
   show_feedback(this.name, result);
+  if (DEBUG) { console.log("show feedback: " + this.name) }
   if (result == "correct") {
     disable_autocheck(this.name);
+    if (DEBUG) { console.log("disable autocheck: " + this.name) }
   }
 }
 
@@ -102,37 +105,42 @@ function get_answer(id) {
 function checker(answer, id) {
   if (DEBUG) { console.log("CHECKER") }
   correct_answer = INFO["autocheck_answer"][id];
+  if (DEBUG) { console.log("correct answer: " + correct_answer) }
   if (answer == "") {
-    if (DEBUG) { console.log("CHECKER EMPTY") }
+    if (DEBUG) { console.log("checker 'empty'") }
     return "empty";
   } else if (answer == correct_answer) {
-    if (DEBUG) { console.log("CHECKER CORRECT") }
+    if (DEBUG) { console.log("checker 'correct'") }
     return "correct";
   } else {
-    if (DEBUG) { console.log("CHECKER INCORRECT") }
+    if (DEBUG) { console.log("checker 'incorrect'") }
     return "incorrect";
   }
 }
 
 function show_feedback(id, result) {
+  if (DEBUG) { console.log("SHOW FEEBDACK " + id) }
   feedback = document.getElementById(id+"-feedback");
   feedback.classList.remove("empty", "correct", "incorrect");
-  if (DEBUG) { console.log("REMOVE ALL RESULTS CLASS " + id) }
+  if (DEBUG) { console.log("remove all result class " + id) }
   feedback.classList.add("shown", result);
-  if (DEBUG) { console.log("ADD SHOWN & RESULTS CLASS " + id) }
+  if (DEBUG) { console.log("add shown & result classes " + id + " " + result) }
   opt_feedback = getRandomInt(MESSAGES[result].length);
-  if (DEBUG) { console.log("GET RANDOM INT " + opt_feedback) }
+  if (DEBUG) { console.log("get random int " + opt_feedback) }
   feedback.innerHTML = MESSAGES[result][opt_feedback];
+  if (DEBUG) { console.log("add inner html " + MESSAGES[result][opt_feedback]) }
   document.getElementById("toc-"+id+"-title").classList.remove("toc-correct", "toc-incorrect");
-  if (DEBUG) { console.log("REMOVE ALL TOC RESULTS CLASS " + id) }
+  if (DEBUG) { console.log("remove all toc result classes " + id) }
   if (result != "empty") {
     document.getElementById("toc-"+id+"-title").classList.add("toc-"+result);
-    if (DEBUG) { console.log("ADD TOC RESULTS CLASS " + id) }
+    if (DEBUG) { console.log("add toc result class " + id + " " + result) }
   }
 }
 
 function disable_autocheck(id) {
-  document.getElementById(id+"-autocheck-button").disabled = true;
-  document.getElementById(id+"-input").disabled = true;
   if (DEBUG) { console.log("DISABLE INPUT & CHECK BUTTON" + id) }
+  document.getElementById(id+"-autocheck-button").disabled = true;
+  if (DEBUG) { console.log("disable button" + id) }
+  document.getElementById(id+"-input").disabled = true;
+  if (DEBUG) { console.log("disable input" + id) }
 }
