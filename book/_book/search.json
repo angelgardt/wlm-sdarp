@@ -765,80 +765,36 @@
     ]
   },
   {
-    "objectID": "r-data.html",
-    "href": "r-data.html",
-    "title": "10  Работа с данными",
-    "section": "",
-    "text": "10.1 RStudio Projects",
-    "crumbs": [
-      "R",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Работа с данными</span>"
-    ]
-  },
-  {
-    "objectID": "measures-psymetI.html",
-    "href": "measures-psymetI.html",
-    "title": "26  Психометрические измерения I",
-    "section": "",
-    "text": "Test Dev",
-    "crumbs": [
-      "Теория измерений",
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Психометрические измерения I</span>"
-    ]
-  },
-  {
-    "objectID": "measures-psymetII.html",
-    "href": "measures-psymetII.html",
-    "title": "27  Психометрические измерения II",
-    "section": "",
-    "text": "CTT",
-    "crumbs": [
-      "Теория измерений",
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Психометрические измерения II</span>"
-    ]
-  },
-  {
-    "objectID": "measures-psymetIII.html",
-    "href": "measures-psymetIII.html",
-    "title": "28  Психометрические измерения III",
-    "section": "",
-    "text": "G-theory IRT",
-    "crumbs": [
-      "Теория измерений",
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Психометрические измерения III</span>"
-    ]
-  },
-  {
     "objectID": "desc-statintro.html",
     "href": "desc-statintro.html",
-    "title": "29  Введение в статистику",
+    "title": "3  Введение в статистику",
     "section": "",
-    "text": "29.1 Виды исследований\nСтатистика неразрывно связана с исследованиями, поэтому нам надо произвести некоторый рекап того, какие исследования у нас бывают. Общую классификацию исследований можно представить так (Иллюстрация 29.1):\nflowchart TD\n  research(Исследования)\n  theor(Теоретические)\n  empir(Эмпирические)\n  cab(Кабинетные)\n  qual(Качественные)\n  quan(Количественные)\n  meta(Мета-анализы)\n  exp(\"Доэкспериментальные\n      Квазиэспериментальные\n      Экспериментальные\")\n  \n  research --&gt; theor\n  research --&gt; empir\n  theor -.-&gt; cab\n  empir -.-&gt; cab\n  empir --&gt; qual\n  empir --&gt; quan\n  quan --&gt; exp\n  quan --&gt; meta\n\n\n\n\nИллюстрация 29.1: Способ классификации исследований",
+    "text": "3.1 Виды исследований\nСтатистика неразрывно связана с исследованиями, поэтому нам надо произвести некоторый рекап того, какие исследования у нас бывают. Общую классификацию исследований можно представить так (Иллюстрация 3.1):\nflowchart TD\n  research(Исследования)\n  theor(Теоретические)\n  empir(Эмпирические)\n  cab(Кабинетные)\n  qual(Качественные)\n  quan(Количественные)\n  meta(Мета-анализы)\n  exp(\"Доэкспериментальные\n      Квазиэспериментальные\n      Экспериментальные\")\n  \n  research --&gt; theor\n  research --&gt; empir\n  theor -.-&gt; cab\n  empir -.-&gt; cab\n  empir --&gt; qual\n  empir --&gt; quan\n  quan --&gt; exp\n  quan --&gt; meta\n\n\n\n\nИллюстрация 3.1: Способ классификации исследований",
     "crumbs": [
       "Описательная статистика",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Введение в статистику</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Введение в статистику</span>"
     ]
   },
   {
     "objectID": "desc-statintro.html#desc-statintro-research-process",
     "href": "desc-statintro.html#desc-statintro-research-process",
-    "title": "29  Введение в статистику",
-    "section": "29.2 Исследовательский процесс",
-    "text": "29.2 Исследовательский процесс\n\n\n\n\n\n\n\n\n\nflowchart TD\n  idea(\"Идея исследования\")\n  resques(\"Исследовательский вопрос 1\n          Исследовательский вопрос 2\n          …\n          Исследовательский вопрос N\")\n  qualres(\"Качественное исследование\")\n  hyps(\"Гипотеза 1\n        Гипотеза 2\n        …\n        Гипотеза M\")\n  quanres(\"Количественное исследование\")\n  results1(\"Осмысление результатов\")\n  results2(\"Осмысление результатов\")\n  newresq(\"Новые\n          исследовательские вопросы\")\n  newhyp(\"Новые гипотезы\")\n  \n  idea --&gt; resques\n  resques --&gt; qualres\n  qualres --&gt; results1\n  results1 --&gt; hyps\n  hyps --&gt; quanres\n  quanres --&gt; results2\n  results2 --&gt; newresq\n  results2 --&gt; newhyp\n  newresq --&gt; qualres\n  newresq --&gt; quanres\n  newhyp --&gt; quanres\n\n\n\n\nИллюстрация 29.2: Сотношение качественных и количественных исследований в исследовательском процессе",
+    "title": "3  Введение в статистику",
+    "section": "3.2 Исследовательский процесс",
+    "text": "3.2 Исследовательский процесс\n\n\n\n\n\n\n\n\n\nflowchart TD\n  idea(\"Идея исследования\")\n  resques(\"Исследовательский вопрос 1\n          Исследовательский вопрос 2\n          …\n          Исследовательский вопрос N\")\n  qualres(\"Качественное исследование\")\n  hyps(\"Гипотеза 1\n        Гипотеза 2\n        …\n        Гипотеза M\")\n  quanres(\"Количественное исследование\")\n  results1(\"Осмысление результатов\")\n  results2(\"Осмысление результатов\")\n  newresq(\"Новые\n          исследовательские вопросы\")\n  newhyp(\"Новые гипотезы\")\n  \n  idea --&gt; resques\n  resques --&gt; qualres\n  qualres --&gt; results1\n  results1 --&gt; hyps\n  hyps --&gt; quanres\n  quanres --&gt; results2\n  results2 --&gt; newresq\n  results2 --&gt; newhyp\n  newresq --&gt; qualres\n  newresq --&gt; quanres\n  newhyp --&gt; quanres\n\n\n\n\nИллюстрация 3.2: Сотношение качественных и количественных исследований в исследовательском процессе",
     "crumbs": [
       "Описательная статистика",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Введение в статистику</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Введение в статистику</span>"
     ]
   },
   {
     "objectID": "desc-statintro.html#desc-statintro-sample",
     "href": "desc-statintro.html#desc-statintro-sample",
-    "title": "29  Введение в статистику",
-    "section": "29.3 Выборка",
-    "text": "29.3 Выборка\n\n\n\n\n29.3.1 Способы формирования репрезентативной выборки\n\n29.3.1.1 Простая случайная выборка\nСамый просто способ, которым можно набрать репрезентативную выборку — это простая случайная выборка (simple random sample).\n\n\n\n\n\n\n\n\n\n\n\n(a) Генеральная совокупность\n\n\n\n\n\n\n\n\n\n\n\n(b) Выборка малого объема\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Выборка среднего объема\n\n\n\n\n\n\n\n\n\n\n\n(d) Выборка большого объема\n\n\n\n\n\n\n\nИллюстрация 29.3: Простая случайная выборка",
+    "title": "3  Введение в статистику",
+    "section": "3.3 Выборка",
+    "text": "3.3 Выборка\n\n\n\n\n3.3.1 Способы формирования репрезентативной выборки\n\n3.3.1.1 Простая случайная выборка\nСамый просто способ, которым можно набрать репрезентативную выборку — это простая случайная выборка (simple random sample).\n\n\n\n\n\n\n\n\n\n\n\n(a) Генеральная совокупность\n\n\n\n\n\n\n\n\n\n\n\n(b) Выборка малого объема\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Выборка среднего объема\n\n\n\n\n\n\n\n\n\n\n\n(d) Выборка большого объема\n\n\n\n\n\n\n\nИллюстрация 3.3: Простая случайная выборка",
     "crumbs": [
       "Описательная статистика",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Введение в статистику</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Введение в статистику</span>"
     ]
   },
   {
@@ -917,8 +873,8 @@
     ]
   },
   {
-    "objectID": "appendix-answers.html",
-    "href": "appendix-answers.html",
+    "objectID": "appendix-keys.html",
+    "href": "appendix-keys.html",
     "title": "Приложение K — Ответы на листки",
     "section": "",
     "text": "K.1 Листок 1",
@@ -928,8 +884,8 @@
     ]
   },
   {
-    "objectID": "appendix-answers.html#листок-2",
-    "href": "appendix-answers.html#листок-2",
+    "objectID": "appendix-keys.html#листок-2",
+    "href": "appendix-keys.html#листок-2",
     "title": "Приложение K — Ответы на листки",
     "section": "K.2 Листок 2",
     "text": "K.2 Листок 2",
@@ -939,8 +895,8 @@
     ]
   },
   {
-    "objectID": "appendix-answers.html#листок-3",
-    "href": "appendix-answers.html#листок-3",
+    "objectID": "appendix-keys.html#листок-3",
+    "href": "appendix-keys.html#листок-3",
     "title": "Приложение K — Ответы на листки",
     "section": "K.3 Листок 3",
     "text": "K.3 Листок 3",
