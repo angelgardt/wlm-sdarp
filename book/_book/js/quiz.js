@@ -14,6 +14,9 @@ for (let i = 0; i < INFO_JSON.length; i++) {
 
 delete INFO_JSON;
 
+// Set debug state
+let DEBUG = false;
+
 
 // Add labels and checkboxes
 for (let i = 1; i <= N_tasks; i++) {
@@ -81,62 +84,90 @@ for (let i = 1; i <= N_tasks; i++) {
 function click_submit() {
   if (STATUS != "filled") {
     get_answers();
+    if (DEBUG) { console.log("GET ANSWERS") }
     set_status(check_filled());
+    if (DEBUG) { console.log("SET STATUS") }
     show_status();
+    if (DEBUG) { console.log("SHOW STATUS") }
     show_non_filled();
+    if (DEBUG) { console.log("SHOW NON FILLED") }
   }
   if (STATUS == "filled") {
     check_quiz();
+    if (DEBUG) { console.log("CHECK QUIZ") }
     show_results();
+    if (DEBUG) { console.log("SHOW RESULTS") }
     show_answers();
+    if (DEBUG) { console.log("SHOW ANSWERS") }
   }
 }
 
 function click_option() {
   show_remove_answer_button(this.name);
+  if (DEBUG) { console.log("SHOW REMOVE ANSWER BUTTON " + this.name) }
   remove_non_filled(this.name);
+  if (DEBUG) { console.log("REMOVE NON FILLED " + this.name) }
   if (STATUS != "initial") {
     get_answers();
+    if (DEBUG) { console.log("GET ANSWERS") }
     set_status(check_filled());
+    if (DEBUG) { console.log("SET STATUS") }
     show_status();
+    if (DEBUG) { console.log("SHOW STATUS") }
     show_non_filled();
+    if (DEBUG) { console.log("SHOW NON FILLED") }
   }
 }
 
 function show_remove_answer_button(id) {
   document.getElementById(id+"-remove-answer").classList.add("shown");
+  if (DEBUG) { console.log("ADD SHOWN CLASS TO REMOVE ANSWERS BUTTON") }
 }
 
 function add_non_filled(id) {
   document.getElementById(id).classList.add("non-filled");
+  if (DEBUG) { console.log("ADD NON FILLED CLASS " + id) }
   document.getElementById("toc-"+id+"-title").classList.add("toc-non-filled");
+  if (DEBUG) { console.log("ADD TOC NON FILLED CLASS " + id) }
 }
 
 function remove_non_filled(id) {
   document.getElementById(id).classList.remove("non-filled");
+  if (DEBUG) { console.log("REMOVE NON FILLED CLASS " + id) }
   document.getElementById("toc-"+id+"-title").classList.remove("toc-non-filled");
+  if (DEBUG) { console.log("REMOVE TOC NON FILLED CLASS " + id) }
 }
 
 function remove_answer() {
+  if (DEBUG) { console.log("REMOVE ANSWER " + this.name) }
   set_options_unchecked(this.name);
+  if (DEBUG) { console.log("SET OPTIONS UNCHECKED " + this.name) }
   hide_remove_answer_button(this.name);
+  if (DEBUG) { console.log("HIDE REMOVE ANSWER BUTTON " + this.name) }
   add_non_filled(this.name);
+  if (DEBUG) { console.log("ADD NON FILLED " + this.name) }
   if (STATUS != "initial") {
     get_answers();
+    if (DEBUG) { console.log("GET ANSWERS") }
     set_status(check_filled());
+    if (DEBUG) { console.log("SET STATUS") }
     show_status();
+    if (DEBUG) { console.log("SHOW STATUS") }
     show_non_filled();
+    if (DEBUG) { console.log("SHOW NON FILLED") }
   }
 }
 
 function set_options_unchecked(id) {
   for (let i = 1; i <= N_options; i++) {
     document.getElementById(id+"-option"+i).checked = false;
+    if (DEBUG) { console.log("SET OPTION UNCHECKED " + id + "-" + i) }
   }
 }
 
 function hide_remove_answer_button(id) {
   document.getElementById(id+"-remove-answer").classList.remove("shown");
+  if (DEBUG) { console.log("REMOVE SHOWN CLASS " + id) }
 }
 
 function get_answers() {
@@ -146,6 +177,7 @@ function get_answers() {
       ANSWERS["q"+i]["opt"+j].checked = answers["q"+i+"-option"+j].checked;
     }
   }
+  if (DEBUG) { console.log(ANSWERS) }
 }
 
 function check_filled() {
@@ -160,6 +192,7 @@ function check_filled() {
       n_non_filled -= 1;
     }
   }
+  if (DEBUG) { console.log(ANSWERS); console.log(n_non_filled) }
   return n_non_filled;
 }
   
@@ -171,19 +204,25 @@ function set_status(n_non_filled) {
   } else {
     STATUS = "filled";
   }
+  if (DEBUG) { console.log("SET STATUS: n_non_filled = " + n_non_filled) }
 }
 
 function getRandomInt(max) {
+  if (DEBUG) { console.log("GET RANDOM INT") }
   return Math.floor(Math.random() * max);
 }
 
 function show_status() {
   if (STATUS != "filled") {
     opt_message = getRandomInt(MESSAGES[STATUS].length)
+    if (DEBUG) { console.log("GET RANDOM INT " + opt_message) }
     document.getElementById("filled-message").innerHTML = MESSAGES[STATUS][opt_message];
+    if (DEBUG) { console.log("ADD MESSAGE " + MESSAGES[STATUS][opt_message]) }
     document.getElementById("filled-message").classList.add("shown");
+    if (DEBUG) { console.log("ADD SHOWN CLASS TO MESSAGE") }
   } else {
     document.getElementById("filled-message").classList.remove("shown");
+    if (DEBUG) { console.log("REMOVE SHOWN CLASS FROM MESSAGE") }
   }
 }
 
@@ -195,6 +234,7 @@ function show_non_filled() {
       add_non_filled("q"+i);
     }
   }
+  if (DEBUG) { console.log("SHOWN NON FILLED INNER") }
 }
 
 
@@ -230,16 +270,19 @@ function check_quiz() {
       }
     }
   }
-  
+  if (DEBUG) { console.log("CHECK QUIZ DONE") }
 }
 
 function show_results() {
   document.getElementById("results").innerHTML = "Результат: " + ANSWERS.n_correct + " / " + N_tasks;
+  if (DEBUG) { console.log("SHOW RERSULTS ADD SCORE") }
   document.getElementById("results").classList.add("shown");
+  if (DEBUG) { console.log("SHOW RERSULTS ADD SHOWN CLASS") }
 }
 
 function show_answers() {
   document.getElementById("submit-button").disabled = true;
+  if (DEBUG) { console.log("SET DISABLE SUBMIT BUTTON") }
   for (let i = 1; i <= N_tasks; i++) {
     hide_remove_answer_button("q"+i);
     set_task_style("q"+i, ANSWERS["q"+i].correct);
@@ -248,6 +291,7 @@ function show_answers() {
       set_option_style("q"+i+"-option"+j, ANSWERS["q"+i]["opt"+j].correct);
     }
   }
+  if (DEBUG) { console.log("SHOW ANSWERS DONE") }
 }
 
 function set_task_style(id, correct) {
@@ -260,6 +304,7 @@ function set_task_style(id, correct) {
     document.getElementById("toc-"+id+"-title").classList.add("toc-incorrect");
     document.getElementById(id+"-check-cross").classList.add("shown");
   }
+  if (DEBUG) { console.log("SET TASK STYLE DONE") }
 }
 
 function set_option_style(id, correct) {
@@ -271,6 +316,7 @@ function set_option_style(id, correct) {
     document.getElementById(id+"-label").classList.add("incorrect");
     document.getElementById(id+"-alternative").classList.add("incorrect");
   }
+  if (DEBUG) { console.log("SET OPTION STYLE DONE") }
 }
 
 function show_feedback(id, correct) {
@@ -279,4 +325,5 @@ function show_feedback(id, correct) {
   } else {
     document.getElementById(id+"-feedback-incorrect").classList.add("shown");
   }
+  if (DEBUG) { console.log("SHOW FEEDBACK DONE") }
 }

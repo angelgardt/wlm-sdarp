@@ -219,10 +219,10 @@ function show_status() {
     document.getElementById("filled-message").innerHTML = MESSAGES[STATUS][opt_message];
     if (DEBUG) { console.log("ADD MESSAGE " + MESSAGES[STATUS][opt_message]) }
     document.getElementById("filled-message").classList.add("shown");
-    if (DEBUG) { console.log("ADD SHOWN CLASS TO MESSAGE" }
+    if (DEBUG) { console.log("ADD SHOWN CLASS TO MESSAGE") }
   } else {
     document.getElementById("filled-message").classList.remove("shown");
-    if (DEBUG) { console.log("REMOVE SHOWN CLASS FROM MESSAGE" }
+    if (DEBUG) { console.log("REMOVE SHOWN CLASS FROM MESSAGE") }
   }
 }
 
@@ -234,7 +234,7 @@ function show_non_filled() {
       add_non_filled("q"+i);
     }
   }
-  if (DEBUG) { console.log("SHOWN NON FILLED INNER" }
+  if (DEBUG) { console.log("SHOWN NON FILLED INNER") }
 }
 
 
@@ -270,19 +270,19 @@ function check_quiz() {
       }
     }
   }
-  if (DEBUG) { console.log("CHECK QUIZ DONE" }
+  if (DEBUG) { console.log("CHECK QUIZ DONE") }
 }
 
 function show_results() {
   document.getElementById("results").innerHTML = "Результат: " + ANSWERS.n_correct + " / " + N_tasks;
-  if (DEBUG) { console.log("SHOW RERSULTS ADD SCORE" }
+  if (DEBUG) { console.log("SHOW RERSULTS ADD SCORE") }
   document.getElementById("results").classList.add("shown");
-  if (DEBUG) { console.log("SHOW RERSULTS ADD SHOWN CLASS" }
+  if (DEBUG) { console.log("SHOW RERSULTS ADD SHOWN CLASS") }
 }
 
 function show_answers() {
   document.getElementById("submit-button").disabled = true;
-  if (DEBUG) { console.log("SET DISABLE SUBMIT BUTTON" }
+  if (DEBUG) { console.log("SET DISABLE SUBMIT BUTTON") }
   for (let i = 1; i <= N_tasks; i++) {
     hide_remove_answer_button("q"+i);
     set_task_style("q"+i, ANSWERS["q"+i].correct);
@@ -291,7 +291,7 @@ function show_answers() {
       set_option_style("q"+i+"-option"+j, ANSWERS["q"+i]["opt"+j].correct);
     }
   }
-  if (DEBUG) { console.log("SHOW ANSWERS DONE" }
+  if (DEBUG) { console.log("SHOW ANSWERS DONE") }
 }
 
 function set_task_style(id, correct) {
@@ -304,7 +304,7 @@ function set_task_style(id, correct) {
     document.getElementById("toc-"+id+"-title").classList.add("toc-incorrect");
     document.getElementById(id+"-check-cross").classList.add("shown");
   }
-  if (DEBUG) { console.log("SET TASK STYLE DONE" }
+  if (DEBUG) { console.log("SET TASK STYLE DONE") }
 }
 
 function set_option_style(id, correct) {
@@ -316,7 +316,7 @@ function set_option_style(id, correct) {
     document.getElementById(id+"-label").classList.add("incorrect");
     document.getElementById(id+"-alternative").classList.add("incorrect");
   }
-  if (DEBUG) { console.log("SET OPTION STYLE DONE" }
+  if (DEBUG) { console.log("SET OPTION STYLE DONE") }
 }
 
 function show_feedback(id, correct) {
@@ -325,5 +325,5 @@ function show_feedback(id, correct) {
   } else {
     document.getElementById(id+"-feedback-incorrect").classList.add("shown");
   }
-  if (DEBUG) { console.log("SHOW FEEDBACK DONE" }
+  if (DEBUG) { console.log("SHOW FEEDBACK DONE") }
 }
