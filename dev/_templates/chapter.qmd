@@ -10,6 +10,17 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Вступление
 :::
 
+::::{.quote}
+--- Текст цитаты <br>
+--- Тоже текст цитаты <br>
+
+:::{.quote-sign}
+Источник цитаты <br>
+Год цитаты
+:::
+
+::::
+
 > Цитата
 
 
@@ -20,7 +31,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::{.lab-junior}
 :::
 
-Тест со [ссылкой](../_debug_/debug_quiz.qmd).
+Тест со [ссылкой](debug_quiz.qmd).
 
 
 ### Заголовок подраздела {#chapterid-subsectionid}
@@ -28,7 +39,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::{.lab-junior}
 :::
 
-Тест со [ссылкой](../_debug_/debug_sheet.qmd).
+Тест со [ссылкой](debug_sheet.qmd).
 
 
 
@@ -218,7 +229,7 @@ print(plot4)
 
 library(leaflet)
 leaflet() %>%
-  addProviderTiles(providers$Stadia.AlidadeSmooth) %>% 
+  addTiles() %>% 
   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
 ```
 

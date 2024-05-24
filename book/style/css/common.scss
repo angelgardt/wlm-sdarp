@@ -159,6 +159,18 @@ code {
   font-family: $font-family-code;
 }
 
+.quote {
+  border-left: solid 3px;
+  margin-left: 2%;
+  padding-left: 2%;
+}
+
+.quote-sign {
+  color: inherit;
+  font-size: .8em;
+  text-align: right;
+}
+
 
 
 // Quiz
