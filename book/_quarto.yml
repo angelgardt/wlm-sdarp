@@ -27,6 +27,7 @@ book:
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
+      - r-data.qmd
     - part: part-math.qmd
     - part: part-measures.qmd
     - part: part-desc.qmd
