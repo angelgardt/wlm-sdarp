@@ -837,15 +837,15 @@ R.version
 
 **Второй**
 
-1. Скрипт должен возвращать количество секунд, прошедших с полуночи 1 января 1970 года по UTC (текущий timestamp).
+1. Скрипт должен выводить в командную строку количество секунд, прошедших с полуночи 1 января 1970 года по UTC (текущий timestamp) в формате `"<n> seconds passed from the midnight of Jan 1, 1970"`.
 2. Скрипт должен выполняться из командной строки (через `Rscript`).
 :::
 
 :::{#fig-r-from-terminal}
 
-{{< video https://youtu.be/WoffShoneY8?si=Du9xHiOVBHZaOYuE >}}
+{{< video https://youtu.be/Sdl_EaZL6GQ?si=9n1gkdnPiGabSO9E >}}
 
-Давайте напишем скрипт на R через Vim... Действительно... Ни одного изъяная в этом плане
+Давайте напишем скрипт на R через Vim... Действительно... Ни одного изъяна в этом плане
 :::
 
 ![Как отсюда, блин, выйти... Святой рандом, за что... [Источник](https://www.orlybooks.com/books/exiting-vim)](img/r-intro/orly-exiting-vim.png)
