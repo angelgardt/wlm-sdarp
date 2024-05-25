@@ -461,7 +461,14 @@ window.Quarto = {
   <li><a href="#r-intro-positcloud" id="toc-r-intro-positcloud" class="nav-link" data-scroll-target="#r-intro-positcloud"><span class="header-section-number">2.3.3</span> Posit Cloud</a></li>
   </ul></li>
   <li><a href="#r-intro-rinterface" id="toc-r-intro-rinterface" class="nav-link" data-scroll-target="#r-intro-rinterface"><span class="header-section-number">2.4</span> Интерфейс R</a></li>
-  <li><a href="#r-intro-rstudiointerface" id="toc-r-intro-rstudiointerface" class="nav-link" data-scroll-target="#r-intro-rstudiointerface"><span class="header-section-number">2.5</span> Интерфейс RStudio</a></li>
+  <li><a href="#r-intro-rstudiointerface" id="toc-r-intro-rstudiointerface" class="nav-link" data-scroll-target="#r-intro-rstudiointerface"><span class="header-section-number">2.5</span> Интерфейс RStudio</a>
+  <ul>
+  <li><a href="#r-intro-rstudiocustomize" id="toc-r-intro-rstudiocustomize" class="nav-link" data-scroll-target="#r-intro-rstudiocustomize"><span class="header-section-number">2.5.1</span> Кастомизация RStudio</a>
+  <ul class="collapse">
+  <li><a href="#r-intro-appearance" id="toc-r-intro-appearance" class="nav-link" data-scroll-target="#r-intro-appearance"><span class="header-section-number">2.5.1.1</span> Тема</a></li>
+  <li><a href="#r-intro-panelayout" id="toc-r-intro-panelayout" class="nav-link" data-scroll-target="#r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение и содержимое окон</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#r-intro-console" id="toc-r-intro-console" class="nav-link" data-scroll-target="#r-intro-console"><span class="header-section-number">2.6</span> Работа в консоли</a></li>
   <li><a href="#r-intro-script" id="toc-r-intro-script" class="nav-link" data-scroll-target="#r-intro-script"><span class="header-section-number">2.7</span> Работа в скрипте</a></li>
   <li><a href="#r-intro-citation" id="toc-r-intro-citation" class="nav-link" data-scroll-target="#r-intro-citation"><span class="header-section-number">2.8</span> Цитирование R</a></li>
@@ -485,13 +492,13 @@ window.Quarto = {
 <div class="lab-junior">
 
 </div>
-<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>2.1</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, Ihaka, 2022</a>)</span>.</p>
+<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>2.1</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
 <div class="cell">
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-31562f62f6491b1725a6" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-31562f62f6491b1725a6">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-90df53c451493a6f94c5" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-90df53c451493a6f94c5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -499,7 +506,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<p>Через пару лет разработчики перестали справляться с [электронными] письмами о багах и предлагаемых улучшениях, и в 1997 году R становится частью <a href="https://www.gnu.org/gnu/gnu.html">GNU Project</a> <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, Ihaka, 2022, p. 17</a>)</span>. В этом же году K. Hornik и F. Leisch создают на базе Венского технического университета (Technische Universität Wien) репозиторий <a href="https://cran.rstudio.com/">CRAN</a> (The Comprehensive R Archive Network) для совместной работы «ядерной» группы разработчиков (core team). В феврале 2000 года выходит первая стабильная версия языка.</p>
+<p>Через пару лет разработчики перестали справляться с [электронными] письмами о багах и предлагаемых улучшениях, и в 1997 году R становится частью <a href="https://www.gnu.org/gnu/gnu.html">GNU Project</a> <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d., p. 17</a>)</span>. В этом же году K. Hornik и F. Leisch создают на базе Венского технического университета (Technische Universität Wien) репозиторий <a href="https://cran.rstudio.com/">CRAN</a> (The Comprehensive R Archive Network) для совместной работы «ядерной» группы разработчиков (core team). В феврале 2000 года выходит первая стабильная версия языка.</p>
 <p>Сегодня R развивается международной командой исследователей вычислительной статистистики (<a href="https://www.r-project.org/">R Project</a>) и поддерживается некоммерческой организацией <a href="https://www.r-project.org/foundation/">R Foundation</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -511,7 +518,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Это шутка авторов. «R» обозначает первую букву их имён (<strong>R</strong>obert и <strong>R</strong>oss) <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, Ihaka, 2022, p. 12</a>)</span>.</p>
+<p>Это шутка авторов. «R» обозначает первую букву их имён (<strong>R</strong>obert и <strong>R</strong>oss) <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d., p. 12</a>)</span>.</p>
 </div>
 </div>
 </section>
@@ -744,32 +751,132 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
+<div id="fig-r-logo" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-r-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/r-logo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.7: Логотип R. <a href="https://www.r-project.org/logo/">Источник</a>
+</figcaption>
+</figure>
+</div>
+<p>На самом деле, RStudio можно было и не ставить, так как R предоставляет собственный графический интерфейс для работы. Его можно открыть, кникнув на иконку R в списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.7</span></a>). Однако как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>).</p>
 <div id="fig-r-interface" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/r-interface.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.7: Интерфейс R
+Иллюстрация&nbsp;2.8: Интерфейс R
 </figcaption>
 </figure>
 </div>
+<p>Здесь есть всего два окна: справа — консоль, слева — скрипт. В скрипте пишется код, в консоли он выполняется. Иногда еще открываются окна с графиками. Стильно, можно, минималистично — весьма по-программистски. Однако в RStudio работу можно обустроить гораздо удобнее и нагляднее, поэтому не будем останавливаться здесь долго и сразу же перейдем к изучению установленной IDE.</p>
 </section>
 <section id="r-intro-rstudiointerface" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="r-intro-rstudiointerface"><span class="header-section-number">2.5</span> Интерфейс RStudio</h2>
 <div class="lab-junior">
 
 </div>
+<div id="fig-rstudio-logo" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/rstudio-logo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.9: Логотип RStudio. <a href="https://www.rstudio.com/about/logos/">Источник</a>
+</figcaption>
+</figure>
+</div>
+<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.9</span></a>) в списке программ на вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>).</p>
 <div id="fig-rstudio-interface" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/rstudio-interface.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.8: Интерфейс RStudio
+Иллюстрация&nbsp;2.10: Интерфейс RStudio
 </figcaption>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Нет первого окна
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>При самом первом открытии RStudio у вас может отображаться не четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>), а только три — второе, третье и четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>Command</code>+<code>Shift</code>+<code>N</code> на Mac) или воспользуйте кнопкой в левом верхнем углу и выберите <code>R Script</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/r-intro/new-rscript.png" class="img-fluid figure-img"></p>
+<figcaption>Создание нового скрипта</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+У меня не тот цвет
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Не беда. RStudio можно кастомизировать под себя, в том числе задать разные темы и стили оформления кода. Об этом будет <a href="#r-intro-rstudiocustomize">ниже</a>.</p>
+</div>
+</div>
+</div>
+<p>Что же у нас есть в представленных окнах?</p>
+<ol type="1">
+<li><code>Code Editor</code>
+<ul>
+<li>Это редактор кода. По сути это не более чем обычный блокнот, встроенный в IDE, с той лишь разницей, что некоторые слова подкрашиваются по определенным правилам. В этом окне мы будем писать <em>текст</em> скрипта.</li>
+<li>В этом же окне будут открывать скриптовые файлы, которые были вами или кем-то ранее написаны. Скриптовые файлы языка R получают расширение <code>.R</code>, то есть какой-то скрипт будет называться <code>script.R</code>, однако это всё ещё обычный текстовый файл, который можно откыть в любом текстовом редакторе (типа Notebook или TextEdit).</li>
+<li>Скрипт состоит из команд, которые мы хотим выполнить, но в самом скрипте они выполнить не могут, поэтому нам нужна консоль.</li>
+</ul></li>
+<li><code>Console</code>
+<ul>
+<li>В консоли также можно писать команды и выполнять их прямо на месте — получается максимальнго интерактивных режим работы. Однако после выполнения команды нигде не сохраняются<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</li>
+<li>Получается, что в работе над анализом данных удобно разнести задачи между консолью и редактором кода: в редакторе мы пишем команды, в консоли — их выполняем.</li>
+</ul></li>
+<li>В этом окне есть несколько вкладок.
+<ul>
+<li>Главная — это <code>Environment</code>. Это наше [глобальное] окружение. Здесь будут отображаться объекты, с которыми мы работаем — переменные, датасеты, результаты моделирования и др.</li>
+<li>На вкладке <code>History</code> хранится история выполнения команд, иногда она может пригодится, но собственно вкладкой пользуются, скорее, редко.</li>
+<li>Другие вкладки отсюда мы использовать не будем.</li>
+</ul></li>
+<li>Это очень полезное окно.
+<ul>
+<li>Во-первых, здесь есть вкладка <code>Files</code>, с помощью которой можно гулять по папкам и файлам. В первое время мы не будем активно обращать на неё внимание, однако когда перейдем к разговору о <a href="r-data.qmd">работе с данными</a> и <a href="r-data.qmd#r-data-rstudioprojects">проектах</a>, она нам будет очень важна.</li>
+<li>На вкладке <code>Plots</code> будут отображаться построенные графики.</li>
+<li>Вкладка <code>Packages</code> помогает сориентироваться в установленных и подключенных пакетах<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</li>
+<li>В <code>Help</code> мы будем обращаться часто — уже буквально через несколько мгновений изучим эту вкладку на практике. Здесь отображается документация. К ней стоит обращаться, если возникают какие-либо пролемы и непонятки с тем, как использовать ту или иную функцию.</li>
+<li><code>Viewer</code> и <code>Presentation</code> — редко используемые вкладки, по крайнем мере, в первое время работы. Они необходимы, когда вы создаете какие-либо материалы в R (презентации, сайты, отчеты, книжки и др.)</li>
+</ul></li>
+</ol>
+<section id="r-intro-rstudiocustomize" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="r-intro-rstudiocustomize"><span class="header-section-number">2.5.1</span> Кастомизация RStudio</h3>
+<div class="lab-junior">
+
+</div>
+<p>После некоторого времени работы в RStudio, вы можете обнаружить, что предлагаемые по умолчанию конфигурация и оформление вам не очень удобны. Скажем, вы как истинный программист работаете по ночам, и дефолтная светлая тема оформления вам крайне больно бьет по глазам, и вы хотите расположить консоль рядом со скриптом, чтобы видеть результаты выполнения команд примерно на том же уровне, что и строки кода. Всё это выполнимо.</p>
+<p>Здесь мы рассмотрим две, пожалуй, ключевых вещи, которые можно настроить — <a href="#r-intro-panelayout">окна</a> и <a href="#r-intro-appearance">тему</a>. В остальных возможностях, я уверен, вы сможете разобраться самостоятельно, понажимав всякие на кнопки или изучив <a href="https://docs.posit.co/ide/user/"><strong>RStudio User Guide</strong></a>.</p>
+<section id="r-intro-appearance" class="level4" data-number="2.5.1.1">
+<h4 data-number="2.5.1.1" class="anchored" data-anchor-id="r-intro-appearance"><span class="header-section-number">2.5.1.1</span> Тема</h4>
+</section>
+<section id="r-intro-panelayout" class="level4" data-number="2.5.1.2">
+<h4 data-number="2.5.1.2" class="anchored" data-anchor-id="r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение и содержимое окон</h4>
+</section>
+</section>
 </section>
 <section id="r-intro-console" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="r-intro-console"><span class="header-section-number">2.6</span> Работа в консоли</h2>
@@ -794,7 +901,7 @@ Apple silicon vs Intel Macs
 <div class="cell-output cell-output-stdout">
 <pre><code>To cite R in publications use:
 
-  R Core Team (2023). _R: A Language and Environment for Statistical
+  R Core Team (2024). _R: A Language and Environment for Statistical
   Computing_. R Foundation for Statistical Computing, Vienna, Austria.
   &lt;https://www.R-project.org/&gt;.
 
@@ -805,7 +912,7 @@ A BibTeX entry for LaTeX users is
     author = {{R Core Team}},
     organization = {R Foundation for Statistical Computing},
     address = {Vienna, Austria},
-    year = {2023},
+    year = {2024},
     url = {https://www.R-project.org/},
   }
 
@@ -814,7 +921,7 @@ when using it for data analysis. See also 'citation("pkgname")' for
 citing R packages.</code></pre>
 </div>
 </div>
-<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</p>
+<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p>
 <p>Хорошим тоном будет сослаться и на RStudio <span class="citation" data-cites="rstudio-core-team">(<a href="references.html#ref-rstudio-core-team" role="doc-biblioref">Posit team, 2024</a>)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -866,13 +973,13 @@ $release_name
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.3.2 (2023-10-31)
-Platform: x86_64-apple-darwin20 (64-bit)
+<pre><code>R version 4.4.0 (2024-04-24)
+Platform: x86_64-apple-darwin20
 Running under: macOS Sonoma 14.4.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -891,15 +998,15 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] utf8_1.2.4        generics_0.1.3    xml2_1.3.6        stringi_1.8.4    
  [5] hms_1.1.3         digest_0.6.35     magrittr_2.0.3    evaluate_0.23    
- [9] grid_4.3.2        timechange_0.3.0  fastmap_1.1.1     jsonlite_1.8.8   
+ [9] grid_4.4.0        timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.8   
 [13] httr_1.4.7        fansi_1.0.6       crosstalk_1.2.1   scales_1.3.0     
 [17] jquerylib_0.1.4   cli_3.6.2         rlang_1.1.3       munsell_0.5.1    
-[21] withr_3.0.0       yaml_2.3.8        tools_4.3.2       tzdb_0.4.0       
+[21] withr_3.0.0       yaml_2.3.8        tools_4.4.0       tzdb_0.4.0       
 [25] colorspace_2.1-0  curl_5.2.1        vctrs_0.6.5       R6_2.5.1         
 [29] lifecycle_1.0.4   htmlwidgets_1.6.4 pkgconfig_2.0.3   pillar_1.9.0     
-[33] gtable_0.3.5      glue_1.7.0        xfun_0.43         tidyselect_1.2.1 
-[37] rstudioapi_0.16.0 knitr_1.45        farver_2.1.1      htmltools_0.5.8.1
-[41] rmarkdown_2.26    labeling_0.4.3    compiler_4.3.2   </code></pre>
+[33] gtable_0.3.5      glue_1.7.0        xfun_0.44         tidyselect_1.2.1 
+[37] rstudioapi_0.16.0 knitr_1.46        farver_2.1.2      htmltools_0.5.8.1
+[41] rmarkdown_2.27    labeling_0.4.3    compiler_4.4.0   </code></pre>
 </div>
 </div>
 
@@ -912,7 +1019,7 @@ Posit team. (2024). <em>RStudio: Integrated development environment for r</em>. 
 R Core Team. (2023). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
 <div id="ref-ross2022" class="csl-entry" role="listitem">
-Ross, Ihaka. (2022, December 27). <em>The r project: A brief history and thoughts about the future</em>. The University of Auckland. <a href="https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf">https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf</a>
+Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the future</em>. The University of Auckland. Retrieved May 19, 2024, from <a href="https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf">https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf</a>
 </div>
 </div>
 </section>
@@ -927,8 +1034,10 @@ Ross, Ihaka. (2022, December 27). <em>The r project: A brief history and thought
 <li id="fn5"><p>На случай, если новое поколение утратило связь с культурным прошлым, а старое поколение желает, чтобы ему подсвело олдскулы — <a href="https://memepedia.ru/sashko-fokin/">источник</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>По пути надо ещё не перепутать её с <a href="https://www.r-studio.com/ru/">R-Studio</a>, которая восстанавливает данные с диска. Критическое сходство названий двух программ обязывает к повышенной внимательности при написании работ/статей/отчётов/заявок на гранты, в которых вы упоминаете RStudio — иногда рецензенты весьма недоумевают, как исследователи анализировали данные с помощью ПО для восстановления данных. Хотя это может звучать несколько странно, такой случай имел место быть в реальности…<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>Их мы будем обсуждать в <a href="r-data.qmd#r-data-rstudio-projects">разделе о работе с данными</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Это не совсем правда, так как есть файл <code>.Rhistory</code>, о нем поговорим чуть дальше.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Хотя бы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
