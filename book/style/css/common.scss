@@ -97,10 +97,6 @@ div.quarto-title-meta {
   margin-bottom: .5em;
 }
 
-.quarto-float-lst figcaption {
-  font-size: .7em;
-}
-
 header div.quarto-title-banner {
   margin-bottom: 0;
 }
@@ -165,9 +161,14 @@ header div.quarto-title-banner {
   margin: -1% 0 2% 0;
 }
 
-figcaption.quarto-float-fig {
+figcaption {
   font-family: Montserrat;
   text-align: center;
+}
+
+.quarto-float-lst figcaption {
+  font-size: .7em;
+  text-align: left;
 }
 
 code {

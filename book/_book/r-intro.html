@@ -471,9 +471,15 @@ window.Quarto = {
   </ul></li>
   <li><a href="#r-intro-console" id="toc-r-intro-console" class="nav-link" data-scroll-target="#r-intro-console"><span class="header-section-number">2.6</span> Работа в консоли</a>
   <ul>
-  <li><a href="#r-intro-math" id="toc-r-intro-math" class="nav-link" data-scroll-target="#r-intro-math"><span class="header-section-number">2.6.1</span> Математические операции</a></li>
+  <li><a href="#r-intro-arithm" id="toc-r-intro-arithm" class="nav-link" data-scroll-target="#r-intro-arithm"><span class="header-section-number">2.6.1</span> Арифметические операции</a></li>
+  <li><a href="#r-intro-logic" id="toc-r-intro-logic" class="nav-link" data-scroll-target="#r-intro-logic"><span class="header-section-number">2.6.2</span> Логические операции</a></li>
+  <li><a href="#r-intro-rhistory" id="toc-r-intro-rhistory" class="nav-link" data-scroll-target="#r-intro-rhistory"><span class="header-section-number">2.6.3</span> История команд</a></li>
   </ul></li>
-  <li><a href="#r-intro-script" id="toc-r-intro-script" class="nav-link" data-scroll-target="#r-intro-script"><span class="header-section-number">2.7</span> Работа в скрипте</a></li>
+  <li><a href="#r-intro-script" id="toc-r-intro-script" class="nav-link" data-scroll-target="#r-intro-script"><span class="header-section-number">2.7</span> Работа в скрипте</a>
+  <ul>
+  <li><a href="#r-intro-mathfunc" id="toc-r-intro-mathfunc" class="nav-link" data-scroll-target="#r-intro-mathfunc"><span class="header-section-number">2.7.1</span> Математические функции</a></li>
+  <li><a href="#r-intro-assignment" id="toc-r-intro-assignment" class="nav-link" data-scroll-target="#r-intro-assignment"><span class="header-section-number">2.7.2</span> Присваивание (assignment)</a></li>
+  </ul></li>
   <li><a href="#r-intro-citation" id="toc-r-intro-citation" class="nav-link" data-scroll-target="#r-intro-citation"><span class="header-section-number">2.8</span> Цитирование R</a></li>
   <li><a href="#r-intro-updates" id="toc-r-intro-updates" class="nav-link" data-scroll-target="#r-intro-updates"><span class="header-section-number">2.9</span> Обновления</a></li>
   <li><a href="#r-intro-cli" id="toc-r-intro-cli" class="nav-link" data-scroll-target="#r-intro-cli"><span class="header-section-number">2.10</span> Работа в R из командной строки</a></li>
@@ -500,8 +506,8 @@ window.Quarto = {
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-716b80844c8dbb60c8ff" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-716b80844c8dbb60c8ff">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-b271d8bdc01d83d735fb" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b271d8bdc01d83d735fb">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -1003,15 +1009,18 @@ Type 'q()' to quit R.</code></pre>
 <p>Покрашенное разными цветами — это сам код. Ниже однотонное — результат его выполнения, отображаемый в консоли.</p>
 </div>
 </div>
-<section id="r-intro-math" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="r-intro-math"><span class="header-section-number">2.6.1</span> Математические операции</h3>
-<p>В R присутствуют все стандарные математические операции — сложение (<code>+</code>), вычитание (<code>-</code>), умножение (<code>*</code>), деление (<code>/</code>) и возведение в степень (<code>^</code>). Выполняются весьма предсказуемо.</p>
-<div id="lst-math-opetaions" class="listing quarto-float">
+<section id="r-intro-arithm" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="r-intro-arithm"><span class="header-section-number">2.6.1</span> Арифметические операции</h3>
+<div class="lab-junior">
+
+</div>
+<p>В R присутствуют все стандарные арифметические операции — сложение (<code>+</code>), вычитание (<code>-</code>), умножение (<code>*</code>), деление (<code>/</code>) и возведение в степень (<code>^</code>). Выполняются весьма предсказуемо.</p>
+<div id="lst-arithm-opetaions" class="listing quarto-float">
 <figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-math-opetaions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;2.1: Базовые математические операции в R
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-arithm-opetaions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.1: Базовые математические операции
 </figcaption>
-<div aria-describedby="lst-math-opetaions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="lst-arithm-opetaions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1057,7 +1066,7 @@ Type 'q()' to quit R.</code></pre>
 </div>
 </figure>
 </div>
-<div id="exr-basic-math" class="theorem exercise">
+<div id="exr-basic-arithm" class="theorem exercise">
 <p><span class="theorem-title"><strong>Задание 2.1</strong></span> Вычислите в R:</p>
 <ol type="a">
 <li><span class="math inline">\(32 + 64\)</span></li>
@@ -1066,10 +1075,12 @@ Type 'q()' to quit R.</code></pre>
 <li><span class="math inline">\(18 - 47\)</span></li>
 <li><span class="math inline">\(9 \cdot 12\)</span></li>
 <li><span class="math inline">\(616 : 55\)</span></li>
+<li><span class="math inline">\(25 \mod 6\)</span></li>
 <li><span class="math inline">\(8^{3}\)</span></li>
 <li><span class="math inline">\(-2^{-2}\)</span></li>
 <li><span class="math inline">\((-2)^{-2}\)</span></li>
 </ol>
+<p>Оператор <span class="math inline">\(\mathrm{mod}\)</span> обозначает взятие остатка от деления.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
@@ -1098,25 +1109,265 @@ Type 'q()' to quit R.</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11.2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> <span class="sc">^</span> <span class="dv">3</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="sc">%%</span> <span class="dv">6</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> <span class="sc">^</span> <span class="dv">3</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 512</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span> <span class="sc">^</span> <span class="sc">-</span><span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span> <span class="sc">^</span> <span class="sc">-</span><span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">2</span>) <span class="sc">^</span> <span class="sc">-</span><span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">2</span>) <span class="sc">^</span> <span class="sc">-</span><span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.25</code></pre>
 </div>
 </div>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/r-intro/orly-changing-stuff-and-seeing.png" class="img-fluid figure-img"></p>
+<figcaption>Как изучать программирование? <a href="https://www.orlybooks.com/books/changing-stuff-and-seeing">Источник</a></figcaption>
+</figure>
+</div>
+<p>В R есть скобки — <code>()</code> — их назначение такое же, как и в математике. Порядок выполнения арифметических действий (он же приоритет операторов, operator precedence) тоже как в математике<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p>
+<div id="lst-operator-precedence" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-operator-precedence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.3: Скобки и приоритет операторов
+</figcaption>
+<div aria-describedby="lst-operator-precedence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> (<span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">/</span> <span class="dv">5</span> <span class="sc">^</span> <span class="dv">5</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0016</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span> <span class="sc">/</span> <span class="dv">5</span>) <span class="sc">^</span> <span class="dv">5</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="exr-operator-precedence" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 2.2</strong></span> Вычислите в R:</p>
+<ol type="a">
+<li><span class="math inline">\(\displaystyle \frac{46 \cdot 3}{13 + 4}\)</span></li>
+<li><span class="math inline">\(2^{\frac{6}{11}}\)</span></li>
+<li><span class="math inline">\(\displaystyle \frac{-77 + 101}{-12^2}\)</span></li>
+<li><span class="math inline">\(\displaystyle -77 + \left( \frac{101}{-12} \right)^2\)</span></li>
+</ol>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
 <div class="cell">
-<p>Это решение</p>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dv">46</span> <span class="sc">*</span> <span class="dv">3</span> <span class="sc">/</span> (<span class="dv">13</span> <span class="sc">+</span> <span class="dv">4</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.117647</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">^</span> (<span class="dv">6</span> <span class="sc">/</span> <span class="dv">11</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.45948</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">77</span> <span class="sc">+</span> <span class="dv">101</span>) <span class="sc">/</span> (<span class="sc">-</span><span class="dv">12</span> <span class="sc">^</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.1666667</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">77</span> <span class="sc">+</span> (<span class="dv">101</span> <span class="sc">/</span> <span class="sc">-</span><span class="dv">12</span>) <span class="sc">^</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -6.159722</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="r-intro-logic" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="r-intro-logic"><span class="header-section-number">2.6.2</span> Логические операции</h3>
+<div class="lab-junior">
+
+</div>
+<p>Числа, как вы знаете, можно не только складывать, умножать, делить и т.д., но ещё и сравнивать друг с другом. Для этого существуют логические операторы, коих в R шесть штук:</p>
+<ul>
+<li>строгое неравенство
+<ul>
+<li>«больше» (<code>&gt;</code>)</li>
+<li>«меньше» (<code>&lt;</code>)</li>
+</ul></li>
+<li>нестрогое неравенство
+<ul>
+<li>«больше или равно» (<code>&gt;=</code>)</li>
+<li>«меньше или равно» (<code>&lt;=</code>)</li>
+</ul></li>
+<li>равенство
+<ul>
+<li>«равно [ли]» (<code>==</code>)</li>
+<li>«не равно» (<code>!=</code>)</li>
+</ul></li>
+</ul>
+<p>Работают они вновь весьма предсказуемо и возвращают <code>TRUE</code>, когда заданное сравнение верно, и <code>FALSE</code>, когда оно неверно.</p>
+<div id="lst-logic-operations" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-logic-operations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.4: Логические операции
+</figcaption>
+<div aria-describedby="lst-logic-operations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">3</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">&gt;=</span> <span class="dv">6</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="sc">&lt;</span> <span class="dv">12</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">5</span> <span class="sc">&lt;=</span> <span class="sc">-</span><span class="dv">4</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="sc">==</span> <span class="dv">1</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> <span class="sc">!=</span> <span class="dv">9</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Приоритет логических операторов <em>ниже</em>, чем арифметических.</p>
+<div id="lst-logic-vs-arithm" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-logic-vs-arithm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.5: Приоритет логических операторов
+</figcaption>
+<div aria-describedby="lst-logic-vs-arithm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">!=</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">&lt;</span> <span class="dv">8</span> <span class="sc">-</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">3</span> <span class="sc">==</span> <span class="dv">12</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">^</span> (<span class="dv">6</span> <span class="sc">==</span> <span class="dv">6</span>) <span class="do">## это почему работает???</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Приоритет операторов более широко
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>У нас появился новый — и не последний — тип операторов. На самом деле, операторов в R больше, и мы с ними постепенно будем знакомиться.</p>
+<p>Если вы не уверены, в каком порядке операторы будут работать, используйте скобки. Или можете посмотреть список операторов по приоритету по команде <code>?Syntax</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>==</code> vs <code>=</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Обращу внимание, что для сравнения на равенство используется двойное равно — <code>==</code>. Одинарное равно имеет другой смысл (см. <a href="#r-intro-assignment">далее</a>).</p>
+<p>В прицнипе, если вы случайно опечатаетесь, катастрофических последствий это, скорее всего, не вызовет — код упадет в ошибкой (<a href="#lst-equal-comparison" class="quarto-xref">Код&nbsp;<span>2.6</span></a>). Хотя могло бы…<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/r-intro/robots-kill-humans.png" class="img-fluid figure-img"></p>
+<figcaption>Code review — это полезно. <a href="https://www.reddit.com/r/ProgrammerHumor/comments/4x26u3/this_is_why_code_reviews_are_a_good_thing/">Источник</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="lst-equal-comparison" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-equal-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.6: Двойное (<code>==</code>) и одинарное (<code>=</code>) равенство
+</figcaption>
+<div aria-describedby="lst-equal-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="ot">=</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in 2 = 2: invalid (do_set) left-hand side to assignment</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="r-intro-rhistory" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="r-intro-rhistory"><span class="header-section-number">2.6.3</span> История команд</h3>
+<div class="lab-junior">
+
+</div>
+<p>Выше я отмечал, что сделанно в консоли бесследно пропадает. Это почти так, но если нам всё же надо воскресить предыдущие команды, то это можно сделать стрелками вверх и вниз (<code>↑</code>, <code>↓</code>). Например, мы посчитали вот это:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">-</span> <span class="dv">3</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">+</span> <span class="dv">14</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">/</span> <span class="dv">12</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.75</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">*</span> <span class="dv">5</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+<p>и теперь хотим вернуться ещё раз пересчитать <code>9 / 12</code> — вдруг ошиблись… Если мы, стоя в консоли, два раза жмякнем стрелку вверх, команда вновь отобразится в консоли (<a href="#fig-rhistory" class="quarto-xref">Иллюстрация&nbsp;<span>2.17</span></a>).</p>
+<p>Такое иногда бывает полезно, когда вы, скажем, писали большой скрипт, потом что-то мелкое промежуточное посчитали в консоли, затем вернулись обратно к скрипту и забыли, что там получилось в вычислениях. Однако лучше все фиксировать в скрипте, чтобы потом мучительно не вспоминать, а что вы там конкретно промежуточно считали.</p>
+<div id="fig-rhistory" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rhistory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/rhistory.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rhistory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.17: История команд. Предыдущие команды можно вызвать в консоль с помощью клавиш <code>↑</code> и <code>↓</code>.
+</figcaption>
+</figure>
 </div>
 </section>
 </section>
@@ -1125,6 +1376,31 @@ Type 'q()' to quit R.</code></pre>
 <div class="lab-junior">
 
 </div>
+<section id="r-intro-mathfunc" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="r-intro-mathfunc"><span class="header-section-number">2.7.1</span> Математические функции</h3>
+<div class="lab-junior">
+
+</div>
+<p>Окей, до сего момента мы ограничивались простыми вычислениями. Но что если нам надо посчитать что-то более сложное? Например, <span class="math inline">\(\sqrt{32}\)</span> или <span class="math inline">\(\log_4 13\)</span>.</p>
+<p>Мы, конечно, при желании переиграем R, так как мы помним<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>, что</p>
+<p><span class="math display">\[
+\sqrt{x} = x^{\frac{1}{2}}
+\]</span></p>
+<p>Поэтому мы можем вычислить <span class="math inline">\(\sqrt{32}\)</span> так:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="dv">32</span><span class="sc">^</span>(<span class="fl">0.5</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.656854</code></pre>
+</div>
+</div>
+<p>Однако это не очень удобно. Плюс с логарифмом такой трюк уже не пройдет — нам нужны <em>функции</em>.</p>
+</section>
+<section id="r-intro-assignment" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="r-intro-assignment"><span class="header-section-number">2.7.2</span> Присваивание (assignment)</h3>
+<div class="lab-junior">
+
+</div>
+</section>
 </section>
 <section id="r-intro-citation" class="level2" data-number="2.8">
 <h2 data-number="2.8" class="anchored" data-anchor-id="r-intro-citation"><span class="header-section-number">2.8</span> Цитирование R</h2>
@@ -1133,7 +1409,7 @@ Type 'q()' to quit R.</code></pre>
 </div>
 <p>На R <span class="citation" data-cites="r-core-team">(<a href="references.html#ref-r-core-team" role="doc-biblioref">R Core Team, 2023</a>)</span>, как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться — цитировать в разделе References. Для этого существует удобная команда:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>To cite R in publications use:
 
@@ -1157,10 +1433,10 @@ when using it for data analysis. See also 'citation("pkgname")' for
 citing R packages.</code></pre>
 </div>
 </div>
-<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>.</p>
+<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>.</p>
 <p>Хорошим тоном будет сослаться и на RStudio <span class="citation" data-cites="rstudio-core-team">(<a href="references.html#ref-rstudio-core-team" role="doc-biblioref">Posit team, 2024</a>)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>$citation
 To cite RStudio in publications use:
@@ -1207,7 +1483,7 @@ $release_name
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1274,8 +1550,11 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 <li id="fn8"><p>Есть еще вкладки <code>Terminal</code> и <code>Background Jobs</code>. Пока что их проигнорируем, ибо и так других миллион. С этим двум обратимся, когда дойдем до соответствующих им тем.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>Это не совсем правда, так как есть файл <code>.Rhistory</code>, о нем поговорим чуть дальше.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>Хотя бы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://www.quora.com/Do-all-programming-languages-use-the-same-operator-precedence-rule-If-yes-or-no-why">Не во всех</a> языках программирования это так.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>К слову, если мы внимательно всмотримся в код на картинке, то обнаружим, что фатальных последствий можно было избежать, убрав избыточность кода в условном операторе — сравнение с <code>true</code> бессмысленно, так как <code>isCrazyMurderingRobot</code> уже является логическим значением, и его можно использовать в условии напрямую. 🤦<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Если забыли, то есть <a href="./appendix-formulas.html">приложение</a>.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

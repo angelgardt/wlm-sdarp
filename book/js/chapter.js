@@ -15,11 +15,9 @@ for (i = 0; i < solution.length; i++) {
     if (cell.style.display === "block") {
       cell.style.display = "none";
       this.innerHTML = solution_title.show;
-      console.log(current_solution.innerHTML);
     } else {
       cell.style.display = "block";
       this.innerHTML = solution_title.hide;
-      console.log(current_solution.innerHTML);
     }
   });
 }
