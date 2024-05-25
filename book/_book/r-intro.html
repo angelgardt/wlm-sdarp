@@ -466,10 +466,13 @@ window.Quarto = {
   <li><a href="#r-intro-rstudiocustomize" id="toc-r-intro-rstudiocustomize" class="nav-link" data-scroll-target="#r-intro-rstudiocustomize"><span class="header-section-number">2.5.1</span> Кастомизация RStudio</a>
   <ul class="collapse">
   <li><a href="#r-intro-appearance" id="toc-r-intro-appearance" class="nav-link" data-scroll-target="#r-intro-appearance"><span class="header-section-number">2.5.1.1</span> Тема</a></li>
-  <li><a href="#r-intro-panelayout" id="toc-r-intro-panelayout" class="nav-link" data-scroll-target="#r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение и содержимое окон</a></li>
+  <li><a href="#r-intro-panelayout" id="toc-r-intro-panelayout" class="nav-link" data-scroll-target="#r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение окон и их содержимое</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#r-intro-console" id="toc-r-intro-console" class="nav-link" data-scroll-target="#r-intro-console"><span class="header-section-number">2.6</span> Работа в консоли</a></li>
+  <li><a href="#r-intro-console" id="toc-r-intro-console" class="nav-link" data-scroll-target="#r-intro-console"><span class="header-section-number">2.6</span> Работа в консоли</a>
+  <ul>
+  <li><a href="#r-intro-math" id="toc-r-intro-math" class="nav-link" data-scroll-target="#r-intro-math"><span class="header-section-number">2.6.1</span> Математические операции</a></li>
+  </ul></li>
   <li><a href="#r-intro-script" id="toc-r-intro-script" class="nav-link" data-scroll-target="#r-intro-script"><span class="header-section-number">2.7</span> Работа в скрипте</a></li>
   <li><a href="#r-intro-citation" id="toc-r-intro-citation" class="nav-link" data-scroll-target="#r-intro-citation"><span class="header-section-number">2.8</span> Цитирование R</a></li>
   <li><a href="#r-intro-updates" id="toc-r-intro-updates" class="nav-link" data-scroll-target="#r-intro-updates"><span class="header-section-number">2.9</span> Обновления</a></li>
@@ -497,8 +500,8 @@ window.Quarto = {
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-90df53c451493a6f94c5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-90df53c451493a6f94c5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-e5b1508b657ab5b502a1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e5b1508b657ab5b502a1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -843,9 +846,9 @@ Apple silicon vs Intel Macs
 <li>В этом же окне будут открывать скриптовые файлы, которые были вами или кем-то ранее написаны. Скриптовые файлы языка R получают расширение <code>.R</code>, то есть какой-то скрипт будет называться <code>script.R</code>, однако это всё ещё обычный текстовый файл, который можно откыть в любом текстовом редакторе (типа Notebook или TextEdit).</li>
 <li>Скрипт состоит из команд, которые мы хотим выполнить, но в самом скрипте они выполнить не могут, поэтому нам нужна консоль.</li>
 </ul></li>
-<li><code>Console</code>
+<li><code>Console</code><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>
 <ul>
-<li>В консоли также можно писать команды и выполнять их прямо на месте — получается максимальнго интерактивных режим работы. Однако после выполнения команды нигде не сохраняются<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</li>
+<li>В консоли также можно писать команды и выполнять их прямо на месте — получается максимальнго интерактивных режим работы. Однако после выполнения команды нигде не сохраняются<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</li>
 <li>Получается, что в работе над анализом данных удобно разнести задачи между консолью и редактором кода: в редакторе мы пишем команды, в консоли — их выполняем.</li>
 </ul></li>
 <li>В этом окне есть несколько вкладок.
@@ -858,7 +861,7 @@ Apple silicon vs Intel Macs
 <ul>
 <li>Во-первых, здесь есть вкладка <code>Files</code>, с помощью которой можно гулять по папкам и файлам. В первое время мы не будем активно обращать на неё внимание, однако когда перейдем к разговору о <a href="r-data.qmd">работе с данными</a> и <a href="r-data.qmd#r-data-rstudioprojects">проектах</a>, она нам будет очень важна.</li>
 <li>На вкладке <code>Plots</code> будут отображаться построенные графики.</li>
-<li>Вкладка <code>Packages</code> помогает сориентироваться в установленных и подключенных пакетах<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</li>
+<li>Вкладка <code>Packages</code> помогает сориентироваться в установленных и подключенных пакетах<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</li>
 <li>В <code>Help</code> мы будем обращаться часто — уже буквально через несколько мгновений изучим эту вкладку на практике. Здесь отображается документация. К ней стоит обращаться, если возникают какие-либо пролемы и непонятки с тем, как использовать ту или иную функцию.</li>
 <li><code>Viewer</code> и <code>Presentation</code> — редко используемые вкладки, по крайнем мере, в первое время работы. Они необходимы, когда вы создаете какие-либо материалы в R (презентации, сайты, отчеты, книжки и др.)</li>
 </ul></li>
@@ -872,9 +875,37 @@ Apple silicon vs Intel Macs
 <p>Здесь мы рассмотрим две, пожалуй, ключевых вещи, которые можно настроить — <a href="#r-intro-panelayout">окна</a> и <a href="#r-intro-appearance">тему</a>. В остальных возможностях, я уверен, вы сможете разобраться самостоятельно, понажимав всякие на кнопки или изучив <a href="https://docs.posit.co/ide/user/"><strong>RStudio User Guide</strong></a>.</p>
 <section id="r-intro-appearance" class="level4" data-number="2.5.1.1">
 <h4 data-number="2.5.1.1" class="anchored" data-anchor-id="r-intro-appearance"><span class="header-section-number">2.5.1.1</span> Тема</h4>
+<div class="lab-junior">
+
+</div>
+<p>Чтобы настроить тему RStudio, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Appearance</code>. Откроется следующее окно (<a href="#fig-rstudio-appearance" class="quarto-xref">Иллюстрация&nbsp;<span>2.11</span></a>). В нем можно выбрать шрифт, его размер, тему самого RStudio и тему редактора кода. Через кнопку <code>Add...</code> можно даже добавить собственные темы, если вам не нравится ни одна из предложенных.</p>
+<div id="fig-rstudio-appearance" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/rstudio-appearance.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.11: Настройки темы RStudio
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="r-intro-panelayout" class="level4" data-number="2.5.1.2">
-<h4 data-number="2.5.1.2" class="anchored" data-anchor-id="r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение и содержимое окон</h4>
+<h4 data-number="2.5.1.2" class="anchored" data-anchor-id="r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение окон и их содержимое</h4>
+<div class="lab-junior">
+
+</div>
+<p>Чтобы настроить расположение и содержимое окон, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Pane Layout</code>. Откроется следующее окно (<a href="#fig-rstudio-panelayout" class="quarto-xref">Иллюстрация&nbsp;<span>2.12</span></a>). Логика проста: здесь тоже четыре области, соответствующих окнам интерфейса RStudio, и в каждом можно выбрать, что должно отображаться. Через <code>Add Column</code> можно добавить ещё одну колонку, если вы, скажем, работаете на большом мониторе в двух скриптах параллельно.</p>
+<div id="fig-rstudio-panelayout" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-panelayout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/rstudio-panelayout.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-panelayout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.12: Настройки расположения окон и их содержимого
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 </section>
@@ -883,6 +914,98 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
+<blockquote class="blockquote">
+<p>Красоту навели — пора бы и серьезными вещами заняться.</p>
+</blockquote>
+<p>Мы начнем работу с R в консоли, хотя такой вариант практически на практике не применяется. Тем не менее, во-первых, надо познакомиться с тем, как консоль работает, а во-вторых, избавиться от «страха консоли», если вдруг он у вас есть.</p>
+<p>Когда вы открыли RStudio, R вывел вам в консоль приветственное сообщение примерно такого содержания:</p>
+<pre><code>
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.</code></pre>
+<p>В принципе, его можно проигнорировать — в нем некая техническая информация. Всё это можно достать отдельно при необходимости. Сейчас сосредоточимся на том, что отображается после сообщения — маленькая неприметная, но важнейшая стрелочка (<a href="#fig-console-waiting" class="quarto-xref">Иллюстрация&nbsp;<span>2.13</span></a>). Она обозначает, что R сейчас ничего не делает и ожидает новую команду.</p>
+<div id="fig-console-waiting" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-console-waiting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/console-waiting.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-waiting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.13: Ожидание команды
+</figcaption>
+</figure>
+</div>
+<p>Это дефолтное состояние консоли. Чтобы выполнить какую-либо команду, надо напечатать её в консоли и нажать <code>Enter</code>. Например, вы хотите напечатать в консоль <code>0</code>. Для этого есть команда (функция) <code>print()</code>. Введя в консоль <code>print(0)</code> и нажав <code>Enter</code>, мы получим следующий результат (<a href="#fig-console-print" class="quarto-xref">Иллюстрация&nbsp;<span>2.14</span></a>).</p>
+<div id="fig-console-print" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-console-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/console-print.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.14: Выполнение команды. После написания команды нажата клавиша <code>Enter</code>
+</figcaption>
+</figure>
+</div>
+<p>Однако состояние со стрелочкой не единственное. На месте стрелочки может стоять плюсик. Это значит, что R нашел окончание команды, и ожидает, когда вы её допишете, чтобы он мог отправить её выполняться. Например, вы всё ещё хотите напечатать в консоль <code>0</code>, но забыли закрыть скобку в функции <code>print()</code>. Это будет выглядеть так (<a href="#fig-console-plus" class="quarto-xref">Иллюстрация&nbsp;<span>2.15</span></a>). Если после «плюса» дописать скобку и нажать <code>Enter</code>, то команда выполнится.</p>
+<div id="fig-console-plus" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-console-plus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/console-plus.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-plus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.15: Ожидание окончания команды. После дописывания скобки нажата клавиша <code>Enter</code>
+</figcaption>
+</figure>
+</div>
+<p>Если вы не хотите, чтобы команды выполнялась, то её можно прервать, нажав клавишу <code>Esc</code> (<a href="#fig-console-plus-esc" class="quarto-xref">Иллюстрация&nbsp;<span>2.16</span></a>).</p>
+<div id="fig-console-plus-esc" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-console-plus-esc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/r-intro/console-plus-esc.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-plus-esc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.16: Прерывание команды. После перехода в ожидание окончания команды нажата клавиша <code>Esc</code>
+</figcaption>
+</figure>
+</div>
+<p>Есть ещё одно состояние, когда не отображается ни стрелочка, ни плюс. Это значит, что вы дали R большую сложную команду, и он теперь занят — вот прямо сейчас её выполняет. Надо подождать, и консоль вернется в дефолтное состояние.</p>
+<p>Ура, мы разобрались, что происходит в консоли, теперь приступим собственно к R.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Далее: код
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Отображать выполнение кода с помощью гифок, конечно, крайне неудобно. Далее будет использоваться следующий формат:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p>Покрашенное разными цветами — это сам код. Ниже однотонное — результат его выполнения, отображаемый в консоли.</p>
+</div>
+</div>
+<section id="r-intro-math" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="r-intro-math"><span class="header-section-number">2.6.1</span> Математические операции</h3>
+</section>
 </section>
 <section id="r-intro-script" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="r-intro-script"><span class="header-section-number">2.7</span> Работа в скрипте</h2>
@@ -897,7 +1020,7 @@ Apple silicon vs Intel Macs
 </div>
 <p>На R <span class="citation" data-cites="r-core-team">(<a href="references.html#ref-r-core-team" role="doc-biblioref">R Core Team, 2023</a>)</span>, как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться — цитировать в разделе References. Для этого существует удобная команда:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>To cite R in publications use:
 
@@ -921,10 +1044,10 @@ when using it for data analysis. See also 'citation("pkgname")' for
 citing R packages.</code></pre>
 </div>
 </div>
-<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p>
+<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>.</p>
 <p>Хорошим тоном будет сослаться и на RStudio <span class="citation" data-cites="rstudio-core-team">(<a href="references.html#ref-rstudio-core-team" role="doc-biblioref">Posit team, 2024</a>)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>$citation
 To cite RStudio in publications use:
@@ -971,7 +1094,7 @@ $release_name
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1034,10 +1157,11 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 <li id="fn5"><p>На случай, если новое поколение утратило связь с культурным прошлым, а старое поколение желает, чтобы ему подсвело олдскулы — <a href="https://memepedia.ru/sashko-fokin/">источник</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>По пути надо ещё не перепутать её с <a href="https://www.r-studio.com/ru/">R-Studio</a>, которая восстанавливает данные с диска. Критическое сходство названий двух программ обязывает к повышенной внимательности при написании работ/статей/отчётов/заявок на гранты, в которых вы упоминаете RStudio — иногда рецензенты весьма недоумевают, как исследователи анализировали данные с помощью ПО для восстановления данных. Хотя это может звучать несколько странно, такой случай имел место быть в реальности…<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>Их мы будем обсуждать в <a href="r-data.qmd#r-data-rstudio-projects">разделе о работе с данными</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Это не совсем правда, так как есть файл <code>.Rhistory</code>, о нем поговорим чуть дальше.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Хотя бы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Есть еще вкладки <code>Terminal</code> и <code>Background Jobs</code>. Пока что их проигнорируем, ибо и так других миллион. С этим двум обратимся, когда дойдем до соответствующих им тем.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Это не совсем правда, так как есть файл <code>.Rhistory</code>, о нем поговорим чуть дальше.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Хотя бы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
