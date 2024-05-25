@@ -166,3 +166,7 @@ print(simple_random_sample_little_sample_graph)
 print(simple_random_sample_medium_sample_graph)
 print(simple_random_sample_big_sample_graph)
 ```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

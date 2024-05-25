@@ -94,7 +94,7 @@ div.quarto-title-meta {
 }
 
 .quarto-float-lst {
-  margin-bottom: -.5em;
+  margin-bottom: .5em;
 }
 
 .quarto-float-lst figcaption {
@@ -107,7 +107,7 @@ header div.quarto-title-banner {
 
 
 .theorem {
-  margin: 1% 0%;
+  margin: 2% 0%;
   padding: 1% 1% 1% 2%;
   border-style: solid;
   border-radius: 10px;
@@ -115,7 +115,21 @@ header div.quarto-title-banner {
 }
 
 .proof {
-  margin-top: 1%;
+  margin-top: 2%;
+}
+
+.proof.solution {
+  margin-bottom: 2%;
+}
+
+.proof.solution:hover {
+  cursor: pointer;
+}
+
+.proof.solution > .cell {
+  display: none;
+  overflow: hidden;
+  cursor: default;
 }
 
 .intro {
