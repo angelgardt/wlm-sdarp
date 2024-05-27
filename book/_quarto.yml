@@ -78,6 +78,6 @@ format:
     theme:
       light: [style/css/light.scss, style/css/common.scss]
       dark: [style/css/dark.scss, style/css/common.scss]
-    code-overflow: scroll
+    code-overflow: wrap
 
 editor: source
