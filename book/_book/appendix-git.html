@@ -359,6 +359,7 @@ background-size: cover;
   <li><a href="#appendix-git-vcs" id="toc-appendix-git-vcs" class="nav-link" data-scroll-target="#appendix-git-vcs"><span class="header-section-number">G.1.1</span> Система контроля версий</a></li>
   <li><a href="#appendix-git-repo" id="toc-appendix-git-repo" class="nav-link" data-scroll-target="#appendix-git-repo"><span class="header-section-number">G.1.2</span> Репозиторий</a></li>
   <li><a href="#appendix-git-logic" id="toc-appendix-git-logic" class="nav-link" data-scroll-target="#appendix-git-logic"><span class="header-section-number">G.1.3</span> Логика Git</a></li>
+  <li><a href="#appendix-git-commits" id="toc-appendix-git-commits" class="nav-link" data-scroll-target="#appendix-git-commits"><span class="header-section-number">G.1.4</span> Коммиты</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -461,7 +462,10 @@ background-size: cover;
 <li>Git фиксирует состояния всех файлов в новой версии — делает фотку репозитория в новом состоянии (<a href="#fig-git-logic-v1-1" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (c)</span></a>)</li>
 </ul></li>
 <li>если какие-то файлы не были изменены, то Git для экономии ресурсов просто ссылается в новой версии на предыдущие версии этих файлов (version 2) (<a href="#fig-git-logic-v2" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (d)</span></a>)</li>
-<li>версии связываются друг с другом ссылками — так формируется история изменений проекта (<a href="#fig-git-logic-v3" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (e)</span></a>)</li>
+<li>версии связываются друг с другом ссылками — так формируется история изменений проекта (<a href="#fig-git-logic-v3" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (e)</span></a>)
+<ul>
+<li>по истории можно двигаться, смотреть, что, когда и кем было изменено, и восстанавливать предыдущие версии.</li>
+</ul></li>
 </ul>
 <div id="fig-git-logic" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -535,6 +539,20 @@ background-size: cover;
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-logic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;G.4: Общая логика версионирования в Git
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="appendix-git-commits" class="level3" data-number="G.1.4">
+<h3 data-number="G.1.4" class="anchored" data-anchor-id="appendix-git-commits"><span class="header-section-number">G.1.4</span> Коммиты</h3>
+<p>То, что в предыдущем разделе называлось версиями, корректнее называть <strong>коммитами (commits)</strong>. Во-первых, потому в Git они именно так и называются, во вторых, потому что <em>версии</em> — это какие-то большие ключевые состояния репозитория, включающие многие изменения. Коммиты же подразумевают небольшие изменения в репозитории, фиксируемые в процессе работы. Получается, что корректнее логику работы Git так (<a href="#fig-git-logic-commits" class="quarto-xref">Иллюстрация&nbsp;<span>G.5</span></a>).</p>
+<div id="fig-git-logic-commits" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-git-logic-commits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/git-logic-commits.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-logic-commits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;G.5: Коммиты в логике Git
 </figcaption>
 </figure>
 </div>
