@@ -214,6 +214,12 @@ background-size: cover;
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -236,7 +242,7 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
   </div>
 </li>
       </ul>
@@ -344,7 +350,18 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#appendix-git-whatisigt" id="toc-appendix-git-whatisigt" class="nav-link active" data-scroll-target="#appendix-git-whatisigt"><span class="header-section-number">G.1</span> Концепция Git</a>
+  <ul>
+  <li><a href="#appendix-git-vcs" id="toc-appendix-git-vcs" class="nav-link" data-scroll-target="#appendix-git-vcs"><span class="header-section-number">G.1.1</span> Система контроля версий</a></li>
+  <li><a href="#appendix-git-repo" id="toc-appendix-git-repo" class="nav-link" data-scroll-target="#appendix-git-repo"><span class="header-section-number">G.1.2</span> Репозиторий</a></li>
+  <li><a href="#appendix-git-logic" id="toc-appendix-git-logic" class="nav-link" data-scroll-target="#appendix-git-logic"><span class="header-section-number">G.1.3</span> Логика Git</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -353,8 +370,178 @@ background-size: cover;
 
 
 
+<div class="intro">
+<p>Мы уже обсуждали <a href="./r-data.html#r-data-rstudioprojects">работу в проектах</a> и обнаружили, что это приносит ряд плюшек. Однако проекты содержат ещё один очень полезный инструмент — <strong>Git</strong>. В этом приложении мы разберемся в том, что это такое, зачем оно надо, и как оно нам может существенно облегчить жизнь.</p>
+</div>
+<section id="appendix-git-whatisigt" class="level2" data-number="G.1">
+<h2 data-number="G.1" class="anchored" data-anchor-id="appendix-git-whatisigt"><span class="header-section-number">G.1</span> Концепция Git</h2>
+<p>Git — это одна из систем контроля версий (version control system, VCS). Это, конечно, максимально понятное определение, поэтому разберемся сначала, что такое система контроля версий.</p>
+<section id="appendix-git-vcs" class="level3" data-number="G.1.1">
+<h3 data-number="G.1.1" class="anchored" data-anchor-id="appendix-git-vcs"><span class="header-section-number">G.1.1</span> Система контроля версий</h3>
+<p>Когда мы работаем с документами — любыми, от кода до вордовских файлов, картинок, видео, шрифтов и др. — мы вряд ли создаем весь документ сразу. Вспомните, как выглядит работа над статьей или курсовой/дипломной работой — примерно так:</p>
+<ul>
+<li>мы что-то написали в начале (скажем, кусок теорчасти);</li>
+<li>оставили это;</li>
+<li>вернулись через некоторое время, внесли правки;</li>
+<li>добавили что-то (потому что скачали ещё статей);</li>
+<li>оно ещё полежало;</li>
+<li>снова вернулись, написали ещё (дописали теорчасть и начали описывать дизайн);</li>
+<li>через месяц вернулись, психанули и снесли половину теории (потому что научник сказал, что все не так);</li>
+<li>…</li>
+<li>и где-то там за горизонтом через 100500 итераций итоговый вариант готов.</li>
+</ul>
+<p>В тексте накапливались изменения — возникали разные версии документа. Нам бы хотелось их как-то фиксировать, чтобы мы (а) могли их отслеживать, (б) при необходимости откатиться к предыдущей или вытащить из предыдущих версий какие-то части.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/appendix-git/advisor-suggestions.png" class="img-fluid figure-img"></p>
+<figcaption>Научник — он творческий человек…</figcaption>
+</figure>
+</div>
+<p>Безусловно, опытные персонажи хорошо осведомлены в творческой натуре всего научного руководителя и хранят предыдущие версии текстов — наивный способ организации приводит к примерно такому результату (<a href="#fig-control-versions-naive" class="quarto-xref">Иллюстрация&nbsp;<span>G.1</span></a>).</p>
+<div id="fig-control-versions-naive" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-control-versions-naive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/control-versions-naive.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-control-versions-naive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;G.1: диплом_финал3_финалточно_самыйфинал4_итог
+</figcaption>
+</figure>
+</div>
+<p>Способ принципиально работающий, но не самый эффективный — засоряется рабочее пространство, версии может быть трудно сопоставить друг с другом. Хотелось бы какую-то умную систему, которая бы позволяла отслеживать изменения, видеть, что и когда было удалено или добавлено, фиксировать версии документа, иметь доступ к предыдущим и возможность откатиться к ним при необходимости.</p>
+<p>Собственно, всем этим и занимается система контроля версий. Если вы заядлый пользователя Google Docs, то наверняка знаете, что такая система там <a href="https://support.google.com/docs/answer/190843">неплохо реализована</a> (<a href="#fig-google-docs-versions" class="quarto-xref">Иллюстрация&nbsp;<span>G.2</span></a>).</p>
+<p>Но это текстовые доки, а что делать с кодом?</p>
+<div id="fig-google-docs-versions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-google-docs-versions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/google-docs-versions.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-google-docs-versions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;G.2: Контроль версий в Google Docs (<code>File</code> → <code>Version history</code> → <code>See version history</code>)
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Далее: Git и код
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Далее мы будем говорить именно о Git, поскольку это, пожалуй, самая популярная система контроля версий. Однако, как отмечалось в самом начале, не единственная.</p>
+<p>Кроме того, мы будем говорить преимущественно о работе с кодом, так как нас в рамках этой книжки интересует именно он. И хотя Git активно используется именно в среде программистов, для отслеживания изменений в скриптах, поместить под его контроль можно абсолютно любые файлы и папки.</p>
+</div>
+</div>
+</section>
+<section id="appendix-git-repo" class="level3" data-number="G.1.2">
+<h3 data-number="G.1.2" class="anchored" data-anchor-id="appendix-git-repo"><span class="header-section-number">G.1.2</span> Репозиторий</h3>
+<p>Код, как мы знаем, не существует изолированно, а всегда связан с рабочей директорией. Этим мы научились управлять в <a href="./r-data.html">главе про работу с данными</a>. Директория, в свою очередь, содержит не только код, но и файлы данных, визуализации, файлы экспорта результатов и др. Получается, чтобы эффективно следить за версиями кода, нам также нужно отслеживать и версии других файлов директории — то есть следить за всем проектом. Для этого директорию проекта превращают в <strong>репозиторий</strong>.</p>
+<p>По сути, репозиторий это всё та же директория (папка) проекта, но находящаяся под наблюдением системы контроля версий. Более ничего. Когда мы превращаем директорию проекта в git-репозиторий, в нем появляется папка <code>.git</code>, которая и будет заниматься контролем версий (<a href="#fig-div-vs-repo" class="quarto-xref">Иллюстрация&nbsp;<span>G.3</span></a>).</p>
+<div id="fig-div-vs-repo" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-div-vs-repo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/div-vs-repo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-div-vs-repo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;G.3: Различия в структуре директории и репозитория
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="appendix-git-logic" class="level3" data-number="G.1.3">
+<h3 data-number="G.1.3" class="anchored" data-anchor-id="appendix-git-logic"><span class="header-section-number">G.1.3</span> Логика Git</h3>
+<p>Git работает по следующей схеме:</p>
+<ul>
+<li>есть некоторая исходная версия файлов репозитория (version 0) (<a href="#fig-git-logic-v0" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (a)</span></a>)</li>
+<li>вы внесли изменения в файлы и возникла новая версия (version 1) (<a href="#fig-git-logic-v1-0" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (b)</span></a>)
+<ul>
+<li>Git фиксирует состояния всех файлов в новой версии — делает фотку репозитория в новом состоянии (<a href="#fig-git-logic-v1-1" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (c)</span></a>)</li>
+</ul></li>
+<li>если какие-то файлы не были изменены, то Git для экономии ресурсов просто ссылается в новой версии на предыдущие версии этих файлов (version 2) (<a href="#fig-git-logic-v2" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (d)</span></a>)</li>
+<li>версии связываются друг с другом ссылками — так формируется история изменений проекта (<a href="#fig-git-logic-v3" class="quarto-xref">Иллюстрация&nbsp;<span>G.4 (e)</span></a>)</li>
+</ul>
+<div id="fig-git-logic" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-git-logic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-git-logic" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-git-logic-v0" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-git-logic-v0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/git-logic-v0.png" class="img-fluid figure-img" data-ref-parent="fig-git-logic">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-git-logic-v0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Исходное состояние репозитория
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-git-logic" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-git-logic-v1-0" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-git-logic-v1-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/git-logic-v1-0.png" class="img-fluid figure-img" data-ref-parent="fig-git-logic">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-git-logic-v1-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) В исходное состояние внесены изменения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-git-logic" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-git-logic-v1-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-git-logic-v1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/git-logic-v1-1.png" class="img-fluid figure-img" data-ref-parent="fig-git-logic">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-git-logic-v1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Зафиксировано новое состояние репозитория
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-git-logic" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-git-logic-v2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-git-logic-v2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/git-logic-v2.png" class="img-fluid figure-img" data-ref-parent="fig-git-logic">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-git-logic-v2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Файлы B и C не были изменены в новой версии
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-git-logic" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-git-logic-v3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-git-logic-v3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-git/git-logic-v3.png" class="img-fluid figure-img" data-ref-parent="fig-git-logic">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-git-logic-v3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(e) Версии связаны друг с другом ссылками
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-logic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;G.4: Общая логика версионирования в Git
+</figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
