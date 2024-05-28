@@ -423,6 +423,7 @@ window.Quarto = {
 
 <!--- {{< include other/_symbols.qmd >}} --->
 <!--- Logic --->
+<!--- Set theory --->
 <!--- Number sets--->
 <!--- Linear Algebra --->
 <!--- vectors and matrices --->
@@ -451,7 +452,7 @@ window.Quarto = {
 <li><span class="math inline">\(\mathbb{N}= \{0, 1, 2, 3, \ldots \}\)</span></li>
 <li><span class="math inline">\(\mathbb{N}^{*}= \{ 1, 2, 3, \ldots\}\)</span></li>
 </ul>
-<p>Оба в книге используются соответствнным образом.</p>
+<p>Оба в книге используются соответствующим образом.</p>
 <section id="appendix-numbers-n-oprations" class="level3" data-number="A.1.1">
 <h3 data-number="A.1.1" class="anchored" data-anchor-id="appendix-numbers-n-oprations"><span class="header-section-number">A.1.1</span> Операции над натуральными числами</h3>
 <p>Над натуральными числами определены следующие операции (<span class="math inline">\(a, b \in \mathbb{N}\)</span>):</p>
@@ -475,7 +476,7 @@ window.Quarto = {
 <h2 data-number="A.2" class="anchored" data-anchor-id="appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</h2>
 <p>При попытке замкнуть множество натуральных чисел относительно вычитания возникает его расширение — множество целых чисел, обозначаемое <span class="math inline">\(\mathbb{Z}\)</span>:</p>
 <p><span class="math display">\[
-\mathbb{Z}= \mathbb{N}\cup \{-1, \, -2, \, -3, \, \ldots \} = \mathbb{N}^{*}\cup {0} \cup \{-1, \, -2, \, -3, \, \ldots \}
+\mathbb{Z}= \mathbb{N}\cup \{-1, \, -2, \, -3, \, \ldots \} = \mathbb{N}^{*}\cup \{0\} \cup \{-1, \, -2, \, -3, \, \ldots \}
 \]</span></p>
 <p>Во множестве целых чисел справедливо, что для каждого числа <span class="math inline">\(n\)</span> из этого множества найдется такое число <span class="math inline">\(-n\)</span> из этого же множества, что их сумма будет равна нулю:</p>
 <p><span class="math display">\[
@@ -498,7 +499,11 @@ window.Quarto = {
 </section>
 <section id="appendix-numbers-c" class="level2" data-number="A.5">
 <h2 data-number="A.5" class="anchored" data-anchor-id="appendix-numbers-c"><span class="header-section-number">A.5</span> Комплексные числа</h2>
-<p>Можно было бы спокойно жить с вещественными числами, если мы не уравнения вида <span class="math inline">\(x^2 + 1 = 0\)</span>. Если мы начнем его решать, что получим следующее:</p>
+<p>Можно было бы спокойно жить с вещественными числами, если бы не уравнения вида</p>
+<p><span id="eq-x2-eq-minus-one"><span class="math display">\[
+x^2 + 1 = 0
+\tag{A.1}\]</span></span></p>
+<p>Если мы начнем его решать, что получим следующее:</p>
 <p><span class="math display">\[
 \begin{split}
 x^2 + 1 &amp;= 0 \\
@@ -513,7 +518,11 @@ x_1 &amp;= \sqrt{-1} \\
 x_2 &amp;= -\sqrt{-1}
 \end{split}
 \]</span></p>
-<p>Штош, допустим. Попробуем решить следующее уравнение — <span class="math inline">\(x^2 + 3 = -6\)</span>.</p>
+<p>Штош, допустим. Попробуем решить следующее уравнение:</p>
+<p><span id="eq-x2-eq-minus-four"><span class="math display">\[
+x^2 + 3 = -6
+\tag{A.2}\]</span></span></p>
+<p>По той же схеме,</p>
 <p><span class="math display">\[
 \begin{split}
 x^2 - 2 &amp;= -6 \\
@@ -524,10 +533,36 @@ x &amp;= \pm \sqrt{-1} \cdot \sqrt{4} \\
 x &amp;= \pm \sqrt{-1} \cdot 2
 \end{split}
 \]</span></p>
-<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>. Такое число встречается в серьезной математике настолько часто, что его обозначили как <span class="math inline">\(i\)</span> и назвали <strong>мнимой единицей</strong> — <span class="math inline">\(i = \sqrt{-1}\)</span>. Мнимая единица обладает интересным свойством:</p>
+<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>, а как известно, под знаком квадратного корня может стоять только положительное число<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Чтобы решить эту неприятность, математики ввели новое число <span class="math inline">\(i\)</span> — <strong>мнимую единицу</strong>. Она обладает интересным свойством:</p>
 <p><span id="eq-i-sq-equals-minus-one"><span class="math display">\[
-i^2 = (\sqrt{-1})^2 = -1
-\tag{A.1}\]</span></span></p>
+i^2 = -1
+\tag{A.3}\]</span></span></p>
+<p>Введение мнимой единицы позволяет записать решения рассмотренных выше уравнений в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа. В первом случае (<a href="#eq-x2-eq-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.1</span></a>):</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 + 1 &amp;= 0 \\
+x^2 &amp;= -1 \\
+x_1 &amp;= \sqrt{-1} = \sqrt{i^2} = i \\
+x_2 &amp;= -\sqrt{-1} = -\sqrt{i^2} = -i
+\end{split}
+\]</span></p>
+<p>Во втором случае (<a href="#eq-x2-eq-minus-four" class="quarto-xref">Уравнение&nbsp;<span>A.2</span></a>):</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 - 2 &amp;= -6 \\
+x^2 &amp;= -4 \\
+x &amp;= \pm \sqrt{-4} \\
+x &amp;= \pm \sqrt{(-1) \cdot 4} \\
+x &amp;= \pm \sqrt{i^2 \cdot 4} \\
+x &amp;= \pm \sqrt{4} \cdot i \\
+x_1 &amp;= 2i \\
+x_2 &amp;= -2i \\
+\end{split}
+\]</span></p>
+<p>Кроме того, мнимая единица даёт возможность расширить поле вещественных чисел до поля комплексных <span class="math inline">\(\mathbb{C}\)</span>:</p>
+<p><span class="math display">\[
+\mathbb{C}= \{ a + bi, \, a, b \in \mathbb{R}\}
+\]</span></p>
 <div id="sqrti-error" class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -538,47 +573,40 @@ i^2 = (\sqrt{-1})^2 = -1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Если рассуждать аккуратнее, то можно обнаружить, что записи <span class="math inline">\(i\)</span> и <span class="math inline">\(\sqrt{-1}\)</span> неравнозначны.</p>
-<p>Так, если мы воспользуемся свойством квадратного корня в уравнении выше (<a href="#eq-i-sq-equals-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.1</span></a>), то можем получить следующее <em>некорректное</em> рассуждение:</p>
+<p>Если присмотреться к мнимой единице внимательно, то можно обнаружить следующее:</p>
+<p><span class="math display">\[
+\begin{split}
+i^2 &amp;= -1 \\
+\sqrt{i^2} &amp;= \sqrt{-1} \\
+i &amp;= \sqrt{-1}
+\end{split}
+\]</span></p>
+<p>Но последнее не совсем верно.</p>
+<p>Вроде мы математически все справедливо, однако обозначения <span class="math inline">\(i\)</span> и <span class="math inline">\(\sqrt{-1}\)</span> не вполне эквивалентны.</p>
+<p>Так, если мы воспользуемся свойством квадратного корня, то можем получить следующее <em>некорректное</em> рассуждение:</p>
 <p><span class="math display">\[
 i^2 = (\sqrt{-1})^2 = \sqrt{-1} \cdot \sqrt{-1} = \sqrt{(-1) \cdot (-1)} = \sqrt{1} = 1
 \]</span></p>
 <p>Аналогично, например, можно получить, что</p>
 <p><span id="eq-sqrt-minus-two-sq-error"><span class="math display">\[
 (\sqrt{-2})^2 = \sqrt{-2} \cdot \sqrt{-2} = \sqrt{(-2) \cdot (-2)} = \sqrt{4} = 2
-\tag{A.2}\]</span></span></p>
+\tag{A.4}\]</span></span></p>
 <p>Возникает оно потому, что значение корня из отрицательного числа определено неоднозначно. В современной математической литературе принято во избежании ошибок выражения с квадратными корнями из отрицательных чисел записываются сразу с выделением мнимой единицы — <span class="math inline">\(i\sqrt{2}\)</span>:</p>
 <p><span class="math display">\[
-\sqrt{-2} = \sqrt{(-1) \cdot 2} = \sqrt{-1} \cdot \sqrt{2} = i\sqrt{2}
+\sqrt{-2} = \sqrt{(-1) \cdot 2} = \sqrt{2i^2} = i\sqrt{2}
 \]</span></p>
-<p>В таком случае ошибок, подобных примеру c <span class="math inline">\((\sqrt{-2})^2\)</span> (<a href="#eq-sqrt-minus-two-sq-error" class="quarto-xref">Уравнение&nbsp;<span>A.2</span></a>) не возникает:</p>
+<p>В таком случае ошибок, подобных примеру c <span class="math inline">\((\sqrt{-2})^2\)</span> (<a href="#eq-sqrt-minus-two-sq-error" class="quarto-xref">Уравнение&nbsp;<span>A.4</span></a>) не возникает:</p>
 <p><span class="math display">\[
 (i\sqrt{2})^2 = i^2 \cdot (\sqrt{2})^2 = -2
 \]</span></p>
+<p>Собственно, именно поэтому мнимую единицу определяют через её квадрат (<a href="#eq-i-sq-equals-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.3</span></a>), а не через её равенство <span class="math inline">\(\sqrt{-1}\)</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Определение <span class="math inline">\(i\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ввиду <a href="#sqrti-error">замечания выше</a> корректнее будет определять мнимую единицу как число, квадрат которого равен <span class="math inline">\(-1\)</span>.</p>
-</div>
-</div>
-<p>Введение мнимой единицы, во-первых позволяет записать решения уравнений <span class="math inline">\(x^2 + 1 = 0\)</span> и <span class="math inline">\(x^2 + 3 = -6\)</span> в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа — <span class="math inline">\(x_1 = i, \, x_2 = -i\)</span> и <span class="math inline">\(x_1 = 2i, \, x_2 = -2i\)</span> соответственно, а во-вторых, расширить поле вещественных чисел до поля комплексных <span class="math inline">\(\mathbb{C}\)</span>:</p>
-<p><span class="math display">\[
-\mathbb{C}= \{ a + bi, \, a, b \in \mathbb{R}\}
-\]</span></p>
 <p>КОМПЛЕКСНАЯ ПЛОСКОСТЬ</p>
 <p>Сопряженное число</p>
 <p>точно ли для любого?</p>
 <p><span class="math display">\[
-\forall z \in \mathbb{C}, \, z = a + bi \, \exists \bar z = a - bi
+\forall z \in \mathbb{C}, \, z = a + bi \,\, \exists \bar z = a - bi
 \]</span></p>
 <p><span class="math display">\[
 z \cdot \bar z = (a + bi)(a - bi) = a^2 - abi + abi - b^2i^2 = a^2 + b^2
@@ -637,6 +665,7 @@ ISO. (2019). <em>Quantities and units — part 2: mathematics</em> (<span>ISO 80
 <hr>
 <ol>
 <li id="fn1"><p>Только в случае <span class="math inline">\(a &gt; b\)</span>, если <span class="math inline">\(a, b \in \mathbb{N}^{*}\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Здесь мы говорим об арифметическом квадратном корне.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
