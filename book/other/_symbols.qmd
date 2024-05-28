@@ -19,7 +19,7 @@
 
 <!--- Number sets--->
 \newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
+\newcommand{\setNstar}{\mathbb{N}^{*}}
 \newcommand{\setZ}{\mathbb{Z}}
 \newcommand{\setQ}{\mathbb{Q}}
 \newcommand{\setI}{\mathbb{I}}

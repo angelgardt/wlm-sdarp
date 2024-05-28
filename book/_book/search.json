@@ -900,7 +900,7 @@
     "href": "references.html",
     "title": "Источники",
     "section": "",
-    "text": "Posit team. (2024). RStudio: Integrated development environment for\nr. Posit Software, PBC. http://www.posit.co/\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nRoss, I. (n.d.). The r project: A brief history and thoughts about\nthe future. The University of Auckland. Retrieved May 19, 2024,\nfrom https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf",
+    "text": "ISO. (2019). Quantities and units — part 2: mathematics\n(ISO 80000-2:2019). International Organization for\nStandardization. https://www.iso.org/standard/64973.html\n\n\nPosit team. (2024). RStudio: Integrated development environment for\nr. Posit Software, PBC. http://www.posit.co/\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nRoss, I. (n.d.). The r project: A brief history and thoughts about\nthe future. The University of Auckland. Retrieved May 19, 2024,\nfrom https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf",
     "crumbs": [
       "Источники"
     ]
@@ -1020,7 +1020,7 @@
     "href": "appendix-numbers.html",
     "title": "Приложение A — Числа",
     "section": "",
-    "text": "A.1 Натуральные числа\n\\(\\mathbb{N}\\)\n\\(\\mathbb{N}_{0}\\)",
+    "text": "A.1 Натуральные числа\nК нулю как натуральному числу относятся по-разному:\nВ силу такого положения дел введено два обозначения (ISO, 2019):",
     "crumbs": [
       "Приложения",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Числа</span>"
@@ -1064,7 +1064,7 @@
     "href": "appendix-numbers.html#appendix-numbers-c",
     "title": "Приложение A — Числа",
     "section": "A.5 Комплексные числа",
-    "text": "A.5 Комплексные числа\n\\(\\mathbb{C}\\)",
+    "text": "A.5 Комплексные числа\n\\(\\mathbb{C}\\)\n\n\n\n\nISO. (2019). Quantities and units — part 2: mathematics (ISO 80000-2:2019). International Organization for Standardization. https://www.iso.org/standard/64973.html",
     "crumbs": [
       "Приложения",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Числа</span>"
@@ -1145,6 +1145,28 @@
     "crumbs": [
       "Приложения",
       "<span class='chapter-number'>F</span>  <span class='chapter-title'>Формулы</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-numbers.html#appendix-numbers-n",
+    "href": "appendix-numbers.html#appendix-numbers-n",
+    "title": "Приложение A — Числа",
+    "section": "",
+    "text": "если мы рассматриваем натуральные числа как использующие при счете предметов, то нуль в натуральные числа не входит (первый кофе, второй кофе, третий кофе, …);\nесли мы рассмтариваем натуральные числа как возникающие при обозначении количества предметов, то нуль входит в натуральные числа (ноль скриптов, один скрипт, два скрипта, …).\n\n\n\n\\(\\mathbb{N}= \\{0, 1, 2, 3, \\ldots \\}\\)\n\\(\\mathbb{N}^{*}= \\{ 1, 2, 3, \\ldots\\}\\)\n\n\nA.1.1 Операции над натуральными числами\nНад натуральными числами определены следующие операции (\\(a, b \\in \\mathbb{N}\\)):\n\nсложение (\\(a + b\\))\nумножение (\\(a \\cdot b\\))\nвозведение в степень (\\(a ^ b\\))\nвычитание (\\(a - b, \\, a \\geq b\\))\nделение с остатком (\\(a \\div b = (q, r), \\, a = q \\cdot b + r, \\, r &lt; b\\))\n\nОперации сложения, умножения и возведения в степень являются замкнутыми, то есть не выводят результат из множества \\(\\mathbb{N}\\). Операции вычитания и деления в остатком в общем случае замкнутыми не являются, поскольку определены не для всех натуральных чисел. В частности, вычитание \\(a - b\\) определено только в случае, когда \\(a \\geq b\\)1, а деление на ноль невозможно, так как во множестве натуральных чисел не существует \\(r &lt; 0\\).\nСами операции определяются друг через друга:\n\n\\(a + b = a + \\underbrace{1 + 1 + \\ldots + 1}_b\\)\n\\(a \\cdot b = \\underbrace{a + a + \\ldots + a}_b\\)\n\\(a^b = \\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_b\\)",
+    "crumbs": [
+      "Приложения",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Числа</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-numbers.html#footnotes",
+    "href": "appendix-numbers.html#footnotes",
+    "title": "Приложение A — Числа",
+    "section": "",
+    "text": "Только в случае \\(a &gt; b\\), если \\(a, b \\in \\mathbb{N}^{*}\\).↩︎",
+    "crumbs": [
+      "Приложения",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Числа</span>"
     ]
   }
 ]

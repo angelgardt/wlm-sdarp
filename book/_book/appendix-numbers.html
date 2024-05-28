@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -383,7 +403,10 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#appendix-numbers-n" id="toc-appendix-numbers-n" class="nav-link active" data-scroll-target="#appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</a></li>
+  <li><a href="#appendix-numbers-n" id="toc-appendix-numbers-n" class="nav-link active" data-scroll-target="#appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</a>
+  <ul>
+  <li><a href="#appendix-numbers-n-oprations" id="toc-appendix-numbers-n-oprations" class="nav-link" data-scroll-target="#appendix-numbers-n-oprations"><span class="header-section-number">A.1.1</span> Операции над натуральными числами</a></li>
+  </ul></li>
   <li><a href="#appendix-numbers-z" id="toc-appendix-numbers-z" class="nav-link" data-scroll-target="#appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</a></li>
   <li><a href="#appendix-numbers-q" id="toc-appendix-numbers-q" class="nav-link" data-scroll-target="#appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</a></li>
   <li><a href="#appendix-numbers-r" id="toc-appendix-numbers-r" class="nav-link" data-scroll-target="#appendix-numbers-r"><span class="header-section-number">A.4</span> Вещественные числа</a></li>
@@ -409,12 +432,38 @@ window.Quarto = {
 <!--- Trig --->
 <!--- Stats --->
 <div class="intro">
-<p>Вступление</p>
+<p>Большая часть этого приложения либо очевидна, либо интуитивна, либо вам, вероятно, хорошо знакома. Тем не менее, для соблюдения некой строгости изложения, даже очевидные вещи прописаны. Если вы хорошо управляетесь со всеми числами, кроме комплексных, прыгайте <a href="#appendix-numbers-c">сюда</a>.</p>
 </div>
 <section id="appendix-numbers-n" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</h2>
-<p><span class="math inline">\(\mathbb{N}\)</span></p>
-<p><span class="math inline">\(\mathbb{N}_{0}\)</span></p>
+<p>К нулю как натуральному числу относятся по-разному:</p>
+<ul>
+<li>если мы рассматриваем натуральные числа как использующие при счете предметов, то нуль в натуральные числа не входит (<em>первый кофе</em>, <em>второй кофе</em>, <em>третий кофе</em>, …);</li>
+<li>если мы рассмтариваем натуральные числа как возникающие при обозначении количества предметов, то нуль входит в натуральные числа (<em>ноль скриптов</em>, <em>один скрипт</em>, <em>два скрипта</em>, …).</li>
+</ul>
+<p>В силу такого положения дел введено два обозначения <span class="citation" data-cites="iso80000-2-2019">(<a href="references.html#ref-iso80000-2-2019" role="doc-biblioref">ISO, 2019</a>)</span>:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{N}= \{0, 1, 2, 3, \ldots \}\)</span></li>
+<li><span class="math inline">\(\mathbb{N}^{*}= \{ 1, 2, 3, \ldots\}\)</span></li>
+</ul>
+<section id="appendix-numbers-n-oprations" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="appendix-numbers-n-oprations"><span class="header-section-number">A.1.1</span> Операции над натуральными числами</h3>
+<p>Над натуральными числами определены следующие операции (<span class="math inline">\(a, b \in \mathbb{N}\)</span>):</p>
+<ul>
+<li>сложение (<span class="math inline">\(a + b\)</span>)</li>
+<li>умножение (<span class="math inline">\(a \cdot b\)</span>)</li>
+<li>возведение в степень (<span class="math inline">\(a ^ b\)</span>)</li>
+<li>вычитание (<span class="math inline">\(a - b, \, a \geq b\)</span>)</li>
+<li>деление с остатком (<span class="math inline">\(a \div b = (q, r), \, a = q \cdot b + r, \, r &lt; b\)</span>)</li>
+</ul>
+<p>Операции сложения, умножения и возведения в степень являются <strong>замкнутыми</strong>, то есть не выводят результат из множества <span class="math inline">\(\mathbb{N}\)</span>. Операции вычитания и деления в остатком в общем случае <strong>замкнутыми не являются</strong>, поскольку определены не для всех натуральных чисел. В частности, вычитание <span class="math inline">\(a - b\)</span> определено только в случае, когда <span class="math inline">\(a \geq b\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, а <em>деление на ноль невозможно</em>, так как во множестве натуральных чисел не существует <span class="math inline">\(r &lt; 0\)</span>.</p>
+<p>Сами операции определяются друг через друга:</p>
+<ul>
+<li><span class="math inline">\(a + b = a + \underbrace{1 + 1 + \ldots + 1}_b\)</span></li>
+<li><span class="math inline">\(a \cdot b = \underbrace{a + a + \ldots + a}_b\)</span></li>
+<li><span class="math inline">\(a^b = \underbrace{a \cdot a \cdot \ldots \cdot a}_b\)</span></li>
+</ul>
+</section>
 </section>
 <section id="appendix-numbers-z" class="level2" data-number="A.2">
 <h2 data-number="A.2" class="anchored" data-anchor-id="appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</h2>
@@ -434,6 +483,17 @@ window.Quarto = {
 <p><span class="math inline">\(\mathbb{C}\)</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-iso80000-2-2019" class="csl-entry" role="listitem">
+ISO. (2019). <em>Quantities and units — part 2: mathematics</em> (<span>ISO 80000-2:2019</span>). International Organization for Standardization. <a href="https://www.iso.org/standard/64973.html">https://www.iso.org/standard/64973.html</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Только в случае <span class="math inline">\(a &gt; b\)</span>, если <span class="math inline">\(a, b \in \mathbb{N}^{*}\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
