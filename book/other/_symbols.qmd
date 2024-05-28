@@ -7,6 +7,7 @@
 \usepackage{tikz}
 
 \newcommand{\const}{\text{const}}
+\newcommand{\fix}{\text{fix}}
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
@@ -16,7 +17,10 @@
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 <!--- Logic --->
-\newcommand{\xor}{\,\text{XOR}\,}
+\newcommand{\xor}{\oplus}
+
+<!--- Set theory --->
+\newcommand{\symdif}{\, \triangle \,}
 
 <!--- Number sets--->
 \newcommand{\setN}{\mathbb{N}}
@@ -31,7 +35,7 @@
 \newcommand{\vm}[1]{\mathbf{#1}} <!--- vectors and matrices --->
 
 <!--- Probability, Random Vars --->
-\newcommand{\Falg}{\mathcal{F}}
+\newcommand{\Fcal}{\mathcal{F}}
 \newcommand{\prob}{\mathbb{P}}
 \newcommand{\expect}{\mathbb{E}}
 \newcommand{\disp}{\mathbb{D}}
@@ -51,6 +55,9 @@
 
 <!--- Other --->
 \newcommand{\defin}{\overset{\text{def}}{=}}
+\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
+\newcommand{\toprob}{\overset{p}{\to}}
+\newcommand{\todist}{\overset{d}{\to}}
 \newcommand{\sgn}{\text{sgn}}
 
 <!--- Trig --->
