@@ -1,1 +1,34 @@
 # Числа {#appendix-numbers}
+
+{{< include other/_symbols.qmd >}}
+
+:::{.intro}
+Вступление
+:::
+
+## Натуральные числа {#appendix-numbers-n}
+
+$\setN$
+
+$\setNo$
+
+## Целые числа {#appendix-numbers-z}
+
+$\setZ$
+
+## Рациональные числа {#appendix-numbers-q}
+
+$\setQ$
+
+## Вещественные числа {#appendix-numbers-r}
+
+$\setR$
+
+$\setI$
+
+## Комплексные числа {#appendix-numbers-c}
+
+$\setC$
+
+
+

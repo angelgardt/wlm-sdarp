@@ -96,6 +96,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -350,7 +379,17 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#appendix-numbers-n" id="toc-appendix-numbers-n" class="nav-link active" data-scroll-target="#appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</a></li>
+  <li><a href="#appendix-numbers-z" id="toc-appendix-numbers-z" class="nav-link" data-scroll-target="#appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</a></li>
+  <li><a href="#appendix-numbers-q" id="toc-appendix-numbers-q" class="nav-link" data-scroll-target="#appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</a></li>
+  <li><a href="#appendix-numbers-r" id="toc-appendix-numbers-r" class="nav-link" data-scroll-target="#appendix-numbers-r"><span class="header-section-number">A.4</span> Вещественные числа</a></li>
+  <li><a href="#appendix-numbers-c" id="toc-appendix-numbers-c" class="nav-link" data-scroll-target="#appendix-numbers-c"><span class="header-section-number">A.5</span> Комплексные числа</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -359,8 +398,43 @@ background-size: cover;
 
 
 
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Logic --->
+<!--- Number sets--->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<div class="intro">
+<p>Вступление</p>
+</div>
+<section id="appendix-numbers-n" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</h2>
+<p><span class="math inline">\(\mathbb{N}\)</span></p>
+<p><span class="math inline">\(\mathbb{N}_{0}\)</span></p>
+</section>
+<section id="appendix-numbers-z" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</h2>
+<p><span class="math inline">\(\mathbb{Z}\)</span></p>
+</section>
+<section id="appendix-numbers-q" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</h2>
+<p><span class="math inline">\(\mathbb{Q}\)</span></p>
+</section>
+<section id="appendix-numbers-r" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="appendix-numbers-r"><span class="header-section-number">A.4</span> Вещественные числа</h2>
+<p><span class="math inline">\(\mathbb{R}\)</span></p>
+<p><span class="math inline">\(\mathbb{I}\)</span></p>
+</section>
+<section id="appendix-numbers-c" class="level2" data-number="A.5">
+<h2 data-number="A.5" class="anchored" data-anchor-id="appendix-numbers-c"><span class="header-section-number">A.5</span> Комплексные числа</h2>
+<p><span class="math inline">\(\mathbb{C}\)</span></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
