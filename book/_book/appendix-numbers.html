@@ -467,20 +467,94 @@ window.Quarto = {
 </section>
 <section id="appendix-numbers-z" class="level2" data-number="A.2">
 <h2 data-number="A.2" class="anchored" data-anchor-id="appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</h2>
-<p><span class="math inline">\(\mathbb{Z}\)</span></p>
+<p>При попытке замкнуть множество натуральных чисел относительно вычитания возникает его расширение — множество целых чисел, обозначаемое <span class="math inline">\(\mathbb{Z}\)</span>:</p>
+<p><span class="math display">\[
+\mathbb{Z}= \mathbb{N}\cup \{-1, \, -2, \, -3, \, \ldots \} = \mathbb{N}^{*}\cup {0} \cup \{-1, \, -2, \, -3, \, \ldots \}
+\]</span></p>
+<p>Во множестве целых чисел справедливо, что для каждого числа <span class="math inline">\(n\)</span> из этого множества найдется такое число <span class="math inline">\(-n\)</span> из этого же множества, что их сумма будет равна нулю:</p>
+<p><span class="math display">\[
+\forall n \in \mathbb{Z}\, \exists -\!n \in \mathbb{Z}: n + (-n) = 0
+\]</span></p>
+<p>Число <span class="math inline">\(-n\)</span> называется <em>противоположным</em> числу <span class="math inline">\(n\)</span>. Поскольку сложно возразить утверждению <span class="math inline">\(0 + 0 = 0\)</span>, то <span class="math inline">\(0\)</span> является противоположным самому себе.</p>
 </section>
 <section id="appendix-numbers-q" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</h2>
-<p><span class="math inline">\(\mathbb{Q}\)</span></p>
+<p>Хотелось бы замкнуть множество целых чисел ещё и относительно операции деления, чтобы все было окончательно красиво — это приводит к его расширению до множества рациональных чисел <span class="math inline">\(\mathbb{Q}\)</span>. Это множество задается следующим образом:</p>
+<p><span class="math display">\[
+\mathbb{Q}= \left\{ \frac{m}{n},  \, m \in \mathbb{Z}, \, n \in \mathbb{N}^{*}\right\}
+\]</span></p>
 </section>
 <section id="appendix-numbers-r" class="level2" data-number="A.4">
 <h2 data-number="A.4" class="anchored" data-anchor-id="appendix-numbers-r"><span class="header-section-number">A.4</span> Вещественные числа</h2>
+<p>Рациональных чисел оказывается недостаточно, чтобы описать все существующие феномены. В частности, широко известен пример вычисления гипотенузы равнобедренного прямоугольного треугольника с катетом, равным <span class="math inline">\(1\)</span>.</p>
 <p><span class="math inline">\(\mathbb{R}\)</span></p>
-<p><span class="math inline">\(\mathbb{I}\)</span></p>
+<p><span class="math inline">\(\mathbb{I}= \mathbb{R}\setminus \mathbb{Q}\)</span></p>
 </section>
 <section id="appendix-numbers-c" class="level2" data-number="A.5">
 <h2 data-number="A.5" class="anchored" data-anchor-id="appendix-numbers-c"><span class="header-section-number">A.5</span> Комплексные числа</h2>
-<p><span class="math inline">\(\mathbb{C}\)</span></p>
+<p>Можно было бы спокойно жить с вещественными числами, если мы не уравнения вида <span class="math inline">\(x^2 + 1 = 0\)</span>. Если мы начнем его решать, что получим следующее:</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 + 1 &amp;= 0 \\
+x^2 &amp;= -1 \\
+\end{split}
+\]</span></p>
+<p>Можно было бы остановиться и сказать, что это чушь и такого не бывает. Но такой ответ математиков не устраивает, и они продолжают:</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 &amp;= -1 \\
+x_1 &amp;= \sqrt{-1} \\
+x_2 &amp;= -\sqrt{-1}
+\end{split}
+\]</span></p>
+<p>Штош, допустим. Попробуем решить следующее уравнение — <span class="math inline">\(x^2 + 3 = -6\)</span>.</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 - 2 &amp;= -6 \\
+x^2 &amp;= -4 \\
+x &amp;= \pm \sqrt{-4} \\
+x &amp;= \pm \sqrt{(-1) \cdot 4} \\
+x &amp;= \pm \sqrt{-1} \cdot \sqrt{4} \\
+x &amp;= \pm \sqrt{-1} \cdot 2
+\end{split}
+\]</span></p>
+<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>. Такое число встречается в серьезной математике настолько часто, что его обозначили как <span class="math inline">\(i\)</span> и назвали <em>мнимой единицей</em> — <span class="math inline">\(i = \sqrt{-1}\)</span>. Мнимая единица обладает интересным свойством:</p>
+<p><span class="math display">\[
+i^2 = -1
+\]</span></p>
+<p>Введение мнимой единицы, во-первых позволяет записать решения уравнений <span class="math inline">\(x^2 + 1 = 0\)</span> и <span class="math inline">\(x^2 + 3 = -6\)</span> в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа — <span class="math inline">\(x_1 = i, \, x_2 = -i\)</span> и <span class="math inline">\(x_1 = 2i, \, x_2 = -2i\)</span> соответственно, а во-вторых, расширить поле вещественных чисел до поля комплексных <span class="math inline">\(\mathbb{C}\)</span>:</p>
+<p><span class="math display">\[
+\mathbb{C}= \{ a + bi, \, a, b \in \mathbb{R}\}
+\]</span></p>
+<p>КОМПЛЕКСНАЯ ПЛОСКОСТЬ</p>
+<p>Сопряженное число</p>
+<p>точно ли для любого?</p>
+<p><span class="math display">\[
+\forall z \in \mathbb{C}, \, z = a + bi \, \exists \bar z = a - bi
+\]</span></p>
+<p><span class="math display">\[
+z \cdot \bar z = (a + bi)(a - bi)
+\]</span></p>
+<p>Сложение и вычитание:</p>
+<p><span class="math display">\[
+z_1 + z_2 = (a_1 + b_1 i) + (a_2 + b_2 i) = (a_1 + a_2) + (b_1 + b_2)i
+\]</span></p>
+<p><span class="math display">\[
+z_1 - z_2 = (a_1 + b_1 i) - (a_2 + b_2 i) = (a_1 - a_2) + (b_1 - b_2)i
+\]</span></p>
+<p>Умножение:</p>
+<p><span class="math display">\[
+\begin{split}
+z_1 \cdot z_2 &amp; = \\
+&amp; = (a_1 + b_1 i) \cdot (a_2 + b_2 i) = a_1 a_2 + a_1 b_2i + a_2 b_1i + b_1 b_2 i^2 = \\
+&amp; = (a_1 a_2 + b_1 b_2 i^2) + (a_1 b_2 i + a_2 b_1 i) = \\
+&amp; = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1)i
+\end{split}
+\]</span></p>
+<p>Деление:</p>
+<p><span class="math display">\[
+\frac{1}{z} = \frac{1}{a + bi} = \frac{(a - bi)}{(a + bi) (a - bi)} = \frac{a - bi}{a^2 + b^2} = \frac{a}{a^2 + b^2} + \frac{b}{a^2 + b^2}i
+\]</span></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">

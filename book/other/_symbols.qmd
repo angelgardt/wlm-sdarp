@@ -4,6 +4,7 @@
 \usepackage{soul}
 \usepackage{amsmath, amsfonts}
 \usepackage[bb=tgdm]{unicode-math}
+\usepackage{tikz}
 
 \newcommand{\const}{\text{const}}
 \newcommand{\lp}{\left(}
