@@ -432,20 +432,26 @@ window.Quarto = {
 <!--- Trig --->
 <!--- Stats --->
 <div class="intro">
-<p>Большая часть этого приложения либо очевидна, либо интуитивна, либо вам, вероятно, хорошо знакома. Тем не менее, для соблюдения некой строгости изложения, даже очевидные вещи прописаны. Если вы хорошо управляетесь со всеми числами, кроме комплексных, прыгайте <a href="#appendix-numbers-c">сюда</a>.</p>
+<p>Большая часть этого приложения либо очевидна, либо интуитивна, либо вам, вероятно, хорошо знакома из курса школьной математики. Тем не менее, для соблюдения некой строгости изложения, даже очевидные вещи здесь формально изложены.</p>
+<ul>
+<li>Если вы хорошо управляетесь со всеми числами, пропустите это приложение.</li>
+<li>Если вы хорошо управляете со всеми числами, кроме комплексных, прыгайте <a href="#appendix-numbers-c">сюда</a>.</li>
+<li>Если вы не уверены в том, что хорошо управляетесь с числами — приглашаю к математическому чтиву.</li>
+</ul>
 </div>
 <section id="appendix-numbers-n" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</h2>
 <p>К нулю как натуральному числу относятся по-разному:</p>
 <ul>
 <li>если мы рассматриваем натуральные числа как использующие при счете предметов, то нуль в натуральные числа не входит (<em>первый кофе</em>, <em>второй кофе</em>, <em>третий кофе</em>, …);</li>
-<li>если мы рассмтариваем натуральные числа как возникающие при обозначении количества предметов, то нуль входит в натуральные числа (<em>ноль скриптов</em>, <em>один скрипт</em>, <em>два скрипта</em>, …).</li>
+<li>если мы рассматриваем натуральные числа как возникающие при обозначении количества предметов, то нуль входит в натуральные числа (<em>ноль скриптов</em>, <em>один скрипт</em>, <em>два скрипта</em>, …).</li>
 </ul>
 <p>В силу такого положения дел введено два обозначения <span class="citation" data-cites="iso80000-2-2019">(<a href="references.html#ref-iso80000-2-2019" role="doc-biblioref">ISO, 2019</a>)</span>:</p>
 <ul>
 <li><span class="math inline">\(\mathbb{N}= \{0, 1, 2, 3, \ldots \}\)</span></li>
 <li><span class="math inline">\(\mathbb{N}^{*}= \{ 1, 2, 3, \ldots\}\)</span></li>
 </ul>
+<p>Оба в книге используются соответствнным образом.</p>
 <section id="appendix-numbers-n-oprations" class="level3" data-number="A.1.1">
 <h3 data-number="A.1.1" class="anchored" data-anchor-id="appendix-numbers-n-oprations"><span class="header-section-number">A.1.1</span> Операции над натуральными числами</h3>
 <p>Над натуральными числами определены следующие операции (<span class="math inline">\(a, b \in \mathbb{N}\)</span>):</p>
@@ -518,10 +524,52 @@ x &amp;= \pm \sqrt{-1} \cdot \sqrt{4} \\
 x &amp;= \pm \sqrt{-1} \cdot 2
 \end{split}
 \]</span></p>
-<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>. Такое число встречается в серьезной математике настолько часто, что его обозначили как <span class="math inline">\(i\)</span> и назвали <em>мнимой единицей</em> — <span class="math inline">\(i = \sqrt{-1}\)</span>. Мнимая единица обладает интересным свойством:</p>
+<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>. Такое число встречается в серьезной математике настолько часто, что его обозначили как <span class="math inline">\(i\)</span> и назвали <strong>мнимой единицей</strong> — <span class="math inline">\(i = \sqrt{-1}\)</span>. Мнимая единица обладает интересным свойством:</p>
+<p><span id="eq-i-sq-equals-minus-one"><span class="math display">\[
+i^2 = (\sqrt{-1})^2 = -1
+\tag{A.1}\]</span></span></p>
+<div id="sqrti-error" class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(i \neq \sqrt{-1}\)</span>???
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Если рассуждать аккуратнее, то можно обнаружить, что записи <span class="math inline">\(i\)</span> и <span class="math inline">\(\sqrt{-1}\)</span> неравнозначны.</p>
+<p>Так, если мы воспользуемся свойством квадратного корня в уравнении выше (<a href="#eq-i-sq-equals-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.1</span></a>), то можем получить следующее <em>некорректное</em> рассуждение:</p>
 <p><span class="math display">\[
-i^2 = -1
+i^2 = (\sqrt{-1})^2 = \sqrt{-1} \cdot \sqrt{-1} = \sqrt{(-1) \cdot (-1)} = \sqrt{1} = 1
 \]</span></p>
+<p>Аналогично, например, можно получить, что</p>
+<p><span id="eq-sqrt-minus-two-sq-error"><span class="math display">\[
+(\sqrt{-2})^2 = \sqrt{-2} \cdot \sqrt{-2} = \sqrt{(-2) \cdot (-2)} = \sqrt{4} = 2
+\tag{A.2}\]</span></span></p>
+<p>Возникает оно потому, что значение корня из отрицательного числа определено неоднозначно. В современной математической литературе принято во избежании ошибок выражения с квадратными корнями из отрицательных чисел записываются сразу с выделением мнимой единицы — <span class="math inline">\(i\sqrt{2}\)</span>:</p>
+<p><span class="math display">\[
+\sqrt{-2} = \sqrt{(-1) \cdot 2} = \sqrt{-1} \cdot \sqrt{2} = i\sqrt{2}
+\]</span></p>
+<p>В таком случае ошибок, подобных примеру c <span class="math inline">\((\sqrt{-2})^2\)</span> (<a href="#eq-sqrt-minus-two-sq-error" class="quarto-xref">Уравнение&nbsp;<span>A.2</span></a>) не возникает:</p>
+<p><span class="math display">\[
+(i\sqrt{2})^2 = i^2 \cdot (\sqrt{2})^2 = -2
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Определение <span class="math inline">\(i\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ввиду <a href="#sqrti-error">замечания выше</a> корректнее будет определять мнимую единицу как число, квадрат которого равен <span class="math inline">\(-1\)</span>.</p>
+</div>
+</div>
 <p>Введение мнимой единицы, во-первых позволяет записать решения уравнений <span class="math inline">\(x^2 + 1 = 0\)</span> и <span class="math inline">\(x^2 + 3 = -6\)</span> в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа — <span class="math inline">\(x_1 = i, \, x_2 = -i\)</span> и <span class="math inline">\(x_1 = 2i, \, x_2 = -2i\)</span> соответственно, а во-вторых, расширить поле вещественных чисел до поля комплексных <span class="math inline">\(\mathbb{C}\)</span>:</p>
 <p><span class="math display">\[
 \mathbb{C}= \{ a + bi, \, a, b \in \mathbb{R}\}
@@ -533,7 +581,7 @@ i^2 = -1
 \forall z \in \mathbb{C}, \, z = a + bi \, \exists \bar z = a - bi
 \]</span></p>
 <p><span class="math display">\[
-z \cdot \bar z = (a + bi)(a - bi)
+z \cdot \bar z = (a + bi)(a - bi) = a^2 - abi + abi - b^2i^2 = a^2 + b^2
 \]</span></p>
 <p>Сложение и вычитание:</p>
 <p><span class="math display">\[
@@ -541,6 +589,16 @@ z_1 + z_2 = (a_1 + b_1 i) + (a_2 + b_2 i) = (a_1 + a_2) + (b_1 + b_2)i
 \]</span></p>
 <p><span class="math display">\[
 z_1 - z_2 = (a_1 + b_1 i) - (a_2 + b_2 i) = (a_1 - a_2) + (b_1 - b_2)i
+\]</span></p>
+<p>Для любых <span class="math inline">\(u, v, w \in \mathbb{C}\)</span> выполняются следующие свойства:</p>
+<p><span class="math display">\[
+\begin{split}
+u + v = v + u \\
+u + (v + w) = (u + v) + w \\
+u + 0 = u \\
+u + (-u) = 0 \\
+u - v = u + (-v)
+\end{split}
 \]</span></p>
 <p>Умножение:</p>
 <p><span class="math display">\[
@@ -551,9 +609,21 @@ z_1 \cdot z_2 &amp; = \\
 &amp; = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1)i
 \end{split}
 \]</span></p>
+<p><span class="math display">\[
+\begin{split}
+u \cdot v = v \cdot u \\
+u \cdot (v \cdot w) = (u \cdot v) \cdot w \\
+u \cdot 1 = u \\
+u \cdot 0 = 0 \\
+u \cdot (v + w) = (u \cdot v) + (u \cdot w)
+\end{split}
+\]</span></p>
 <p>Деление:</p>
 <p><span class="math display">\[
 \frac{1}{z} = \frac{1}{a + bi} = \frac{(a - bi)}{(a + bi) (a - bi)} = \frac{a - bi}{a^2 + b^2} = \frac{a}{a^2 + b^2} + \frac{b}{a^2 + b^2}i
+\]</span></p>
+<p><span class="math display">\[
+\frac{z_1}{z_2} = \frac{a_1 + b_1 i}{a_2 + b_2 i} = \frac{(a_1 + b_1 i)(a_2 - b_2 i)}{(a_2 + b_2 i)(a_2 - b_2 i)} = \frac{a_1 a_2 + b_1 b_2}{a_2^2 + b_2^2} + \frac{a_2 b_1 - a_1 b_2}{a_2^2 + b_2^2}i
 \]</span></p>
 
 

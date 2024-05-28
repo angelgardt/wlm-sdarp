@@ -26,7 +26,7 @@ title-block-modified: "Изменено"
 callout-tip-title: "Совет"
 callout-note-title: "Заметка"
 callout-warning-title: "Предупреждение"
-callout-important-title: "Важно"
+callout-important-title: "Важность"
 callout-caution-title: "Опасность"
 
 code-summary: "Код"
