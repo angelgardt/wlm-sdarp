@@ -2,12 +2,15 @@
 
 \usepackage{xcolor}
 \usepackage{soul}
-\usepackage{amsmath, amsfonts}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{tensor}
 \usepackage[bb=tgdm]{unicode-math}
 \usepackage{tikz}
 
 \newcommand{\const}{\text{const}}
 \newcommand{\fix}{\text{fix}}
+\DeclareMathOperator{\mmod}{mod}
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
@@ -17,14 +20,27 @@
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 <!--- Logic --->
-\newcommand{\xor}{\oplus}
+\newcommand{\xor}{\veebar}
+
 
 <!--- Set theory --->
-\newcommand{\symdif}{\, \triangle \,}
+\newcommand{\univ}{\mathbb{U}}
+\DeclareMathOperator{\symdif}{\triangle}
+\newcommand{\such}{\, | \,}
+\newcommand{\emptyset}{\varnothing}
+\newcommand{\geq}{\geqslant}
+\newcommand{\leq}{\leqslant}
+
+<!--- Combinatorics --->
+\newcommand{\perm}[1]{\mathsf{P}_{#1}}
+\newcommand{\vari}[3][]{{}^\mathsf{{#1}}\mathsf{V}_{#2}^{#3}}
+\newcommand{\comb}[3][]{{}^\mathsf{{#1}}\mathsf{C}_{#2}^{#3}}
+
+
 
 <!--- Number sets--->
 \newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNstar}{\mathbb{N}^{*}}
+\newcommand{\setNstar}{\mathbb{N}^{\ast}}
 \newcommand{\setZ}{\mathbb{Z}}
 \newcommand{\setQ}{\mathbb{Q}}
 \newcommand{\setI}{\mathbb{I}}
@@ -68,3 +84,8 @@
 \newcommand{\mean}{\mathbb{M}}
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
+
+
+<!--- Letters --->
+\newcommand{\phi}{\varphi}
+\newcommand{\epsilon}{\varepsilon}
