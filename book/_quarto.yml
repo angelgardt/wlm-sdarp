@@ -6,9 +6,9 @@ metadata-files:
   - _metadata.yml
 
 book:
-  title: "WLM SDAR"
+  title: "WLM SDARP"
   # language: ru
-  subtitle: "World of Linear Models: Statistics & Data Analysis in R"
+  subtitle: "World of Linear Models: Statistics & Data Analysis in R for Psychologists"
   author: 
     - name: "Anton Angelgardt"
       email: "anton.angelgardt@gmail.com"
