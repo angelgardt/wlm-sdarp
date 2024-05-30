@@ -408,6 +408,11 @@ window.Quarto = {
   <li><a href="#appendix-numbers-n-zero" id="toc-appendix-numbers-n-zero" class="nav-link" data-scroll-target="#appendix-numbers-n-zero"><span class="header-section-number">A.1.1</span> Ноль как натуральное число</a></li>
   <li><a href="#appendix-numbers-n-oprations" id="toc-appendix-numbers-n-oprations" class="nav-link" data-scroll-target="#appendix-numbers-n-oprations"><span class="header-section-number">A.1.2</span> Операции над натуральными числами</a></li>
   <li><a href="#appendix-numbers-n-peano" id="toc-appendix-numbers-n-peano" class="nav-link" data-scroll-target="#appendix-numbers-n-peano"><span class="header-section-number">A.1.3</span> Аксиомы Пеано</a></li>
+  <li><a href="#appendix-numbers-n-peano" id="toc-appendix-numbers-n-peano" class="nav-link" data-scroll-target="#appendix-numbers-n-peano"><span class="header-section-number">A.1.4</span> Формализация арифметики</a>
+  <ul class="collapse">
+  <li><a href="#сложение-натуральных-чисел" id="toc-сложение-натуральных-чисел" class="nav-link" data-scroll-target="#сложение-натуральных-чисел"><span class="header-section-number">A.1.4.1</span> Сложение натуральных чисел</a></li>
+  <li><a href="#умножение-натуральных-чисел" id="toc-умножение-натуральных-чисел" class="nav-link" data-scroll-target="#умножение-натуральных-чисел"><span class="header-section-number">A.1.4.2</span> Умножение натуральных чисел</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#appendix-numbers-z" id="toc-appendix-numbers-z" class="nav-link" data-scroll-target="#appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</a></li>
   <li><a href="#appendix-numbers-q" id="toc-appendix-numbers-q" class="nav-link" data-scroll-target="#appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</a></li>
@@ -510,22 +515,22 @@ window.Quarto = {
 <p>Хотя всё в натуральных числах вроде бы весьма очевидно и даже «осязаемо», с развитием математики, а в особенности теории множеств, возникла необходимость поставить натуральные числа на формальные основания. Этим занялся итальяснкий математик <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Peano/">Джузеппе Пеано</a>, сформулировав систему аксиом для натуральных чисел.</p>
 <p>Рассмотрим множество натуральных чисел <span class="math inline">\(\mathbb{N}^{\ast}\)</span>, единицу <span class="math inline">\(1\)</span> (как особо выделенный элемент) и функцию <span class="math inline">\(S(n) = n'\)</span>, сопоставляющую некоторому числу <span class="math inline">\(n\)</span> следующее за ним число <span class="math inline">\(n'\)</span> — функцию следования (successor function). Тогда система аксиом примет следующий вид<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
 <ol type="1">
-<li><span class="math inline">\(1\)</span> является натуральным числом;</li>
+<li><span class="math inline">\(0\)</span> является натуральным числом;</li>
 </ol>
 <p><span id="eq-peano1"><span class="math display">\[
-1 \in \mathbb{N}^{\ast}
+0 \in \mathbb{N}
 \tag{A.1}\]</span></span></p>
 <ol start="2" type="1">
 <li>За каждым натуральным числом следует натуральное число;</li>
 </ol>
 <p><span id="eq-peano2"><span class="math display">\[
-n \in \mathbb{N}^{\ast}\Rightarrow S(n) \in \mathbb{N}^{\ast}
+n \in \mathbb{N}\Rightarrow S(n) \in \mathbb{N}
 \tag{A.2}\]</span></span></p>
 <ol start="3" type="1">
-<li><span class="math inline">\(1\)</span> не следует ни за каким натуральным числом;</li>
+<li><span class="math inline">\(0\)</span> не следует ни за каким натуральным числом;</li>
 </ol>
 <p><span id="eq-peano3"><span class="math display">\[
-\nexists \, n \in \mathbb{N}^{\ast}: S(n) = 1
+\nexists \, n \in \mathbb{N}: S(n) = 0
 \tag{A.3}\]</span></span></p>
 <ol start="4" type="1">
 <li>Если натуральное число <span class="math inline">\(a\)</span> непосредственно следует как за числом <span class="math inline">\(b\)</span>, так и за числом <span class="math inline">\(c\)</span>, то <span class="math inline">\(b\)</span> и <span class="math inline">\(c\)</span> являются одним и тем же числом;</li>
@@ -534,31 +539,51 @@ n \in \mathbb{N}^{\ast}\Rightarrow S(n) \in \mathbb{N}^{\ast}
 \big( S(b) = a \wedge S(c) = a \big) \Rightarrow b = c
 \tag{A.4}\]</span></span></p>
 <ol start="5" type="1">
-<li>[Аксиома индукции] Если какое-либо предположение доказано для <span class="math inline">\(1\)</span> (база индукции) и если из допущения, что оно верно для натурального числа <span class="math inline">\(n\)</span>, следует, что оно верно для следующего за <span class="math inline">\(n\)</span> натурального числа (шаг индукции, индукционный переход), то это предположение верно для всех натуральных чисел.</li>
+<li>[Аксиома индукции] Если какое-либо предположение доказано для <span class="math inline">\(0\)</span> (база индукции) и если из допущения, что оно верно для натурального числа <span class="math inline">\(n\)</span>, следует, что оно верно для следующего за <span class="math inline">\(n\)</span> натурального числа (шаг индукции, индукционный переход), то это предположение верно для всех натуральных чисел.</li>
 </ol>
 <p><span id="eq-peano5"><span class="math display">\[
-P(1) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow \forall n \in \mathbb{N}^{\ast}\; P(n)
+P(0) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow \forall n \in \mathbb{N}\; P(n)
 \tag{A.5}\]</span></span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Аксиомы Пеано для <span class="math inline">\(\mathbb{N}\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Внимательный читатель мог заметить, что аксиомы Пеано сформулированы для множества <span class="math inline">\(\mathbb{N}^{\ast}\)</span>, то есть для множества натуральных чисел без <span class="math inline">\(0\)</span>. Однако в современной математике часто рассматривается как множество натуральных чисел именно <span class="math inline">\(\mathbb{N}\)</span>, то есть <span class="math inline">\(0\)</span> считается натуральным числом.</p>
-<p>Однако если в аксиомах <span class="math inline">\(1\)</span> заменить на <span class="math inline">\(0\)</span>, ничего не рухнет <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>, поэтому современный взгляд на натуральные числа не противоречит исходной аксиоматике.</p>
-</div>
-</div>
+</section>
+<section id="appendix-numbers-n-peano" class="level3" data-number="A.1.4">
+<h3 data-number="A.1.4" class="anchored" data-anchor-id="appendix-numbers-n-peano"><span class="header-section-number">A.1.4</span> Формализация арифметики</h3>
+<p>Используя функцию следования, вводимую в рамках аксиом Пеано, можно формализовать всю арифметику, введя следующие аксиомы сложения и умножения <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>:</p>
+<p><span id="eq-arithm-axioms"><span class="math display">\[
+\begin{split}
+&amp; n + 0 = n \\
+&amp; n_1 + S(n_2) = S(n_1 + n_2) \\
+&amp; n \cdot 0 = 0 \\
+&amp; n_1 \cdot S(n_2) = n_1 + n_1 \cdot n_2
+\end{split}
+\tag{A.6}\]</span></span></p>
+<section id="сложение-натуральных-чисел" class="level4" data-number="A.1.4.1">
+<h4 data-number="A.1.4.1" class="anchored" data-anchor-id="сложение-натуральных-чисел"><span class="header-section-number">A.1.4.1</span> Сложение натуральных чисел</h4>
+<p>Пусть мы хотим вычислить <span class="math inline">\(1 + 1\)</span>. Обозначим второе слагаемое как <span class="math inline">\(1 = S(0)\)</span>. Тогда</p>
+<p><span class="math display">\[
+1 + 1 = 1 + S(0) = S(1 + 0) = S(1) = 2
+\]</span></p>
+<p>Аналогично,</p>
+<p><span class="math display">\[
+1 + 2 = 1 + S(1) = S(1 + 1) = S(2) = 3
+\]</span></p>
+<p>Повторив эту операцию столько раз, сколько требуется для сложения конкретны чисел, мы получим хорошо знакомое нам сложение, которым практически от рождения пользуемся.</p>
+</section>
+<section id="умножение-натуральных-чисел" class="level4" data-number="A.1.4.2">
+<h4 data-number="A.1.4.2" class="anchored" data-anchor-id="умножение-натуральных-чисел"><span class="header-section-number">A.1.4.2</span> Умножение натуральных чисел</h4>
+<p>Здесь, во-первых, мы можем получить хорошо знакомый нам факт, что <span class="math inline">\(n \cdot 1 = n\)</span>:</p>
+<p><span class="math display">\[
+n \cdot 1 = n \cdot S(0) = n + n \cdot 0 = n + 0 = n
+\]</span> А если нам необходимо получить произведение двух чисел, то действуем так:</p>
+<p><span class="math display">\[
+2 \cdot 2 = 2 \cdot S(1) = 2 + 2 \cdot 1 = 2 + 2 = 4
+\]</span></p>
 <p>Сами операции определяются друг через друга:</p>
 <ul>
 <li><span class="math inline">\(a + b = a + \underbrace{1 + 1 + \ldots + 1}_b\)</span></li>
 <li><span class="math inline">\(a \cdot b = \underbrace{a + a + \ldots + a}_b\)</span></li>
 <li><span class="math inline">\(a^b = \underbrace{a \cdot a \cdot \ldots \cdot a}_b\)</span></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="appendix-numbers-z" class="level2" data-number="A.2">
@@ -591,7 +616,7 @@ P(1) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow
 <p>Можно было бы спокойно жить с вещественными числами, если бы не уравнения вида</p>
 <p><span id="eq-x2-eq-minus-one"><span class="math display">\[
 x^2 + 1 = 0
-\tag{A.6}\]</span></span></p>
+\tag{A.7}\]</span></span></p>
 <p>Если мы начнем его решать, что получим следующее:</p>
 <p><span class="math display">\[
 \begin{split}
@@ -610,7 +635,7 @@ x_2 &amp;= -\sqrt{-1}
 <p>Штош, допустим. Попробуем решить следующее уравнение:</p>
 <p><span id="eq-x2-eq-minus-four"><span class="math display">\[
 x^2 + 3 = -6
-\tag{A.7}\]</span></span></p>
+\tag{A.8}\]</span></span></p>
 <p>По той же схеме,</p>
 <p><span class="math display">\[
 \begin{split}
@@ -625,8 +650,8 @@ x &amp;= \pm \sqrt{-1} \cdot 2
 <p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>, а как известно, под знаком квадратного корня может стоять только положительное число<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Чтобы решить эту неприятность, математики ввели новое число <span class="math inline">\(i\)</span> — <strong>мнимую единицу</strong>. Она обладает интересным свойством:</p>
 <p><span id="eq-i-sq-equals-minus-one"><span class="math display">\[
 i^2 = -1
-\tag{A.8}\]</span></span></p>
-<p>Введение мнимой единицы позволяет записать решения рассмотренных выше уравнений в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа. В первом случае (<a href="#eq-x2-eq-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.6</span></a>):</p>
+\tag{A.9}\]</span></span></p>
+<p>Введение мнимой единицы позволяет записать решения рассмотренных выше уравнений в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа. В первом случае (<a href="#eq-x2-eq-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.7</span></a>):</p>
 <p><span class="math display">\[
 \begin{split}
 x^2 + 1 &amp;= 0 \\
@@ -635,7 +660,7 @@ x_1 &amp;= \sqrt{-1} = \sqrt{i^2} = i \\
 x_2 &amp;= -\sqrt{-1} = -\sqrt{i^2} = -i
 \end{split}
 \]</span></p>
-<p>Во втором случае (<a href="#eq-x2-eq-minus-four" class="quarto-xref">Уравнение&nbsp;<span>A.7</span></a>):</p>
+<p>Во втором случае (<a href="#eq-x2-eq-minus-four" class="quarto-xref">Уравнение&nbsp;<span>A.8</span></a>):</p>
 <p><span class="math display">\[
 \begin{split}
 x^2 - 2 &amp;= -6 \\
@@ -679,16 +704,16 @@ i^2 = (\sqrt{-1})^2 = \sqrt{-1} \cdot \sqrt{-1} = \sqrt{(-1) \cdot (-1)} = \sqrt
 <p>Аналогично, например, можно получить, что</p>
 <p><span id="eq-sqrt-minus-two-sq-error"><span class="math display">\[
 (\sqrt{-2})^2 = \sqrt{-2} \cdot \sqrt{-2} = \sqrt{(-2) \cdot (-2)} = \sqrt{4} = 2
-\tag{A.9}\]</span></span></p>
+\tag{A.10}\]</span></span></p>
 <p>Возникает оно потому, что значение корня из отрицательного числа определено неоднозначно. В современной математической литературе принято во избежании ошибок выражения с квадратными корнями из отрицательных чисел записываются сразу с выделением мнимой единицы — <span class="math inline">\(i\sqrt{2}\)</span>:</p>
 <p><span class="math display">\[
 \sqrt{-2} = \sqrt{(-1) \cdot 2} = \sqrt{2i^2} = i\sqrt{2}
 \]</span></p>
-<p>В таком случае ошибок, подобных примеру c <span class="math inline">\((\sqrt{-2})^2\)</span> (<a href="#eq-sqrt-minus-two-sq-error" class="quarto-xref">Уравнение&nbsp;<span>A.9</span></a>) не возникает:</p>
+<p>В таком случае ошибок, подобных примеру c <span class="math inline">\((\sqrt{-2})^2\)</span> (<a href="#eq-sqrt-minus-two-sq-error" class="quarto-xref">Уравнение&nbsp;<span>A.10</span></a>) не возникает:</p>
 <p><span class="math display">\[
 (i\sqrt{2})^2 = i^2 \cdot (\sqrt{2})^2 = -2
 \]</span></p>
-<p>Собственно, именно поэтому мнимую единицу определяют через её квадрат (<a href="#eq-i-sq-equals-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.8</span></a>), а не через её равенство <span class="math inline">\(\sqrt{-1}\)</span>.</p>
+<p>Собственно, именно поэтому мнимую единицу определяют через её квадрат (<a href="#eq-i-sq-equals-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.9</span></a>), а не через её равенство <span class="math inline">\(\sqrt{-1}\)</span>.</p>
 </div>
 </div>
 <p>КОМПЛЕКСНАЯ ПЛОСКОСТЬ</p>
@@ -773,7 +798,7 @@ SLOVARonline. (2010). <em>Философский энциклопедическ�
 <ol>
 <li id="fn1"><p>Термины «арабские цифры (аrabic digits)» и «индийские цифры (hindi digits)» в современном мире <a href="https://www.unicode.org/terminology/digits.html">неоднозначны</a>, так как цифры, используемые сегодня в арабских странах и Индии, отличаются от тех, которые называются арабскими на территории европейских стран.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Только в случае <span class="math inline">\(a &gt; b\)</span>, если <span class="math inline">\(a, b \in \mathbb{N}^{\ast}\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Изначально самим Дж. Пеано было введено девять аксиом <span class="citation" data-cites="peano1889">(<a href="references.html#ref-peano1889" role="doc-biblioref">Peano, 1889</a>)</span>. Здесь представлен современный вариант Аксиом Пеано <span class="citation" data-cites="kumar-peano">(<a href="references.html#ref-kumar-peano" role="doc-biblioref">Kumar, n.d.</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Изначально самим Дж. Пеано было введено девять аксиом <span class="citation" data-cites="peano1889">(<a href="references.html#ref-peano1889" role="doc-biblioref">Peano, 1889</a>)</span>. Cовременный вариант аксиом Пеано для <span class="math inline">\(\mathbb{N}^{\ast}\)</span> состоит из пяти аксиом <span class="citation" data-cites="kumar-peano">(<a href="references.html#ref-kumar-peano" role="doc-biblioref">Kumar, n.d.</a>)</span>. Здесь представлен вариант аксиом для <span class="math inline">\(\mathbb{N}\)</span> <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Здесь мы говорим об арифметическом квадратном корне.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
