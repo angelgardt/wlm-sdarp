@@ -6,7 +6,7 @@
 
 ||||Начертание||||Название|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|Обычное|Романское|Полужирное|Рукописное|Контурное|Готическое|Без засечек||
+|Обычное|Прямое|Полужирное|Рукописное|Контурное|Готическое|Без засечек||
 |$A$ $a$|$\mathrm A$ $\mathrm a$|$\mathbf A$ $\mathbf a$|$\mathcal A$|$\mathbb A$|$\mathfrak A$ $\mathfrak a$|$\mathsf A$ $\mathsf a$|а|
 |$B$ $b$|$\mathrm B$ $\mathrm b$|$\mathbf B$ $\mathbf b$|$\mathcal B$|$\mathbb B$|$\mathfrak B$ $\mathfrak b$|$\mathsf B$ $\mathsf b$|бэ|
 |$C$ $c$|$\mathrm C$ $\mathrm c$|$\mathbf C$ $\mathbf c$|$\mathcal C$|$\mathbb C$|$\mathfrak C$ $\mathfrak c$|$\mathsf C$ $\mathsf c$|цэ|
