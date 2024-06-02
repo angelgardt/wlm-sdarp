@@ -7,6 +7,7 @@
 \usepackage[bb=tgdm]{unicode-math}
 \usepackage{tikz}
 
+<!--- Common --->
 \newcommand{\const}{\text{const}}
 \newcommand{\fix}{\text{fix}}
 \DeclareMathOperator{\mmod}{mod}
@@ -30,6 +31,7 @@
 \newcommand{\emptyset}{\varnothing}
 \newcommand{\geq}{\geqslant}
 \newcommand{\leq}{\leqslant}
+\newcommand{\compl}{\overline}
 
 <!--- Combinatorics --->
 \newcommand{\perm}[1]{\mathsf{P}_{#1}}
@@ -45,14 +47,20 @@
 \newcommand{\setQ}{\mathbb{Q}}
 \newcommand{\setI}{\mathbb{I}}
 \newcommand{\setR}{\mathbb{R}}
+\newcommand{\setRplus}{\mathbb{R}_{+}}
 \newcommand{\setC}{\mathbb{C}}
 
 <!--- Linear Algebra --->
 \newcommand{\vm}[1]{\mathbf{#1}} <!--- vectors and matrices --->
+\newcommand{\tp}[1]{{#1}\!^{\mathsf{T}}}
+\newcommand{\inv}[1]{{#1}\!^{-1}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
 
 <!--- Probability, Random Vars --->
 \newcommand{\Fcal}{\mathcal{F}}
 \newcommand{\prob}{\mathbb{P}}
+\newcommand{\dens}{\mathbb{p}}
 \newcommand{\expect}{\mathbb{E}}
 \newcommand{\disp}{\mathbb{D}}
 \newcommand{\var}{\text{var}}
@@ -74,7 +82,6 @@
 \newcommand{\toas}{\overset{\text{a.s.}}{\to}}
 \newcommand{\toprob}{\overset{p}{\to}}
 \newcommand{\todist}{\overset{d}{\to}}
-\newcommand{\sgn}{\text{sgn}}
 
 <!--- Trig --->
 \DeclareMathOperator\artanh{artanh}

@@ -4,35 +4,36 @@
 
 ## Латинский алфавит {#math-letters-latin}
 
-||||Начертание||||Название|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|Обычное|Прямое|Полужирное|Рукописное|Контурное|Готическое|Без засечек||
-|$A$ $a$|$\mathrm A$ $\mathrm a$|$\mathbf A$ $\mathbf a$|$\mathcal A$|$\mathbb A$ $\mathbb a$|$\mathfrak A$ $\mathfrak a$|$\mathsf A$ $\mathsf a$|а|
-|$B$ $b$|$\mathrm B$ $\mathrm b$|$\mathbf B$ $\mathbf b$|$\mathcal B$|$\mathbb B$ $\mathbb b$|$\mathfrak B$ $\mathfrak b$|$\mathsf B$ $\mathsf b$|бэ|
-|$C$ $c$|$\mathrm C$ $\mathrm c$|$\mathbf C$ $\mathbf c$|$\mathcal C$|$\mathbb C$ $\mathbb c$|$\mathfrak C$ $\mathfrak c$|$\mathsf C$ $\mathsf c$|цэ|
-|$D$ $d$|$\mathrm D$ $\mathrm d$|$\mathbf D$ $\mathbf d$|$\mathcal D$|$\mathbb D$ $\mathbb d$|$\mathfrak D$ $\mathfrak d$|$\mathsf D$ $\mathsf d$|дэ|
-|$E$ $e$|$\mathrm E$ $\mathrm e$|$\mathbf E$ $\mathbf e$|$\mathcal E$|$\mathbb E$ $\mathbb e$|$\mathfrak E$ $\mathfrak e$|$\mathsf E$ $\mathsf e$|е|
-|$F$ $f$|$\mathrm F$ $\mathrm f$|$\mathbf F$ $\mathbf f$|$\mathcal F$|$\mathbb F$ $\mathbb f$|$\mathfrak F$ $\mathfrak f$|$\mathsf F$ $\mathsf f$|эф|
-|$G$ $g$|$\mathrm G$ $\mathrm g$|$\mathbf G$ $\mathbf g$|$\mathcal G$|$\mathbb G$ $\mathbb g$|$\mathfrak G$ $\mathfrak g$|$\mathsf G$ $\mathsf g$|жэ|
-|$H$ $h$|$\mathrm H$ $\mathrm h$|$\mathbf H$ $\mathbf h$|$\mathcal H$|$\mathbb H$ $\mathbb h$|$\mathfrak H$ $\mathfrak h$|$\mathsf H$ $\mathsf h$|аш|
-|$I$ $i$|$\mathrm I$ $\mathrm i$|$\mathbf I$ $\mathbf i$|$\mathcal I$|$\mathbb I$ $\mathbb i$|$\mathfrak I$ $\mathfrak i$|$\mathsf I$ $\mathsf i$|и|
-|$J$ $j$|$\mathrm J$ $\mathrm j$|$\mathbf J$ $\mathbf j$|$\mathcal J$|$\mathbb J$ $\mathbb j$|$\mathfrak J$ $\mathfrak j$|$\mathsf J$ $\mathsf j$|жи|
-|$K$ $k$|$\mathrm K$ $\mathrm k$|$\mathbf K$ $\mathbf k$|$\mathcal K$|$\mathbb K$ $\mathbb k$|$\mathfrak K$ $\mathfrak k$|$\mathsf K$ $\mathsf k$|ка|
-|$L$ $l$|$\mathrm L$ $\mathrm l$|$\mathbf L$ $\mathbf l$|$\mathcal L$|$\mathbb L$ $\mathbb l$|$\mathfrak L$ $\mathfrak l$|$\mathsf L$ $\mathsf l$|эль|
-|$M$ $m$|$\mathrm M$ $\mathrm m$|$\mathbf M$ $\mathbf m$|$\mathcal M$|$\mathbb M$ $\mathbb m$|$\mathfrak M$ $\mathfrak m$|$\mathsf M$ $\mathsf m$|эм|
-|$N$ $n$|$\mathrm N$ $\mathrm n$|$\mathbf N$ $\mathbf n$|$\mathcal N$|$\mathbb N$ $\mathbb n$|$\mathfrak N$ $\mathfrak n$|$\mathsf N$ $\mathsf n$|эн|
-|$O$ $o$|$\mathrm O$ $\mathrm o$|$\mathbf O$ $\mathbf o$|$\mathcal O$|$\mathbb O$ $\mathbb o$|$\mathfrak O$ $\mathfrak o$|$\mathsf O$ $\mathsf o$|о|
-|$P$ $p$|$\mathrm P$ $\mathrm p$|$\mathbf P$ $\mathbf p$|$\mathcal P$|$\mathbb P$ $\mathbb p$|$\mathfrak P$ $\mathfrak p$|$\mathsf P$ $\mathsf p$|пэ|
-|$Q$ $q$|$\mathrm Q$ $\mathrm q$|$\mathbf Q$ $\mathbf q$|$\mathcal Q$|$\mathbb Q$ $\mathbb q$|$\mathfrak Q$ $\mathfrak q$|$\mathsf Q$ $\mathsf q$|ку|
-|$R$ $r$|$\mathrm R$ $\mathrm r$|$\mathbf R$ $\mathbf r$|$\mathcal R$|$\mathbb R$ $\mathbb r$|$\mathfrak R$ $\mathfrak r$|$\mathsf R$ $\mathsf r$|эр|
-|$S$ $s$|$\mathrm S$ $\mathrm s$|$\mathbf S$ $\mathbf s$|$\mathcal S$|$\mathbb S$ $\mathbb s$|$\mathfrak S$ $\mathfrak s$|$\mathsf S$ $\mathsf s$|эс|
-|$T$ $t$|$\mathrm T$ $\mathrm t$|$\mathbf T$ $\mathbf t$|$\mathcal T$|$\mathbb T$ $\mathbb t$|$\mathfrak T$ $\mathfrak t$|$\mathsf T$ $\mathsf t$|тэ|
-|$U$ $u$|$\mathrm U$ $\mathrm u$|$\mathbf U$ $\mathbf u$|$\mathcal U$|$\mathbb U$ $\mathbb u$|$\mathfrak U$ $\mathfrak u$|$\mathsf U$ $\mathsf u$|у|
-|$V$ $v$|$\mathrm V$ $\mathrm v$|$\mathbf V$ $\mathbf v$|$\mathcal V$|$\mathbb V$ $\mathbb v$|$\mathfrak V$ $\mathfrak v$|$\mathsf V$ $\mathsf v$|вэ|
-|$W$ $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathcal W$|$\mathbb W$ $\mathbb w$|$\mathfrak W$ $\mathfrak w$|$\mathsf W$ $\mathsf w$|дубль вэ|
-|$X$ $x$|$\mathrm X$ $\mathrm x$|$\mathbf X$ $\mathbf x$|$\mathcal X$|$\mathbb X$ $\mathbb x$|$\mathfrak X$ $\mathfrak x$|$\mathsf X$ $\mathsf x$|икс|
-|$Y$ $y$|$\mathrm Y$ $\mathrm y$|$\mathbf Y$ $\mathbf y$|$\mathcal Y$|$\mathbb Y$ $\mathbb y$|$\mathfrak Y$ $\mathfrak y$|$\mathsf Y$ $\mathsf y$|игрек|
-|$Z$ $z$|$\mathrm Z$ $\mathrm z$|$\mathbf Z$ $\mathbf z$|$\mathcal Z$|$\mathbb Z$ $\mathbb z$|$\mathfrak Z$ $\mathfrak z$|$\mathsf Z$ $\mathsf z$|зет|
+Буквы латинского алфавита в математических текстах могут использоваться в нескольких начертания. В таблице ниже слева направо представлены *обычное*, *прямое*, *полужирное*, *красивое*, *рукописное*, *контурное*, *готическое* начертания и начертание *без засечек*.
+
+||||Начертание|||||Название|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|$A$ $a$|$\mathrm A$ $\mathrm a$|$\mathbf A$ $\mathbf a$|$\mathcal A$|$\mathscr A$|$\mathbb A$ $\mathbb a$|$\mathfrak A$ $\mathfrak a$|$\mathsf A$ $\mathsf a$|а|
+|$B$ $b$|$\mathrm B$ $\mathrm b$|$\mathbf B$ $\mathbf b$|$\mathcal B$|$\mathscr B$|$\mathbb B$ $\mathbb b$|$\mathfrak B$ $\mathfrak b$|$\mathsf B$ $\mathsf b$|бэ|
+|$C$ $c$|$\mathrm C$ $\mathrm c$|$\mathbf C$ $\mathbf c$|$\mathcal C$|$\mathscr C$|$\mathbb C$ $\mathbb c$|$\mathfrak C$ $\mathfrak c$|$\mathsf C$ $\mathsf c$|цэ|
+|$D$ $d$|$\mathrm D$ $\mathrm d$|$\mathbf D$ $\mathbf d$|$\mathcal D$|$\mathscr D$|$\mathbb D$ $\mathbb d$|$\mathfrak D$ $\mathfrak d$|$\mathsf D$ $\mathsf d$|дэ|
+|$E$ $e$|$\mathrm E$ $\mathrm e$|$\mathbf E$ $\mathbf e$|$\mathcal E$|$\mathscr E$|$\mathbb E$ $\mathbb e$|$\mathfrak E$ $\mathfrak e$|$\mathsf E$ $\mathsf e$|е|
+|$F$ $f$|$\mathrm F$ $\mathrm f$|$\mathbf F$ $\mathbf f$|$\mathcal F$|$\mathscr F$|$\mathbb F$ $\mathbb f$|$\mathfrak F$ $\mathfrak f$|$\mathsf F$ $\mathsf f$|эф|
+|$G$ $g$|$\mathrm G$ $\mathrm g$|$\mathbf G$ $\mathbf g$|$\mathcal G$|$\mathscr G$|$\mathbb G$ $\mathbb g$|$\mathfrak G$ $\mathfrak g$|$\mathsf G$ $\mathsf g$|жэ|
+|$H$ $h$|$\mathrm H$ $\mathrm h$|$\mathbf H$ $\mathbf h$|$\mathcal H$|$\mathscr H$|$\mathbb H$ $\mathbb h$|$\mathfrak H$ $\mathfrak h$|$\mathsf H$ $\mathsf h$|аш|
+|$I$ $i$|$\mathrm I$ $\mathrm i$|$\mathbf I$ $\mathbf i$|$\mathcal I$|$\mathscr I$|$\mathbb I$ $\mathbb i$|$\mathfrak I$ $\mathfrak i$|$\mathsf I$ $\mathsf i$|и|
+|$J$ $j$|$\mathrm J$ $\mathrm j$|$\mathbf J$ $\mathbf j$|$\mathcal J$|$\mathscr J$|$\mathbb J$ $\mathbb j$|$\mathfrak J$ $\mathfrak j$|$\mathsf J$ $\mathsf j$|жи|
+|$K$ $k$|$\mathrm K$ $\mathrm k$|$\mathbf K$ $\mathbf k$|$\mathcal K$|$\mathscr K$|$\mathbb K$ $\mathbb k$|$\mathfrak K$ $\mathfrak k$|$\mathsf K$ $\mathsf k$|ка|
+|$L$ $l$|$\mathrm L$ $\mathrm l$|$\mathbf L$ $\mathbf l$|$\mathcal L$|$\mathscr L$|$\mathbb L$ $\mathbb l$|$\mathfrak L$ $\mathfrak l$|$\mathsf L$ $\mathsf l$|эль|
+|$M$ $m$|$\mathrm M$ $\mathrm m$|$\mathbf M$ $\mathbf m$|$\mathcal M$|$\mathscr M$|$\mathbb M$ $\mathbb m$|$\mathfrak M$ $\mathfrak m$|$\mathsf M$ $\mathsf m$|эм|
+|$N$ $n$|$\mathrm N$ $\mathrm n$|$\mathbf N$ $\mathbf n$|$\mathcal N$|$\mathscr N$|$\mathbb N$ $\mathbb n$|$\mathfrak N$ $\mathfrak n$|$\mathsf N$ $\mathsf n$|эн|
+|$O$ $o$|$\mathrm O$ $\mathrm o$|$\mathbf O$ $\mathbf o$|$\mathcal O$|$\mathscr O$|$\mathbb O$ $\mathbb o$|$\mathfrak O$ $\mathfrak o$|$\mathsf O$ $\mathsf o$|о|
+|$P$ $p$|$\mathrm P$ $\mathrm p$|$\mathbf P$ $\mathbf p$|$\mathcal P$|$\mathscr P$|$\mathbb P$ $\mathbb p$|$\mathfrak P$ $\mathfrak p$|$\mathsf P$ $\mathsf p$|пэ|
+|$Q$ $q$|$\mathrm Q$ $\mathrm q$|$\mathbf Q$ $\mathbf q$|$\mathcal Q$|$\mathscr Q$|$\mathbb Q$ $\mathbb q$|$\mathfrak Q$ $\mathfrak q$|$\mathsf Q$ $\mathsf q$|ку|
+|$R$ $r$|$\mathrm R$ $\mathrm r$|$\mathbf R$ $\mathbf r$|$\mathcal R$|$\mathscr R$|$\mathbb R$ $\mathbb r$|$\mathfrak R$ $\mathfrak r$|$\mathsf R$ $\mathsf r$|эр|
+|$S$ $s$|$\mathrm S$ $\mathrm s$|$\mathbf S$ $\mathbf s$|$\mathcal S$|$\mathscr S$|$\mathbb S$ $\mathbb s$|$\mathfrak S$ $\mathfrak s$|$\mathsf S$ $\mathsf s$|эс|
+|$T$ $t$|$\mathrm T$ $\mathrm t$|$\mathbf T$ $\mathbf t$|$\mathcal T$|$\mathscr T$|$\mathbb T$ $\mathbb t$|$\mathfrak T$ $\mathfrak t$|$\mathsf T$ $\mathsf t$|тэ|
+|$U$ $u$|$\mathrm U$ $\mathrm u$|$\mathbf U$ $\mathbf u$|$\mathcal U$|$\mathscr U$|$\mathbb U$ $\mathbb u$|$\mathfrak U$ $\mathfrak u$|$\mathsf U$ $\mathsf u$|у|
+|$V$ $v$|$\mathrm V$ $\mathrm v$|$\mathbf V$ $\mathbf v$|$\mathcal V$|$\mathscr V$|$\mathbb V$ $\mathbb v$|$\mathfrak V$ $\mathfrak v$|$\mathsf V$ $\mathsf v$|вэ|
+|$W$ $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathcal W$|$\mathscr W$|$\mathbb W$ $\mathbb w$|$\mathfrak W$ $\mathfrak w$|$\mathsf W$ $\mathsf w$|дубль|
+|$X$ $x$|$\mathrm X$ $\mathrm x$|$\mathbf X$ $\mathbf x$|$\mathcal X$|$\mathscr X$|$\mathbb X$ $\mathbb x$|$\mathfrak X$ $\mathfrak x$|$\mathsf X$ $\mathsf x$|икс|
+|$Y$ $y$|$\mathrm Y$ $\mathrm y$|$\mathbf Y$ $\mathbf y$|$\mathcal Y$|$\mathscr Y$|$\mathbb Y$ $\mathbb y$|$\mathfrak Y$ $\mathfrak y$|$\mathsf Y$ $\mathsf y$|игрек|
+|$Z$ $z$|$\mathrm Z$ $\mathrm z$|$\mathbf Z$ $\mathbf z$|$\mathcal Z$|$\mathscr Z$|$\mathbb Z$ $\mathbb z$|$\mathfrak Z$ $\mathfrak z$|$\mathsf Z$ $\mathsf z$|зет|
 
 
 ## Греческий алфавит {#math-letters-greek}

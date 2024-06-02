@@ -416,6 +416,7 @@ window.Quarto = {
   <li><a href="#signs-set-theory" id="toc-signs-set-theory" class="nav-link" data-scroll-target="#signs-set-theory">Теория множеств</a></li>
   <li><a href="#signs-numbers-sets" id="toc-signs-numbers-sets" class="nav-link" data-scroll-target="#signs-numbers-sets">Числовые множества</a></li>
   <li><a href="#операции-и-другие-символы" id="toc-операции-и-другие-символы" class="nav-link" data-scroll-target="#операции-и-другие-символы">Операции и другие символы</a></li>
+  <li><a href="#константы" id="toc-константы" class="nav-link" data-scroll-target="#константы">Константы</a></li>
   <li><a href="#теория-вероятности-и-математическая-статистика" id="toc-теория-вероятности-и-математическая-статистика" class="nav-link" data-scroll-target="#теория-вероятности-и-математическая-статистика">Теория вероятности и математическая статистика</a></li>
   <li><a href="#signs-comb" id="toc-signs-comb" class="nav-link" data-scroll-target="#signs-comb">Комбинаторика</a></li>
   <li><a href="#signs-calculus" id="toc-signs-calculus" class="nav-link" data-scroll-target="#signs-calculus">Математический анализ</a></li>
@@ -433,6 +434,12 @@ window.Quarto = {
 
 
 <!--- {{< include other/_symbols.qmd >}} --->
+<!--
+% Any of the following work, and probably many more
+\setmathfont{TeX Gyre Pagella Math}
+%\setmathfont{TeX Gyre Termes Math}
+%\setmathfont{STIX}
+-->
 <!--- Logic --->
 <!--- Set theory --->
 <!--- Combinatorics --->
@@ -615,7 +622,7 @@ Junior в книжке ≠ Junior в индустрии
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Она важная. Очень. Прям крайне. Pay, так сказать, attention сюда, пожалуйста.</p>
+<p>Она важная. Очень. Прям крайне. Pay attention, так сказать, сюда, пожалуйста.</p>
 </div>
 </div>
 </section>
@@ -727,19 +734,22 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Эквиваленция, «<span class="math inline">\(p\)</span> равносильно <span class="math inline">\(q\)</span>», «только если <span class="math inline">\(p\)</span>, то <span class="math inline">\(q\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\exists\)</span>, <span class="math inline">\(\exists p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\exists p\)</span></td>
 <td style="text-align: left;">Квантор существования, «существует <span class="math inline">\(p\)</span>»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\nexists\)</span>, <span class="math inline">\(\nexists p\)</span></td>
-<td style="text-align: left;">Отрицатние существования, «не существует <span class="math inline">\(p\)</span><span class="math inline">\(|
-|\)</span>!$, <span class="math inline">\(\exists! p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\nexists p\)</span></td>
+<td style="text-align: left;">Отрицание существования, «не существует <span class="math inline">\(p\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\forall\)</span>, <span class="math inline">\(\forall p\)</span></td>
-<td style="text-align: left;">Квантор всеобщности, «для любого <span class="math inline">\(p\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(\exists! p\)</span></td>
+<td style="text-align: left;">Квантор существования и единственности, «cуществует единственный <span class="math inline">\(p\)</span>»</td>
 </tr>
 <tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\forall p\)</span></td>
+<td style="text-align: left;">Квантор всеобщности, «для любого <span class="math inline">\(p\)</span>»</td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\forall p \, \exists! q : p \Leftrightarrow q\)</span></td>
 <td style="text-align: left;">«для любого <span class="math inline">\(p\)</span> существует единственный <span class="math inline">\(q\)</span>», такой что <span class="math inline">\(p\)</span> равносильно <span class="math inline">\(q\)</span>»</td>
 </tr>
@@ -785,11 +795,11 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Мощность множества</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\in\)</span>, <span class="math inline">\(a \in A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \in A\)</span></td>
 <td style="text-align: left;">Принадлежность, «элемент <span class="math inline">\(a\)</span> принадлежит множеству <span class="math inline">\(A\)</span>»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\notin\)</span>, <span class="math inline">\(a \notin A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \notin A\)</span></td>
 <td style="text-align: left;">Отрицание принадлежности, «элемент <span class="math inline">\(a\)</span> не принадлежит множеству <span class="math inline">\(A\)</span>»</td>
 </tr>
 <tr class="odd">
@@ -801,36 +811,36 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Дополнение множества</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\cap\)</span>, <span class="math inline">\(A \cap B\)</span></td>
-<td style="text-align: left;">Пересечение, «пересечение множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A \cap B\)</span></td>
+<td style="text-align: left;">Пересечение множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \bigcap_{i=1}^n A_i\)</span></td>
-<td style="text-align: left;">«пересечение множеств <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, …, <span class="math inline">\(A_n\)</span>»</td>
+<td style="text-align: left;">Пересечение множеств <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, …, <span class="math inline">\(A_n\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\cup\)</span>, <span class="math inline">\(A \cup B\)</span></td>
-<td style="text-align: left;">Объединение, «объединение множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A \cup B\)</span></td>
+<td style="text-align: left;">Объединение множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i\)</span></td>
-<td style="text-align: left;">«объединение множеств <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, …, <span class="math inline">\(A_n\)</span>»</td>
+<td style="text-align: left;">Объединение множеств <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, …, <span class="math inline">\(A_n\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\sqcup\)</span>, <span class="math inline">\(A \sqcup B\)</span></td>
-<td style="text-align: left;">Дизъюнктное объединение</td>
+<td style="text-align: center;"><span class="math inline">\(A \sqcup B\)</span></td>
+<td style="text-align: left;">Дизъюнктное объединение множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \bigsqcup_{i=1}^n A_i\)</span></td>
 <td style="text-align: left;">Дизъюнктное объединение множеств <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, …, <span class="math inline">\(A_n\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\setminus\)</span>, <span class="math inline">\(A \setminus B\)</span></td>
-<td style="text-align: left;">Разность [множеств], «множество <span class="math inline">\(A\)</span> без <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A \setminus B\)</span></td>
+<td style="text-align: left;">Разность <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\mathop{\mathrm{\triangle}}\)</span>, <span class="math inline">\(A \mathop{\mathrm{\triangle}}B\)</span></td>
-<td style="text-align: left;">Симметрическая разность [множеств], «симметрическая разность множества <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A \mathop{\mathrm{\triangle}}B\)</span></td>
+<td style="text-align: left;">Симметрическая разность множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\sup A\)</span></td>
@@ -841,27 +851,27 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Инфимум множества <span class="math inline">\(A\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(=\)</span>, <span class="math inline">\(A = B\)</span></td>
-<td style="text-align: left;">Равенство, «множество <span class="math inline">\(A\)</span> совпадает с множеством <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A = B\)</span></td>
+<td style="text-align: left;">Равенство, совпадение множеств <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\subseteq\)</span>, <span class="math inline">\(A \subseteq B\)</span></td>
-<td style="text-align: left;">Включение, «множество <span class="math inline">\(A\)</span> является подмножеством <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A \subseteq B\)</span></td>
+<td style="text-align: left;">Включение множества <span class="math inline">\(A\)</span> во множество <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\subset\)</span>, <span class="math inline">\(A \subset B\)</span></td>
-<td style="text-align: left;">Собственное включение, «множество <span class="math inline">\(A\)</span> является подмножеством <span class="math inline">\(B\)</span>, но не совпадает с ним»</td>
+<td style="text-align: center;"><span class="math inline">\(A \subset B\)</span></td>
+<td style="text-align: left;">Собственное включение множества <span class="math inline">\(A\)</span> во множество <span class="math inline">\(B\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\supseteq\)</span>, <span class="math inline">\(A \supseteq B\)</span></td>
-<td style="text-align: left;">Обратное включение, «множество <span class="math inline">\(A\)</span> является надмножеством <span class="math inline">\(B\)</span>»</td>
+<td style="text-align: center;"><span class="math inline">\(A \supseteq B\)</span></td>
+<td style="text-align: left;">Обратное включение, включение множества <span class="math inline">\(B\)</span> во множество <span class="math inline">\(A\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\supset\)</span>, <span class="math inline">\(A \supset B\)</span></td>
-<td style="text-align: left;">Собственное обратное включение, «множество <span class="math inline">\(A\)</span> является надмножеством <span class="math inline">\(B\)</span>, но не совпадает с ним»</td>
+<td style="text-align: center;"><span class="math inline">\(A \supset B\)</span></td>
+<td style="text-align: left;">Собственное обратное включение, cобственное включение множества <span class="math inline">\(B\)</span> во множество <span class="math inline">\(A\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\times\)</span>, <span class="math inline">\(A \times B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \times B\)</span></td>
 <td style="text-align: left;">Декартово произведение множеств</td>
 </tr>
 <tr class="odd">
@@ -914,30 +924,34 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Множество действительных (вещественных) чисел</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbb{R}_{+}\)</span></td>
+<td style="text-align: left;">Множество положительных действительных (вещественных) чисел</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\mathbb{C}\)</span></td>
 <td style="text-align: left;">Множество компле́ксных чисел</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\([a, b]\)</span></td>
 <td style="text-align: left;">Закрытый интервал (отрезок) от <span class="math inline">\(a\)</span> до <span class="math inline">\(b\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\((a, b]\)</span></td>
 <td style="text-align: left;">Полуинтервал, закрытый справа, от <span class="math inline">\(a\)</span> до <span class="math inline">\(b\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\([a, b)\)</span></td>
 <td style="text-align: left;">Полуинтервал, закрытый слева, от <span class="math inline">\(a\)</span> до <span class="math inline">\(b\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\((a, b)\)</span></td>
 <td style="text-align: left;">[Открытый] интервал от <span class="math inline">\(a\)</span> до <span class="math inline">\(b\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\((-\infty, b]\)</span>, <span class="math inline">\([a, +\infty)\)</span></td>
 <td style="text-align: left;">Лучи</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\((-\infty, b)\)</span>, <span class="math inline">\((a, -\infty)\)</span></td>
 <td style="text-align: left;">Открытые лучи</td>
 </tr>
@@ -959,59 +973,59 @@ Junior в книжке ≠ Junior в индустрии
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(=\)</span>, <span class="math inline">\(a = b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a = b\)</span></td>
 <td style="text-align: left;">Равенство, «<span class="math inline">\(a\)</span> равно <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\equiv\)</span>, <span class="math inline">\(f(x) \equiv 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f(x) \equiv 0\)</span></td>
 <td style="text-align: left;">Тождественное равенство, «<span class="math inline">\(f(x)\)</span> равна нулю при любых <span class="math inline">\(x\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\overset{\text{def}}{=}\)</span>, <span class="math inline">\(n! \overset{\text{def}}{=}1 \cdot 2 \cdot \ldots \cdot n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(n! \overset{\text{def}}{=}1 \cdot 2 \cdot \ldots \cdot n\)</span></td>
 <td style="text-align: left;">Равно по определению</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\approx\)</span>, <span class="math inline">\(a \approx b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \approx b\)</span></td>
 <td style="text-align: left;">Приблизительное равенство, «<span class="math inline">\(a\)</span> приблизительно равно <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\simeq\)</span>, <span class="math inline">\(\displaystyle \frac{1}{\sin(x-a)} \underset{x \to a}{\simeq} \frac{1}{x-a}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{\sin(x-a)} \underset{x \to a}{\simeq} \frac{1}{x-a}\)</span></td>
 <td style="text-align: left;">Ассимптотическое равенство</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(&gt;\)</span>, <span class="math inline">\(a &gt; b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a &gt; b\)</span></td>
 <td style="text-align: left;">Больше, «<span class="math inline">\(a\)</span> больше <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\gg\)</span>, <span class="math inline">\(a \gg b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \gg b\)</span></td>
 <td style="text-align: left;">Много больше, «<span class="math inline">\(a\)</span> много больше <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\geqslant\)</span>, <span class="math inline">\(a \geqslant b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \geqslant b\)</span></td>
 <td style="text-align: left;">Больше или равно, «<span class="math inline">\(a\)</span> больше или равно <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(&lt;\)</span>, <span class="math inline">\(a &lt; b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a &lt; b\)</span></td>
 <td style="text-align: left;">Меньше, «<span class="math inline">\(a\)</span> меньше <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ll\)</span>, <span class="math inline">\(a \ll b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \ll b\)</span></td>
 <td style="text-align: left;">Много меньше, «<span class="math inline">\(a\)</span> много меньше <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\leqslant\)</span>, <span class="math inline">\(a \leqslant b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \leqslant b\)</span></td>
 <td style="text-align: left;">Меньше или равно, «<span class="math inline">\(a\)</span> меньше или равно <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\propto\)</span>, <span class="math inline">\(a \propto b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a \propto b\)</span></td>
 <td style="text-align: left;">Пропорциональность, «<span class="math inline">\(a\)</span> пропорционально <span class="math inline">\(b\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\text{const}\)</span>, <span class="math inline">\(a = \text{const}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a = \text{const}\)</span></td>
 <td style="text-align: left;">Константа, «<span class="math inline">\(a\)</span> является константой»</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\text{fix}\)</span>, <span class="math inline">\(a = \text{fix}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a = \text{fix}\)</span></td>
 <td style="text-align: left;">Фиксированное значение, «<span class="math inline">\(a\)</span> имеет фиксированное значение»</td>
 </tr>
 <tr class="odd">
@@ -1043,11 +1057,11 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Деление</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(|\)</span>, <span class="math inline">\(m|n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(m|n\)</span></td>
 <td style="text-align: left;">Делимость, «<span class="math inline">\(m\)</span> делит <span class="math inline">\(n\)</span>»</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\mathop{\mathrm{mod}}\)</span>, <span class="math inline">\(m \mathop{\mathrm{mod}}n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(m \mathop{\mathrm{mod}}n\)</span></td>
 <td style="text-align: left;">Деление по модулю <span class="math inline">\(n\)</span>, остаток от деления <span class="math inline">\(m\)</span> на <span class="math inline">\(n\)</span></td>
 </tr>
 <tr class="even">
@@ -1085,6 +1099,35 @@ Junior в книжке ≠ Junior в индустрии
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\max (a, b)\)</span></td>
 <td style="text-align: left;">Максимум из <span class="math inline">\(a\)</span> и <span class="math inline">\(b\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="константы" class="level3">
+<h3 class="anchored" data-anchor-id="константы">Константы</h3>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Обозначение</th>
+<th style="text-align: left;">Обозначаемое</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\pi\)</span></td>
+<td style="text-align: left;">Отношение длины окружности к её диаметру, <span class="math inline">\(\pi \approx 3.14159\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: left;">Основание натурального логарифма, <span class="math inline">\(e \approx 2.71828\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(i\)</span></td>
+<td style="text-align: left;">Мнимая единица, <span class="math inline">\(i^2 = -1\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1128,66 +1171,70 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Вероятность</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbb{p}\)</span></td>
+<td style="text-align: left;">Плотность вероятности</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span></td>
 <td style="text-align: left;">Вероятностное пространство</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\xi(\omega)\)</span></td>
-<td style="text-align: left;">Случайная величина</td>
-</tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\xi(\omega)\)</span>, <span class="math inline">\(\eta(\omega)\)</span>, <span class="math inline">\(\zeta(\omega)\)</span></td>
 <td style="text-align: left;">Случайные величины</td>
 </tr>
 <tr class="even">
+<td style="text-align: center;"><span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span></td>
+<td style="text-align: left;">Случайные величины</td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span></td>
 <td style="text-align: left;">Значения случайных величин <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span></td>
 </tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathbb{E}\big( \xi (\omega) \big)\)</span>, <span class="math inline">\(\mathbb{E}(X)\)</span></td>
+<td style="text-align: left;">Математическое ожидание случайной величины</td>
+</tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\mathbb{E}\)</span></td>
-<td style="text-align: left;">Математическое ожидание</td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb{D}\big( \xi(\omega) \big)\)</span>, <span class="math inline">\(\text{var}(X)\)</span></td>
+<td style="text-align: left;">Дисперсия (вариация) случайной величины</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\mathbb{D}\)</span>, <span class="math inline">\(\text{var}\)</span></td>
-<td style="text-align: left;">Дисперсия, вариация</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\text{sd}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{sd}\big( \xi(\omega) \big)\)</span></td>
 <td style="text-align: left;">Стандартное отклонение</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\text{se}\)</span></td>
 <td style="text-align: left;">Стандартная ошибка</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\text{i.i.d.}\)</span></td>
 <td style="text-align: left;">Независимые одинаково распределенные [случайные величины]</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\text{cov}\)</span></td>
-<td style="text-align: left;">Ковариация</td>
-</tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\text{cor}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{cov}\big(\xi_1 (\omega), \xi_2 (\omega) \big)\)</span>, <span class="math inline">\(\text{cov}(X, Y)\)</span></td>
+<td style="text-align: left;">Ковариация случайных величин</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{cor}\big(\xi_1 (\omega), \xi_2 (\omega) \big)\)</span>, <span class="math inline">\(\text{cor}(X, Y)\)</span></td>
 <td style="text-align: left;">Корреляция</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\overset{\text{a.s.}}{\to}\)</span></td>
 <td style="text-align: left;">Сходится почти наверное (almost sure)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\overset{p}{\to}\)</span></td>
 <td style="text-align: left;">Сходится по вероятности</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\overset{d}{\to}\)</span></td>
 <td style="text-align: left;">Сходится по распределению</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\mathcal{N}(\mu, \sigma^2)\)</span></td>
 <td style="text-align: left;">Нормальное распределение с&nbsp;математическим ожиданием <span class="math inline">\(\mu\)</span> и&nbsp;дисперсией <span class="math inline">\(\sigma^2\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\mathcal{N}(0, 1)\)</span></td>
 <td style="text-align: left;">Стандартное нормальное распределение</td>
 </tr>
@@ -1295,22 +1342,50 @@ Junior в книжке ≠ Junior в индустрии
 <td style="text-align: left;">Матрицы</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;"><span class="math inline">\({\mathbf{A}}\!^{\mathsf{T}}\)</span></td>
+<td style="text-align: left;">Транспонирование матрицы</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\det \mathbf{A}\)</span></td>
+<td style="text-align: left;">Детерминант матрицы</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathop{\mathrm{tr}}\mathbf{A}\)</span></td>
+<td style="text-align: left;">След матрицы</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathop{\mathrm{rank}}\mathbf{A}\)</span></td>
+<td style="text-align: left;">Ранг матрицы</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\({\mathbf{A}}\!^{-1}\)</span></td>
+<td style="text-align: left;">Обратная матрица</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathbf{I}\)</span></td>
+<td style="text-align: left;">Единичная матрица</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbf{O}\)</span></td>
+<td style="text-align: left;">Нулевая матрица</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, … <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span></td>
 <td style="text-align: left;">Числа, элементы вектора, элементы матрицы</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span>, …</td>
 <td style="text-align: left;">Числа, коэффициенты</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\mathbf{a} \cdot \mathbf{b}\)</span></td>
 <td style="text-align: left;">Скалярное произведение векторов <span class="math inline">\(\mathbf{a}\)</span> и <span class="math inline">\(\mathbf{b}\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\mathbf{a} \times \mathbf{b}\)</span></td>
 <td style="text-align: left;">Векторное произведение векторов <span class="math inline">\(\mathbf{a}\)</span> и <span class="math inline">\(\mathbf{b}\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\mathbf{A} \times \mathbf{B}\)</span></td>
 <td style="text-align: left;">Матричное произведение матриц <span class="math inline">\(\mathbf{A}\)</span> и <span class="math inline">\(\mathbf{B}\)</span></td>
 </tr>
