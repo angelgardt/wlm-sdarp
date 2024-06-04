@@ -676,7 +676,7 @@ a. $\displaystyle -77 + \left( \frac{101}{-12} \right)^2$
 * Если выделена часть строки, то выполнился именно эта часть, курсор и выделение останутся на месте (@fig-run-part-of-line).
 * Если выделено несколько строк, то выполняться все они, курсов и выделение останутся на месте (@fig-run-two-lines).
 
-[^stay_on_line]: Если нужно оставить курсор на текущйе строке, используйте `Alt` + `Enter` (`Option` + `Enter`).
+[^stay_on_line]: Если нужно оставить курсор на текущей строке, используйте `Alt` + `Enter` (`Option` + `Enter`).
 
 :::{#fig-run-from-script layout-nrow=3}
 ![Выполнение строки. Первый раз нажат `Enter`, второй раз --- `Ctrl` + `Enter`](img/r-intro/run-line.gif){#fig-run-line}
@@ -840,6 +840,20 @@ R.version
 1. Скрипт должен выводить в командную строку количество секунд, прошедших с полуночи 1 января 1970 года по UTC (текущий timestamp) в формате `"<n> seconds passed from the midnight of Jan 1, 1970"`.
 2. Скрипт должен выполняться из командной строки (через `Rscript`).
 :::
+
+```{r code-r-intro-cli, eval=FALSE}
+#| code-fold: true
+#| code-summary: "Код из видео"
+
+## Первый скрипт
+x <- as.numeric(readline("Enter x:" ))
+y <- as.numeric(readline("Enter y:" ))
+print(paste0("This is the sum of x and y: ", x + y))
+
+## Второй скрипт
+print(paste0(as.numeric(lubridate::now()), " seconds passed from the midnight of Jan 1, 1970"))
+
+```
 
 :::{#fig-r-from-terminal}
 

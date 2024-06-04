@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDAR - 2&nbsp; Знакомство с R</title>
+<title>WLM SDARP - 2&nbsp; Знакомство с R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -232,7 +232,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">WLM SDAR</a> 
+      <a href="./">WLM SDARP</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -425,14 +425,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-other-math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические конструкции</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -500,7 +506,10 @@ window.Quarto = {
 
 
 <!--- {{< include other/_symbols.qmd >}} --->
+<!--- Common --->
 <!--- Logic --->
+<!--- Set theory --->
+<!--- Combinatorics --->
 <!--- Number sets--->
 <!--- Linear Algebra --->
 <!--- vectors and matrices --->
@@ -509,6 +518,7 @@ window.Quarto = {
 <!--- Other --->
 <!--- Trig --->
 <!--- Stats --->
+<!--- Letters --->
 <div class="intro">
 <p>В этой главе мы познакомимся с самыми основами работы в R и начнем прям от Адама — с установки и интерфейса. Если у вас уже есть R и RStudio и вы хотите сразу стартовать с работы в среде, прыгайте <a href="#r-intro-console">сюда</a>.</p>
 </div>
@@ -517,13 +527,13 @@ window.Quarto = {
 <div class="lab-junior">
 
 </div>
-<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="r-data.html#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>3.5</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
+<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="appendix-other-math.html#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>J.5</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
 <div class="cell">
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-b03655bcd79d09f6d323" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b03655bcd79d09f6d323">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-f942f791228e17b9fbc9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f942f791228e17b9fbc9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -1640,6 +1650,18 @@ nickname       Puppy Cup                   </code></pre>
 </div>
 </div>
 </div>
+<div class="cell">
+<details class="code-fold">
+<summary>Код из видео</summary>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Первый скрипт</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">"Enter x:"</span> ))</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">"Enter y:"</span> ))</span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"This is the sum of x and y: "</span>, x <span class="sc">+</span> y))</span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Второй скрипт</span></span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="fu">as.numeric</span>(lubridate<span class="sc">::</span><span class="fu">now</span>()), <span class="st">" seconds passed from the midnight of Jan 1, 1970"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <div id="fig-r-from-terminal" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-from-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1660,7 +1682,7 @@ nickname       Puppy Cup                   </code></pre>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1729,7 +1751,7 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 <li id="fn10"><p>Хотя бы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p><a href="https://www.quora.com/Do-all-programming-languages-use-the-same-operator-precedence-rule-If-yes-or-no-why">Не во всех</a> языках программирования это так.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn12"><p>К слову, если мы внимательно всмотримся в код на картинке, то обнаружим, что фатальных последствий можно было избежать, убрав избыточность кода в условном операторе — сравнение с <code>true</code> бессмысленно, так как <code>isCrazyMurderingRobot</code> уже является логическим значением, и его можно использовать в условии напрямую. 🤦<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>Если нужно оставить курсор на текущйе строке, используйте <code>Alt</code> + <code>Enter</code> (<code>Option</code> + <code>Enter</code>).<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Если нужно оставить курсор на текущей строке, используйте <code>Alt</code> + <code>Enter</code> (<code>Option</code> + <code>Enter</code>).<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn14"><p>Если забыли, то есть <a href="./appendix-formulas.html">приложение</a>.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn15"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn16"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

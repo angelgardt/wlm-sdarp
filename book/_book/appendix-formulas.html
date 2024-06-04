@@ -389,7 +389,7 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#formulas_power" id="toc-formulas_power" class="nav-link active" data-scroll-target="#formulas_power"><span class="header-section-number">F.1</span> Степени и корни</a>
+  <li><a href="#appendix-formulas_power" id="toc-appendix-formulas_power" class="nav-link active" data-scroll-target="#appendix-formulas_power"><span class="header-section-number">F.1</span> Степени, корни, логарифмы</a>
   <ul>
   <li><a href="#formulas_power_def" id="toc-formulas_power_def" class="nav-link" data-scroll-target="#formulas_power_def"><span class="header-section-number">F.1.1</span> Определения</a></li>
   <li><a href="#formulas_power_identities" id="toc-formulas_power_identities" class="nav-link" data-scroll-target="#formulas_power_identities"><span class="header-section-number">F.1.2</span> Свойства</a></li>
@@ -443,7 +443,10 @@ window.Quarto = {
 
 
 <!--- {{< include other/_symbols.qmd >}} --->
+<!--- Common --->
 <!--- Logic --->
+<!--- Set theory --->
+<!--- Combinatorics --->
 <!--- Number sets--->
 <!--- Linear Algebra --->
 <!--- vectors and matrices --->
@@ -452,8 +455,9 @@ window.Quarto = {
 <!--- Other --->
 <!--- Trig --->
 <!--- Stats --->
-<section id="formulas_power" class="level2" data-number="F.1">
-<h2 data-number="F.1" class="anchored" data-anchor-id="formulas_power"><span class="header-section-number">F.1</span> Степени и корни</h2>
+<!--- Letters --->
+<section id="appendix-formulas_power" class="level2" data-number="F.1">
+<h2 data-number="F.1" class="anchored" data-anchor-id="appendix-formulas_power"><span class="header-section-number">F.1</span> Степени, корни, логарифмы</h2>
 <section id="formulas_power_def" class="level3" data-number="F.1.1">
 <h3 data-number="F.1.1" class="anchored" data-anchor-id="formulas_power_def"><span class="header-section-number">F.1.1</span> Определения</h3>
 <p><span class="math display">\[
@@ -509,12 +513,12 @@ x^n = a \Rightarrow x =
 <p><span class="math display">\[
 |a| =
 \begin{cases}
-a, &amp;a \geq 0 \\
+a, &amp;a \geqslant 0 \\
 -a, &amp;a &lt; 0
 \end{cases}
 \]</span></p>
-<p><span class="math display">\[|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]\]</span></p>
-<p><span class="math display">\[|x| \geq a \Rightarrow x \leq -a \wedge x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)\]</span></p>
+<p><span class="math display">\[|x| \leqslant a \Rightarrow -a \leqslant x \leqslant a \Leftrightarrow x \in [-a, a]\]</span></p>
+<p><span class="math display">\[|x| \geqslant a \Rightarrow x \leqslant-a \wedge x \geqslant a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)\]</span></p>
 </section>
 <section id="formulas_deriv" class="level2" data-number="F.4">
 <h2 data-number="F.4" class="anchored" data-anchor-id="formulas_deriv"><span class="header-section-number">F.4</span> Производная</h2>
@@ -734,9 +738,9 @@ a, &amp;a \geq 0 \\
 <section id="trig_sgn" class="level3" data-number="F.5.5">
 <h3 data-number="F.5.5" class="anchored" data-anchor-id="trig_sgn"><span class="header-section-number">F.5.5</span> Соотношение знаков</h3>
 <p><span class="math display">\[
-\text{sgn}\sin \alpha = \text{sgn}\csc \alpha \qquad \text{sgn}\cos \alpha = \text{sgn}\sec \alpha
+\mathop{\mathrm{sgn}}\sin \alpha = \mathop{\mathrm{sgn}}\csc \alpha \qquad \mathop{\mathrm{sgn}}\cos \alpha = \mathop{\mathrm{sgn}}\sec \alpha
 \]</span> <span class="math display">\[
-\text{sgn}\tan \alpha = \text{sgn}\cot \alpha
+\mathop{\mathrm{sgn}}\tan \alpha = \mathop{\mathrm{sgn}}\cot \alpha
 \]</span></p>
 </section>
 <section id="trig_angle_sum" class="level3" data-number="F.5.6">
@@ -804,22 +808,22 @@ a, &amp;a \geq 0 \\
 <section id="trig_half_arg" class="level3" data-number="F.5.9">
 <h3 data-number="F.5.9" class="anchored" data-anchor-id="trig_half_arg"><span class="header-section-number">F.5.9</span> Формулы половинного аргумента</h3>
 <p><span class="math display">\[
-\sin \frac{\alpha}{2} = \text{sgn}\Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
+\sin \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
 \]</span></p>
 <p><span class="math display">\[
-\cos \frac{\alpha}{2} = \text{sgn}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
+\cos \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
 \]</span></p>
 <p><span class="math display">\[
-\tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \text{sgn}(\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
+\tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \mathop{\mathrm{sgn}}(\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
 \]</span></p>
 <p><span class="math display">\[
-\cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \text{sgn}(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
+\cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \mathop{\mathrm{sgn}}(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
 \]</span></p>
 <p><span class="math display">\[
-\sec \frac{\alpha}{2} = \text{sgn}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
+\sec \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
 \]</span></p>
 <p><span class="math display">\[
-\csc \frac{\alpha}{2} = \text{sgn}\Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
+\csc \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
 \]</span></p>
 </section>
 <section id="trig_power_reduction" class="level3" data-number="F.5.10">
