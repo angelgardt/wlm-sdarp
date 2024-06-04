@@ -9,7 +9,7 @@ library(latex2exp)
 theme_set(theme_bw())
 ```
 
-## Степени и корни {#formulas_power}
+## Степени, корни, логарифмы {#appendix-formulas_power}
 
 ### Определения {#formulas_power_def}
 

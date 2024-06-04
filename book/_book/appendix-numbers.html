@@ -381,14 +381,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-other-math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические конструкции</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -408,13 +414,15 @@ window.Quarto = {
   <li><a href="#appendix-numbers-n-zero" id="toc-appendix-numbers-n-zero" class="nav-link" data-scroll-target="#appendix-numbers-n-zero"><span class="header-section-number">A.1.1</span> Ноль как натуральное число</a></li>
   <li><a href="#appendix-numbers-n-oprations" id="toc-appendix-numbers-n-oprations" class="nav-link" data-scroll-target="#appendix-numbers-n-oprations"><span class="header-section-number">A.1.2</span> Операции над натуральными числами</a></li>
   <li><a href="#appendix-numbers-n-peano" id="toc-appendix-numbers-n-peano" class="nav-link" data-scroll-target="#appendix-numbers-n-peano"><span class="header-section-number">A.1.3</span> Аксиомы Пеано</a></li>
-  <li><a href="#appendix-numbers-n-peano" id="toc-appendix-numbers-n-peano" class="nav-link" data-scroll-target="#appendix-numbers-n-peano"><span class="header-section-number">A.1.4</span> Формализация арифметики</a>
+  <li><a href="#appendix-numbers-n-arithm" id="toc-appendix-numbers-n-arithm" class="nav-link" data-scroll-target="#appendix-numbers-n-arithm"><span class="header-section-number">A.1.4</span> Формализация арифметики</a>
   <ul class="collapse">
   <li><a href="#appendix-numbers-n-sum" id="toc-appendix-numbers-n-sum" class="nav-link" data-scroll-target="#appendix-numbers-n-sum"><span class="header-section-number">A.1.4.1</span> Сложение натуральных чисел</a></li>
   <li><a href="#appendix-numbers-n-prod" id="toc-appendix-numbers-n-prod" class="nav-link" data-scroll-target="#appendix-numbers-n-prod"><span class="header-section-number">A.1.4.2</span> Умножение натуральных чисел</a></li>
+  <li><a href="#appendix-numbers-n-minus-div" id="toc-appendix-numbers-n-minus-div" class="nav-link" data-scroll-target="#appendix-numbers-n-minus-div"><span class="header-section-number">A.1.4.3</span> Вычитание и деление и возведение в степень натуральных чисел</a></li>
+  <li><a href="#appendix-numbers-n-properties" id="toc-appendix-numbers-n-properties" class="nav-link" data-scroll-target="#appendix-numbers-n-properties"><span class="header-section-number">A.1.4.4</span> Свойства сложения и умножения</a></li>
+  <li><a href="#appendix-numbers-n-power" id="toc-appendix-numbers-n-power" class="nav-link" data-scroll-target="#appendix-numbers-n-power"><span class="header-section-number">A.1.4.5</span> Возведение в степень натуральных чисел</a></li>
   </ul></li>
-  <li><a href="#определение-операций-друг-через-друга" id="toc-определение-операций-друг-через-друга" class="nav-link" data-scroll-target="#определение-операций-друг-через-друга"><span class="header-section-number">A.1.5</span> Определение операций друг через друга</a></li>
-  <li><a href="#appendix-numbers-n-sum-n-natural" id="toc-appendix-numbers-n-sum-n-natural" class="nav-link" data-scroll-target="#appendix-numbers-n-sum-n-natural"><span class="header-section-number">A.1.6</span> Сумма <span class="math inline">\(n\)</span> натуральных чисел</a></li>
+  <li><a href="#appendix-numbers-n-sum-n-natural" id="toc-appendix-numbers-n-sum-n-natural" class="nav-link" data-scroll-target="#appendix-numbers-n-sum-n-natural"><span class="header-section-number">A.1.5</span> Сумма <span class="math inline">\(n\)</span> натуральных чисел</a></li>
   </ul></li>
   <li><a href="#appendix-numbers-z" id="toc-appendix-numbers-z" class="nav-link" data-scroll-target="#appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</a></li>
   <li><a href="#appendix-numbers-q" id="toc-appendix-numbers-q" class="nav-link" data-scroll-target="#appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</a></li>
@@ -464,7 +472,7 @@ window.Quarto = {
 <p>В общем, приходится признать, что мы не знаем, что такое числа, но при этом неплохо интуитивно понимаем, как они работают (по крайне мере, определенные из них). Далее мы попытаемся проследить, как развивалось понятие числа исходя из внутренних потребностей математики, а если вас заинтересует развитие чисел в историческом контексте, то про это написана книга в 600 страниц «The universal history of numbers» <span class="citation" data-cites="ifrah2000">(<a href="references.html#ref-ifrah2000" role="doc-biblioref">Ifrah, 2000</a>)</span>.</p>
 <section id="appendix-numbers-n" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</h2>
-<p>Первыми исторически возникли натуральные числа, чтобы можно было считать окружающие предметы. Сама идея числа и счёта возникла далеко не сразу — закономерности восприятия позволяют выяснить, что некоторое множество объектов изменилось (объект пропал или появился) и без вовлечения процедуры счёта <span class="citation" data-cites="history-of-numbers">(<a href="references.html#ref-history-of-numbers" role="doc-biblioref"><strong>history-of-numbers?</strong></a>)</span>. Тем не менее, в определенные момент всё же возникает необходимость считать предметы и формируется некоторое абстрактное представление о <em>натуральных числах как тех, которые используются при счёте предметов</em>.</p>
+<p>Первыми исторически возникли натуральные числа, чтобы можно было считать окружающие предметы. Сама идея числа и счёта возникла далеко не сразу — закономерности восприятия позволяют выяснить, что некоторое множество объектов изменилось (объект пропал или появился) и без вовлечения процедуры счёта <span class="citation" data-cites="ifrah2000">(<a href="references.html#ref-ifrah2000" role="doc-biblioref">Ifrah, 2000</a>)</span>. Тем не менее, в определенные момент всё же возникает необходимость считать предметы и формируется некоторое абстрактное представление о <em>натуральных числах как тех, которые используются при счёте предметов</em>.</p>
 <p>Сегодня по прошествии многих веков с момента «рождения» чисел мы пользуемся для их записи арабскими (они же индийские, они же индо-арабские<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>) цифрами и десятичной <a href="./appendix-numbers-iron.html#appendix-numbers-num-systems">системой счисления</a>:</p>
 <p><span class="math display">\[
 0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9
@@ -548,8 +556,8 @@ n \in \mathbb{N}\Rightarrow S(n) \in \mathbb{N}
 P(0) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow \forall n \in \mathbb{N}\; P(n)
 \tag{A.5}\]</span></span></p>
 </section>
-<section id="appendix-numbers-n-peano" class="level3" data-number="A.1.4">
-<h3 data-number="A.1.4" class="anchored" data-anchor-id="appendix-numbers-n-peano"><span class="header-section-number">A.1.4</span> Формализация арифметики</h3>
+<section id="appendix-numbers-n-arithm" class="level3" data-number="A.1.4">
+<h3 data-number="A.1.4" class="anchored" data-anchor-id="appendix-numbers-n-arithm"><span class="header-section-number">A.1.4</span> Формализация арифметики</h3>
 <p>Используя функцию следования, вводимую в рамках аксиом Пеано, можно формализовать всю арифметику, введя следующие аксиомы сложения и умножения <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>:</p>
 <p><span id="eq-arithm-axioms"><span class="math display">\[
 \begin{split}
@@ -561,6 +569,7 @@ P(0) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow
 \tag{A.6}\]</span></span></p>
 <section id="appendix-numbers-n-sum" class="level4" data-number="A.1.4.1">
 <h4 data-number="A.1.4.1" class="anchored" data-anchor-id="appendix-numbers-n-sum"><span class="header-section-number">A.1.4.1</span> Сложение натуральных чисел</h4>
+<p>Заметим, что в аксиомах сложения и умножения (<a href="#eq-arithm-axioms" class="quarto-xref">Уравнение&nbsp;<span>A.6</span></a>) фигурирует запись <span class="math inline">\(n + 0 = n\)</span>, то есть прибавление нуля ничего не делает с числом — иначе, <em>ноль является нейтральным элементом относительно сложения</em>.</p>
 <p>Пусть мы хотим вычислить <span class="math inline">\(1 + 1\)</span>. Обозначим второе слагаемое как <span class="math inline">\(1 = S(0)\)</span>. Тогда</p>
 <p><span class="math display">\[
 1 + 1 = 1 + S(0) = S(1 + 0) = S(1) = 2
@@ -569,30 +578,78 @@ P(0) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow
 <p><span class="math display">\[
 1 + 2 = 1 + S(1) = S(1 + 1) = S(2) = 3
 \]</span></p>
-<p>Повторив эту операцию столько раз, сколько требуется для сложения конкретны чисел, мы получим хорошо знакомое нам сложение, которым практически от рождения пользуемся.</p>
+<p>Повторив эту операцию столько раз, сколько требуется для сложения конкретных чисел, мы получим хорошо знакомое нам сложение, которым практически от рождения пользуемся.</p>
+<p>Иначе можно записать:</p>
+<p><span class="math display">\[
+a + b = a + \underbrace{1 + 1 + \ldots + 1}_b
+\]</span></p>
 </section>
 <section id="appendix-numbers-n-prod" class="level4" data-number="A.1.4.2">
 <h4 data-number="A.1.4.2" class="anchored" data-anchor-id="appendix-numbers-n-prod"><span class="header-section-number">A.1.4.2</span> Умножение натуральных чисел</h4>
 <p>Здесь, во-первых, мы можем получить хорошо знакомый нам факт, что <span class="math inline">\(n \cdot 1 = n\)</span>:</p>
 <p><span class="math display">\[
 n \cdot 1 = n \cdot S(0) = n + n \cdot 0 = n + 0 = n
-\]</span> А если нам необходимо получить произведение двух чисел, то действуем так:</p>
+\]</span> То есть <em>единица является нейтральным элементом относительно умножения</em>.</p>
+<p>А если нам необходимо получить произведение двух чисел, то действуем так:</p>
 <p><span class="math display">\[
 2 \cdot 2 = 2 \cdot S(1) = 2 + 2 \cdot 1 = 2 + 2 = 4
 \]</span></p>
+<p>Иначе можно записать:</p>
+<p><span class="math display">\[
+a \cdot b = \underbrace{a + a + \ldots + a}_b
+\]</span></p>
 </section>
-</section>
-<section id="определение-операций-друг-через-друга" class="level3" data-number="A.1.5">
-<h3 data-number="A.1.5" class="anchored" data-anchor-id="определение-операций-друг-через-друга"><span class="header-section-number">A.1.5</span> Определение операций друг через друга</h3>
-<p>Сами операции определяются друг через друга:</p>
+<section id="appendix-numbers-n-minus-div" class="level4" data-number="A.1.4.3">
+<h4 data-number="A.1.4.3" class="anchored" data-anchor-id="appendix-numbers-n-minus-div"><span class="header-section-number">A.1.4.3</span> Вычитание и деление и возведение в степень натуральных чисел</h4>
+<p>Когда на множестве натуральных чисел введены сложение и умножение, появляется возможность задать обратные операции к ним.</p>
 <ul>
-<li><span class="math inline">\(a + b = a + \underbrace{1 + 1 + \ldots + 1}_b\)</span></li>
-<li><span class="math inline">\(a \cdot b = \underbrace{a + a + \ldots + a}_b\)</span></li>
-<li><span class="math inline">\(a^b = \underbrace{a \cdot a \cdot \ldots \cdot a}_b\)</span></li>
+<li><strong>Вычитание</strong> вводится как операция обратная сложению: <span class="math inline">\(a - b = c \Leftrightarrow b + c = a\)</span>;</li>
+<li><strong>Деление</strong> вводится как операция обратная умножению: <span class="math inline">\(a \div b = c \Leftrightarrow b \cdot c = a\)</span>
+<ul>
+<li>В случае натуральных чисел вводится <strong>деление с остатком</strong>, как указывалось выше, чтобы задать возможность деление любого натурального числа на любое натуральное число, отличное от <span class="math inline">\(0\)</span>: <span class="math inline">\(a \div b = (q, r), \, a = q \cdot b + r, \, r &lt; b\)</span> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+</ul></li>
 </ul>
 </section>
-<section id="appendix-numbers-n-sum-n-natural" class="level3" data-number="A.1.6">
-<h3 data-number="A.1.6" class="anchored" data-anchor-id="appendix-numbers-n-sum-n-natural"><span class="header-section-number">A.1.6</span> Сумма <span class="math inline">\(n\)</span> натуральных чисел</h3>
+<section id="appendix-numbers-n-properties" class="level4" data-number="A.1.4.4">
+<h4 data-number="A.1.4.4" class="anchored" data-anchor-id="appendix-numbers-n-properties"><span class="header-section-number">A.1.4.4</span> Свойства сложения и умножения</h4>
+<ol type="1">
+<li><p>Коммутативность сложения <span class="math display">\[
+a + b = b + a
+\]</span></p></li>
+<li><p>Коммутативность умножения <span class="math display">\[
+a \cdot b = b \cdot a
+\]</span></p></li>
+<li><p>Ассоциативность сложения <span class="math display">\[
+(a + b) + c = a + (b + c)
+\]</span></p></li>
+<li><p>Ассоциативность умножения <span class="math display">\[
+(a + b) + c = a + (b + c)
+\]</span></p></li>
+<li><p>Дистрибутивность умножения относительно сложения <span class="math display">\[
+(a + b) \cdot c = (a \cdot c) + (b \cdot c)
+\]</span></p></li>
+</ol>
+</section>
+<section id="appendix-numbers-n-power" class="level4" data-number="A.1.4.5">
+<h4 data-number="A.1.4.5" class="anchored" data-anchor-id="appendix-numbers-n-power"><span class="header-section-number">A.1.4.5</span> Возведение в степень натуральных чисел</h4>
+<p>С возведением в степень ситуация несколько сложнее: это действие не является обратным к какому-либо из введенных. Она, как известно, определяется через умножение следующим образом<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
+<p><span class="math display">\[
+a^b = \underbrace{a \cdot a \cdot \ldots \cdot a}_b
+\]</span></p>
+<p>Таким образом определенная операция оказывается <em>некоммутативной</em>, так как в общем случае</p>
+<p><span class="math display">\[
+a^b \neq b^a
+\]</span></p>
+<p>По этой причине возникает две обратные операции.</p>
+<ul>
+<li>Первая обратная операция решает задачу нахождения <em>основания степени</em> и называется <em>извлечением корня</em>: <span class="math inline">\(\sqrt[b]{c} = a \Leftrightarrow a^b = c\)</span></li>
+<li>Вторая обратная операция решает задачу нахождения <em>показателя степени</em> и называется <em>логарифмированием</em>: <span class="math inline">\(\log_a{c} = b \Leftrightarrow a^b = c\)</span></li>
+</ul>
+<p>Свойства степеней, корней и логарифмов представлены в <a href="./appendix-formulas.html#appendix-formulas_power">приложении с формулами</a>, поэтому позволю себе их здесь не дублировать.</p>
+</section>
+</section>
+<section id="appendix-numbers-n-sum-n-natural" class="level3" data-number="A.1.5">
+<h3 data-number="A.1.5" class="anchored" data-anchor-id="appendix-numbers-n-sum-n-natural"><span class="header-section-number">A.1.5</span> Сумма <span class="math inline">\(n\)</span> натуральных чисел</h3>
 <div id="prp-sum-n-natural" class="theorem proposition">
 <p><span class="theorem-title"><strong>Утверждение A.1</strong></span> Сумма <span class="math inline">\(n\)</span> натуральных чисел <span class="math inline">\(S_n\)</span> равна <span class="math inline">\(\displaystyle \frac{n \cdot (n+1)}{2}\)</span>.</p>
 </div>
@@ -701,7 +758,7 @@ x &amp;= \pm \sqrt{-1} \cdot \sqrt{4} \\
 x &amp;= \pm \sqrt{-1} \cdot 2
 \end{split}
 \]</span></p>
-<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>, а как известно, под знаком квадратного корня может стоять только положительное число<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Чтобы решить эту неприятность, математики ввели новое число <span class="math inline">\(i\)</span> — <strong>мнимую единицу</strong>. Она обладает интересным свойством:</p>
+<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>, а как известно, под знаком квадратного корня может стоять только положительное число<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Чтобы решить эту неприятность, математики ввели новое число <span class="math inline">\(i\)</span> — <strong>мнимую единицу</strong>. Она обладает интересным свойством:</p>
 <p><span id="eq-i-sq-equals-minus-one"><span class="math display">\[
 i^2 = -1
 \tag{A.10}\]</span></span></p>
@@ -853,7 +910,9 @@ SLOVARonline. (2010). <em>Философский энциклопедическ�
 <li id="fn1"><p>Термины «арабские цифры (аrabic digits)» и «индийские цифры (hindi digits)» в современном мире <a href="https://www.unicode.org/terminology/digits.html">неоднозначны</a>, так как цифры, используемые сегодня в арабских странах и Индии, отличаются от тех, которые называются арабскими на территории европейских стран.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Только в случае <span class="math inline">\(a &gt; b\)</span>, если <span class="math inline">\(a, b \in \mathbb{N}^{\ast}\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Изначально самим Дж. Пеано было введено девять аксиом <span class="citation" data-cites="peano1889">(<a href="references.html#ref-peano1889" role="doc-biblioref">Peano, 1889</a>)</span>. Cовременный вариант аксиом Пеано для <span class="math inline">\(\mathbb{N}^{\ast}\)</span> состоит из пяти аксиом <span class="citation" data-cites="kumar-peano">(<a href="references.html#ref-kumar-peano" role="doc-biblioref">Kumar, n.d.</a>)</span>. Здесь представлен вариант аксиом для <span class="math inline">\(\mathbb{N}\)</span> <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Здесь мы говорим об арифметическом квадратном корне.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Здесь: <span class="math inline">\(q\)</span> — частное (<strong>q</strong>uotient), <span class="math inline">\(r\)</span> — остаток (<strong>r</strong>emainder).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>То есть по факту уножение является <a href="./appendix-other-math.html#appendix-other-math-hyperop">гипероператором третьего порядка</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Здесь мы говорим об арифметическом квадратном корне.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
