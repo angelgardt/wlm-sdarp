@@ -8,28 +8,57 @@
 #
 
 library(shiny)
+library(bslib)
+library(tidyverse)
+theme_set(theme_bw())
+library(latex2exp)
 
-# Define UI for application that draws a histogram
-ui <- fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins 
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-           plotOutput("distPlot")
-        )
+ui <- page_navbar(
+  
+  # Application title
+  title = "Стандартизация случайных величин // WLM SDARP",
+  
+  sidebar = sidebar(
+    title = "Параметры",
+    sliderInput(
+      "n",
+      label = TeX("n"),
+      min = 1,
+      max = 500,
+      value = 30
+    ),
+    sliderInput(
+      "p",
+      label = "p",
+      min = 0,
+      max = 1,
+      value = .5
+    ),
+    sliderInput(
+      "point_size",
+      label = "Размер точек",
+      min = 1,
+      max = 5,
+      value = 2
+    ),
+    sliderInput(
+      "line_width",
+      label = "Ширина линий",
+      min = 1,
+      max = 5,
+      value = 1
+    ),
+    textInput(
+      "additional_color",
+      label = "Дополнительный цвет",
+      value = "gray"
     )
+  ),
+  
+  nav_panel("Стандартизация"),
+  
+  nav_panel("Свойства среднего и дисперсии")
+  
 )
 
 # Define server logic required to draw a histogram
