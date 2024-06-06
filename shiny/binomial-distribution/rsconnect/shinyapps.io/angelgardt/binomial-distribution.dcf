@@ -1,0 +1,13 @@
+name: binomial-distribution
+title: binomial-distribution
+username: angelgardt
+account: angelgardt
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12137278
+bundleId: 8709144
+url: https://angelgardt.shinyapps.io/binomial-distribution/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: draft.R
