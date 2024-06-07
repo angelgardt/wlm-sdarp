@@ -29,6 +29,8 @@ book:
       - r-intro.qmd
       - r-data.qmd
     - part: part-math.qmd
+      chapters: 
+        - math-logic.qmd
     - part: part-measures.qmd
     - part: part-desc.qmd
       chapters:
