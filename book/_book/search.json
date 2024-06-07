@@ -900,7 +900,7 @@
     "href": "references.html",
     "title": "Источники",
     "section": "",
-    "text": "Ifrah, G. (2000). The universal history of numbers: From prehistory\nto the invention of the computer. John Wiley & Sons, Inc.\n\n\nISO. (2019). Quantities and units — part 2: mathematics\n(ISO 80000-2:2019). International Organization for\nStandardization. https://www.iso.org/standard/64973.html\n\n\nKumar, N. M. (n.d.). Construstion of number systems. Washington\nUniversity in St. Louis, Department of Mathematics. Retrieved May 30,\n2024, from https://www.math.wustl.edu/~kumar/courses/310-2011/Peano.pdf\n\n\nPeano, I. (1889). Arithmetices principia: Nova methodo. Fratres\nBocca.\n\n\nPelayo, R. (n.d.). The peano axioms. Retrieved May 30, 2024,\nfrom https://www2.hawaii.edu/~robertop/Courses/TMP/7_Peano_Axioms.pdf\n\n\nPosit team. (2024). RStudio: Integrated development environment for\nr. Posit Software, PBC. http://www.posit.co/\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nRoss, I. (n.d.). The r project: A brief history and thoughts about\nthe future. The University of Auckland. Retrieved May 19, 2024,\nfrom https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf\n\n\nSLOVARonline. (2010). Философский энциклопедический словарь.\nСловари онлайн. https://rus-philosophy-enc.slovaronline.com/\n\n\nВиноградов, И. М. (1985). Математическая энциклопедия (в 5 томах).\nТом 5. Советская энциклопедия.",
+    "text": "Ifrah, G. (2000). The universal history of numbers: From prehistory\nto the invention of the computer. John Wiley & Sons, Inc.\n\n\nISO. (2019). Quantities and units — part 2: mathematics\n(ISO 80000-2:2019). International Organization for\nStandardization. https://www.iso.org/standard/64973.html\n\n\nKumar, N. M. (n.d.). Construstion of number systems. Washington\nUniversity in St. Louis, Department of Mathematics. Retrieved May 30,\n2024, from https://www.math.wustl.edu/~kumar/courses/310-2011/Peano.pdf\n\n\nPeano, I. (1889). Arithmetices principia: Nova methodo. Fratres\nBocca.\n\n\nPelayo, R. (n.d.). The peano axioms. Retrieved May 30, 2024,\nfrom https://www2.hawaii.edu/~robertop/Courses/TMP/7_Peano_Axioms.pdf\n\n\nPosit team. (2024). RStudio: Integrated development environment for\nr. Posit Software, PBC. http://www.posit.co/\n\n\nR Core Team. (2023). R: A language and environment for statistical\ncomputing. R Foundation for Statistical Computing. https://www.R-project.org/\n\n\nRoss, I. (n.d.). The r project: A brief history and thoughts about\nthe future. The University of Auckland. Retrieved May 19, 2024,\nfrom https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf\n\n\nSLOVARonline. (2010). Философский энциклопедический словарь.\nСловари онлайн. https://rus-philosophy-enc.slovaronline.com/\n\n\nВиноградов, И. М. (1985). Математическая энциклопедия (в 5 томах).\nТом 5. Советская энциклопедия.\n\n\nСаввина, О. А. (2016). Математику уже затем учить надо…. Журнал\nПедагогических Исследований, 1(6), 6.",
     "crumbs": [
       "Источники"
     ]
@@ -1405,7 +1405,7 @@
     "href": "part-math.html",
     "title": "Математика для анализа данных",
     "section": "",
-    "text": "Почему стоит изучать математику?\nВо-первых, потому что это красиво (Иллюстрация 1 и Иллюстрация 2).\nВо-вторых, потому что в математике происходит дикий экшон (Иллюстрация 3).\nНу, а в-третьих, почему-то так складывается, что математика крайне удачно подходит2 в качестве инструмента для описания наблюдаемых явлений, в том числе того, что мы наблюдаем в наших исследованиях — и научных, и индустриальных. К тому же, статистика, на которой стоят все методы анализа данных, является разделом математики, так что ситуация весьма понятная — придется погрузиться в этот дивный мир.\nБезусловно, есть еще много причин — на математике работаю все цифровые устройства и современные алгоритмы, окружающие нас повсюду, являясь формальной наукой, она знакомит нас с логическими рассуждениями и доказательствами, позволяет изучать мир за пределами нашего перцептивного опыта3 и т. д. Частично мы попробуем прикоснуться к ним в рамках данной книги.",
+    "text": "Почему стоит изучать математику?\nЦитата, которая может быть известна вам ещё со школы, звучащая настолько пафосно, что может даже отталкивать в современное время — с чего бы мне вдруг «ум в порядок приводить»? он у меня и так в норме! Зайдём с других сторон.\nВо-первых, потому что это красиво (Иллюстрация 1 и Иллюстрация 2).\nВо-вторых, потому что в математике происходит дикий экшон (Иллюстрация 3).\nНу, а в-третьих, почему-то так складывается, что математика крайне удачно подходит3 в качестве инструмента для описания наблюдаемых явлений, в том числе того, что мы наблюдаем в наших исследованиях — и научных, и индустриальных. К тому же, статистика, на которой стоят все методы анализа данных, является разделом математики, так что ситуация весьма понятная — придется погрузиться в этот дивный мир.\nБезусловно, есть еще много причин — на математике работаю все цифровые устройства и современные алгоритмы, окружающие нас повсюду, являясь формальной наукой, она знакомит нас с логическими рассуждениями и доказательствами, позволяет изучать мир за пределами нашего перцептивного опыта4 и т. д. Частично мы попробуем прикоснуться к ним в рамках данной книги.",
     "crumbs": [
       "Математика для анализа данных"
     ]
@@ -1415,7 +1415,7 @@
     "href": "part-math.html#почему-стоит-изучать-математику",
     "title": "Математика для анализа данных",
     "section": "",
-    "text": "Иллюстрация 1: Curlicue Fractals by Chirag Dudhat\n\n\n\n\n\n\n\n\n\nИллюстрация 2: π painting “The area of a Circle” ENDLESSLY by Chirag Dudhat\n\n\n\n\n\n\n\n\n\n\nИллюстрация 3: Animation vs Math by Alan Becker Team1",
+    "text": "Математику уже затем учить надо, что она ум в порядок приводит\n\nМ. В. Ломоносов1\n\n\n\n\n\n\n\n\n\n\nИллюстрация 1: Curlicue Fractals by Chirag Dudhat\n\n\n\n\n\n\n\n\n\nИллюстрация 2: π painting “The area of a Circle” ENDLESSLY by Chirag Dudhat\n\n\n\n\n\n\n\n\n\n\nИллюстрация 3: Animation vs Math by Alan Becker Team2",
     "crumbs": [
       "Математика для анализа данных"
     ]
@@ -1425,7 +1425,7 @@
     "href": "part-math.html#footnotes",
     "title": "Математика для анализа данных",
     "section": "",
-    "text": "Для впечатлившихся: от команды Алана есть ещё аналогичный видос про физику. Там не всё полностью корректно, но с учетом художественных допущений произведение крайне достойное!↩︎\nНа тему описания мира через математику хорошо повествует А. М. Семихатов. См. «Математика и интуиция», «Абстрактное и конкретное в математике» и другие лекции.↩︎\nНа тему открытий и предсказаний силами математики безумно интересно рассказывает всё тот же А. М. Семихатов. Есть два варианта примерно одной и той же лекции: для всех и для программистов.↩︎",
+    "text": "См. Саввина (2016)↩︎\nДля впечатлившихся: от команды Алана есть ещё аналогичный видос про физику. Там не всё полностью корректно, но с учетом художественных допущений произведение крайне достойное!↩︎\nНа тему описания мира через математику хорошо повествует А. М. Семихатов. См. «Математика и интуиция», «Абстрактное и конкретное в математике» и другие лекции.↩︎\nНа тему открытий и предсказаний силами математики безумно интересно рассказывает всё тот же А. М. Семихатов. Есть два варианта примерно одной и той же лекции: для всех и для программистов.↩︎",
     "crumbs": [
       "Математика для анализа данных"
     ]
@@ -1435,7 +1435,7 @@
     "href": "part-math.html#размышления-о-математической-тревожности",
     "title": "Математика для анализа данных",
     "section": "Размышления о «математической тревожности»",
-    "text": "Размышления о «математической тревожности»",
+    "text": "Размышления о «математической тревожности»\n\n\n\n\nСаввина, О. А. (2016). Математику уже затем учить надо…. Журнал Педагогических Исследований, 1(6), 6.",
     "crumbs": [
       "Математика для анализа данных"
     ]
