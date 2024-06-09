@@ -36,6 +36,8 @@ book:
       chapters:
       - desc-statintro.qmd
     - part: part-prob.qmd
+      chapters: 
+        - prob-prob.qmd
     - part: part-andan.qmd
     - common-outro.qmd
     - references.qmd
