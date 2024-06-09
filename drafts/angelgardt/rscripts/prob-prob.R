@@ -19,11 +19,11 @@ tibble(n = seq(1, 5000, by = 5),
 
 
 set.seed(956)
-sample(1:6, 100*1000, replace = TRUE) %>% 
-  matrix(ncol = 100) %>% 
+sample(1:6, 500*1000, replace = TRUE) %>% 
+  matrix(ncol = 1000) %>% 
   apply(2, function(x) sum(x == 1)) %>% 
-  `/`(1000) %>% 
-  tibble(n = 1:100,
+  `/`(500) %>% 
+  tibble(n = 1:1000,
          p = .) %>% 
   ggplot(aes(x = n,
              y = p)) +
@@ -34,4 +34,8 @@ sample(1:6, 100*1000, replace = TRUE) %>%
   ylim(0, 1) +
   labs(x = "Номер серии экспериментов",
        y = "Относительная частота")
+
+
+
+
 

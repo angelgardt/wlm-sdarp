@@ -435,7 +435,19 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#prob-randexp" id="toc-prob-randexp" class="nav-link active" data-scroll-target="#prob-randexp"><span class="header-section-number">6.1</span> Эксперименты со случайным исходом</a></li>
+  <li><a href="#prob-randexp" id="toc-prob-randexp" class="nav-link active" data-scroll-target="#prob-randexp"><span class="header-section-number">6.1</span> Эксперименты со случайным исходом</a>
+  <ul>
+  <li><a href="#prob-not-freq" id="toc-prob-not-freq" class="nav-link" data-scroll-target="#prob-not-freq"><span class="header-section-number">6.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</a></li>
+  </ul></li>
+  <li><a href="#prob-events" id="toc-prob-events" class="nav-link" data-scroll-target="#prob-events"><span class="header-section-number">6.2</span> Элементарные исходы и события</a>
+  <ul>
+  <li><a href="#prob-omega-types" id="toc-prob-omega-types" class="nav-link" data-scroll-target="#prob-omega-types"><span class="header-section-number">6.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</a></li>
+  <li><a href="#prop-events-operations" id="toc-prop-events-operations" class="nav-link" data-scroll-target="#prop-events-operations"><span class="header-section-number">6.2.2</span> Операции над событиями</a></li>
+  </ul></li>
+  <li><a href="#prob-lim-set" id="toc-prob-lim-set" class="nav-link" data-scroll-target="#prob-lim-set"><span class="header-section-number">6.3</span> Предел последовательности множеств</a>
+  <ul>
+  <li><a href="#prob-indic-function" id="toc-prob-indic-function" class="nav-link" data-scroll-target="#prob-indic-function"><span class="header-section-number">6.3.1</span> Индикаторная функция</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -513,22 +525,318 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
+<p>Значение, в которому стремится относительная частота исхода случайного эксперимента, естественно назвать <em>вероятностью этого исхода</em>:</p>
+<p><span class="math display">\[
+\mathbb{P}(A) \approx \frac{n(A)}{n}, \, n \to \infty
+\]</span></p>
+<p>Окей… Но ведь мы это же самое говорили, когда рассматривали статистическую интерпретацию вероятности! В чем здесь проблема?</p>
+<section id="prob-not-freq" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="prob-not-freq"><span class="header-section-number">6.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</h3>
+<p>Если мы внимательно присмотримся к записи <span class="math inline">\(\displaystyle \mathbb{P}(A) \approx \frac{n(A)}{n}, \, n \to \infty\)</span>, то обнаружим, что в качестве математического определения вероятности она совершенно не годится <span class="citation" data-cites="serdobolskaya2019">(<a href="references.html#ref-serdobolskaya2019" role="doc-biblioref">Сердобольская, 2017</a>)</span>.</p>
+<ul>
+<li>Во-первых, его невозможно [эмпирически] проверить — необходимо бесконечно время (<span class="math inline">\(n \to \infty\)</span>), а значит, изменятся условия эксперимента и не будет выполнено соответствующее требование модели случайного эксперимента.</li>
+<li>Во-вторых, математика не очень любит приближённые равенства. Можно было бы выкрутиться пределом, и сказать, что <span class="math inline">\(\displaystyle \mathbb{P}(A) = \lim_{n \to \infty} \frac{n(A)}{n}\)</span>), но это нас на спасёт. Здесь слева от знака равенства стоит число <span class="math inline">\(\mathbb{P}(A)\)</span>, а частное <span class="math inline">\(\displaystyle  \frac{n(A)}{n}\)</span> под знаком предела — <em>случайное</em> число, поскольку случаен и сам исход <span class="math inline">\(A\)</span>. В каком-то смысле относительная частота ещё более случайная, чем исход <span class="math inline">\(A\)</span>, так как исход может либо реализоваться, либо нет, а частота может принимать любое значение от <span class="math inline">\(0\)</span> до <span class="math inline">\(1\)</span> c шагом <span class="math inline">\(\displaystyle \frac{1}{n}\)</span>.
+<ul>
+<li>Тогда необходимо определить предел последовательности случайных чисел! Но и здесь возникает проблема — разность между вероятность и частотой также случайна, поэтому определить предел аналогично тому, как это делается в математическом анализе, не получится.</li>
+</ul></li>
+<li>Однако есть другая проблема — «концептуальная» — равенство <span class="math inline">\(\displaystyle \mathbb{P}(A) = \lim_{n \to \infty} \frac{n(A)}{n}\)</span> зациклено само на себе. Мы пытаемся определить вероятность, используя частоту, но поведение частоты в случайном эксперименте определяется тем, как задана вероятность в той или иной математической модели.</li>
+</ul>
+<p>Таким образом, это выражение не может быть математическим определением, однако оно может быть теоремой теории вероятности, которую мы в виде приближенного равенства сможем использовать в эмпирической проверке расчётов. Для вычисления же самой вероятности необходимо построить математическую конструкцию вероятности. Решением этой задачи и занимается теория вероятности.</p>
+</section>
+</section>
+<section id="prob-events" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="prob-events"><span class="header-section-number">6.2</span> Элементарные исходы и события</h2>
+<p>Определимся концептуально, что <strong>вероятность — это мера множества</strong>. <strong>Мера</strong> — это правильно, которое приписывает множеству <em>числовое значение</em>. Мерой как математической конструкцией занимается теория меры(HREF), однако можно найти и хорошо знакомых нам из практики представителей меры — это, например, длина, площадь, объем или масса. Вероятность является ещё одной мерой, правда, найти ей осязаемый физический аналог оказывается сложнее.</p>
+<p>Тем не менее, мы обозначили, что есть некоторое множество, для которого вероятность является мерой. Надо разобраться в том, что это такое за множество.</p>
+<p>Пусть есть некоторый эксперимент со случайным исходом. Мы знаем, что в рамках этого эксперимента может произойти, но на можем сказать, что именно произойдет в конкретном случайном эксперименте. Обозначим каждый из возможных исходов [в одном повторении случайного эксперимента] как <span class="math inline">\(\omega\)</span> и назовём <strong>элементарным исходом</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Если мы соберем все возможные элементарные исходы случайного эксперимента в мешок, то получим <strong>множество элементарных исходов</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, обозначаемое <span class="math inline">\(\Omega\)</span>.</p>
+<p>Приведем примеры множеств элементарных исходов. Начнем с чего-то суперклассического. Рассмотрим следующий случайный эксперимент: «один раз брошена монета». Тогда</p>
+<p><span class="math display">\[
+\Omega = \{ \omega_1, \omega_2 \},
+\]</span></p>
+<p>где <span class="math inline">\(\omega_1\)</span> — «монета упада “орлом” вверх», <span class="math inline">\(\omega_2\)</span> — «монета упала “решкой” вверх». Множество элементарных исходов в этой случае состоит всего из двух элементов.</p>
+<p>Другой пример: «один раз брошен игральный кубик». В этом случае множество элементарных исходов состоит из шести элементов:</p>
+<p><span id="eq-dice-omega"><span class="math display">\[
+\Omega = \{ \omega_1, \omega_2, \omega_3, \omega_4, \omega_5, \omega_6 \},
+\tag{6.1}\]</span></span></p>
+<p>где</p>
+<ul>
+<li><span class="math inline">\(\omega_1\)</span> — «выпала грань с одной точкой»,</li>
+<li><span class="math inline">\(\omega_2\)</span> — «выпала грань с двумя точками»,</li>
+<li><span class="math inline">\(\omega_3\)</span> — «выпала грань с тремя точками»,</li>
+<li><span class="math inline">\(\omega_4\)</span> — «выпала грань с четырьмя точками»,</li>
+<li><span class="math inline">\(\omega_5\)</span> — «выпала грань с пятью точками»,</li>
+<li><span class="math inline">\(\omega_6\)</span> — «выпала грань с шестью точками».</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Модель vs реальность
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Конечно, множество элементарных исходов — это <em>модель</em>, и как и в любой модели, в ней присутствует ряд упрощений. Так, не рассматриваются события, «монета упала на ребро» или «игральный кубик упал на ребро», а события «монета упала на стол “орлом” вверх» и «монета упала на пол “орлом” вверх» считаются один и тем же событием. Однако мы пользуемся такими моделями для описания реальных экспериментов, если подобные идеализации, во-первых, адекватно, а во-вторых, вполне хорошо приближают реальность.</p>
+</div>
+</div>
+<p>Приведем ещё примеры множеств элементарных исходов, более близким к психологии. Случайный эксперимент: «респондент отвечает на вопрос опросника, используя пятибалльную шкалу Ликерта». Тогда</p>
+<p><span class="math display">\[
+\Omega = \{ \omega_1, \omega_2, \omega_3, \omega_4, \omega_5 \},
+\]</span></p>
+<p>где</p>
+<ul>
+<li><span class="math inline">\(\omega_1\)</span> — «респондент выбрал ответ &lt;1&gt;»,</li>
+<li><span class="math inline">\(\omega_2\)</span> — «респондент выбрал ответ &lt;2&gt;»,</li>
+<li><span class="math inline">\(\omega_3\)</span> — «респондент выбрал ответ &lt;3&gt;»,</li>
+<li><span class="math inline">\(\omega_4\)</span> — «респондент выбрал ответ &lt;4&gt;»,</li>
+<li><span class="math inline">\(\omega_5\)</span> — «респондент выбрал ответ &lt;5&gt;».</li>
+</ul>
+<p>Случайный эксперимент: «респондент заполняет опросник STAI»<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Тогда множество элементарных исходов будет таким:</p>
+<p><span id="eq-stai-omega"><span class="math display">\[
+\Omega = \{ (\omega_{1i}, \omega_{2j}) \, | \,20 \leqslant i,j \leqslant 80\},
+\tag{6.2}\]</span></span></p>
+<p>где <span class="math inline">\(\omega_{1i}\)</span> — «респондент набрал <span class="math inline">\(i\)</span> баллов по шкале ситуативной тревожности», <span class="math inline">\(\omega_{2}\)</span> — «респондент набрал <span class="math inline">\(j\)</span> баллов по шкале личностной тревожности».</p>
+<p>Случайный эксперимент: «неподготовленный студент решает тест по курсу “Психодиагностика и основы психометрики” из 30 заданий, каждое из которые оценивается дихотомически». Тогда множество элементарных исходов для балла за тест будет следующим:</p>
+<p><span id="eq-psydiag-omega"><span class="math display">\[
+\Omega = \{ \omega_{i} \, | \,0 \leqslant i \leqslant 30 \},
+\tag{6.3}\]</span></span></p>
+<p>где <span class="math inline">\(\omega_{i}\)</span> — «студент набрал <span class="math inline">\(i\)</span> баллов за тест».</p>
+<p>И так далее. Для каждого случайного эксперимента мы можем описать множество элементарных исходов.</p>
+<p>Однако сами элементарные исходы на часто не очень интересуют. Интереснее рассматривать «неэлементарные» исходы, так как они будут соответствовать более содержательным вопросам. Так, например, если считать, что тест по «Психодиагностике и основам психометрики» сдан, если студент набрал не менее 20 баллов, то логично интересоваться событием <span class="math inline">\(A\)</span> «тест сдан», которые состоит из следующих элементарных исходов из <span class="math inline">\(\Omega\)</span> (<a href="#eq-psydiag-omega" class="quarto-xref">Уравнение&nbsp;<span>6.3</span></a>):</p>
+<p><span class="math display">\[
+A = \{ \omega_{i} \, | \,20 \leqslant i \leqslant 30 \}
+\]</span></p>
+<p>Или же рассмотреть событие <span class="math inline">\(A\)</span> «у респондента низкая ситуативная и личностная тревожность» (<a href="#eq-stai-omega" class="quarto-xref">Уравнение&nbsp;<span>6.2</span></a>):</p>
+<p><span class="math display">\[
+A = \{ (\omega_{1i}, \omega_{2j}) \, | \,20 \leqslant i,j \leqslant 30\}
+\]</span></p>
+<p>Ну, или же вернуться к истокам, и изучить событие «на игральной кости выпало четное число очков» (<a href="#eq-dice-omega" class="quarto-xref">Уравнение&nbsp;<span>6.1</span></a>):</p>
+<p><span class="math display">\[
+A = \{ \omega_2, \omega_4, \omega_6 \}
+\]</span></p>
+<p>Таким образом, когда мы говорим о «неэлементарных» события, которые далее будем называться просто <strong>событиями</strong>, мы рассматриваем подмножества <span class="math inline">\(A \subseteq \Omega\)</span>.</p>
+<p>Получается, что <strong>вероятность — это мера множества элементарных исходов</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Элементарные исходы, множество элементарных исходов, события
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Итак, зафиксируем введенные обозначения и термины.</p>
+<ul>
+<li>В случайном эксперименте может реализоваться некоторое количество <strong>элементарных исходов</strong> <span class="math inline">\(\omega\)</span>.</li>
+<li>Все элементарные исходы составляют <strong>множество элементарных исходов</strong> <span class="math inline">\(\Omega\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\Omega = \{ \omega_1, \omega_2, \ldots, \omega_n, \ldots \}
+\]</span></p>
+<ul>
+<li><strong>Любое событие</strong> <span class="math inline">\(A\)</span> является подмножеством множества элементарных исходов <span class="math inline">\(\Omega\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+A \subseteq \Omega
+\]</span></p>
+</div>
+</div>
+<section id="prob-omega-types" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="prob-omega-types"><span class="header-section-number">6.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</h3>
+<p>Выше мы рассматривали примеры множеств элементарных исходов с конечным числом элементов. Здесь все достаточно понятно. А может ли число элементарных исходов быть бесконечным?</p>
+<p>Да, по крайней мере, в математической модели. Например, следующий случайный эксперимент: «монету бросают до первого выпадения “орла”». Тогда множество элементарных исходов примет следующий вид:</p>
+<p><span class="math display">\[
+\Omega = \{\omega_1, \omega_2, \ldots, \omega_n, \ldots\},
+\]</span></p>
+<p>где</p>
+<ul>
+<li><span class="math inline">\(\omega_1 = \text{H}\)</span>,</li>
+<li><span class="math inline">\(\omega_1 = \text{TH}\)</span>,</li>
+<li><span class="math inline">\(\vdots\)</span></li>
+<li><span class="math inline">\(\omega_n = \underbrace{\text{T..T}}_{n-1}\text{H}\)</span>,</li>
+<li><span class="math inline">\(\text{H}\)</span> — «орёл» («head»), <span class="math inline">\(\text{T}\)</span> — «решка» («tail»).</li>
+</ul>
+<p>В этом случае множество элементарных исходов <span class="math inline">\(\Omega\)</span> равномощно множеству натуральных чисел <span class="math inline">\(\mathbb{N}\)</span> — <span class="math inline">\(|\Omega| = |\mathbb{N}|\)</span>— то есть является <em>счётным</em>. Такие множество элементарных исходов встречаются в психологических исследованиях примерно никогда, поэтому на них останавливаться мы не будем, но будем иметь их в виду.</p>
+<p>Также в математике есть множества, которые <em>не являются конечными</em>, и <em>не являются счетными</em>. Они тоже используются в математических моделях случайных экспериментов. Например, ситуация измерения температуры. Пусть мы решили измерить температуру за окном в июле. Множество элементарных исходов такого случайного эксперимента будет описываться так:</p>
+<p><span class="math display">\[
+\Omega = [T_\min, T_\max],
+\]</span></p>
+<p>где <span class="math inline">\(T_\min = 15^\circ \text{C}\)</span>, <span class="math inline">\(T_\max = 35^\circ \text{C}\)</span>. При этом температура может быть абсолютно любым значением из заданного диапазона.</p>
+<p>Приведем пример из области психологии. Пусть у нас есть эксперимент, в котором измеряется время реакции (скажем, задача лексического решения). Тогда зададим множество элементарных исходов так:</p>
+<p><span class="math display">\[
+\Omega = [t_\min, t_\max],
+\]</span></p>
+<p>где, скажем, <span class="math inline">\(t_\min = 0.3 \, \text{c}\)</span>, <span class="math inline">\(t_\max = 1.5 \,\text{c}\)</span>. При этом время реакции может быть абсолютно любым значением из заданного диапазона. О границах диапазона можно поразмышлять, но в данном случае это не очень существенно, важно, что внутри границ содержится бесконечно много значений, причем эта бесконечность больше, чем количество натуральных чисел <span class="math inline">\(|\mathbb{N}|\)</span>.</p>
+<p>Таким образом, если мы хотим описать эксперимент с помощью <span class="math inline">\(\Omega\)</span>, нам надо иметь в виду, что это множество может быть абсолютно любой природы с точки зрения количества элементов. Это сделает нам некоторые проблемы, но о них позже.</p>
+</section>
+<section id="prop-events-operations" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="prop-events-operations"><span class="header-section-number">6.2.2</span> Операции над событиями</h3>
+<p>Напомним себе, что мы пытаемся построить конструкцию вероятности, и дошли до того, что определили события как подмножества множества элементарных исходов. Чтобы далее работать с событиями, нам нужны какие-то операции над нами. Вполне естественно, раз уж мы заговорили о множествах, чтобы операции над событиями отражали операции над множествами. Ниже представлены эти соотношения (<a href="#tbl-evets-set" class="quarto-xref">Таблица&nbsp;<span>6.1</span></a>).</p>
+<div id="tbl-evets-set" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-evets-set-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;6.1: Соотношение событий и операций над множествами
+</figcaption>
+<div aria-describedby="tbl-evets-set-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">События</th>
+<th style="text-align: center;">Множества</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\omega\)</span> влечёт событие <span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math display">\[ \omega \in A \]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Событие <span class="math inline">\(A\)</span> состоит из элементарных исходов, которые влекут <span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math display">\[ \omega \in A \vee \omega \not \in A \, \forall \omega \in \Omega \]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Событие <span class="math inline">\(A\)</span> влечёт событие <span class="math inline">\(B\)</span> («если <span class="math inline">\(A\)</span>, то <span class="math inline">\(B\)</span>», <span class="math inline">\(A \Rightarrow B\)</span>)</td>
+<td style="text-align: center;"><span class="math display">\[ A \subseteq B \Leftrightarrow \forall \omega \in A, \omega \in B \]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Событие <span class="math inline">\(A\)</span> не произошло: <span class="math inline">\(\overline A\)</span></td>
+<td style="text-align: center;">Дополнение к множеству <span class="math inline">\(A\)</span> <span class="math display">\[ \overline A = \{ \omega \in \Omega \, | \,\omega \not \in A \} \]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Произошли все события <span class="math inline">\(A_i\)</span> в одном акте эксперимента</td>
+<td style="text-align: center;">Пересечение множеств <span class="math inline">\(A_i\)</span> <span class="math display">\[ \bigcap_i A_i = \{ \omega \in \Omega \, | \,\forall i \,\, \omega \in A_i \} \]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Произошло хотя бы одно событие из <span class="math inline">\(A_i\)</span></td>
+<td style="text-align: center;">Объединение множеств <span class="math display">\[ \bigcup_i A_i = \{ \omega \in \Omega \, | \,\exists i \,\, \omega \in A_i \} \]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Произошло событие <span class="math inline">\(A\)</span>, но не произошло событие <span class="math inline">\(B\)</span></td>
+<td style="text-align: center;">Разность множеств <span class="math display">\[ A \setminus B = \{ \omega \in \Omega \, | \,\omega \in A \wedge \omega \not \in B \} \]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Либо произошло событие <span class="math inline">\(A\)</span>, либо произошло событие <span class="math inline">\(B\)</span></td>
+<td style="text-align: center;">Симметрическая разность множеств <span class="math display">\[ A \mathop{\mathrm{\triangle}}B = \{ \omega \in \Omega \, | \,\omega \in A \veebar\omega \not \in B \} = (A \cup B) \setminus (A \cap B) \]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Свойства операций над множествами
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Вспомним кратко свойства операций над множествами, чтобы не листать книжку.</p>
+<ol type="1">
+<li>Коммутативность <br> <span class="math inline">\(A \cup B = B \cup A\)</span> <br> <span class="math inline">\(A \cap B = B \cap A\)</span></li>
+<li>Ассоциативность <br> <span class="math inline">\((A \cup B) \cup C = A \cup (B \cup C)\)</span> <br> <span class="math inline">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></li>
+<li>Дистрибутивность <br> <span class="math inline">\((A \cup B) \cap C = (A \cap C) \cup (A \cap B)\)</span> <br> <span class="math inline">\((A \cap B) \cup C = (A \cup C) \cap (A \cup B)\)</span></li>
+<li>Формулы двойственности <br> <span class="math inline">\(\overline{A \cap B} = \overline A \cup \overline B\)</span> ; <span class="math inline">\(\overline{A \cup B} = \overline A \cap \overline B\)</span> <br> <span class="math inline">\(\displaystyle \overline{\bigcup_i A_i} = \bigcap_i \overline{A_i}\)</span>; <span class="math inline">\(\displaystyle \overline{\bigcap_i A_i} = \bigcup_i \overline{A_i}\)</span></li>
+<li>Свойства включения <br> <span class="math inline">\(A \subseteq B \wedge B \subseteq C \Rightarrow A \subseteq C\)</span> <br> <span class="math inline">\(\varnothing\subset A \subset \Omega\)</span> <br> <span class="math inline">\(A \subset B \Rightarrow \cases{A \cap B = A \\ A \cup B = B}\)</span></li>
+<li>Двойное дополнение <br> <span class="math inline">\(\overline{(\overline A)} = A\)</span></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="prob-lim-set" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="prob-lim-set"><span class="header-section-number">6.3</span> Предел последовательности множеств</h2>
+<p>Мы движемся всё ещё движемся к построению вероятности, однако давайте на секунду остановимся и задумаемся вот на чем: когда мы построим вероятность, нам необходимо будет исследовать её аналитические свойства, чтобы понять, как она работает. Исследование любых аналитических свойств предполагает, что мы умеем считать пределы последовательностей. Так как вероятность будет стоять на множествах — в частности, событиях — нам потребуются пределы последовательностей множеств. На данный момент совершенно не ясно, как их считать. Озаботимся этим вопросом.</p>
+<p>Сходу неясно, как посчитать предел последовательности множеств, но из матана мы знаем, как считать предела числовых последовательностей. Можно ли как-то на элементах множеств создать некоторую числовую последовательность, логически отражающую свойства множеств?</p>
+<section id="prob-indic-function" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="prob-indic-function"><span class="header-section-number">6.3.1</span> Индикаторная функция</h3>
+<p>Да. Сделаем мы это исходя из весьма простого соображения.</p>
+<div id="def-indic-funciton" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.1</strong></span> Функция <span class="math inline">\(\chi_A(\omega): \Omega \to \{0, 1\}\)</span> называется <strong>индикаторной функцией множества <span class="math inline">\(A\)</span></strong>, если она задана следующим образом:</p>
+<p><span class="math display">\[
+\chi_A(\omega) = \cases{
+1, \, \omega \in A \\
+0, \, \omega \not \in A
+}
+\]</span></p>
+</div>
+<p>Будет ли такая функция отражать свойства множеств? Да, так как она обладает следующими свойствами:</p>
+<ol type="1">
+<li><span class="math inline">\(A \subseteq B \Leftrightarrow \chi_A(\omega) \leqslant\chi_B(\omega), \, \forall \omega \in \Omega\)</span></li>
+<li><span class="math inline">\(A = B \Leftrightarrow \chi_A(\omega) = \chi_B(\omega), \, \forall \omega \in \Omega\)</span></li>
+<li><span class="math inline">\(\chi_{\overline A} (\omega) = 1 - \chi_A(\omega), \, \forall \omega \in \Omega\)</span></li>
+<li><span class="math inline">\(\chi_{A \cup B}(\omega) = \max \big( \chi_A(\omega), \chi_B(\omega) \big), \, \forall \omega \in \Omega\)</span></li>
+<li><span class="math inline">\(\chi_{A \cap B}(\omega) = \min \big( \chi_A(\omega), \chi_B(\omega) \big), \, \forall \omega \in \Omega\)</span></li>
+</ol>
+<hr>
+<p>Как индикаторная функция поможет нам в определении предела последовательности множеств?</p>
+<p>Пусть есть последовательность множеств <span class="math inline">\(A_1, A_2, \ldots, A_n, \ldots\)</span> <span class="math inline">\((A_k \subseteq \Omega)\)</span>. Будем говорить, что существует предел последовательности множеств <span class="math inline">\(\lim_{n \to \infty} A_n\)</span>, если существует предел последовательности индикаторных функций множеств этой последовательности <span class="math inline">\(\lim_{n \to \infty} \chi_{A_n}(\omega)\)</span>.</p>
+<p>Это равносильно тому, что для любого <span class="math inline">\(\omega\)</span> либо индикаторная функция <span class="math inline">\(\chi_{A_n}(\omega) = 1\)</span>, начиная с некоторого номера <span class="math inline">\(n_0\)</span>, либо индикаторная функция <span class="math inline">\(\chi_{A_n}(\omega) = 0\)</span>, начиная с некоторого номера <span class="math inline">\(\tilde n_0\)</span>.</p>
+<p>Из этого следует, что предел последовательности индикаторных функций <span class="math inline">\(\lim_{n \to \infty} \chi_{A_n} (\omega)\)</span> будет равен либо нулю, либо единице, а следовательно, будет является индикаторной функцией некоторого множества <span class="math inline">\(A\)</span>. Это множество <span class="math inline">\(A\)</span> мы по определению назовём <strong>пределом последовательности множеств</strong> <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
+<p>То же самое рассуждение, но без слов:</p>
+<p><span class="math display">\[
+\begin{split}
+&amp;\exists \lim_{n \to \infty} A_n \Leftarrow
+\forall \omega \in \Omega \, \exists \lim_{n \to \infty} \chi_{A_n} (\omega) \Leftrightarrow \\
+&amp;\forall \omega \in \Omega \,\,
+\left [
+\begin{aligned}
+\chi_{A_n} (\omega) &amp;= 1, \forall n &gt; n_0 \\
+\chi_{A_n} (\omega) &amp;= 0, \forall n &gt; \tilde n_0 \end{aligned}
+\right.
+\Rightarrow \\
+&amp; \lim_{n \to \infty} \chi_{A_n} (\omega) =
+\left [
+\begin{aligned}
+&amp;1 \\
+&amp;0
+\end{aligned}
+\right. \Rightarrow
+\chi_{A_n}(\omega) \Rightarrow
+A \overset{\text{def}}{=}\lim_{n \to \infty} A_n
+\end{split}
+\]</span></p>
+<div id="def-lim-set-seq" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.2</strong></span> Пределом последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span> называется множество <span class="math inline">\(A\)</span>, индикаторная функция которого является пределом индикаторных функций множеств данной последовательности:</p>
+<p><span class="math display">\[
+A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) = \lim_{n \to \infty} \chi_{A_n} (\omega)
+\]</span></p>
+</div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-zaytsev2011" class="csl-entry" role="listitem">
+Зайцев, Ю. A., &amp; Хван, А. А. (2011). Стандартизация методик диагностики тревожности спилбергера-ханина и дж. тейлор. <em>Психологическая Диагностика</em>, <em>3</em>, 13–34.
+</div>
 <div id="ref-serdobolskaya2019" class="csl-entry" role="listitem">
 Сердобольская, М. Л. (2017). Основные понятия теории вероятностей. In <em>Теория вероятностей и математическая статистика. Курс лекций</em>. Физический факультет, Московский государственный университет имени М. В. Ломоносова. <a href="https://youtu.be/ClRpDrVuoNY?si=Vc4VVGTc5fRta1NR">https://youtu.be/ClRpDrVuoNY?si=Vc4VVGTc5fRta1NR</a>
+</div>
+<div id="ref-khanin1976" class="csl-entry" role="listitem">
+Ханин, Ю. Л. (1976). <em>Краткое руководство к применению шкалы реактивной и личностной тревожности спилбергера</em>. Л.: ЛНИИФК.
 </div>
 <div id="ref-erlikh2019" class="csl-entry" role="listitem">
 Эрлих, И. Г. (2017). Теория меры 0. Вводная лекция. In <em>Теория меры (2 курс, 2019)</em>. Лекторий ФПМИ. <a href="https://youtu.be/_zSZgR2khpY?si=A0A-JVtZFKkCkZmc">https://youtu.be/_zSZgR2khpY?si=A0A-JVtZFKkCkZmc</a>
 </div>
 </div>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Окей, максимум — три. Этого всё равно не достаточно для выполнения данного требования.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Также встречается термин «элементарное событие».<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Также используется термин «пространство элементарных исходов (событий)», однако он в данном случае не совсем корректен. В математике термин «пространство» подразумевает, что между элементами есть какие-либо отношения, однако никаких отношений между элементарными исходами во множестве элементарных исходов нет. Это буквально мешок, в который собрали все элементарных исходы какого-то конкретного случайного эксперимента.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Шкала тревоги Спилбергера-Ханина (State-Trait Anxiety Inventory, STAI) <span class="citation" data-cites="khanin1976 zaytsev2011">(<a href="references.html#ref-zaytsev2011" role="doc-biblioref">Зайцев &amp; Хван, 2011</a>; <a href="references.html#ref-khanin1976" role="doc-biblioref">Ханин, 1976</a>)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
