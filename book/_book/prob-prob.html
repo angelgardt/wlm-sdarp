@@ -447,6 +447,7 @@ window.Quarto = {
   <li><a href="#prob-lim-set" id="toc-prob-lim-set" class="nav-link" data-scroll-target="#prob-lim-set"><span class="header-section-number">6.3</span> Предел последовательности множеств</a>
   <ul>
   <li><a href="#prob-indic-function" id="toc-prob-indic-function" class="nav-link" data-scroll-target="#prob-indic-function"><span class="header-section-number">6.3.1</span> Индикаторная функция</a></li>
+  <li><a href="#prob-get-set-lims" id="toc-prob-get-set-lims" class="nav-link" data-scroll-target="#prob-get-set-lims"><span class="header-section-number">6.3.2</span> Вычисление пределов последовательностей множеств</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -832,11 +833,129 @@ A \subseteq \Omega
 A \overset{\text{def}}{=}\lim_{n \to \infty} A_n
 \end{split}
 \]</span></p>
-<div id="def-lim-set-seq" class="theorem definition">
+<div id="def-lim-setseq" class="theorem definition">
 <p><span class="theorem-title"><strong>Определение 6.2</strong></span> Пределом последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span> называется множество <span class="math inline">\(A\)</span>, индикаторная функция которого является пределом индикаторных функций множеств данной последовательности:</p>
 <p><span class="math display">\[
 A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) = \lim_{n \to \infty} \chi_{A_n} (\omega)
 \]</span></p>
+</div>
+</section>
+<section id="prob-get-set-lims" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="prob-get-set-lims"><span class="header-section-number">6.3.2</span> Вычисление пределов последовательностей множеств</h3>
+<div class="lab-senior">
+
+</div>
+<p>Индикаторная функция — это, конечно, хорошо. Как минимум, она позволила нам дать определение предела последовательности множеств. Однако обращаться к ней каждый раз для вычисления необходимого предела не очень удобно — хотелось бы оставаться в процессе нахождения предела в рамках операций над множествами.</p>
+<p>Из математического анализа известно(HREF), что есть числовая последовательность имеет предел, что они имеет верхний и нижний пределы, которые совпадают, то есть</p>
+<p><span class="math display">\[
+(x_n)_{n=1}^\infty \subset \mathbb{R}, \,\, \exists \, x = \lim_{n \to \infty} x_n \Leftrightarrow \limsup_{n \to \infty} x_n = \liminf_{n \to \infty} x_n = x
+\]</span></p>
+<ul>
+<li><em>Верхний предел</em> — максимальная из всех предельных точек.</li>
+</ul>
+<p><span class="math display">\[
+\limsup_{n \to \infty} x_n = \inf_{n = 1,2,\ldots} \sup_{k = n,n+1,\ldots} x_n
+\]</span></p>
+<ul>
+<li><em>Нижний предел</em> — минимальная из всех предельных точек.</li>
+</ul>
+<p><span class="math display">\[
+\liminf_{n \to \infty} x_n = \sup_{n = 1,2,\ldots}\inf_{k = n,n+1,\ldots} x_n
+\]</span></p>
+<p>Это условие является необходимым и достаточным для того, чтобы последовательность сходилась.</p>
+<p>Попробуем перенести эти размышления на операции со множествами. Заметим, что взятие максимума множеств эквивалентно операции объединения</p>
+<p><span class="math display">\[
+\bigcup_k \Leftrightarrow \max_k,
+\]</span></p>
+<p>а взятие минимума — операции пересечения</p>
+<p><span class="math display">\[
+\bigcap_k \Leftrightarrow \min_k.
+\]</span></p>
+<p>Тогда можно дать следующие определения.</p>
+<div id="def-limsup-setseq" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.3</strong></span> Множество <span class="math inline">\(\displaystyle \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k\)</span> называется <strong>верхним пределом</strong> последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
+<p><span class="math display">\[
+\bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k \overset{\text{def}}{=}\limsup_{n \to \infty} A_n
+\]</span></p>
+</div>
+<div id="def-liminf-setseq" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.4</strong></span> Множество <span class="math inline">\(\displaystyle \bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k\)</span> называется <strong>нижним пределом</strong> последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
+<p><span class="math display">\[
+\bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k \overset{\text{def}}{=}\liminf_{n \to \infty} A_n
+\]</span></p>
+</div>
+<p>Довольно громоздкие конструкции… Давайте попробуем понять, что они обозначают по сути.</p>
+<p>В первом случае (<a href="#def-limsup-setseq" class="quarto-xref">Определение&nbsp;<span>6.3</span></a>):</p>
+<p><span class="math display">\[
+\omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \Leftrightarrow \forall n = 1, 2, \ldots \exists k \geqslant n : \omega \in A_k \Leftrightarrow \exists k_1, k_2, \ldots, k_n \to \infty : \omega \in A_{k_n}, \forall n = 1, 2, \ldots
+\]</span></p>
+<p>Во втором случае (<a href="#def-liminf-setseq" class="quarto-xref">Определение&nbsp;<span>6.4</span></a>)</p>
+<p><span class="math display">\[
+\omega \in \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k \Leftrightarrow \exists n: \forall k \geqslant n \,\, \omega \in A_k \Leftrightarrow \omega \in A_n, A_{n+1}, \ldots
+\]</span></p>
+<p><span class="math display">\[
+\limsup_{n \to \infty} A_n \supseteq \liminf_{n \to \infty} A_n,
+\]</span></p>
+<p>что ясно, если в качестве последовательности <span class="math inline">\(k_n\)</span> для верхнего предела взять <span class="math inline">\(k_n = \{ n, n+1, n+2, \ldots \}\)</span>.</p>
+<p>Из формул двойственности следует, что</p>
+<p><span class="math display">\[
+\overline{\bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k} = \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty \overline{A_k} \Leftrightarrow \overline{ \liminf_{n \to \infty} A_n } = \limsup_{n \to \infty} \overline{ A_n }
+\]</span></p>
+<p>Также имеем, что</p>
+<p><span class="math display">\[
+\exists \, A = \lim_{n \to \infty} A_n \Leftarrow \limsup_{n \to \infty} A_n = \liminf_{n \to \infty} A_n \overset{\text{def}}{=}A
+\]</span></p>
+<p>Матан: всякая монотонная и ограниченная сверху и снизу последовательность имеет предел.</p>
+<div id="lem-limunion-setseq" class="theorem lemma">
+<p><span class="theorem-title"><strong>Лемма 6.1</strong></span> Пусть <span class="math inline">\(A_1 \subseteq A_2 \subseteq \ldots \subseteq A_n \subseteq \ldots \subseteq \Omega\)</span> — монотонная неубывающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему объединению множеств, входящих в последовательность:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} A_n = \bigcup_{n=1}^\infty A_n
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Необходимо доказать, что</p>
+<p><span class="math display">\[
+\limsup_{n \to \infty} A_n \overset{\enclose{circle}{1}}{=} \liminf_{n \to \infty} A_n \overset{\enclose{circle}{2}}{=} \bigcup_{n=1}^\infty A_n
+\]</span></p>
+<p>Равенство <span class="math inline">\(\enclose{circle}{1}\)</span> утверждает, что существует предел, а равенство <span class="math inline">\(\enclose{circle}{2}\)</span> утверждает, что этот предел равен общему объединению множеств. Здесь, за самом деле, скрывается и третье равенство <span class="math inline">\(\limsup_{n \to \infty} A_n \overset{\enclose{circle}{3}}{=} \bigcup_{n=1}^\infty A_n\)</span>, однако для доказательства цепочки равенств достаточно доказать <em>любые два из трёх</em> — справедливость оставшегося будет следовать из транзитивности равенства. Докажем равенства <span class="math inline">\(\enclose{circle}{3}\)</span> и <span class="math inline">\(\enclose{circle}{2}\)</span>.</p>
+<p>Для равенства <span class="math inline">\(\enclose{circle}{3}\)</span> имеем, что</p>
+<p><span class="math display">\[
+\limsup_{n \to \infty} A_n \overset{\text{def}}{=}\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \overset{?}{=} \bigcup_{n=1}^\infty A_n
+\]</span></p>
+<p>Необходимо показать совпадение множеств <span class="math inline">\(\bigcap_{n=1}^\infty \bigcap_{k=n}^\infty A_k\)</span> и <span class="math inline">\(\bigcup_{n=1}^\infty A_n\)</span>. Чтобы это сделать, необходимо показать, что любой элемент из левого множества принадлежит правому, и наоборот.</p>
+<p>Пусть <span class="math inline">\(\displaystyle \omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k\)</span>. Тогда:</p>
+<p><span class="math display">\[
+\omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \Leftrightarrow \forall n \, \exists k \geqslant n : \omega \in A_{k_n} \Rightarrow \omega \in \bigcup_{n=1}^\infty A_n
+\]</span></p>
+<p>Пусть <span class="math inline">\(\displaystyle \omega \in \bigcup_{n=1}^\infty A_n\)</span>. Тогда:</p>
+<p><span class="math display">\[
+\begin{split}
+&amp;\omega \in \bigcup_{n=1}^\infty A_n \Leftrightarrow \exists n_0 : \omega \in A_{n_0} \subseteq A_{n_0+1} \subseteq \ldots \subseteq A_{n_0+m} \subseteq \ldots \Rightarrow \\
+&amp;\omega \in A_{n_0+m} \forall m \geqslant 0 \Rightarrow \forall m = 1, 2, \ldots \, \exists k \geqslant n: \omega \in A_k, k = \cases{n_0, \, n \leqslant n_0 \\ n_0 + m, \, n &gt; n_0, n = n_0 + m, m &gt; 0} \Rightarrow \\
+&amp;\omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k
+\end{split}
+\]</span></p>
+<p>Для равенства <span class="math inline">\(\enclose{circle}{2}\)</span> сразу имеем:</p>
+<p><span class="math display">\[
+\liminf_{n \to \infty} A_n = \bigcup_{n=1}^\infty \bigcap_{n=1}^\infty A_k = \bigcup_{n=1}^\infty A_n,
+\]</span></p>
+<p>так как <span class="math inline">\(\displaystyle A_1 \subseteq A_2 \subseteq \ldots \Rightarrow \bigcap_{k=n}^\infty A_k = A_n\)</span>.</p>
+<p><strong>QED</strong></p>
+</div>
+<div id="lem-limintersection-setseq" class="theorem lemma">
+<p><span class="theorem-title"><strong>Лемма 6.2</strong></span> [<a href="#lem-limunion-setseq" class="quarto-xref">Дуальная к&nbsp;<span>6.1</span></a>] Пусть <span class="math inline">\(\Omega \supseteq A_1 \supseteq A_2 \supseteq \ldots \subseteq A_n \supseteq \ldots\)</span> — монотонная невозрастающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему пересечению множеств, входящих в последовательность:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} A_n = \bigcap_{n=1}^\infty A_n
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Докажем, воспользовавшись формулами двойственности:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} A_n \overset{\enclose{circle}{✓}}{=} \lim_{n \to \infty} \overline{A_n} = \bigcup_{n=1}^\infty \overline{A_n} = \bigcap_{n=1}^\infty A_n
+\]</span></p>
+</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Замечание</em>. </span>Сделаем замечание, относительно равенства <span class="math inline">\(\enclose{circle}{✓}\)</span>.</p>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 

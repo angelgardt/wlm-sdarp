@@ -6,6 +6,7 @@
 \usepackage{tensor}
 \usepackage[bb=tgdm]{unicode-math}
 \usepackage{tikz}
+\usepackage{mathtools}
 
 
 <!--- Decorations --->

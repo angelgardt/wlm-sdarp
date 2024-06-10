@@ -397,7 +397,7 @@ A \defin \lim_{n \to \infty} A_n
 \end{split}
 $$
 
-:::{#def-lim-set-seq}
+:::{#def-lim-setseq}
 Пределом последовательности множеств $(A_n)_{n=1}^\infty$ называется множество $A$, индикаторная функция которого является пределом индикаторных функций множеств данной последовательности:
 
 $$
@@ -406,8 +406,171 @@ $$
 :::
 
 
+### Вычисление пределов последовательностей множеств {#prob-get-set-lims}
+
+:::{.lab-senior}
+:::
+
+Индикаторная функция --- это, конечно, хорошо. Как минимум, она позволила нам дать определение предела последовательности множеств. Однако обращаться к ней каждый раз для вычисления необходимого предела не очень удобно --- хотелось бы оставаться в процессе нахождения предела в рамках операций над множествами.
+
+Из математического анализа известно(HREF), что есть числовая последовательность имеет предел, что они имеет верхний и нижний пределы, которые совпадают, то есть
+
+$$
+(x_n)_{n=1}^\infty \subset \setR, \,\, \exists \, x = \lim_{n \to \infty} x_n \Leftrightarrow \limsup_{n \to \infty} x_n = \liminf_{n \to \infty} x_n = x
+$$
+
+* *Верхний предел* --- максимальная из всех предельных точек.
+
+$$
+\limsup_{n \to \infty} x_n = \inf_{n = 1,2,\ldots} \sup_{k = n,n+1,\ldots} x_n
+$$
+
+* *Нижний предел* --- минимальная из всех предельных точек.
+
+$$
+\liminf_{n \to \infty} x_n = \sup_{n = 1,2,\ldots}\inf_{k = n,n+1,\ldots} x_n
+$$
+
+Это условие является необходимым и достаточным для того, чтобы последовательность сходилась.
+
+Попробуем перенести эти размышления на операции со множествами. Заметим, что взятие максимума множеств эквивалентно операции объединения 
+
+$$
+\bigcup_k \Leftrightarrow \max_k,
+$$
+
+а взятие минимума --- операции пересечения
+
+$$
+\bigcap_k \Leftrightarrow \min_k.
+$$
+
+Тогда можно дать следующие определения.
+
+:::{#def-limsup-setseq}
+
+Множество $\displaystyle \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k$ называется **верхним пределом** последовательности множеств $(A_n)_{n=1}^\infty$.
+
+$$
+\bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k \defin \limsup_{n \to \infty} A_n
+$$
+:::
+
+:::{#def-liminf-setseq}
+Множество $\displaystyle \bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k$ называется **нижним пределом** последовательности множеств $(A_n)_{n=1}^\infty$.
+
+$$
+\bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k \defin \liminf_{n \to \infty} A_n
+$$
+:::
+
+Довольно громоздкие конструкции... Давайте попробуем понять, что они обозначают по сути.
+
+В первом случае (@def-limsup-setseq):
+
+$$
+\omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \Leftrightarrow \forall n = 1, 2, \ldots \exists k \geq n : \omega \in A_k \Leftrightarrow \exists k_1, k_2, \ldots, k_n \to \infty : \omega \in A_{k_n}, \forall n = 1, 2, \ldots
+$$
+
+Во втором случае (@def-liminf-setseq)
+
+$$
+\omega \in \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k \Leftrightarrow \exists n: \forall k \geq n \,\, \omega \in A_k \Leftrightarrow \omega \in A_n, A_{n+1}, \ldots
+$$
 
 
+$$
+\limsup_{n \to \infty} A_n \supseteq \liminf_{n \to \infty} A_n,
+$$
+
+что ясно, если в качестве последовательности $k_n$ для верхнего предела взять $k_n = \{ n, n+1, n+2, \ldots \}$.
+
+Из формул двойственности следует, что 
+
+$$
+\overline{\bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k} = \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty \overline{A_k} \Leftrightarrow \overline{ \liminf_{n \to \infty} A_n } = \limsup_{n \to \infty} \overline{ A_n }
+$$
+
+Также имеем, что
+
+$$
+\exists \, A = \lim_{n \to \infty} A_n \Leftarrow \limsup_{n \to \infty} A_n = \liminf_{n \to \infty} A_n \defin A
+$$
+
+Матан: всякая монотонная и ограниченная сверху и снизу последовательность имеет предел.
+
+:::{#lem-limunion-setseq}
+Пусть $A_1 \subseteq A_2 \subseteq \ldots \subseteq A_n \subseteq \ldots \subseteq \Omega$ --- монотонная неубывающая последовательность $(A_n)_{n=1}^\infty$. Тогда такая последовательность имеет предел, равный общему объединению множеств, входящих в последовательность:
+
+$$
+\lim_{n \to \infty} A_n = \bigcup_{n=1}^\infty A_n
+$$
+:::
+
+:::{.proof}
+Необходимо доказать, что
+
+$$
+\limsup_{n \to \infty} A_n \overset{\circled{1}}{=} \liminf_{n \to \infty} A_n \overset{\circled{2}}{=} \bigcup_{n=1}^\infty A_n
+$$
+
+Равенство $\circled{1}$ утверждает, что существует предел, а равенство $\circled{2}$ утверждает, что этот предел равен общему объединению множеств. Здесь, за самом деле, скрывается и третье равенство $\limsup_{n \to \infty} A_n \overset{\circled{3}}{=} \bigcup_{n=1}^\infty A_n$, однако для доказательства цепочки равенств достаточно доказать *любые два из трёх* --- справедливость оставшегося будет следовать из транзитивности равенства. Докажем равенства $\circled{3}$ и $\circled{2}$.
+
+Для равенства $\circled{3}$ имеем, что
+
+$$
+\limsup_{n \to \infty} A_n \defin \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \overset{?}{=} \bigcup_{n=1}^\infty A_n
+$$
+
+Необходимо показать совпадение множеств $\bigcap_{n=1}^\infty \bigcap_{k=n}^\infty A_k$ и $\bigcup_{n=1}^\infty A_n$. Чтобы это сделать, необходимо показать, что любой элемент из левого множества принадлежит правому, и наоборот.
+
+Пусть $\displaystyle \omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k$. Тогда:
+
+$$
+\omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \Leftrightarrow \forall n \, \exists k \geq n : \omega \in A_{k_n} \Rightarrow \omega \in \bigcup_{n=1}^\infty A_n
+$$
+
+Пусть $\displaystyle \omega \in \bigcup_{n=1}^\infty A_n$. Тогда:
+
+$$
+\begin{split}
+&\omega \in \bigcup_{n=1}^\infty A_n \Leftrightarrow \exists n_0 : \omega \in A_{n_0} \subseteq A_{n_0+1} \subseteq \ldots \subseteq A_{n_0+m} \subseteq \ldots \Rightarrow \\
+&\omega \in A_{n_0+m} \forall m \geq 0 \Rightarrow \forall m = 1, 2, \ldots \, \exists k \geq n: \omega \in A_k, k = \cases{n_0, \, n \leq n_0 \\ n_0 + m, \, n > n_0, n = n_0 + m, m > 0} \Rightarrow \\
+&\omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k
+\end{split}
+$$
+
+Для равенства $\circled{2}$ сразу имеем:
+
+$$
+\liminf_{n \to \infty} A_n = \bigcup_{n=1}^\infty \bigcap_{n=1}^\infty A_k = \bigcup_{n=1}^\infty A_n,
+$$
+
+так как $\displaystyle A_1 \subseteq A_2 \subseteq \ldots \Rightarrow \bigcap_{k=n}^\infty A_k = A_n$.
+
+**QED**
+:::
+
+
+:::{#lem-limintersection-setseq}
+[[Дуальная к @lem-limunion-setseq]] Пусть $\Omega \supseteq A_1 \supseteq A_2 \supseteq \ldots \subseteq A_n \supseteq \ldots$ --- монотонная невозрастающая последовательность $(A_n)_{n=1}^\infty$. Тогда такая последовательность имеет предел, равный общему пересечению множеств, входящих в последовательность:
+
+$$
+\lim_{n \to \infty} A_n = \bigcap_{n=1}^\infty A_n
+$$
+:::
+
+:::{.proof}
+Докажем, воспользовавшись формулами двойственности:
+
+$$
+\lim_{n \to \infty} A_n \overset{\circled{✓}}{=} \lim_{n \to \infty} \overline{A_n} = \bigcup_{n=1}^\infty \overline{A_n} = \bigcap_{n=1}^\infty A_n
+$$
+:::
+
+:::{.remark}
+Сделаем замечание, относительно равенства $\circled{✓}$.
+:::
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
