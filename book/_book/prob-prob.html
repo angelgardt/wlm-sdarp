@@ -449,6 +449,8 @@ window.Quarto = {
   <li><a href="#prob-indic-function" id="toc-prob-indic-function" class="nav-link" data-scroll-target="#prob-indic-function"><span class="header-section-number">6.3.1</span> Индикаторная функция</a></li>
   <li><a href="#prob-get-set-lims" id="toc-prob-get-set-lims" class="nav-link" data-scroll-target="#prob-get-set-lims"><span class="header-section-number">6.3.2</span> Вычисление пределов последовательностей множеств</a></li>
   </ul></li>
+  <li><a href="#sigma-алгебра-событий" id="toc-sigma-алгебра-событий" class="nav-link" data-scroll-target="#sigma-алгебра-событий"><span class="header-section-number">6.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</a></li>
+  <li><a href="#prob-kolmogorov-axioms" id="toc-prob-kolmogorov-axioms" class="nav-link" data-scroll-target="#prob-kolmogorov-axioms"><span class="header-section-number">6.5</span> Система аксиом вероятности</a></li>
   </ul>
 </nav>
     </div>
@@ -940,7 +942,7 @@ A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega)
 \liminf_{n \to \infty} A_n = \bigcup_{n=1}^\infty \bigcap_{n=1}^\infty A_k = \bigcup_{n=1}^\infty A_n,
 \]</span></p>
 <p>так как <span class="math inline">\(\displaystyle A_1 \subseteq A_2 \subseteq \ldots \Rightarrow \bigcap_{k=n}^\infty A_k = A_n\)</span>.</p>
-<p><strong>QED</strong></p>
+<p><strong>Q.E.D.</strong></p>
 </div>
 <div id="lem-limintersection-setseq" class="theorem lemma">
 <p><span class="theorem-title"><strong>Лемма 6.2</strong></span> [<a href="#lem-limunion-setseq" class="quarto-xref">Дуальная к&nbsp;<span>6.1</span></a>] Пусть <span class="math inline">\(\Omega \supseteq A_1 \supseteq A_2 \supseteq \ldots \subseteq A_n \supseteq \ldots\)</span> — монотонная невозрастающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему пересечению множеств, входящих в последовательность:</p>
@@ -952,10 +954,212 @@ A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega)
 <p><span class="proof-title"><em>Доказательство</em>. </span>Докажем, воспользовавшись формулами двойственности:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} A_n \overset{\enclose{circle}{✓}}{=} \lim_{n \to \infty} \overline{A_n} = \bigcup_{n=1}^\infty \overline{A_n} = \bigcap_{n=1}^\infty A_n
-\]</span></p>
+\]</span> <strong>Q.E.D.</strong></p>
 </div>
 <div class="proof remark">
 <p><span class="proof-title"><em>Замечание</em>. </span>Сделаем замечание, относительно равенства <span class="math inline">\(\enclose{circle}{✓}\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="sigma-алгебра-событий" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sigma-алгебра-событий"><span class="header-section-number">6.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</h2>
+<p>Вся кропотливая деятельность, связанная со множествами, была обусловлена необходимостью построения конструкции вероятности. Напомним ещё раз себе, что мы хотим для событий <span class="math inline">\(A\)</span> (<span class="math inline">\(A \subseteq \Omega\)</span>) «построить» вероятность <span class="math inline">\(\mathbb{P}(A)\)</span>. «Построить» значит задать функцию, которая подмножеству сопоставляет некоторое число.</p>
+<p>Задание функции начинается с задания её <strong>области определения</strong> — где вообще должна существовать та функция, которую мы желаем построить? Есть несколько соображений здравого смысла относительно области определения вероятности.</p>
+<ol type="1">
+<li>Очевидно, что область определения вероятности (по определению) должна состоять из таких событий <span class="math inline">\(A\)</span>, для которых существует <span class="math inline">\(\mathbb{P}(A)\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\mathcal D(\mathbb{P}(A)) \overset{\text{def}}{=}\{ A \subseteq \Omega \, | \,\exists \mathbb{P}(A) \}
+\]</span></p>
+<ol start="2" type="1">
+<li>Если существует вероятность события <span class="math inline">\(A\)</span>, то должна существовать и вероятность обратного события <span class="math inline">\(\overline{A}\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\exists \mathbb{P}(A) \Rightarrow \exists \mathbb{P}(\overline{A})
+\]</span></p>
+<ol start="3" type="1">
+<li>Если существуют вероятности событий <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span>, то должны существовать вероятности событий, состоящих из их объединения, пересечения и всех других разумных операций для множествами — то есть операции над событиями как множествами не должны выводить из области определения вероятности:</li>
+</ol>
+<p><span class="math display">\[
+\exists \mathbb{P}(A), \mathbb{P}(B) \Rightarrow \exists \mathbb{P}(A \cup B), \mathbb{P}(A \cap B), \mathbb{P}(A \setminus B), \ldots
+\]</span></p>
+<p>Таких требований можно придумать достаточно много, и необходимо выбрать минимальный комплекс требования, чтобы избежать переопределения понятий. В частности, нужно ли нам перечислять в пункте (3) все операции, если <span class="math inline">\(A \cap B = \overline{\overline{A} \cup \overline{B}}\)</span> и <span class="math inline">\(A \cup B = \overline{\overline{A} \cap \overline{B}}\)</span>?</p>
+<div id="def-algF" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.5</strong></span> Система <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> называется <strong>алгеброй</strong> подмножеств, если она замкнута относительно операций дополнения и объединения.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;A \in \mathcal{F}\Rightarrow \overline{A} \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}1} \\
+&amp;A,B \in \mathcal{F}\Rightarrow A \cup B \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}2}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="cor-intersection-algF" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.1</strong></span> [Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span>]</p>
+<p><span class="math inline">\(\mathcal{F}\)</span> также замкнута относительно пересечения множеств:</p>
+<p><span class="math display">\[
+A \cap B = \overline{\overline{A} \cup \overline{B}} \in \mathcal{F},
+\]</span></p>
+<p>так как <span class="math inline">\(\overline{A}, \overline{B} \in \mathcal{F}\Rightarrow \overline{A} \cup \overline{B} \in \mathcal{F}\Rightarrow \overline{\overline{A} \cup \overline{B}} \in \mathcal{F}\)</span>.</p>
+</div>
+<div id="cor-emptyomega-alfF" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.2</strong></span> [Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span>]</p>
+<p>Пустое множество <span class="math inline">\(\varnothing\)</span> и <span class="math inline">\(\Omega\)</span> также принадлежат <span class="math inline">\(\mathcal{F}\)</span>:</p>
+<p><span class="math display">\[
+A \in \mathcal{F}\Rightarrow
+\left [
+\begin{aligned}
+A &amp;= \varnothing\Rightarrow \overline{A} = \Omega \in \mathcal{F}\\
+A &amp;= \Omega \Rightarrow \overline{A} = \varnothing\in \mathcal{F}\\
+A &amp;\neq \varnothing, \Omega, \, A \cup \overline{A} = \Omega \in \mathcal{F}, \, A \cap \overline{A} = \varnothing\in \mathcal{F}
+\end{aligned}
+\right.
+\]</span></p>
+</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Замечание</em>. </span>Отметим также две замечательные алгебры:</p>
+<ul>
+<li>наименьшей возможной алгеброй является множество <span class="math inline">\(\mathcal{F}_\min = \{ \varnothing, \Omega \}\)</span> и <span class="math inline">\(\mathcal{F}_\min \subset \mathcal{F}\,\, \forall \mathcal{F}\)</span></li>
+<li>наибольшей возможной алгеброй является множество <span class="math inline">\(\mathcal{F}_\max = 2^\Omega\)</span> и <span class="math inline">\(\mathcal{F}\subset \mathcal{F}_\max \,\, \forall \mathcal{F}\)</span></li>
+</ul>
+</div>
+<div id="cor-finiteunion-algF" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.3</strong></span> Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span> также следует, что</p>
+<p><span class="math display">\[
+A_n \in \mathcal{F}\Rightarrow \bigcup_{k=1}^n A_k \in \mathcal{F}\,\, \forall n &lt; \infty, \, A_k \in \mathcal{F}
+\]</span></p>
+</div>
+<p>Однако из <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span> <em>не следует</em>, что</p>
+<p><span id="eq-infty-union-algF"><span class="math display">\[
+\enclose{circle}{\mathcal{F}2} \not \Rightarrow \bigcup_{k=1}^\infty A_k \in \mathcal{F}, \,\, A_1, A_2, \ldots \in \mathcal{F}
+\tag{6.4}\]</span></span></p>
+<p>Для задания вероятности нам необходимо, чтобы счетное объединение множеств, принадлежащих <span class="math inline">\(\mathcal{F}\)</span> также принадлежало <span class="math inline">\(\mathcal{F}\)</span>, то есть чтобы <a href="#eq-infty-union-algF" class="quarto-xref">следствие&nbsp;<span>6.4</span></a> выполнялось. Отсутствие принадлежности счетного объединения как следствия принадлежности конечного объединения требует дополнения определения данным требованием.</p>
+<div id="def-sigma-algF" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.6</strong></span> Систем <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> называется <strong><span class="math inline">\(\sigma\)</span>-алгеброй</strong>, есл она замкнута относительно операций дополнения и <em>конечного и счётного</em> объединения.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;A \in \mathcal{F}\Rightarrow \overline{A} \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}1} \\
+&amp;A,B \in \mathcal{F}\Rightarrow A \cup B \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}2} \\
+&amp;A_1, A_2, \ldots \in \mathcal{F}\Rightarrow \bigcup_{n=1}^\infty A_n \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}3}
+\end{aligned}
+\]</span></p>
+</div>
+<p>Необходимость отдельно налагать условие <span class="math inline">\(\enclose{circle}{\mathcal{F}3}\)</span> возникает из-за того, что предельный переход в общем случае можем менять свойства объекта (см. <a href="#eq-infty-union-algF" class="quarto-xref">Уравнение&nbsp;<span>6.4</span></a>).</p>
+<div id="cor-sigma-algF-algF" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.4</strong></span> Очевидно, что если <span class="math inline">\(\mathcal{F}\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй, то <span class="math inline">\(\mathcal{F}\)</span> является алгеброй, так как</p>
+<p><span class="math display">\[
+\enclose{circle}{\mathcal{F}1} \wedge \enclose{circle}{\mathcal{F}2} \wedge \enclose{circle}{\mathcal{F}3} \Rightarrow \enclose{circle}{\mathcal{F}1} \wedge \enclose{circle}{\mathcal{F}2}
+\]</span></p>
+</div>
+<div id="prp-finite-algF-sigma-algF" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 6.1</strong></span> Если <span class="math inline">\(\Omega\)</span> конечно, то любая алгебра <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй подмножеств <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+<p>Зачем мы возвели на множестве <span class="math inline">\(\Omega\)</span> какую-то конструкцию под названием <span class="math inline">\(\sigma\)</span>-алгебра <span class="math inline">\(\mathcal{F}\)</span>? Именно <span class="math inline">\(\mathcal{F}\)</span> будет являться областью определения вероятности <span class="math inline">\(\mathbb{P}(A)\)</span>.</p>
+</section>
+<section id="prob-kolmogorov-axioms" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="prob-kolmogorov-axioms"><span class="header-section-number">6.5</span> Система аксиом вероятности</h2>
+<p>Окей, мы, слава святому рандому, определились с тем, как устроена область определения вероятности <span class="math inline">\(\mathcal{D}(\mathbb{P}(A)) = \mathcal{F}\)</span>. Может хоть теперь мы уже наконец-то сможем задать вероятность?</p>
+<p>Да, мы критически близки к этому моменту. Откатимся немного назад и вспомним, с чего мы начали.</p>
+<ul>
+<li>Мы хотели задать вероятность как относительную частоту <span class="math inline">\(\displaystyle \mathbb{P}(A) \approx \frac{n(A)}{n}\)</span>, но <a href="#prob-not-freq">выяснили</a>, что так у нас сделать не получится.</li>
+<li>Мы определили множество элементарных исходов <span class="math inline">\(\Omega\)</span> и <span class="math inline">\(\sigma\)</span>-алгебру подмножеств <span class="math inline">\(\mathcal{F}\)</span> на нём и заявили, что она будет являться область определения вероятности.</li>
+<li>Как же, собственно, мы должны задать саму вероятность как функцию?</li>
+</ul>
+<p>Всё-таки нам хотелось бы, чтобы вероятность была идеализированной частотой, то есть отражала её свойства, а значит сразу возникают довольно естественные требования к определению вероятности:</p>
+<ul>
+<li>Во-первых, вероятность должна быть «зажата» между <span class="math inline">\(0\)</span> и <span class="math inline">\(1\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+0 \leqslant\mathbb{P}(A) \leqslant 1
+\]</span></p>
+<ul>
+<li>Во-вторых, вероятность обратного события должна быть равна разности единицы и вероятности прямого события:</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{P}(\overline{A}) = 1 - \mathbb{P}(A)
+\]</span></p>
+<ul>
+<li>В-третьих, если события <em>несовместны</em> — <span class="math inline">\(A \cap B = \varnothing\)</span>, то есть <span class="math inline">\(\nexists \omega : \omega \in A \cap B\)</span>, то</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B)
+\]</span></p>
+<p>или можно записать по-другому<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p><span class="math display">\[
+\mathbb{P}(A \sqcup B) = \mathbb{P}(A) + \mathbb{P}(B)
+\]</span></p>
+<p>Последнее требование похоже на <span class="math inline">\(f(x + y) = f(x) + f(y)\)</span> — это свойство функции называется <em>аддитивностью</em>, то есть мы хотим, чтобы вероятность была аддитивной конструкцией.</p>
+<ul>
+<li>В-четвертых, логично потребовать, чтобы <span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span> и <span class="math inline">\(\mathbb{P}(\varnothing) = 0\)</span>.</li>
+</ul>
+<p>Вновь можно выдвинуть довольно много требований и вновь нам надо определиться с тем, каков будет минимальный их набор, обеспечивающий все нам необходимые. Такой набор требований был предложен А.&nbsp;Н.&nbsp;Колмогоровым <span class="citation" data-cites="kolmogorov1974">(<a href="references.html#ref-kolmogorov1974" role="doc-biblioref">Колмогоров, 1974</a>)</span> и составляет <strong>систему аксиом вероятности [Колмогорова]</strong>.</p>
+<div id="prp-kolmogorov-axioms" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 6.2</strong></span> <strong>Cистема аксиом вероятности [Колмогорова]</strong></p>
+<p>Пусть <span class="math inline">\(\Omega\)</span> — множестве элементарных исходов случайного эксперимента, <span class="math inline">\(\mathcal{F}\)</span> — множество подмножеств <span class="math inline">\(\Omega\)</span>, а <span class="math inline">\(\mathbb{P}\)</span> — вероятность.</p>
+<p><span class="math inline">\(\enclose{circle}{\text{A0}}\)</span> Множество событий <span class="math inline">\(\mathcal{F}\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй.</p>
+<p><span class="math inline">\(\enclose{circle}{\text{A1}}\)</span> Любому событию <span class="math inline">\(A\)</span> из <span class="math inline">\(\mathcal{F}\)</span> ставится в соответствие неотрицательное действительное число <span class="math inline">\(\mathbb{P}(A)\)</span>, называемое вероятностью события <span class="math inline">\(A\)</span>.</p>
+<p><span class="math inline">\(\enclose{circle}{\text{A2}}\)</span> (<em>Аксиома счетной аддитивности</em>) Если события <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(\ldots\)</span> не пересекаются, то вероятность события, являющегося их объединением, равна сумме вероятностей этих событий.</p>
+<p><span class="math inline">\(\enclose{circle}{\text{A3}}\)</span> Вероятность множества элементарных исходов равна единице.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \mathcal{F}= \{ A \subseteq \Omega \, | \,\exists \, \mathbb{P}(A) \} \text{ есть } \sigma \text{-алгебра} &amp;&amp;&amp; \enclose{circle}{\text{A0}} \\
+&amp; \forall A \in \mathcal{F}\,\, \exists \mathbb{P}(A) \geqslant 0, \mathbb{P}(A) \in \mathbb{R}&amp;&amp;&amp; \enclose{circle}{\text{A1}}\\
+&amp; \forall A_1, A_2, \ldots \in \mathcal{F}: A_i \cap A_j = \varnothing, i \neq j \,\, \mathbb{P}\Big( \bigsqcup_{k=1}^\infty A_k \Big) = \sum_{k=1}^\infty \mathbb{P}(A_k) &amp;&amp;&amp; \enclose{circle}{\text{A2}} \\
+&amp; \mathbb{P}(\Omega) = 1 &amp;&amp;&amp; \enclose{circle}{\text{A3}}
+\end{aligned}
+\]</span></p>
+</div>
+<p>Мы отмечали, что вероятность — это мера множества. Теперь, учитывая аксиому <span class="math inline">\(\enclose{circle}{\text{A2}}\)</span> мы можем сказать, что <strong>вероятность — это счётно-аддитивная мера</strong>.</p>
+<p>Из аксиом Колмоголова получается ряд следствий.</p>
+<div id="cor-prob-emptyset" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.5</strong></span> Вероятность пустого множества равна нулю.</p>
+<p><span class="math display">\[
+\mathbb{P}(\varnothing) = 0
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Займемся высокоинтеллектуальной деятельностью.</p>
+<p>Пусть <span class="math inline">\(A_1 = A_2 = \ldots = A_n = \ldots = \varnothing\)</span>. Тогда <span class="math inline">\(\varnothing\in \mathcal{F}\Rightarrow \exists \, \mathbb{P}(A_k) = p \geqslant 0\)</span>. Очевидно, что <span class="math inline">\(\bigcup_{n=1}^\infty A_n = \varnothing\)</span>, так как если <span class="math inline">\(\omega \in \bigcup_{n=1}^\infty A_n\)</span>, то <span class="math inline">\(\omega \in A_n\)</span>, но <span class="math inline">\(A_n = \varnothing\)</span>. Ясно, что <span class="math inline">\(A_i \cap A_j = \varnothing\,\, \forall i, j\)</span>, значит можно применить аксиому <span class="math inline">\(\enclose{circle}{\text{A2}}\)</span>. По аксиоме <span class="math inline">\(\enclose{circle}{\text{A2}}\)</span>:</p>
+<p><span class="math display">\[
+p = \mathbb{P}(\varnothing) = \mathbb{P}\Big( \bigsqcup_{n=1}^\infty A_n \Big) = \sum_{n=1}^\infty \mathbb{P}(A_n) = \sum_{i=1}^\infty p
+\]</span></p>
+<p>Из выражения <span class="math inline">\(p = \sum_{i=1}^\infty p\)</span> следует единственно возможное решение <span class="math inline">\(p = 0\)</span>.</p>
+</div>
+<div id="cor-finite-add" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.6</strong></span> [<em>Конечная аддитивность</em>]</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\mathbb{P}(A \sqcup B) = \mathbb{P}(A) + \mathbb{P}(B) &amp;&amp;&amp; \enclose{circle}{\tilde{\text{A2}}}
+\end{aligned}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(A_1 = A\)</span>, <span class="math inline">\(A_2 = B\)</span>, <span class="math inline">\(A_3 = A_4 = \ldots = A_n \ldots = \varnothing\)</span>.</p>
+<p><span class="math display">\[
+A \sqcup B = \bigsqcup_{k=1}^\infty A_k \overset{\enclose{circle}{\text{A2}}}{\Rightarrow} \mathbb{P}(A \sqcup B) = \sum_{k=1}^\infty \mathbb{P}(A_k) = \mathbb{P}(A) + \mathbb{P}(B)
+\]</span></p>
+</div>
+<p>Иногда <a href="#cor-finite-add" class="quarto-xref">следствие&nbsp;<span>6.6</span></a> вводится в систему аксиом вероятности в качестве отдельной аксиомы — здесь она обозначена как <span class="math inline">\(\enclose{circle}{\tilde{\text{A2}}}\)</span>. Однако, как мы видим, свойство конечной аддитивности является следствием аксиомы счётной аддитивности.</p>
+<div id="cor-compl-event-prob" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.7</strong></span> [<em>Вероятность обратного события</em>]</p>
+<p><span class="math display">\[
+\mathbb{P}(\overline{A}) = 1 - \mathbb{P}(A)
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
+\Omega = A \sqcup \overline{A} \overset{\enclose{circle}{\tilde{\text{A2}}}}{\underset{ \enclose{circle}{\text{A3}}}{\Rightarrow}} 1 = \mathbb{P}(A) + \mathbb{P}(\overline{A}) \Rightarrow \mathbb{P}(\overline{A}) = 1 - \mathbb{P}(A)
+\]</span></p>
+</div>
+<div id="cor-ord-prob" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 6.8</strong></span> Если <span class="math inline">\(A, B \in \mathcal{F}\)</span> и <span class="math inline">\(A \subseteq B\)</span>, то <span class="math inline">\(\mathbb{P}(A) \leqslant\mathbb{P}(B)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
+B = A \sqcup (B \setminus A)
+\]</span></p>
+<p><span class="math display">\[
+(B \setminus A) = B \cap \overline{A} \in \mathcal{F}\Rightarrow \mathbb{P}(B) = \mathbb{P}(A) + \underset{\geqslant 0}{\mathbb{P}(B \setminus A)} \geqslant\mathbb{P}(A)
+\]</span></p>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
@@ -963,6 +1167,9 @@ A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega)
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-zaytsev2011" class="csl-entry" role="listitem">
 Зайцев, Ю. A., &amp; Хван, А. А. (2011). Стандартизация методик диагностики тревожности спилбергера-ханина и дж. тейлор. <em>Психологическая Диагностика</em>, <em>3</em>, 13–34.
+</div>
+<div id="ref-kolmogorov1974" class="csl-entry" role="listitem">
+Колмогоров, А. Н. (1974). <em>Основные понятия теории вероятностей</em>. М.: Наука.
 </div>
 <div id="ref-serdobolskaya2019" class="csl-entry" role="listitem">
 Сердобольская, М. Л. (2017). Основные понятия теории вероятностей. In <em>Теория вероятностей и математическая статистика. Курс лекций</em>. Физический факультет, Московский государственный университет имени М. В. Ломоносова. <a href="https://youtu.be/ClRpDrVuoNY?si=Vc4VVGTc5fRta1NR">https://youtu.be/ClRpDrVuoNY?si=Vc4VVGTc5fRta1NR</a>
@@ -975,7 +1182,6 @@ A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega)
 </div>
 </div>
 </section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -983,6 +1189,7 @@ A \overset{\text{def}}{=}\lim_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega)
 <li id="fn2"><p>Также встречается термин «элементарное событие».<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Также используется термин «пространство элементарных исходов (событий)», однако он в данном случае не совсем корректен. В математике термин «пространство» подразумевает, что между элементами есть какие-либо отношения, однако никаких отношений между элементарными исходами во множестве элементарных исходов нет. Это буквально мешок, в который собрали все элементарных исходы какого-то конкретного случайного эксперимента.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Шкала тревоги Спилбергера-Ханина (State-Trait Anxiety Inventory, STAI) <span class="citation" data-cites="khanin1976 zaytsev2011">(<a href="references.html#ref-zaytsev2011" role="doc-biblioref">Зайцев &amp; Хван, 2011</a>; <a href="references.html#ref-khanin1976" role="doc-biblioref">Ханин, 1976</a>)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Здесь используется знак дизъюнктного объединения, который обозначает объединение непересекающихся множеств: <span class="math inline">\(A \sqcup B = A \cup B, \,\, A \cap B = \varnothing\)</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

@@ -548,7 +548,7 @@ $$
 
 так как $\displaystyle A_1 \subseteq A_2 \subseteq \ldots \Rightarrow \bigcap_{k=n}^\infty A_k = A_n$.
 
-**QED**
+**Q.E.D.**
 :::
 
 
@@ -566,11 +566,277 @@ $$
 $$
 \lim_{n \to \infty} A_n \overset{\circled{✓}}{=} \lim_{n \to \infty} \overline{A_n} = \bigcup_{n=1}^\infty \overline{A_n} = \bigcap_{n=1}^\infty A_n
 $$
+**Q.E.D.**
 :::
 
 :::{.remark}
 Сделаем замечание, относительно равенства $\circled{✓}$.
 :::
+
+
+## $\sigma$-алгебра событий
+
+Вся кропотливая деятельность, связанная со множествами, была обусловлена необходимостью построения конструкции вероятности. Напомним ещё раз себе, что мы хотим для событий $A$ ($A \subseteq \Omega$) «построить» вероятность $\prob(A)$. «Построить» значит задать функцию, которая подмножеству сопоставляет некоторое число.
+
+Задание функции начинается с задания её **области определения** --- где вообще должна существовать та функция, которую мы желаем построить? Есть несколько соображений здравого смысла относительно области определения вероятности.
+
+1. Очевидно, что область определения вероятности (по определению) должна состоять из таких событий $A$, для которых существует $\prob(A)$:
+
+$$
+\mathcal D(\prob(A)) \defin \{ A \subseteq \Omega \such \exists \prob(A) \}
+$$
+
+2. Если существует вероятность события $A$, то должна существовать и вероятность обратного события $\overline{A}$:
+
+$$
+\exists \prob(A) \Rightarrow \exists \prob(\overline{A})
+$$
+
+3. Если существуют вероятности событий $A$ и $B$, то должны существовать вероятности событий, состоящих из их объединения, пересечения и всех других разумных операций для множествами --- то есть операции над событиями как множествами не должны выводить из области определения вероятности:
+
+$$
+\exists \prob(A), \prob(B) \Rightarrow \exists \prob(A \cup B), \prob(A \cap B), \prob(A \setminus B), \ldots
+$$
+
+Таких требований можно придумать достаточно много, и необходимо выбрать минимальный комплекс требования, чтобы избежать переопределения понятий. В частности, нужно ли нам перечислять в пункте (3) все операции, если $A \cap B = \overline{\overline{A} \cup \overline{B}}$ и $A \cup B = \overline{\overline{A} \cap \overline{B}}$?
+
+:::{#def-algF}
+Система $\Fcal$ подмножеств $\Omega$ называется **алгеброй** подмножеств, если она замкнута относительно операций дополнения и объединения.
+
+$$
+\begin{aligned}
+&A \in \Fcal \Rightarrow \overline{A} \in \Fcal &&& \circled{\Fcal1} \\
+&A,B \in \Fcal \Rightarrow A \cup B \in \Fcal &&& \circled{\Fcal2}
+\end{aligned}
+$$
+:::
+
+:::{#cor-intersection-algF}
+[Из требования $\circled{\Fcal2}$]
+
+$\Fcal$ также замкнута относительно пересечения множеств:
+
+$$
+A \cap B = \overline{\overline{A} \cup \overline{B}} \in \Fcal,
+$$
+
+так как $\overline{A}, \overline{B} \in \Fcal \Rightarrow \overline{A} \cup \overline{B} \in \Fcal \Rightarrow \overline{\overline{A} \cup \overline{B}} \in \Fcal$.
+:::
+
+:::{#cor-emptyomega-alfF}
+[Из требования $\circled{\Fcal2}$]
+
+Пустое множество $\emptyset$ и $\Omega$ также принадлежат $\Fcal$:
+
+$$
+A \in \Fcal \Rightarrow 
+\left [ 
+\begin{aligned}
+A &= \emptyset \Rightarrow \overline{A} = \Omega \in \Fcal \\
+A &= \Omega \Rightarrow \overline{A} = \emptyset \in \Fcal \\
+A &\neq \emptyset, \Omega, \, A \cup \overline{A} = \Omega \in \Fcal, \, A \cap \overline{A} = \emptyset \in \Fcal
+\end{aligned}
+\right.
+$$
+:::
+
+:::{.remark}
+Отметим также две замечательные алгебры:
+
+* наименьшей возможной алгеброй является множество $\Fcal_\min = \{ \emptyset, \Omega \}$ и $\Fcal_\min \subset \Fcal \,\, \forall \Fcal$
+* наибольшей возможной алгеброй является множество $\Fcal_\max = 2^\Omega$ и $\Fcal \subset \Fcal_\max \,\, \forall \Fcal$
+
+:::
+
+:::{#cor-finiteunion-algF}
+Из требования $\circled{\Fcal2}$ также следует, что
+
+$$
+A_n \in \Fcal \Rightarrow \bigcup_{k=1}^n A_k \in \Fcal \,\, \forall n < \infty, \, A_k \in \Fcal
+$$
+:::
+
+Однако из $\circled{\Fcal2}$ *не следует*, что
+
+$$
+\circled{\Fcal2} \not \Rightarrow \bigcup_{k=1}^\infty A_k \in \Fcal, \,\, A_1, A_2, \ldots \in \Fcal
+$${#eq-infty-union-algF}
+
+Для задания вероятности нам необходимо, чтобы счетное объединение множеств, принадлежащих $\Fcal$ также принадлежало $\Fcal$, то есть чтобы [следствие @eq-infty-union-algF] выполнялось. Отсутствие принадлежности счетного объединения как следствия принадлежности конечного объединения требует дополнения определения данным требованием.
+
+:::{#def-sigma-algF}
+Систем $\Fcal$ подмножеств $\Omega$ называется **$\sigma$-алгеброй**, есл она замкнута относительно операций дополнения и *конечного и счётного* объединения.
+
+$$
+\begin{aligned}
+&A \in \Fcal \Rightarrow \overline{A} \in \Fcal &&& \circled{\Fcal1} \\
+&A,B \in \Fcal \Rightarrow A \cup B \in \Fcal &&& \circled{\Fcal2} \\
+&A_1, A_2, \ldots \in \Fcal \Rightarrow \bigcup_{n=1}^\infty A_n \in \Fcal &&& \circled{\Fcal3}
+\end{aligned}
+$$
+:::
+
+Необходимость отдельно налагать условие $\circled{\Fcal3}$ возникает из-за того, что предельный переход в общем случае можем менять свойства объекта (см. @eq-infty-union-algF).
+
+:::{#cor-sigma-algF-algF}
+Очевидно, что если $\Fcal$ является $\sigma$-алгеброй, то $\Fcal$ является алгеброй, так как
+
+$$
+\circled{\Fcal1} \wedge \circled{\Fcal2} \wedge \circled{\Fcal3} \Rightarrow \circled{\Fcal1} \wedge \circled{\Fcal2}
+$$
+:::
+
+:::{#prp-finite-algF-sigma-algF}
+Если $\Omega$ конечно, то любая алгебра $\Fcal$ подмножеств $\Omega$ является $\sigma$-алгеброй подмножеств $\Omega$.
+:::
+
+Зачем мы возвели на множестве $\Omega$ какую-то конструкцию под названием $\sigma$-алгебра $\Fcal$? Именно $\Fcal$ будет являться областью определения вероятности $\prob (A)$.
+
+
+## Система аксиом вероятности {#prob-kolmogorov-axioms}
+
+Окей, мы, слава святому рандому, определились с тем, как устроена область определения вероятности $\mathcal{D}(\prob(A)) = \Fcal$. Может хоть теперь мы уже наконец-то сможем задать вероятность?
+
+Да, мы критически близки к этому моменту. Откатимся немного назад и вспомним, с чего мы начали.
+
+* Мы хотели задать вероятность как относительную частоту $\displaystyle \prob (A) \approx \frac{n(A)}{n}$, но [выяснили](#prob-not-freq), что так у нас сделать не получится.
+* Мы определили множество элементарных исходов $\Omega$ и $\sigma$-алгебру подмножеств $\Fcal$ на нём и заявили, что она будет являться область определения вероятности.
+* Как же, собственно, мы должны задать саму вероятность как функцию?
+
+Всё-таки нам хотелось бы, чтобы вероятность была идеализированной частотой, то есть отражала её свойства, а значит сразу возникают довольно естественные требования к определению вероятности:
+
+* Во-первых, вероятность должна быть «зажата» между $0$ и $1$:
+
+$$
+0 \leq \prob(A) \leq 1
+$$
+
+* Во-вторых, вероятность обратного события должна быть равна разности единицы и вероятности прямого события:
+
+$$
+\prob(\overline{A}) = 1 - \prob(A)
+$$
+
+* В-третьих, если события *несовместны* --- $A \cap B = \emptyset$, то есть $\nexists \omega : \omega \in A \cap B$, то
+
+$$
+\prob (A \cup B) = \prob(A) + \prob(B)
+$$
+
+или можно записать по-другому[^sqcap]
+
+[^sqcap]: Здесь используется знак дизъюнктного объединения, который обозначает объединение непересекающихся множеств: $A \sqcup B = A \cup B, \,\, A \cap B = \emptyset$.
+
+$$
+\prob (A \sqcup B) = \prob(A) + \prob(B)
+$$
+
+Последнее требование похоже на $f(x + y) = f(x) + f(y)$ --- это свойство функции называется *аддитивностью*, то есть мы хотим, чтобы вероятность была аддитивной конструкцией.
+
+* В-четвертых, логично потребовать, чтобы $\prob (\Omega) = 1$ и $\prob (\emptyset) = 0$.
+
+Вновь можно выдвинуть довольно много требований и вновь нам надо определиться с тем, каков будет минимальный их набор, обеспечивающий все нам необходимые. Такой набор требований был предложен А. Н. Колмогоровым [@kolmogorov1974] и составляет **систему аксиом вероятности [Колмогорова]**.
+
+:::{#prp-kolmogorov-axioms}
+**Cистема аксиом вероятности [Колмогорова]**
+
+Пусть $\Omega$ --- множестве элементарных исходов случайного эксперимента, $\Fcal$ --- множество подмножеств $\Omega$, а $\prob$ --- вероятность.
+
+$\circled{\text{A0}}$ Множество событий $\Fcal$ является $\sigma$-алгеброй.
+
+$\circled{\text{A1}}$ Любому событию $A$ из $\Fcal$ ставится в соответствие неотрицательное действительное число $\prob(A)$, называемое вероятностью события $A$.
+
+$\circled{\text{A2}}$ (*Аксиома счетной аддитивности*) Если события $A_1$, $A_2$, $\ldots$ не пересекаются, то вероятность события, являющегося их объединением, равна сумме вероятностей этих событий.
+
+$\circled{\text{A3}}$ Вероятность множества элементарных исходов равна единице.
+
+$$
+\begin{aligned}
+& \Fcal = \{ A \subseteq \Omega \such \exists \, \prob(A) \} \text{ есть } \sigma \text{-алгебра} &&& \circled{\text{A0}} \\ 
+& \forall A \in \Fcal \,\, \exists \prob(A) \geq 0, \prob(A) \in \setR  &&& \circled{\text{A1}}\\
+& \forall A_1, A_2, \ldots \in \Fcal : A_i \cap A_j = \emptyset, i \neq j \,\, \prob \Big( \bigsqcup_{k=1}^\infty A_k \Big) = \sum_{k=1}^\infty \prob(A_k) &&& \circled{\text{A2}} \\
+& \prob(\Omega) = 1 &&& \circled{\text{A3}}
+\end{aligned}
+$$
+:::
+
+Мы отмечали, что вероятность --- это мера множества. Теперь, учитывая аксиому $\circled{\text{A2}}$ мы можем сказать, что **вероятность --- это счётно-аддитивная мера**.
+
+Из аксиом Колмоголова получается ряд следствий.
+
+:::{#cor-prob-emptyset}
+Вероятность пустого множества равна нулю.
+
+$$
+\prob (\emptyset) = 0
+$$
+::: 
+
+:::{.proof}
+Займемся высокоинтеллектуальной деятельностью.
+
+Пусть $A_1 = A_2 = \ldots = A_n = \ldots = \emptyset$. Тогда $\emptyset \in \Fcal \Rightarrow \exists \, \prob(A_k) = p \geq 0$. Очевидно, что $\bigcup_{n=1}^\infty A_n = \emptyset$, так как если $\omega \in \bigcup_{n=1}^\infty A_n$, то $\omega \in A_n$, но $A_n = \emptyset$. Ясно, что $A_i \cap A_j = \emptyset \,\, \forall i, j$, значит можно применить аксиому $\circled{\text{A2}}$. По аксиоме $\circled{\text{A2}}$:
+
+$$
+p = \prob(\emptyset) = \prob \Big( \bigsqcup_{n=1}^\infty A_n \Big) = \sum_{n=1}^\infty \prob(A_n) = \sum_{i=1}^\infty p
+$$
+
+Из выражения $p = \sum_{i=1}^\infty p$ следует единственно возможное решение $p = 0$.
+:::
+
+:::{#cor-finite-add}
+[*Конечная аддитивность*]
+
+$$
+\begin{aligned}
+&\prob (A \sqcup B) = \prob(A) + \prob(B) &&& \circled{\tilde{\text{A2}}}
+\end{aligned}
+$$
+:::
+
+:::{.proof}
+Пусть $A_1 = A$, $A_2 = B$, $A_3 = A_4 = \ldots = A_n \ldots = \emptyset$.
+
+$$
+A \sqcup B = \bigsqcup_{k=1}^\infty A_k \overset{\circled{\text{A2}}}{\Rightarrow} \prob(A \sqcup B) = \sum_{k=1}^\infty \prob(A_k) = \prob(A) + \prob(B)
+$$
+
+::::
+
+Иногда [следствие @cor-finite-add] вводится в систему аксиом вероятности в качестве отдельной аксиомы --- здесь она обозначена как $\circled{\tilde{\text{A2}}}$. Однако, как мы видим, свойство конечной аддитивности является следствием аксиомы счётной аддитивности.
+
+:::{#cor-compl-event-prob}
+[*Вероятность обратного события*]
+
+$$
+\prob(\overline{A}) = 1 - \prob(A)
+$$
+:::
+
+:::{.proof}
+$$
+\Omega = A \sqcup \overline{A} \overset{\circled{\tilde{\text{A2}}}}{\underset{ \circled{\text{A3}}}{\Rightarrow}} 1 = \prob(A) + \prob(\overline{A}) \Rightarrow \prob(\overline{A}) = 1 - \prob(A)
+$$
+:::
+
+
+:::{#cor-ord-prob}
+Если $A, B \in \Fcal$ и $A \subseteq B$, то $\prob (A) \leq \prob(B)$.
+:::
+
+:::{.proof}
+$$
+B = A \sqcup (B \setminus A)
+$$
+
+$$
+(B \setminus A) = B \cap \overline{A} \in \Fcal \Rightarrow \prob (B) = \prob(A) + \underset{\geq 0}{\prob(B \setminus A)} \geq \prob(A)
+$$
+:::
+
+
+
+
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
