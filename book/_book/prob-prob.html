@@ -451,6 +451,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#sigma-алгебра-событий" id="toc-sigma-алгебра-событий" class="nav-link" data-scroll-target="#sigma-алгебра-событий"><span class="header-section-number">6.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</a></li>
   <li><a href="#prob-kolmogorov-axioms" id="toc-prob-kolmogorov-axioms" class="nav-link" data-scroll-target="#prob-kolmogorov-axioms"><span class="header-section-number">6.5</span> Система аксиом вероятности</a></li>
+  <li><a href="#prob-continuous" id="toc-prob-continuous" class="nav-link" data-scroll-target="#prob-continuous"><span class="header-section-number">6.6</span> Непрерывность вероятности</a></li>
+  <li><a href="#prob-space" id="toc-prob-space" class="nav-link" data-scroll-target="#prob-space"><span class="header-section-number">6.7</span> Вероятностное пространство</a></li>
   </ul>
 </nav>
     </div>
@@ -1161,6 +1163,110 @@ B = A \sqcup (B \setminus A)
 (B \setminus A) = B \cap \overline{A} \in \mathcal{F}\Rightarrow \mathbb{P}(B) = \mathbb{P}(A) + \underset{\geqslant 0}{\mathbb{P}(B \setminus A)} \geqslant\mathbb{P}(A)
 \]</span></p>
 </div>
+</section>
+<section id="prob-continuous" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="prob-continuous"><span class="header-section-number">6.6</span> Непрерывность вероятности</h2>
+<p>Вероятность — это некоторая функция, а для аналитических свойств хорошо бы, чтобы функция была непрерывной. Непрерывность функции определяется как равенство предельного значения функции значению функции в точке предела:</p>
+<p><span class="math display">\[
+f(\cdot): \mathbb{R}\to \mathbb{R}: f(\lim_{n \to \infty} x_n) = \lim_{n \to \infty} f(x_n)
+\]</span></p>
+<p>Таким образом, чтобы показать непрерывность вероятности, необходимо проверить, выполняется ли равенство</p>
+<p><span class="math display">\[
+\mathbb{P}(\lim_{n \to \infty} A_n) \overset{?}{=} \lim_{n \to \infty} \mathbb{P}(A_n)
+\]</span></p>
+<div id="lem-prob-lim-upseq" class="theorem lemma">
+<p><span class="theorem-title"><strong>Лемма 6.3</strong></span> Пусть <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(A_1 \subset A_2 \subset \ldots \subset A_n \subset \ldots\)</span>. Тогда <span class="math inline">\(\displaystyle \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(\lim_{n \to \infty} A_n)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Разобьём последовательность множеств следующим образом:</p>
+<p><span class="math display">\[
+\begin{split}
+&amp;B_1 = A_1 \\
+&amp;B_2 = A_2 \setminus A_1 \\
+&amp;\vdots \\
+&amp;B_n = A_n \setminus A_{n-1}
+\end{split}
+\]</span></p>
+<p>Тогда должно быть выполнено равенство</p>
+<p><span class="math display">\[
+\bigcup_{n=1}^\infty A_n = \bigsqcup_{k=1}^\infty B_k,
+\]</span></p>
+<p>из которого следует, что</p>
+<p><span class="math display">\[
+\mathbb{P}(B_k) = \mathbb{P}(A_n) - \mathbb{P}(A_{n-1})
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+\sum_{k=1}^\infty \mathbb{P}(B_k) &amp;= \lim_{n \to \infty} \sum_{k=1}^n \mathbb{P}(B_k) = \\
+&amp;= \lim_{n \to \infty} \Big( \mathbb{P}(A_1) + \mathbb{P}(A_2) - \mathbb{P}(A_1) + \mathbb{P}(A_3) - \mathbb{P}(A_2) + \ldots + \mathbb{P}(A_n) - \mathbb{P}(A_{n-1}) \Big) = \\
+&amp;= \lim_{n \to \infty} \Big( \cancel{\mathbb{P}(A_1)} + \cancel{\mathbb{P}(A_2)} - \cancel{\mathbb{P}(A_1)} + \cancel{\mathbb{P}(A_3)} - \cancel{\mathbb{P}(A_2)} + \ldots + \mathbb{P}(A_n) - \cancel{\mathbb{P}(A_{n-1})} \Big) = \\
+&amp; = \lim_{n \to \infty} \mathbb{P}(A_n)
+\end{split}
+\]</span></p>
+<p><span class="math display">\[
+A_{n+1} = A_n \sqcup B_{n+1}, \, n = 1, 2, \ldots
+\]</span></p>
+<p><span class="math display">\[
+A_n \cap B_{n+1} = A_n \cap (A_{n+1} \cap \overline{A_n}) = \underbrace{(A_n \cap \overline{A_n})}_\varnothing\cap A_{n+1} = \varnothing
+\]</span></p>
+<p><span class="math display">\[
+A_n + B_{n+1} = A_n \cup (A_{n+1} \cap \overline{A_n}) = \underbrace{(A_n \cup \overline{A_n})}_\varnothing\cap (A_n \cup A_{n+1}) = \Omega \cap A_{n+1} = A_{n+1}
+\]</span></p>
+<p><span class="math display">\[
+\mathbb{P}(A_{n+1}) = \mathbb{P}(A_n) + \mathbb{P}(B_{n+1})
+\]</span></p>
+<p><span class="math display">\[
+\mathbb{P}(B_{n+1}) = \mathbb{P}(A_{n+1}) - \mathbb{P}(A_n)
+\]</span></p>
+<p><span class="math display">\[
+A_n = \bigsqcup_{k=1}^n B_k \Rightarrow \bigcup_{n=1}^\infty A_n = \bigsqcup_{k=1}^\infty B_k
+\]</span></p>
+<p>так как</p>
+<p><span class="math display">\[
+B_{n+p} \cap B_n = A_{n+p} \cap \underbrace{\overline{A_{n+p-1}} \cap A_n}_\varnothing\cap \overline{A_{n-1}} = \varnothing\,\, \forall p = 1,2,\ldots, \forall n = 1,2,\ldots, A_{n+p-1} \supseteq A_n
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+&amp; \omega \in \bigsqcup_{k=1}^\infty B_k \Rightarrow \exists k: \omega \in B_k = A_k \cap A_{k-1} \Rightarrow \omega \in A_k \Rightarrow \omega \in \bigcup_{k=1}^\infty A_k \\
+&amp; \omega \in \bigcup_{n=1}^\infty A_n \Rightarrow \exists n: \omega \in A_n = \bigsqcup_{k=1}^n B_k \Rightarrow \exists(!) k: \omega \in B_k, k \leqslant n \Rightarrow \omega \in \bigsqcup_{k=1}^\infty B_k
+\end{split}
+\]</span></p>
+</div>
+<div id="lem-prob-lim-downseq" class="theorem lemma">
+<p><span class="theorem-title"><strong>Лемма 6.4</strong></span> <a href="#lem-prob-lim-upseq" class="quarto-xref">Дуальная к&nbsp;<span>6.3</span></a> Пусть <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\Omega \supset A_1 \supset A_2 \supset \ldots \supset A_n \supset \ldots\)</span>. Тогда <span class="math inline">\(\displaystyle \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(\lim_{n \to \infty} A_n)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
+\lim_{n \to \infty} A_n = \bigcap_{n=1}^\infty A_n
+\]</span></p>
+<p><span class="math display">\[
+\overline{A_1} \subset \overline{A_2} \subset \ldots \subset \overline{A_n} \Rightarrow \mathbb{P}\Big( \bigcup_{n=1}^\infty \overline{A_n} \Big) = \lim_{n \to \infty} \mathbb{P}(\overline{A_n})
+\]</span></p>
+<p><span class="math display">\[
+\mathbb{P}\Big( \bigcap_{n=1}^\infty A_n \Big) = \mathbb{P}\Big( \overline{\bigcup_{n=1}^\infty \overline{A_n}} \Big) = 1 - \lim_{n \to \infty} \mathbb{P}(\overline{A_n}) = \lim_{n \to \infty} \big( 1 - \mathbb{P}(\overline{A_n}) \big) = \lim_{n \to \infty} \mathbb{P}(A_n)
+\]</span></p>
+</div>
+<div id="prp-prob-ineq-lims" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 6.3</strong></span> <span class="math inline">\(\forall (A_n)_{n=1}^\infty, A_n \subset \Omega\)</span></p>
+<p><span class="math display">\[
+\mathbb{P}(\liminf_{n \to \infty} A_n) \leqslant\liminf_{n \to \infty} \mathbb{P}(A_n) \leqslant\limsup_{n \to \infty} \mathbb{P}(A_n) \leqslant\mathbb{P}(\limsup_{n \to \infty} A_n)
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span></p>
+</div>
+<div id="thm-prob-continuity" class="theorem">
+<p><span class="theorem-title"><strong>Теорема 6.1</strong></span> Если <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\exists \lim_{n \to \infty A_n = A}\)</span>, то</p>
+<p><span class="math display">\[
+\mathbb{P}(A) = \lim_{n \to \infty} \mathbb{P}(A_n)
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span></p>
+</div>
+</section>
+<section id="prob-space" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="prob-space"><span class="header-section-number">6.7</span> Вероятностное пространство</h2>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 

@@ -835,7 +835,144 @@ $$
 :::
 
 
+## Непрерывность вероятности {#prob-continuous}
 
+Вероятность --- это некоторая функция, а для аналитических свойств хорошо бы, чтобы функция была непрерывной. Непрерывность функции определяется как равенство предельного значения функции значению функции в точке предела:
+
+$$
+f(\cdot): \setR \to \setR : f(\lim_{n \to \infty} x_n) = \lim_{n \to \infty} f(x_n)
+$$
+
+Таким образом, чтобы показать непрерывность вероятности, необходимо проверить, выполняется ли равенство
+
+$$
+\prob (\lim_{n \to \infty} A_n) \overset{?}{=} \lim_{n \to \infty} \prob (A_n)
+$$
+
+:::{#lem-prob-lim-upseq}
+Пусть $(A_n)_{n=1}^\infty \subset \Fcal$ и $A_1 \subset A_2 \subset \ldots \subset A_n \subset \ldots$. Тогда $\displaystyle \lim_{n \to \infty} \prob (A_n) = \prob (\lim_{n \to \infty} A_n)$.
+:::
+
+:::{.proof}
+Разобьём последовательность множеств следующим образом:
+
+$$
+\begin{split}
+&B_1 = A_1 \\
+&B_2 = A_2 \setminus A_1 \\
+&\vdots \\
+&B_n = A_n \setminus A_{n-1}
+\end{split}
+$$
+
+Тогда должно быть выполнено равенство
+
+$$
+\bigcup_{n=1}^\infty A_n = \bigsqcup_{k=1}^\infty B_k,
+$$
+
+из которого следует, что
+
+$$
+\prob(B_k) = \prob(A_n) - \prob(A_{n-1})
+$$
+
+$$
+\begin{split}
+\sum_{k=1}^\infty \prob(B_k) &= \lim_{n \to \infty} \sum_{k=1}^n \prob(B_k) = \\
+&= \lim_{n \to \infty} \Big( \prob(A_1) + \prob(A_2) - \prob(A_1) + \prob(A_3) - \prob(A_2) + \ldots + \prob(A_n) - \prob(A_{n-1}) \Big) = \\
+&= \lim_{n \to \infty} \Big( \cancel{\prob(A_1)} + \cancel{\prob(A_2)} - \cancel{\prob(A_1)} + \cancel{\prob(A_3)} - \cancel{\prob(A_2)} + \ldots + \prob(A_n) - \cancel{\prob(A_{n-1})} \Big) = \\
+& = \lim_{n \to \infty} \prob (A_n)
+\end{split}
+$$
+
+$$
+A_{n+1} = A_n \sqcup B_{n+1}, \, n = 1, 2, \ldots
+$$
+
+$$
+A_n \cap B_{n+1} = A_n \cap (A_{n+1} \cap \overline{A_n}) = \underbrace{(A_n \cap \overline{A_n})}_\emptyset \cap A_{n+1} = \emptyset
+$$
+
+$$
+A_n + B_{n+1} = A_n \cup (A_{n+1} \cap \overline{A_n}) = \underbrace{(A_n \cup \overline{A_n})}_\emptyset \cap (A_n \cup A_{n+1}) = \Omega \cap A_{n+1} = A_{n+1}
+$$
+
+$$
+\prob (A_{n+1}) = \prob(A_n) + \prob(B_{n+1})
+$$
+
+$$
+\prob (B_{n+1}) = \prob(A_{n+1}) - \prob(A_n)
+$$
+
+$$
+A_n = \bigsqcup_{k=1}^n B_k \Rightarrow \bigcup_{n=1}^\infty A_n = \bigsqcup_{k=1}^\infty B_k
+$$
+
+так как
+
+$$
+B_{n+p} \cap B_n = A_{n+p} \cap \underbrace{\overline{A_{n+p-1}} \cap A_n}_\emptyset \cap \overline{A_{n-1}} = \emptyset \,\, \forall p = 1,2,\ldots, \forall n = 1,2,\ldots, A_{n+p-1} \supseteq A_n
+$$
+
+$$
+\begin{split}
+& \omega \in \bigsqcup_{k=1}^\infty B_k \Rightarrow \exists k: \omega \in B_k = A_k \cap A_{k-1} \Rightarrow \omega \in A_k \Rightarrow \omega \in \bigcup_{k=1}^\infty A_k \\
+& \omega \in \bigcup_{n=1}^\infty A_n \Rightarrow \exists n: \omega \in A_n = \bigsqcup_{k=1}^n B_k \Rightarrow \exists(!) k: \omega \in B_k, k \leq n \Rightarrow \omega \in \bigsqcup_{k=1}^\infty B_k
+\end{split}
+$$
+
+:::
+
+
+:::{#lem-prob-lim-downseq}
+[Дуальная к @lem-prob-lim-upseq]
+Пусть $(A_n)_{n=1}^\infty \subset \Fcal$ и $\Omega \supset A_1 \supset A_2 \supset \ldots \supset A_n \supset \ldots$. Тогда $\displaystyle \lim_{n \to \infty} \prob (A_n) = \prob (\lim_{n \to \infty} A_n)$.
+:::
+
+:::{.proof}
+
+$$
+\lim_{n \to \infty} A_n = \bigcap_{n=1}^\infty A_n
+$$
+
+$$
+\overline{A_1} \subset \overline{A_2} \subset \ldots \subset \overline{A_n} \Rightarrow \prob \Big( \bigcup_{n=1}^\infty \overline{A_n} \Big) = \lim_{n \to \infty} \prob(\overline{A_n})
+$$
+
+$$
+\prob \Big( \bigcap_{n=1}^\infty A_n \Big) = \prob \Big( \overline{\bigcup_{n=1}^\infty \overline{A_n}} \Big) = 1 - \lim_{n \to \infty} \prob(\overline{A_n}) = \lim_{n \to \infty} \big( 1 - \prob (\overline{A_n}) \big) = \lim_{n \to \infty} \prob (A_n)
+$$
+:::
+
+:::{#prp-prob-ineq-lims}
+$\forall (A_n)_{n=1}^\infty, A_n \subset \Omega$
+
+$$
+\prob(\liminf_{n \to \infty} A_n) \leq \liminf_{n \to \infty} \prob(A_n) \leq \limsup_{n \to \infty} \prob(A_n) \leq \prob(\limsup_{n \to \infty} A_n)
+$$
+:::
+
+:::{.proof}
+
+:::
+
+:::{#thm-prob-continuity}
+Если $(A_n)_{n=1}^\infty \subset \Fcal$ и $\exists \lim_{n \to \infty A_n = A}$, то
+
+$$
+\prob(A) = \lim_{n \to \infty} \prob (A_n)
+$$
+:::
+
+:::{.proof}
+
+:::
+
+
+
+## Вероятностное пространство {#prob-space}
 
 
 ```{=html}
