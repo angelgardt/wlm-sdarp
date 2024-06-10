@@ -459,6 +459,7 @@ window.Quarto = {
 
 
 <!--- {{< include other/_symbols.qmd >}} --->
+<!--- Decorations --->
 <!--- Common --->
 <!--- Logic --->
 <!--- Set theory --->
@@ -477,6 +478,9 @@ window.Quarto = {
 </div>
 <section id="prob-randexp" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="prob-randexp"><span class="header-section-number">6.1</span> Эксперименты со случайным исходом</h2>
+<div class="lab-senior">
+
+</div>
 <p>Вернемся к концепции <strong>эксперимента со случайным исходом (случайного эксперимента)</strong>, который как мы выяснили ранее(HREF), происходит каждый раз в момент измерения. Нам необходима некая математическая модель такого эксперимента, чтобы мы могли далее с этим феноменом работать.</p>
 <p>Математическая модель случайного эксперимента содержит несколько требований:</p>
 <ol type="1">
@@ -532,6 +536,9 @@ window.Quarto = {
 <p>Окей… Но ведь мы это же самое говорили, когда рассматривали статистическую интерпретацию вероятности! В чем здесь проблема?</p>
 <section id="prob-not-freq" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="prob-not-freq"><span class="header-section-number">6.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</h3>
+<div class="lab-senior">
+
+</div>
 <p>Если мы внимательно присмотримся к записи <span class="math inline">\(\displaystyle \mathbb{P}(A) \approx \frac{n(A)}{n}, \, n \to \infty\)</span>, то обнаружим, что в качестве математического определения вероятности она совершенно не годится <span class="citation" data-cites="serdobolskaya2019">(<a href="references.html#ref-serdobolskaya2019" role="doc-biblioref">Сердобольская, 2017</a>)</span>.</p>
 <ul>
 <li>Во-первых, его невозможно [эмпирически] проверить — необходимо бесконечно время (<span class="math inline">\(n \to \infty\)</span>), а значит, изменятся условия эксперимента и не будет выполнено соответствующее требование модели случайного эксперимента.</li>
@@ -546,6 +553,9 @@ window.Quarto = {
 </section>
 <section id="prob-events" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="prob-events"><span class="header-section-number">6.2</span> Элементарные исходы и события</h2>
+<div class="lab-senior">
+
+</div>
 <p>Определимся концептуально, что <strong>вероятность — это мера множества</strong>. <strong>Мера</strong> — это правильно, которое приписывает множеству <em>числовое значение</em>. Мерой как математической конструкцией занимается теория меры(HREF), однако можно найти и хорошо знакомых нам из практики представителей меры — это, например, длина, площадь, объем или масса. Вероятность является ещё одной мерой, правда, найти ей осязаемый физический аналог оказывается сложнее.</p>
 <p>Тем не менее, мы обозначили, что есть некоторое множество, для которого вероятность является мерой. Надо разобраться в том, что это такое за множество.</p>
 <p>Пусть есть некоторый эксперимент со случайным исходом. Мы знаем, что в рамках этого эксперимента может произойти, но на можем сказать, что именно произойдет в конкретном случайном эксперименте. Обозначим каждый из возможных исходов [в одном повторении случайного эксперимента] как <span class="math inline">\(\omega\)</span> и назовём <strong>элементарным исходом</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
@@ -646,6 +656,9 @@ A \subseteq \Omega
 </div>
 <section id="prob-omega-types" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="prob-omega-types"><span class="header-section-number">6.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</h3>
+<div class="lab-senior">
+
+</div>
 <p>Выше мы рассматривали примеры множеств элементарных исходов с конечным числом элементов. Здесь все достаточно понятно. А может ли число элементарных исходов быть бесконечным?</p>
 <p>Да, по крайней мере, в математической модели. Например, следующий случайный эксперимент: «монету бросают до первого выпадения “орла”». Тогда множество элементарных исходов примет следующий вид:</p>
 <p><span class="math display">\[
@@ -674,6 +687,9 @@ A \subseteq \Omega
 </section>
 <section id="prop-events-operations" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="prop-events-operations"><span class="header-section-number">6.2.2</span> Операции над событиями</h3>
+<div class="lab-senior">
+
+</div>
 <p>Напомним себе, что мы пытаемся построить конструкцию вероятности, и дошли до того, что определили события как подмножества множества элементарных исходов. Чтобы далее работать с событиями, нам нужны какие-то операции над нами. Вполне естественно, раз уж мы заговорили о множествах, чтобы операции над событиями отражали операции над множествами. Ниже представлены эти соотношения (<a href="#tbl-evets-set" class="quarto-xref">Таблица&nbsp;<span>6.1</span></a>).</p>
 <div id="tbl-evets-set" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -755,10 +771,16 @@ A \subseteq \Omega
 </section>
 <section id="prob-lim-set" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="prob-lim-set"><span class="header-section-number">6.3</span> Предел последовательности множеств</h2>
+<div class="lab-senior">
+
+</div>
 <p>Мы движемся всё ещё движемся к построению вероятности, однако давайте на секунду остановимся и задумаемся вот на чем: когда мы построим вероятность, нам необходимо будет исследовать её аналитические свойства, чтобы понять, как она работает. Исследование любых аналитических свойств предполагает, что мы умеем считать пределы последовательностей. Так как вероятность будет стоять на множествах — в частности, событиях — нам потребуются пределы последовательностей множеств. На данный момент совершенно не ясно, как их считать. Озаботимся этим вопросом.</p>
 <p>Сходу неясно, как посчитать предел последовательности множеств, но из матана мы знаем, как считать предела числовых последовательностей. Можно ли как-то на элементах множеств создать некоторую числовую последовательность, логически отражающую свойства множеств?</p>
 <section id="prob-indic-function" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="prob-indic-function"><span class="header-section-number">6.3.1</span> Индикаторная функция</h3>
+<div class="lab-guru">
+
+</div>
 <p>Да. Сделаем мы это исходя из весьма простого соображения.</p>
 <div id="def-indic-funciton" class="theorem definition">
 <p><span class="theorem-title"><strong>Определение 6.1</strong></span> Функция <span class="math inline">\(\chi_A(\omega): \Omega \to \{0, 1\}\)</span> называется <strong>индикаторной функцией множества <span class="math inline">\(A\)</span></strong>, если она задана следующим образом:</p>
@@ -779,29 +801,34 @@ A \subseteq \Omega
 </ol>
 <hr>
 <p>Как индикаторная функция поможет нам в определении предела последовательности множеств?</p>
-<p>Пусть есть последовательность множеств <span class="math inline">\(A_1, A_2, \ldots, A_n, \ldots\)</span> <span class="math inline">\((A_k \subseteq \Omega)\)</span>. Будем говорить, что существует предел последовательности множеств <span class="math inline">\(\lim_{n \to \infty} A_n\)</span>, если существует предел последовательности индикаторных функций множеств этой последовательности <span class="math inline">\(\lim_{n \to \infty} \chi_{A_n}(\omega)\)</span>.</p>
-<p>Это равносильно тому, что для любого <span class="math inline">\(\omega\)</span> либо индикаторная функция <span class="math inline">\(\chi_{A_n}(\omega) = 1\)</span>, начиная с некоторого номера <span class="math inline">\(n_0\)</span>, либо индикаторная функция <span class="math inline">\(\chi_{A_n}(\omega) = 0\)</span>, начиная с некоторого номера <span class="math inline">\(\tilde n_0\)</span>.</p>
-<p>Из этого следует, что предел последовательности индикаторных функций <span class="math inline">\(\lim_{n \to \infty} \chi_{A_n} (\omega)\)</span> будет равен либо нулю, либо единице, а следовательно, будет является индикаторной функцией некоторого множества <span class="math inline">\(A\)</span>. Это множество <span class="math inline">\(A\)</span> мы по определению назовём <strong>пределом последовательности множеств</strong> <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
+<p>Пусть есть последовательность множеств <span class="math inline">\(A_1, A_2, \ldots, A_n, \ldots\)</span> <span class="math inline">\((A_k \subseteq \Omega)\)</span>.</p>
+<ol type="1">
+<li>Будем говорить, что существует предел последовательности множеств <span class="math inline">\(\lim_{n \to \infty} A_n\)</span>, если существует предел последовательности индикаторных функций множеств этой последовательности <span class="math inline">\(\lim_{n \to \infty} \chi_{A_n}(\omega)\)</span>.</li>
+<li>Это равносильно тому, что для любого <span class="math inline">\(\omega\)</span> либо индикаторная функция <span class="math inline">\(\chi_{A_n}(\omega) = 1\)</span>, начиная с некоторого номера <span class="math inline">\(n_0\)</span>, либо индикаторная функция <span class="math inline">\(\chi_{A_n}(\omega) = 0\)</span>, начиная с некоторого номера <span class="math inline">\(\tilde n_0\)</span>.</li>
+<li>Из этого следует, что предел последовательности индикаторных функций <span class="math inline">\(\lim_{n \to \infty} \chi_{A_n} (\omega)\)</span> будет равен либо нулю, либо единице.</li>
+<li>Следовательно, будет является индикаторной функцией некоторого множества <span class="math inline">\(A\)</span>.</li>
+<li>Это множество <span class="math inline">\(A\)</span> мы по определению назовём <strong>пределом последовательности множеств</strong> <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</li>
+</ol>
 <p>То же самое рассуждение, но без слов:</p>
 <p><span class="math display">\[
 \begin{split}
-&amp;\exists \lim_{n \to \infty} A_n \Leftarrow
-\forall \omega \in \Omega \, \exists \lim_{n \to \infty} \chi_{A_n} (\omega) \Leftrightarrow \\
+&amp;\exists \lim_{n \to \infty} A_n \overset{\enclose{circle}{1}}{\Leftarrow}
+\forall \omega \in \Omega \, \exists \lim_{n \to \infty} \chi_{A_n} (\omega) \overset{\enclose{circle}{2}}{\Leftrightarrow} \\
 &amp;\forall \omega \in \Omega \,\,
 \left [
 \begin{aligned}
 \chi_{A_n} (\omega) &amp;= 1, \forall n &gt; n_0 \\
 \chi_{A_n} (\omega) &amp;= 0, \forall n &gt; \tilde n_0 \end{aligned}
 \right.
-\Rightarrow \\
+\overset{\enclose{circle}{3}}{\Rightarrow} \\
 &amp; \lim_{n \to \infty} \chi_{A_n} (\omega) =
 \left [
 \begin{aligned}
 &amp;1 \\
 &amp;0
 \end{aligned}
-\right. \Rightarrow
-\chi_{A_n}(\omega) \Rightarrow
+\right. \overset{\enclose{circle}{4}}\Rightarrow
+\chi_{A_n}(\omega) \overset{\enclose{circle}{5}}{\Rightarrow }
 A \overset{\text{def}}{=}\lim_{n \to \infty} A_n
 \end{split}
 \]</span></p>

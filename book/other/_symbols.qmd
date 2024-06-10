@@ -7,6 +7,12 @@
 \usepackage[bb=tgdm]{unicode-math}
 \usepackage{tikz}
 
+
+<!--- Decorations --->
+\newcommand{\circled}[1]{\enclose{circle}{#1}}
+\newcommand{\boxed}[1]{\enclose{box}{#1}}
+
+
 <!--- Common --->
 \newcommand{\const}{\text{const}}
 \newcommand{\fix}{\text{fix}}
@@ -16,9 +22,6 @@
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
 \newcommand{\rb}{\right]}
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 
 <!--- Logic --->
