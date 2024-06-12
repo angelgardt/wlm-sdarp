@@ -955,11 +955,78 @@ $$
 :::
 
 :::{.proof}
+Утверждение состоит из трёх неравенств:
 
+$$
+\prob(\liminf_{n \to \infty} A_n) \overset{\circled{1}}{\leq} \liminf_{n \to \infty} \prob(A_n) \overset{\circled{2}}{\leq} \limsup_{n \to \infty} \prob(A_n) \overset{\circled{3}}{\leq} \prob(\limsup_{n \to \infty} A_n)
+$$
+
+$\circled{2}$: данное неравенство представляет собой теорему математического анализа, так как
+
+$$
+\Big( \prob(A_n) \Big)_{n=1}^\infty \subset \setR
+$$
+
+$$
+0 \leq \prob(A_n) \leq 1 \Rightarrow 
+\left.
+\begin{aligned}
+& \exists P_\ast = \liminf_{n \to \infty} \prob(A_n) \\
+& \exists P^\ast = \limsup_{n \to \infty} \prob(A_n) \\
+\end{aligned}
+\right \} \Rightarrow
+P_\ast \leq P^\ast
+$$
+
+$\circled{3}$: Пусть $\displaystyle A^\ast = \limsup_{n \to \infty} A_n = \bigcap_{n=1}^\infty \underbrace{\bigcup_{k=n}^\infty A_k}_{B_k} = \bigcap_{n=1}^\infty B_k$.
+
+$$
+B_{n+1} = \bigcup_{k = n+1}^\infty A_k 
+\Rightarrow
+B_n = A_n \cup B_{n+1}
+\Rightarrow
+\left \{
+\begin{aligned}
+&B_n \supset A_n \\
+&B_n \supset B_{n+1}
+\end{aligned}
+\right.
+\Rightarrow
+\left \{
+\begin{aligned}
+&\prob(B_n) \geq \prob(A_n), \, n = 1, 2, \ldots \\
+&\exists \lim_{n \to \infty}B_n = \bigcap_{n=1}^\infty B_n = A^\ast
+\end{aligned}
+\right.
+$$
+
+$$
+B_n = \bigcup_{k=n}^\infty A_k \in \Fcal, \quad \bigcap_{n=1}^\infty B_n \in \Fcal, \,A_1, A_2, \ldots \in \Fcal \Rightarrow \prob(A^\ast) = \lim_{n \to \infty} \prob(B_n)
+$$
+
+Последовательность $\Big( \prob(A_n) \Big)_{n=1}^\infty$ ограничена, но не обязательно сходится --- предел иметь не обязана, но имеет верхний предел. Последовательность $\Big( \prob(A_n) \Big)_{n=1}^\infty$ сходится: $\prob(A_n) \to \prob(A^\ast)$.
+
+$$
+\exists P^\ast = \limsup_{n \to \infty} \prob(A_n) = \lim \prob(A_{n_m}),
+$$
+
+где $(A_{n_m})_{m=1}^\infty$ --- некоторая подпоследовательность.
+
+$$
+\prob(A_{n_m}) \leq \prob(B_{n_m}) \, \forall m = 1, 2, \ldots
+$$
+
+Устремляя $m$ к бесконечности, получим
+
+$$
+P^\ast = \lim_{m \to infty} \prob(A_{n_m}) \leq \lim_{m \to \infty} B_{n_m} = \lim_{n \to \infty} \prob(B_n),
+$$
+
+то есть ??????????????????????????????????????????????????????
 :::
 
 :::{#thm-prob-continuity}
-Если $(A_n)_{n=1}^\infty \subset \Fcal$ и $\exists \lim_{n \to \infty A_n = A}$, то
+Если $(A_n)_{n=1}^\infty \subset \Fcal$ и $\exists \lim_{n \to \infty} A_n = A$, то
 
 $$
 \prob(A) = \lim_{n \to \infty} \prob (A_n)
@@ -967,6 +1034,31 @@ $$
 :::
 
 :::{.proof}
+
+Поскольку у последовательности $(A_n)_{n=1}^\infty$ существует предел, у неё существуют верхний предел, равный $A^\ast$, и нижний предел, равный $A_\ast$, при этом
+
+$$
+A^\ast = A_\ast = A
+$$
+
+По [утверждению @prp-prob-ineq-lims] из этого следует, что
+
+$$
+\begin{split}
+& \prob(A_\ast) \leq \liminf_{n \to \infty} (A_n) \leq \limsup_{n \to \infty}(A_n) \leq \prob (A^\ast) \\
+& \prob(A^\ast) = \prob(A_\ast) = \prob(A)
+\end{split}
+$$
+
+Следовательно,
+
+$$
+\begin{aligned}
+\liminf_{n \to \infty} \prob (A_n) &\overset{\circled{✓}}{=} \limsup_{n \to \infty} \prob(A_n) = \prob(A) \\
+&\Updownarrow \\
+&\exists \lim_{n \to \infty} \prob(A_n) = \prob(A)
+\end{aligned}
+$$
 
 :::
 

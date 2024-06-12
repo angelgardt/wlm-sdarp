@@ -1253,16 +1253,87 @@ B_{n+p} \cap B_n = A_{n+p} \cap \underbrace{\overline{A_{n+p-1}} \cap A_n}_\varn
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span></p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Утверждение состоит из трёх неравенств:</p>
+<p><span class="math display">\[
+\mathbb{P}(\liminf_{n \to \infty} A_n) \overset{\enclose{circle}{1}}{\leqslant} \liminf_{n \to \infty} \mathbb{P}(A_n) \overset{\enclose{circle}{2}}{\leqslant} \limsup_{n \to \infty} \mathbb{P}(A_n) \overset{\enclose{circle}{3}}{\leqslant} \mathbb{P}(\limsup_{n \to \infty} A_n)
+\]</span></p>
+<p><span class="math inline">\(\enclose{circle}{2}\)</span>: данное неравенство представляет собой теорему математического анализа, так как</p>
+<p><span class="math display">\[
+\Big( \mathbb{P}(A_n) \Big)_{n=1}^\infty \subset \mathbb{R}
+\]</span></p>
+<p><span class="math display">\[
+0 \leqslant\mathbb{P}(A_n) \leqslant 1 \Rightarrow
+\left.
+\begin{aligned}
+&amp; \exists P_\ast = \liminf_{n \to \infty} \mathbb{P}(A_n) \\
+&amp; \exists P^\ast = \limsup_{n \to \infty} \mathbb{P}(A_n) \\
+\end{aligned}
+\right \} \Rightarrow
+P_\ast \leqslant P^\ast
+\]</span></p>
+<p><span class="math inline">\(\enclose{circle}{3}\)</span>: Пусть <span class="math inline">\(\displaystyle A^\ast = \limsup_{n \to \infty} A_n = \bigcap_{n=1}^\infty \underbrace{\bigcup_{k=n}^\infty A_k}_{B_k} = \bigcap_{n=1}^\infty B_k\)</span>.</p>
+<p><span class="math display">\[
+B_{n+1} = \bigcup_{k = n+1}^\infty A_k
+\Rightarrow
+B_n = A_n \cup B_{n+1}
+\Rightarrow
+\left \{
+\begin{aligned}
+&amp;B_n \supset A_n \\
+&amp;B_n \supset B_{n+1}
+\end{aligned}
+\right.
+\Rightarrow
+\left \{
+\begin{aligned}
+&amp;\mathbb{P}(B_n) \geqslant\mathbb{P}(A_n), \, n = 1, 2, \ldots \\
+&amp;\exists \lim_{n \to \infty}B_n = \bigcap_{n=1}^\infty B_n = A^\ast
+\end{aligned}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+B_n = \bigcup_{k=n}^\infty A_k \in \mathcal{F}, \quad \bigcap_{n=1}^\infty B_n \in \mathcal{F}, \,A_1, A_2, \ldots \in \mathcal{F}\Rightarrow \mathbb{P}(A^\ast) = \lim_{n \to \infty} \mathbb{P}(B_n)
+\]</span></p>
+<p>Последовательность <span class="math inline">\(\Big( \mathbb{P}(A_n) \Big)_{n=1}^\infty\)</span> ограничена, но не обязательно сходится — предел иметь не обязана, но имеет верхний предел. Последовательность <span class="math inline">\(\Big( \mathbb{P}(A_n) \Big)_{n=1}^\infty\)</span> сходится: <span class="math inline">\(\mathbb{P}(A_n) \to \mathbb{P}(A^\ast)\)</span>.</p>
+<p><span class="math display">\[
+\exists P^\ast = \limsup_{n \to \infty} \mathbb{P}(A_n) = \lim \mathbb{P}(A_{n_m}),
+\]</span></p>
+<p>где <span class="math inline">\((A_{n_m})_{m=1}^\infty\)</span> — некоторая подпоследовательность.</p>
+<p><span class="math display">\[
+\mathbb{P}(A_{n_m}) \leqslant\mathbb{P}(B_{n_m}) \, \forall m = 1, 2, \ldots
+\]</span></p>
+<p>Устремляя <span class="math inline">\(m\)</span> к бесконечности, получим</p>
+<p><span class="math display">\[
+P^\ast = \lim_{m \to infty} \mathbb{P}(A_{n_m}) \leqslant\lim_{m \to \infty} B_{n_m} = \lim_{n \to \infty} \mathbb{P}(B_n),
+\]</span></p>
+<p>то есть ??????????????????????????????????????????????????????</p>
 </div>
 <div id="thm-prob-continuity" class="theorem">
-<p><span class="theorem-title"><strong>Теорема 6.1</strong></span> Если <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\exists \lim_{n \to \infty A_n = A}\)</span>, то</p>
+<p><span class="theorem-title"><strong>Теорема 6.1</strong></span> Если <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\exists \lim_{n \to \infty} A_n = A\)</span>, то</p>
 <p><span class="math display">\[
 \mathbb{P}(A) = \lim_{n \to \infty} \mathbb{P}(A_n)
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span></p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Поскольку у последовательности <span class="math inline">\((A_n)_{n=1}^\infty\)</span> существует предел, у неё существуют верхний предел, равный <span class="math inline">\(A^\ast\)</span>, и нижний предел, равный <span class="math inline">\(A_\ast\)</span>, при этом</p>
+<p><span class="math display">\[
+A^\ast = A_\ast = A
+\]</span></p>
+<p>По <a href="#prp-prob-ineq-lims" class="quarto-xref">утверждению&nbsp;<span>6.3</span></a> из этого следует, что</p>
+<p><span class="math display">\[
+\begin{split}
+&amp; \mathbb{P}(A_\ast) \leqslant\liminf_{n \to \infty} (A_n) \leqslant\limsup_{n \to \infty}(A_n) \leqslant\mathbb{P}(A^\ast) \\
+&amp; \mathbb{P}(A^\ast) = \mathbb{P}(A_\ast) = \mathbb{P}(A)
+\end{split}
+\]</span></p>
+<p>Следовательно,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\liminf_{n \to \infty} \mathbb{P}(A_n) &amp;\overset{\enclose{circle}{✓}}{=} \limsup_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(A) \\
+&amp;\Updownarrow \\
+&amp;\exists \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(A)
+\end{aligned}
+\]</span></p>
 </div>
 </section>
 <section id="prob-space" class="level2" data-number="6.7">
