@@ -38,6 +38,7 @@ book:
     - part: part-prob.qmd
       chapters: 
         - prob-prob.qmd
+        - prob-randvalues.qmd
     - part: part-andan.qmd
     - common-outro.qmd
     - references.qmd

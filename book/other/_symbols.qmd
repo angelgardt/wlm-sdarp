@@ -66,6 +66,7 @@
 
 <!--- Probability, Random Vars --->
 \newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Bcal}{\mathcal{B}}
 \newcommand{\prob}{\mathbb{P}}
 \newcommand{\dens}{\mathbb{p}}
 \newcommand{\expect}{\mathbb{E}}
