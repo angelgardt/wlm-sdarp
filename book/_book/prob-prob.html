@@ -1338,6 +1338,103 @@ A^\ast = A_\ast = A
 </section>
 <section id="prob-space" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="prob-space"><span class="header-section-number">6.7</span> Вероятностное пространство</h2>
+<div id="def-prob-space" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.7</strong></span> Тройка объектов <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>вероятностным пространством</strong>.</p>
+<p>Здесь</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> — некоторое множество [элементарных исходов]</li>
+<li><span class="math inline">\(\mathcal{F}\)</span> — <span class="math inline">\(\sigma\)</span>-алгебра подмножеств <span class="math inline">\(\Omega\)</span></li>
+<li><span class="math inline">\(\mathbb{P}\)</span> — функция <span class="math inline">\(\mathbb{P}(\cdot)\)</span> такая, что <span class="math inline">\(A \subseteq \Omega : A \in \mathcal{F}\mapsto \mathbb{P}(A) \in \mathbb{R}\)</span> и для неё выполняются аксиомы <span class="math inline">\(\enclose{circle}{\text{A1}}\)</span> — <span class="math inline">\(\enclose{circle}{\text{A3}}\)</span> (см. <a href="#prp-kolmogorov-axioms" class="quarto-xref">Утверждение&nbsp;<span>6.2</span></a>).</li>
+</ul>
+</div>
+<p>Обратим внимание, что набор требований к вероятностному пространству и его составляющим весьма нестрогий. В частности, нет никаких ограничений на то, как должно быть устроено <span class="math inline">\(\Omega\)</span>, и нет ограничений, как должно быть устроено <span class="math inline">\(\mathcal{F}\)</span>, кроме того, что это должна быть <span class="math inline">\(\sigma\)</span>-алгебра. Это значит, что вероятностные пространства могут быть очень разными. Мы будем иметь дело с <strong>двумя базовыми типами</strong> вероятностных пространств.</p>
+<div id="def-prob-space-discrete" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.8</strong></span> Вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>дискретным</strong>, если</p>
+<ul>
+<li><span class="math inline">\(\Omega = \{\omega_1, \omega_2, \ldots, \omega_N\}, \quad N \leqslant\aleph_0\)</span></li>
+<li><span class="math inline">\(\mathcal{F}= \mathcal{F}_\max\)</span></li>
+<li><span class="math inline">\(\forall \omega_k, \, k = 1, 2, \ldots N \quad p_k = \mathbb{P}(\omega_k) &gt; 0, \quad \sum_{k=1}^n p_k = 1\)</span></li>
+</ul>
+</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Замечание</em>. </span>Запись <span class="math inline">\(N \leqslant\aleph_0\)</span> обозначает, что <span class="math inline">\(\Omega\)</span> в случае дискретного вероятностного пространства может быть как <em>конечным</em> (<span class="math inline">\(N &lt; \aleph_0\)</span>), так и <em>счётным</em> (<span class="math inline">\(N = \aleph_0\)</span>).</p>
+</div>
+<p>В этом случае вероятность события <span class="math inline">\(A\)</span> будет определяться как сумма вероятностей элементарных исходов, составляющих данное событие:</p>
+<p><span class="math display">\[
+\forall A \subseteq \Omega \, \mathbb{P}(A) = \sum_{k \,:\,\omega_k \in A} \mathbb{P}(\omega_k) = \sum_{k \,:\,\omega_k \in A}p_k
+\]</span></p>
+<p>Как можно заметить, дискретность вероятностного пространства связана с дискретностью множества элементарных исходов.</p>
+<div class="proof remark">
+<p><span class="proof-title"><em>Замечание</em>. </span>Если <span class="math inline">\(N &lt; \aleph_0\)</span>, а <span class="math inline">\(p_k = \frac{1}{N} \, \forall k\)</span>, то <span class="math inline">\(\mathbb{P}(A) = \frac{M}{N}, \, \forall A = \{\omega_1, \ldots, \omega_M\}\)</span>. Такое вероятностное пространство задаёт <strong>классическую вероятность</strong>.</p>
+</div>
+<div id="def-prob-space-continuous" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 6.9</strong></span> Вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>непрерывным</strong>, если</p>
+<ul>
+<li><span class="math inline">\(\omega\)</span> — точка в <span class="math inline">\(n\)</span>-мерном пространстве</li>
+<li><span class="math inline">\(\Omega\)</span> — область в <span class="math inline">\(n\)</span>-мерном пространстве такая, что <span class="math inline">\(\displaystyle 0 &lt; V(\Omega) = \int_{\Omega} \mathbb{p}(x) dx &lt; \infty\)</span>, где <span class="math inline">\(\mathbb{p}(\cdot)\)</span> — некоторая весовая функция</li>
+<li><span class="math inline">\(\displaystyle \mathcal{F}= \{A \subseteq \Omega \, | \,\exists V(A) = \int_A \mathbb{p}(x)dx \}\)</span></li>
+<li><span class="math inline">\(\displaystyle \mathbb{P}(A) = \frac{V(A)}{V(\Omega)}\)</span></li>
+</ul>
+</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Замечание</em>. </span>Если <span class="math inline">\(\mathbb{p}(x) \equiv 1 \, \forall x \in \Omega\)</span>, тогда объем <span class="math inline">\(V(\cdot)\)</span> представляет собой «истинный» объем (без весовой функции <span class="math inline">\(\mathbb{p}(\cdot)\)</span>), а <span class="math inline">\(\mathbb{P}(A)\)</span> является <strong>геометрической вероятностью</strong>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Интегралы в теории вероятностей
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>Техническое замечание, не имеющее решающего значения для освоения материала книги.</p>
+</blockquote>
+<p>Все интегралы в теории вероятностей являются <em>интегралами Лебе́гa</em>, а не интегралами Римана, с которыми работает математический анализ. Интеграл Римана определяется как предел последовательности интегральных сумм:</p>
+<p><span class="math display">\[
+\int_a^b f(x)dx = \lim_{n \to \infty} S_n = \lim_{\Delta x_k \to 0} \sum_{k=1}^n f(x_k) \Delta x_k
+\]</span></p>
+<p>Интеграл Лебега тоже представляет собой предел интегральных сумм</p>
+<p><span class="math display">\[
+\int_a^b f(x)dx = \lim_{n \to \infty} \tilde S_n,
+\]</span></p>
+<p>но сами интегральные суммы <span class="math inline">\(\tilde S_n\)</span> строятся иначе, чем в интеграле Римана. По этой причине <em>у интеграла Лебега более широкая область существования</em>, то есть <em>существуют функции, интегрируемые по Лебегу, но не интегрируемые по Риману</em>. Однако</p>
+<blockquote class="blockquote">
+<p>если функция интегрируема по Риману, то она интегрируема и по Лебегу, и численные значения интегралов совпадают.</p>
+</blockquote>
+<p>В данной книге, как и в большинстве курсов по теории вероятности и математической статистике, <strong>не рассматриваются функции, не интегрируемые по Риману</strong>, то есть все функции, которые стоят в этой книжке под интегралом, всегда интегрируемы по Риману.</p>
+<p>Это значит, что можно не грузить себя новыми математическими приблудами, и спокойно пользоваться концепцией интеграла, с которой произошло знакомство ещё в школе.</p>
+</div>
+</div>
+</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Замечание</em>. </span>В случае непрерывного вероятностного пространства <span class="math inline">\(\sigma\)</span>-алгебра подмножеств <span class="math inline">\(\mathcal{F}\)</span> не совпадает со множеством все подмножеств <span class="math inline">\(\mathcal{F}_\max\)</span>:</p>
+<p><span class="math display">\[
+\mathcal{F}= \{A \subseteq \Omega \, | \,\exists \int_A \mathbb{p}(x) dx \} \neq \mathcal{F}_\max.
+\]</span></p>
+<p>Это значит, что существуют такие подмножества <span class="math inline">\(\Omega\)</span>, у которых интеграла <span class="math inline">\(\int_A \mathbb{p}(x) dx\)</span> не существует.</p>
+</div>
+<p>В частности для геометрической вероятности, когда <span class="math inline">\(\mathbb{p}(x) \equiv 1\)</span>, <span class="math inline">\(\Omega = [0, 1]\)</span>, можно указать такое <span class="math inline">\(A\)</span>, что</p>
+<p><span class="math display">\[
+\exists A \subset [0, 1] \,:\,\nexists V(A) = L(A),
+\]</span></p>
+<p>то есть подмножество <span class="math inline">\(\Omega\)</span>, у которого не существует длина. Если же длина <span class="math inline">\(l\)</span> у такого подмножества существует, то можно указать такие <span class="math inline">\(A_1, A_2, \ldots\)</span>, что</p>
+<p><span class="math display">\[
+\left \{
+\begin{aligned}
+&amp; \mathbb{P}(A_k) = l \\
+&amp; \bigsqcup_{n=1}^\infty A_k = \Omega
+\end{aligned}
+\right.
+\Rightarrow
+1 = \sum_{k=1}^\infty l
+\]</span></p>
+<p>Получается противоречие, так как полученное уравнение неразрешимо ни при каких <span class="math inline">\(l\)</span>, так как есои <span class="math inline">\(l=0\)</span>, то <span class="math inline">\(\sum = 0\)</span>, а если <span class="math inline">\(l \neq 0\)</span>, то <span class="math inline">\(\sum = \infty\)</span>.</p>
+<p>Таким образом, вся история с <span class="math inline">\(\sigma\)</span>-алгебрами нужна для согласования аксиомы счетной аддитивности <span class="math inline">\(\enclose{circle}{\text{A2}}\)</span> и аксиомы нормировки <span class="math inline">\(\enclose{circle}{\text{A3}}\)</span>.</p>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
