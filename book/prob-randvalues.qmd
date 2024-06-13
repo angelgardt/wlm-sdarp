@@ -83,9 +83,46 @@ $$
 \prob(-\infty, x) = \prob \big( \xi(\omega) < x \big) = F(x)
 $$
 
+:::{#def-rand-value-discrete}
+Распределение случайной величины $\xi$ называется **дискретным**, если
+
+$$
+F(x) = \sum_{k \suchd x_k < x} p_k,
+$$
+
+где $\big\{ (x_k, p_k) \big\}_{k=1}^N, \, N \leq \aleph_0$ --- конечный или счётный набор, $p_k > 0$, $\sum_{k=1}^N p_k = 1$.
+:::
+
+Если $x_k < x_{k+1} \forall k$, то $F(x) = \const$ при $x \in (x_k, x_{k+1})$, $F(x_n + 0) - F(x_n) - 0 = p_k$.
 
 
+:::{#def-rand-value-continuous}
+Случайная величина $\xi$ имеет **абсолютно непрерывное** распределение, если
 
+$$
+F(x) = \int_{-\infty}^x \dens(z)dz, \, x \in \setR,
+$$
+где $\dens(\cdot)$ --- некоторая функция, $\dens(z) > 0$, $\int_{-\infty}^\infty \dens(z)dx = 1$.
+
+Функция $\dens(\cdot)$ называется **плотностью распределения**.
+:::
+
+$F(\cdot)$ непрерывна в каждой точке $x$ ($\forall x \in \setR$) и $F'(x) = \dens(x)$.
+
+
+## Общие свойства функций распределения
+
+:::{#prp-F-monotonous}
+$F(\cdot)$ не убывает.
+:::
+
+:::{#prp-F-contleft}
+$F(\cdot)$ непрерывна слева.
+:::
+
+:::{#prp-F-infty}
+$F(-\infty) = 0$, $F(+\infty) = 1$
+:::
 
 
 

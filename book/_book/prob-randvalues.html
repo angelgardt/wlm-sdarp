@@ -417,7 +417,13 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#общие-свойства-функций-распределения" id="toc-общие-свойства-функций-распределения" class="nav-link active" data-scroll-target="#общие-свойства-функций-распределения"><span class="header-section-number">7.1</span> Общие свойства функций распределения</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -498,9 +504,37 @@ window.Quarto = {
 <p><span class="math display">\[
 \mathbb{P}(-\infty, x) = \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x)
 \]</span></p>
+<div id="def-rand-value-discrete" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 7.2</strong></span> Распределение случайной величины <span class="math inline">\(\xi\)</span> называется <strong>дискретным</strong>, если</p>
+<p><span class="math display">\[
+F(x) = \sum_{k \,:\,x_k &lt; x} p_k,
+\]</span></p>
+<p>где <span class="math inline">\(\big\{ (x_k, p_k) \big\}_{k=1}^N, \, N \leqslant\aleph_0\)</span> — конечный или счётный набор, <span class="math inline">\(p_k &gt; 0\)</span>, <span class="math inline">\(\sum_{k=1}^N p_k = 1\)</span>.</p>
+</div>
+<p>Если <span class="math inline">\(x_k &lt; x_{k+1} \forall k\)</span>, то <span class="math inline">\(F(x) = \text{const}\)</span> при <span class="math inline">\(x \in (x_k, x_{k+1})\)</span>, <span class="math inline">\(F(x_n + 0) - F(x_n) - 0 = p_k\)</span>.</p>
+<div id="def-rand-value-continuous" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 7.3</strong></span> Случайная величина <span class="math inline">\(\xi\)</span> имеет <strong>абсолютно непрерывное</strong> распределение, если</p>
+<p><span class="math display">\[
+F(x) = \int_{-\infty}^x \mathbb{p}(z)dz, \, x \in \mathbb{R},
+\]</span> где <span class="math inline">\(\mathbb{p}(\cdot)\)</span> — некоторая функция, <span class="math inline">\(\mathbb{p}(z) &gt; 0\)</span>, <span class="math inline">\(\int_{-\infty}^\infty \mathbb{p}(z)dx = 1\)</span>.</p>
+<p>Функция <span class="math inline">\(\mathbb{p}(\cdot)\)</span> называется <strong>плотностью распределения</strong>.</p>
+</div>
+<p><span class="math inline">\(F(\cdot)\)</span> непрерывна в каждой точке <span class="math inline">\(x\)</span> (<span class="math inline">\(\forall x \in \mathbb{R}\)</span>) и <span class="math inline">\(F'(x) = \mathbb{p}(x)\)</span>.</p>
+<section id="общие-свойства-функций-распределения" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="общие-свойства-функций-распределения"><span class="header-section-number">7.1</span> Общие свойства функций распределения</h2>
+<div id="prp-F-monotonous" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.1</strong></span> <span class="math inline">\(F(\cdot)\)</span> не убывает.</p>
+</div>
+<div id="prp-F-contleft" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.2</strong></span> <span class="math inline">\(F(\cdot)\)</span> непрерывна слева.</p>
+</div>
+<div id="prp-F-infty" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.3</strong></span> <span class="math inline">\(F(-\infty) = 0\)</span>, <span class="math inline">\(F(+\infty) = 1\)</span></p>
+</div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
