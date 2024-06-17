@@ -422,6 +422,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#общие-свойства-функций-распределения" id="toc-общие-свойства-функций-распределения" class="nav-link active" data-scroll-target="#общие-свойства-функций-распределения"><span class="header-section-number">7.1</span> Общие свойства функций распределения</a></li>
+  <li><a href="#дискретное-распределение" id="toc-дискретное-распределение" class="nav-link" data-scroll-target="#дискретное-распределение"><span class="header-section-number">7.2</span> Дискретное распределение</a></li>
+  <li><a href="#абсолютно-непрерывное-распределение" id="toc-абсолютно-непрерывное-распределение" class="nav-link" data-scroll-target="#абсолютно-непрерывное-распределение"><span class="header-section-number">7.3</span> Абсолютно непрерывное распределение</a></li>
+  <li><a href="#независимость-случайных-величин" id="toc-независимость-случайных-величин" class="nav-link" data-scroll-target="#независимость-случайных-величин"><span class="header-section-number">7.4</span> Независимость случайных величин</a></li>
+  <li><a href="#функции-от-случайных-величин" id="toc-функции-от-случайных-величин" class="nav-link" data-scroll-target="#функции-от-случайных-величин"><span class="header-section-number">7.5</span> Функции от случайных величин</a></li>
+  <li><a href="#моменты-случайных-величин" id="toc-моменты-случайных-величин" class="nav-link" data-scroll-target="#моменты-случайных-величин"><span class="header-section-number">7.6</span> Моменты случайных величин</a></li>
   </ul>
 </nav>
     </div>
@@ -448,7 +453,7 @@ window.Quarto = {
 <!--- Stats --->
 <!--- Letters --->
 <div class="intro">
-<p>В предыдущей главы мы выстроили теоретико-множественный фундамент теории вероятности. Это была полезная с точки зрения создания последовательной и непротиворечивой теории деятельность, однако, как вы могли заметить, в работе со множествами возникает ряд проблем, приходится вводить разные дополнительные определения, что усложняем нам жизнь. Возникает естественная потребность выстроить новый объект, называемый случайной величиной.</p>
+<p>В предыдущей главе мы выстроили теоретико-множественный фундамент теории вероятности. Это была полезная с точки зрения создания последовательной и непротиворечивой теории деятельность, однако, как вы могли заметить, в работе со множествами возникает ряд проблем, приходится вводить разные дополнительные определения, что усложняем нам жизнь. Возникает естественная потребность выстроить новый объект, называемый случайной величиной.</p>
 </div>
 <p>Зачем нам нужны случайные величины? Ну, во-первых, математика, чьей частью является теория вероятности, не очень-то понимает, как работать в таким объектом, как «элементарный исход». «На игральном кубике выпало 6 очков» — довольно странный математический объект. Давайте введем такую конструкцию, которая будет сопоставлять элементарному исходу <span class="math inline">\(\omega\)</span> некоторое число <span class="math inline">\(\xi(\omega)\)</span>:</p>
 <p><span class="math display">\[
@@ -526,11 +531,62 @@ F(x) = \int_{-\infty}^x \mathbb{p}(z)dz, \, x \in \mathbb{R},
 <p><span class="theorem-title"><strong>Утверждение 7.1</strong></span> <span class="math inline">\(F(\cdot)\)</span> не убывает.</p>
 </div>
 <div id="prp-F-contleft" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.2</strong></span> <span class="math inline">\(F(\cdot)\)</span> непрерывна слева.</p>
+<p><span class="theorem-title"><strong>Утверждение 7.2</strong></span> <span class="math inline">\(F(\cdot)\)</span> непрерывна слева, то есть <span class="math inline">\(F(x - 0) = F(x)\)</span>.</p>
 </div>
 <div id="prp-F-infty" class="theorem proposition">
 <p><span class="theorem-title"><strong>Утверждение 7.3</strong></span> <span class="math inline">\(F(-\infty) = 0\)</span>, <span class="math inline">\(F(+\infty) = 1\)</span></p>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Необходимые и достаточные свойства для функции распределения
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Наличие у функции свойств <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a> эквивалентно тому, что эта функция является функцией распределения</strong>, то есть свойства <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a> являются необходимыми и достаточными, чтобы некоторая функция являлась функцией распределения.</p>
+<ul>
+<li>Если некоторая функция является функцией распределения, то для неё выполнены <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a>.</li>
+<li>Если некоторая функция удовлетворяет свойствам <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a>, то существует случайная величина, для которой эта функция является функцией распределения.</li>
+</ul>
+</div>
+</div>
+<div id="prp-F-contright" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.4</strong></span> <span class="math inline">\(F(x + 0) = \mathbb{P}\big( \xi(\omega) \leqslant x \big)\)</span></p>
+</div>
+<div id="prp-F-x" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.5</strong></span> <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = \mathbb{P}\big( \xi(\omega) \leqslant x \big) - \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x + 0) - F(x) = F(x+0) - F(x - 0)\)</span></p>
+</div>
+<div id="prp-F-cont" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.6</strong></span> Если <span class="math inline">\(F(\cdot)\)</span> непрерывна в точке <span class="math inline">\(x\)</span>, то <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = 0\)</span>.</p>
+</div>
+<div id="prp-F-intervals" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 7.7</strong></span> <span class="math display">\[
+\begin{aligned}
+&amp;\mathbb{P}\big( x_1 \leqslant\xi(\omega) &lt; x_2 \big) = \mathbb{P}\big( \xi(\omega) &lt; x_2 \big) - \mathbb{P}\big( \xi(\omega) \leqslant x_1 \big) = F(x_2) - F(x_1) \\
+&amp;\mathbb{P}\big( x_1 \leqslant\xi(\omega) \leqslant x_2 \big) = \mathbb{P}\big( \xi(\omega) \leqslant x_2 \big) - \mathbb{P}\big( \xi(\omega) \leqslant x_1 \big) = F(x_2 + 0) - F(x_1) \\
+&amp;\mathbb{P}\big( x_1 &lt; \xi(\omega) &lt; x_2 \big) = \mathbb{P}\big( \xi(\omega) &lt; x_2 \big) - \mathbb{P}\big( \xi(\omega) &lt; x_1 \big) = F(x_2) - F(x_1 + 0) \\
+&amp;\mathbb{P}\big( x_1 &lt; \xi(\omega) \leqslant x_2 \big) = \mathbb{P}\big( \xi(\omega) \leqslant x_2 \big) - \mathbb{P}\big( \xi(\omega) &lt; x_1 \big) = F(x_2 + 0) - F(x_1 + 0)
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="дискретное-распределение" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="дискретное-распределение"><span class="header-section-number">7.2</span> Дискретное распределение</h2>
+</section>
+<section id="абсолютно-непрерывное-распределение" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="абсолютно-непрерывное-распределение"><span class="header-section-number">7.3</span> Абсолютно непрерывное распределение</h2>
+</section>
+<section id="независимость-случайных-величин" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="независимость-случайных-величин"><span class="header-section-number">7.4</span> Независимость случайных величин</h2>
+</section>
+<section id="функции-от-случайных-величин" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="функции-от-случайных-величин"><span class="header-section-number">7.5</span> Функции от случайных величин</h2>
+</section>
+<section id="моменты-случайных-величин" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="моменты-случайных-величин"><span class="header-section-number">7.6</span> Моменты случайных величин</h2>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
