@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -99,6 +119,35 @@ background-size: cover;
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -399,11 +448,16 @@ background-size: cover;
   <ul>
   <li><a href="#desc-statintro-research-process-quan" id="toc-desc-statintro-research-process-quan" class="nav-link" data-scroll-target="#desc-statintro-research-process-quan"><span class="header-section-number">5.1.1</span> Исследовательский процесс в количественных исследованиях</a></li>
   </ul></li>
-  <li><a href="#desc-statintro-sample" id="toc-desc-statintro-sample" class="nav-link" data-scroll-target="#desc-statintro-sample"><span class="header-section-number">5.2</span> Выборка</a>
+  <li><a href="#desc-statintro-what-is-stat" id="toc-desc-statintro-what-is-stat" class="nav-link" data-scroll-target="#desc-statintro-what-is-stat"><span class="header-section-number">5.2</span> Что такое статистика?</a></li>
+  <li><a href="#desc-statintro-population-sample" id="toc-desc-statintro-population-sample" class="nav-link" data-scroll-target="#desc-statintro-population-sample"><span class="header-section-number">5.3</span> Выборка и генеральная совокупность</a></li>
+  <li><a href="#desc-statintro-param-estim" id="toc-desc-statintro-param-estim" class="nav-link" data-scroll-target="#desc-statintro-param-estim"><span class="header-section-number">5.4</span> Признаки, параметры, оценки</a>
   <ul>
-  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">5.2.1</span> Способы формирования репрезентативной выборки</a>
+  <li><a href="#desc-statintro-why-do-we-need-stat" id="toc-desc-statintro-why-do-we-need-stat" class="nav-link" data-scroll-target="#desc-statintro-why-do-we-need-stat"><span class="header-section-number">5.4.1</span> Зачем нужна статистика?</a></li>
+  <li><a href="#desc-statintro-stat-modelling" id="toc-desc-statintro-stat-modelling" class="nav-link" data-scroll-target="#desc-statintro-stat-modelling"><span class="header-section-number">5.4.2</span> Этапы статистического моделирования</a></li>
+  <li><a href="#desc-statintro-statdata" id="toc-desc-statintro-statdata" class="nav-link" data-scroll-target="#desc-statintro-statdata"><span class="header-section-number">5.4.3</span> Характеристики статистических данных</a></li>
+  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">5.4.4</span> Способы формирования репрезентативной выборки</a>
   <ul class="collapse">
-  <li><a href="#desc-statintro-simple-random-sample" id="toc-desc-statintro-simple-random-sample" class="nav-link" data-scroll-target="#desc-statintro-simple-random-sample"><span class="header-section-number">5.2.1.1</span> Простая случайная выборка</a></li>
+  <li><a href="#desc-statintro-simple-random-sample" id="toc-desc-statintro-simple-random-sample" class="nav-link" data-scroll-target="#desc-statintro-simple-random-sample"><span class="header-section-number">5.4.4.1</span> Простая случайная выборка</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -476,7 +530,7 @@ background-size: cover;
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-research-process-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;5.1: Сотношение качественных и количественных исследований в исследовательском процессе
+Иллюстрация&nbsp;5.1: Соотношение качественных и количественных исследований в исследовательском процессе
 </figcaption>
 </figure>
 </div>
@@ -496,17 +550,295 @@ background-size: cover;
 <div class="lab-junior">
 
 </div>
+<p>Итак, пусть мы решили, что проводим количественное исследование. Какие этапы нам предстоит пройти, прежде чем мы получим ответ на наш исследовательский вопрос? Снова представим процес в виде схемы (<a href="#fig-research-process-quan" class="quarto-xref">Иллюстрация&nbsp;<span>5.2</span></a>):</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-research-process-quan" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-research-process-quan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-research-process-quan">flowchart TD
+  idea("Идея исследования / Исследовательский вопрос")
+  literature("Теоретический обзор")
+  constructs("Конструкты")
+  theorhyp("Теоретические гипотезы")
+  design("Дизайн исследования")
+  sample(["Выборка"])
+  vars(["Переменные
+        Процедура"])
+  empirhyp(["Эмпирические гипотезы"])
+  plananalysis(["План анализа"])
+  prog("Программирование эксперимента / Составление опроса")
+  datacollection("Сбор данных")
+  dataanalysis("Анализ данных")
+  preproc(["Предобработка данных"])
+  desc(["Описательные статистики"])
+  statmethods(["Статистические методы"])
+  stathyp(["Статистические гипотезы"])
+  statres(["Статистические результаты"])
+  statinterp(["Статистическая интерпретация"])
+  interpretation("Интерпретация результатов")
+  discussion("Обсуждение результатов")
+  report("Написание отчета")
+  
+  idea ==&gt; literature
+  literature -.-&gt; constructs
+  constructs -.-&gt; theorhyp
+  literature ==&gt; theorhyp
+  theorhyp ==&gt; design
+  design --&gt; sample
+  design --&gt; vars
+  vars --&gt; empirhyp
+  empirhyp --&gt; plananalysis
+  design ==&gt; prog
+  prog ==&gt; datacollection
+  datacollection ==&gt; dataanalysis
+  dataanalysis --&gt; preproc
+  preproc --&gt; desc
+  desc --&gt; statmethods
+  statmethods --&gt; stathyp
+  stathyp --&gt; statres
+  statres --&gt; statinterp
+  statinterp --&gt; interpretation
+  dataanalysis ==&gt; interpretation
+  interpretation ==&gt; discussion
+  discussion ==&gt; report
+  %% report -.-&gt; idea
+  
+  %% style sample color:#A3F09C
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-research-process-quan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;5.2: Исследовательский процесс в количественных исследованиях
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Мы вновь начинаем с <strong>идеи</strong> исследования или <strong>исследовательского вопроса</strong>, прочитываем необходимую <strong>литературу</strong>, при необходимости определяем исследуемые <strong>конструкты</strong> и приходим к <strong>теоретическим гипотезам</strong> нашего исследования.</p>
 </section>
 </section>
-<section id="desc-statintro-sample" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="desc-statintro-sample"><span class="header-section-number">5.2</span> Выборка</h2>
+<section id="desc-statintro-what-is-stat" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="desc-statintro-what-is-stat"><span class="header-section-number">5.2</span> Что такое статистика?</h2>
 <div class="lab-junior">
 
 </div>
-<section id="desc-statintro-sample-types" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">5.2.1</span> Способы формирования репрезентативной выборки</h3>
-<section id="desc-statintro-simple-random-sample" class="level4" data-number="5.2.1.1">
-<h4 data-number="5.2.1.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">5.2.1.1</span> Простая случайная выборка</h4>
+<p>Чем же в итоге занимается статистика? Что она изучает?</p>
+<div id="def-statistics" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 5.1</strong></span> <strong>Статистика</strong> — это междисциплинарная область знаний, а также практической деятельности, изучающая массовые явления, а также принципы и методы работы с данными, характеризующими эти явления <span class="citation" data-cites="sirotin2018">(<a href="references.html#ref-sirotin2018" role="doc-biblioref">Сиротин, 2018</a>)</span>.</p>
+</div>
+<p>Это, пожалуй, наиболее общее определение, которое весьма красиво звучит, но явно требует пояснений.</p>
+<p>Массовые явления затрагивают огромные количества людей. Огромность этих масс, конечно, различна. Скажем, базовые перцептивные закономерности, связанные с тем, как устроена зрительная система, охватывают <em>всех людей</em>. Уровень удовлетворенности жизнью россиян охватывает только <em>население России</em>. Городские блага петербуржцев — только для <em>жителей Санкт-Петербурга</em>. Учебная мотивация студентов психологического факультета некоторого вуза — это только про <em>студентов-психологов этого вуза</em>. Однако так или иначе эти группы составляет не 5–10 человек, а десятки, сотни, тысячи или миллионы.</p>
+<p>Собственно, статистика и возникает именно тогда, когда нам нужно изучать большие — очень большие — группы людей. Можно было бы, наверно, озадачится изучением всех представителей интересующей нас группы, однако это требует много времени и денег — ни того, ни другого, как правило, в наличии не присутствует. Приходится ограничиваться рассмотрением <em>части интересующей нас группы людей</em>.</p>
+</section>
+<section id="desc-statintro-population-sample" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="desc-statintro-population-sample"><span class="header-section-number">5.3</span> Выборка и генеральная совокупность</h2>
+<div class="lab-junior">
+
+</div>
+<p>Одним из ключевых понятий статистики является <strong>генеральная совокупность (population)</strong> — множество всех [существующих] исследуемых объектов, а также сведения о них. <strong>Объемом генеральной совокупности</strong> (<span class="math inline">\(N\)</span>) называют число объектов, составляющих генеральную совокупность. Как мы отметили выше, <span class="math inline">\(N\)</span> в подавляющем большинстве случаев крайне велико, поэтому мы не можем работать с генеральной совокупностью целиком — в ходе исследования мы работаем с <em>выборкой</em>.</p>
+<p><strong>Выборка, или выборочная совокупность (sample)</strong> — это некоторая часть генеральной совокупности, формируемая в ходе проведения исследований. Выборка характеризуется <strong>объёмом</strong> (<span class="math inline">\(n\)</span>), при этом объем выборки всегда существенно меньше объёма генеральной совокупности (<span class="math inline">\(n \ll N\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>).</p>
+<p>Получается следующая логика (<a href="#fig-sampling-inference" class="quarto-xref">Иллюстрация&nbsp;<span>5.3</span></a>):</p>
+<ol type="1">
+<li>мы <strong>формируем выборку (sampling)</strong> из генеральной совокупности</li>
+<li>изучаем получившуюся выборку в исследовании</li>
+<li>по полученным результатам <strong>делаем выводы (inference)</strong> о генеральной совокупности</li>
+</ol>
+<div id="fig-sampling-inference" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sampling-inference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/desc-statintro/sampling-inference.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-inference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;5.3: Выборка и генеральная совокупность
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="desc-statintro-param-estim" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="desc-statintro-param-estim"><span class="header-section-number">5.4</span> Признаки, параметры, оценки</h2>
+<div class="lab-junior">
+
+</div>
+<p>В ходе исследования мы изучаем <strong>признаки</strong>, которыми обладают интересующие нас объекты рассматриваемой генеральной совокупности. Эти признаки выражаются <em>количественно</em> в определённых <strong>показателях</strong>. В качестве примеров признаков показателей, рассматриваемых в психологически исследованиях, можно привести следующие (<a href="#tbl-features" class="quarto-xref">Таблица&nbsp;<span>5.1</span></a>):</p>
+<div id="tbl-features" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.1: Примеры признаков и показателей в психологических исследованиях
+</figcaption>
+<div aria-describedby="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Признаки</th>
+<th>Показатели</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Рабочая память</td>
+<td>Объем рабочей памяти</td>
+</tr>
+<tr class="even">
+<td>Нейротизм</td>
+<td>Уровень нейротизма по BFI</td>
+</tr>
+<tr class="odd">
+<td>Заработная плата</td>
+<td>Средняя заработная плата</td>
+</tr>
+<tr class="even">
+<td>Когнитивная нагрузка</td>
+<td>Уровень когнитивной нагрузки по ЭЭГ-коррелятам</td>
+</tr>
+<tr class="odd">
+<td>Доверие к ИИ</td>
+<td>Уровень доверия к ИИ по опроснику TAIA</td>
+</tr>
+<tr class="even">
+<td>Индивидуализм/коллективизм</td>
+<td>Индекс индивидуализма/коллективизма по модели Хофстеде</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Признаки могут быть очень разными, как и показатели, которыми мы их пытаемся измерить, однако независимо от того, какой признак и с помощью какого показателя мы пытаемся изучать, <em>генеральная совокупность характеризуется некоторым параметром</em>.</p>
+<div id="def-parameter" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 5.2</strong></span> <strong>Параметр</strong> — относительно постоянная [от одной совокупности к другой] величина, характеризующая генеральную совокупность по некоторому показателю.</p>
+</div>
+<p>Что это значит? Что по сути есть этот <em>параметр</em>? Это значит, что <em>в принципе</em> существуют</p>
+<ul>
+<li>средний уровень нейротизма по BFI студентов-психологов города Москвы</li>
+<li>средний уровень доверия к ИИ по опроснику TAIA россиян пенсионного возраста</li>
+<li>средний уровень когнитивной нагрузки по ЭЭГ-коррелятам (<span class="math inline">\(\alpha\)</span> band, <span class="math inline">\(\beta\)</span> band, <span class="math inline">\(\theta\)</span> band)</li>
+</ul>
+<p>и так далее. Проблем заключается в том, что</p>
+<blockquote class="blockquote">
+<p><strong>величина параметра, который мы изучаем, неизвестна и никогда не будет известна.</strong></p>
+</blockquote>
+<p>Стоп, что?</p>
+<p>Хотя понятно, как вычислить <em>средний уровень нейротизма по BFI студентов-психологов города Москвы</em> — взять всех студентов-психологов Москвы, дать им заполнить опросник BFI, посчитать балл по шкале «нейротизм», сложить результаты и разделить на количество студентов — на деле <em>такое провернуть невозможно</em>. Но почему? Причины две:</p>
+<ul>
+<li>В Москве слишком много студентов-психологов — мы не сможем собрать данные со всех-всех-всех</li>
+<li>Любое наше измерение всегда содержит ошибку — независимо от того физическое оно или психологическое</li>
+</ul>
+<p>Аналогично дело обстоит с любыми другими параметрами.</p>
+<p>Что же делать? Собственно за этим мы и формируем выборку. Мы не можем измерить величину параметра точно, но можем <em>предсказать её с определённой статистической точностью</em>, измеряя показатели на выборке. Выборка имеет ограниченный объём, и, измерив величину показателя у каждого объекта выборки, мы получим <strong>[выборочную] оценку параметра (estimation)</strong> — эмпирический (измеримый) аналог параметра. В частности, если у нас есть выборка из 100 студентов-психологов Москвы, вполне возможно за некоторое время собрать данных по уровню их нейротизма с помощью опросника BFI и вычислить среднее арифметическое по этим 100 наблюдениям.</p>
+<p>Далее мы часто будем говорить о параметрах генеральной совокупности и выборочных оценках, сейчас же приведем несколько примеров и обозначений, чтобы придать теоретическим речам некоторое фактическое содержание (<a href="#tbl-param-estim" class="quarto-xref">Таблица&nbsp;<span>5.2</span></a>).</p>
+<div id="tbl-param-estim" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-param-estim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.2: Примеры параметров и выборочных оценок
+</figcaption>
+<div aria-describedby="tbl-param-estim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Параметр генеральной совокупности</th>
+<th>Выборочная оценка</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mu\)</span> — генеральное среднее</td>
+<td><span class="math inline">\(\hat \mu\)</span>, <span class="math inline">\(\bar x\)</span> — выборочное среднее</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma^2\)</span> — стандартное отклонение генеральной совокупности</td>
+<td><span class="math inline">\(\hat \sigma^2\)</span>, <span class="math inline">\(s^2\)</span> — дисперсия выборки</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\rho\)</span> — коэффициент корреляции генеральной совокупности</td>
+<td><span class="math inline">\(\hat \rho\)</span>, <span class="math inline">\(r\)</span> — выборочный коээффициент корреляции</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<section id="desc-statintro-why-do-we-need-stat" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="desc-statintro-why-do-we-need-stat"><span class="header-section-number">5.4.1</span> Зачем нужна статистика?</h3>
+<div class="lab-junior">
+
+</div>
+<p>Мы в какой-то малоприятной ситуации… Мы хотим измерить то, что в определенном смысле невозможно измерить — параметры генеральной совокупности — при этом достаточно точно, чтобы потом это можно было сравнивать или строить какие-то модели. Задача выглядит заведомо провальной…</p>
+<p>Однако именно в этот момент на помощь нам приходит статистика. Не в гордом одиночестве, конечно. Она проводит с собой теорию измерений, психометрику, теорию обнаружения сигнала и др. Всё это работает в нашей психологической науке в комплексе. Мы же сейчас сосредотачиваемся на статистической части этого салата.</p>
+<p>Статистика даёт нам теоретический и математический инструментарий, чтобы мы могли делать какие-либо выводы по нашим собранным данным. К сожалению, как бы нам ни хотелось, мы не можем делать выводы по сырым данным, потому что измерения по выборке не отражают вот прям ровно то, что есть в генеральной совокупности. Нам их надо определенным образом обсчитать, чтобы наши выводы были корректными. Этим и занимается статистика.</p>
+<p>Возможно, сейчас это звучит достаточно абстрактно, но на данном этапе будет достаточно некоторого интуитивного понимание того, зачем нужна статистика. Далее это обрастёт содержанием и уложится, я надеюсь, в достаточно стройную систему.</p>
+<p>Итого,</p>
+<blockquote class="blockquote">
+<p>статистика обеспечает возможность делать выводы о генеральной совокупности по выборке.</p>
+</blockquote>
+</section>
+<section id="desc-statintro-stat-modelling" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="desc-statintro-stat-modelling"><span class="header-section-number">5.4.2</span> Этапы статистического моделирования</h3>
+<div class="lab-middle">
+
+</div>
+<p>Обобщение результатов исследования, проведенного на выборке, на всю генеральную совокупность происходит в ходе <strong>статистического моделирования</strong>. Хотя это словосочетание обычно пробуждает в сознании ассоциации, связанные с большими вычисления и чуть ли не искусственным интеллектом, на самом деле, любой статистический анализ — даже самая обычная простая линейная регрессия — это уже статистическое моделирование. Ведь мы берем некоторую математическую модель, примеряем её к данным и делаем выводы о том, насколько хорошо она работает.</p>
+<p>В статистическом моделировании независимо от того, какую именно модель мы строим или какой анализ проводим, можно выделить несколько этапов:</p>
+<ul>
+<li><strong>Определение целей и задач моделирования</strong>
+<ul>
+<li>Здесь нам необходимо ответить на вопрос: что мы вообще пытаемся смоделировать и для чего? Этот этап неразрывно связан с определением целей и задач исследования в целом.</li>
+<li>Как отмечалось выше, анализ данных, который по сути и есть статистическое моделирование, должен быть согласован с гипотезами и исследовательским вопросом — этот этам ровно при эту согласованность.</li>
+</ul></li>
+<li><strong>Формализация модели</strong>
+<ul>
+<li>Здесь нам надо принципиально понять, каков тип статистических моделей нам подходит для моделирования изучаемой закономерности.</li>
+<li>Изучаем ли мы линейные взаимосвязи или нам необходимо нелинейная модель? Есть ли у нас группировка в данных, которую необходимо учесть, или нет? И другие вопросы, которые нам необходимо задать уже на этапе <em>дизайна исследования</em>, а именно — <em>планирования анализа данных</em>.</li>
+</ul></li>
+<li><strong>Спецификация модели</strong>
+<ul>
+<li>На этом этапе мы уточняем модель до уровня переменных (и их взаимодействий), которые в неё будут входить.</li>
+<li>Иногда этот этап переносят ниже — после сбора и предобработки данных — однако согласно современным взглядам, это не вполне корректно.</li>
+<li>Спецификация модели, как и формализация, является частью <em>планирования анализа данных</em>, то есть подэтапом <em>дизайна исследования</em>. Продумывание спецификации модели позволит посмотреть на дизайн исследования «аналитическим» взглядом и обнаружить потенциальные проблемы (например, взаимодействия трех переменных, которые крайне сложны для интерпретации).</li>
+</ul></li>
+<li><strong>Сбор данных и их предобработка</strong>
+<ul>
+<li>Собственно, стандартная часть исследовательского процесса в любых эмпирических исследованиях.</li>
+</ul></li>
+<li><strong>Идентификация модели</strong>
+<ul>
+<li>Иначе говоря, подбор коэффициентов модели, или вычисление выборочных оценок параметров генеральной совокупности.</li>
+</ul></li>
+<li><strong>Анализ модели</strong>
+<ul>
+<li>Этот этап включает в себя проверку статистической значимости модели в целом и отдельных её коэффициентов, исследование выполнения математических допущений, оценку модели по метрикам качества и др. — всё, что позволит сказать, насколько хороша получившаяся модель с точки зрения описания изучаемых закономерностей.</li>
+</ul></li>
+<li><strong>Верификация модели</strong>
+<ul>
+<li>На последнем этапе осуществляется тестирование модели на новом наборе данных, то есть на тех наблюдениях, с которыми модель ещё не знакома.</li>
+<li>Этот этап, прежде всего, актуален для задач машинного обучения, в рамках которого является необходимым шагом, однако иногда встречается и некоторых ситуациях научной и практической аналитики.</li>
+</ul></li>
+</ul>
+</section>
+<section id="desc-statintro-statdata" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="desc-statintro-statdata"><span class="header-section-number">5.4.3</span> Характеристики статистических данных</h3>
+<p>Конечно же, статистическое моделирование происходит на <strong>статистических данных</strong>, которые мы собираем в ходе исследования. Эти данные <em>собираются на выборке</em> с помощью <em>измерения</em> интересующих нас показателей. Такое положение дел приводит нас к следующему обстоятельству: статистические данные обладают двумя ключевыми характеристиками — <em>неопределенностью</em> и <em>вариативностью</em>.</p>
+<!---
+Мы уже говорили об этих характеристиках данных, когда изучали теорию измерений, однако не лишним будет повторить это еще раз, потому что именно эти две характеристики делают нам всё статистическое веселье с оценками параметров и тестированием гипотез.
+--->
+<ul>
+<li><strong>Неопределенность</strong></li>
+<li><strong>Вариативность</strong></li>
+</ul>
+</section>
+<section id="desc-statintro-sample-types" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">5.4.4</span> Способы формирования репрезентативной выборки</h3>
+<section id="desc-statintro-simple-random-sample" class="level4" data-number="5.4.4.1">
+<h4 data-number="5.4.4.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">5.4.4.1</span> Простая случайная выборка</h4>
 <p>Самый просто способ, которым можно набрать репрезентативную выборку — это <strong>простая случайная выборка (simple random sample)</strong>.</p>
 <div id="fig-simple-random-sample" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -565,15 +897,26 @@ background-size: cover;
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simple-random-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;5.2: Простая случайная выборка
+Иллюстрация&nbsp;5.4: Простая случайная выборка
 </figcaption>
 </figure>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-sirotin2018" class="csl-entry" role="listitem">
+Сиротин, В. П. (2018). <em>Курс «прикладной статистический анализ»</em>. НИУ ВШЭ, платформа «Открытое образование».
+</div>
+</div>
 </section>
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Символ <span class="math inline">\(\ll\)</span> читается как «много меньше».<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
