@@ -35,10 +35,16 @@ book:
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
+      - desc-centaltend.qmd
+      #- desc-variation.qmd
+      #- desc-distshape.qmd
+      #- desc-prodmetrics.qmd
     - part: part-prob.qmd
       chapters: 
+        - prob-randexpvals.qmd
         - prob-prob.qmd
         - prob-randvalues.qmd
+        - prob-cond-prob.qmd
     - part: part-andan.qmd
     - common-outro.qmd
     - references.qmd

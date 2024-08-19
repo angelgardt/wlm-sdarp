@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-prob.html" rel="next">
+<link href="./desc-centaltend.html" rel="next">
 <link href="./part-desc.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -310,6 +310,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -323,14 +329,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -455,11 +473,21 @@ window.Quarto = {
   <li><a href="#desc-statintro-why-do-we-need-stat" id="toc-desc-statintro-why-do-we-need-stat" class="nav-link" data-scroll-target="#desc-statintro-why-do-we-need-stat"><span class="header-section-number">5.4.1</span> Зачем нужна статистика?</a></li>
   <li><a href="#desc-statintro-stat-modelling" id="toc-desc-statintro-stat-modelling" class="nav-link" data-scroll-target="#desc-statintro-stat-modelling"><span class="header-section-number">5.4.2</span> Этапы статистического моделирования</a></li>
   <li><a href="#desc-statintro-statdata" id="toc-desc-statintro-statdata" class="nav-link" data-scroll-target="#desc-statintro-statdata"><span class="header-section-number">5.4.3</span> Характеристики статистических данных</a></li>
-  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">5.4.4</span> Способы формирования репрезентативной выборки</a>
+  </ul></li>
+  <li><a href="#desc-statintro-saple-representativity" id="toc-desc-statintro-saple-representativity" class="nav-link" data-scroll-target="#desc-statintro-saple-representativity"><span class="header-section-number">5.5</span> Репрезентативность выборки</a>
+  <ul>
+  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">5.5.1</span> Способы формирования репрезентативной выборки</a></li>
+  <li><a href="#desc-statintro-probability-sampling" id="toc-desc-statintro-probability-sampling" class="nav-link" data-scroll-target="#desc-statintro-probability-sampling"><span class="header-section-number">5.5.2</span> Вероятностная выборка</a></li>
+  <li><a href="#desc-statintro-nonprobability-sampling" id="toc-desc-statintro-nonprobability-sampling" class="nav-link" data-scroll-target="#desc-statintro-nonprobability-sampling"><span class="header-section-number">5.5.3</span> Невероятностная выборка</a>
   <ul class="collapse">
-  <li><a href="#desc-statintro-simple-random-sample" id="toc-desc-statintro-simple-random-sample" class="nav-link" data-scroll-target="#desc-statintro-simple-random-sample"><span class="header-section-number">5.4.4.1</span> Простая случайная выборка</a></li>
+  <li><a href="#convenience-sampling" id="toc-convenience-sampling" class="nav-link" data-scroll-target="#convenience-sampling"><span class="header-section-number">5.5.3.1</span> Convenience sampling</a></li>
+  <li><a href="#voluntary-response-sampling" id="toc-voluntary-response-sampling" class="nav-link" data-scroll-target="#voluntary-response-sampling"><span class="header-section-number">5.5.3.2</span> Voluntary response sampling</a></li>
+  <li><a href="#purposive-sampling" id="toc-purposive-sampling" class="nav-link" data-scroll-target="#purposive-sampling"><span class="header-section-number">5.5.3.3</span> Purposive sampling</a></li>
+  <li><a href="#snowball-sampling" id="toc-snowball-sampling" class="nav-link" data-scroll-target="#snowball-sampling"><span class="header-section-number">5.5.3.4</span> Snowball sampling</a></li>
+  <li><a href="#quota-sampling" id="toc-quota-sampling" class="nav-link" data-scroll-target="#quota-sampling"><span class="header-section-number">5.5.3.5</span> Quota sampling</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#desc-statintro-kinds-of-stat" id="toc-desc-statintro-kinds-of-stat" class="nav-link" data-scroll-target="#desc-statintro-kinds-of-stat"><span class="header-section-number">5.6</span> Виды статистики</a></li>
   </ul>
 </nav>
     </div>
@@ -693,14 +721,18 @@ window.Quarto = {
 <td>Средняя заработная плата</td>
 </tr>
 <tr class="even">
+<td>Доход</td>
+<td>Совокупный годовой доход после уплаты налогов</td>
+</tr>
+<tr class="odd">
 <td>Когнитивная нагрузка</td>
 <td>Уровень когнитивной нагрузки по ЭЭГ-коррелятам</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Доверие к ИИ</td>
 <td>Уровень доверия к ИИ по опроснику TAIA</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Индивидуализм/коллективизм</td>
 <td>Индекс индивидуализма/коллективизма по модели Хофстеде</td>
 </tr>
@@ -711,7 +743,7 @@ window.Quarto = {
 </div>
 <p>Признаки могут быть очень разными, как и показатели, которыми мы их пытаемся измерить, однако независимо от того, какой признак и с помощью какого показателя мы пытаемся изучать, <em>генеральная совокупность характеризуется некоторым параметром</em>.</p>
 <div id="def-parameter" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 5.2</strong></span> <strong>Параметр</strong> — относительно постоянная [от одной совокупности к другой] величина, характеризующая генеральную совокупность по некоторому показателю.</p>
+<p><span class="theorem-title"><strong>Определение 5.2</strong></span> <strong>Параметр</strong> (<span class="math inline">\(\theta\)</span>) — относительно постоянная [от одной совокупности к другой] величина, характеризующая генеральную совокупность по некоторому показателю.</p>
 </div>
 <p>Что это значит? Что по сути есть этот <em>параметр</em>? Это значит, что <em>в принципе</em> существуют</p>
 <ul>
@@ -730,7 +762,7 @@ window.Quarto = {
 <li>Любое наше измерение всегда содержит ошибку — независимо от того физическое оно или психологическое</li>
 </ul>
 <p>Аналогично дело обстоит с любыми другими параметрами.</p>
-<p>Что же делать? Собственно за этим мы и формируем выборку. Мы не можем измерить величину параметра точно, но можем <em>предсказать её с определённой статистической точностью</em>, измеряя показатели на выборке. Выборка имеет ограниченный объём, и, измерив величину показателя у каждого объекта выборки, мы получим <strong>[выборочную] оценку параметра (estimation)</strong> — эмпирический (измеримый) аналог параметра. В частности, если у нас есть выборка из 100 студентов-психологов Москвы, вполне возможно за некоторое время собрать данных по уровню их нейротизма с помощью опросника BFI и вычислить среднее арифметическое по этим 100 наблюдениям.</p>
+<p>Что же делать? Собственно за этим мы и формируем выборку. Мы не можем измерить величину параметра точно, но можем <em>предсказать её с определённой статистической точностью</em>, измеряя показатели на выборке. Выборка имеет ограниченный объём, и, измерив величину показателя у каждого объекта выборки, мы получим <strong>[выборочную] оценку параметра (estimation)</strong> (<span class="math inline">\(\hat \theta\)</span>) — эмпирический (измеримый) аналог параметра. В частности, если у нас есть выборка из 100 студентов-психологов Москвы, вполне возможно за некоторое время собрать данных по уровню их нейротизма с помощью опросника BFI и вычислить среднее арифметическое по этим 100 наблюдениям.</p>
 <p>Далее мы часто будем говорить о параметрах генеральной совокупности и выборочных оценках, сейчас же приведем несколько примеров и обозначений, чтобы придать теоретическим речам некоторое фактическое содержание (<a href="#tbl-param-estim" class="quarto-xref">Таблица&nbsp;<span>5.2</span></a>).</p>
 <div id="tbl-param-estim" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -826,20 +858,86 @@ window.Quarto = {
 </section>
 <section id="desc-statintro-statdata" class="level3" data-number="5.4.3">
 <h3 data-number="5.4.3" class="anchored" data-anchor-id="desc-statintro-statdata"><span class="header-section-number">5.4.3</span> Характеристики статистических данных</h3>
-<p>Конечно же, статистическое моделирование происходит на <strong>статистических данных</strong>, которые мы собираем в ходе исследования. Эти данные <em>собираются на выборке</em> с помощью <em>измерения</em> интересующих нас показателей. Такое положение дел приводит нас к следующему обстоятельству: статистические данные обладают двумя ключевыми характеристиками — <em>неопределенностью</em> и <em>вариативностью</em>.</p>
+<div class="lab-junior">
+
+</div>
+<p>Конечно же, статистическое моделирование происходит на <strong>статистических данных</strong>, которые мы собираем в ходе исследования. Эти данные <em>собираются на выборке</em> с помощью <em>измерения</em> интересующих нас показателей.</p>
+<ul>
+<li>Мы не можем работать с генеральной совокупностью, поэтому набираем выборку — выборки между собой имеют право различаться</li>
+<li>Каждый респондент или испытуемый обладает своими особенностями — мы не знаем, что мы получим в результате конкретного измерения на конкретном изучаемом объекте1</li>
+<li>Любое наше измерение содержит ошибку — ни один измерительный инструмент не является совершенным</li>
+</ul>
+<p>Такое положение дел приводит нас к следующему обстоятельству: статистические данные обладают двумя ключевыми характеристиками — <em>неопределенностью</em> и <em>вариативностью</em>.</p>
 <!---
 Мы уже говорили об этих характеристиках данных, когда изучали теорию измерений, однако не лишним будет повторить это еще раз, потому что именно эти две характеристики делают нам всё статистическое веселье с оценками параметров и тестированием гипотез.
 --->
 <ul>
-<li><strong>Неопределенность</strong></li>
-<li><strong>Вариативность</strong></li>
+<li><strong>Неопределенность</strong> нам говорит о том, что мы не знаем, что именно мы получим в результате наших измерений для конкретной выборки.
+<ul>
+<li>Отсюда чуть позже возникнут <em>случайные величины</em>.</li>
+</ul></li>
+<li><strong>Вариативность</strong> означает, что наши данные будут различаться от выборки к выборке и от респондента к респонденту.
+<ul>
+<li>Отсюда возникнут <em>статистические критерии</em>, в которых эта характеристика данных будет учтена в ходе тестирования гипотез.</li>
+</ul></li>
 </ul>
+<p>Ну, хорошо. Пусть это будет так. Но неужели мы ничего не можем сделать для того, чтобы наши данные были качественнее, а моделирование точнее?</p>
+<p>Разумеется, можем. И не только можем, но и обязаны, если мы хорошие исследователи, а мы именно такие. Нам необходимо позаботиться о <em>качестве выборки</em> нашего исследования. Помимо объёма, к которому мы будем ещё неоднократно возвращаться при обсуждении статистических методов, выборка характеризуется ещё и <em>репрезентативностью</em>.</p>
 </section>
-<section id="desc-statintro-sample-types" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">5.4.4</span> Способы формирования репрезентативной выборки</h3>
-<section id="desc-statintro-simple-random-sample" class="level4" data-number="5.4.4.1">
-<h4 data-number="5.4.4.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">5.4.4.1</span> Простая случайная выборка</h4>
-<p>Самый просто способ, которым можно набрать репрезентативную выборку — это <strong>простая случайная выборка (simple random sample)</strong>.</p>
+</section>
+<section id="desc-statintro-saple-representativity" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="desc-statintro-saple-representativity"><span class="header-section-number">5.5</span> Репрезентативность выборки</h2>
+<div class="lab-junior">
+
+</div>
+<p>Статистика даёт нам теоретический и математический аппарат, который позволяет делать выводы о генеральной совокупности по выборке. Однако если мы криво собрали данные, то никакая математика нас не спасет от некорректных выводов. Как гласит великий вычислительный принцип,</p>
+<blockquote class="blockquote">
+<p>Garbage in, garbage out.</p>
+</blockquote>
+<p><strong>Репрезентативность</strong> — степень соответствия характеристик выборки характеристикам генеральной совокупности.</p>
+<p>Например, мы хотим исследовать связь учебной мотивации и академической успеваемости бакалавров психологии. Если мы соберем данные только со своих однокурсников, будет нехорошо, так как в нашу выборку не попали (1) другие курсы психологического бакалавриата нашего вуза, (2) бакалавры-психологи других вузов Москвы и (3) бакалавры-психологи вузов других городов России.</p>
+<p><em>И так работает всегда.</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ну, почти
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Есть соблазн проводить исследования на студентах-психологах, потому что они достаточно близко и их можно загнать на эксперименты за баллы в итоговую оценку. Более-менее сносно это может работать на каких-то базовых когнитивных феноменах из восприятия и памяти. Обычно у нас нет оснований предполагать<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, что восприятие и память работают по-разному у людей разного возраста и разных социальных страт. Но вот уже с мышлением возникают проблемы.</p>
+</div>
+</div>
+<p><strong>Почему выборка должна быть репрезентативной?</strong> Потому что если мы <em>делаем нормально</em>, то хотим обобщать результаты нашего исследования, полученные на выборке, на генеральную совокупность. Если выборка нерепрезентативна, то мы не можем этого сделать. Зачем в таком случае проводить исследование — решительно неясно.</p>
+<p>Можно выделить три (четыре) условных шага, которые позволят сформировать репрезентативную выборку:</p>
+<ol start="0" type="1">
+<li>Осознать, <strong>кто наша генеральная совокупность</strong>, так как для каждой генеральной совокупности репрезентативная выборка будет своя.</li>
+<li>Понять, <strong>есть ли какая-то группировка, <em>важная для нашего исследования</em>, в нашей генеральной совокупности</strong> — социальная страта, специальность образования, сфера работы, пол / гендер, возрастные группы, регион проживания, семейное положение, что-либо ещё.</li>
+<li>Рассчитать <strong>достаточный объём выборки</strong>. Это не самая простая задача и о ней мы будем говорить отдельно, обсуждая каждый статистический метод. Пока отметим в назывном порядке, что на объем выборки будут влиять дизайн исследования, изменчивость признака, уровень значимости и размер эффекта [что бы это ни значило].</li>
+<li>Обеспечить <strong>случайное попадание респондентов в выборку</strong>.</li>
+</ol>
+<p>Здесь надо остановиться подробнее. Если у нас есть ресурсы набрать много людей в выборку (скажем, раза в 2–3 больше, чем достаточный объем выборки), то можно просто случайным образом откуда-то доставать людей — и всё будет хорошо. Закон больших чисел и центральная предельная теорема говорят, что наша выборка будет репрезентативной. Пока примем это как данность, позже поговорим об это подробнее.</p>
+<p>Если мы всё же не можем набрать много человеков, то надо набрать выборку достаточного объема и проверить репрезентативна ли она — отражает ли выборка те группировки объектов, которые есть в генеральной совокупности.</p>
+<p><em>Идеальная выборка</em> — это когда каждый человек имеет равную вероятность попасть в число респонтентов / испытуемых. Полностью случайный отбор трудно достижим — это очень дорого и логистически сложно — но к нему нужно стремиться. Сам метод сбора данных также может деформировать выборку (например, онлайн опросы отсекают пенсионеров), поэтому думать о сборе данных необходимо уже на этапе планирования исследования.</p>
+<section id="desc-statintro-sample-types" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">5.5.1</span> Способы формирования репрезентативной выборки</h3>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="desc-statintro-probability-sampling" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="desc-statintro-probability-sampling"><span class="header-section-number">5.5.2</span> Вероятностная выборка</h3>
+<p><strong>Вероятностная выборка (probability sampling)</strong> подразумевает, что каждый представитель генеральной совокупности может оказаться в выборке. Именно такие способы преимущественно используются в количественных исследованиях, так как позволяют сформировать репрезентативную выборку.</p>
+<section id="desc-statintro-simple-random-sample" class="level5" data-number="5.5.2.0.1">
+<h5 data-number="5.5.2.0.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">5.5.2.0.1</span> Простая случайная выборка</h5>
+<div class="lab-junior">
+
+</div>
+<p>Самый простой способ, которым можно набрать репрезентативную выборку — это <strong>простая случайная выборка (simple random sample)</strong>.</p>
+<p>Пусть у нас есть некоторая генеральная совокупность (<a href="#fig-simple-random-sample-1" class="quarto-xref">Иллюстрация&nbsp;<span>5.4 (a)</span></a>). Мы можем извлечь из неё достаточно большое количество наблюдений случайным образом, и получить репрезентативную выборку (<a href="#fig-simple-random-sample-4" class="quarto-xref">Иллюстрация&nbsp;<span>5.4 (d)</span></a>).</p>
+<p>Хотя это, пожалуй, самый простой способ формирования выборки, поскольку он не требует учета каких-либо характеристик изучаемых объектов, у него есть один существенный недостаток: обязательное условие репрезентативности выборки — её <em>большой объем</em>. В случае если у нас нет ресурсов для сбора данных большом количестве объектов или от большого количества респондентов, репрезентативность находится по угрозой (иллюстрации <a href="#fig-simple-random-sample-2" class="quarto-xref"><span>5.4 (b)</span></a> и <a href="#fig-simple-random-sample-3" class="quarto-xref"><span>5.4 (c)</span></a>).</p>
 <div id="fig-simple-random-sample" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simple-random-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -901,6 +999,154 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="desc-statintro-stratified-sample" class="level5" data-number="5.5.2.0.2">
+<h5 data-number="5.5.2.0.2" class="anchored" data-anchor-id="desc-statintro-stratified-sample"><span class="header-section-number">5.5.2.0.2</span> Стратифицированная выборка</h5>
+<div class="lab-junior">
+
+</div>
+<p><strong>Стратифицированная выборка (stratified sample)</strong> применима, когда генеральная совокупность разбивается на несколько обособленных и различных по своей природе групп (страт). Например, по полу, уровню образования, возрастной группе и т.&nbsp;д. Далее из каждой группы случайным образом извлекается несколько объектов, которые попадают в выборку.</p>
+<p>Из каждой страты можно извлечь одинаковое количество объектов или рассчитать количество представителей каждой страты в итоговой выборке пропорционально объему каждой страты. Последний вариант обеспечит дополнительную репрезентативность с точки зрения соотношения представителей разных стран в выборке, если это необходимо с точки зрения дизайна исследования.</p>
+<p>Например, у нашей генеральной совокупности есть четыре страты (<a href="#fig-stratified-sample-1" class="quarto-xref">Иллюстрация&nbsp;<span>5.5 (a)</span></a>). Тогда мы можем разделить её на четыре «подгенеральных совокупности» (subpopulations) соответственно (<a href="#fig-stratified-sample-2" class="quarto-xref">Иллюстрация&nbsp;<span>5.5 (b)</span></a>). Из каждой такой «подгенеральной совокупности» будем извлекать случайную выборку — в данном случае пропорционально объему страты (<a href="#fig-stratified-sample-3" class="quarto-xref">Иллюстрация&nbsp;<span>5.5 (c)</span></a>). Выбранные объекты составят итоговую выборку исследования.</p>
+<div class="cell" data-layout="[[50,50],[100]]">
+<div id="fig-stratified-sample" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stratified-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stratified-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-stratified-sample-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-stratified-sample-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-statintro_files/figure-html/fig-stratified-sample-1.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stratified-sample-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Генеральная совокупность
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stratified-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-stratified-sample-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-stratified-sample-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-statintro_files/figure-html/fig-stratified-sample-2.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stratified-sample-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Генеральная совокупность, разделенная по стратам
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stratified-sample" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-stratified-sample-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-stratified-sample-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-statintro_files/figure-html/fig-stratified-sample-3.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stratified-sample-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Итоговая выборка с учетом страт (простая случайная из каждой страты пропорционально её объему)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stratified-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;5.5: Стратифицированная выборка
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="desc-statintro-cluster-sample" class="level5" data-number="5.5.2.0.3">
+<h5 data-number="5.5.2.0.3" class="anchored" data-anchor-id="desc-statintro-cluster-sample"><span class="header-section-number">5.5.2.0.3</span> Групповая выборка</h5>
+<div class="lab-junior">
+
+</div>
+<p>Генеральная совокупность разбивается на несколько обособленных, но одинаковых групп (кластеров). Например, население города группируется по району проживания Выбираются случайным образом несколько групп Из каждой группы случайным образом выбираются несколько объектов, которые попадают в выборку. Пусть мы разделили нашу генеральную совокупность на 8 кластеров: Кластеры у нас примерно одинаковые по характеристикам между собой — по крайне мере, мы так предполагаем. Выберем случайно четыре кластера, которые примут участие в исследовании: Теперь из этих кластеров наберем выборку (допустим, по 20 наблюдений из кластера) случайным образом (объекты, попавшие в итоговую выборку отмечены черным контуром, не попавшие — серым): Такой подход к формированию выборки позволяет экономить драгоценные ресурсы при проведении исследования.</p>
+</section>
+<section id="desc-statintro-systematic-sample" class="level5" data-number="5.5.2.0.4">
+<h5 data-number="5.5.2.0.4" class="anchored" data-anchor-id="desc-statintro-systematic-sample"><span class="header-section-number">5.5.2.0.4</span> Систематическая выборка</h5>
+<div class="lab-middle">
+
+</div>
+<p>Случайная систематическая выборка Линейная систематическая выборка Круговая систематическая выборка</p>
+</section>
+</section>
+<section id="desc-statintro-nonprobability-sampling" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="desc-statintro-nonprobability-sampling"><span class="header-section-number">5.5.3</span> Невероятностная выборка</h3>
+<div class="lab-middle">
+
+</div>
+<p>non-probability sampling</p>
+<section id="convenience-sampling" class="level4" data-number="5.5.3.1">
+<h4 data-number="5.5.3.1" class="anchored" data-anchor-id="convenience-sampling"><span class="header-section-number">5.5.3.1</span> Convenience sampling</h4>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="voluntary-response-sampling" class="level4" data-number="5.5.3.2">
+<h4 data-number="5.5.3.2" class="anchored" data-anchor-id="voluntary-response-sampling"><span class="header-section-number">5.5.3.2</span> Voluntary response sampling</h4>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="purposive-sampling" class="level4" data-number="5.5.3.3">
+<h4 data-number="5.5.3.3" class="anchored" data-anchor-id="purposive-sampling"><span class="header-section-number">5.5.3.3</span> Purposive sampling</h4>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="snowball-sampling" class="level4" data-number="5.5.3.4">
+<h4 data-number="5.5.3.4" class="anchored" data-anchor-id="snowball-sampling"><span class="header-section-number">5.5.3.4</span> Snowball sampling</h4>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="quota-sampling" class="level4" data-number="5.5.3.5">
+<h4 data-number="5.5.3.5" class="anchored" data-anchor-id="quota-sampling"><span class="header-section-number">5.5.3.5</span> Quota sampling</h4>
+<div class="lab-middle">
+
+</div>
+</section>
+</section>
+</section>
+<section id="desc-statintro-kinds-of-stat" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="desc-statintro-kinds-of-stat"><span class="header-section-number">5.6</span> Виды статистики</h2>
+<div class="lab-junior">
+
+</div>
+<p>Статистика как набор методов и инструментов работы с данными может быть разделена на два вида: <em>описательная статистика</em> и <em>статистика вывода</em>.</p>
+<ul>
+<li><strong>Описательная статистика (descriptive statistics<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>)</strong> занимается обработкой статистических данных, их наглядным представлением, и собственно описанием через некоторые характеристики.
+<ul>
+<li>Эти характеристики, количественно описывающие особенности имеющихся данных, называются <strong>описательными статистиками (descriptive statistics<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>)</strong>.</li>
+<li><em>Задача описательной статистики</em> — ёмко описать имеющиеся данные и составить на основе этих описаний общее представление о них, а также обнаружить особенности, которые могут повлиять на дальнейший анализ.</li>
+</ul></li>
+<li><strong>Статистика вывода (inferential statistics)</strong> занимается поиском ответов на содержательные вопросы, которые мы задаем данным в ходе их анализа в рамках научных и практических исследований. Состоит из двух компонентов — <em>тестирования статистических гипотез</em> и <em>статистических методов</em>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Замечание о машинном обучении
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Часто в высокообразованных кругах слышится словосочетание «машинное обучение». Иногда его причисляют к статистике, иногда рассматривают отдельно. На самом же деле, статистические методы лежат где-то между статистикой вывода и машинным обучением.</p>
+<p>Почему?</p>
+<p>Дело в том, что на статистические методы можно смотреть по-разному.</p>
+<ul>
+<li>Если нашей задачей является поиск ответов на <strong>исследовательские</strong> вопросы о закономерностях, о связи каких-либо факторов или влиянии переменных друг на друга, то мы будем смотреть на статистические модели с точки зрения статистики вывода. Это позволит нам находить ответы на интересующие нас вопросы — причем не важно, говорим мы о научных исследованиях или об исследованиях в индустрии.</li>
+<li>Если перед нами стоит задача хорошо <strong>предсказывать</strong> одни переменные на основании значений других — например, выдавать рекомендации на Яндекс Музыке или в Яндекс Лавке — то мы будем смотреть на те же статистические модели с точки зрения машинного обучения.</li>
+</ul>
+<p>То есть, модели в анализе данных и машинном обучении одни и те же, но то, какую модель мы назовем хорошей и как мы эту «хорошесть» определим, будет отличаться в зависимости от задачи — исследовательская или предиктивная — которая перед нами стоит.</p>
+</div>
+</div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
@@ -910,12 +1156,13 @@ window.Quarto = {
 </div>
 </div>
 </section>
-</section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Символ <span class="math inline">\(\ll\)</span> читается как «много меньше».<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Хотя можно привести и множество возражений такому утверждению — какие именно феномены восприятия? какая конкретно память? и т.д.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Mass (uncountable) noun.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Countable noun, plural in this case.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1480,8 +1727,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-prob.html" class="pagination-link" aria-label="Теория вероятности и математическая статистика">
-        <span class="nav-page-text">Теория вероятности и математическая статистика</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./desc-centaltend.html" class="pagination-link" aria-label="Меры центральной тенденции">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
