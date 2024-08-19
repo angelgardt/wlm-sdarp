@@ -1,4 +1,4 @@
-# WLM SDAR
+# WLM SDARP
 
-World of Linear Models: Statistics & Data Analysis in R
+**W**orld of **L**inear **M**odels: **S**tatistics & **D**ata **A**nalysis in **R** for **P**sychologists
 
