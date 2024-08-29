@@ -27,12 +27,44 @@ book:
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
-      - r-data.qmd
+      - r-datatypes.qmd
+      - r-datastructures.qmd
+      # - r-functionsI.qmd
+      # - r-controlflow.qmd
+      # - r-functionsII.qmd
+      # - r-strings.qmd
+      # - r-datetime.qmd
+      # - r-data.qmd
+      # - r-basicpreproc.qmd
+      # - r-advancedpreproc.qmd
+      # - r-visbaser.qmd
+      # - r-basicggplot.qmd
+      # - r-advancedggplot.qmd
+      # - r-rmarkdown.qmd
+      # - r-quarto.qmd
     - part: part-math.qmd
+      # chapters:
+      # - math-logic.qmd
+      # - math-settheory.qmd
+      # - math-combinatorics.qmd
+      # - math-calculusI.qmd
+      # - math-calculusII.qmd
+      # - math-linalI.qmd
+      # - math-linalII.qmd
+      # - math-measure.qmd
     - part: part-measures.qmd
+      # chapters:
+      # - measures-scales.qmd
+      # - measures-psychometricsI.qmd
+      # - measures-psychometricsII.qmd
+      # - measures-psychometricsIII.qmd
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
+      # - desc-centraltend.qmd
+      # - desc-variation.qmd
+      # - desc-distshape.qmd
+      # - desc-prodmetrics.qmd
     - part: part-prob.qmd
     - part: part-andan.qmd
     - common-outro.qmd

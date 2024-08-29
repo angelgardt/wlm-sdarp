@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -84,7 +84,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r-data.html" rel="next">
+<link href="./r-datatypes.html" rel="next">
 <link href="./part-r.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -309,8 +309,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+  <a href="./r-datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Типы данных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-datastructures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></a>
   </div>
 </li>
       </ul>
@@ -335,7 +341,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
   </div>
 </li>
       </ul>
@@ -505,7 +511,7 @@ window.Quarto = {
 
 
 
-<!--- {{< include other/_symbols.qmd >}} --->
+<!---  --->
 <!--- Common --->
 <!--- Logic --->
 <!--- Set theory --->
@@ -532,8 +538,8 @@ window.Quarto = {
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-7cbca9e63d48f9f0d5a7" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-7cbca9e63d48f9f0d5a7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-925bfe31d9b23c57b095" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-925bfe31d9b23c57b095">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -891,7 +897,7 @@ Apple silicon vs Intel Macs
 </ul></li>
 <li>Это очень полезное окно.
 <ul>
-<li>Во-первых, здесь есть вкладка <code>Files</code>, с помощью которой можно гулять по папкам и файлам. В первое время мы не будем активно обращать на неё внимание, однако когда перейдем к разговору о <a href="./r-data.html">работе с данными</a> и <a href="./r-data.html#r-data-rstudioprojects">проектах</a>, она нам будет очень важна.</li>
+<li>Во-первых, здесь есть вкладка <code>Files</code>, с помощью которой можно гулять по папкам и файлам. В первое время мы не будем активно обращать на неё внимание, однако когда перейдем к разговору о <a href="r-data.qmd">работе с данными</a> и <a href="r-data.qmd#r-data-rstudioprojects">проектах</a>, она нам будет очень важна.</li>
 <li>На вкладке <code>Plots</code> будут отображаться построенные графики.</li>
 <li>Вкладка <code>Packages</code> помогает сориентироваться в установленных и подключенных пакетах<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</li>
 <li>В <code>Help</code> мы будем обращаться часто — уже буквально через несколько мгновений изучим эту вкладку на практике. Здесь отображается документация. К ней стоит обращаться, если возникают какие-либо пролемы и непонятки с тем, как использовать ту или иную функцию.</li>
@@ -1358,6 +1364,19 @@ Type 'q()' to quit R.</code></pre>
 </div>
 </figure>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ещё логические операции
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>К логическим операциям также относятся <code>&amp;</code> и <code>|</code> — И и ИЛИ. Однако чтобы не перегружать вводный раздел, их мы обсудим <a href="./r-datatypes.html#r-datatypes-logical">чуть позже вместе с соответствующим типом данных</a>.</p>
+</div>
+</div>
 </section>
 <section id="r-intro-rhistory" class="level3" data-number="2.6.3">
 <h3 data-number="2.6.3" class="anchored" data-anchor-id="r-intro-rhistory"><span class="header-section-number">2.6.3</span> История команд</h3>
@@ -1484,12 +1503,93 @@ Type 'q()' to quit R.</code></pre>
 </div>
 </div>
 <p>Однако это не очень удобно. Плюс с логарифмом такой трюк уже не пройдет — нам нужны <em>функции</em>.</p>
+<p>В школьной математике вводилось неким образом понятие функции, но прямо сейчас оно нам не очень нужно. Мы уделим более пристальное внимание функциям в R и в математике позднее. Пока что нам будет достаточно вспомнить, как обозначались функции в математике — полагаю, что как-то так:</p>
+<p><span class="math display">\[
+f(x),
+\]</span></p>
+<p>где <span class="math inline">\(f\)</span> — название функции, а <span class="math inline">\(x\)</span> — её аргумент. Скажем, можно вспомнить — с болью или с восторгом — следующие примеры: <span class="math inline">\(\sin(x)\)</span>, <span class="math inline">\(\cos(x)\)</span> и <span class="math inline">\(\tan(x)\)</span><a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. Но всё же вернемся к вычислению корня.</p>
+<p>В R синтаксис функции довольно стандартный:</p>
+<div id="lst-intro-fun" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-intro-fun-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.7: Синтаксис функции
+</figcaption>
+<div aria-describedby="lst-intro-fun-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span>(arg1, arg2, ...)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</figure>
+</div>
+<p>Здесь <code>function</code> является <em>названием (именем) функции</em>, а <code>arg1</code>, <code>arg2</code> и т.д. её <em>аргументами</em>. Аргументы функции указываются в скобках после её названия. В простейшем случае это будет выглядеть так:</p>
+<div id="lst-sqrt" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-sqrt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.8: Функция квадратного корня
+</figcaption>
+<div aria-describedby="lst-sqrt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">32</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.656854</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Функция <code>sqrt()</code> имеет только один аргумент и вычисляет квадратный корень из переданного ей числа. Как можно заметить, результат совпадает с <code>32^(0.5)</code>.</p>
+<p>Аналогично можно вычислить, например, значения тригонометрических функций<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>:</p>
+<div id="lst-trig" class="listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-trig-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;2.9: Базовые тригонометрические функции
+</figcaption>
+<div aria-describedby="lst-trig-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(<span class="dv">10</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.5440211</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cos</span>(<span class="dv">10</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.8390715</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tan</span>(<span class="dv">10</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6483608</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Думаю, что здесь логика работы довольно понятна. А что же с логарифмом?</p>
 </section>
 <section id="r-intro-assignment" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="r-intro-assignment"><span class="header-section-number">2.7.2</span> Присваивание (assignment)</h3>
 <div class="lab-junior">
 
 </div>
+<p>Результаты вычислений и преобразований хотелось бы сохранять, поэтому в R существует оператор присваивания <code>&lt;-</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">8</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Можно, конечно, написать и <code>x = 5</code>, но сообщество вас не поймет и будет косо смотреть… Когда мы присвоим некоторой <em>переменной</em> какой-либо <em>объект</em>, он отобразиться в окошке Environment, и с ним можно будет работать. Например, совершать разные операции:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 37</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.236068</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(y, <span class="at">base =</span> x)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.153383</code></pre>
+</div>
+</div>
+<p>Объектом в R может быть вообще все, что угодно — число, строка, вектор, матрица, датафрейм, таблица, результат моделирования, функция и т.д.</p>
 </section>
 </section>
 <section id="r-intro-citation" class="level2" data-number="2.8">
@@ -1500,11 +1600,11 @@ Type 'q()' to quit R.</code></pre>
 <p>Напоследок пара важных вещей.</p>
 <p>На R <span class="citation" data-cites="r-core-team">(<a href="references.html#ref-r-core-team" role="doc-biblioref">R Core Team, 2023</a>)</span>, как и на любые ресурсы, используемые при написании статьи или отчета, следует ссылаться — цитировать в разделе References. Для этого существует удобная команда:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>To cite R in publications use:
 
-  R Core Team (2024). _R: A Language and Environment for Statistical
+  R Core Team (2023). _R: A Language and Environment for Statistical
   Computing_. R Foundation for Statistical Computing, Vienna, Austria.
   &lt;https://www.R-project.org/&gt;.
 
@@ -1515,7 +1615,7 @@ A BibTeX entry for LaTeX users is
     author = {{R Core Team}},
     organization = {R Foundation for Statistical Computing},
     address = {Vienna, Austria},
-    year = {2024},
+    year = {2023},
     url = {https://www.R-project.org/},
   }
 
@@ -1524,10 +1624,10 @@ when using it for data analysis. See also 'citation("pkgname")' for
 citing R packages.</code></pre>
 </div>
 </div>
-<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>.</p>
+<p>В аутпуте есть вариант ссылки в форматах APA и BibTeх. Второй вам пригодится, если вы пишете отчеты в <span class="math inline">\(\LaTeX\)</span> или R Markdown и Quarto, первый — в других случаях. Если вы копируете APA-цитату в текстовый редактор, добавьте курсивное форматирование на текст, заключенный между андерскорами (нижними подчеркиваниями<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>, <code>_</code>) , а сами андерскоры удалите<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>.</p>
 <p>Хорошим тоном будет сослаться и на RStudio <span class="citation" data-cites="rstudio-core-team">(<a href="references.html#ref-rstudio-core-team" role="doc-biblioref">Posit team, 2024</a>)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">RStudio.Version</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>$citation
 To cite RStudio in publications use:
@@ -1571,23 +1671,23 @@ $release_name
 </blockquote>
 <p>Узнать текущую версию R можно с помощью команды <code>R.version</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>R.version</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>R.version</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               _                           
-platform       x86_64-apple-darwin20       
+platform       x86_64-pc-linux-gnu         
 arch           x86_64                      
-os             darwin20                    
-system         x86_64, darwin20            
+os             linux-gnu                   
+system         x86_64, linux-gnu           
 status                                     
 major          4                           
-minor          4.0                         
-year           2024                        
-month          04                          
-day            24                          
-svn rev        86474                       
+minor          3.2                         
+year           2023                        
+month          10                          
+day            31                          
+svn rev        85441                       
 language       R                           
-version.string R version 4.4.0 (2024-04-24)
-nickname       Puppy Cup                   </code></pre>
+version.string R version 4.3.2 (2023-10-31)
+nickname       Eye Holes                   </code></pre>
 </div>
 </div>
 </section>
@@ -1624,7 +1724,7 @@ nickname       Puppy Cup                   </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1633,7 +1733,7 @@ nickname       Puppy Cup                   </code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Создать два скрипта на R.</p>
 <p><strong>Первый</strong></p>
@@ -1653,13 +1753,13 @@ nickname       Puppy Cup                   </code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Код из видео</summary>
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Первый скрипт</span></span>
-<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">"Enter x:"</span> ))</span>
-<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">"Enter y:"</span> ))</span>
-<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"This is the sum of x and y: "</span>, x <span class="sc">+</span> y))</span>
-<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Второй скрипт</span></span>
-<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="fu">as.numeric</span>(lubridate<span class="sc">::</span><span class="fu">now</span>()), <span class="st">" seconds passed from the midnight of Jan 1, 1970"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Первый скрипт</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">"Enter x:"</span> ))</span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">"Enter y:"</span> ))</span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"This is the sum of x and y: "</span>, x <span class="sc">+</span> y))</span>
+<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Второй скрипт</span></span>
+<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="fu">as.numeric</span>(lubridate<span class="sc">::</span><span class="fu">now</span>()), <span class="st">" seconds passed from the midnight of Jan 1, 1970"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div id="fig-r-from-terminal" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -1682,21 +1782,26 @@ nickname       Puppy Cup                   </code></pre>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
-Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.4.1
+<pre><code>R version 4.3.2 (2023-10-31)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.2 LTS
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
 
 locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
 
 time zone: Europe/Moscow
-tzcode source: internal
+tzcode source: system (glibc)
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
@@ -1709,15 +1814,17 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] utf8_1.2.4        generics_0.1.3    xml2_1.3.6        stringi_1.8.4    
  [5] hms_1.1.3         digest_0.6.35     magrittr_2.0.3    evaluate_0.23    
- [9] grid_4.4.0        timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.8   
-[13] httr_1.4.7        fansi_1.0.6       crosstalk_1.2.1   scales_1.3.0     
-[17] jquerylib_0.1.4   cli_3.6.2         rlang_1.1.4       munsell_0.5.1    
-[21] withr_3.0.0       yaml_2.3.8        tools_4.4.0       tzdb_0.4.0       
-[25] colorspace_2.1-0  curl_5.2.1        vctrs_0.6.5       R6_2.5.1         
-[29] lifecycle_1.0.4   htmlwidgets_1.6.4 pkgconfig_2.0.3   pillar_1.9.0     
-[33] gtable_0.3.5      glue_1.7.0        xfun_0.44         tidyselect_1.2.1 
-[37] rstudioapi_0.16.0 knitr_1.47        farver_2.1.2      htmltools_0.5.8.1
-[41] rmarkdown_2.27    labeling_0.4.3    compiler_4.4.0   </code></pre>
+ [9] grid_4.3.2        timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.8   
+[13] processx_3.8.4    chromote_0.2.0    ps_1.7.6          promises_1.3.0   
+[17] httr_1.4.7        fansi_1.0.6       crosstalk_1.2.1   scales_1.3.0     
+[21] jquerylib_0.1.4   cli_3.6.2         rlang_1.1.4       munsell_0.5.1    
+[25] withr_3.0.0       yaml_2.3.8        tools_4.3.2       tzdb_0.4.0       
+[29] colorspace_2.1-0  curl_5.2.1        vctrs_0.6.5       R6_2.5.1         
+[33] lifecycle_1.0.4   htmlwidgets_1.6.4 pkgconfig_2.0.3   pillar_1.9.0     
+[37] later_1.3.2       gtable_0.3.5      glue_1.7.0        Rcpp_1.0.12      
+[41] xfun_0.44         tidyselect_1.2.1  rstudioapi_0.16.0 knitr_1.47       
+[45] farver_2.1.2      websocket_1.4.1   htmltools_0.5.8.1 labeling_0.4.3   
+[49] rmarkdown_2.27    compiler_4.3.2   </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -1745,7 +1852,7 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 <li id="fn4"><p>Подробнее в том же <a href="./appendix-proglang.html#proglang-classification-tasks">приложении</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>На случай, если новое поколение утратило связь с культурным прошлым, а старое поколение желает, чтобы ему подсвело олдскулы — <a href="https://memepedia.ru/sashko-fokin/">источник</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>По пути надо ещё не перепутать её с <a href="https://www.r-studio.com/ru/">R-Studio</a>, которая восстанавливает данные с диска. Критическое сходство названий двух программ обязывает к повышенной внимательности при написании работ/статей/отчётов/заявок на гранты, в которых вы упоминаете RStudio — иногда рецензенты весьма недоумевают, как исследователи анализировали данные с помощью ПО для восстановления данных. Хотя это может звучать несколько странно, такой случай имел место быть в реальности…<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Их мы будем обсуждать в <a href="./r-data.html#r-data-rstudio-projects">разделе о работе с данными</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Их мы будем обсуждать в <a href="r-data.qmd#r-data-rstudio-projects">разделе о работе с данными</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>Есть еще вкладки <code>Terminal</code> и <code>Background Jobs</code>. Пока что их проигнорируем, ибо и так других миллион. С этим двум обратимся, когда дойдем до соответствующих им тем.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>Это не совсем правда, так как есть файл <code>.Rhistory</code>, о нем поговорим чуть дальше.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>Хотя бы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1753,8 +1860,10 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 <li id="fn12"><p>К слову, если мы внимательно всмотримся в код на картинке, то обнаружим, что фатальных последствий можно было избежать, убрав избыточность кода в условном операторе — сравнение с <code>true</code> бессмысленно, так как <code>isCrazyMurderingRobot</code> уже является логическим значением, и его можно использовать в условии напрямую. 🤦<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn13"><p>Если нужно оставить курсор на текущей строке, используйте <code>Alt</code> + <code>Enter</code> (<code>Option</code> + <code>Enter</code>).<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn14"><p>Если забыли, то есть <a href="./appendix-formulas.html">приложение</a>.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn15"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn16"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>В этой книжке для тангенса и контангенса используются обозначения, принятые в современной зарубежной математической литературе — <span class="math inline">\(\tan\)</span> и <span class="math inline">\(\cot\)</span> соответственно. Они идентичный по смыслу обозначениям, используемым в отечественной литературе — <span class="math inline">\(\text{tg}\)</span> и <span class="math inline">\(\text{ctg}\)</span>.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>Число, передаваемое в качестве аргумента тригонометрическим функциям, обрабатывается ими как <em>радианная</em> мера угла.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>Согласно правилам современного русского литературного языка, термин «нижнее подчеркивание» является плеоназмом, так как любое подчеркивание выполняется снизу. Однако такой термин используется наряду с терминами <em>подчерк</em> и <em>underscore</em>, поэтому использую его и я.<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Такой синтаксис используется в Markdown — в частности, R Markdown.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1982,24 +2091,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2034,11 +2125,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2314,13 +2401,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./part-r.html" class="pagination-link" aria-label="R">
+      <a href="./part-r.html" class="pagination-link  aria-label=" r"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-data.html" class="pagination-link" aria-label="Работа с данными">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Работа с данными</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-datatypes.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Типы данных</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Типы данных</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
