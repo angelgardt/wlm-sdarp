@@ -27,6 +27,8 @@ book:
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
+      - r-datatypes.qmd
+      - r-datastructures.qmd
       - r-data.qmd
     - part: part-math.qmd
       chapters: 
