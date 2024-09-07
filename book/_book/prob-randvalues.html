@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 7&nbsp; Случайные величины</title>
+<title>WLM SDARP - 8&nbsp; Случайные величины</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-andan.html" rel="next">
+<link href="./prob-cond-prob.html" rel="next">
 <link href="./prob-prob.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -137,7 +137,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-randvalues.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайные величины</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-randvalues.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Случайные величины</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -147,10 +147,10 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-randvalues.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайные величины</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-randvalues.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Случайные величины</span></a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><span id="randvalues" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></h1>
+      <h1 class="title"><span id="randvalues" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></h1>
                       </div>
   </div>
     
@@ -243,12 +243,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -263,7 +257,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
   </div>
 </li>
       </ul>
@@ -284,7 +278,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
       </ul>
@@ -300,14 +300,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,12 +433,12 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#общие-свойства-функций-распределения" id="toc-общие-свойства-функций-распределения" class="nav-link active" data-scroll-target="#общие-свойства-функций-распределения"><span class="header-section-number">7.1</span> Общие свойства функций распределения</a></li>
-  <li><a href="#дискретное-распределение" id="toc-дискретное-распределение" class="nav-link" data-scroll-target="#дискретное-распределение"><span class="header-section-number">7.2</span> Дискретное распределение</a></li>
-  <li><a href="#абсолютно-непрерывное-распределение" id="toc-абсолютно-непрерывное-распределение" class="nav-link" data-scroll-target="#абсолютно-непрерывное-распределение"><span class="header-section-number">7.3</span> Абсолютно непрерывное распределение</a></li>
-  <li><a href="#независимость-случайных-величин" id="toc-независимость-случайных-величин" class="nav-link" data-scroll-target="#независимость-случайных-величин"><span class="header-section-number">7.4</span> Независимость случайных величин</a></li>
-  <li><a href="#функции-от-случайных-величин" id="toc-функции-от-случайных-величин" class="nav-link" data-scroll-target="#функции-от-случайных-величин"><span class="header-section-number">7.5</span> Функции от случайных величин</a></li>
-  <li><a href="#моменты-случайных-величин" id="toc-моменты-случайных-величин" class="nav-link" data-scroll-target="#моменты-случайных-величин"><span class="header-section-number">7.6</span> Моменты случайных величин</a></li>
+  <li><a href="#общие-свойства-функций-распределения" id="toc-общие-свойства-функций-распределения" class="nav-link active" data-scroll-target="#общие-свойства-функций-распределения"><span class="header-section-number">8.1</span> Общие свойства функций распределения</a></li>
+  <li><a href="#дискретное-распределение" id="toc-дискретное-распределение" class="nav-link" data-scroll-target="#дискретное-распределение"><span class="header-section-number">8.2</span> Дискретное распределение</a></li>
+  <li><a href="#абсолютно-непрерывное-распределение" id="toc-абсолютно-непрерывное-распределение" class="nav-link" data-scroll-target="#абсолютно-непрерывное-распределение"><span class="header-section-number">8.3</span> Абсолютно непрерывное распределение</a></li>
+  <li><a href="#независимость-случайных-величин" id="toc-независимость-случайных-величин" class="nav-link" data-scroll-target="#независимость-случайных-величин"><span class="header-section-number">8.4</span> Независимость случайных величин</a></li>
+  <li><a href="#функции-от-случайных-величин" id="toc-функции-от-случайных-величин" class="nav-link" data-scroll-target="#функции-от-случайных-величин"><span class="header-section-number">8.5</span> Функции от случайных величин</a></li>
+  <li><a href="#моменты-случайных-величин" id="toc-моменты-случайных-величин" class="nav-link" data-scroll-target="#моменты-случайных-величин"><span class="header-section-number">8.6</span> Моменты случайных величин</a></li>
   </ul>
 </nav>
     </div>
@@ -474,7 +486,7 @@ window.Quarto = {
 </ul>
 <p>Соответственно, нужно, как мы делали ранее, сформировать минимальный набор требований к множествам, из которых будут следовать все остальные.</p>
 <div id="def-rand-value" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 7.1</strong></span> <strong>Случайной величиной</strong> над вероятностным пространством <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется функция <span class="math inline">\(\xi: \Omega \to \mathbb{R}\)</span>, такая что</p>
+<p><span class="theorem-title"><strong>Определение 8.1</strong></span> <strong>Случайной величиной</strong> над вероятностным пространством <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется функция <span class="math inline">\(\xi: \Omega \to \mathbb{R}\)</span>, такая что</p>
 <p><span class="math display">\[
 \begin{gather}
 \forall x \in \mathbb{R}\, \big\{ \omega \, | \,\xi(\omega) &lt; x \big\} \in \mathcal{F}\\
@@ -510,7 +522,7 @@ window.Quarto = {
 \mathbb{P}(-\infty, x) = \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x)
 \]</span></p>
 <div id="def-rand-value-discrete" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 7.2</strong></span> Распределение случайной величины <span class="math inline">\(\xi\)</span> называется <strong>дискретным</strong>, если</p>
+<p><span class="theorem-title"><strong>Определение 8.2</strong></span> Распределение случайной величины <span class="math inline">\(\xi\)</span> называется <strong>дискретным</strong>, если</p>
 <p><span class="math display">\[
 F(x) = \sum_{k \,:\,x_k &lt; x} p_k,
 \]</span></p>
@@ -518,23 +530,23 @@ F(x) = \sum_{k \,:\,x_k &lt; x} p_k,
 </div>
 <p>Если <span class="math inline">\(x_k &lt; x_{k+1} \forall k\)</span>, то <span class="math inline">\(F(x) = \text{const}\)</span> при <span class="math inline">\(x \in (x_k, x_{k+1})\)</span>, <span class="math inline">\(F(x_n + 0) - F(x_n) - 0 = p_k\)</span>.</p>
 <div id="def-rand-value-continuous" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 7.3</strong></span> Случайная величина <span class="math inline">\(\xi\)</span> имеет <strong>абсолютно непрерывное</strong> распределение, если</p>
+<p><span class="theorem-title"><strong>Определение 8.3</strong></span> Случайная величина <span class="math inline">\(\xi\)</span> имеет <strong>абсолютно непрерывное</strong> распределение, если</p>
 <p><span class="math display">\[
 F(x) = \int_{-\infty}^x \mathbb{p}(z)dz, \, x \in \mathbb{R},
 \]</span> где <span class="math inline">\(\mathbb{p}(\cdot)\)</span> — некоторая функция, <span class="math inline">\(\mathbb{p}(z) &gt; 0\)</span>, <span class="math inline">\(\int_{-\infty}^\infty \mathbb{p}(z)dx = 1\)</span>.</p>
 <p>Функция <span class="math inline">\(\mathbb{p}(\cdot)\)</span> называется <strong>плотностью распределения</strong>.</p>
 </div>
 <p><span class="math inline">\(F(\cdot)\)</span> непрерывна в каждой точке <span class="math inline">\(x\)</span> (<span class="math inline">\(\forall x \in \mathbb{R}\)</span>) и <span class="math inline">\(F'(x) = \mathbb{p}(x)\)</span>.</p>
-<section id="общие-свойства-функций-распределения" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="общие-свойства-функций-распределения"><span class="header-section-number">7.1</span> Общие свойства функций распределения</h2>
+<section id="общие-свойства-функций-распределения" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="общие-свойства-функций-распределения"><span class="header-section-number">8.1</span> Общие свойства функций распределения</h2>
 <div id="prp-F-monotonous" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.1</strong></span> <span class="math inline">\(F(\cdot)\)</span> не убывает.</p>
+<p><span class="theorem-title"><strong>Утверждение 8.1</strong></span> <span class="math inline">\(F(\cdot)\)</span> не убывает.</p>
 </div>
 <div id="prp-F-contleft" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.2</strong></span> <span class="math inline">\(F(\cdot)\)</span> непрерывна слева, то есть <span class="math inline">\(F(x - 0) = F(x)\)</span>.</p>
+<p><span class="theorem-title"><strong>Утверждение 8.2</strong></span> <span class="math inline">\(F(\cdot)\)</span> непрерывна слева, то есть <span class="math inline">\(F(x - 0) = F(x)\)</span>.</p>
 </div>
 <div id="prp-F-infty" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.3</strong></span> <span class="math inline">\(F(-\infty) = 0\)</span>, <span class="math inline">\(F(+\infty) = 1\)</span></p>
+<p><span class="theorem-title"><strong>Утверждение 8.3</strong></span> <span class="math inline">\(F(-\infty) = 0\)</span>, <span class="math inline">\(F(+\infty) = 1\)</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -546,24 +558,24 @@ F(x) = \int_{-\infty}^x \mathbb{p}(z)dz, \, x \in \mathbb{R},
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Наличие у функции свойств <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a> эквивалентно тому, что эта функция является функцией распределения</strong>, то есть свойства <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a> являются необходимыми и достаточными, чтобы некоторая функция являлась функцией распределения.</p>
+<p><strong>Наличие у функции свойств <a href="#prp-F-monotonous" class="quarto-xref"><span>8.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>8.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>8.3</span></a> эквивалентно тому, что эта функция является функцией распределения</strong>, то есть свойства <a href="#prp-F-monotonous" class="quarto-xref"><span>8.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>8.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>8.3</span></a> являются необходимыми и достаточными, чтобы некоторая функция являлась функцией распределения.</p>
 <ul>
-<li>Если некоторая функция является функцией распределения, то для неё выполнены <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a>.</li>
-<li>Если некоторая функция удовлетворяет свойствам <a href="#prp-F-monotonous" class="quarto-xref"><span>7.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>7.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>7.3</span></a>, то существует случайная величина, для которой эта функция является функцией распределения.</li>
+<li>Если некоторая функция является функцией распределения, то для неё выполнены <a href="#prp-F-monotonous" class="quarto-xref"><span>8.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>8.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>8.3</span></a>.</li>
+<li>Если некоторая функция удовлетворяет свойствам <a href="#prp-F-monotonous" class="quarto-xref"><span>8.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>8.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>8.3</span></a>, то существует случайная величина, для которой эта функция является функцией распределения.</li>
 </ul>
 </div>
 </div>
 <div id="prp-F-contright" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.4</strong></span> <span class="math inline">\(F(x + 0) = \mathbb{P}\big( \xi(\omega) \leqslant x \big)\)</span></p>
+<p><span class="theorem-title"><strong>Утверждение 8.4</strong></span> <span class="math inline">\(F(x + 0) = \mathbb{P}\big( \xi(\omega) \leqslant x \big)\)</span></p>
 </div>
 <div id="prp-F-x" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.5</strong></span> <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = \mathbb{P}\big( \xi(\omega) \leqslant x \big) - \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x + 0) - F(x) = F(x+0) - F(x - 0)\)</span></p>
+<p><span class="theorem-title"><strong>Утверждение 8.5</strong></span> <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = \mathbb{P}\big( \xi(\omega) \leqslant x \big) - \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x + 0) - F(x) = F(x+0) - F(x - 0)\)</span></p>
 </div>
 <div id="prp-F-cont" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.6</strong></span> Если <span class="math inline">\(F(\cdot)\)</span> непрерывна в точке <span class="math inline">\(x\)</span>, то <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = 0\)</span>.</p>
+<p><span class="theorem-title"><strong>Утверждение 8.6</strong></span> Если <span class="math inline">\(F(\cdot)\)</span> непрерывна в точке <span class="math inline">\(x\)</span>, то <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = 0\)</span>.</p>
 </div>
 <div id="prp-F-intervals" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 7.7</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Утверждение 8.7</strong></span> <span class="math display">\[
 \begin{aligned}
 &amp;\mathbb{P}\big( x_1 \leqslant\xi(\omega) &lt; x_2 \big) = \mathbb{P}\big( \xi(\omega) &lt; x_2 \big) - \mathbb{P}\big( \xi(\omega) \leqslant x_1 \big) = F(x_2) - F(x_1) \\
 &amp;\mathbb{P}\big( x_1 \leqslant\xi(\omega) \leqslant x_2 \big) = \mathbb{P}\big( \xi(\omega) \leqslant x_2 \big) - \mathbb{P}\big( \xi(\omega) \leqslant x_1 \big) = F(x_2 + 0) - F(x_1) \\
@@ -573,20 +585,20 @@ F(x) = \int_{-\infty}^x \mathbb{p}(z)dz, \, x \in \mathbb{R},
 \]</span></p>
 </div>
 </section>
-<section id="дискретное-распределение" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="дискретное-распределение"><span class="header-section-number">7.2</span> Дискретное распределение</h2>
+<section id="дискретное-распределение" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="дискретное-распределение"><span class="header-section-number">8.2</span> Дискретное распределение</h2>
 </section>
-<section id="абсолютно-непрерывное-распределение" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="абсолютно-непрерывное-распределение"><span class="header-section-number">7.3</span> Абсолютно непрерывное распределение</h2>
+<section id="абсолютно-непрерывное-распределение" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="абсолютно-непрерывное-распределение"><span class="header-section-number">8.3</span> Абсолютно непрерывное распределение</h2>
 </section>
-<section id="независимость-случайных-величин" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="независимость-случайных-величин"><span class="header-section-number">7.4</span> Независимость случайных величин</h2>
+<section id="независимость-случайных-величин" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="независимость-случайных-величин"><span class="header-section-number">8.4</span> Независимость случайных величин</h2>
 </section>
-<section id="функции-от-случайных-величин" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="функции-от-случайных-величин"><span class="header-section-number">7.5</span> Функции от случайных величин</h2>
+<section id="функции-от-случайных-величин" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="функции-от-случайных-величин"><span class="header-section-number">8.5</span> Функции от случайных величин</h2>
 </section>
-<section id="моменты-случайных-величин" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="моменты-случайных-величин"><span class="header-section-number">7.6</span> Моменты случайных величин</h2>
+<section id="моменты-случайных-величин" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="моменты-случайных-величин"><span class="header-section-number">8.6</span> Моменты случайных величин</h2>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
@@ -1149,12 +1161,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./prob-prob.html" class="pagination-link" aria-label="Вероятность как математическая конструкция">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-andan.html" class="pagination-link" aria-label="Методы анализа данных">
-        <span class="nav-page-text">Методы анализа данных</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prob-cond-prob.html" class="pagination-link" aria-label="Условные вероятности и условные распределения">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

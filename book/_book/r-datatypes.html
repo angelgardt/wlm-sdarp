@@ -498,7 +498,20 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#chapterid-sectionid" id="toc-chapterid-sectionid" class="nav-link active" data-scroll-target="#chapterid-sectionid"><span class="header-section-number">3.1</span> Заголовок раздела</a>
+  <li><a href="#numeric" id="toc-numeric" class="nav-link active" data-scroll-target="#numeric"><span class="header-section-number">3.0.1</span> <code>numeric</code></a></li>
+  <li><a href="#integer" id="toc-integer" class="nav-link" data-scroll-target="#integer"><span class="header-section-number">3.0.2</span> <code>integer</code></a></li>
+  <li><a href="#complex" id="toc-complex" class="nav-link" data-scroll-target="#complex"><span class="header-section-number">3.0.3</span> <code>complex</code></a></li>
+  <li><a href="#logical" id="toc-logical" class="nav-link" data-scroll-target="#logical"><span class="header-section-number">3.0.4</span> <code>logical</code></a></li>
+  <li><a href="#логические-операторы" id="toc-логические-операторы" class="nav-link" data-scroll-target="#логические-операторы"><span class="header-section-number">3.0.5</span> Логические операторы</a></li>
+  <li><a href="#character" id="toc-character" class="nav-link" data-scroll-target="#character"><span class="header-section-number">3.0.6</span> <code>character</code></a></li>
+  <li><a href="#factor" id="toc-factor" class="nav-link" data-scroll-target="#factor"><span class="header-section-number">3.0.7</span> <code>factor</code></a></li>
+  <li><a href="#специальные-литералы" id="toc-специальные-литералы" class="nav-link" data-scroll-target="#специальные-литералы"><span class="header-section-number">3.0.8</span> Специальные литералы</a>
+  <ul>
+  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na"><span class="header-section-number">3.0.8.1</span> <code>NA</code></a></li>
+  <li><a href="#nan" id="toc-nan" class="nav-link" data-scroll-target="#nan"><span class="header-section-number">3.0.8.2</span> <code>NaN</code></a></li>
+  <li><a href="#null" id="toc-null" class="nav-link" data-scroll-target="#null"><span class="header-section-number">3.0.8.3</span> <code>NULL</code></a></li>
+  </ul></li>
+  <li><a href="#chapterid-sectionid" id="toc-chapterid-sectionid" class="nav-link" data-scroll-target="#chapterid-sectionid"><span class="header-section-number">3.1</span> Заголовок раздела</a>
   <ul>
   <li><a href="#chapterid-subsectionid" id="toc-chapterid-subsectionid" class="nav-link" data-scroll-target="#chapterid-subsectionid"><span class="header-section-number">3.1.1</span> Заголовок подраздела</a></li>
   </ul></li>
@@ -552,6 +565,137 @@ window.Quarto = {
 <div class="intro">
 <p>Вступление</p>
 </div>
+<p><strong>Тип данных</strong> — это характеристика данных, которая определяет:</p>
+<ul>
+<li><strong>множество допустимых значений</strong>, которые могут принимать данные этого типа</li>
+<li><strong>допустимые операции</strong> над данными этого типа</li>
+</ul>
+<section id="numeric" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="numeric"><span class="header-section-number">3.0.1</span> <code>numeric</code></h3>
+<p>Это числа с десятичной частью.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">3.14</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fl">3.14</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+</div>
+<p><code>"double"</code> нам говорит о том, что числа с десятичной частью храняться в R с двойной точностью. И это хорошо.</p>
+</section>
+<section id="integer" class="level3" data-number="3.0.2">
+<h3 data-number="3.0.2" class="anchored" data-anchor-id="integer"><span class="header-section-number">3.0.2</span> <code>integer</code></h3>
+<p>Это целые числа.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">3</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+<p>Правда чтобы создать именно целое число, надо указать, что мы хотим именно целое число с помощью литерала <code>L</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">3</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">3</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+</div>
+<p>По умолчанию объект типа <code>3</code> воспринимается R как <code>3.0</code>, поэтому тип данных будет <code>numeric</code>.</p>
+</section>
+<section id="complex" class="level3" data-number="3.0.3">
+<h3 data-number="3.0.3" class="anchored" data-anchor-id="complex"><span class="header-section-number">3.0.3</span> <code>complex</code></h3>
+<p>Комплексные числа тоже существуют, и мы с ними немного познакомимся, чтобы перестать их бояться.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "complex"</code></pre>
+</div>
+</div>
+</section>
+<section id="logical" class="level3" data-number="3.0.4">
+<h3 data-number="3.0.4" class="anchored" data-anchor-id="logical"><span class="header-section-number">3.0.4</span> <code>logical</code></h3>
+</section>
+<section id="логические-операторы" class="level3" data-number="3.0.5">
+<h3 data-number="3.0.5" class="anchored" data-anchor-id="логические-операторы"><span class="header-section-number">3.0.5</span> Логические операторы</h3>
+</section>
+<section id="character" class="level3" data-number="3.0.6">
+<h3 data-number="3.0.6" class="anchored" data-anchor-id="character"><span class="header-section-number">3.0.6</span> <code>character</code></h3>
+<p>Текст тоже надо как-то хранить.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="st">'a'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="st">"это строка"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s1)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Кавычки не важны, если у вас не встречаются кавычки внутри кавычек. Тогда надо использовать разные:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">'Мужчина громко зашёл в комнату и высказал решительное "здравствуйте"'</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>s</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Мужчина громко зашёл в комнату и высказал решительное \"здравствуйте\""</code></pre>
+</div>
+</div>
+</section>
+<section id="factor" class="level3" data-number="3.0.7">
+<h3 data-number="3.0.7" class="anchored" data-anchor-id="factor"><span class="header-section-number">3.0.7</span> <code>factor</code></h3>
+<p>Бывают такие переменные, которые группируют наши данные. Например,</p>
+<ul>
+<li>город проживания (<code>Москва</code>, <code>Санкт-Петербург</code>, <code>Казань</code>, <code>Екатеринбург</code>)</li>
+<li>уровень образования (<code>бакалавриат</code>, <code>специалитет</code>, <code>магистратура</code>, <code>аспирантура</code>)</li>
+<li>экспериментальная группа (<code>group1</code>, <code>group2</code>, <code>control</code>)</li>
+<li>и др.</li>
+</ul>
+<p>Обычно они текстовые. Для них был придуман тип данных <code>factor</code>, чтобы их было дешевле хранить. Однако большинство современных пакетов сами могут решить, когда надо текст перевести в фактор.</p>
+<p><code>Ordered factor</code> (<strong>упорядоченный фактор</strong>) — тип данных, который позволяет задать порядок групп. Например,</p>
+<ul>
+<li>уровень образования: <code>bachelor</code> &lt; <code>master</code> &lt; <code>phd</code> &lt; <code>postdoc</code></li>
+<li>сложность экспериментальной задачи: <code>easy</code> &lt; <code>medium</code> &lt; <code>hard</code></li>
+<li>и др.</li>
+</ul>
+<p>Вот упорядоченный фактор нам время от времени может понадобиться — например, для создания визуалиация или в некоторых статистических моделях.</p>
+</section>
+<section id="специальные-литералы" class="level3" data-number="3.0.8">
+<h3 data-number="3.0.8" class="anchored" data-anchor-id="специальные-литералы"><span class="header-section-number">3.0.8</span> Специальные литералы</h3>
+<section id="na" class="level4" data-number="3.0.8.1">
+<h4 data-number="3.0.8.1" class="anchored" data-anchor-id="na"><span class="header-section-number">3.0.8.1</span> <code>NA</code></h4>
+<p>Пропущенное значение (<strong>N</strong>ot <strong>A</strong>vailable). Обозначает отсутствие значения там, где оно вроде бы должно быть. Причины могут быть разные:</p>
+<ul>
+<li>технические ошибки записи данных</li>
+<li>ошибки настройки платформы — забыли сделать ответы обязательными</li>
+<li>организация исследования — ограничили время на ответ</li>
+<li>«честный» пропуск — дали возможность не отвечать на вопрос</li>
+<li>предобработка данных — специально создали <code>NA</code>, чтобы далее с ними работать</li>
+<li>и др.</li>
+</ul>
+</section>
+<section id="nan" class="level4" data-number="3.0.8.2">
+<h4 data-number="3.0.8.2" class="anchored" data-anchor-id="nan"><span class="header-section-number">3.0.8.2</span> <code>NaN</code></h4>
+<p>Это не число (<strong>N</strong>ot <strong>a</strong> <strong>N</strong>umber).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> <span class="sc">/</span> <span class="dv">0</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+</div>
+</section>
+<section id="null" class="level4" data-number="3.0.8.3">
+<h4 data-number="3.0.8.3" class="anchored" data-anchor-id="null"><span class="header-section-number">3.0.8.3</span> <code>NULL</code></h4>
+<p>Это ничто. Пустота. Используется для задания аргументов функций.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="quote">
 <p>— Текст цитаты <br> — Тоже текст цитаты <br></p>
 <div class="quote-sign">
@@ -561,6 +705,8 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Цитата</p>
 </blockquote>
+</section>
+</section>
 <section id="chapterid-sectionid" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="chapterid-sectionid"><span class="header-section-number">3.1</span> Заголовок раздела</h2>
 <div class="lab-junior">
@@ -583,11 +729,11 @@ window.Quarto = {
 <section id="chapterid-code-nolst" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="chapterid-code-nolst"><span class="header-section-number">3.2.1</span> Чанк без подписи</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## подключаем самую лучшую библиотеку</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="do">## устанавливаем тему</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## подключаем самую лучшую библиотеку</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="do">## устанавливаем тему</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 10
   carat cut       color clarity depth table price     x     y     z
@@ -610,22 +756,22 @@ window.Quarto = {
 </figcaption>
 <div aria-describedby="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(files[i]) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(ds) <span class="ot">-&gt;</span> ds</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">'a'</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) {</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(files[i]) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(ds) <span class="ot">-&gt;</span> ds</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">'a'</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>()</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </figure>
 </div>
-<p>Ссылка на чанк с подписью (<a href="debug_chapter.html#lst-for-example" class="quarto-xref">Код&nbsp;<span>1.2</span></a>).</p>
+<p>Ссылка на чанк с подписью (<a href="#lst-for-example" class="quarto-xref">Код&nbsp;<span class="quarto-unresolved-ref">lst-for-example</span></a>).</p>
 </section>
 <section id="chapterid-code-annotated" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="chapterid-code-annotated"><span class="header-section-number">3.2.3</span> Аннотированный чанк</h3>
@@ -636,33 +782,33 @@ window.Quarto = {
 </figcaption>
 <div aria-describedby="lst-code-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для агрегации</span></span>
-<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-3" class="code-annotation-target"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
-<span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
-<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-14-7" class="code-annotation-target"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-8" class="code-annotation-target"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
-<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
-<span id="annotated-cell-14-10"><a href="#annotated-cell-14-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>)))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-35"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-35-1"><a href="#annotated-cell-35-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для агрегации</span></span>
+<span id="annotated-cell-35-2"><a href="#annotated-cell-35-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-35" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-35-3" class="code-annotation-target"><a href="#annotated-cell-35-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-35" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-35-4" class="code-annotation-target"><a href="#annotated-cell-35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
+<span id="annotated-cell-35-5"><a href="#annotated-cell-35-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
+<span id="annotated-cell-35-6"><a href="#annotated-cell-35-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-35" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-35-7" class="code-annotation-target"><a href="#annotated-cell-35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-35" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-35-8" class="code-annotation-target"><a href="#annotated-cell-35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
+<span id="annotated-cell-35-9"><a href="#annotated-cell-35-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
+<span id="annotated-cell-35-10"><a href="#annotated-cell-35-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>)))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-35" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
+<span data-code-cell="annotated-cell-35" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
 </dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-35" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
+<span data-code-cell="annotated-cell-35" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
 </dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-35" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
+<span data-code-cell="annotated-cell-35" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
 </dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-35" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
+<span data-code-cell="annotated-cell-35" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
 </dd>
 </dl>
 </div>
@@ -696,7 +842,7 @@ window.Quarto = {
 </div>
 <section id="chapterid-import-pic" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="chapterid-import-pic"><span class="header-section-number">3.3.1</span> Импорт графического файла</h3>
-<p>Ссылка на импортированную картинку (<a href="appendix-other-math.html#fig-gh-soc-preview" class="quarto-xref">Иллюстрация&nbsp;<span>J.1</span></a>):</p>
+<p>Ссылка на импортированную картинку (<a href="#fig-gh-soc-preview" class="quarto-xref">Иллюстрация&nbsp;<span class="quarto-unresolved-ref">fig-gh-soc-preview</span></a>):</p>
 <div id="fig-gh-soc-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -711,44 +857,44 @@ window.Quarto = {
 <section id="chapterid-plot" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="chapterid-plot"><span class="header-section-number">3.3.2</span> График, построенный с помощью кода</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для графика</span></span>
-<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
-<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
-<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
-<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>))) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-11" class="code-annotation-target"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(clarity, price,</span>
-<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> price_group, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"pointrange"</span>, </span>
-<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">fun.data =</span> mean_cl_boot,</span>
-<span id="annotated-cell-3-15"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-17"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для графика</span></span>
+<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-3" class="code-annotation-target"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
+<span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
+<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-14-7" class="code-annotation-target"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-8" class="code-annotation-target"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
+<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
+<span id="annotated-cell-14-10"><a href="#annotated-cell-14-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>))) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-14-11" class="code-annotation-target"><a href="#annotated-cell-14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(clarity, price,</span>
+<span id="annotated-cell-14-12"><a href="#annotated-cell-14-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> price_group, <span class="at">color =</span> color)) <span class="sc">+</span></span>
+<span id="annotated-cell-14-13"><a href="#annotated-cell-14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"pointrange"</span>, </span>
+<span id="annotated-cell-14-14"><a href="#annotated-cell-14-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">fun.data =</span> mean_cl_boot,</span>
+<span id="annotated-cell-14-15"><a href="#annotated-cell-14-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="annotated-cell-14-16"><a href="#annotated-cell-14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>)) <span class="sc">+</span></span>
+<span id="annotated-cell-14-17"><a href="#annotated-cell-14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-14" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-14" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="11" data-code-annotation="5">Начинаем рисовать</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="11" data-code-annotation="5">Начинаем рисовать</span>
 </dd>
 </dl>
 </div>
@@ -830,7 +976,7 @@ window.Quarto = {
 </figure>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>) <span class="ot">-&gt;</span> plot1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>) <span class="ot">-&gt;</span> plot1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -838,7 +984,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>) <span class="ot">-&gt;</span> plot2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>) <span class="ot">-&gt;</span> plot2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -846,7 +992,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="ot">-&gt;</span> plot3</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="ot">-&gt;</span> plot3</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -854,7 +1000,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>) <span class="ot">-&gt;</span> plot4</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>) <span class="ot">-&gt;</span> plot4</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -863,10 +1009,10 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot1)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot3)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot4)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot1)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot2)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot3)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot4)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-several-plots-one-figure" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-several-plots-one-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -899,8 +1045,8 @@ window.Quarto = {
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-b42c14d5f5c6cebb1a1e" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b42c14d5f5c6cebb1a1e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-7adfa81004a5d6f14e1a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-7adfa81004a5d6f14e1a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;3.5: Тут родился R
@@ -908,7 +1054,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<p>Ссылка неа карту (<a href="appendix-other-math.html#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>J.5</span></a>).</p>
+<p>Ссылка неа карту (<a href="#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span class="quarto-unresolved-ref">fig-rbirthplace</span></a>).</p>
 </section>
 <section id="chapterid-video" class="level3" data-number="3.3.5">
 <h3 data-number="3.3.5" class="anchored" data-anchor-id="chapterid-video"><span class="header-section-number">3.3.5</span> Видео</h3>
@@ -922,7 +1068,7 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<p>Ссылка на видео (<a href="appendix-other-math.html#fig-razbor" class="quarto-xref">Иллюстрация&nbsp;<span>J.6</span></a>).</p>
+<p>Ссылка на видео (<a href="#fig-razbor" class="quarto-xref">Иллюстрация&nbsp;<span class="quarto-unresolved-ref">fig-razbor</span></a>).</p>
 </section>
 <section id="chapterid-scheme" class="level3" data-number="3.3.6">
 <h3 data-number="3.3.6" class="anchored" data-anchor-id="chapterid-scheme"><span class="header-section-number">3.3.6</span> Схема</h3>
@@ -948,13 +1094,13 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Ссылка на схему (<a href="appendix-other-math.html#fig-mermaidtest" class="quarto-xref">Иллюстрация&nbsp;<span>J.7</span></a>).</p>
+<p>Ссылка на схему (<a href="#fig-mermaidtest" class="quarto-xref">Иллюстрация&nbsp;<span class="quarto-unresolved-ref">fig-mermaidtest</span></a>).</p>
 </section>
 </section>
 <section id="chapterid-tables" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="chapterid-tables"><span class="header-section-number">3.4</span> Таблицы</h2>
-<p>Ссылка на таблицу из <code>tibble</code> (<a href="appendix-other-math.html#tbl-kabletable" class="quarto-xref">Таблица&nbsp;<span>J.1</span></a>).</p>
-<p>Ссылка на таблицу из R Markdown (<a href="appendix-other-math.html#tbl-markdowntable" class="quarto-xref">Таблица&nbsp;<span>J.2</span></a>).</p>
+<p>Ссылка на таблицу из <code>tibble</code> (<a href="#tbl-kabletable" class="quarto-xref">Таблица&nbsp;<span class="quarto-unresolved-ref">tbl-kabletable</span></a>).</p>
+<p>Ссылка на таблицу из R Markdown (<a href="#tbl-markdowntable" class="quarto-xref">Таблица&nbsp;<span class="quarto-unresolved-ref">tbl-markdowntable</span></a>).</p>
 <section id="chapterid-kabletable" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="chapterid-kabletable"><span class="header-section-number">3.4.1</span> Таблица из <code>kable()</code></h3>
 <div id="tbl-kabletable" class="quarto-float anchored">
@@ -1038,7 +1184,7 @@ window.Quarto = {
 </section>
 <section id="chapterid-math" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="chapterid-math"><span class="header-section-number">3.5</span> Математика</h2>
-<p>Это уравнение прямой (<a href="appendix-other-math.html#eq-line" class="quarto-xref">Уравнение&nbsp;<span>J.1</span></a>):</p>
+<p>Это уравнение прямой (<a href="#eq-line" class="quarto-xref">Уравнение&nbsp;<span class="quarto-unresolved-ref">eq-line</span></a>):</p>
 <p><span id="eq-line"><span class="math display">\[
 y = kx + b
 \tag{3.1}\]</span></span></p>
@@ -1082,7 +1228,7 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
 <p><span class="proof-title"><em>Решение</em>. </span></p>
 <!--Это решение, где есть только код.-->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
