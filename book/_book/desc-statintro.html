@@ -345,6 +345,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -756,7 +768,8 @@ window.Quarto = {
 <li>Любое наше измерение всегда содержит ошибку — независимо от того физическое оно или психологическое</li>
 </ul>
 <p>Аналогично дело обстоит с любыми другими параметрами.</p>
-<p>Что же делать? Собственно за этим мы и формируем выборку. Мы не можем измерить величину параметра точно, но можем <em>предсказать её с определённой статистической точностью</em>, измеряя показатели на выборке. Выборка имеет ограниченный объём, и, измерив величину показателя у каждого объекта выборки, мы получим <strong>[выборочную] оценку параметра (estimation)</strong> (<span class="math inline">\(\hat \theta\)</span>) — эмпирический (измеримый) аналог параметра. В частности, если у нас есть выборка из 100 студентов-психологов Москвы, вполне возможно за некоторое время собрать данных по уровню их нейротизма с помощью опросника BFI и вычислить среднее арифметическое по этим 100 наблюдениям.</p>
+<p>Что же делать? Собственно за этим мы и формируем выборку. Мы не можем измерить величину параметра точно, но можем <em>предсказать её с определённой статистической точностью</em>, измеряя показатели на выборке.</p>
+<p>Выборка имеет ограниченный объём, и, измерив величину показателя у каждого объекта выборки, мы получим <strong>[выборочную] оценку параметра (estimation)</strong> (<span class="math inline">\(\hat \theta\)</span>) — эмпирический (измеримый) аналог параметра. В частности, если у нас есть выборка из 100 студентов-психологов Москвы, вполне возможно за некоторое время собрать данных по уровню их нейротизма с помощью опросника BFI и вычислить среднее арифметическое по этим 100 наблюдениям.</p>
 <p>Далее мы часто будем говорить о параметрах генеральной совокупности и выборочных оценках, сейчас же приведем несколько примеров и обозначений, чтобы придать теоретическим речам некоторое фактическое содержание (<a href="#tbl-param-estim" class="quarto-xref">Таблица&nbsp;<span>4.2</span></a>).</p>
 <div id="tbl-param-estim" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -786,13 +799,14 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\rho\)</span> — коэффициент корреляции генеральной совокупности</td>
-<td><span class="math inline">\(\hat \rho\)</span>, <span class="math inline">\(r\)</span> — выборочный коээффициент корреляции</td>
+<td><span class="math inline">\(\hat \rho\)</span>, <span class="math inline">\(r\)</span> — выборочный коэффициент корреляции</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
+<p>Параметры генеральной совокупности традиционно обозначают греческими буквами. Для выборочных оценок используют соответствующие греческим латинские буквы или же надевают на греческие шляпку ( <span class="math inline">\(\hat \,\)</span> ), чтобы отличать их от параметров.</p>
 <section id="desc-statintro-why-do-we-need-stat" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="desc-statintro-why-do-we-need-stat"><span class="header-section-number">4.4.1</span> Зачем нужна статистика?</h3>
 <div class="lab-junior">

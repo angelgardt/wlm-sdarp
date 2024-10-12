@@ -47,6 +47,9 @@ book:
         - prob-prob.qmd
         - prob-randvalues.qmd
         - prob-cond-prob.qmd
+        - prob-statestim.qmd
+        - prob-hyptesting.qmd
+        - prob-falsepositive.qmd
     - part: part-andan.qmd
     - common-outro.qmd
     - references.qmd

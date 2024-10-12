@@ -23,6 +23,11 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 > Цитата
 
+:::{.quote .small}
+--- Текст цитаты <br>
+--- Тоже текст цитаты <br>
+:::
+
 
 
 

@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 ```{r pkgs, echo=FALSE}
 library(tidyverse)
 theme_set(theme_bw())
+library(latex2exp)
 ```
 
 :::{.intro}
