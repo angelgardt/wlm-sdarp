@@ -1,4 +1,4 @@
-# Вопспроизводимость и ложноположительные результаты {#prob-falsepositive}
+# Работа с данными {#r-data}
 
 {{< include other/_symbols.qmd >}}
 
@@ -9,6 +9,12 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::{.intro}
 Вступление
 :::
+
+
+## RStudio Projects {#r-data-rstudioprojects}
+
+
+
 
 ::::{.quote}
 --- Текст цитаты <br>
@@ -22,11 +28,6 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 ::::
 
 > Цитата
-
-:::{.quote .small}
---- Текст цитаты <br>
---- Тоже текст цитаты <br>
-:::
 
 
 
@@ -360,18 +361,8 @@ $$
 Это задание.
 :::
 
-::::{.solution}
-
-:::{.cell}
-Это решение
-:::
-::::
-
 ::: {.solution}
-<!--Это решение, где есть только код.-->
-```{r}
-print(0)
-```
+Это решение.
 :::
 
 ::: {.remark}

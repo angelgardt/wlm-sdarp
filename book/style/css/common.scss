@@ -199,7 +199,12 @@ code {
   padding: 2% 2%;
 }
 
-
+.callout-note, .callout-tip, .callout-warning, .callout-important, .callout-caution {
+  &.save-font-size > .callout-body > .callout-body-container > p,
+  &.save-font-size > .callout-body-container > p {
+    font-size: 1rem !important;
+  }
+}
 
 
 // Quiz

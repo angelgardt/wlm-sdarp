@@ -253,6 +253,49 @@ flowchart LR
 ```
 
 :::{.callout-note}
+Без заголовка
+:::
+
+:::{.callout-tip}
+Без заголовка
+:::
+
+:::{.callout-warning}
+Без заголовка
+:::
+
+:::{.callout-important}
+Без заголовка
+:::
+
+:::{.callout-caution}
+Без заголовка
+:::
+
+Ссылка на блоки ниже --- @nte-ref, @tip-ref, @wrn-ref, @imp-ref, @cau-ref.
+
+:::{.callout-note #nte-ref}
+With cross-ref
+:::
+
+:::{.callout-tip #tip-ref}
+With cross-ref
+:::
+
+:::{.callout-warning #wrn-ref}
+With cross-ref
+:::
+
+:::{.callout-important #imp-ref}
+With cross-ref
+:::
+
+:::{.callout-caution #cau-ref}
+With cross-ref
+:::
+
+
+:::{.callout-note}
 ###### Заголовок заметки
 
 Здесь схема из Mermaid (@fig-mermaidtest).

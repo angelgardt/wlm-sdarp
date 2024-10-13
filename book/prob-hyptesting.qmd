@@ -65,8 +65,9 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 1. в первом случае параметр *не отличается* от некоторого заданного значения,
 2. во втором параметры двух генеральных совокупностей *не отличаются* друг от друга.
 
-> Таким образом, **нулевая гипотеза --- это гипотеза об отсутствии различий**, а следовательно, об отсутствии закономерности.
-
+:::{.callout-note .save-font-size appearance="minimal"}
+Таким образом, **нулевая гипотеза --- это гипотеза об отсутствии различий**, а следовательно, об отсутствии закономерности.
+:::
 
 ### Альтернативная гипотеза {#prob-hyptesting-alt-hypothesis}
 
@@ -81,7 +82,9 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 Ситуация $\theta \neq \theta_0$, конечно же, включается в себя и ситуацию $\theta < \theta_0$, и ситуацию $\theta > \theta_0$, то есть в качестве альтернативы мы рассматриваем *две стороны* возможных различий. Аналогично $\theta_1 \neq \theta_2 \Leftrightarrow \theta_1 < \theta_2 \wedge \theta_1 > \theta_2$[^logic_two_side].
 
-> Такие альтернативные гипотезы называются **двусторонними (two-sided hypothesis, two-tailed test)**.
+:::{.callout-note .save-font-size appearance="minimal"}
+Такие альтернативные гипотезы называются **двусторонними (two-sided hypothesis, two-tailed test)**.
+:::
 
 Они описывают ситуацию, когда различия есть, но нам не важно, куда они направлены --- (1) больше или меньше параметр $\theta$ заданного значения $\theta_0$ или (2) какой из параметров $\theta_1$ и $\theta_2$ больше другого.
 
@@ -93,11 +96,17 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 Мы можем «направить» альтернативные гипотезы и в обратную сторону, если это согласуется с теоретическими основаниями --- $H_1 : \theta < \theta_0$ и $H_1 : \theta_1 > \theta_2$ соответственно.
 
-> Такие альтернативные гипотезы называются **односторонними (one-sided hypothesis, one-tailed test)**.
+:::{.callout-note .save-font-size appearance="minimal"}
+Такие альтернативные гипотезы называются **односторонними (one-sided hypothesis, one-tailed test)**.
+:::
 
-> Если нас интересует ситуация «меньше», то гипотеза называется **левосторонней (left-tailed test)**.
+:::{.callout-note .save-font-size appearance="minimal"}
+Если нас интересует ситуация «меньше», то гипотеза называется **левосторонней (left-tailed test)**.
+:::
 
-> Если же нас интересует ситуация «больше», то гипотеза будет **правосторонней (right-tailed test)**.
+:::{.callout-note .save-font-size appearance="minimal"}
+Если же нас интересует ситуация «больше», то гипотеза будет **правосторонней (right-tailed test)**.
+:::
 
 ::: {#tbl-alt-hyp}
 
@@ -151,7 +160,6 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 | $\hat H_1$ | **Ситуация 3**<br> Ошибка I рода (Type I Error) | **Ситуация 4**<br> ✓ |
 
 Ситуации, возникающие при тестировании статистических гипотез
-
 :::
 
 Ситуации 1 и 4 нас полностью устраивают:
@@ -167,6 +175,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Ошибки приводят нас к некорректным выводам по результатам исследований --- соответственно, необходимо найти способ их контролировать. Для этого нам хорошо было бы каким-то образом описать сложившееся положение дел. Сделаем мы это с помощью [условной вероятности](prob-cond-prob.qmd) --- получится весьма удобная картина (@tbl-stattest-probs):
 
 :::{#tbl-stattest-probs}
+
 |  | $H_0$ | $H_1$ |
 |:---:|:---:|:---:|
 | $\hat H_0$ | $\prob (\hat H_0 | H_0)$ | $\prob (\hat H_0 | H_1) = \beta$ |
@@ -264,7 +273,7 @@ $$
 \alpha \to 0 \Rightarrow \prob (\hat H_1) \to 0
 $$
 
-:::{.callout-important appearance="simple" #imp-siglevel}
+:::{.callout-important .save-font-size appearance="minimal" #imp-siglevel}
 Иначе говоря, если мы выберем в качестве уровня значимости $0$, то мы **никогда не сможем отклонить нулевую гипотезу**, а значит **никогда не сможем обнаружить какие-либо различия**.
 :::
 
@@ -293,7 +302,7 @@ $$
 
 А ведь вероятность ошибки II рода определяет статистическую мощность $1 - \beta$, и справедливо, что $\beta \to 0 \Rightarrow (1-\beta) \to 1$. Соответственно, и статистическая мощность, равная единице, повлечет за собой вероятность неотклонения нулевой гипотезы, равную нулю.
 
-:::{.callout-important appearance="simple" #imp-statpower}
+:::{.callout-important .save-font-size appearance="minimal" #imp-statpower}
 Иначе говоря, если мы выберем в качестве статистической мощности $1$, то мы **всегда будем должны отклонять нулевую гипотезу**, а значит **никогда всегда будем обнаруживать какие-либо различия**.
 :::
 
@@ -337,15 +346,15 @@ $${#eq-alpha-to-beta}
 
 Что мы можем в итоге пронаблюдать?
 
-:::{.callout-important appearance="simple" #imp-alpha-beta-1}
+:::{.callout-important .save-font-size appearance="minimal" #imp-alpha-beta-1}
 Из формул [-@eq-beta-to-alpha] и [-@eq-alpha-to-beta] наглядно видно, что вероятности ошибок I и II рода связаны друг с другом --- ибо одна выражается через другую и наоборот.
 :::
 
-:::{.callout-important appearance="simple" #imp-alpha-beta-2}
+:::{.callout-important .save-font-size appearance="minimal" #imp-alpha-beta-2}
 Из [-@eq-alpha-to-beta] видно, что если устремить статистическую мощность к единице --- следовательно, вероятность ошибки II рода к нулю --- то вероятность ошибки I рода будет стремиться к единице.
 :::
 
-:::{.callout-important appearance="simple" #imp-alpha-beta-3}
+:::{.callout-important .save-font-size appearance="minimal" #imp-alpha-beta-3}
 Из [-@eq-beta-to-alpha] видно, что если устремить уровень значимости к нулю, вероятность ошибки II рода будет стремиться к единице[^beta-to-alpha-comment].
 :::
 
