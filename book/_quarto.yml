@@ -33,6 +33,7 @@ book:
     - part: part-math.qmd
       chapters: 
         - math-logic.qmd
+        - math-settheory.qmd
     - part: part-measures.qmd
     - part: part-desc.qmd
       chapters:

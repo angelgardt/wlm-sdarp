@@ -4,7 +4,7 @@
 
 ## Латинский алфавит {#math-letters-latin}
 
-Буквы латинского алфавита в математических текстах могут использоваться в нескольких начертания. В таблице ниже слева направо представлены *обычное*, *прямое*, *полужирное*, *красивое*, *рукописное*, *контурное*, *готическое* начертания и начертание *без засечек*.
+Буквы латинского алфавита в математических текстах могут использоваться в нескольких начертаниях. В таблице ниже слева направо представлены *обычное*, *прямое*, *полужирное*, *красивое*, *рукописное*, *контурное*, *готическое* начертания и начертание *без засечек*.
 
 ||||Начертание|||||Название|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -30,37 +30,40 @@
 |$T$ $t$|$\mathrm T$ $\mathrm t$|$\mathbf T$ $\mathbf t$|$\mathcal T$|$\mathscr T$|$\mathbb T$ $\mathbb t$|$\mathfrak T$ $\mathfrak t$|$\mathsf T$ $\mathsf t$|тэ|
 |$U$ $u$|$\mathrm U$ $\mathrm u$|$\mathbf U$ $\mathbf u$|$\mathcal U$|$\mathscr U$|$\mathbb U$ $\mathbb u$|$\mathfrak U$ $\mathfrak u$|$\mathsf U$ $\mathsf u$|у|
 |$V$ $v$|$\mathrm V$ $\mathrm v$|$\mathbf V$ $\mathbf v$|$\mathcal V$|$\mathscr V$|$\mathbb V$ $\mathbb v$|$\mathfrak V$ $\mathfrak v$|$\mathsf V$ $\mathsf v$|вэ|
-|$W$ $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathcal W$|$\mathscr W$|$\mathbb W$ $\mathbb w$|$\mathfrak W$ $\mathfrak w$|$\mathsf W$ $\mathsf w$|дубль|
+|$W$[^w] $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathcal W$|$\mathscr W$|$\mathbb W$ $\mathbb w$|$\mathfrak W$ $\mathfrak w$|$\mathsf W$ $\mathsf w$|дубль вэ|
 |$X$ $x$|$\mathrm X$ $\mathrm x$|$\mathbf X$ $\mathbf x$|$\mathcal X$|$\mathscr X$|$\mathbb X$ $\mathbb x$|$\mathfrak X$ $\mathfrak x$|$\mathsf X$ $\mathsf x$|икс|
 |$Y$ $y$|$\mathrm Y$ $\mathrm y$|$\mathbf Y$ $\mathbf y$|$\mathcal Y$|$\mathscr Y$|$\mathbb Y$ $\mathbb y$|$\mathfrak Y$ $\mathfrak y$|$\mathsf Y$ $\mathsf y$|игрек|
 |$Z$ $z$|$\mathrm Z$ $\mathrm z$|$\mathbf Z$ $\mathbf z$|$\mathcal Z$|$\mathscr Z$|$\mathbb Z$ $\mathbb z$|$\mathfrak Z$ $\mathfrak z$|$\mathsf Z$ $\mathsf z$|зет|
 
+[^w]: Вообще буква $W \, w$ в алфавит классической латыни не входила, так как возникла в средневековье в алфавитах германских языков (как диграф $VV$ примерно в XI веке и начала считаться отдельной буквой уже в Новое время). Однако так как она входит в набор символов латиницы, зафиксированный ISO [@iso80000-10646], она считается частью современного латинского алфавита. Справедливости ради стоит отметить, что в классической латыни отсутствовали также $J \, j$ и $U \, u$ --- они также возникли в Новое время (около XVI века), отделившись от $I \, i$ и $V \, v$, неслоговыми вариантами которых были до этого.
 
 ## Греческий алфавит {#math-letters-greek}
 
+Несомненно, не будет открытием, что употребляются и греческие буквы. Однако не все --- из-за совпадения начертания некоторых заглавных букв с латинскими, буквы, отмеченные звездочкой ($^\star$), не используются.
+
 |Буква|Название|
 |:---:|:---:|
-|$A$ $\alpha$|альфа|
-|$B$ $\beta$|бета|
+|$A^\star$ $\alpha$|альфа|
+|$B^\star$ $\beta$|бета|
 |$\Gamma$ $\gamma$|гамма|
 |$\Delta$ $\delta$|дельта|
-|$E$ $\varepsilon$|эпсилон|
-|$Z$ $\zeta$|дзета|
-|$H$ $\eta$|эта|
+|$E^\star$ $\varepsilon$|эпсилон|
+|$Z^\star$ $\zeta$|дзета|
+|$H^\star$ $\eta$|эта|
 |$\Theta$ $\theta$|тета|
-|$I$ $\iota$|йота|
-|$K$ $\kappa$|каппа|
+|$I^\star$ $\iota$|йота|
+|$K^\star$ $\kappa$|каппа|
 |$\Lambda$ $\lambda$|лямбда|
-|$M$ $\mu$|мю|
-|$N$ $\nu$|ню|
+|$M^\star$ $\mu$|мю|
+|$N^\star$ $\nu$|ню|
 |$\Xi$ $\xi$|кси|
-|$O$ $o$|омикрон|
+|$O^\star$ $o$|омикрон|
 |$\Pi$ $\pi$|пи|
-|$P$ $\rho$|ро|
+|$P^\star$ $\rho$|ро|
 |$\Sigma$ $\sigma$|сигма|
-|$T$ $\tau$|тау|
-|$Y$ $\upsilon$|ипсилон|
+|$T^\star$ $\tau$|тау|
+|$Y^\star$ $\upsilon$|ипсилон|
 |$\Phi$ $\varphi$|фи|
-|$X$ $\chi$|хи|
+|$X^\star$ $\chi$|хи|
 |$\Psi$ $\psi$|пси|
 |$\Omega$ $\omega$|омега|

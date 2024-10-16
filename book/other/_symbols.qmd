@@ -96,7 +96,7 @@
 
 <!--- Stats --->
 \newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
+\newcommand{\mean}{\mathbb{mean}}
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
 
