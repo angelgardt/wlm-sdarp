@@ -1,6 +1,6 @@
 # Глава книги {#chapterid}
 
-{{< include ../other/_symbols.qmd >}}
+{{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
@@ -10,7 +10,23 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Вступление
 :::
 
+::::{.quote}
+--- Текст цитаты <br>
+--- Тоже текст цитаты <br>
+
+:::{.quote-sign}
+Источник цитаты <br>
+Год цитаты
+:::
+
+::::
+
 > Цитата
+
+:::{.quote .small}
+--- Текст цитаты <br>
+--- Тоже текст цитаты <br>
+:::
 
 
 
@@ -20,7 +36,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::{.lab-junior}
 :::
 
-Тест со [ссылкой](../_debug_/debug_quiz.qmd).
+Тест со [ссылкой](debug_quiz.qmd).
 
 
 ### Заголовок подраздела {#chapterid-subsectionid}
@@ -28,7 +44,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::{.lab-junior}
 :::
 
-Тест со [ссылкой](../_debug_/debug_sheet.qmd).
+Тест со [ссылкой](debug_sheet.qmd).
 
 
 
@@ -218,7 +234,7 @@ print(plot4)
 
 library(leaflet)
 leaflet() %>%
-  addProviderTiles(providers$Stadia.AlidadeSmooth) %>% 
+  addTiles() %>% 
   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
 ```
 
@@ -344,8 +360,18 @@ $$
 Это задание.
 :::
 
+::::{.solution}
+
+:::{.cell}
+Это решение
+:::
+::::
+
 ::: {.solution}
-Это решение.
+<!--Это решение, где есть только код.-->
+```{r}
+print(0)
+```
 :::
 
 ::: {.remark}
@@ -386,3 +412,7 @@ $$
 
 Текст предупреждения.
 :::
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

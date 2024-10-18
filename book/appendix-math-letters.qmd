@@ -4,62 +4,66 @@
 
 ## Латинский алфавит {#math-letters-latin}
 
-||||Начертание||||Название|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|Обычное|Романское|Полужирное|Рукописное|Контурное|Готическое|Без засечек||
-|$A$ $a$|$\mathrm A$ $\mathrm a$|$\mathbf A$ $\mathbf a$|$\mathcal A$|$\mathbb A$|$\mathfrak A$ $\mathfrak a$|$\mathsf A$ $\mathsf a$|а|
-|$B$ $b$|$\mathrm B$ $\mathrm b$|$\mathbf B$ $\mathbf b$|$\mathcal B$|$\mathbb B$|$\mathfrak B$ $\mathfrak b$|$\mathsf B$ $\mathsf b$|бэ|
-|$C$ $c$|$\mathrm C$ $\mathrm c$|$\mathbf C$ $\mathbf c$|$\mathcal C$|$\mathbb C$|$\mathfrak C$ $\mathfrak c$|$\mathsf C$ $\mathsf c$|цэ|
-|$D$ $d$|$\mathrm D$ $\mathrm d$|$\mathbf D$ $\mathbf d$|$\mathcal D$|$\mathbb D$|$\mathfrak D$ $\mathfrak d$|$\mathsf D$ $\mathsf d$|дэ|
-|$E$ $e$|$\mathrm E$ $\mathrm e$|$\mathbf E$ $\mathbf e$|$\mathcal E$|$\mathbb E$|$\mathfrak E$ $\mathfrak e$|$\mathsf E$ $\mathsf e$|е|
-|$F$ $f$|$\mathrm F$ $\mathrm f$|$\mathbf F$ $\mathbf f$|$\mathcal F$|$\mathbb F$|$\mathfrak F$ $\mathfrak f$|$\mathsf F$ $\mathsf f$|эф|
-|$G$ $g$|$\mathrm G$ $\mathrm g$|$\mathbf G$ $\mathbf g$|$\mathcal G$|$\mathbb G$|$\mathfrak G$ $\mathfrak g$|$\mathsf G$ $\mathsf g$|жэ|
-|$H$ $h$|$\mathrm H$ $\mathrm h$|$\mathbf H$ $\mathbf h$|$\mathcal H$|$\mathbb H$|$\mathfrak H$ $\mathfrak h$|$\mathsf H$ $\mathsf h$|аш|
-|$I$ $i$|$\mathrm I$ $\mathrm i$|$\mathbf I$ $\mathbf i$|$\mathcal I$|$\mathbb I$|$\mathfrak I$ $\mathfrak i$|$\mathsf I$ $\mathsf i$|и|
-|$J$ $j$|$\mathrm J$ $\mathrm j$|$\mathbf J$ $\mathbf j$|$\mathcal J$|$\mathbb J$|$\mathfrak J$ $\mathfrak j$|$\mathsf J$ $\mathsf j$|жи|
-|$K$ $k$|$\mathrm K$ $\mathrm k$|$\mathbf K$ $\mathbf k$|$\mathcal K$|$\mathbb K$|$\mathfrak K$ $\mathfrak k$|$\mathsf K$ $\mathsf k$|ка|
-|$L$ $l$|$\mathrm L$ $\mathrm l$|$\mathbf L$ $\mathbf l$|$\mathcal L$|$\mathbb L$|$\mathfrak L$ $\mathfrak l$|$\mathsf L$ $\mathsf l$|эль|
-|$M$ $m$|$\mathrm M$ $\mathrm m$|$\mathbf M$ $\mathbf m$|$\mathcal M$|$\mathbb M$|$\mathfrak M$ $\mathfrak m$|$\mathsf M$ $\mathsf m$|эм|
-|$N$ $n$|$\mathrm N$ $\mathrm n$|$\mathbf N$ $\mathbf n$|$\mathcal N$|$\mathbb N$|$\mathfrak N$ $\mathfrak n$|$\mathsf N$ $\mathsf n$|эн|
-|$O$ $o$|$\mathrm O$ $\mathrm o$|$\mathbf O$ $\mathbf o$|$\mathcal O$|$\mathbb O$|$\mathfrak O$ $\mathfrak o$|$\mathsf O$ $\mathsf o$|о|
-|$P$ $p$|$\mathrm P$ $\mathrm p$|$\mathbf P$ $\mathbf p$|$\mathcal P$|$\mathbb P$|$\mathfrak P$ $\mathfrak p$|$\mathsf P$ $\mathsf p$|пэ|
-|$Q$ $q$|$\mathrm Q$ $\mathrm q$|$\mathbf Q$ $\mathbf q$|$\mathcal Q$|$\mathbb Q$|$\mathfrak Q$ $\mathfrak q$|$\mathsf Q$ $\mathsf q$|ку|
-|$R$ $r$|$\mathrm R$ $\mathrm r$|$\mathbf R$ $\mathbf r$|$\mathcal R$|$\mathbb R$|$\mathfrak R$ $\mathfrak r$|$\mathsf R$ $\mathsf r$|эр|
-|$S$ $s$|$\mathrm S$ $\mathrm s$|$\mathbf S$ $\mathbf s$|$\mathcal S$|$\mathbb S$|$\mathfrak S$ $\mathfrak s$|$\mathsf S$ $\mathsf s$|эс|
-|$T$ $t$|$\mathrm T$ $\mathrm t$|$\mathbf T$ $\mathbf t$|$\mathcal T$|$\mathbb T$|$\mathfrak T$ $\mathfrak t$|$\mathsf T$ $\mathsf t$|тэ|
-|$U$ $u$|$\mathrm U$ $\mathrm u$|$\mathbf U$ $\mathbf u$|$\mathcal U$|$\mathbb U$|$\mathfrak U$ $\mathfrak u$|$\mathsf U$ $\mathsf u$|у|
-|$V$ $v$|$\mathrm V$ $\mathrm v$|$\mathbf V$ $\mathbf v$|$\mathcal V$|$\mathbb V$|$\mathfrak V$ $\mathfrak v$|$\mathsf V$ $\mathsf v$|вэ|
-|$W$ $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathcal W$|$\mathbb W$|$\mathfrak W$ $\mathfrak w$|$\mathsf W$ $\mathsf w$|дубль вэ|
-|$X$ $x$|$\mathrm X$ $\mathrm x$|$\mathbf X$ $\mathbf x$|$\mathcal X$|$\mathbb X$|$\mathfrak X$ $\mathfrak x$|$\mathsf X$ $\mathsf x$|икс|
-|$Y$ $y$|$\mathrm Y$ $\mathrm y$|$\mathbf Y$ $\mathbf y$|$\mathcal Y$|$\mathbb Y$|$\mathfrak Y$ $\mathfrak y$|$\mathsf Y$ $\mathsf y$|игрек|
-|$Z$ $z$|$\mathrm Z$ $\mathrm z$|$\mathbf Z$ $\mathbf z$|$\mathcal Z$|$\mathbb Z$|$\mathfrak Z$ $\mathfrak z$|$\mathsf Z$ $\mathsf z$|зет|
+Буквы латинского алфавита в математических текстах могут использоваться в нескольких начертаниях. В таблице ниже слева направо представлены *обычное*, *прямое*, *полужирное*, *красивое*, *рукописное*, *контурное*, *готическое* начертания и начертание *без засечек*.
 
+||||Начертание|||||Название|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|$A$ $a$|$\mathrm A$ $\mathrm a$|$\mathbf A$ $\mathbf a$|$\mathcal A$|$\mathscr A$|$\mathbb A$ $\mathbb a$|$\mathfrak A$ $\mathfrak a$|$\mathsf A$ $\mathsf a$|а|
+|$B$ $b$|$\mathrm B$ $\mathrm b$|$\mathbf B$ $\mathbf b$|$\mathcal B$|$\mathscr B$|$\mathbb B$ $\mathbb b$|$\mathfrak B$ $\mathfrak b$|$\mathsf B$ $\mathsf b$|бэ|
+|$C$ $c$|$\mathrm C$ $\mathrm c$|$\mathbf C$ $\mathbf c$|$\mathcal C$|$\mathscr C$|$\mathbb C$ $\mathbb c$|$\mathfrak C$ $\mathfrak c$|$\mathsf C$ $\mathsf c$|цэ|
+|$D$ $d$|$\mathrm D$ $\mathrm d$|$\mathbf D$ $\mathbf d$|$\mathcal D$|$\mathscr D$|$\mathbb D$ $\mathbb d$|$\mathfrak D$ $\mathfrak d$|$\mathsf D$ $\mathsf d$|дэ|
+|$E$ $e$|$\mathrm E$ $\mathrm e$|$\mathbf E$ $\mathbf e$|$\mathcal E$|$\mathscr E$|$\mathbb E$ $\mathbb e$|$\mathfrak E$ $\mathfrak e$|$\mathsf E$ $\mathsf e$|е|
+|$F$ $f$|$\mathrm F$ $\mathrm f$|$\mathbf F$ $\mathbf f$|$\mathcal F$|$\mathscr F$|$\mathbb F$ $\mathbb f$|$\mathfrak F$ $\mathfrak f$|$\mathsf F$ $\mathsf f$|эф|
+|$G$ $g$|$\mathrm G$ $\mathrm g$|$\mathbf G$ $\mathbf g$|$\mathcal G$|$\mathscr G$|$\mathbb G$ $\mathbb g$|$\mathfrak G$ $\mathfrak g$|$\mathsf G$ $\mathsf g$|жэ|
+|$H$ $h$|$\mathrm H$ $\mathrm h$|$\mathbf H$ $\mathbf h$|$\mathcal H$|$\mathscr H$|$\mathbb H$ $\mathbb h$|$\mathfrak H$ $\mathfrak h$|$\mathsf H$ $\mathsf h$|аш|
+|$I$ $i$|$\mathrm I$ $\mathrm i$|$\mathbf I$ $\mathbf i$|$\mathcal I$|$\mathscr I$|$\mathbb I$ $\mathbb i$|$\mathfrak I$ $\mathfrak i$|$\mathsf I$ $\mathsf i$|и|
+|$J$ $j$|$\mathrm J$ $\mathrm j$|$\mathbf J$ $\mathbf j$|$\mathcal J$|$\mathscr J$|$\mathbb J$ $\mathbb j$|$\mathfrak J$ $\mathfrak j$|$\mathsf J$ $\mathsf j$|жи|
+|$K$ $k$|$\mathrm K$ $\mathrm k$|$\mathbf K$ $\mathbf k$|$\mathcal K$|$\mathscr K$|$\mathbb K$ $\mathbb k$|$\mathfrak K$ $\mathfrak k$|$\mathsf K$ $\mathsf k$|ка|
+|$L$ $l$|$\mathrm L$ $\mathrm l$|$\mathbf L$ $\mathbf l$|$\mathcal L$|$\mathscr L$|$\mathbb L$ $\mathbb l$|$\mathfrak L$ $\mathfrak l$|$\mathsf L$ $\mathsf l$|эль|
+|$M$ $m$|$\mathrm M$ $\mathrm m$|$\mathbf M$ $\mathbf m$|$\mathcal M$|$\mathscr M$|$\mathbb M$ $\mathbb m$|$\mathfrak M$ $\mathfrak m$|$\mathsf M$ $\mathsf m$|эм|
+|$N$ $n$|$\mathrm N$ $\mathrm n$|$\mathbf N$ $\mathbf n$|$\mathcal N$|$\mathscr N$|$\mathbb N$ $\mathbb n$|$\mathfrak N$ $\mathfrak n$|$\mathsf N$ $\mathsf n$|эн|
+|$O$ $o$|$\mathrm O$ $\mathrm o$|$\mathbf O$ $\mathbf o$|$\mathcal O$|$\mathscr O$|$\mathbb O$ $\mathbb o$|$\mathfrak O$ $\mathfrak o$|$\mathsf O$ $\mathsf o$|о|
+|$P$ $p$|$\mathrm P$ $\mathrm p$|$\mathbf P$ $\mathbf p$|$\mathcal P$|$\mathscr P$|$\mathbb P$ $\mathbb p$|$\mathfrak P$ $\mathfrak p$|$\mathsf P$ $\mathsf p$|пэ|
+|$Q$ $q$|$\mathrm Q$ $\mathrm q$|$\mathbf Q$ $\mathbf q$|$\mathcal Q$|$\mathscr Q$|$\mathbb Q$ $\mathbb q$|$\mathfrak Q$ $\mathfrak q$|$\mathsf Q$ $\mathsf q$|ку|
+|$R$ $r$|$\mathrm R$ $\mathrm r$|$\mathbf R$ $\mathbf r$|$\mathcal R$|$\mathscr R$|$\mathbb R$ $\mathbb r$|$\mathfrak R$ $\mathfrak r$|$\mathsf R$ $\mathsf r$|эр|
+|$S$ $s$|$\mathrm S$ $\mathrm s$|$\mathbf S$ $\mathbf s$|$\mathcal S$|$\mathscr S$|$\mathbb S$ $\mathbb s$|$\mathfrak S$ $\mathfrak s$|$\mathsf S$ $\mathsf s$|эс|
+|$T$ $t$|$\mathrm T$ $\mathrm t$|$\mathbf T$ $\mathbf t$|$\mathcal T$|$\mathscr T$|$\mathbb T$ $\mathbb t$|$\mathfrak T$ $\mathfrak t$|$\mathsf T$ $\mathsf t$|тэ|
+|$U$ $u$|$\mathrm U$ $\mathrm u$|$\mathbf U$ $\mathbf u$|$\mathcal U$|$\mathscr U$|$\mathbb U$ $\mathbb u$|$\mathfrak U$ $\mathfrak u$|$\mathsf U$ $\mathsf u$|у|
+|$V$ $v$|$\mathrm V$ $\mathrm v$|$\mathbf V$ $\mathbf v$|$\mathcal V$|$\mathscr V$|$\mathbb V$ $\mathbb v$|$\mathfrak V$ $\mathfrak v$|$\mathsf V$ $\mathsf v$|вэ|
+|$W$[^w] $w$|$\mathrm W$ $\mathrm w$|$\mathbf W$ $\mathbf w$|$\mathcal W$|$\mathscr W$|$\mathbb W$ $\mathbb w$|$\mathfrak W$ $\mathfrak w$|$\mathsf W$ $\mathsf w$|дубль вэ|
+|$X$ $x$|$\mathrm X$ $\mathrm x$|$\mathbf X$ $\mathbf x$|$\mathcal X$|$\mathscr X$|$\mathbb X$ $\mathbb x$|$\mathfrak X$ $\mathfrak x$|$\mathsf X$ $\mathsf x$|икс|
+|$Y$ $y$|$\mathrm Y$ $\mathrm y$|$\mathbf Y$ $\mathbf y$|$\mathcal Y$|$\mathscr Y$|$\mathbb Y$ $\mathbb y$|$\mathfrak Y$ $\mathfrak y$|$\mathsf Y$ $\mathsf y$|игрек|
+|$Z$ $z$|$\mathrm Z$ $\mathrm z$|$\mathbf Z$ $\mathbf z$|$\mathcal Z$|$\mathscr Z$|$\mathbb Z$ $\mathbb z$|$\mathfrak Z$ $\mathfrak z$|$\mathsf Z$ $\mathsf z$|зет|
+
+[^w]: Вообще буква $W \, w$ в алфавит классической латыни не входила, так как возникла в Средневековье в алфавитах германских языков (изначально как диграф $VV$) [@britanica-latin-alphabet]. Однако так как она входит в набор символов латиницы, зафиксированный ISO [@iso80000-10646], она считается частью современного латинского алфавита. Справедливости ради стоит отметить, что в классической латыни отсутствовали также $J \, j$ и $U \, u$ --- они также возникли в Средние века, отделившись от $I \, i$ и $V \, v$, неслоговыми вариантами которых были до этого [@britanica-latin-alphabet].
 
 ## Греческий алфавит {#math-letters-greek}
 
+Несомненно, не будет открытием, что употребляются и греческие буквы. Однако не все --- из-за совпадения начертания некоторых заглавных букв с латинскими, буквы, отмеченные звездочкой ($^\star$), не используются.
+
 |Буква|Название|
 |:---:|:---:|
-|$A$ $\alpha$|альфа|
-|$B$ $\beta$|бета|
+|$A^\star$ $\alpha$|альфа|
+|$B^\star$ $\beta$|бета|
 |$\Gamma$ $\gamma$|гамма|
 |$\Delta$ $\delta$|дельта|
-|$E$ $\varepsilon$|эпсилон|
-|$Z$ $\zeta$|дзета|
-|$H$ $\eta$|эта|
+|$E^\star$ $\varepsilon$|эпсилон|
+|$Z^\star$ $\zeta$|дзета|
+|$H^\star$ $\eta$|эта|
 |$\Theta$ $\theta$|тета|
-|$I$ $\iota$|йота|
-|$K$ $\kappa$|каппа|
+|$I^\star$ $\iota$|йота|
+|$K^\star$ $\kappa$|каппа|
 |$\Lambda$ $\lambda$|лямбда|
-|$M$ $\mu$|мю|
-|$N$ $\nu$|ню|
+|$M^\star$ $\mu$|мю|
+|$N^\star$ $\nu$|ню|
 |$\Xi$ $\xi$|кси|
-|$O$ $o$|омикрон|
+|$O^\star$ $o$|омикрон|
 |$\Pi$ $\pi$|пи|
-|$P$ $\rho$|ро|
+|$P^\star$ $\rho$|ро|
 |$\Sigma$ $\sigma$|сигма|
-|$T$ $\tau$|тау|
-|$Y$ $\upsilon$|ипсилон|
+|$T^\star$ $\tau$|тау|
+|$Y^\star$ $\upsilon$|ипсилон|
 |$\Phi$ $\varphi$|фи|
-|$X$ $\chi$|хи|
+|$X^\star$ $\chi$|хи|
 |$\Psi$ $\psi$|пси|
 |$\Omega$ $\omega$|омега|

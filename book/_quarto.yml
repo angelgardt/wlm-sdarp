@@ -6,9 +6,9 @@ metadata-files:
   - _metadata.yml
 
 book:
-  title: "WLM SDAR"
-  # language: ru
-  subtitle: "World of Linear Models: Statistics & Data Analysis in R"
+  title: "WLM SDARP"
+  # language: _lang.yml
+  subtitle: "World of Linear Models: Statistics & Data Analysis in R for Psychologists"
   author: 
     - name: "Anton Angelgardt"
       email: "anton.angelgardt@gmail.com"
@@ -27,83 +27,31 @@ book:
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
-      - r-datatypes.qmd
-      - r-datastructures.qmd
-      - r-functionsI.qmd
-      - r-controlworkflow.qmd
-      - r-functionsII.qmd
-      - r-strings.qmd
-      - r-datetime.qmd
-      - r-data.qmd
-      - r-preprocessbasic.qmd
-      - r-preprocessadvanced.qmd
-      - r-visbaser.qmd
-      - r-visbasic.qmd
-      - r-visadvanced.qmd
-      - r-rmd.qmd
-      - r-qmd.qmd
+      # - r-datatypes.qmd
+      # - r-datastructures.qmd
+      # - r-data.qmd
     - part: part-math.qmd
-      chapters:
-      - math-logic.qmd
-      - math-set.qmd
-      - math-comb.qmd
-      - math-calculusI.qmd
-      - math-calculusII.qmd
-      - math-linalI.qmd
-      - math-linalII.qmd
+      chapters: 
+        - math-logic.qmd
+        - math-settheory.qmd
     - part: part-measures.qmd
-      chapters:
-      - measures-scales.qmd
-      - measures-psymetI.qmd
-      - measures-psymetII.qmd
-      - measures-psymetIII.qmd
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
-      - desc-centrtend.qmd
-      - desc-variance.qmd
-      - desc-distshape.qmd
-      - desc-prodmetrics.qmd
+      - desc-centaltend.qmd
+      #- desc-variation.qmd
+      #- desc-distshape.qmd
+      #- desc-prodmetrics.qmd
     - part: part-prob.qmd
+      chapters: 
+        - prob-randexpvals.qmd
+        - prob-prob.qmd
+        - prob-randvalues.qmd
+        - prob-cond-prob.qmd
+        - prob-statestim.qmd
+        - prob-hyptesting.qmd
+        - prob-falsepositive.qmd
     - part: part-andan.qmd
-      chapters:
-      - andan-means.qmd
-      - andan-categorical.qmd
-      - andan-cor.qmd
-      - andan-nonparam.qmd
-      - andan-simplelinear.qmd
-      - andan-multiplelinear.qmd
-      - andan-polynomialreg.qmd
-      - andan-svr.qmd
-      - andan-regreg.qmd
-      - andan-anova.qmd
-      - andan-ancova.qmd
-      - andan-manova.qmd
-      - andan-regtrees.qmd
-      - andan-regforest.qmd
-      - andan-dist.qmd
-      - andan-glm.qmd
-      - andan-logreg.qmd
-      - andan-multinomreg.qmd
-      - andan-poisreg.qmd
-      - andan-gam.qmd
-      - andan-glmm.qmd
-      - andan-glogmm.qmd
-      - andan-gmultinommm.qmd
-      - andan-svm.qmd
-      - andan-classtrees.qmd
-      - andan-classforest.qmd
-      - andan-cluster.qmd
-      - andan-fuzzycluster.qmd
-      - andan-lda.qmd
-      - andan-pca.qmd
-      - andan-ica.qmd
-      - andan-cca.qmd
-      - andan-efa.qmd
-      - andan-cfa.qmd
-      - andan-sem.qmd
-      - andan-path.qmd
-      - andan-timeseries.qmd
     - common-outro.qmd
     - references.qmd
   appendices:
@@ -116,8 +64,9 @@ book:
     - appendix-git.qmd
     - appendix-research-design.qmd
     - appendix-design.qmd
+    - appendix-other-math.qmd
     - appendix-math-letters.qmd
-    - appendix-answers.qmd
+    - appendix-keys.qmd
     
   favicon: img/other/favicon.png
 
@@ -147,6 +96,6 @@ format:
     theme:
       light: [style/css/light.scss, style/css/common.scss]
       dark: [style/css/dark.scss, style/css/common.scss]
-    code-overflow: scroll
+    code-overflow: wrap
 
 editor: source

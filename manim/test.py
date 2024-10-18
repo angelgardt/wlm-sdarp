@@ -29,3 +29,4 @@ class Example(Scene):
         difference = Difference(ellipse1, ellipse2, color=PINK, fill_opacity = .5)
         self.play(difference.animate.scale(.5).move_to(LEFT * 5 + DOWN * 2.5))
 
+## manim -pql test.py Example

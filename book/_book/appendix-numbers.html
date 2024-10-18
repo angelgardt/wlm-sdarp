@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDAR - Приложение A — Числа</title>
+<title>WLM SDARP - Приложение A — Числа</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -96,6 +116,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -139,7 +188,7 @@ background-size: cover;
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">WLM SDAR</a> 
+      <a href="./">WLM SDARP</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -214,96 +263,6 @@ background-size: cover;
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Типы данных</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-datastructures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-functionsI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции I</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-controlworkflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Управляющие конструкции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-functionsII.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Функции II</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-preprocessbasic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Базовая предобработка данных</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-preprocessadvanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Продвинутая предобработка данных</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-visbaser.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-visbasic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Базовая визуализация в <code>ggplot2</code></span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-visadvanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Продвинутая визуализация в <code>ggplot2</code></span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-rmd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">R Markdown</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-qmd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -318,81 +277,20 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Алгебра логики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-set.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-comb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculusI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Математический анализ I</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculusII.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Математический анализ II</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linalI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Линейная алгебра I</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linalII.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Линейная алгебра II</span></span></a>
+  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Теория измерений</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./measures-scales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Измерения и шкалы</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./measures-psymetI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Психометрические измерения I</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./measures-psymetII.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Психометрические измерения II</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./measures-psymetIII.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Психометрические измерения III</span></span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Теория измерений</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -406,271 +304,73 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./desc-centrtend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+  <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория вероятности и математическая статистика</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./desc-variance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
+  <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Меры формы распределения</span></span></a>
+  <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./desc-prodmetrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Продуктовые метрики</span></span></a>
+  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория вероятности и математическая статистика</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Сравнение средних</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-categorical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Анализ категориальных данных</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Корреляционый анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-nonparam.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Непараметрические методы</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-multiplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Множественная линейная регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-polynomialreg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Полиномиальная регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-svr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Support Vector Regression</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-regreg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Регуляризованная регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Дисперсионный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-ancova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Ковариационный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-manova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Многомерный дисперсионный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-regtrees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Деревья решений. Регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-regforest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Случайный лес. Регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-dist.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Определение вида распределения</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-glm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Обобщенные линейные модели</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-logreg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Логистическая регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-multinomreg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Мультиномиальная регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-poisreg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Пуассоновская регрессия</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-gam.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Обобщенные аддитивные модели</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-glmm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Смешанные линейные модели</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-glogmm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Смешанные логистические модели</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-gmultinommm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Смешанные мультиномиальные модели</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-svm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Support Vector Machine</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-classtrees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Деревья решений. Классификация</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-classforest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Случайный лес. Классификация</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-cluster.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">Кластерный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-fuzzycluster.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">Нечеткий кластерный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-lda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Линейный дискриминантный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-pca.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">Анализ главных компонент</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-ica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">64</span>&nbsp; <span class="chapter-title">Анализ независимых компонент</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-cca.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">65</span>&nbsp; <span class="chapter-title">Анализ скоррелированных компонент</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-efa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">66</span>&nbsp; <span class="chapter-title">Эксплораторный факторный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-cfa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">67</span>&nbsp; <span class="chapter-title">Конфирматорный факторный анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-sem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">68</span>&nbsp; <span class="chapter-title">Структурное моделирование</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-path.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">69</span>&nbsp; <span class="chapter-title">Путевой анализ</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./andan-timeseries.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">70</span>&nbsp; <span class="chapter-title">Основы анализа временных рядов</span></span></a>
-  </div>
-</li>
-      </ul>
+ <span class="menu-text">Методы анализа данных</span></span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -749,14 +449,20 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+  <a href="./appendix-other-math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические конструкции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-answers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+  <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -767,7 +473,31 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#appendix-numbers-n" id="toc-appendix-numbers-n" class="nav-link active" data-scroll-target="#appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</a>
+  <ul>
+  <li><a href="#appendix-numbers-n-zero" id="toc-appendix-numbers-n-zero" class="nav-link" data-scroll-target="#appendix-numbers-n-zero"><span class="header-section-number">A.1.1</span> Ноль как натуральное число</a></li>
+  <li><a href="#appendix-numbers-n-oprations" id="toc-appendix-numbers-n-oprations" class="nav-link" data-scroll-target="#appendix-numbers-n-oprations"><span class="header-section-number">A.1.2</span> Операции над натуральными числами</a></li>
+  <li><a href="#appendix-numbers-n-peano" id="toc-appendix-numbers-n-peano" class="nav-link" data-scroll-target="#appendix-numbers-n-peano"><span class="header-section-number">A.1.3</span> Аксиомы Пеано</a></li>
+  <li><a href="#appendix-numbers-n-arithm" id="toc-appendix-numbers-n-arithm" class="nav-link" data-scroll-target="#appendix-numbers-n-arithm"><span class="header-section-number">A.1.4</span> Формализация арифметики</a>
+  <ul class="collapse">
+  <li><a href="#appendix-numbers-n-sum" id="toc-appendix-numbers-n-sum" class="nav-link" data-scroll-target="#appendix-numbers-n-sum"><span class="header-section-number">A.1.4.1</span> Сложение натуральных чисел</a></li>
+  <li><a href="#appendix-numbers-n-prod" id="toc-appendix-numbers-n-prod" class="nav-link" data-scroll-target="#appendix-numbers-n-prod"><span class="header-section-number">A.1.4.2</span> Умножение натуральных чисел</a></li>
+  <li><a href="#appendix-numbers-n-minus-div" id="toc-appendix-numbers-n-minus-div" class="nav-link" data-scroll-target="#appendix-numbers-n-minus-div"><span class="header-section-number">A.1.4.3</span> Вычитание и деление и возведение в степень натуральных чисел</a></li>
+  <li><a href="#appendix-numbers-n-properties" id="toc-appendix-numbers-n-properties" class="nav-link" data-scroll-target="#appendix-numbers-n-properties"><span class="header-section-number">A.1.4.4</span> Свойства сложения и умножения</a></li>
+  <li><a href="#appendix-numbers-n-power" id="toc-appendix-numbers-n-power" class="nav-link" data-scroll-target="#appendix-numbers-n-power"><span class="header-section-number">A.1.4.5</span> Возведение в степень натуральных чисел</a></li>
+  </ul></li>
+  <li><a href="#appendix-numbers-n-sum-n-natural" id="toc-appendix-numbers-n-sum-n-natural" class="nav-link" data-scroll-target="#appendix-numbers-n-sum-n-natural"><span class="header-section-number">A.1.5</span> Сумма <span class="math inline">\(n\)</span> натуральных чисел</a></li>
+  </ul></li>
+  <li><a href="#appendix-numbers-z" id="toc-appendix-numbers-z" class="nav-link" data-scroll-target="#appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</a></li>
+  <li><a href="#appendix-numbers-q" id="toc-appendix-numbers-q" class="nav-link" data-scroll-target="#appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</a></li>
+  <li><a href="#appendix-numbers-r" id="toc-appendix-numbers-r" class="nav-link" data-scroll-target="#appendix-numbers-r"><span class="header-section-number">A.4</span> Вещественные числа</a></li>
+  <li><a href="#appendix-numbers-c" id="toc-appendix-numbers-c" class="nav-link" data-scroll-target="#appendix-numbers-c"><span class="header-section-number">A.5</span> Комплексные числа</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -776,8 +506,484 @@ background-size: cover;
 
 
 
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Decorations --->
+<!--- Common --->
+<!--- Logic --->
+<!--- Set theory --->
+<!--- Combinatorics --->
+<!--- Number sets--->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<!--- Letters --->
+<div class="intro">
+<p>Большая часть этого приложения либо очевидна, либо интуитивна, либо вам, вероятно, хорошо знакома из курса школьной математики. Тем не менее, для соблюдения некой строгости изложения, даже очевидные вещи здесь формально изложены.</p>
+<ul>
+<li>Если вы хорошо управляетесь со всеми числами, пропустите это приложение.</li>
+<li>Если вы хорошо управляете со всеми числами, кроме комплексных, прыгайте <a href="#appendix-numbers-c">сюда</a>.</li>
+<li>Если вы не уверены в том, что хорошо управляетесь с числами — приглашаю к математическому чтиву.</li>
+</ul>
+</div>
+<p>Если мы попытаемся выяснить, что такое число, то потерпим решительное фиаско. Обратившись к математическому словарю <span class="citation" data-cites="math-enc">(<a href="references.html#ref-math-enc" role="doc-biblioref">Виноградов, 1985</a>, с. 873)</span> мы обнаружим следующее:</p>
+<blockquote class="blockquote">
+<p>Число — основное понятие математики, сложившееся в ходе длительного исторического развития. Возникновение и формирование этого понятия происходило вместе с зарождением математики. Практическая деятельность человека, с одной стороны, и внутренние потребности математики — с другой определили развитие понятия числа.</p>
+</blockquote>
+<p>Очень точно и понятно, спасибо. Однако что тут удивляться — число, действительно, основное понятие математики, а с определением собственных основных понятий у наук часто бывают существенные затруднения. Ровно в такой же ситуации мы оказываемся, например, с «точкой» в геометрии. По идее, задача определения фундаментальных понятий адресуется философии, как дисциплине осмысляющей всё и вся, но тут нас тоже не то чтобы ждёт что-то уверенно определенное <span class="citation" data-cites="philos-enc">(<a href="references.html#ref-philos-enc" role="doc-biblioref">SLOVARonline, 2010</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>Число — абстрактное, лишенное особенного содержания обозначение какого-либо члена некоторого ряда, в котором этому члену предшествует или следует за ним какой-нибудь другой определенный член; абстрактный индивидуальный признак, отличающий одно множество от другого того же рода.</p>
+</blockquote>
+<p>Весьма философски…</p>
+<p>В общем, приходится признать, что мы не знаем, что такое числа, но при этом неплохо интуитивно понимаем, как они работают (по крайне мере, определенные из них). Далее мы попытаемся проследить, как развивалось понятие числа исходя из внутренних потребностей математики, а если вас заинтересует развитие чисел в историческом контексте, то про это написана книга в 600 страниц «The universal history of numbers» <span class="citation" data-cites="ifrah2000">(<a href="references.html#ref-ifrah2000" role="doc-biblioref">Ifrah, 2000</a>)</span>.</p>
+<section id="appendix-numbers-n" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="appendix-numbers-n"><span class="header-section-number">A.1</span> Натуральные числа</h2>
+<p>Первыми исторически возникли натуральные числа, чтобы можно было считать окружающие предметы. Сама идея числа и счёта возникла далеко не сразу — закономерности восприятия позволяют выяснить, что некоторое множество объектов изменилось (объект пропал или появился) и без вовлечения процедуры счёта <span class="citation" data-cites="ifrah2000">(<a href="references.html#ref-ifrah2000" role="doc-biblioref">Ifrah, 2000</a>)</span>. Тем не менее, в определенные момент всё же возникает необходимость считать предметы и формируется некоторое абстрактное представление о <em>натуральных числах как тех, которые используются при счёте предметов</em>.</p>
+<p>Сегодня по прошествии многих веков с момента «рождения» чисел мы пользуемся для их записи арабскими (они же индийские, они же индо-арабские<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>) цифрами и десятичной <a href="./appendix-numbers-iron.html#appendix-numbers-num-systems">системой счисления</a>:</p>
+<p><span class="math display">\[
+0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9
+\]</span></p>
+<section id="appendix-numbers-n-zero" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="appendix-numbers-n-zero"><span class="header-section-number">A.1.1</span> Ноль как натуральное число</h3>
+<p>К нулю как натуральному числу относятся по-разному. Представление о натуральных числах как используются при счете предметов допускает две трактовки:</p>
+<ul>
+<li>если мы рассматриваем натуральные числа как использующие собственно при счете предметов, то ноль в натуральные числа не входит (<em>первый кофе</em>, <em>второй кофе</em>, <em>третий кофе</em>, …);</li>
+<li>если мы рассматриваем натуральные числа как возникающие при обозначении количества предметов, то ноль входит в натуральные числа (<em>ноль скриптов</em>, <em>один скрипт</em>, <em>два скрипта</em>, …).</li>
+</ul>
+<p>В силу такого положения дел в математике введено два обозначения <span class="citation" data-cites="iso80000-2-2019">(<a href="references.html#ref-iso80000-2-2019" role="doc-biblioref">ISO, 2019</a>)</span>:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{N}= \{0, 1, 2, 3, \ldots \}\)</span></li>
+<li><span class="math inline">\(\mathbb{N}^{\ast}= \{ 1, 2, 3, \ldots\}\)</span></li>
+</ul>
+<p>Оба в книге используются соответствующим образом.</p>
+</section>
+<section id="appendix-numbers-n-oprations" class="level3" data-number="A.1.2">
+<h3 data-number="A.1.2" class="anchored" data-anchor-id="appendix-numbers-n-oprations"><span class="header-section-number">A.1.2</span> Операции над натуральными числами</h3>
+<p>Над натуральными числами определены следующие операции (<span class="math inline">\(a, b \in \mathbb{N}\)</span>):</p>
+<ul>
+<li>сложение (<span class="math inline">\(a + b\)</span>)</li>
+<li>умножение (<span class="math inline">\(a \cdot b\)</span>)</li>
+<li>возведение в степень (<span class="math inline">\(a ^ b\)</span>)</li>
+<li>вычитание (<span class="math inline">\(a - b, \, a \geqslant b\)</span>)</li>
+<li>деление с остатком (<span class="math inline">\(a \div b = (q, r), \, a = q \cdot b + r, \, r &lt; b\)</span>)</li>
+</ul>
+<p>Операции сложения, умножения и возведения в степень являются <strong>замкнутыми</strong>, то есть не выводят результат из множества <span class="math inline">\(\mathbb{N}\)</span>. Действительно,</p>
+<ul>
+<li>какие бы два натуральных числа мы ни складывали друг с другом, результат всегда будет натуральным числом: <span class="math inline">\(\forall a, b \in \mathbb{N}\; (a + b) \in \mathbb{N}\)</span></li>
+<li>какие бы два натуральных числа мы ни умножали друг на друга, результат всегда будет натуральным числом: <span class="math inline">\(\forall a, b \in \mathbb{N}\; (a \cdot b) \in \mathbb{N}\)</span></li>
+<li>в какую бы натуральную степень мы ни возводили натуральные число, результат всегда будет натуральным числом: <span class="math inline">\(\forall a, b \in \mathbb{N}\; a^b \in \mathbb{N}\)</span></li>
+</ul>
+<p>Операции вычитания и деления в остатком в общем случае <strong>не являются замкнутыми</strong>, поскольку определены не для всех натуральных чисел. В частности,</p>
+<ul>
+<li>вычитание <span class="math inline">\(a - b\)</span> определено только в случае<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, когда <span class="math inline">\(a \geqslant b\)</span>, так как</li>
+</ul>
+<p><span class="math display">\[
+\begin{split}
+\forall a, b \in \mathbb{N}, a \geqslant b \; (a - b) \in \mathbb{N}\\
+\forall a, b \in \mathbb{N}, a &lt; b \; (a - b) \notin \mathbb{N}\\
+\end{split}
+\]</span></p>
+<ul>
+<li><em>деление на ноль невозможно</em>, так как во множестве натуральных чисел не существует <span class="math inline">\(r &lt; 0\)</span>, а по определению деления с остатков мы должны получить в остатке число, меньшее делителя.</li>
+</ul>
+</section>
+<section id="appendix-numbers-n-peano" class="level3" data-number="A.1.3">
+<h3 data-number="A.1.3" class="anchored" data-anchor-id="appendix-numbers-n-peano"><span class="header-section-number">A.1.3</span> Аксиомы Пеано</h3>
+<p>Хотя всё в натуральных числах вроде бы весьма очевидно и даже «осязаемо», с развитием математики, а в особенности теории множеств, возникла необходимость поставить натуральные числа на формальные основания. Этим занялся итальяснкий математик <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Peano/">Джузеппе Пеано</a>, сформулировав систему аксиом для натуральных чисел.</p>
+<p>Рассмотрим множество натуральных чисел <span class="math inline">\(\mathbb{N}^{\ast}\)</span>, единицу <span class="math inline">\(1\)</span> (как особо выделенный элемент) и функцию <span class="math inline">\(S(n) = n'\)</span>, сопоставляющую некоторому числу <span class="math inline">\(n\)</span> следующее за ним число <span class="math inline">\(n'\)</span> — функцию следования (successor function). Тогда система аксиом примет следующий вид<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<ol type="1">
+<li><span class="math inline">\(0\)</span> является натуральным числом;</li>
+</ol>
+<p><span id="eq-peano1"><span class="math display">\[
+0 \in \mathbb{N}
+\tag{A.1}\]</span></span></p>
+<ol start="2" type="1">
+<li>За каждым натуральным числом следует натуральное число;</li>
+</ol>
+<p><span id="eq-peano2"><span class="math display">\[
+n \in \mathbb{N}\Rightarrow S(n) \in \mathbb{N}
+\tag{A.2}\]</span></span></p>
+<ol start="3" type="1">
+<li><span class="math inline">\(0\)</span> не следует ни за каким натуральным числом;</li>
+</ol>
+<p><span id="eq-peano3"><span class="math display">\[
+\nexists \, n \in \mathbb{N}: S(n) = 0
+\tag{A.3}\]</span></span></p>
+<ol start="4" type="1">
+<li>Если натуральное число <span class="math inline">\(a\)</span> непосредственно следует как за числом <span class="math inline">\(b\)</span>, так и за числом <span class="math inline">\(c\)</span>, то <span class="math inline">\(b\)</span> и <span class="math inline">\(c\)</span> являются одним и тем же числом;</li>
+</ol>
+<p><span id="eq-peano4"><span class="math display">\[
+\big( S(b) = a \wedge S(c) = a \big) \Rightarrow b = c
+\tag{A.4}\]</span></span></p>
+<ol start="5" type="1">
+<li>[Аксиома индукции] Если какое-либо предположение доказано для <span class="math inline">\(0\)</span> (база индукции) и если из допущения, что оно верно для натурального числа <span class="math inline">\(n\)</span>, следует, что оно верно для следующего за <span class="math inline">\(n\)</span> натурального числа (шаг индукции, индукционный переход), то это предположение верно для всех натуральных чисел.</li>
+</ol>
+<p><span id="eq-peano5"><span class="math display">\[
+P(0) \wedge \forall n \Big( P(n) \Rightarrow P\big( S(n) \big) \Big) \Rightarrow \forall n \in \mathbb{N}\; P(n)
+\tag{A.5}\]</span></span></p>
+</section>
+<section id="appendix-numbers-n-arithm" class="level3" data-number="A.1.4">
+<h3 data-number="A.1.4" class="anchored" data-anchor-id="appendix-numbers-n-arithm"><span class="header-section-number">A.1.4</span> Формализация арифметики</h3>
+<p>Используя функцию следования, вводимую в рамках аксиом Пеано, можно формализовать всю арифметику, введя следующие аксиомы сложения и умножения <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>:</p>
+<p><span id="eq-arithm-axioms"><span class="math display">\[
+\begin{split}
+&amp; n + 0 = n \\
+&amp; n_1 + S(n_2) = S(n_1 + n_2) \\
+&amp; n \cdot 0 = 0 \\
+&amp; n_1 \cdot S(n_2) = n_1 + n_1 \cdot n_2
+\end{split}
+\tag{A.6}\]</span></span></p>
+<section id="appendix-numbers-n-sum" class="level4" data-number="A.1.4.1">
+<h4 data-number="A.1.4.1" class="anchored" data-anchor-id="appendix-numbers-n-sum"><span class="header-section-number">A.1.4.1</span> Сложение натуральных чисел</h4>
+<p>Заметим, что в аксиомах сложения и умножения (<a href="#eq-arithm-axioms" class="quarto-xref">Уравнение&nbsp;<span>A.6</span></a>) фигурирует запись <span class="math inline">\(n + 0 = n\)</span>, то есть прибавление нуля ничего не делает с числом — иначе, <em>ноль является нейтральным элементом относительно сложения</em>.</p>
+<p>Пусть мы хотим вычислить <span class="math inline">\(1 + 1\)</span>. Обозначим второе слагаемое как <span class="math inline">\(1 = S(0)\)</span>. Тогда</p>
+<p><span class="math display">\[
+1 + 1 = 1 + S(0) = S(1 + 0) = S(1) = 2
+\]</span></p>
+<p>Аналогично,</p>
+<p><span class="math display">\[
+1 + 2 = 1 + S(1) = S(1 + 1) = S(2) = 3
+\]</span></p>
+<p>Повторив эту операцию столько раз, сколько требуется для сложения конкретных чисел, мы получим хорошо знакомое нам сложение, которым практически от рождения пользуемся.</p>
+<p>Иначе можно записать:</p>
+<p><span class="math display">\[
+a + b = a + \underbrace{1 + 1 + \ldots + 1}_b
+\]</span></p>
+</section>
+<section id="appendix-numbers-n-prod" class="level4" data-number="A.1.4.2">
+<h4 data-number="A.1.4.2" class="anchored" data-anchor-id="appendix-numbers-n-prod"><span class="header-section-number">A.1.4.2</span> Умножение натуральных чисел</h4>
+<p>Здесь, во-первых, мы можем получить хорошо знакомый нам факт, что <span class="math inline">\(n \cdot 1 = n\)</span>:</p>
+<p><span class="math display">\[
+n \cdot 1 = n \cdot S(0) = n + n \cdot 0 = n + 0 = n
+\]</span> То есть <em>единица является нейтральным элементом относительно умножения</em>.</p>
+<p>А если нам необходимо получить произведение двух чисел, то действуем так:</p>
+<p><span class="math display">\[
+2 \cdot 2 = 2 \cdot S(1) = 2 + 2 \cdot 1 = 2 + 2 = 4
+\]</span></p>
+<p>Иначе можно записать:</p>
+<p><span class="math display">\[
+a \cdot b = \underbrace{a + a + \ldots + a}_b
+\]</span></p>
+</section>
+<section id="appendix-numbers-n-minus-div" class="level4" data-number="A.1.4.3">
+<h4 data-number="A.1.4.3" class="anchored" data-anchor-id="appendix-numbers-n-minus-div"><span class="header-section-number">A.1.4.3</span> Вычитание и деление и возведение в степень натуральных чисел</h4>
+<p>Когда на множестве натуральных чисел введены сложение и умножение, появляется возможность задать обратные операции к ним.</p>
+<ul>
+<li><strong>Вычитание</strong> вводится как операция обратная сложению: <span class="math inline">\(a - b = c \Leftrightarrow b + c = a\)</span>;</li>
+<li><strong>Деление</strong> вводится как операция обратная умножению: <span class="math inline">\(a \div b = c \Leftrightarrow b \cdot c = a\)</span>
+<ul>
+<li>В случае натуральных чисел вводится <strong>деление с остатком</strong>, как указывалось выше, чтобы задать возможность деление любого натурального числа на любое натуральное число, отличное от <span class="math inline">\(0\)</span>: <span class="math inline">\(a \div b = (q, r), \, a = q \cdot b + r, \, r &lt; b\)</span> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+</ul></li>
+</ul>
+</section>
+<section id="appendix-numbers-n-properties" class="level4" data-number="A.1.4.4">
+<h4 data-number="A.1.4.4" class="anchored" data-anchor-id="appendix-numbers-n-properties"><span class="header-section-number">A.1.4.4</span> Свойства сложения и умножения</h4>
+<ol type="1">
+<li><p>Коммутативность сложения <span class="math display">\[
+a + b = b + a
+\]</span></p></li>
+<li><p>Коммутативность умножения <span class="math display">\[
+a \cdot b = b \cdot a
+\]</span></p></li>
+<li><p>Ассоциативность сложения <span class="math display">\[
+(a + b) + c = a + (b + c)
+\]</span></p></li>
+<li><p>Ассоциативность умножения <span class="math display">\[
+(a + b) + c = a + (b + c)
+\]</span></p></li>
+<li><p>Дистрибутивность умножения относительно сложения <span class="math display">\[
+(a + b) \cdot c = (a \cdot c) + (b \cdot c)
+\]</span></p></li>
+</ol>
+</section>
+<section id="appendix-numbers-n-power" class="level4" data-number="A.1.4.5">
+<h4 data-number="A.1.4.5" class="anchored" data-anchor-id="appendix-numbers-n-power"><span class="header-section-number">A.1.4.5</span> Возведение в степень натуральных чисел</h4>
+<p>С возведением в степень ситуация несколько сложнее: это действие не является обратным к какому-либо из введенных. Она, как известно, определяется через умножение следующим образом<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
+<p><span class="math display">\[
+a^b = \underbrace{a \cdot a \cdot \ldots \cdot a}_b
+\]</span></p>
+<p>Таким образом определенная операция оказывается <em>некоммутативной</em>, так как в общем случае</p>
+<p><span class="math display">\[
+a^b \neq b^a
+\]</span></p>
+<p>По этой причине возникает две обратные операции.</p>
+<ul>
+<li>Первая обратная операция решает задачу нахождения <em>основания степени</em> и называется <em>извлечением корня</em>: <span class="math inline">\(\sqrt[b]{c} = a \Leftrightarrow a^b = c\)</span></li>
+<li>Вторая обратная операция решает задачу нахождения <em>показателя степени</em> и называется <em>логарифмированием</em>: <span class="math inline">\(\log_a{c} = b \Leftrightarrow a^b = c\)</span></li>
+</ul>
+<p>Свойства степеней, корней и логарифмов представлены в <a href="./appendix-formulas.html#appendix-formulas_power">приложении с формулами</a>, поэтому позволю себе их здесь не дублировать.</p>
+</section>
+</section>
+<section id="appendix-numbers-n-sum-n-natural" class="level3" data-number="A.1.5">
+<h3 data-number="A.1.5" class="anchored" data-anchor-id="appendix-numbers-n-sum-n-natural"><span class="header-section-number">A.1.5</span> Сумма <span class="math inline">\(n\)</span> натуральных чисел</h3>
+<div id="prp-sum-n-natural" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение A.1</strong></span> Сумма <span class="math inline">\(n\)</span> натуральных чисел <span class="math inline">\(S_n\)</span> равна <span class="math inline">\(\displaystyle \frac{n \cdot (n+1)}{2}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Докажем <a href="#prp-sum-n-natural" class="quarto-xref">Утверждение&nbsp;<span>A.1</span></a> по индукции. Будем рассматривать множество натуральных чисел <span class="math inline">\(\mathbb{N}\)</span>, где первым элементов является <span class="math inline">\(0\)</span>.</p>
+<p>Сформулируем <strong>базу индукции</strong>:</p>
+<p><span class="math display">\[
+n = 0, \quad S_0 = 0
+\]</span></p>
+<p>Согласно доказываемому утверждению,</p>
+<p><span class="math display">\[
+S_0 = \frac{0 \cdot (0 + 1)}{2}
+\]</span></p>
+<p>Очевидно, что база индукции справелива:</p>
+<p><span class="math display">\[
+S_0 = \frac{0 \cdot (0+1)}{2} = \frac{0 \cdot 1}{2} = \frac{0}{2} = 0
+\]</span></p>
+<blockquote class="blockquote">
+<p>В качестве упражнения можно рассмотреть и несколько последующих случаев, однако с точки зрения доказательства это избыточно:</p>
+</blockquote>
+<p><span id="eq-sum-n-natural-12"><span class="math display">\[
+\begin{split}
+n = 1, &amp;\quad S_1 = S_0 + 1 = 0 + 1 = 1, \quad S_1 = \frac{1 \cdot (1+1)}{2} = \frac{1 \cdot 2}{2} = 1 \\
+n = 2, &amp;\quad S_2 =S_1 + 2 = 0 + 1 + 2 = 3, \quad S_2 = \frac{2 \cdot (2+1)}{2} = \frac{2 \cdot 3}{2} = 3
+\end{split}
+\tag{A.7}\]</span></span></p>
+<p>Итак, для первого <span class="math inline">\(n = 0\)</span> (в нашем случае также для нескольких других первых <span class="math inline">\(n\)</span>) утверждение выполнено. Если мы теперь докажем, что утверждение выполнено для <span class="math inline">\(n+1\)</span>, то есть совершим <strong>индукционный переход</strong>, то доказательно будет завершено.</p>
+<p>Предположим, что для <span class="math inline">\(n\)</span> утверждение верно. Тогда для <span class="math inline">\(n+1\)</span>, с одной стороны (ср. с <a href="#eq-sum-n-natural-12" class="quarto-xref">Уравнение&nbsp;<span>A.7</span></a>),</p>
+<p><span class="math display">\[
+S_{n+1} = S_n + (n +1)
+\]</span></p>
+<p>С другой стороны, согласно доказываемому утверждению</p>
+<p><span class="math display">\[
+S_{n+1} = \frac{(n+1)(n+1+1)}{2} = \frac{(n+1)(n+2)}{2}
+\]</span></p>
+<p>Получается, что</p>
+<p><span class="math display">\[
+\begin{split}
+S_{n+1} &amp;= S_n + (n +1) = \\
+&amp; = \frac{n(n+1)}{2} + (n+1) = \frac{n(n+1)}{2} + \frac{2(n+1)}{2} = \\
+&amp; = \frac{n(n+1)+2(n+1)}{2} = \frac{(n+1)(n+2)}{2}
+\end{split}
+\]</span></p>
+<p>Утверждение доказано.</p>
+</div>
+</section>
+</section>
+<section id="appendix-numbers-z" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="appendix-numbers-z"><span class="header-section-number">A.2</span> Целые числа</h2>
+<p>При попытке замкнуть множество натуральных чисел относительно вычитания возникает его расширение — множество целых чисел, обозначаемое <span class="math inline">\(\mathbb{Z}\)</span>:</p>
+<p><span class="math display">\[
+\mathbb{Z}= \mathbb{N}\cup \{-1, \, -2, \, -3, \, \ldots \} = \mathbb{N}^{\ast}\cup \{0\} \cup \{-1, \, -2, \, -3, \, \ldots \}
+\]</span></p>
+<p>Во множестве целых чисел справедливо, что для каждого числа <span class="math inline">\(n\)</span> из этого множества найдется такое число <span class="math inline">\(-n\)</span> из этого же множества, что их сумма будет равна нулю:</p>
+<p><span class="math display">\[
+\forall n \in \mathbb{Z}\, \exists -\!n \in \mathbb{Z}: n + (-n) = 0
+\]</span></p>
+<p>Число <span class="math inline">\(-n\)</span> называется <em>противоположным</em> числу <span class="math inline">\(n\)</span>. Поскольку сложно возразить утверждению <span class="math inline">\(0 + 0 = 0\)</span>, то <span class="math inline">\(0\)</span> является противоположным самому себе.</p>
+</section>
+<section id="appendix-numbers-q" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="appendix-numbers-q"><span class="header-section-number">A.3</span> Рациональные числа</h2>
+<p>Хотелось бы замкнуть множество целых чисел ещё и относительно операции деления, чтобы все было окончательно красиво — это приводит к его расширению до множества рациональных чисел <span class="math inline">\(\mathbb{Q}\)</span>. Это множество задается следующим образом:</p>
+<p><span class="math display">\[
+\mathbb{Q}= \left\{ \frac{m}{n},  \, m \in \mathbb{Z}, \, n \in \mathbb{N}^{\ast}\right\}
+\]</span></p>
+</section>
+<section id="appendix-numbers-r" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="appendix-numbers-r"><span class="header-section-number">A.4</span> Вещественные числа</h2>
+<p>Рациональных чисел оказывается недостаточно, чтобы описать все существующие феномены. В частности, широко известен пример вычисления гипотенузы равнобедренного прямоугольного треугольника с катетом, равным <span class="math inline">\(1\)</span>.</p>
+<p><span class="math inline">\(\mathbb{R}\)</span></p>
+<p><span class="math inline">\(\mathbb{I}= \mathbb{R}\setminus \mathbb{Q}\)</span></p>
+</section>
+<section id="appendix-numbers-c" class="level2" data-number="A.5">
+<h2 data-number="A.5" class="anchored" data-anchor-id="appendix-numbers-c"><span class="header-section-number">A.5</span> Комплексные числа</h2>
+<p>Можно было бы спокойно жить с вещественными числами, если бы не уравнения вида</p>
+<p><span id="eq-x2-eq-minus-one"><span class="math display">\[
+x^2 + 1 = 0
+\tag{A.8}\]</span></span></p>
+<p>Если мы начнем его решать, что получим следующее:</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 + 1 &amp;= 0 \\
+x^2 &amp;= -1 \\
+\end{split}
+\]</span></p>
+<p>Можно было бы остановиться и сказать, что это чушь и такого не бывает. Но такой ответ математиков не устраивает, и они продолжают:</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 &amp;= -1 \\
+x_1 &amp;= \sqrt{-1} \\
+x_2 &amp;= -\sqrt{-1}
+\end{split}
+\]</span></p>
+<p>Штош, допустим. Попробуем решить следующее уравнение:</p>
+<p><span id="eq-x2-eq-minus-four"><span class="math display">\[
+x^2 + 3 = -6
+\tag{A.9}\]</span></span></p>
+<p>По той же схеме,</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 - 2 &amp;= -6 \\
+x^2 &amp;= -4 \\
+x &amp;= \pm \sqrt{-4} \\
+x &amp;= \pm \sqrt{(-1) \cdot 4} \\
+x &amp;= \pm \sqrt{-1} \cdot \sqrt{4} \\
+x &amp;= \pm \sqrt{-1} \cdot 2
+\end{split}
+\]</span></p>
+<p>Интересная ситуация выходит: уже второй раз нам попадается <span class="math inline">\(\sqrt{-1}\)</span>, а как известно, под знаком квадратного корня может стоять только положительное число<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Чтобы решить эту неприятность, математики ввели новое число <span class="math inline">\(i\)</span> — <strong>мнимую единицу</strong>. Она обладает интересным свойством:</p>
+<p><span id="eq-i-sq-equals-minus-one"><span class="math display">\[
+i^2 = -1
+\tag{A.10}\]</span></span></p>
+<p>Введение мнимой единицы позволяет записать решения рассмотренных выше уравнений в более «приличном» виде, где отсутствует извлечение корня из отрицательного числа. В первом случае (<a href="#eq-x2-eq-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.8</span></a>):</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 + 1 &amp;= 0 \\
+x^2 &amp;= -1 \\
+x_1 &amp;= \sqrt{-1} = \sqrt{i^2} = i \\
+x_2 &amp;= -\sqrt{-1} = -\sqrt{i^2} = -i
+\end{split}
+\]</span></p>
+<p>Во втором случае (<a href="#eq-x2-eq-minus-four" class="quarto-xref">Уравнение&nbsp;<span>A.9</span></a>):</p>
+<p><span class="math display">\[
+\begin{split}
+x^2 - 2 &amp;= -6 \\
+x^2 &amp;= -4 \\
+x &amp;= \pm \sqrt{-4} \\
+x &amp;= \pm \sqrt{(-1) \cdot 4} \\
+x &amp;= \pm \sqrt{i^2 \cdot 4} \\
+x &amp;= \pm \sqrt{4} \cdot i \\
+x_1 &amp;= 2i \\
+x_2 &amp;= -2i \\
+\end{split}
+\]</span></p>
+<p>Кроме того, мнимая единица даёт возможность расширить поле вещественных чисел до поля комплексных <span class="math inline">\(\mathbb{C}\)</span>:</p>
+<p><span class="math display">\[
+\mathbb{C}= \{ a + bi, \, a, b \in \mathbb{R}\}
+\]</span></p>
+<div id="sqrti-error" class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(i \neq \sqrt{-1}\)</span>???
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Если присмотреться к мнимой единице внимательно, то можно обнаружить следующее:</p>
+<p><span class="math display">\[
+\begin{split}
+i^2 &amp;= -1 \\
+\sqrt{i^2} &amp;= \sqrt{-1} \\
+i &amp;= \sqrt{-1}
+\end{split}
+\]</span></p>
+<p>Но последнее не совсем верно.</p>
+<p>Вроде мы математически все справедливо, однако обозначения <span class="math inline">\(i\)</span> и <span class="math inline">\(\sqrt{-1}\)</span> не вполне эквивалентны.</p>
+<p>Так, если мы воспользуемся свойством квадратного корня, то можем получить следующее <em>некорректное</em> рассуждение:</p>
+<p><span class="math display">\[
+i^2 = (\sqrt{-1})^2 = \sqrt{-1} \cdot \sqrt{-1} = \sqrt{(-1) \cdot (-1)} = \sqrt{1} = 1
+\]</span></p>
+<p>Аналогично, например, можно получить, что</p>
+<p><span id="eq-sqrt-minus-two-sq-error"><span class="math display">\[
+(\sqrt{-2})^2 = \sqrt{-2} \cdot \sqrt{-2} = \sqrt{(-2) \cdot (-2)} = \sqrt{4} = 2
+\tag{A.11}\]</span></span></p>
+<p>Возникает оно потому, что значение корня из отрицательного числа определено неоднозначно. В современной математической литературе принято во избежании ошибок выражения с квадратными корнями из отрицательных чисел записываются сразу с выделением мнимой единицы — <span class="math inline">\(i\sqrt{2}\)</span>:</p>
+<p><span class="math display">\[
+\sqrt{-2} = \sqrt{(-1) \cdot 2} = \sqrt{2i^2} = i\sqrt{2}
+\]</span></p>
+<p>В таком случае ошибок, подобных примеру c <span class="math inline">\((\sqrt{-2})^2\)</span> (<a href="#eq-sqrt-minus-two-sq-error" class="quarto-xref">Уравнение&nbsp;<span>A.11</span></a>) не возникает:</p>
+<p><span class="math display">\[
+(i\sqrt{2})^2 = i^2 \cdot (\sqrt{2})^2 = -2
+\]</span></p>
+<p>Собственно, именно поэтому мнимую единицу определяют через её квадрат (<a href="#eq-i-sq-equals-minus-one" class="quarto-xref">Уравнение&nbsp;<span>A.10</span></a>), а не через её равенство <span class="math inline">\(\sqrt{-1}\)</span>.</p>
+</div>
+</div>
+<p>КОМПЛЕКСНАЯ ПЛОСКОСТЬ</p>
+<p>Сопряженное число</p>
+<p>точно ли для любого?</p>
+<p><span class="math display">\[
+\forall z \in \mathbb{C}, \, z = a + bi \,\, \exists \bar z = a - bi
+\]</span></p>
+<p><span class="math display">\[
+z \cdot \bar z = (a + bi)(a - bi) = a^2 - abi + abi - b^2i^2 = a^2 + b^2
+\]</span></p>
+<p>Сложение и вычитание:</p>
+<p><span class="math display">\[
+z_1 + z_2 = (a_1 + b_1 i) + (a_2 + b_2 i) = (a_1 + a_2) + (b_1 + b_2)i
+\]</span></p>
+<p><span class="math display">\[
+z_1 - z_2 = (a_1 + b_1 i) - (a_2 + b_2 i) = (a_1 - a_2) + (b_1 - b_2)i
+\]</span></p>
+<p>Для любых <span class="math inline">\(u, v, w \in \mathbb{C}\)</span> выполняются следующие свойства:</p>
+<p><span class="math display">\[
+\begin{split}
+u + v = v + u \\
+u + (v + w) = (u + v) + w \\
+u + 0 = u \\
+u + (-u) = 0 \\
+u - v = u + (-v)
+\end{split}
+\]</span></p>
+<p>Умножение:</p>
+<p><span class="math display">\[
+\begin{split}
+z_1 \cdot z_2 &amp; = \\
+&amp; = (a_1 + b_1 i) \cdot (a_2 + b_2 i) = a_1 a_2 + a_1 b_2i + a_2 b_1i + b_1 b_2 i^2 = \\
+&amp; = (a_1 a_2 + b_1 b_2 i^2) + (a_1 b_2 i + a_2 b_1 i) = \\
+&amp; = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1)i
+\end{split}
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+u \cdot v = v \cdot u \\
+u \cdot (v \cdot w) = (u \cdot v) \cdot w \\
+u \cdot 1 = u \\
+u \cdot 0 = 0 \\
+u \cdot (v + w) = (u \cdot v) + (u \cdot w)
+\end{split}
+\]</span></p>
+<p>Деление:</p>
+<p><span class="math display">\[
+\frac{1}{z} = \frac{1}{a + bi} = \frac{(a - bi)}{(a + bi) (a - bi)} = \frac{a - bi}{a^2 + b^2} = \frac{a}{a^2 + b^2} + \frac{b}{a^2 + b^2}i
+\]</span></p>
+<p><span class="math display">\[
+\frac{z_1}{z_2} = \frac{a_1 + b_1 i}{a_2 + b_2 i} = \frac{(a_1 + b_1 i)(a_2 - b_2 i)}{(a_2 + b_2 i)(a_2 - b_2 i)} = \frac{a_1 a_2 + b_1 b_2}{a_2^2 + b_2^2} + \frac{a_2 b_1 - a_1 b_2}{a_2^2 + b_2^2}i
+\]</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-ifrah2000" class="csl-entry" role="listitem">
+Ifrah, G. (2000). <em>The universal history of numbers: From prehistory to the invention of the computer</em>. John Wiley &amp; Sons, Inc.
+</div>
+<div id="ref-iso80000-2-2019" class="csl-entry" role="listitem">
+ISO. (2019). <em>Quantities and units — part 2: mathematics</em> (<span>ISO 80000-2:2019</span>). International Organization for Standardization. <a href="https://www.iso.org/standard/64973.html">https://www.iso.org/standard/64973.html</a>
+</div>
+<div id="ref-kumar-peano" class="csl-entry" role="listitem">
+Kumar, N. M. (n.d.). <em>Construstion of number systems</em>. Washington University in St. Louis, Department of Mathematics. Retrieved May 30, 2024, from <a href="https://www.math.wustl.edu/~kumar/courses/310-2011/Peano.pdf">https://www.math.wustl.edu/~kumar/courses/310-2011/Peano.pdf</a>
+</div>
+<div id="ref-peano1889" class="csl-entry" role="listitem">
+Peano, I. (1889). <em>Arithmetices principia: Nova methodo</em>. Fratres Bocca.
+</div>
+<div id="ref-pelayo-peano" class="csl-entry" role="listitem">
+Pelayo, R. (n.d.). <em>The peano axioms</em>. Retrieved May 30, 2024, from <a href="https://www2.hawaii.edu/~robertop/Courses/TMP/7_Peano_Axioms.pdf">https://www2.hawaii.edu/~robertop/Courses/TMP/7_Peano_Axioms.pdf</a>
+</div>
+<div id="ref-philos-enc" class="csl-entry" role="listitem">
+SLOVARonline. (2010). <em>Философский энциклопедический словарь</em>. Словари онлайн. <a href="https://rus-philosophy-enc.slovaronline.com/">https://rus-philosophy-enc.slovaronline.com/</a>
+</div>
+<div id="ref-math-enc" class="csl-entry" role="listitem">
+Виноградов, И. М. (1985). <em>Математическая энциклопедия (в 5 томах). Том 5</em>. Советская энциклопедия.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Термины «арабские цифры (аrabic digits)» и «индийские цифры (hindi digits)» в современном мире <a href="https://www.unicode.org/terminology/digits.html">неоднозначны</a>, так как цифры, используемые сегодня в арабских странах и Индии, отличаются от тех, которые называются арабскими на территории европейских стран.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Только в случае <span class="math inline">\(a &gt; b\)</span>, если <span class="math inline">\(a, b \in \mathbb{N}^{\ast}\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Изначально самим Дж. Пеано было введено девять аксиом <span class="citation" data-cites="peano1889">(<a href="references.html#ref-peano1889" role="doc-biblioref">Peano, 1889</a>)</span>. Cовременный вариант аксиом Пеано для <span class="math inline">\(\mathbb{N}^{\ast}\)</span> состоит из пяти аксиом <span class="citation" data-cites="kumar-peano">(<a href="references.html#ref-kumar-peano" role="doc-biblioref">Kumar, n.d.</a>)</span>. Здесь представлен вариант аксиом для <span class="math inline">\(\mathbb{N}\)</span> <span class="citation" data-cites="pelayo-peano">(<a href="references.html#ref-pelayo-peano" role="doc-biblioref">Pelayo, n.d.</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Здесь: <span class="math inline">\(q\)</span> — частное (<strong>q</strong>uotient), <span class="math inline">\(r\)</span> — остаток (<strong>r</strong>emainder).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>То есть по факту уножение является <a href="./appendix-other-math.html#appendix-other-math-hyperop">гипероператором третьего порядка</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Здесь мы говорим об арифметическом квадратном корне.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

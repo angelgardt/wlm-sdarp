@@ -1,6 +1,6 @@
-# Листок n {.unnumbered}
+# Листок 0 [отладка] {.unnumbered}
 
-{{< include ../other/_symbols.qmd >}}
+{{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 knitr::opts_chunk$set(echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error
 
 
 
-## #1 {.unnumbered}
+## #1 {#t1-title .unnumbered}
 
 <div class="level" id="t1-level"></div>
 
@@ -20,12 +20,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t1-autocheck}
 ::: {.input-format #t1-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t1-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t1')">
+<input class="button-autocheck" type="button" id="t1-autocheck-button" name="t1" value="Проверить">
 
 ::: {.feedback-autocheck #t1-feedback}
 :::
@@ -33,7 +33,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t1-hints">
-<summary>Подсказки</summary>
+<summary id="t1-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -45,7 +45,7 @@ Input format
 
 
 
-## #2 {.unnumbered}
+## #2 {#t2-title .unnumbered}
 
 <div class="level" id="t2-level"></div>
 
@@ -55,12 +55,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t2-autocheck}
 ::: {.input-format #t2-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t2-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t2')">
+<input class="button-autocheck" type="button" id="t2-autocheck-button" name="t2" value="Проверить">
 
 ::: {.feedback-autocheck #t2-feedback}
 :::
@@ -68,7 +68,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t2-hints">
-<summary>Подсказки</summary>
+<summary id="t2-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -80,7 +80,7 @@ Input format
 
 
 
-## #3 {.unnumbered}
+## #3 {#t3-title .unnumbered}
 
 <div class="level" id="t3-level"></div>
 
@@ -90,12 +90,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t3-autocheck}
 ::: {.input-format #t3-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t3-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t3')">
+<input class="button-autocheck" type="button" id="t3-autocheck-button" name="t3" value="Проверить">
 
 ::: {.feedback-autocheck #t3-feedback}
 :::
@@ -103,7 +103,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t3-hints">
-<summary>Подсказки</summary>
+<summary id="t3-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -115,7 +115,7 @@ Input format
 
 
 
-## #4 {.unnumbered}
+## #4 {#t4-title .unnumbered}
 
 <div class="level" id="t4-level"></div>
 
@@ -125,12 +125,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t4-autocheck}
 ::: {.input-format #t4-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t4-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t4')">
+<input class="button-autocheck" type="button" id="t4-autocheck-button" name="t4" value="Проверить">
 
 ::: {.feedback-autocheck #t4-feedback}
 :::
@@ -138,7 +138,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t4-hints">
-<summary>Подсказки</summary>
+<summary id="t4-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -150,7 +150,7 @@ Input format
 
 
 
-## #5 {.unnumbered}
+## #5 {#t5-title .unnumbered}
 
 <div class="level" id="t5-level"></div>
 
@@ -160,12 +160,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t5-autocheck}
 ::: {.input-format #t5-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t5-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t5')">
+<input class="button-autocheck" type="button" id="t5-autocheck-button" name="t5" value="Проверить">
 
 ::: {.feedback-autocheck #t5-feedback}
 :::
@@ -173,7 +173,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t5-hints">
-<summary>Подсказки</summary>
+<summary id="t5-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -185,7 +185,7 @@ Input format
 
 
 
-## #6 {.unnumbered}
+## #6 {#t6-title .unnumbered}
 
 <div class="level" id="t6-level"></div>
 
@@ -195,12 +195,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t6-autocheck}
 ::: {.input-format #t6-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t6-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t6')">
+<input class="button-autocheck" type="button" id="t6-autocheck-button" name="t6" value="Проверить">
 
 ::: {.feedback-autocheck #t6-feedback}
 :::
@@ -208,7 +208,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t6-hints">
-<summary>Подсказки</summary>
+<summary id="t6-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -220,7 +220,7 @@ Input format
 
 
 
-## #7 {.unnumbered}
+## #7 {#t7-title .unnumbered}
 
 <div class="level" id="t7-level"></div>
 
@@ -230,12 +230,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t7-autocheck}
 ::: {.input-format #t7-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t7-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t7')">
+<input class="button-autocheck" type="button" id="t7-autocheck-button" name="t7" value="Проверить">
 
 ::: {.feedback-autocheck #t7-feedback}
 :::
@@ -243,7 +243,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t7-hints">
-<summary>Подсказки</summary>
+<summary id="t7-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -255,7 +255,7 @@ Input format
 
 
 
-## #8 {.unnumbered}
+## #8 {#t8-title .unnumbered}
 
 <div class="level" id="t8-level"></div>
 
@@ -265,12 +265,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t8-autocheck}
 ::: {.input-format #t8-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t8-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t8')">
+<input class="button-autocheck" type="button" id="t8-autocheck-button" name="t8" value="Проверить">
 
 ::: {.feedback-autocheck #t8-feedback}
 :::
@@ -278,7 +278,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t8-hints">
-<summary>Подсказки</summary>
+<summary id="t8-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -290,7 +290,7 @@ Input format
 
 
 
-## #9 {.unnumbered}
+## #9 {#t9-title .unnumbered}
 
 <div class="level" id="t9-level"></div>
 
@@ -300,12 +300,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t9-autocheck}
 ::: {.input-format #t9-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t9-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t9')">
+<input class="button-autocheck" type="button" id="t9-autocheck-button" name="t9" value="Проверить">
 
 ::: {.feedback-autocheck #t9-feedback}
 :::
@@ -313,7 +313,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t9-hints">
-<summary>Подсказки</summary>
+<summary id="t9-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -325,7 +325,7 @@ Input format
 
 
 
-## #10 {.unnumbered}
+## #10 {#t10-title .unnumbered}
 
 <div class="level" id="t10-level"></div>
 
@@ -335,12 +335,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t10-autocheck}
 ::: {.input-format #t10-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t10-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t10')">
+<input class="button-autocheck" type="button" id="t10-autocheck-button" name="t10" value="Проверить">
 
 ::: {.feedback-autocheck #t10-feedback}
 :::
@@ -348,7 +348,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t10-hints">
-<summary>Подсказки</summary>
+<summary id="t10-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -360,7 +360,7 @@ Input format
 
 
 
-## #11 {.unnumbered}
+## #11 {#t11-title .unnumbered}
 
 <div class="level" id="t11-level"></div>
 
@@ -370,12 +370,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t11-autocheck}
 ::: {.input-format #t11-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t11-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t11')">
+<input class="button-autocheck" type="button" id="t11-autocheck-button" name="t11" value="Проверить">
 
 ::: {.feedback-autocheck #t11-feedback}
 :::
@@ -383,7 +383,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t11-hints">
-<summary>Подсказки</summary>
+<summary id="t11-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -395,7 +395,7 @@ Input format
 
 
 
-## #12 {.unnumbered}
+## #12 {#t12-title .unnumbered}
 
 <div class="level" id="t12-level"></div>
 
@@ -405,12 +405,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t12-autocheck}
 ::: {.input-format #t12-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t12-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t12')">
+<input class="button-autocheck" type="button" id="t12-autocheck-button" name="t12" value="Проверить">
 
 ::: {.feedback-autocheck #t12-feedback}
 :::
@@ -418,7 +418,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t12-hints">
-<summary>Подсказки</summary>
+<summary id="t12-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -430,7 +430,7 @@ Input format
 
 
 
-## #13 {.unnumbered}
+## #13 {#t13-title .unnumbered}
 
 <div class="level" id="t13-level"></div>
 
@@ -440,12 +440,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t13-autocheck}
 ::: {.input-format #t13-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t13-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t13')">
+<input class="button-autocheck" type="button" id="t13-autocheck-button" name="t13" value="Проверить">
 
 ::: {.feedback-autocheck #t13-feedback}
 :::
@@ -453,7 +453,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t13-hints">
-<summary>Подсказки</summary>
+<summary id="t13-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -465,7 +465,7 @@ Input format
 
 
 
-## #14 {.unnumbered}
+## #14 {#t14-title .unnumbered}
 
 <div class="level" id="t14-level"></div>
 
@@ -475,12 +475,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t14-autocheck}
 ::: {.input-format #t14-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t14-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t14')">
+<input class="button-autocheck" type="button" id="t14-autocheck-button" name="t14" value="Проверить">
 
 ::: {.feedback-autocheck #t14-feedback}
 :::
@@ -488,7 +488,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t14-hints">
-<summary>Подсказки</summary>
+<summary id="t14-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -500,7 +500,7 @@ Input format
 
 
 
-## #15 {.unnumbered}
+## #15 {#t15-title .unnumbered}
 
 <div class="level" id="t15-level"></div>
 
@@ -510,12 +510,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t15-autocheck}
 ::: {.input-format #t15-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t15-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t15')">
+<input class="button-autocheck" type="button" id="t15-autocheck-button" name="t15" value="Проверить">
 
 ::: {.feedback-autocheck #t15-feedback}
 :::
@@ -523,7 +523,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t15-hints">
-<summary>Подсказки</summary>
+<summary id="t15-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -535,7 +535,7 @@ Input format
 
 
 
-## #16 {.unnumbered}
+## #16 {#t16-title .unnumbered}
 
 <div class="level" id="t16-level"></div>
 
@@ -545,12 +545,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t16-autocheck}
 ::: {.input-format #t16-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t16-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t16')">
+<input class="button-autocheck" type="button" id="t16-autocheck-button" name="t16" value="Проверить">
 
 ::: {.feedback-autocheck #t16-feedback}
 :::
@@ -558,7 +558,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t16-hints">
-<summary>Подсказки</summary>
+<summary id="t16-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -570,7 +570,7 @@ Input format
 
 
 
-## #17 {.unnumbered}
+## #17 {#t17-title .unnumbered}
 
 <div class="level" id="t17-level"></div>
 
@@ -580,12 +580,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t17-autocheck}
 ::: {.input-format #t17-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t17-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t17')">
+<input class="button-autocheck" type="button" id="t17-autocheck-button" name="t17" value="Проверить">
 
 ::: {.feedback-autocheck #t17-feedback}
 :::
@@ -593,7 +593,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t17-hints">
-<summary>Подсказки</summary>
+<summary id="t17-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -605,7 +605,7 @@ Input format
 
 
 
-## #18 {.unnumbered}
+## #18 {#t18-title .unnumbered}
 
 <div class="level" id="t18-level"></div>
 
@@ -615,12 +615,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t18-autocheck}
 ::: {.input-format #t18-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t18-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t18')">
+<input class="button-autocheck" type="button" id="t18-autocheck-button" name="t18" value="Проверить">
 
 ::: {.feedback-autocheck #t18-feedback}
 :::
@@ -628,7 +628,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t18-hints">
-<summary>Подсказки</summary>
+<summary id="t18-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -640,7 +640,7 @@ Input format
 
 
 
-## #19 {.unnumbered}
+## #19 {#t19-title .unnumbered}
 
 <div class="level" id="t19-level"></div>
 
@@ -650,12 +650,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t19-autocheck}
 ::: {.input-format #t19-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t19-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t19')">
+<input class="button-autocheck" type="button" id="t19-autocheck-button" name="t19" value="Проверить">
 
 ::: {.feedback-autocheck #t19-feedback}
 :::
@@ -663,7 +663,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t19-hints">
-<summary>Подсказки</summary>
+<summary id="t19-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -675,7 +675,7 @@ Input format
 
 
 
-## #20 {.unnumbered}
+## #20 {#t20-title .unnumbered}
 
 <div class="level" id="t20-level"></div>
 
@@ -685,12 +685,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t20-autocheck}
 ::: {.input-format #t20-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t20-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t20')">
+<input class="button-autocheck" type="button" id="t20-autocheck-button" name="t20" value="Проверить">
 
 ::: {.feedback-autocheck #t20-feedback}
 :::
@@ -698,7 +698,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t20-hints">
-<summary>Подсказки</summary>
+<summary id="t20-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -710,7 +710,7 @@ Input format
 
 
 
-## #21 {.unnumbered}
+## #21 {#t21-title .unnumbered}
 
 <div class="level" id="t21-level"></div>
 
@@ -720,12 +720,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t21-autocheck}
 ::: {.input-format #t21-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t21-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t21')">
+<input class="button-autocheck" type="button" id="t21-autocheck-button" name="t21" value="Проверить">
 
 ::: {.feedback-autocheck #t21-feedback}
 :::
@@ -733,7 +733,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t21-hints">
-<summary>Подсказки</summary>
+<summary id="t21-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -745,7 +745,7 @@ Input format
 
 
 
-## #22 {.unnumbered}
+## #22 {#t22-title .unnumbered}
 
 <div class="level" id="t22-level"></div>
 
@@ -755,12 +755,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t22-autocheck}
 ::: {.input-format #t22-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t22-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t22')">
+<input class="button-autocheck" type="button" id="t22-autocheck-button" name="t22" value="Проверить">
 
 ::: {.feedback-autocheck #t22-feedback}
 :::
@@ -768,7 +768,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t22-hints">
-<summary>Подсказки</summary>
+<summary id="t22-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -780,7 +780,7 @@ Input format
 
 
 
-## #23 {.unnumbered}
+## #23 {#t23-title .unnumbered}
 
 <div class="level" id="t23-level"></div>
 
@@ -790,12 +790,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t23-autocheck}
 ::: {.input-format #t23-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t23-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t23')">
+<input class="button-autocheck" type="button" id="t23-autocheck-button" name="t23" value="Проверить">
 
 ::: {.feedback-autocheck #t23-feedback}
 :::
@@ -803,7 +803,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t23-hints">
-<summary>Подсказки</summary>
+<summary id="t23-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -815,7 +815,7 @@ Input format
 
 
 
-## #24 {.unnumbered}
+## #24 {#t24-title .unnumbered}
 
 <div class="level" id="t24-level"></div>
 
@@ -825,12 +825,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t24-autocheck}
 ::: {.input-format #t24-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t24-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t24')">
+<input class="button-autocheck" type="button" id="t24-autocheck-button" name="t24" value="Проверить">
 
 ::: {.feedback-autocheck #t24-feedback}
 :::
@@ -838,7 +838,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t24-hints">
-<summary>Подсказки</summary>
+<summary id="t24-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -850,7 +850,7 @@ Input format
 
 
 
-## #25 {.unnumbered}
+## #25 {#25-title .unnumbered}
 
 <div class="level" id="t25-level"></div>
 
@@ -860,12 +860,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t25-autocheck}
 ::: {.input-format #t25-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t25-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t25')">
+<input class="button-autocheck" type="button" id="t25-autocheck-button" name="t25" value="Проверить">
 
 ::: {.feedback-autocheck #t25-feedback}
 :::
@@ -873,7 +873,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t25-hints">
-<summary>Подсказки</summary>
+<summary id="t25-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -885,7 +885,7 @@ Input format
 
 
 
-## #26 {.unnumbered}
+## #26 {#t26-title .unnumbered}
 
 <div class="level" id="t26-level"></div>
 
@@ -895,12 +895,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t26-autocheck}
 ::: {.input-format #t26-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t26-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t26')">
+<input class="button-autocheck" type="button" id="t26-autocheck-button" name="t216" value="Проверить">
 
 ::: {.feedback-autocheck #t26-feedback}
 :::
@@ -908,7 +908,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t26-hints">
-<summary>Подсказки</summary>
+<summary id="t26-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -920,7 +920,7 @@ Input format
 
 
 
-## #27 {.unnumbered}
+## #27 {#t27-title .unnumbered}
 
 <div class="level" id="t27-level"></div>
 
@@ -930,12 +930,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t27-autocheck}
 ::: {.input-format #t27-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t27-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t27')">
+<input class="button-autocheck" type="button" id="t27-autocheck-button" name="t27" value="Проверить">
 
 ::: {.feedback-autocheck #t27-feedback}
 :::
@@ -943,7 +943,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t27-hints">
-<summary>Подсказки</summary>
+<summary id="t27-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -955,7 +955,7 @@ Input format
 
 
 
-## #28 {.unnumbered}
+## #28 {#t28-title .unnumbered}
 
 <div class="level" id="t28-level"></div>
 
@@ -965,12 +965,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t28-autocheck}
 ::: {.input-format #t28-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t28-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t28')">
+<input class="button-autocheck" type="button" id="t28-autocheck-button" name="t28" value="Проверить">
 
 ::: {.feedback-autocheck #t28-feedback}
 :::
@@ -978,7 +978,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t28-hints">
-<summary>Подсказки</summary>
+<summary id="t28-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -990,7 +990,7 @@ Input format
 
 
 
-## #29 {.unnumbered}
+## #29 {#t29-title .unnumbered}
 
 <div class="level" id="t29-level"></div>
 
@@ -1000,12 +1000,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t29-autocheck}
 ::: {.input-format #t29-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t29-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t29')">
+<input class="button-autocheck" type="button" id="t29-autocheck-button" name="t29" value="Проверить">
 
 ::: {.feedback-autocheck #t29-feedback}
 :::
@@ -1013,7 +1013,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t29-hints">
-<summary>Подсказки</summary>
+<summary id="t29-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`
@@ -1025,7 +1025,7 @@ Input format
 
 
 
-## #30 {.unnumbered}
+## #30 {#t30-title .unnumbered}
 
 <div class="level" id="t30-level"></div>
 
@@ -1035,12 +1035,12 @@ Task with `inline_code`.
 
 ::: {.autocheck #t30-autocheck}
 ::: {.input-format #t30-input-format}
-Input format
+Input format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.
 :::
 
 <input class="input-autocheck" type="text" id="t30-input" placeholder="Введите ответ…">
 
-<input class="button-autocheck" type="button" value="Проверить" onclick="check('t30')">
+<input class="button-autocheck" type="button" id="t30-autocheck-button" name="t30" value="Проверить">
 
 ::: {.feedback-autocheck #t30-feedback}
 :::
@@ -1048,7 +1048,7 @@ Input format
 
 ::: {.hints-wrapper}
 <details class="hints" id="t30-hints">
-<summary>Подсказки</summary>
+<summary id="t30-hints-summary">Подсказки</summary>
 
 * Hint 1
 * `Hint 2`

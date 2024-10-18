@@ -2,35 +2,73 @@
 
 \usepackage{xcolor}
 \usepackage{soul}
-\usepackage{amsmath, amsfonts}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{tensor}
 \usepackage[bb=tgdm]{unicode-math}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage[makeroom]{cancel}
 
+
+<!--- Decorations --->
+\newcommand{\circled}[1]{\enclose{circle}{#1}}
+\newcommand{\boxed}[1]{\enclose{box}{#1}}
+
+
+<!--- Common --->
 \newcommand{\const}{\text{const}}
+\newcommand{\fix}{\text{fix}}
+\DeclareMathOperator{\mmod}{mod}
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
 \newcommand{\rb}{\right]}
+\newcommand{\suchd}{\,:\,}
 
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 <!--- Logic --->
-\newcommand{\xor}{\,\text{XOR}\,}
+\newcommand{\xor}{\veebar}
+
+
+<!--- Set theory --->
+\newcommand{\univ}{\mathbb{U}}
+\DeclareMathOperator{\symdif}{\triangle}
+\newcommand{\such}{\, | \,}
+\newcommand{\emptyset}{\varnothing}
+\newcommand{\geq}{\geqslant}
+\newcommand{\leq}{\leqslant}
+\newcommand{\compl}{\overline}
+
+<!--- Combinatorics --->
+\newcommand{\perm}[1]{\mathsf{P}_{#1}}
+\newcommand{\vari}[3][]{{}^\mathsf{{#1}}\mathsf{V}_{#2}^{#3}}
+\newcommand{\comb}[3][]{{}^\mathsf{{#1}}\mathsf{C}_{#2}^{#3}}
+
+
 
 <!--- Number sets--->
 \newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_{0}}
+\newcommand{\setNstar}{\mathbb{N}^{\ast}}
 \newcommand{\setZ}{\mathbb{Z}}
 \newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setI}{\mathbb{I}}
 \newcommand{\setR}{\mathbb{R}}
+\newcommand{\setRplus}{\mathbb{R}_{+}}
 \newcommand{\setC}{\mathbb{C}}
 
 <!--- Linear Algebra --->
 \newcommand{\vm}[1]{\mathbf{#1}} <!--- vectors and matrices --->
+\newcommand{\tp}[1]{{#1}\!^{\mathsf{T}}}
+\newcommand{\inv}[1]{{#1}\!^{-1}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
 
 <!--- Probability, Random Vars --->
-\newcommand{\Falg}{\mathcal{F}}
+\newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Bcal}{\mathcal{B}}
 \newcommand{\prob}{\mathbb{P}}
+\newcommand{\dens}{\mathbb{p}}
 \newcommand{\expect}{\mathbb{E}}
 \newcommand{\disp}{\mathbb{D}}
 \newcommand{\var}{\text{var}}
@@ -49,13 +87,20 @@
 
 <!--- Other --->
 \newcommand{\defin}{\overset{\text{def}}{=}}
-\newcommand{\sgn}{\text{sgn}}
+\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
+\newcommand{\toprob}{\overset{p}{\to}}
+\newcommand{\todist}{\overset{d}{\to}}
 
 <!--- Trig --->
 \DeclareMathOperator\artanh{artanh}
 
 <!--- Stats --->
 \newcommand{\median}{\text{median}}
-\newcommand{\mean}{\mathbb{M}}
+\newcommand{\mean}{\mathbb{mean}}
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
+
+
+<!--- Letters --->
+\newcommand{\phi}{\varphi}
+\newcommand{\epsilon}{\varepsilon}

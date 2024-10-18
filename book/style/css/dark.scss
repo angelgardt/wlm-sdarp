@@ -35,6 +35,7 @@ $quiz-incorrect-background: #4D0C02 !default;
 $quiz-incorrect-border:     #9A2822 !default;
 
 
+
 // Body
 
 $body-bg:                   $gray-900 !default;
@@ -328,6 +329,11 @@ code.sourceCode a.code-annotation-anchor {
 
 .intro {
   border-bottom-color: $gray-400 !important;
+}
+
+.quote {
+  border-left-color: $gray-200;
+  color: $gray-200;
 }
 
 
