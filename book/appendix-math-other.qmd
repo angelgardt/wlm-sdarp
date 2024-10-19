@@ -1,0 +1,855 @@
+# Прочие математические штуки {#appendix-other-math}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+
+
+## Гипероператор {#appendix-other-math-hyperop}
+
+
+## Доказательства свойств производной {#appendix-other-math-deriv-props}
+
+:::{.lab-senior}
+:::
+
+Свойства производной практически всегда берутся без доказательства --- в общем-то они достаточно простые и интуитивно понятные. Однако если мы собираемся строго что-либо обосновывать, то доказательство необходимо. Что ж, обоснуем то, что и так нам было хорошо известно.
+
+
+### Производная константы {#appendix-other-math-deriv-const1}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-const1}
+$$
+c' = 0, \, c = \const
+$$
+:::
+
+:::{.quote .small}
+Ох, щас будет высокоинтеллектуальная деятельность!
+:::
+
+:::{.proof}
+Пусть $y(x) = c$. Тогда $\displaystyle c' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\Delta y = y(x+\Delta x) - y(x) = c - c = 0
+$$
+
+Тогда
+
+$$
+\frac{\Delta y}{\Delta x} = \frac{0}{\Delta x} = 0 = \const
+$$
+
+$$
+c' = \lim_{\Delta x \to 0} \frac{0}{\Delta x} = \lim_{\Delta x \to 0} 0 = 0 \qed
+$$
+:::
+
+
+### Константа в производной {#appendix-other-math-deriv-const2}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-const2}
+$$
+\Big( cf(x) \Big)' = cf'(x)
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = cf(x)$. Тогда $\displaystyle \big( cf(x) \big)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+$$
+\begin{split}
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \\
+&= \lim_{\Delta x \to 0} \frac{c f(x + \Delta x)  - c f(x) }{\Delta x} = \\
+&= \lim_{\Delta x \to 0} c \cdot \frac{f(x + \Delta x)  - f(x) }{\Delta x} = \\
+&= c \cdot \lim_{\Delta x \to 0} \frac{f(x + \Delta x)  - f(x) }{\Delta x} = \\
+&= c f'(x)
+\end{split}
+$$
+:::
+
+
+### Производная суммы {#appendix-other-math-deriv-sum}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-sum}
+$$
+\big( f(x) + g(x) \big)' = f'(x) + g'(x)
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = f(x) + g(x)$. Тогда
+
+$$
+\begin{split}
+y'(x) \defin &= \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) + g(x + \Delta x) \Big) - \Big( f(x) + g(x) \Big)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) - f(x) \Big) + \Big( g(x + \Delta x) - g(x) \Big)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x) - f(x)}{\Delta x} + \frac{g(x + \Delta x) - g(x)}{\Delta x} \right) = \\
+&= 
+\lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x} + 
+\lim_{\Delta x \to 0} \frac{g(x + \Delta x) - g(x)}{\Delta x} = \\
+&= f'(x) + g'(x) \qed
+\end{split}
+$$
+:::
+
+
+### Производная произведения {#appendix-other-math-deriv-prod}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-prod}
+$$
+\Big( f(x) g(x) \Big)' = f'(x) g(x) + f(x) g'(x)
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = f(x) g(x)$. Тогда $\displaystyle \Big( f(x) g(x) \Big)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Опишем также приращения функций $f(x)$ и $g(x)$ для случая, когда приращение аргумента равно $\Delta x$:
+
+$$
+\begin{split}
+\Delta f(x) &= f(x + \Delta x) - f(x) \quad & \circled{1} \\
+\Delta g(x) &= g(x + \Delta x) - g(x) \quad & \circled{2}
+\end{split}
+$$
+
+$$
+\begin{split}
+y'(x) &\defin \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) \, g(x + \Delta x) - f(x)\, g(x)}{\Delta x} = \\
+&\overset{\circled{1} + \circled{2}}{=} 
+\frac{\big( f(x) + \Delta f(x) \big) \big( g(x) + \Delta g(x) \big) - f(x) g(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{ \cancel{ f(x) g(x) } + f(x) \Delta g(x) + \Delta f(x) g(x) + \Delta f(x) \Delta g(x) - \cancel{ f(x) g(x) }}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \Bigg( f(x) \frac{\Delta g(x)}{\Delta x} + g(x) \frac{\delta f(x)}{\Delta x} + \Delta g(x) \frac{\Delta f(x)}{\Delta x}\Bigg) = \\
+&\overset{\Delta g(x) \to 0}{=} f(x) g'(x) + g(x) f'(x) \qed
+\end{split}
+$$
+
+:::
+
+### Производная частного {#appendix-other-math-deriv-frac}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-frac}
+$$
+\left(\frac{f(x)}{g(x)} \right)' = \frac{f'(x) g(x) - f(x) g'(x)}{g^2(x)}, \, g(x) \not \equiv 0
+$$
+:::
+
+:::{.proof}
+Пусть $\displaystyle y(x) = \frac{f(x)}{g(x)}$. Тогда $\displaystyle \left( \frac{f(x)}{g(x)} \right)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Опишем также приращения функций $f(x)$ и $g(x)$ для случая, когда приращение аргумента равно $\Delta x$:
+
+$$
+\begin{split}
+\Delta f(x) &= f(x + \Delta x) - f(x) \quad & \circled{1} \\
+\Delta g(x) &= g(x + \Delta x) - g(x) \quad & \circled{2}
+\end{split}
+$$
+
+$$
+\begin{split}
+y'(x) &\defin \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{\dfrac{f(x + \Delta x)}{g(x + \Delta x)} - \dfrac{f(x)}{g(x)}}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{g(x + \Delta x) g(x) \Delta x} = \\
+&=
+\underset{\circled{3}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{1}{g(x + \Delta x) g(x)}
+}
+}
+\cdot
+\underset{\circled{4}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{\Delta x}
+}
+}
+\end{split}
+$$
+
+Рассмотрим множитель $\circled{3}$. При стремлении приращения аргумента к нулю, первый множитель в знаменателе стремится к $g(x)$: $\Delta x \to 0 \Rightarrow g(x + \Delta x) \to g(x)$. Следовательно,
+
+$$
+\lim_{\Delta x \to 0} \frac{1}{g(x + \Delta x) g(x)} = \frac{1}{g^2(x)}
+$$
+
+Рассмотрим множитель $\circled{4}$.
+
+$$
+\begin{split}
+&\lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{\Delta x} = \\
+&\overset{\circled{1} + \circled{2}}{=}
+\lim_{\Delta x \to 0} \Bigg( \frac{\Big(f(x) + \Delta f(x) \Big) g(x) - f(x) \Big(g(x) + \Delta g(x) \Big)}{\Delta x} \Bigg) = \\
+&= \lim_{\Delta x \to 0} \frac{ \cancel{ f(x) g(x) } + \Delta f(x) g(x) - \cancel{ f(x) g(x) } + f(x) \Delta g(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \Bigg( g(x) \frac{\Delta f(x)}{\Delta x} - f(x) \frac{\Delta g(x)}{\Delta x}\Bigg) = g(x) \lim_{\Delta x \to 0} \frac{\Delta f(x)}{\Delta x} - f(x) \lim_{\Delta x \to 0} \frac{\Delta g(x)}{\Delta x} = \\
+&= g(x) f'(x) - f(x) g'(x)
+\end{split}
+$$
+
+Тогда
+
+$$
+\begin{split}
+y'(x) = \left( \frac{f(x)}{g(x)} \right)' &= \frac{1}{g^2(x)} \cdot g(x) f'(x) - f(x) g'(x) = \\
+&= \frac{g(x) f'(x) - f(x) g'(x)}{g^2(x)} \qed
+\end{split}
+$$
+
+:::
+
+
+Объединив свойства из утверждений [-@prp-deriv-const2], [-@prp-deriv-frac] и [-@prp-deriv-const1] можно получить ещё одно:
+
+:::{#cor-deriv-const3}
+$$
+\left( \frac{c}{g(x)} \right)' = -\frac{c \, g'(x)}{g^2(x)}
+$$
+:::
+
+:::{.proof}
+$$
+\left( \frac{c}{g(x)} \right)' = c \cdot \left( \frac{1}{g(x)} \right)' = c \cdot \frac{(1)' \cdot g(x) - 1 \cdot g'(x)}{g^2(x)} = c \cdot \frac{0 \cdot g(x) - g'(x)}{g^2(x)} = c \cdot \frac{-g'(x)}{g^2(x)} = - \frac{c \, g'(x)}{g^2(x)} \qed
+$$
+:::
+
+### Производная сложной функции {#appendix-other-math-deriv-composition}
+
+:::{.lab-senior}
+:::
+
+
+
+
+
+
+## Доказательства формул для производных элементарных функций {#appendix-other-math-deriv-proof}
+
+:::{.lab-senior}
+:::
+
+И в курсе школьной математики, и в этой книге формулы для производных элементарных функций даются, как правило, как факты, ниспосланные свыше. Тем не менее, это вовсе не так --- все формулы выводимы из определения производной и свойств пределов. Здесь представлены доказательства формул для производных, пожалуй, всех элементарных функций.
+
+
+### Степенная функция {#appendix-other-math-deriv-proof-power}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-proof-power}
+$$
+(x^n)' = nx^{n-1}
+$$
+:::
+
+:::{.proof}
+
+Пусть $y(x) = x^n$. Тогда $\displaystyle (x^n)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\Delta y = 
+(x + \Delta x)^n - x^n = x^n \left( 1 + \frac{\Delta x}{x} \right) - x^n = 
+x^n \left( \left( 1 + \frac{\Delta x}{x} \right) -1 \right)
+$$
+
+Тогда
+
+$$
+(x^n)' = 
+\lim_{\Delta x \to 0} \frac{x^n \left( \left( 1 + \dfrac{\Delta x}{x} \right) -1 \right)}{\Delta x} = 
+\lim_{\Delta x \to 0} \frac{n \cdot x^n \cdot \dfrac{\Delta x}{x}}{\Delta x} = 
+\lim_{\Delta x \to 0} \frac{n \cdot x^n \cdot \Delta x}{\Delta x \cdot x} = 
+nx^{n-1} \qed
+$$
+:::
+
+Доказанное влечет ряд следствий.
+
+:::{#cor-deriv-proof-power1}
+$$
+(x)' = 1
+$$
+:::
+
+:::{.proof}
+$$
+(x)' = (x^1)' = 1 \cdot x^{1-1} = x^0 = 1 \qed
+$$
+:::
+
+:::{#cor-deriv-proof-1byx}
+$$
+\left( \frac{1}{x} \right)' = -\frac{1}{x^2}
+$$
+:::
+
+:::{.proof}
+$$
+\left( \frac{1}{x} \right)' =
+(x^{-1})' = (-1) \cdot x^{-1-1} = 
+-x^{-2} = -\frac{1}{x^2} \qed
+$$
+:::
+
+:::{#cor-deriv-proof-1byx}
+$$
+\left( \frac{1}{x^n} \right)' = -\frac{n}{x^{n+1}}
+$$
+:::
+
+:::{.proof}
+$$
+\left( \frac{1}{x^n} \right)' = 
+(x^{-n})' = -n \cdot x^{-n-1} = 
+-n \cdot x^{-(n+1)} = 
+-\frac{n}{x^{n+1}} \qed
+$$
+:::
+
+:::{#cor-deriv-proof-sqrt}
+$$
+(\sqrt{x})' = \frac{1}{2\sqrt{x}}
+$$
+:::
+
+:::{.proof}
+$$
+(\sqrt{x})' = 
+\left( x^{\frac{1}{2}}\right)' = 
+\frac{1}{2} \cdot x^{\frac{1}{2}-1} = 
+\frac{1}{2} x^{-\frac{1}{2}} = 
+\frac{1}{2 x^{\frac{1}{2}}} = 
+\frac{1}{2 \sqrt{x}} \qed
+$$
+:::
+
+:::{#cor-deriv-proof-sqrt}
+$$
+(\sqrt[q]{x^p})' = \frac{p}{q}x^{\frac{p-q}{q}}
+$$
+:::
+
+:::{.proof}
+$$
+(\sqrt[q]{x^p})' = 
+\left( x^\frac{p}{q} \right)' = \frac{p}{q} x^{\frac{p}{q}-1} = 
+\frac{p}{q} x^{\frac{p}{q} - \frac{q}{q}} = 
+\frac{p}{q} x^\frac{p - q}{q} \qed
+$$
+:::
+
+
+
+### Показательная функция {#appendix-other-math-deriv-proof-exp}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-proof-exp}
+$$
+(a^x)' = a^x \ln a
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = a^x$. Тогда $\displaystyle (a^x)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\Delta y = a^{x + \Delta x} - a^x = a^x \left( a^{\Delta x - 1} \right)
+$$
+
+Тогда
+
+$$
+(a^x)' = \lim_{\Delta x \to 0} \frac{a^x \left( a^{\Delta x - 1} \right)}{\Delta x} = 
+\lim_{\Delta x \to 0} \frac{a^x \cdot \Delta x \cdot \ln a}{\Delta x} = 
+a^x \ln a \qed
+$$
+:::
+
+:::{#cor-deriv-proof-expe}
+$$
+(e^x)' = e^x
+$$
+:::
+
+:::{.proof}
+$$
+(e^x)' = e^x \cdot \ln e = e^x \cdot 1 = e^x \qed
+$$
+:::
+
+
+
+### Логарифмическая функция {#appendix-other-math-deriv-proof-log}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-proof-log}
+$$
+(\log_a x)' = \frac{1}{x \ln a}
+$$
+:::
+
+:::{.proof}
+
+:::
+
+
+
+### Тригонометрические функции {#appendix-other-math-deriv-proof-trig}
+
+:::{.lab-guru}
+:::
+
+В доказательствах формул производных для тригонометрических функций используются свойства тригонометрических функций.
+
+
+
+#### Синус {#appendix-other-math-deriv-proof-sin}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-sin}
+$$
+(\sin x)' = \cos x
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = \sin x$. Тогда $\displaystyle (\sin x)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\begin{split}
+\Delta y &= 
+\sin(x + \Delta x) - \sin x = \\
+&\overset{\circled{1}}{=} 2 \sin \left( \frac{x + \Delta x - x}{2} \right) \cos \left( \frac{x + \Delta x + x}{2} \right) = \\
+&= 2 \sin \left( \frac{\Delta x}{2} \right) \cos \left( x + \frac{\Delta x}{2} \right)
+\end{split}
+$$
+
+В переходе $\circled{1}$ использована формула преобразование суммы в произведение, согласно которой $\sin \alpha - \sin \beta = 2 \sin \Big(\frac{\alpha - \beta}{2}\Big) \cos \Big(\frac{\alpha + \beta}{2}\Big)$.
+
+Тогда имеем
+
+$$
+\begin{split}
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \\
+&= \lim_{\Delta x \to 0} \frac{2 \sin \left( \frac{\Delta x}{2} \right) \cos \left( x + \frac{\Delta x}{2} \right)}{\Delta x} = \\ 
+&= \lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right) \cos \left( x + \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = \\
+&= \underset{\circled{2}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}}
+}
+}
+\cdot 
+\underset{\circled{3}}{
+\boxed{
+\lim_{\Delta x \to 0} \cos \left( x + \frac{\Delta x}{2} \right)
+}
+}
+\end{split}
+$$
+
+Множитель $\circled{2}$ представляет собой **первый замечательный предел** --- $\displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1$. Соответственно, $\displaystyle \lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = 1$. Выражение под знаком предела во множителе $\circled{3}$, как несложно заметить, при стремлении приращения аргумента к нулю стремится к $\cos x$:
+
+$$
+\lim_{\Delta x \to 0} \cos \left( x + \frac{\Delta x}{2} \right) = \cos x
+$$
+
+Получается,
+
+$$
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = 1 \cdot \cos x = \cos x \qed
+$$
+:::
+
+
+
+#### Косинус {#appendix-other-math-deriv-proof-cos}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-cos}
+$$
+(\cos x)' = -\sin x
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = \cos x$. Тогда $\displaystyle (\cos x)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\begin{split}
+\Delta y &= 
+\cos (x + \Delta x) - \cos x = \\
+&\overset{\circled{1}}{=} -2 \sin \left( \frac{x + \Delta x + x}{2} \right) \sin \left( \frac{x + \Delta x - x}{2} \right) = \\
+&= -2 \sin \left( x + \frac{\Delta x}{2}\right) \sin \left( \frac{\Delta x}{2} \right)
+\end{split}
+$$
+
+В переходе $\circled{1}$ использована формула преобразование суммы в произведение, согласно которой $\cos \alpha - \cos \beta = -2 \sin \Big(\frac{\alpha + \beta}{2}\Big) \sin \Big(\frac{\alpha - \beta}{2}\Big)$.
+
+Тогда имеем 
+
+$$
+\begin{split}
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \\
+&= \lim_{\Delta x \to 0} \frac{-2 \sin \left( x + \frac{\Delta x}{2}\right) \sin \left( \frac{\Delta x}{2} \right)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{-\sin \left( x + \frac{\Delta x}{2}\right) \sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = \\
+&= 
+\underset{\circled{2}}{
+\boxed{
+\lim_{\Delta x \to 0} - \sin \left( x + \frac{\Delta x}{2} \right)
+}
+}
+\cdot 
+\underset{\circled{3}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{\sin \frac{\Delta x}{2}}{\frac{\Delta x}{2}}
+}
+}
+\end{split}
+$$
+
+Множитель $\circled{2}$ представляет собой **первый замечательный предел** --- $\displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1$. Соответственно, $\displaystyle \lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = 1$. Выражение под знаком предела во множителе $\circled{2}$, как несложно заметить, при стремлении приращения аргумента к нулю стремится к $-\sin x$:
+
+$$
+\lim_{\Delta x \to 0} - \sin \left( x + \frac{\Delta x}{2} \right) = - \lim_{\Delta x \to 0} \sin \left( x + \frac{\Delta x}{2} \right) = -\sin x
+$$
+
+Получается,
+
+$$
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = -\sin x \cdot 1 = - \sin x \qed
+$$
+
+:::
+
+#### Тангенс {#appendix-other-math-deriv-proof-tan}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-tan}
+$$
+(\tan x)' = \frac{1}{\cos^2 x}
+$$
+:::
+
+Доказать справедливость формулы для производной тангенса можно разными способами. Один из вариантов --- рассмотреть приращение функции, обнаружить там замечательный предел и получить искомый ответ, как было сделано выше (см. [-@prp-deriv-proof-sin] и [-@prp-deriv-proof-cos]). Я же воспользуюсь правилом взятия производной от частного функций (@prp-deriv-frac).
+
+:::{.proof}
+$$
+\begin{split}
+(\tan x)' & = \left( \frac{\sin x}{\cos x} \right)' = \\
+&= \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x} = \\
+&= \frac{\cos x \cdot \cos x + \sin x \cdot \sin x}{\cos^2 x} = \\
+&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} \qed
+\end{split}
+$$
+:::
+
+
+
+#### Котангенс {#appendix-other-math-deriv-proof-cot}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-cot}
+$$
+(\cot x)' = -\frac{1}{\sin^2 x}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+(\cot x)' &= \left( \frac{\cos x}{\sin x} \right)' = \\
+&= \frac{(\cos x)' \sin x - \cos x (\sin x)'}{\sin^2x} = \\
+&= \frac{-\sin x \cdot \sin x - \cos x \cos x}{\sin^2 x} = \\
+&= - \frac{\sin^2x + \cos^2 x}{\sin^2 x} = - \frac{1}{\sin^2 x} \qed
+\end{split}
+$$
+:::
+
+
+
+#### Секанс {#appendix-other-math-deriv-proof-sec}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-sec}
+$$
+(\sec x)' = \tan x \sec x
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+(\sec x)' &= \left( \frac{1}{\cos x} \right)' = \\
+&= \frac{(1)' \cdot \cos x - 1 \cdot (\cos x)'}{\cos^2 x} = \\
+&= \frac{\sin x}{\cos^2 x} = \frac{\sin x}{\cos x} \cdot \frac{1}{\cos x} = \tan x \sec x \qed
+\end{split}
+$$
+:::
+
+
+
+#### Косеканс {#appendix-other-math-deriv-proof-csc}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-csc}
+$$
+(\csc x)' = -\cot x \csc x
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+(\csc x)' &= \left( \frac{1}{\sin x} \right)' = \\
+&= \frac{(1)' \cdot \sin x - 1 \cdot (\sin x)'}{\sin^2 x} = \\
+&= - \frac{\cos x}{\sin^2 x} = - \frac{\cos x}{\sin x} \cdot \frac{1}{\sin x} = - \cot x \csc x \qed
+\end{split}
+$$
+:::
+
+
+
+#### Арксинус {#appendix-other-math-deriv-proof-arcsin}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arcsin}
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1-x^2}}
+$$
+:::
+
+:::{.proof}
+
+$$
+\sin \arcsin x = x \Rightarrow \big( \sin \arcsin x \big)' = x'
+$$
+
+$$
+\cos(\arcsin x) \cdot (\arcsin x)' = 1 \Rightarrow (\arcsin x)' = \frac{1}{\cos \arcsin x}
+$$
+
+$$
+\sin^2 x + \cos^2 x = 1 \Rightarrow (\arcsin x)' = \frac{1}{\pm \sqrt{1 - \sin^2 \arcsin x}}
+$$
+
+$$
+\im \arcsin x = [-\frac{\pi}{2}, \frac{\pi}{2}] \Rightarrow \cos(\arcsin x) > 0 \Rightarrow \sqrt{1 - \sin^2 \arcsin x} > 0
+$$
+
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1 - \sin^2 \arcsin x}} = \frac{1}{\sqrt{1 - x^2}} \qed
+$$
+
+:::
+
+
+
+#### Арккосинус {#appendix-other-math-deriv-proof-arccos}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arccos}
+$$
+(\arccos x)' = -\frac{1}{\sqrt{1-x^2}}
+$$
+:::
+
+:::{.proof}
+$$
+\arcsin x + \arccos x = \frac{\pi}{2}
+$$
+
+$$
+(\arcsin x + \arccos x)' = \left( \frac{\pi}{2} \right)' = 0
+$$
+
+$$
+(\arccos x)' = -(\arcsin x)'
+$$
+
+$$
+(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
+$$
+
+:::
+
+
+
+#### Арктангенс {#appendix-other-math-deriv-proof-arctan}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arctan}
+$$
+(\arctan x)' = \frac{1}{1+x^2}
+$$
+:::
+
+:::{.proof}
+$$
+\tan \arctan x = x \Rightarrow \big( \tan \arctan x \big)' = x'
+$$
+
+$$
+\frac{1}{\cos^2 \arctan x} \cdot (\arctan x)' = 1 \Rightarrow (\arctan x)' = \cos^2 \arctan x
+$$
+
+$$
+\cos x = \frac{1}{\sqrt{1 + \tan^2 x}} \Rightarrow (\arctan x)' = \left( \frac{1}{\sqrt{1 + \tan^2 \arctan x}} \right)^2 = \frac{1}{1 + x^2} \qed
+$$
+:::
+
+
+
+#### Арккотангенс {#appendix-other-math-deriv-proof-arccot}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arccot}
+$$
+(\arccot x)' = -\frac{1}{1+x^2}
+$$
+:::
+
+:::{.proof}
+$$
+\arctan x + \arccot x = \frac{\pi}{2}
+$$
+
+$$
+(\arctan x + \arccot x)' = \left( \frac{\pi}{2} \right)' = 0
+$$
+$$
+(\arccot x)' = -(\arctan x) = -\frac{1}{1 + x^2} \qed
+$$
+
+:::
+
+
+
+#### Арксеканс {#appendix-other-math-deriv-proof-arcsec}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arcsec}
+$$
+(\arcsec x)' = \frac{1}{|x| \sqrt{x^2-1}}
+$$
+:::
+
+:::{.proof}
+$$
+\arcsec x = \arccos \frac{1}{x}
+$$
+
+$$
+(\arcsec x)' = \left( \arccos \frac{1}{x} \right)'
+$$
+
+$$
+\begin{split}
+(\arcsec x)' &= -\frac{1}{\sqrt{1 - \dfrac{1}{x^2}}} \cdot \left( -\frac{1}{x^2} \right) = \\
+&= \frac{1}{x^2 \sqrt{\dfrac{x^2 - 1}{x^2}}} = \frac{1}{x^2 \dfrac{\sqrt{x^2 - 1}}{|x|}} = 
+\frac{1}{|x| \sqrt{x^2 -1}} \qed
+\end{split}
+$$
+
+:::
+
+
+
+#### Арккосеканс {#appendix-other-math-deriv-proof-arccsc}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arccsc}
+$$
+(\arccsc x)' = - \frac{1}{|x| \sqrt{x^2-1}}
+$$
+:::
+
+:::{.proof}
+$$
+\arcsec x + \arccsc x = \frac{\pi}{2}
+$$
+
+$$
+(\arcsec x + \arccsc x)' = \left( \frac{\pi}{2} \right)'
+$$
+
+$$
+(\arccsc x)' = -(\arcsec x)' = - \frac{1}{|x| \sqrt{x^2 -1}}
+$$
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

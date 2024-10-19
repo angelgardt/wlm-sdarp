@@ -3,6 +3,7 @@
 \usepackage{xcolor}
 \usepackage{soul}
 \usepackage{amsmath, amsfonts, amssymb}
+\usepackage{commath}
 \usepackage{tensor}
 \usepackage[bb=tgdm]{unicode-math}
 \usepackage{tikz}
@@ -24,7 +25,8 @@
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
 \newcommand{\rb}{\right]}
-\newcommand{\suchd}{\,:\,}
+
+\newcommand{\qed}{\quad \blacksquare}
 
 
 <!--- Logic --->
@@ -56,6 +58,10 @@
 \newcommand{\setR}{\mathbb{R}}
 \newcommand{\setRplus}{\mathbb{R}_{+}}
 \newcommand{\setC}{\mathbb{C}}
+
+<!--- Calculus --->
+\newcommand{\dom}{\mathcal{D}}
+\newcommand{\im}{\mathcal{E}}
 
 <!--- Linear Algebra --->
 \newcommand{\vm}[1]{\mathbf{#1}} <!--- vectors and matrices --->
@@ -92,6 +98,9 @@
 \newcommand{\todist}{\overset{d}{\to}}
 
 <!--- Trig --->
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
 \DeclareMathOperator\artanh{artanh}
 
 <!--- Stats --->

@@ -95,11 +95,14 @@ $$|x| \geq a \Rightarrow x \leq -a \wedge x \geq a \Leftrightarrow x \in (-\inft
 
 ### Свойства производной {#formulas_deriv_props}
 
-$$c' = 0, \, c = \const$$
+$$C' = 0, \, C = \const$$
 $$(Cu)' = Cu'$$
 $$(u + v)' = u' + v'$$
 $$(uv)' = u'v + uv'$$
 $$\Big( \frac{u}{v} \Big)' = \frac{u'v - uv'}{v^2}$$
+
+$$\Big( \frac{C}{v} \Big)' = - \frac{Cv'}{v^2}$$
+
 $$\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)$$
 
 
@@ -114,7 +117,7 @@ $$\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)$$
     </td>
     <td valign="top">
     $$(\log_a x)' = \frac{1}{x \ln a}$$
-    $$(\ln_a x)' = \frac{1}{x}$$
+    $$(\ln x)' = \frac{1}{x}$$
     $$(\sqrt{x})' = \frac{1}{2\sqrt{x}}$$
     </td>
    </tr>
@@ -128,7 +131,7 @@ $$\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)$$
     </td>
     <td valign="top">
     $$(\tan x)' = \frac{1}{\cos^2 x}$$
-    $$(\cot x)' = \frac{1}{\sin^2 x}$$
+    $$(\cot x)' = -\frac{1}{\sin^2 x}$$
     </td>
    </tr>
 </table>
