@@ -592,6 +592,7 @@ window.Quarto = {
 <!--- Set theory --->
 <!--- Combinatorics --->
 <!--- Number sets--->
+<!--- Calculus --->
 <!--- Linear Algebra --->
 <!--- vectors and matrices --->
 <!--- Probability, Random Vars --->
@@ -613,8 +614,8 @@ window.Quarto = {
 <div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-210b609e98eb33d0bf96" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-210b609e98eb33d0bf96">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-4cb17bb3060b0e944967" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4cb17bb3060b0e944967">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Тут родился R
@@ -731,16 +732,6 @@ window.Quarto = {
 </div>
 <p>Ниже есть пример установки R на Win (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>2.3</span></a>), если вдруг у вас возникли какие-то проблемы при установке. Скорее всего всё прошло достаточно ровно.</p>
 <p>Самая частая проблема — имя пользователя на кириллице. Компьютер вообще достаточно плохо переваривает кириллические символы. Особенную же проблему составляют такие символы в путях к файлам. Поскольку на Win папка пользователя называется именем пользователя, то в случае кириллического имени, естественно, её имя будет на кириллице. Это можно пережить, перезадав некоторое дефолтные пути в настройках, однако если есть возможность переименовать пользователя и папку, я бы рекомендовал это сделать. Ну, так, чтобы не было неожиданных внезапностей.</p>
-<div id="fig-rinstallation-win" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rinstallation-win-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-win-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.3: Установка R на Windows (на примере Windows 10 Pro)
-</figcaption>
-</figure>
-</div>
 </section>
 <section id="rintro-rinstallation-mac" class="level4" data-number="2.3.1.2">
 <h4 data-number="2.3.1.2" class="anchored" data-anchor-id="rintro-rinstallation-mac"><span class="header-section-number">2.3.1.2</span> macOS</h4>
@@ -762,16 +753,6 @@ Apple silicon vs Intel Macs
 </div>
 <p>Ниже есть пример установки R на Mac (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>2.4</span></a>), если вдруг у вас возникли какие-то проблемы при установке.</p>
 <p>Тут в 99.9% случаев всё ровно. Бывает, что уже в процессе работы некоторые пакеты жалуются на недоустановленное что-то или на какие-либо несовместимости, но это случается невероятно редко и обычно достаточно легко лечится.</p>
-<div id="fig-rinstallation-mac" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rinstallation-mac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-mac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.4: Установка R на macOS (на примере macOS Sonoma 14.1.1)
-</figcaption>
-</figure>
-</div>
 </section>
 <section id="rintro-rinstallation-linux" class="level4" data-number="2.3.1.3">
 <h4 data-number="2.3.1.3" class="anchored" data-anchor-id="rintro-rinstallation-linux"><span class="header-section-number">2.3.1.3</span> Linux</h4>
@@ -804,22 +785,12 @@ Apple silicon vs Intel Macs
 <p>Я работаю на Ubuntu (ВЕРСИЯ), поэтому примеры для Linux будут приводится именно для этого дистрибутива. На других дистрибутивах могут быть свои особенности.</p>
 </div>
 </div>
-<p>Ниже есть пример установки R на Linux (Ubuntu) (<a href="#fig-rinstallation-linux" class="quarto-xref">Иллюстрация&nbsp;<span>2.5</span></a>), если вы только начинаете знакомство с Linux и у вас возникли какие-то проблемы при установке.</p>
+<!---Ниже есть пример установки R на Linux (Ubuntu) (@fig-rinstallation-linux), если вы только начинаете знакомство с Linux и у вас возникли какие-то проблемы при установке.--->
 <p>Если вы пользователь Linux, значит R вы, вероятно, ставите через Terminal. Например, с помощью такой команды:</p>
 <pre><code>sudo apt install r-base-dev</code></pre>
 <p>Скорее всего, всё пройдет хорошо, и базовый R будет работать. Проблемки могут случиться чуть дальше, когда мы будем ставить дополнительные пакеты, в которых будет идти основная наша работа — R может не найти некоторые системные пакеты. Такая проблема возникла у меня возникла (на Ubuntu 22.04) — помогла команда ниже:</p>
 <pre><code>sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev linfreetype6-dev libpng-dev libtiff5-dev libjpeg-deva</code></pre>
 <p>Сначала мы будем знакомиться с базовым R и работать только в нём, но имейте в виду, что тут есть некая команда, которая может пригодиться.</p>
-<div id="fig-rinstallation-linux" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rinstallation-linux-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-linux-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.5: Установка R на Linux (на примере Ubuntu ВЕРСИЯ)
-</figcaption>
-</figure>
-</div>
 </section>
 </section>
 <section id="r-intro-rstudioinstallation" class="level3" data-number="2.3.2">
@@ -827,19 +798,9 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
-<p>Казалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — <a href="#r-intro-rinterface">можно работать и просто в R</a>. Однако для упрощения и увеличения приятности работы стоит установить RStudio<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Установочные файлы лежат <a href="https://posit.co/download/rstudio-desktop/">тут</a>. На всякий случай, прикреплены примеры установки RStudio для Win, macOS и Linux (<a href="#fig-rstudioinstallation" class="quarto-xref">Иллюстрация&nbsp;<span>2.6</span></a>).</p>
+<p>Казалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — <a href="#r-intro-rinterface">можно работать и просто в R</a>. Однако для упрощения и увеличения приятности работы стоит установить RStudio<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Установочные файлы лежат <a href="https://posit.co/download/rstudio-desktop/">тут</a>. Ниже есть примеры установки RStudio на Windows (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>2.3</span></a>) и macOS (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>2.4</span></a>).</p>
 <p>RStudio — это интегрированная среда разработки (IDE) (подробнее см. <a href="#rintro-ide">тут</a>). Она расширяет возможности R, предоставляет более юзабельный интерфейс для взаимодействия с языком и в целом делает работу с R радостной и приятной.</p>
 <p>RStudio это не единственная среда для работы с R, но определенно самая удобная и популярная, поэтому мы будем пользоваться именно ею. RStudio является IDE, разработанной специально для работы в R, однако это вовсе не значит, что в ней нельзя использовать другие языки программирования. Например, книжка, которуя вы сейчас читаете, написана с использованием <a href="https://www.r-project.org/about.html">R</a>, <a href="https://www.python.org/">Python</a>, <a href="http://htmlbook.ru/html">HTML</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://learn.javascript.ru/">JavaScript</a>, <a href="https://yaml.org/">YAML</a> и других языков — при этом вся работа велась в RStudio. Вот такая мощная вещь.</p>
-<div id="fig-rstudioinstallation" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rstudioinstallation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudioinstallation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.6: Установка RStudio на основные операционные системы
-</figcaption>
-</figure>
-</div>
 <section id="rintro-ide" class="level4" data-number="2.3.2.1">
 <h4 data-number="2.3.2.1" class="anchored" data-anchor-id="rintro-ide"><span class="header-section-number">2.3.2.1</span> Что такое IDE?</h4>
 <div class="lab-junior">
@@ -866,6 +827,26 @@ Apple silicon vs Intel Macs
 </div>
 <p>В подавляющем большинстве случаев работа в R происходит на десктопной версии. Однако это не единственный вариант. Например, если вам нужно резко, быстро и несложно обработать небольшие данные, а вы в отпуске без своего любимого персонального компа, можно поработать в облачной версии RStudio — <a href="https://posit.cloud/">Posit Cloud</a>.</p>
 <p>В Posit Cloud используются RStudio Projects<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, интерфейс полностью совпадает с десктопной версией RStudio, доступны дополнительные пакеты. Однако объем доступной оперативной памяти существенно ограничен, что, безусловно, может создать существенные сложности. Тем не менее, такой вариант работы вполне можно рассмотреть в каких-то ограниченных условиях.</p>
+<div id="fig-rinstallation-win" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rinstallation-win-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-win-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.3: Установка R и RStudio на Windows (на примере Windows 10 Pro)
+</figcaption>
+</figure>
+</div>
+<div id="fig-rinstallation-mac" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rinstallation-mac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/aQKfTrkRy2I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-mac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;2.4: Установка R на macOS (на примере macOS Sonoma 14.1.1)
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="r-intro-rinterface" class="level2" data-number="2.4">
@@ -879,18 +860,18 @@ Apple silicon vs Intel Macs
 <img src="img/r-intro/r-logo.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.7: Логотип R. <a href="https://www.r-project.org/logo/">Источник</a>
+Иллюстрация&nbsp;2.5: Логотип R. <a href="https://www.r-project.org/logo/">Источник</a>
 </figcaption>
 </figure>
 </div>
-<p>На самом деле, RStudio можно было и не ставить, так как R предоставляет собственный графический интерфейс для работы. Его можно открыть, кникнув на иконку R в списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.7</span></a>). Однако как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>).</p>
+<p>На самом деле, RStudio можно было и не ставить, так как R предоставляет собственный графический интерфейс для работы. Его можно открыть, кникнув на иконку R в списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.5</span></a>). Однако как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.6</span></a>).</p>
 <div id="fig-r-interface" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/r-interface.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.8: Интерфейс R
+Иллюстрация&nbsp;2.6: Интерфейс R
 </figcaption>
 </figure>
 </div>
@@ -907,18 +888,18 @@ Apple silicon vs Intel Macs
 <img src="img/r-intro/rstudio-logo.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.9: Логотип RStudio. <a href="https://www.rstudio.com/about/logos/">Источник</a>
+Иллюстрация&nbsp;2.7: Логотип RStudio. <a href="https://www.rstudio.com/about/logos/">Источник</a>
 </figcaption>
 </figure>
 </div>
-<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.9</span></a>) в списке программ на вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>).</p>
+<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.7</span></a>) в списке программ на вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>).</p>
 <div id="fig-rstudio-interface" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/rstudio-interface.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.10: Интерфейс RStudio
+Иллюстрация&nbsp;2.8: Интерфейс RStudio
 </figcaption>
 </figure>
 </div>
@@ -932,7 +913,7 @@ Apple silicon vs Intel Macs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>При самом первом открытии RStudio у вас может отображаться не четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>), а только три — второе, третье и четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>Command</code>+<code>Shift</code>+<code>N</code> на Mac) или воспользуйте кнопкой в левом верхнем углу и выберите <code>R Script</code>.</p>
+<p>При самом первом открытии RStudio у вас может отображаться не четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>), а только три — второе, третье и четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>Command</code>+<code>Shift</code>+<code>N</code> на Mac) или воспользуйте кнопкой в левом верхнем углу и выберите <code>R Script</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/r-intro/new-rscript.png" class="img-fluid figure-img"></p>
@@ -997,14 +978,14 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
-<p>Чтобы настроить тему RStudio, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Appearance</code>. Откроется следующее окно (<a href="#fig-rstudio-appearance" class="quarto-xref">Иллюстрация&nbsp;<span>2.11</span></a>). В нем можно выбрать шрифт, его размер, тему самого RStudio и тему редактора кода. Через кнопку <code>Add...</code> можно даже добавить собственные темы, если вам не нравится ни одна из предложенных.</p>
+<p>Чтобы настроить тему RStudio, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Appearance</code>. Откроется следующее окно (<a href="#fig-rstudio-appearance" class="quarto-xref">Иллюстрация&nbsp;<span>2.9</span></a>). В нем можно выбрать шрифт, его размер, тему самого RStudio и тему редактора кода. Через кнопку <code>Add...</code> можно даже добавить собственные темы, если вам не нравится ни одна из предложенных.</p>
 <div id="fig-rstudio-appearance" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/rstudio-appearance.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.11: Настройки темы RStudio
+Иллюстрация&nbsp;2.9: Настройки темы RStudio
 </figcaption>
 </figure>
 </div>
@@ -1014,14 +995,14 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
-<p>Чтобы настроить расположение и содержимое окон, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Pane Layout</code>. Откроется следующее окно (<a href="#fig-rstudio-panelayout" class="quarto-xref">Иллюстрация&nbsp;<span>2.12</span></a>). Логика проста: здесь тоже четыре области, соответствующих окнам интерфейса RStudio, и в каждом можно выбрать, что должно отображаться. Через <code>Add Column</code> можно добавить ещё одну колонку, если вы, скажем, работаете на большом мониторе в двух скриптах параллельно.</p>
+<p>Чтобы настроить расположение и содержимое окон, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Pane Layout</code>. Откроется следующее окно (<a href="#fig-rstudio-panelayout" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>). Логика проста: здесь тоже четыре области, соответствующих окнам интерфейса RStudio, и в каждом можно выбрать, что должно отображаться. Через <code>Add Column</code> можно добавить ещё одну колонку, если вы, скажем, работаете на большом мониторе в двух скриптах параллельно.</p>
 <div id="fig-rstudio-panelayout" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-panelayout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/rstudio-panelayout.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-panelayout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.12: Настройки расположения окон и их содержимого
+Иллюстрация&nbsp;2.10: Настройки расположения окон и их содержимого
 </figcaption>
 </figure>
 </div>
@@ -1056,47 +1037,47 @@ Type 'contributors()' for more information and
 Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.</code></pre>
-<p>В принципе, его можно проигнорировать — в нем некая техническая информация. Всё это можно достать отдельно при необходимости. Сейчас сосредоточимся на том, что отображается после сообщения — маленькая неприметная, но важнейшая стрелочка (<a href="#fig-console-waiting" class="quarto-xref">Иллюстрация&nbsp;<span>2.13</span></a>). Она обозначает, что R сейчас ничего не делает и ожидает новую команду.</p>
+<p>В принципе, его можно проигнорировать — в нем некая техническая информация. Всё это можно достать отдельно при необходимости. Сейчас сосредоточимся на том, что отображается после сообщения — маленькая неприметная, но важнейшая стрелочка (<a href="#fig-console-waiting" class="quarto-xref">Иллюстрация&nbsp;<span>2.11</span></a>). Она обозначает, что R сейчас ничего не делает и ожидает новую команду.</p>
 <div id="fig-console-waiting" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-waiting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/console-waiting.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-waiting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.13: Ожидание команды
+Иллюстрация&nbsp;2.11: Ожидание команды
 </figcaption>
 </figure>
 </div>
-<p>Это дефолтное состояние консоли. Чтобы выполнить какую-либо команду, надо напечатать её в консоли и нажать <code>Enter</code>. Например, вы хотите напечатать в консоль <code>0</code>. Для этого есть команда (функция) <code>print()</code>. Введя в консоль <code>print(0)</code> и нажав <code>Enter</code>, мы получим следующий результат (<a href="#fig-console-print" class="quarto-xref">Иллюстрация&nbsp;<span>2.14</span></a>).</p>
+<p>Это дефолтное состояние консоли. Чтобы выполнить какую-либо команду, надо напечатать её в консоли и нажать <code>Enter</code>. Например, вы хотите напечатать в консоль <code>0</code>. Для этого есть команда (функция) <code>print()</code>. Введя в консоль <code>print(0)</code> и нажав <code>Enter</code>, мы получим следующий результат (<a href="#fig-console-print" class="quarto-xref">Иллюстрация&nbsp;<span>2.12</span></a>).</p>
 <div id="fig-console-print" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/console-print.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.14: Выполнение команды. После написания команды нажата клавиша <code>Enter</code>
+Иллюстрация&nbsp;2.12: Выполнение команды. После написания команды нажата клавиша <code>Enter</code>
 </figcaption>
 </figure>
 </div>
-<p>Однако состояние со стрелочкой не единственное. На месте стрелочки может стоять плюсик. Это значит, что R нашел окончание команды, и ожидает, когда вы её допишете, чтобы он мог отправить её выполняться. Например, вы всё ещё хотите напечатать в консоль <code>0</code>, но забыли закрыть скобку в функции <code>print()</code>. Это будет выглядеть так (<a href="#fig-console-plus" class="quarto-xref">Иллюстрация&nbsp;<span>2.15</span></a>). Если после «плюса» дописать скобку и нажать <code>Enter</code>, то команда выполнится.</p>
+<p>Однако состояние со стрелочкой не единственное. На месте стрелочки может стоять плюсик. Это значит, что R нашел окончание команды, и ожидает, когда вы её допишете, чтобы он мог отправить её выполняться. Например, вы всё ещё хотите напечатать в консоль <code>0</code>, но забыли закрыть скобку в функции <code>print()</code>. Это будет выглядеть так (<a href="#fig-console-plus" class="quarto-xref">Иллюстрация&nbsp;<span>2.13</span></a>). Если после «плюса» дописать скобку и нажать <code>Enter</code>, то команда выполнится.</p>
 <div id="fig-console-plus" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-plus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/console-plus.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-plus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.15: Ожидание окончания команды. После дописывания скобки нажата клавиша <code>Enter</code>
+Иллюстрация&nbsp;2.13: Ожидание окончания команды. После дописывания скобки нажата клавиша <code>Enter</code>
 </figcaption>
 </figure>
 </div>
-<p>Если вы не хотите, чтобы команды выполнялась, то её можно прервать, нажав клавишу <code>Esc</code> (<a href="#fig-console-plus-esc" class="quarto-xref">Иллюстрация&nbsp;<span>2.16</span></a>).</p>
+<p>Если вы не хотите, чтобы команды выполнялась, то её можно прервать, нажав клавишу <code>Esc</code> (<a href="#fig-console-plus-esc" class="quarto-xref">Иллюстрация&nbsp;<span>2.14</span></a>).</p>
 <div id="fig-console-plus-esc" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-plus-esc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/console-plus-esc.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-plus-esc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.16: Прерывание команды. После перехода в ожидание окончания команды нажата клавиша <code>Esc</code>
+Иллюстрация&nbsp;2.14: Прерывание команды. После перехода в ожидание окончания команды нажата клавиша <code>Esc</code>
 </figcaption>
 </figure>
 </div>
@@ -1483,7 +1464,7 @@ Type 'q()' to quit R.</code></pre>
 <pre><code>[1] 15</code></pre>
 </div>
 </div>
-<p>и теперь хотим вернуться ещё раз пересчитать <code>9 / 12</code> — вдруг ошиблись… Если мы, стоя в консоли, два раза жмякнем стрелку вверх, команда вновь отобразится в консоли (<a href="#fig-rhistory" class="quarto-xref">Иллюстрация&nbsp;<span>2.17</span></a>).</p>
+<p>и теперь хотим вернуться ещё раз пересчитать <code>9 / 12</code> — вдруг ошиблись… Если мы, стоя в консоли, два раза жмякнем стрелку вверх, команда вновь отобразится в консоли (<a href="#fig-rhistory" class="quarto-xref">Иллюстрация&nbsp;<span>2.15</span></a>).</p>
 <p>Такое иногда бывает полезно, когда вы, скажем, писали большой скрипт, потом что-то мелкое промежуточное посчитали в консоли, затем вернулись обратно к скрипту и забыли, что там получилось в вычислениях. Однако лучше все фиксировать в скрипте, чтобы потом мучительно не вспоминать, а что вы там конкретно промежуточно считали.</p>
 <div id="fig-rhistory" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1491,7 +1472,7 @@ Type 'q()' to quit R.</code></pre>
 <img src="img/r-intro/rhistory.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rhistory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.17: История команд. Предыдущие команды можно вызвать в консоль с помощью клавиш <code>↑</code> и <code>↓</code>.
+Иллюстрация&nbsp;2.15: История команд. Предыдущие команды можно вызвать в консоль с помощью клавиш <code>↑</code> и <code>↓</code>.
 </figcaption>
 </figure>
 </div>
@@ -1510,9 +1491,9 @@ Type 'q()' to quit R.</code></pre>
 </ul>
 <p>Кроме того, скрипт предоставляет нам более широкую вариативность того, что можно отправить на выполнение.</p>
 <ul>
-<li>Если курсор просто стоит на некоторой строке, то выполнится вся строка, а курсор перейдет на следующую строку<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> (<a href="#fig-run-line" class="quarto-xref">Иллюстрация&nbsp;<span>2.18 (a)</span></a>).</li>
-<li>Если выделена часть строки, то выполнился именно эта часть, курсор и выделение останутся на месте (<a href="#fig-run-part-of-line" class="quarto-xref">Иллюстрация&nbsp;<span>2.18 (b)</span></a>).</li>
-<li>Если выделено несколько строк, то выполняться все они, курсов и выделение останутся на месте (<a href="#fig-run-two-lines" class="quarto-xref">Иллюстрация&nbsp;<span>2.18 (c)</span></a>).</li>
+<li>Если курсор просто стоит на некоторой строке, то выполнится вся строка, а курсор перейдет на следующую строку<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> (<a href="#fig-run-line" class="quarto-xref">Иллюстрация&nbsp;<span>2.16 (a)</span></a>).</li>
+<li>Если выделена часть строки, то выполнился именно эта часть, курсор и выделение останутся на месте (<a href="#fig-run-part-of-line" class="quarto-xref">Иллюстрация&nbsp;<span>2.16 (b)</span></a>).</li>
+<li>Если выделено несколько строк, то выполняться все они, курсов и выделение останутся на месте (<a href="#fig-run-two-lines" class="quarto-xref">Иллюстрация&nbsp;<span>2.16 (c)</span></a>).</li>
 </ul>
 <div id="fig-run-from-script" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1561,7 +1542,7 @@ Type 'q()' to quit R.</code></pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-from-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.18: Выполнение команд из скрипта
+Иллюстрация&nbsp;2.16: Выполнение команд из скрипта
 </figcaption>
 </figure>
 </div>
@@ -1647,14 +1628,14 @@ f(x),
 <p>Мы желали вычислить <span class="math inline">\(\log_4 13\)</span>. Согласно математике, это <span class="math inline">\(1.85\)</span> с копейками. Для вычисления логарифма, конечно же, существует функция <code>log()</code>, однако у «математического» логарифма два аргумента: собственно аргумент — в нашем случае <span class="math inline">\(13\)</span> — и основание логарифма — в нашем случае <span class="math inline">\(4\)</span>. Общий синтаксис (<a href="#lst-intro-fun" class="quarto-xref">Код&nbsp;<span>2.7</span></a>) нам подсказывает, что функция может принимать несколько аргументов, но будет ли разница между <code>log(13, 4)</code> и <code>log(4, 13)</code>? В математике мы сначала пишем основание логарифма, затем число, от которого его нужно вычислить — сохраняется ли этот порядок при использовании функции в R?</p>
 <section id="r-intro-help" class="level4" data-number="2.7.1.1">
 <h4 data-number="2.7.1.1" class="anchored" data-anchor-id="r-intro-help"><span class="header-section-number">2.7.1.1</span> Help</h4>
-<p>Чтобы ответить на эти вопросы, нам необходимо ненадолго отвлечься на важную вкладку чётвертого окна интерфейса RStudio (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>) — <strong>Help</strong>. Оно, как мы отмечали выше, содержит документацию по R (<a href="#fig-r-intro-help" class="quarto-xref">Иллюстрация&nbsp;<span>2.19</span></a>).</p>
+<p>Чтобы ответить на эти вопросы, нам необходимо ненадолго отвлечься на важную вкладку чётвертого окна интерфейса RStudio (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>) — <strong>Help</strong>. Оно, как мы отмечали выше, содержит документацию по R (<a href="#fig-r-intro-help" class="quarto-xref">Иллюстрация&nbsp;<span>2.17</span></a>).</p>
 <div id="fig-r-intro-help" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-intro-help-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/r-help.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-intro-help-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.19: Вкладка Help
+Иллюстрация&nbsp;2.17: Вкладка Help
 </figcaption>
 </figure>
 </div>
@@ -1670,14 +1651,14 @@ f(x),
 <li>аналогично, сейчас нам нужен <code>?log</code></li>
 </ul></li>
 </ul>
-<p>Все варианты дадут один и тот же результат (<a href="#fig-r-intro-help-log" class="quarto-xref">Иллюстрация&nbsp;<span>2.20</span></a>).</p>
+<p>Все варианты дадут один и тот же результат (<a href="#fig-r-intro-help-log" class="quarto-xref">Иллюстрация&nbsp;<span>2.18</span></a>).</p>
 <div id="fig-r-intro-help-log" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-intro-help-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/r-help-log.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-intro-help-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.20: Help по функции <code>log()</code>
+Иллюстрация&nbsp;2.18: Help по функции <code>log()</code>
 </figcaption>
 </figure>
 </div>
@@ -1919,7 +1900,7 @@ f(x),
 <ul>
 <li>первое помещено в переменную напрямую, второе создано вычислением <code>4 * 8</code></li>
 </ul></li>
-<li>созданные объекты отображаются во вкладке <strong>Environment</strong> третьего окна RStudio (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>)</li>
+<li>созданные объекты отображаются во вкладке <strong>Environment</strong> третьего окна RStudio (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>)</li>
 </ul>
 <p><strong>Объектом</strong> в R может быть абсолютно всё, что угодно — число, строка, вектор, матрица, таблица, список, функция и другие более сложные и специфические штуки. Мы не будем погружаться в программистские детали и аровское закулисье, поэтому всё, что валяется в Environment для нас есть объект.</p>
 <p>С созданными объектами можно далее успешно работать. Например, созданные переменные <code>x</code> и <code>y</code> использоваться во всяких вычислениях:</p>
@@ -2280,14 +2261,14 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <li><strong>структуру кода</strong> — разделить скрипт на несколько частей</li>
 </ul>
 <p>и другие мысли, которые у вас возникают по ходу предобработки и анализа данных.</p>
-<p>Это важно. Очень. Иначе будет <a href="#fig-commenting-importance" class="quarto-xref">Иллюстрация&nbsp;<span>2.21</span></a>.</p>
+<p>Это важно. Очень. Иначе будет <a href="#fig-commenting-importance" class="quarto-xref">Иллюстрация&nbsp;<span>2.19</span></a>.</p>
 <div id="fig-commenting-importance" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-commenting-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/r-intro/commenting-importance.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-commenting-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.21: Жизненная ситуация. <a href="https://twitter.com/Loly_girl/status/1009726649263325184/photo/1">Источник</a>
+Иллюстрация&nbsp;2.19: Жизненная ситуация. <a href="https://twitter.com/Loly_girl/status/1009726649263325184/photo/1">Источник</a>
 </figcaption>
 </figure>
 </div>
@@ -2408,7 +2389,7 @@ nickname       Puppy Cup                   </code></pre>
 <li>Исполнить его можно из консоли R с помощью команды <code>source("path_to_script")</code> или из командной строки с помощью команды <code>Rscript path_to_script</code>.</li>
 </ul></li>
 </ul>
-<p>Игрушечный пример представлен ниже (<a href="#fig-r-from-terminal" class="quarto-xref">Иллюстрация&nbsp;<span>2.22</span></a>).</p>
+<p>Игрушечный пример представлен ниже (<a href="#fig-r-from-terminal" class="quarto-xref">Иллюстрация&nbsp;<span>2.20</span></a>).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2465,10 +2446,10 @@ nickname       Puppy Cup                   </code></pre>
 <div id="fig-r-from-terminal" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-from-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Sdl_EaZL6GQ?si=9n1gkdnPiGabSO9E" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/-rRHd8rcx44" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-from-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.22: Давайте напишем скрипт на R через Vim… Действительно… Ни одного изъяна в этом плане
+Иллюстрация&nbsp;2.20: Давайте напишем скрипт на R через Vim… Действительно… Ни одного изъяна в этом плане
 </figcaption>
 </figure>
 </div>
