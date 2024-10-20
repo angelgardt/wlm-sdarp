@@ -87,10 +87,10 @@ format:
     title-block-banner-color: "#f5f5f5"
     toc: true
     toc-depth: 4
-    grid: 
-      body-width: 900px
-      sidebar-width: 210px
-      margin-width: 210px
+    # grid:
+    #   body-width: 1200px
+      # sidebar-width: 210px
+      # margin-width: 210px
     cover-image: img/other/cover.jpg
     cover-image-alt: |
       Тут должна быть обложка книги, но что-то пошло не так...
