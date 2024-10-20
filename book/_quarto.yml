@@ -21,6 +21,7 @@ book:
     - common-signs.qmd
     - part: Debug
       chapters: 
+      - debug_pretest.qmd
       - debug_chapter.qmd
       - debug_quiz.qmd
       - debug_sheet.qmd

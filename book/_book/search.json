@@ -2255,5 +2255,115 @@
       "Приложения",
       "<span class='chapter-number'>J</span>  <span class='chapter-title'>Прочие математические штуки</span>"
     ]
+  },
+  {
+    "objectID": "debug_pretest.html#q1-title",
+    "href": "debug_pretest.html#q1-title",
+    "title": "Претест",
+    "section": "#1",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q2-title",
+    "href": "debug_pretest.html#q2-title",
+    "title": "Претест",
+    "section": "#2",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{=}\\frac{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q3-title",
+    "href": "debug_pretest.html#q3-title",
+    "title": "Претест",
+    "section": "#3",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q4-title",
+    "href": "debug_pretest.html#q4-title",
+    "title": "Претест",
+    "section": "#4",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q5-title",
+    "href": "debug_pretest.html#q5-title",
+    "title": "Претест",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q6-title",
+    "href": "debug_pretest.html#q6-title",
+    "title": "Претест",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q7-title",
+    "href": "debug_pretest.html#q7-title",
+    "title": "Претест",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q8-title",
+    "href": "debug_pretest.html#q8-title",
+    "title": "Претест",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q9-title",
+    "href": "debug_pretest.html#q9-title",
+    "title": "Претест",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q10-title",
+    "href": "debug_pretest.html#q10-title",
+    "title": "Претест",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
   }
 ]
