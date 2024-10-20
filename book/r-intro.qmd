@@ -629,12 +629,12 @@ a. $\displaystyle \frac{41}{64 - 4^3} = 0$
 :::
 
 
-:::{.callout-warning}
+:::{.callout-caution}
 ###### `==` vs `=`
 
 Обращу внимание, что для сравнения на равенство используется двойное равно --- `==`. Одинарное равно имеет другой смысл (см. [далее](#r-intro-assignment)).
 
-В прицнипе, если вы случайно опечатаетесь, катастрофических последствий это, скорее всего, не вызовет --- код упадет в ошибкой (@lst-equal-comparison). Хотя могло бы...[^rintro-redundancy]
+В принципе, если вы случайно опечатаетесь, катастрофических последствий это, скорее всего, не вызовет --- код упадет в ошибкой (@lst-equal-comparison). Хотя могло бы...[^rintro-redundancy]
 
 ![Code review --- это полезно. [Источник](https://www.reddit.com/r/ProgrammerHumor/comments/4x26u3/this_is_why_code_reviews_are_a_good_thing/)](img/r-intro/robots-kill-humans.png)
 :::
