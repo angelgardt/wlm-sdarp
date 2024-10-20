@@ -12,7 +12,8 @@ quizzes <- list()
 
 read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
            sheet = "order",
-           col_types = "c") -> quiz_order
+           col_types = "c") %>% 
+  select(quiz, number) -> quiz_order
 
 for (quiz_name in quizzes_names) {
   read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
