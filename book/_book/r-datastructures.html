@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - Введение</title>
+<title>WLM SDARP - 4&nbsp; Структуры данных</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./common-signs.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./r-data.html" rel="next">
+<link href="./r-datatypes.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./common-intro.html">Введение</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-datastructures.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -147,10 +181,10 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-datastructures.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title"><span id="intro" class="quarto-section-identifier">Введение</span></h1>
+      <h1 class="title"><span id="r-datastructures" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></h1>
                       </div>
   </div>
     
@@ -189,7 +223,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./common-intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./common-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Введение</span></a>
   </div>
 </li>
@@ -257,7 +291,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-datastructures.html" class="sidebar-item-text sidebar-link">
+  <a href="./r-datastructures.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></a>
   </div>
 </li>
@@ -481,9 +515,26 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#intro-andan" id="toc-intro-andan" class="nav-link active" data-scroll-target="#intro-andan">Зачем изучать анализ данных?</a></li>
-  <li><a href="#intro-andan-nn" id="toc-intro-andan-nn" class="nav-link" data-scroll-target="#intro-andan-nn">Зачем изучать анализ данных в эпоху нейросетей?</a></li>
-  <li><a href="#intro-not-working-links" id="toc-intro-not-working-links" class="nav-link" data-scroll-target="#intro-not-working-links">Особенности бытия в текущей реальности</a></li>
+  <li><a href="#датафрейм" id="toc-датафрейм" class="nav-link active" data-scroll-target="#датафрейм"><span class="header-section-number">4.0.1</span> Датафрейм</a></li>
+  <li><a href="#векторы" id="toc-векторы" class="nav-link" data-scroll-target="#векторы"><span class="header-section-number">4.0.2</span> Векторы</a>
+  <ul>
+  <li><a href="#индексация-векторов" id="toc-индексация-векторов" class="nav-link" data-scroll-target="#индексация-векторов"><span class="header-section-number">4.0.2.1</span> Индексация векторов</a></li>
+  <li><a href="#векторизация" id="toc-векторизация" class="nav-link" data-scroll-target="#векторизация"><span class="header-section-number">4.0.2.2</span> Векторизация</a></li>
+  <li><a href="#recycling" id="toc-recycling" class="nav-link" data-scroll-target="#recycling"><span class="header-section-number">4.0.2.3</span> Recycling</a></li>
+  </ul></li>
+  <li><a href="#матрицы" id="toc-матрицы" class="nav-link" data-scroll-target="#матрицы"><span class="header-section-number">4.1</span> Матрицы</a>
+  <ul>
+  <li><a href="#индексация-матриц" id="toc-индексация-матриц" class="nav-link" data-scroll-target="#индексация-матриц"><span class="header-section-number">4.1.1</span> Индексация матриц</a></li>
+  </ul></li>
+  <li><a href="#массивы" id="toc-массивы" class="nav-link" data-scroll-target="#массивы"><span class="header-section-number">4.2</span> Массивы</a></li>
+  <li><a href="#списки" id="toc-списки" class="nav-link" data-scroll-target="#списки"><span class="header-section-number">4.3</span> Списки</a>
+  <ul>
+  <li><a href="#индексация-списков" id="toc-индексация-списков" class="nav-link" data-scroll-target="#индексация-списков"><span class="header-section-number">4.3.1</span> Индексация списков</a></li>
+  </ul></li>
+  <li><a href="#собираем-датафрейм" id="toc-собираем-датафрейм" class="nav-link" data-scroll-target="#собираем-датафрейм"><span class="header-section-number">4.4</span> Собираем датафрейм</a>
+  <ul>
+  <li><a href="#индексация-датафрейма" id="toc-индексация-датафрейма" class="nav-link" data-scroll-target="#индексация-датафрейма"><span class="header-section-number">4.4.1</span> Индексация датафрейма</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -494,151 +545,451 @@ window.Quarto = {
 
 
 
-<section id="intro-andan" class="level2">
-<h2 class="anchored" data-anchor-id="intro-andan">Зачем изучать анализ данных?</h2>
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Decorations --->
+<!--- Common --->
+<!--- Logic --->
+<!--- Set theory --->
+<!--- Combinatorics --->
+<!--- Number sets--->
+<!--- Calculus --->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<!--- Letters --->
 <div class="intro">
-<p>По идее, если вы дотянулись до этой книжки, то вряд ли вам нужно пояснять, что анализ данных — это стильно, можно и полезно, однако позволю себе следующий «мотивационный» заход.</p>
+<p>Вступление</p>
 </div>
-<p>Допустим, мы решили замерить уровень счастья российского населения — задача, прямо скажем, не суперпростая. Расшарить опросник на 144 миллиона человек весьма энергозатратно, и хотелось бы как-то упростить себе задачу. Возникает ряд вопросов:</p>
-<ul>
-<li>сколько нам надо опросить людей, чтобы наш замер отражал реальность?</li>
-<li>как нам их выбрать?</li>
-<li>как потом обсчитать цифры<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, которые мы получим?</li>
-<li>как сделать по обсчитанным цифрам содержательные выводы?</li>
-<li>и вообще, наш опросник — он точный? надежный? им вообще законно что-либо измерять?</li>
-</ul>
-<p>Или пусть мы учёные и решили провести некоторый суровый эксперимент, чтобы узнать, как пользователи Android и iOS ищут иконки разных приложений. Скачали статей, выдвинули гипотезы, придумали дизайн, запрогали эксперимент, нашли несчастных, которые прошли этот эксперимент — по итогу вновь мы получили какие-то цифры. Возникает справедливый вопрос: и чё?</p>
-<ul>
-<li>как нам сказать, что данные подтвердили или опровергли наши гипотезы?</li>
-<li>можем ли мы вообще по этим данным что-то сказать?</li>
-</ul>
-<p>Ну, допустим, мы ленивые и вообще программировать это для умных — отдадим специально обученным аналитикам посчитать это всё. И получим «цифры». О, нет — опять! Возникает ещё один справедливый вопрос: и чё?</p>
-<ul>
-<li>как нам сказать, что эти цифры подверждают или опровергают наши гипотезы?</li>
-<li>можем лм мы вообще по этим цифрам что-либо сказать осмысленного?</li>
-<li>а содержательно как это интерпретировать? иконки-то как пользователи ищут?</li>
-</ul>
-<p>Ну, или мы HR в компании на 100500 тысяч человек сотрудников. Пришел гендир, сказал «уволить нельзя премировать, только непонятно кого». Дал нам экселевскую таблицу со всякими показателями эффективности и сказал «завтра к вечеру должна быть система грейдов, по которой будем оценить сотрудников». И что делать? Придется всю ночь ворочить цифры и статистически моделировать.</p>
-<p>А вот, скажем, залезли мы в новости — а там новая пандемия. Графики, снова цифры какие-то ужасные. Хлебнули чаю, включили статистический взгляд — а, ну так все норм же. Оценили риски для себя, друзей, родных, убедились в том, что журналисты снова навели излишней суеты, восхитились собой, пошли инвестировать в крипту.</p>
-<p>Опять какие-то графики увидели, тренды, прогнозы и всё такое. Как понять? Как прочитать это всё? Как оценить, куда надо стипуху вкласть? Вспомнили статистику, навели шороху, собрали достойный инвестиционный портфельчик — хлебнули кофе, пошли покупать билеты и релоцироваться на Бали.</p>
-<p>Далее можно расписать огромное количество подобных случаев. Предлагаю поразмыслить на досуге на следующими кейсами и вопросами.</p>
-<div class="question">
-<p><strong>Рандомный динозавр</strong></p>
-<p><em>Какова вероятность завтра встретить динозавра на улице?</em></p>
+<p><strong>Структура данных</strong> — это способ и форма объединения однотипных и/или логически связанных данных.</p>
+<center>
+<figure class="figure">
+<img src="pics/tidy-2.jpg" class="figure-img">
+<figcaption>
+Пример данных
+</figcaption>
+</figure>
+</center>
+<section id="датафрейм" class="level3" data-number="4.0.1">
+<h3 data-number="4.0.1" class="anchored" data-anchor-id="датафрейм"><span class="header-section-number">4.0.1</span> Датафрейм</h3>
+<p>Воплощение привычной нам «таблицы» в R.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  carat cut       color clarity depth table price     x     y     z
+  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
 </div>
-<div class="question">
-<p><strong>Очередная волна COVID-19</strong></p>
-<p>Вирусологи объявили о новой волне коронавируса — заболеваемость 16.4% на 100 тыс. населения. Все дружно пошли сдавать самый надежный ПЦР-тест — он с 98% точностью определяет, что вы заражены короновирусом, если вы действительно заражены, и с 98% точностью определяет, что вы здоровы, если вы действительно здоровы. Ваш результат теста положительный.</p>
-<p><em>Какова вероятность того, что вы заражены коронавирусом?</em> <!--- 0.0000805 ---></p>
 </div>
-<div class="question">
-<p><strong>Суд на Салли Кларк</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>В 1998 году в Англии состоялось громкое судебное разбирательство — английский адвокат Салли Кларк (Sally Clark, 1964 — 15 марта 2007) была осуждена за убийство двух своих новорожденных сыновей. Ее первый сын Кристофер умер в декабре 1996 года, через 11 недель после рождения, а второй сын Гарри умер при аналогичных обстоятельствах в январе 1998 года, спустя 8 недель после рождения. Месяц спустя Кларк была арестована.</p>
-<p>Защита утверждала, что оба ребенка умерли в результате СВДС (синдромом внезапной детской смерти), но обвинение настаивало, что их убила Кларк. Обвинение привлекло профессионального эксперта, авторитетного профессора педиатрии сэра Роя Медоу, который заявил, что поскольку вероятность внезапной смерти ребенка составляет <span class="math inline">\(\displaystyle \frac{1}{8543}\)</span>, то шанс двух смертей от СВДС в одной семье равен <span class="math inline">\(\displaystyle \frac{1}{8543} \cdot \frac{1}{8543}\)</span>, то есть 1 к 73 миллионам. В то время количество рождений в Англии, Уэльсе и Шотландии составляло 700 000 в год, поэтому вероятность случайного возникновения этого события составляла 1 каждые 100 лет.</p>
-<p>Салли Кларк признали виновной. Честерский суд приговорил ее к пожизненному заключению восемью голосами за и двумя против. В 1999 году она была заключена в тюрьму, но в январе 2003-го приговор отменили.</p>
-<p><em>Почему приговор был отменен? Была ли где-либо совершена ошибка при вынесении приговора?</em></p>
-</div>
-<p>Приходится признать, что сегодня мы живем в окружении огромного количества алгоритмов, основанных на статистическом анализе. Все то, что называется модным словосочетанием «машинное обучение» базируется на тех статистических методах, которые будут обсуждаться в этой книге. А знание основы основ придаёт некоторой уверенности в том, что вы понимаете, что происходит и когда искусственный интеллект нас уже поработит.</p>
-<p>Можно ли жить без этого знания? В принципе, да. Однако</p>
-<ul>
-<li><em>исследователям в когнитивной психологии и нейронауке</em> необходимо анализировать данные своих экспериментов и — что значительно более важно — корректно интерпретировать результаты статистического анализа, что невозможно без понимания того, как используемые статистические методы работают;</li>
-<li><em>исследователям в психологии личности и социальной психологии</em> также необходимо анализировать данные своих исследований — и используемые ими модели даже сложнее, чем у когнитивщиков и нейроученых;</li>
-<li><em>организационным психологам</em> придется также работать с данными, потому что HR-аналитика на хайпе и экспертный подход к оценке персонала постепенно теряет актуальность [а еще айтишников нанимать придётся]</li>
-<li><em>консультирующим психологам</em> надо быть в теме того, что творят исследователи в области психологии личности, а значит придется читать статьи и оценивать их адекватность, в том числе, в аспекте анализа данных</li>
-<li><em>всем</em> [даже некоторым когнитивщикам] придется работать с опросниками — а вся психометрика строится на статистике</li>
-<li><em>всем</em> придется в жизни анализировать потоки информации, возрастающие в невероятной скоростью, данные и графики, критически оценивать, выявлять неочевидные закономерности, чтобы понимать, что происходит — и статистика в этом сильно поможет</li>
-<li><em>все</em> мы продолжаем жить в мире гаджетов и технологий, и понимание того, какие модели лежат в их основе, очень прилично апгрейдит наше понимание того, как современных технологии работают.</li>
-</ul>
-<p>Конечно, ни одна книга и ни один курс не может охватить всё. Но мы постараемся заложить достаточно прочный фундамент, который при правильном применении и должном уходе поможет вам преуспеть и в жизни, и в работе и вообще.</p>
+<p>Это сложная структура данных. Чтобы понять всю её мощь, необходимо начать с более простых.</p>
 </section>
-<section id="intro-andan-nn" class="level2">
-<h2 class="anchored" data-anchor-id="intro-andan-nn">Зачем изучать анализ данных в эпоху нейросетей?</h2>
-<p>Реально… А зачем? Можно же просто закинуть промпт, и всё готово…</p>
-<p>Ну, закинем промпт.</p>
+<section id="векторы" class="level3" data-number="4.0.2">
+<h3 data-number="4.0.2" class="anchored" data-anchor-id="векторы"><span class="header-section-number">4.0.2</span> Векторы</h3>
+<p>Вектор — это набор чисел.</p>
+<p><span class="math display">\[
+\pmatrix{1 &amp; 4 &amp; 36 &amp; -8 &amp; 90.1 &amp; -14.5}
+\]</span></p>
+<p>Если это утверждение вызывает у вас внутренний протест, давай проследим пусть от направленного отрезка в набору чисел.</p>
+<p>Возьмем направленный отрезок — вектор:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r-datastructures_files/figure-html/vec-classic-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Именно так мы понимали вектор в школе. Договоримся, что все векторы у нас начинаются из точки <span class="math inline">\((0, 0)\)</span>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r-datastructures_files/figure-html/vec-free-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Если теперь у нас все вектора начинаются из начал координат, то мы можем полностью описать вектор только координатами его конца. Поэтому уберем вектор:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r-datastructures_files/figure-html/vec-remove-vector-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>То есть для нас теперь вектор равносилен точке на плоскости. А точка однозначно описывается двумя координатами. Получается, можно просто записать:</p>
+<p><span class="math display">\[
+\pmatrix{1 &amp; 2}
+\]</span></p>
+<p>Получается, что это одно и то же:</p>
+<p><span class="math display">\[
+\pmatrix{1 &amp; 0.5}, \quad \pmatrix{2 &amp; 3}, \quad \pmatrix{4.2 &amp; -3.5}
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r-datastructures_files/figure-html/vec-same-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Теперь обобщим вектор на более общие случаи:</p>
 <blockquote class="blockquote">
-<p>Зачем изучать анализ данных, если существуют нейросети, которые могут проанализировать данные за меня?</p>
+<p>Вектор — это набор некоторого колчиества элементов одного типа.</p>
 </blockquote>
-<!---
-::::{.quote}
-Хороший вопрос! Изучение анализа данных имеет несколько преимуществ:
-
-1. Понимание данных: Изучив анализ данных, вы сможете понять, какие данные нужны для решения конкретной задачи, какие методы анализа применять и как интерпретировать полученные результаты.
-2. Контроль качества: Понимание процесса анализа данных позволяет контролировать качество работы нейронных сетей и других автоматических методов. Вы сможете определить, в каких случаях результаты нейросетей могут быть ненадежными или ошибочными.
-3. Улучшение модели: Знания по анализу данных помогут вам создавать более эффективные и точные модели машинного обучения. Вы сможете оптимизировать параметры модели, обрабатывать данные для улучшения результатов и переобучать модель при необходимости.
-
-Таким образом, изучение анализа данных полезно для более глубокого понимания данных, улучшения работы нейросетей и создания более точных и надежных моделей машинного обучения.
-
-Вот еще несколько мотивирующих причин для изучения анализа данных:
-
-1. Карьерные перспективы: Навыки анализа данных сегодня очень востребованы на рынке труда. Знание аналитики данных может открыть для вас больше возможностей для карьерного роста в области ИТ, маркетинга, финансов и других сферах.
-
-2. Принятие обоснованных решений: Умение анализировать данные поможет вам принимать обоснованные и информированные решения как в личной жизни, так и в сфере бизнеса. Это может повысить вашу уверенность и расширить кругозор.
-
-3. Творческий потенциал: Анализ данных --- это процесс поиска паттернов, выявления трендов и создания новых знаний. Это может быть увлекательным и творческим процессом, открывающим возможности для самовыражения и реализации ваших идей.
-
-Надеюсь, эти мотиваторы вдохновят вас на изучение анализа данных!
-
-:::{.quote-sign}
-Ответ [ChatGPT-3](https://chatgpt-me.ru/)<br>
-30 мая 2024
-:::
-::::
---->
-<div class="quote">
-<p>Это отличный вопрос! Действительно, нейросети и другие методы машинного обучения становятся все более мощными инструментами для анализа данных. Однако есть несколько причин, почему важно изучать анализ данных, даже если существуют такие технологии:</p>
-<ol type="1">
-<li><p><strong>Понимание процесса</strong>: Понимание основ анализа данных позволяет лучше понять, как работают нейросети и другие алгоритмы машинного обучения. Это помогает в настройке, интерпретации и улучшении моделей.</p></li>
-<li><p><strong>Выбор методов</strong>: Анализ данных помогает выбирать подходящие методы и инструменты для конкретной задачи. Нейросети — не всегда лучший выбор, особенно для небольших наборов данных или когда требуется интерпретируемость результатов.</p></li>
-<li><p><strong>Качество данных</strong>: Анализ данных включает в себя предварительную обработку данных — очистку, нормализацию, выявление и исправление ошибок. Без этого этапа нейросеть может обучиться на “грязных” данных и выдавать неправильные результаты.</p></li>
-<li><p><strong>Интерпретируемость моделей</strong>: Многие модели машинного обучения (включая нейросети) сложны для интерпретации. Традиционные методы анализа данных, такие как регрессия или дерево решений, могут предложить более простые и интерпретируемые модели, что важно в некоторых приложениях, например, в медицине или финансах.</p></li>
-<li><p><strong>Обоснование результатов</strong>: В некоторых ситуациях требуется не только предсказать результат, но и объяснить, почему модель приняла то или иное решение. Это особенно важно в регулируемых отраслях, таких как банковское дело или страхование.</p></li>
-<li><p><strong>Комбинаторика методов</strong>: Возможно объединение различных методов анализа данных и машинного обучения для достижения лучших результатов. Глубокое понимание как статистических методов, так и нейросетей позволяет строить гибридные модели.</p></li>
-<li><p><strong>Инновации и новые подходы</strong>: Знания в области анализа данных способствуют разработке новых алгоритмов и подходов, что может привести к появлению более эффективных способов решения задач.</p></li>
-</ol>
-<p>В целом, изучение анализа данных дает фундаментальные знания, которые помогут лучше использовать и усовершенствовать нейросетевые модели и другие инструменты машинного обучения.</p>
-<div class="quote-sign">
-<p>Ответ <a href="https://chatgpt-me.ru/">ChatGPT-4</a><br> 30 мая 2024</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="sc">-</span><span class="dv">34</span>, <span class="fl">7.7</span>) <span class="co"># числовой вектор</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>v_char <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Москва"</span>, <span class="st">"Санкт-Петербург"</span>, <span class="st">"Нижний Новгород"</span>, <span class="st">"Пермь"</span>) <span class="co"># текстовый вектор</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>v_log <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>) <span class="co"># логический вектор</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(v_num)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>v_num</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]   1.0   6.0 -34.0   7.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(v_char)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>v_char</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Москва"          "Санкт-Петербург" "Нижний Новгород" "Пермь"          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(v_log)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>v_log</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE  TRUE</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>Зачем мне как аналитику уметь писать код, если можно попросить нейросеть написать код под конкретную задачу по анализу данных?</p>
-</blockquote>
-<div class="quote">
-<p>Использование нейросетей для генерации кода под задачи анализа данных может быть полезным, но есть несколько причин, по которым важно уметь писать код самостоятельно, даже если вы аналитик:</p>
-<ol type="1">
-<li><p><strong>Понимание данных и процессов</strong>: Знание программирования помогает лучше понять структуру данных и методы, которые вы используете для их анализа. Это особенно важно для интерпретации результатов и их корректного применения.</p></li>
-<li><p><strong>Отладка и валидность результатов</strong>: Автоматически сгенерированный код может привести к ошибкам или неправильным выводам. Умение самостоятельно писать и проверять код позволяет убедиться, что все работает корректно.</p></li>
-<li><p><strong>Гибкость и адаптация</strong>: Ваши задачи могут изменяться, требуя новой логики анализа или дополнительных шагов обработки данных. Умение писать код позволяет легче адаптироваться к новым требованиям и быстро вносить изменения.</p></li>
-<li><p><strong>Качество данных</strong>: Предварительная обработка данных — ключевой этап анализа. Знание программирования помогает эффективно очистить, нормализовать и обработать данные перед анализом.</p></li>
-<li><p><strong>Оптимизация</strong>: Автоматически сгенерированный код может быть неоптимальным. Умение писать собственный код позволяет вам сделать анализ данных более эффективным и производительным.</p></li>
-<li><p><strong>Интерпретируемость</strong>: Полное понимание кода делает результаты вашего анализа более понятными и объяснимыми для заинтересованных сторон.</p></li>
-<li><p><strong>Командная работа и документация</strong>: В команде аналитиков важно уметь читать и писать структурированный код, чтобы эффективно сотрудничать с коллегами и поддерживать документацию проекта.</p></li>
-<li><p><strong>Навык решения уникальных задач</strong>: Задачи анализа данных могут быть очень разнообразными и требовать индивидуального подхода. Нейросеть может не всегда справиться с уникальными или нестандартными задачами без надлежащего контекста.</p></li>
-<li><p><strong>Профессиональный рост</strong>: Знание программирования является важным навыком для роста и развития в карьере аналитика. Это открывает двери к более сложным и интересным проектам.</p></li>
-<li><p><strong>Безопасность и конфиденциальность</strong>: Используя нейросеть, вы можете столкнуться с проблемами, связанными с конфиденциальностью данных. Самостоятельная работа с кодом помогает лучше контролировать безопасность и защиту данных.</p></li>
-</ol>
-<p>Хотя нейросети могут быть полезным инструментом, знание программирования остается важным навыком для аналитиков, обеспечивая гибкость, контроль и качество работы.</p>
-<div class="quote-sign">
-<p>Ответ <a href="https://chatgpt-me.ru/">ChatGPT-4</a><br> 30 мая 2024</p>
+<section id="индексация-векторов" class="level4" data-number="4.0.2.1">
+<h4 data-number="4.0.2.1" class="anchored" data-anchor-id="индексация-векторов"><span class="header-section-number">4.0.2.1</span> Индексация векторов</h4>
+<p>Из вектора можно вытащить его элемент:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>v_char[<span class="dv">2</span>] <span class="co"># по номеру</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Санкт-Петербург"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>v_num[v_num <span class="sc">&gt;</span> <span class="dv">5</span>] <span class="co"># по условию</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.0 7.7</code></pre>
 </div>
 </div>
-<p>В общем-то, автор согласен с мнением нейросетки. Пусть и не все обозначенные ею пункты в полной мере актуальны для психологов-исследователей, так или иначе каждый тезис находит своё отражение в исследовательской работе психолога.</p>
-<p>Кроме того, если мы уж и решили использовать нейросеть для генерации кода или подбора статистического метода под имеющуюся у вас задачу, каким-то образом <strong>надо сформулировать промпт</strong>. А как его сформулировать, если не знать хотя бы на концептуальном уровне, что должно получиться в результате анализа данных?</p>
-<p>Получается, что всё-таки имеет смысл разобраться в статистике и андане хотя бы на некотором базовом уровне, чтобы использоваться нейросетки с умом.</p>
 </section>
-<section id="intro-not-working-links" class="level2">
-<h2 class="anchored" data-anchor-id="intro-not-working-links">Особенности бытия в текущей реальности</h2>
-<p>В книге оставлено много ссылок на внешние ресурсы. Так устроен современный мир, что не все интернет-ресурсы легко и непринужденно доступны. Если какая-либо ссылка не открывается, а вам очень хочется по ней прогуляться, попробуйте врубить VPN.</p>
-<p>Если это не помогло, <a href="https://t.me/angelgardt">маякните автору</a>, он проверит, не полетело ли что-нибудь при верстке, и если имеется баг — поправит.</p>
+<section id="векторизация" class="level4" data-number="4.0.2.2">
+<h4 data-number="4.0.2.2" class="anchored" data-anchor-id="векторизация"><span class="header-section-number">4.0.2.2</span> Векторизация</h4>
+<p>Для того, чтобы выполнить операцию на всем векторе поэлементно, не нужно перебирать его элементы.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>vec <span class="sc">-</span> <span class="dv">1</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0 1 2 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>vec<span class="sc">^</span><span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  4  9 16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(vec)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.000000 1.414214 1.732051 2.000000</code></pre>
+</div>
+</div>
+</section>
+<section id="recycling" class="level4" data-number="4.0.2.3">
+<h4 data-number="4.0.2.3" class="anchored" data-anchor-id="recycling"><span class="header-section-number">4.0.2.3</span> Recycling</h4>
+<p>Если мы будем, например, складывать два вектора разной длины, то более короткий зациклится.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>vec2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>vec1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>vec2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>vec1 <span class="sc">+</span> vec2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  2  4  4  6  6  8  8 10 10 12</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="матрицы" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="матрицы"><span class="header-section-number">4.1</span> Матрицы</h2>
+<p>Если мы желаем приблизиться к датафрейму, то одного ряда элементов нам недостаточно — надо выходить во второе измерение! Поэтому уложим вектор в матрицу:</p>
+<center>
+<figure class="figure">
+<img src="pics/vec-to-mat.png" class="figure-img">
+<figcaption>
+Варианты преобразования вектора в матрицу
+</figcaption>
+</figure>
+</center>
+<p>Или вот еще разные варианты:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>m1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v, <span class="at">nrow =</span> <span class="dv">4</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>m2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>m3</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v, <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>m4</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+[4,]   10   11   12</code></pre>
+</div>
+</div>
+<section id="индексация-матриц" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="индексация-матриц"><span class="header-section-number">4.1.1</span> Индексация матриц</h3>
+<p>Из матрицы можно вытащить её элементы:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>m1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>m1[<span class="dv">2</span>, <span class="dv">3</span>] <span class="co"># отдельный элемент</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>m1[<span class="dv">1</span>, ] <span class="co"># целую строку</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  4  7 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>m1[, <span class="dv">4</span>] <span class="co"># целый столбец</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10 11 12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>m1[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] <span class="co"># часть матрицы</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    4    7   10
+[2,]    5    8   11</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="массивы" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="массивы"><span class="header-section-number">4.2</span> Массивы</h2>
+<ul>
+<li>Вектор — одномерный массив.</li>
+<li>Матрица — двумерный массив.</li>
+<li><strong>Массивы</strong> — структуры, которые объединяют данные только одного типа.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span>, <span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span>, <span class="cn">TRUE</span>, <span class="st">"word"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2"    "TRUE" "word"</code></pre>
+</div>
+</div>
+<p>При объединении разных типов данных в одном массиве происходит <strong>приведение типов (coercion)</strong> по следующей иерархии:</p>
+<center>
+<code>logical</code> → <code>integer</code> → <code>numeric</code> → <code>complex</code> → <code>character</code>
+</center>
+<p>Это нам осложняет жизнь, так как мы бы хотели объединять данные разных типов в одну структуру.</p>
+</section>
+<section id="списки" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="списки"><span class="header-section-number">4.3</span> Списки</h2>
+<p>Списки позволяют объединять массивы различных типов данных, чем делают нашу жизнь значительно приятнее.</p>
+<center>
+<figure class="figure">
+<img src="pics/list-structure.png" class="figure-img">
+<figcaption>
+Схема внутренней структуры списка
+</figcaption>
+</figure>
+</center>
+<p>Например, так:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">v1 =</span> v_num,</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">v2 =</span> v_char,</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">m1 =</span> m1,</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">ls =</span> <span class="fu">list</span>(<span class="at">v =</span> v,</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">m =</span> m3))</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>l</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$v1
+[1]   1.0   6.0 -34.0   7.7
+
+$v2
+[1] "Москва"          "Санкт-Петербург" "Нижний Новгород" "Пермь"          
+
+$m1
+     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12
+
+$ls
+$ls$v
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12
+
+$ls$m
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+</div>
+</div>
+<section id="индексация-списков" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="индексация-списков"><span class="header-section-number">4.3.1</span> Индексация списков</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>l[<span class="dv">1</span>] <span class="co"># по номеру элемента, возвращается список</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$v1
+[1]   1.0   6.0 -34.0   7.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>l[[<span class="dv">1</span>]] <span class="co"># по номеру элемента, возвращается массив</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]   1.0   6.0 -34.0   7.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>l<span class="sc">$</span>ls <span class="co"># по названию элемента</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$v
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12
+
+$m
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>l<span class="sc">$</span>ls<span class="sc">$</span>m <span class="co"># можно идти многоуровнево</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    5    6    7    8
+[3,]    9   10   11   12</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="собираем-датафрейм" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="собираем-датафрейм"><span class="header-section-number">4.4</span> Собираем датафрейм</h2>
+<ul>
+<li>возьмем список</li>
+<li>потребуем, чтобы его элементами были <strong>векторы</strong></li>
+<li>потребуем, чтобы эти векторы были <strong>одинаковой длины</strong></li>
+<li>расположим их «вертикально»</li>
+</ul>
+<center>
+<figure class="figure">
+<img src="pics/list-vs-df.png" class="figure-img">
+<figcaption>
+Структура списка и датафрейма
+</figcaption>
+</figure>
+</center>
+<section id="индексация-датафрейма" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="индексация-датафрейма"><span class="header-section-number">4.4.1</span> Индексация датафрейма</h3>
+<p>Для примера возьмем датафрейм про бриллианты:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>diam</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  carat cut       color clarity depth table price     x     y     z
+  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
+</div>
+</div>
+<p>Датафрейм наследует свойства списка и матрицы, что делает его невероятно гибким в обращении и крайне удобным в работе:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>diam<span class="sc">$</span>carat <span class="co"># вытащить столбец</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.23 0.21 0.23 0.29 0.31 0.24</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>diam[diam<span class="sc">$</span>price <span class="sc">&gt;</span> <span class="dv">330</span>, ] <span class="co"># отобрать строки по условию</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 10
+  carat cut       color clarity depth table price     x     y     z
+  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+2  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+3  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>diam[, <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">7</span>)] <span class="co"># вытащить столбцы по номерам</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  cut       color price
+  &lt;ord&gt;     &lt;ord&gt; &lt;int&gt;
+1 Ideal     E       326
+2 Premium   E       326
+3 Good      E       327
+4 Premium   I       334
+5 Good      J       335
+6 Very Good J       336</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>diam[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="fu">c</span>(<span class="st">"carat"</span>, <span class="st">"price"</span>)] <span class="co"># вытащить отдельные строки по номерам и столбцы по названиям</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  carat price
+  &lt;dbl&gt; &lt;int&gt;
+1  0.23   326
+2  0.21   326
+3  0.23   327
+4  0.29   334</code></pre>
+</div>
+</div>
+<script type="text/javascript" src="./js/chapter.js"></script>
 
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Да, здесь корректнее употреблять слово «числа», но, увы, как фигуры речи зафиксировались выражения типа «цифры показывают». Дадим своему внутреннему лингвисту/филологу печеньку, чтобы он сильно не орал на данный факт.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>За идею кейса спасибо Елене Рыбиной.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1197,13 +1548,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Аннотация">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Аннотация</span>
+      <a href="./r-datatypes.html" class="pagination-link" aria-label="Типы данных">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Типы данных</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./common-signs.html" class="pagination-link" aria-label="Обозначения">
-        <span class="nav-page-text">Обозначения</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-data.html" class="pagination-link" aria-label="Работа с данными">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

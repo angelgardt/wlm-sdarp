@@ -919,78 +919,78 @@
   {
     "objectID": "math-logic.html",
     "href": "math-logic.html",
-    "title": "3  Логика и алгебра логики",
+    "title": "4  Логика и алгебра логики",
     "section": "",
-    "text": "3.1 Заголовок раздела\nТест со ссылкой.",
+    "text": "4.1 Заголовок раздела\nТест со ссылкой.",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
     "objectID": "math-logic.html#chapterid-sectionid",
     "href": "math-logic.html#chapterid-sectionid",
-    "title": "3  Логика и алгебра логики",
+    "title": "4  Логика и алгебра логики",
     "section": "",
-    "text": "3.1.1 Заголовок подраздела\n\n\n\nТест со ссылкой.",
+    "text": "4.1.1 Заголовок подраздела\n\n\n\nТест со ссылкой.",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
     "objectID": "math-logic.html#chapterid-code-examples",
     "href": "math-logic.html#chapterid-code-examples",
-    "title": "3  Логика и алгебра логики",
-    "section": "3.2 Примеры кода",
-    "text": "3.2 Примеры кода\n\n\n\n\n3.2.1 Чанк без подписи\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n\n3.2.2 Чанк с подписью\n\n\n\nКод 3.1: Пример чанка с подписью\n\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n\n\nСсылка на чанк с подписью (Код 1.2).\n\n\n3.2.3 Аннотированный чанк\n\n\n\nКод 3.2\n\n\n\n## большой код для агрегации\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\")))\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n\n\n\n# A tibble: 53,940 × 13\n   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x\n   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95\n 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93\n 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35\n 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31\n 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49\n 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49\n 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49\n 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93\n 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45\n10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 \n# ℹ 53,930 more rows\n# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;",
+    "title": "4  Логика и алгебра логики",
+    "section": "4.2 Примеры кода",
+    "text": "4.2 Примеры кода\n\n\n\n\n4.2.1 Чанк без подписи\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n\n4.2.2 Чанк с подписью\n\n\n\nКод 4.1: Пример чанка с подписью\n\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n\n\nСсылка на чанк с подписью (Код 1.2).\n\n\n4.2.3 Аннотированный чанк\n\n\n\nКод 4.2\n\n\n\n## большой код для агрегации\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\")))\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n\n\n\n# A tibble: 53,940 × 13\n   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x\n   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95\n 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93\n 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35\n 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31\n 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49\n 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49\n 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49\n 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93\n 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45\n10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 \n# ℹ 53,930 more rows\n# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
     "objectID": "math-logic.html#chapterid-figures",
     "href": "math-logic.html#chapterid-figures",
-    "title": "3  Логика и алгебра логики",
-    "section": "3.3 Примеры иллюстраций",
-    "text": "3.3 Примеры иллюстраций\n\n\n\n\n3.3.1 Импорт графического файла\nСсылка на импортированную картинку (Иллюстрация J.1):\n\n\n\n\n\n\nИллюстрация 3.1: Превью репозитория\n\n\n\n\n\n3.3.2 График, построенный с помощью кода\n\n## большой код для графика\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n5  ggplot(aes(clarity, price,\n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n5\n\nНачинаем рисовать\n\n\n\n\n\n\n\n\n\n\nИллюстрация 3.2: Это картинка, нарисованная большим кодом, который аннотирован\n\n\n\n\n\n\n\n3.3.3 Несколько изображений в одной иллюстрации\n\n\n\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\n\n\n\nИллюстрация 3.3: Объединяющие джойны\n\n\n\n\nplot(0:1) -&gt; plot1\n\n\n\n\n\n\n\nplot(0:2) -&gt; plot2\n\n\n\n\n\n\n\nplot(0:3) -&gt; plot3\n\n\n\n\n\n\n\nplot(0:4) -&gt; plot4\n\n\n\n\n\n\n\n\nprint(plot1)\nprint(plot2)\nprint(plot3)\nprint(plot4)\n\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nИллюстрация 3.4: Несколько картинок с помощью кода в одной иллюстрации\n\n\n\n\n\n3.3.4 Карта\n\n\n\n\n\n\n\n\nИллюстрация 3.5: Тут родился R\n\n\n\n\nСсылка неа карту (Иллюстрация J.5).\n\n\n3.3.5 Видео\n\n\n\n\n\n\nИллюстрация 3.6: Разбор третьей домашки\n\n\n\nСсылка на видео (Иллюстрация J.6).\n\n\n3.3.6 Схема\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\nИллюстрация 3.7: Это схема из Mermaid\n\n\n\n\n\nСсылка на схему (Иллюстрация J.7).",
+    "title": "4  Логика и алгебра логики",
+    "section": "4.3 Примеры иллюстраций",
+    "text": "4.3 Примеры иллюстраций\n\n\n\n\n4.3.1 Импорт графического файла\nСсылка на импортированную картинку (Иллюстрация 13.1):\n\n\n\n\n\n\nИллюстрация 4.1: Превью репозитория\n\n\n\n\n\n4.3.2 График, построенный с помощью кода\n\n## большой код для графика\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n5  ggplot(aes(clarity, price,\n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n5\n\nНачинаем рисовать\n\n\n\n\n\n\n\n\n\n\nИллюстрация 4.2: Это картинка, нарисованная большим кодом, который аннотирован\n\n\n\n\n\n\n\n4.3.3 Несколько изображений в одной иллюстрации\n\n\n\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\n\n\n\nИллюстрация 4.3: Объединяющие джойны\n\n\n\n\nplot(0:1) -&gt; plot1\n\n\n\n\n\n\n\nplot(0:2) -&gt; plot2\n\n\n\n\n\n\n\nplot(0:3) -&gt; plot3\n\n\n\n\n\n\n\nplot(0:4) -&gt; plot4\n\n\n\n\n\n\n\n\nprint(plot1)\nprint(plot2)\nprint(plot3)\nprint(plot4)\n\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nИллюстрация 4.4: Несколько картинок с помощью кода в одной иллюстрации\n\n\n\n\n\n4.3.4 Карта\n\n\n\n\n\n\n\n\nИллюстрация 4.5: Тут родился R\n\n\n\n\nСсылка неа карту (Иллюстрация 13.5).\n\n\n4.3.5 Видео\n\n\n\n\n\n\nИллюстрация 4.6: Разбор третьей домашки\n\n\n\nСсылка на видео (Иллюстрация 13.6).\n\n\n4.3.6 Схема\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\nИллюстрация 4.7: Это схема из Mermaid\n\n\n\n\n\nСсылка на схему (Иллюстрация 13.7).",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
     "objectID": "math-logic.html#chapterid-tables",
     "href": "math-logic.html#chapterid-tables",
-    "title": "3  Логика и алгебра логики",
-    "section": "3.4 Таблицы",
-    "text": "3.4 Таблицы\nСсылка на таблицу из tibble (Таблица J.1).\nСсылка на таблицу из R Markdown (Таблица J.2).\n\n3.4.1 Таблица из kable()\n\n\n\nТаблица 3.1: Это kable-таблица\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n1\nakjsfv\n\n\n2\nakejrhvae\n\n\n3\nkvuhaefrv\n\n\n\n\n\n\n\n\n\n\n3.4.2 Таблица из R Markdown\n\n\n\nТаблица 3.2: Это Markdown-таблица\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n1\nabc\nда\n\\(\\sin (2)\\)\n\n\n2\ndef\nнет\n\\(\\sqrt {4+2i}\\)\n\n\n3\nghi\nда\n\\(e^{i\\pi} + 1 = 0\\)",
+    "title": "4  Логика и алгебра логики",
+    "section": "4.4 Таблицы",
+    "text": "4.4 Таблицы\nСсылка на таблицу из tibble (Таблица 13.1).\nСсылка на таблицу из R Markdown (Таблица 13.2).\n\n4.4.1 Таблица из kable()\n\n\n\nТаблица 4.1: Это kable-таблица\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n1\nakjsfv\n\n\n2\nakejrhvae\n\n\n3\nkvuhaefrv\n\n\n\n\n\n\n\n\n\n\n4.4.2 Таблица из R Markdown\n\n\n\nТаблица 4.2: Это Markdown-таблица\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n1\nabc\nда\n\\(\\sin (2)\\)\n\n\n2\ndef\nнет\n\\(\\sqrt {4+2i}\\)\n\n\n3\nghi\nда\n\\(e^{i\\pi} + 1 = 0\\)",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
     "objectID": "math-logic.html#chapterid-math",
     "href": "math-logic.html#chapterid-math",
-    "title": "3  Логика и алгебра логики",
-    "section": "3.5 Математика",
-    "text": "3.5 Математика\nЭто уравнение прямой (Уравнение J.1):\n\\[\ny = kx + b\n\\tag{3.1}\\]\n\nТеорема 3.1 Это теорема.\n\n\nДоказательство. Это доказательство.\n\\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\n\nЛемма 3.1 Это лемма.\n\n\nСледствие 3.1 Это следствие.\n\n\nУтверждение 3.1 Это утверждение.\n\n\nПредположение 3.1 Это conjecutre.\n\n\nОпределение 3.1 Это определение.\n\n\nПример 3.1 Это пример.\n\n\nЗадание 3.1 Это задание.\n\n\nРешение. \n\nЭто решение\n\n\n\nРешение. \n\n\nprint(0)\n\n[1] 0\n\n\n\n\nЗамечание. Это замечание.",
+    "title": "4  Логика и алгебра логики",
+    "section": "4.5 Математика",
+    "text": "4.5 Математика\nЭто уравнение прямой (Уравнение 13.1):\n\\[\ny = kx + b\n\\tag{4.1}\\]\n\nТеорема 4.1 Это теорема.\n\n\nДоказательство. Это доказательство.\n\\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\n\nЛемма 4.1 Это лемма.\n\n\nСледствие 4.1 Это следствие.\n\n\nУтверждение 4.1 Это утверждение.\n\n\nПредположение 4.1 Это conjecutre.\n\n\nОпределение 4.1 Это определение.\n\n\nПример 4.1 Это пример.\n\n\nЗадание 4.1 Это задание.\n\n\nРешение. \n\nЭто решение\n\n\n\nРешение. \n\n\nprint(0)\n\n[1] 0\n\n\n\n\nЗамечание. Это замечание.",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
     "objectID": "math-logic.html#chapterid-callouts",
     "href": "math-logic.html#chapterid-callouts",
-    "title": "3  Логика и алгебра логики",
-    "section": "3.6 Блоки",
-    "text": "3.6 Блоки\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nТекст заметки.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nТекст лайфхака.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nТекст предупреждения.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nТекст важности.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nТекст предупреждения.",
+    "title": "4  Логика и алгебра логики",
+    "section": "4.6 Блоки",
+    "text": "4.6 Блоки\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nТекст заметки.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nТекст лайфхака.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nТекст предупреждения.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nТекст важности.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nТекст предупреждения.\n\n\n\n\n\n\n\n\nЗегет, В. (1985). Элементарная логика. Высшая школа.",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
     ]
   },
   {
@@ -2470,7 +2470,7 @@
     "href": "r-datatypes.html#footnotes",
     "title": "3  Типы данных",
     "section": "",
-    "text": "Это связано с различиями в способе хранения целых чисел и чисел с плавающей точкой. Подробнее см. приложение.↩︎\nЛитерал L обозначает, что это long integer (Wickham, 2019). Подробнее см. приложение.↩︎\nЭто наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. приложение.↩︎\nКто это такие, описывается в приложении.↩︎",
+    "text": "Это связано с различиями в способе хранения целых чисел и чисел с плавающей точкой. Подробнее см. приложение.↩︎\nЛитерал L обозначает, что это long integer (Wickham, 2019). Подробнее см. приложение.↩︎\nЭто наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. приложение.↩︎\nКто это такие, описывается в приложении.↩︎\nДругое название этого типа — boolean. В данному случае мы имеем дело с полными синонимами.↩︎\nВариантов, кроме «истина» и «ложь», не существует, так как мы имеем дело с двузначной логикой. Вообще это не единственный вариант построить логическую систему, однако других мы касаться в этой книжке не будем.↩︎\nПод знакомство с этой наукой выделена соответствующая глава.↩︎",
     "crumbs": [
       "R",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
@@ -2481,7 +2481,7 @@
     "href": "r-datatypes.html#r-datatypes-logical",
     "title": "3  Типы данных",
     "section": "3.3 logical",
-    "text": "3.3 logical\n\n\n\n\n\n\n\n\n\nCase sensitivity\n\n\n\nR чувствителен к регистру (case sensitive), поэтому TRUE, true и True — это разные сущности!\n\n\n\n\n\n\n\n\nАналитик! Не ленись! Пиши TRUE полностью!\n\n\n\nT и TRUE\n\n\n\n3.3.1 Логические операторы",
+    "text": "3.3 logical\n\n\n\nПомимо чисел в прошлой главе мы видели два особенных значения — TRUE и FALSE.\n\n— Это явно не числа. По крайне мере, не похожи на них.  — Всё так. Это данные итого типа.\n\nМы столкнулись с логическим типом данных, именуемым в R logical5. У этого типа данных всего два возможных значения — те самые TRUE и FALSE. Первый обозначает «истину», второй — «ложь»6. Это довольно справедливо, если учесть, что мы их получали как результат сравнения двух чисел:\n\n2 == 2 # довольно трудно спорить с тем, что это утверждение истинно\n\n[1] TRUE\n\n1 != 1 # весьма непросто возразить, что это утверждение ложно\n\n[1] FALSE\n\n\n\n\n\n\n\n\nЛогические константы\n\n\n\nЗначения TRUE и FALSE — это зарезервированные константы. Это значит, что они защищены от перезаписи — их значение зафиксировано и не может измениться.\n\nTRUE &lt;- 2\n\nError in TRUE &lt;- 2: invalid (do_set) left-hand side to assignment\n\nFALSE &lt;- -50 + 13\n\nError in FALSE &lt;- -50 + 13: invalid (do_set) left-hand side to assignment\n\nTRUE &lt;- FALSE\n\nError in TRUE &lt;- FALSE: invalid (do_set) left-hand side to assignment\n\n\n\n\n\nМы видим, что у логического типа данных всего два возможных значения, в то время как у числового типа данных их было бесконечно много. Это и есть «допустимые значения», упомянутые в определении 3.1.\n\n\n\n\n\n\n\nCase sensitivity\n\n\n\nR чувствителен к регистру (case sensitive), поэтому TRUE, true и True — это разные сущности!\n\nclass(TRUE); class(FALSE)\n\n[1] \"logical\"\n\n\n[1] \"logical\"\n\nclass(True); class(False)\n\nError in eval(expr, envir, enclos): object 'True' not found\n\n\nError in eval(expr, envir, enclos): object 'False' not found\n\nclass(true); class(false)\n\nError in eval(expr, envir, enclos): object 'true' not found\n\n\nError in eval(expr, envir, enclos): object 'false' not found\n\n\n\n\nМы уже знакомы с операторами сравнения (==, !=, &lt;, &gt;, &lt;=, &gt;=), результатом действия которых являются логические значения. Однако существуют собственно логические операторы, которые работают только с логическими значениями.\n\n3.3.1 Логические операторы\n\n\n\nСуществует всего три основных оператора — НЕ (!), И (&) и ИЛИ (|). Вообще они к нам пришли из формальной логики и не являются чем-то специфичным для программирования и тем более для R. Соответственно, и работают они так, как им предписывают законы формальной логики7.\nОднако даже если вы с этой отраслью знаний не знакомы, вполне можно понять, как эти операторы работают, просто посмотрев на них в деле.\n\n3.3.1.1 НЕ (!)\n\n\n\nОператор НЕ занимается, не поверите, отрицанием. Он превращает «истину» в «ложь», а «ложь» — в «истину»:\n\n\n\nКод 3.6: Логическое отрицание в R\n\n\n\n!TRUE\n\n[1] FALSE\n\n!FALSE\n\n[1] TRUE\n\n\n\n\n\nВсё.\nНу, ладно. Можно заметить ещё кое-что: это унарный оператор, то есть он работает только с одним объектом.\nТеперь точно всё.\n\n\n3.3.1.2 И (&)\n\n\n\nТут уже интереснее: И — это бинарный оператор, то есть он работает с двумя объектами. Если объекта всего два и у каждого может быть одно и двух значений — либо «истина», либо «ложь» — то всего комбинаций может быть четыре. Посмотрим, что возвращает оператор в каждом из случаев:\n\n\n\nКод 3.7: Логическое И в R\n\n\n\nTRUE & TRUE\n\n[1] TRUE\n\nTRUE & FALSE\n\n[1] FALSE\n\nFALSE & TRUE\n\n[1] FALSE\n\nFALSE & FALSE\n\n[1] FALSE\n\n\n\n\n\nЗакономерность проста: логическое И возвращает «истину» (TRUE) только в том случае, если по обеим сторонам от него стоит «истина». Если же хотя бы с одной из сторон «ложь», то и в результате будет «ложь».\n\n— Это очевидно, потому что это конъюнкция…  — Всё так. Но вообще-то неискушенный в формальной логике читатель об этом знать не обязан. Попозже его с этим познакомим.\n\n\n\n3.3.1.3 ИЛИ (|)\n\n\n\nИЛИ — это тоже бинарный оператор. Посмотрим, чем он отличается от И:\n\n\n\nКод 3.8: Логическое И в R\n\n\n\nTRUE | TRUE\n\n[1] TRUE\n\nTRUE | FALSE\n\n[1] TRUE\n\nFALSE | TRUE\n\n[1] TRUE\n\nFALSE | FALSE\n\n[1] FALSE\n\n\n\n\n\nЗдесь ситуация в каком-то смысле противоположная — ИЛИ возвращает «ложь» только с том случае, если по обеим сторонам от него стоит «ложь». Если же хотя бы с одной стороны есть «истина», то и в результате будет «истина».\n\n— Естественно, потому что это дизъюнкция.  — Верно, но прекрати уже пугать читателя непонятными словами, пожалуйста…\n\n\n\n3.3.1.4 ИЛИ-ИЛИ (xor())\n\n\n\nКроме трех упомянутых выше и наиболее популярных операторов, есть ещё один — ИЛИ-ИЛИ. Если вы шарите за логику или имели дело, например, с низкоуровневым программированием, то это знакомых вам XOR. Он реализован в R как функция:\n\n\n\nКод 3.9: Исключающее ИЛИ в R\n\n\n\nxor(TRUE, TRUE)\n\n[1] FALSE\n\nxor(TRUE, FALSE)\n\n[1] TRUE\n\nxor(FALSE, TRUE)\n\n[1] TRUE\n\nxor(FALSE, FALSE)\n\n[1] FALSE\n\n\n\n\n\nОн возвращает «истину» только тогда, когда ровно с одной стороны от него стоит «истина». Если же по обеим сторонам от него стоит «истина» или же с обеих сторон стоит «ложь», он вернет «ложь».\n\n\n\n3.3.2 Логические операции в практике\n\n\n\nКонечно же, в реальной ситуации мы не будет проверять, что 2 == 2 или выяснять, что TRUE & FALSE — это FALSE в явном виде. Мы будем активно использовать эти операции в предобработке данных.\nСкажем, у вас есть большая таблица с данными исследования, из которой вам нужно отобрать только молодежь. Тогда будет использоваться примерно такое условие (age — столбец с возрастом):\nage &gt;=18 & age &lt;= 35\nИли же у вас данные эксперимента и вам надо удалить статистические выбросы по времени реакции. Вы создали колонку is_outlier, в которой для каждого наблюдения указано, является ли оно выбросом (TRUE) или не является (FALSE). Тогда в условии отбора наблюдений мы напишем:\n!is_outlier\nЭто пока что просто примеры, свидетельствующие о том, что логические операции нам нужны. В следующей главе мы познакомимся со структурами данных, и уже сможем немного попрактиковаться.\nПока же нам надо доделать фундамент. Продолжим знакомиться с типами данных.\n\n\n\n\n\n\nАналитик! Не ленись! Пиши TRUE полностью!\n\n\n\nВ R есть возможность не прописывать полностью логические константы, а использовать только первые буквы от них — T и F. Это в принципе будет работать:\n\nclass(T); class(F)\n\n[1] \"logical\"\n\n\n[1] \"logical\"\n\nT & F\n\n[1] FALSE\n\nF | F\n\n[1] FALSE\n\n\nОднако этим крайне не рекомендуется пользоваться!\nИ вот почему. В отличие от TRUE и FALSE буквы T и F не защищены от перезаписи и могут служить названием каких-либо переменных. Это может привести к неожиданным последствиям:\n\nT &lt;- 0\nT & FALSE\n\n[1] FALSE\n\nF &lt;- 12.5\nF | FALSE\n\n[1] TRUE\n\n\nКонечно, с целью минимизации возможных ошибок использовать T и F в качестве названий переменных не рекомендуется. Однако кто-то будет следовать этой рекомендации, а кто-то не будет.\nПоэтому на всякий случай прописывайте логические константы полностью — тогда точно подобных казусов удастся избежать.",
     "crumbs": [
       "R",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
@@ -2529,6 +2529,61 @@
     "crumbs": [
       "R",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datastructures.html",
+    "href": "r-datastructures.html",
+    "title": "4  Структуры данных",
+    "section": "",
+    "text": "4.0.1 Датафрейм\nВоплощение привычной нам «таблицы» в R.\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\nЭто сложная структура данных. Чтобы понять всю её мощь, необходимо начать с более простых.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Структуры данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datastructures.html#матрицы",
+    "href": "r-datastructures.html#матрицы",
+    "title": "4  Структуры данных",
+    "section": "4.1 Матрицы",
+    "text": "4.1 Матрицы\nЕсли мы желаем приблизиться к датафрейму, то одного ряда элементов нам недостаточно — надо выходить во второе измерение! Поэтому уложим вектор в матрицу:\n\n\n\n\nВарианты преобразования вектора в матрицу\n\n\n\nИли вот еще разные варианты:\n\nv &lt;- 1:12\nm1 &lt;- matrix(v, nrow = 3)\nm1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\nm2 &lt;- matrix(v, nrow = 4)\nm2\n\n     [,1] [,2] [,3]\n[1,]    1    5    9\n[2,]    2    6   10\n[3,]    3    7   11\n[4,]    4    8   12\n\nm3 &lt;- matrix(v, nrow = 3, byrow = TRUE)\nm3\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\nm4 &lt;- matrix(v, nrow = 4, byrow = TRUE)\nm4\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n[4,]   10   11   12\n\n\n\n4.1.1 Индексация матриц\nИз матрицы можно вытащить её элементы:\n\nm1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\nm1[2, 3] # отдельный элемент\n\n[1] 8\n\nm1[1, ] # целую строку\n\n[1]  1  4  7 10\n\nm1[, 4] # целый столбец\n\n[1] 10 11 12\n\nm1[1:2, 2:4] # часть матрицы\n\n     [,1] [,2] [,3]\n[1,]    4    7   10\n[2,]    5    8   11",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Структуры данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datastructures.html#массивы",
+    "href": "r-datastructures.html#массивы",
+    "title": "4  Структуры данных",
+    "section": "4.2 Массивы",
+    "text": "4.2 Массивы\n\nВектор — одномерный массив.\nМатрица — двумерный массив.\nМассивы — структуры, которые объединяют данные только одного типа.\n\n\nc(2, TRUE)\n\n[1] 2 1\n\nc(2, TRUE, \"word\")\n\n[1] \"2\"    \"TRUE\" \"word\"\n\n\nПри объединении разных типов данных в одном массиве происходит приведение типов (coercion) по следующей иерархии:\n\nlogical → integer → numeric → complex → character\n\nЭто нам осложняет жизнь, так как мы бы хотели объединять данные разных типов в одну структуру.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Структуры данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datastructures.html#списки",
+    "href": "r-datastructures.html#списки",
+    "title": "4  Структуры данных",
+    "section": "4.3 Списки",
+    "text": "4.3 Списки\nСписки позволяют объединять массивы различных типов данных, чем делают нашу жизнь значительно приятнее.\n\n\n\n\nСхема внутренней структуры списка\n\n\n\nНапример, так:\n\nl &lt;- list(v1 = v_num,\n          v2 = v_char,\n          m1 = m1,\n          ls = list(v = v,\n                    m = m3))\nl\n\n$v1\n[1]   1.0   6.0 -34.0   7.7\n\n$v2\n[1] \"Москва\"          \"Санкт-Петербург\" \"Нижний Новгород\" \"Пермь\"          \n\n$m1\n     [,1] [,2] [,3] [,4]\n[1,]    1    4    7   10\n[2,]    2    5    8   11\n[3,]    3    6    9   12\n\n$ls\n$ls$v\n [1]  1  2  3  4  5  6  7  8  9 10 11 12\n\n$ls$m\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\n\n\n4.3.1 Индексация списков\n\nl[1] # по номеру элемента, возвращается список\n\n$v1\n[1]   1.0   6.0 -34.0   7.7\n\nl[[1]] # по номеру элемента, возвращается массив\n\n[1]   1.0   6.0 -34.0   7.7\n\nl$ls # по названию элемента\n\n$v\n [1]  1  2  3  4  5  6  7  8  9 10 11 12\n\n$m\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n\nl$ls$m # можно идти многоуровнево\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Структуры данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datastructures.html#собираем-датафрейм",
+    "href": "r-datastructures.html#собираем-датафрейм",
+    "title": "4  Структуры данных",
+    "section": "4.4 Собираем датафрейм",
+    "text": "4.4 Собираем датафрейм\n\nвозьмем список\nпотребуем, чтобы его элементами были векторы\nпотребуем, чтобы эти векторы были одинаковой длины\nрасположим их «вертикально»\n\n\n\n\n\nСтруктура списка и датафрейма\n\n\n\n\n4.4.1 Индексация датафрейма\nДля примера возьмем датафрейм про бриллианты:\n\ndiam\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\nДатафрейм наследует свойства списка и матрицы, что делает его невероятно гибким в обращении и крайне удобным в работе:\n\ndiam$carat # вытащить столбец\n\n[1] 0.23 0.21 0.23 0.29 0.31 0.24\n\ndiam[diam$price &gt; 330, ] # отобрать строки по условию\n\n# A tibble: 3 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n2  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n3  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\ndiam[, c(2:3, 7)] # вытащить столбцы по номерам\n\n# A tibble: 6 × 3\n  cut       color price\n  &lt;ord&gt;     &lt;ord&gt; &lt;int&gt;\n1 Ideal     E       326\n2 Premium   E       326\n3 Good      E       327\n4 Premium   I       334\n5 Good      J       335\n6 Very Good J       336\n\ndiam[1:4, c(\"carat\", \"price\")] # вытащить отдельные строки по номерам и столбцы по названиям\n\n# A tibble: 4 × 2\n  carat price\n  &lt;dbl&gt; &lt;int&gt;\n1  0.23   326\n2  0.21   326\n3  0.23   327\n4  0.29   334",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Структуры данных</span>"
     ]
   }
 ]
