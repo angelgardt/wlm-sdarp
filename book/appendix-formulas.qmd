@@ -724,6 +724,7 @@ $${#eq-frmapp-sgn-tancot}
 
 
 ### Функции суммы и разности аргументов {#trig_angle_sum}
+
 $$
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
 $${#eq-frmapp-sin-of-sum}

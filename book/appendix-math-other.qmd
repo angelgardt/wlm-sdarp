@@ -841,14 +841,281 @@ $$
 
 
 
+## Доказательства тригонометрических тождеств {#appendix-other-math-trigids-proof}
+
+### Синус и косинус суммы {#appendix-other-math-trigids-proof-sin-cos-of-sum}
+
+:::{#prp-sin-cos-of-sum}
+$$
+\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta
+$${#eq-sin-of-sum}
+
+$$
+\cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta
+$${#eq-cos-of-sum}
+:::
+
+:::{.proof}
+
+Будем доказывать равенства геометрически.
+
+Возьмём некоторую прямую $a_1$ и отложим от неё угол $\alpha$. Получим $\angle a_1 a_2 = \alpha$.
+
+От $a_2$ отложим угол $\beta$ в том же направлении, что и угол $\alpha$. Получим $\angle a_2 a_3 = \beta$.
+
+Вершины обоих углов при таком построении будут совпадать --- обозначим эту точку как $O$ (@fig-sin-cos-of-sum-draw-angles).
+
+![Построение рассматриваемых углов](img/appendix-math-other/draw-angles.jpg){#fig-sin-cos-of-sum-draw-angles}
+
+Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы $\alpha$ и $\beta$. Отложим на прямой $a_3$ отрезок $OA$. Из точки $A$ опустим перпендикуляр $AB$ на прямую $a_2$. Получим $\triangle AOB$, в котором $\angle ABO = 90^\circ$. Так как значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника, положим $OA = 1$. Сразу заметим, что
+
+$$
+\sin \beta \defin \frac{AB}{OA} = \frac{AB}{1} = AB
+$$
+
+$$
+\cos \beta \defin \frac{OB}{OA} = \frac{OB}{1} = OB
+$$
+
+Из точки $B$ опустим перпендикуляр $BC$ на прямую $a_1$. Получим $\triangle BOC$, в котором $\angle BCO = 90^\circ$. Вновь заметим, что
+
+$$
+\sin \alpha \defin \frac{BC}{OB} \Rightarrow BC = \sin \alpha \cdot OB = \sin \alpha \cos \beta
+$$
+
+$$
+\cos \alpha \defin \frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
+$$
+
+Для доказательства тождеств также необходимо определить тригонометрические функции угла $\alpha + \beta$. Следовательно, необходимо найти прямоугольный треугольник, содержащий данный угол.
+
+Проведём через точку $A$ прямую $b_1$, параллельную прямой $a_1$, а также опустим из точки $O$ перпендикуляр $OD$ на прямую $b_1$. Получим две параллельные прямые прямые $a_1$ и $b_1$, пересеченные прямой $a_3$.
+
+Рассмотрим образовавшиеся углы. $\angle DAO$ и $\angle AOC$ --- внутренние накрест лежащие. Следовательно, $\angle DAO = \angle AOC$. Однако по построению $\angle AOC = \angle AOB + \angle BOC = \beta + \alpha$. Получаем, что $\angle DAO = \alpha + \beta$ и есть искомый угол.
+
+Рассмотрим $\triangle OAD$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle OAD$ --- прямоугольный, а $OA$ --- его гипотенуза. Тогда
 
 
+$$
+\sin (\alpha + \beta) \defin = \frac{OD}{OA} = \frac{OD}{1} = OD
+$$
+
+$$
+\cos (\alpha + \beta) \defin \frac{AD}{OA} = \frac{AD}{1} = AD
+$$
+
+Проведем через точку $B$ прямую $b_2$, параллельную $DO$. Получим, что $b_2 \perp b_1$ и $b_2 \perp a_1$, значит $BC \in b_2$, а также $b_1 \cap b_2 = E$. Рассмотрим получившийся $\triangle ABE$. Его $\angle AEB = 90^\circ$. Заметим также, что $\angle ABE = \alpha$, так как
+
+$$
+\begin{split}
+\angle CBE &= \angle CBO + \angle OBA + \angle ABE = 180^\circ \\
+\angle CBE &= (90^\circ - \alpha) + 90^\circ + \angle ABE = 180^\circ
+\end{split}
+$$
+
+$$
+\angle ABE = 180^\circ - (90^\circ - \alpha) - 90^\circ = \alpha
+$$
+
+Тогда из $\triangle ABE$
+
+$$
+\sin \alpha \defin \frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
+$$
+
+$$
+\cos \alpha \defin \frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
+$$
+
+Итого, имеем
+
+$$
+\begin{split}
+OD &= \sin (\alpha + \beta) \\
+BE &= \cos \alpha \sin \beta \\
+BC &= \sin \alpha \cos \beta \\
+AD &= \cos (\alpha + \beta) \\
+AE &= \sin \alpha \sin \beta \\
+OC &= \cos \alpha \cos \beta
+\end{split}
+$$
+
+Получены все слагаемые, входящие в доказываемые тождества. Остается доказать, что
+
+$$
+\begin{split}
+OD &\overset{?}{=} BC + BE \\
+DA &\overset{?}{=} OC - AE
+\end{split}
+$$
+
+Рассмотрим четырёхугольник $ODEC$. По построению $OC \parallel DE$, а $OD \parallel EC$. Следовательно, четырёхугольник $ODEC$ --- параллелограмм[^odec-rectangle], значит $OD = EC$ и $OC = DE$.
+
+[^odec-rectangle]: Дополнительно, безусловно, можно заметить, что $ODEC$ --- прямоугольник.
+
+Тогда
+
+$$
+\begin{split}
+OD &= CE + BE \\
+OC &= AD + AE \Rightarrow AD = OC - AE
+\end{split}
+$$
+
+из чего получаем, что
+
+$$
+\begin{split}
+\sin (\alpha + \beta) &= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+\cos (\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta \qed
+\end{split}
+$$
+
+:::
 
 
+### Синус и косинус разности {#appendix-other-math-trigids-proof-sin-cos-of-diff}
+
+:::{#prp-sin-cos-of-diff}
+$$
+\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta
+$${#eq-sin-of-diff}
+
+$$
+\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta
+$${#eq-cos-of-diff}
+:::
+
+:::{.proof}
+
+Для [-@eq-sin-of-diff] справедливо, что
+
+$$
+\sin (\alpha - \beta) = \sin \big( \alpha + (-\beta) \big)
+$$
+
+По доказанному выше (@eq-sin-of-sum):
+
+$$
+\begin{split}
+\sin \big( \alpha + (-\beta) \big) &= \\
+&= \sin \alpha \cos (-\beta) + \cos \alpha \sin (-\beta) = \\
+&= \sin \alpha \cos \beta + \cos \alpha \cdot (- \sin \beta) = \\
+&= \sin \alpha \cos \beta - \cos \alpha \sin \beta
+\end{split}
+$$
+
+Для [-@eq-cos-of-diff] справедливо, что
+
+$$
+\cos (\alpha - \beta) = \cos \big( \alpha + (-\beta) \big)
+$$
+
+По доказанному выше (@eq-cos-of-sum):
+
+$$
+\begin{split}
+\cos \big( \alpha + (-\beta) \big) &= \\
+&= \cos \alpha \cos (-\beta) - \sin \alpha \sin (-\beta) = \\
+&= \cos \alpha \cos \beta - \sin \alpha \cdot (-\sin \beta) = \\
+&= \cos \alpha \cos \beta + \sin \alpha \sin \beta \qed
+\end{split}
+$$
+
+:::
 
 
+### Синус и косинус двойного угла {#appendix-other-math-trigids-proof-sin-cos-2a}
 
+:::{#prp-sin-cos-2a}
+$$
+\sin 2\alpha = 2 \sin \alpha \cos \alpha
+$${#eq-sin-2a}
 
+$$
+\cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha
+$${#eq-cos-2a}
+:::
+
+:::{.proof}
+
+Для [-@eq-sin-2a] справедливо, что
+
+$$
+\sin 2\alpha = \sin (\alpha + \alpha)
+$$
+
+По доказанному выше (@eq-sin-of-sum):
+
+$$
+\begin{split}
+\sin (\alpha + \alpha) &= \\
+&= \sin \alpha \cos \alpha + \cos \alpha \sin \alpha = \\
+&= \sin \alpha \cos \alpha + \sin \alpha \cos \alpha = \\
+&= 2 \sin \alpha \cos \alpha
+\end{split}
+$$
+
+Для [-@eq-cos-2a] справедливо, что
+
+$$
+\cos 2\alpha = \cos (\alpha + \alpha)
+$$
+
+По доказанному выше (@eq-cos-of-sum):
+
+$$
+\begin{split}
+\cos (\alpha + \alpha) &= \\
+&= \cos \alpha \cos \alpha - \sin \alpha \sin \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha \qed
+\end{split}
+$$
+
+:::
+
+:::{#cor-sin-2a}
+$$
+\sin 2 \alpha = (\sin \alpha + \cos \alpha)^2 - 1
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin 2 \alpha &= \sin 2 \alpha + 1 - 1 = \\
+&= 2 \sin \alpha \cos \alpha + (\sin^2 \alpha + \cos^2 \alpha) - 1 = \\
+&= (\sin^2 \alpha + 2 \sin \alpha \cos \alpha + \cos^2 \alpha) - 1 = \\
+&= (\sin \alpha + \cos \alpha)^2 - 1 \qed
+\end{split}
+$$
+:::
+
+:::{#cor-cos-2a}
+$$
+\cos 2\alpha = 2 \cos^2 \alpha - 1 = 1 - 2 \sin^2 \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos 2 \alpha - \cos^2 \alpha + \cos^2 \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha - \cos^2 \alpha + \cos^2 \alpha = \\
+&= \cos^2 \alpha + \cos^2 \alpha - (\sin^2 \alpha + \cos^2 \alpha) = \\
+&= 2 \cos^2 \alpha - 1
+\end{split}
+$$
+
+$$
+\begin{split}
+\cos 2 \alpha &= \cos 2 \alpha + \sin^2 \alpha - \sin^2 \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha + \sin^2 \alpha - \sin^2 \alpha = \\
+&= (\cos^2 \alpha + \sin^2 \alpha) - \sin^2 \alpha - \sin^2 \alpha = \\
+&= 1 - 2 \sin^2 \alpha \qed
+\end{split}
+$$
+:::
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
