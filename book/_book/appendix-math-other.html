@@ -1243,91 +1243,141 @@ a^x \ln a \quad \blacksquare
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span>Будем доказывать равенства геометрически.</p>
-<p>Возьмём некоторую прямую <span class="math inline">\(a_1\)</span> и отложим от неё угол <span class="math inline">\(\alpha\)</span>. Получим <span class="math inline">\(\angle a_1 a_2 = \alpha\)</span>.</p>
-<p>От <span class="math inline">\(a_2\)</span> отложим угол <span class="math inline">\(\beta\)</span> в том же направлении, что и угол <span class="math inline">\(\alpha\)</span>. Получим <span class="math inline">\(\angle a_2 a_3 = \beta\)</span>.</p>
-<p>Вершины обоих углов при таком построении будут совпадать — обозначим эту точку как <span class="math inline">\(O\)</span> (<a href="#fig-sin-cos-of-sum-draw-angles" class="quarto-xref">Иллюстрация&nbsp;<span>J.1</span></a>).</p>
+<p>Возьмём некоторую прямую <span class="math inline">\(a_1\)</span> и отложим от неё угол <span class="math inline">\(\alpha\)</span>. Получим <span class="math inline">\(\angle a_1 a_2 = \alpha\)</span>. От <span class="math inline">\(a_2\)</span> отложим угол <span class="math inline">\(\beta\)</span> в том же направлении, что и угол <span class="math inline">\(\alpha\)</span>. Получим <span class="math inline">\(\angle a_2 a_3 = \beta\)</span>. Вершины обоих углов при таком построении будут совпадать — обозначим эту точку как <span class="math inline">\(O\)</span> (<a href="#fig-sin-cos-of-sum-draw-angles" class="quarto-xref">Иллюстрация&nbsp;<span>J.1</span></a>).</p>
 <div id="fig-sin-cos-of-sum-draw-angles" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-draw-angles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/draw-angles.jpg" class="img-fluid figure-img">
+<img src="img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-draw-angles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.1: Построение рассматриваемых углов
 </figcaption>
 </figure>
 </div>
-<p>Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span>. Отложим на прямой <span class="math inline">\(a_3\)</span> отрезок <span class="math inline">\(OA\)</span>. Из точки <span class="math inline">\(A\)</span> опустим перпендикуляр <span class="math inline">\(AB\)</span> на прямую <span class="math inline">\(a_2\)</span>. Получим <span class="math inline">\(\triangle AOB\)</span>, в котором <span class="math inline">\(\angle ABO = 90^\circ\)</span>. Так как значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника, положим <span class="math inline">\(OA = 1\)</span>. Сразу заметим, что</p>
+<p>Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span>. Отложим на прямой <span class="math inline">\(a_3\)</span> отрезок <span class="math inline">\(OA\)</span>. Из точки <span class="math inline">\(A\)</span> опустим перпендикуляр <span class="math inline">\(AB\)</span> на прямую <span class="math inline">\(a_2\)</span>. Получим <span class="math inline">\(\triangle AOB\)</span>, в котором <span class="math inline">\(\angle ABO = 90^\circ\)</span>. Так как значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника, положим <span class="math inline">\(OA = 1\)</span>. Из точки <span class="math inline">\(B\)</span> опустим перпендикуляр <span class="math inline">\(BC\)</span> на прямую <span class="math inline">\(a_1\)</span>. Получим <span class="math inline">\(\triangle BOC\)</span>, в котором <span class="math inline">\(\angle BCO = 90^\circ\)</span> (<a href="#fig-sin-cos-of-sum-draw-triangles" class="quarto-xref">Иллюстрация&nbsp;<span>J.2</span></a>). Сразу заметим, что</p>
 <p><span class="math display">\[
 \sin \beta \overset{\text{def}}{=}\frac{AB}{OA} = \frac{AB}{1} = AB
 \]</span></p>
 <p><span class="math display">\[
 \cos \beta \overset{\text{def}}{=}\frac{OB}{OA} = \frac{OB}{1} = OB
 \]</span></p>
-<p>Из точки <span class="math inline">\(B\)</span> опустим перпендикуляр <span class="math inline">\(BC\)</span> на прямую <span class="math inline">\(a_1\)</span>. Получим <span class="math inline">\(\triangle BOC\)</span>, в котором <span class="math inline">\(\angle BCO = 90^\circ\)</span>. Вновь заметим, что</p>
+<div id="fig-sin-cos-of-sum-draw-triangles" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sin-cos-of-sum-draw-triangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-draw-triangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;J.2: Построение прямоугольных треугольников, содержащих рассматриваемые углы углов
+</figcaption>
+</figure>
+</div>
+<p>Для доказательства тождеств также необходимо определить тригонометрические функции угла <span class="math inline">\(\alpha + \beta\)</span>. Следовательно, необходимо найти прямоугольный треугольник, содержащий данный угол.</p>
+<p>Проведём через точку <span class="math inline">\(A\)</span> прямую <span class="math inline">\(b_1\)</span>, параллельную прямой <span class="math inline">\(a_1\)</span>, а через точку <span class="math inline">\(O\)</span> — прямую <span class="math inline">\(b_2\)</span>, перпендикулярную <span class="math inline">\(b_1\)</span>. Тогда <span class="math inline">\(b_1 \cap b_2 = D\)</span>.</p>
+<p>Рассмотрим образовавшиеся углы. <span class="math inline">\(\angle DAO\)</span> и <span class="math inline">\(\angle AOC\)</span> — внутренние накрест лежащие при параллельных прямых <span class="math inline">\(a_1\)</span> и <span class="math inline">\(b_1\)</span> и секущей <span class="math inline">\(a_3\)</span>. Следовательно, <span class="math inline">\(\angle DAO = \angle AOC\)</span>. Однако по построению <span class="math inline">\(\angle AOC = \angle AOB + \angle BOC = \beta + \alpha\)</span>. Получаем, что <span class="math inline">\(\angle DAO = \alpha + \beta\)</span> и есть искомый угол.</p>
+<div id="fig-sin-cos-of-sum-first-perp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sin-cos-of-sum-first-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-math-other/sin-cos-of-sum-first-perp.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-first-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;J.3: Построение треугольника, содержащего угол, равный сумме рассматриваемых углов
+</figcaption>
+</figure>
+</div>
+<p>Рассмотрим образовавшийся <span class="math inline">\(\triangle DAO\)</span>. По построению <span class="math inline">\(\angle ODA = 90^\circ\)</span>, следовательно <span class="math inline">\(\triangle DAO\)</span> — прямоугольный, а <span class="math inline">\(AO\)</span> — его гипотенуза. Так как <span class="math inline">\(AO = 1\)</span>, имеем</p>
+<p><span id="eq-sin-DO"><span class="math display">\[
+\sin (\alpha + \beta) \overset{\text{def}}{=}\frac{DO}{AO} = \frac{DO}{1} = DO
+\tag{J.3}\]</span></span></p>
+<p><span id="eq-cos-DA"><span class="math display">\[
+\cos (\alpha + \beta) \overset{\text{def}}{=}\frac{DA}{AO} = \frac{DA}{1} = DA
+\tag{J.4}\]</span></span></p>
+<div id="fig-sin-cos-of-sum-get-trigs" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sin-cos-of-sum-get-trigs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-get-trigs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;J.4: Искомые тригонометрические фукнции в построенном треугольнике
+</figcaption>
+</figure>
+</div>
+<p>Проведем через точку <span class="math inline">\(B\)</span> прямую <span class="math inline">\(b_3\)</span>, параллельную <span class="math inline">\(b_2\)</span>. Получим, что <span class="math inline">\(b_3 \perp b_1\)</span> и <span class="math inline">\(b_3 \perp a_1\)</span>, значит <span class="math inline">\(BC \in b_2\)</span>, а также <span class="math inline">\(b_1 \cap b_3 = E\)</span>.</p>
+<p>Рассмотрим получившийся <span class="math inline">\(\triangle ABE\)</span>. Его <span class="math inline">\(\angle AEB = 90^\circ\)</span>, а <span class="math inline">\(\angle ABE = \alpha\)</span>, так как</p>
+<p><span id="eq-ABE-alpha"><span class="math display">\[
+\begin{split}
+\angle CBE &amp;= \angle CBO + \angle OBA + \angle ABE = 180^\circ \\
+\angle CBE &amp;= (90^\circ - \alpha) + 90^\circ + \angle ABE = 180^\circ \\
+\Downarrow \\
+\angle ABE &amp;= 180^\circ - (90^\circ - \alpha) - 90^\circ = \alpha
+\end{split}
+\tag{J.5}\]</span></span></p>
+<div id="fig-sin-cos-of-sum-second-perp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sin-cos-of-sum-second-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-math-other/sin-cos-of-sum-second-perp.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-second-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;J.5: Построение дополнительного треугольника
+</figcaption>
+</figure>
+</div>
+<p>Рассмотрим образовавшийся четырёхугольник <span class="math inline">\(ODEC\)</span>.</p>
+<p>По построению <span class="math inline">\(OC \parallel DE\)</span>. В свою очередь, <span class="math inline">\(OD \parallel EC\)</span>, поскольку лежат на прямых, перпендикулярных <span class="math inline">\(b_1\)</span>, а две прямые, перпендикулярные третьей, параллельны. Следовательно, четырёхугольник <span class="math inline">\(ODEC\)</span> — параллелограмм<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Значит <span class="math inline">\(OD = CE\)</span> и <span class="math inline">\(OC = DE\)</span>.</p>
+<p>Тогда</p>
+<p><span class="math display">\[
+\begin{split}
+DO &amp;= CB + BE \\
+OC &amp;= DA + AE \Rightarrow DA = OC - AE
+\end{split}
+\]</span></p>
+<p>Однако выше (<a href="#eq-sin-DO" class="quarto-xref"><span>J.3</span></a> и <a href="#eq-cos-DA" class="quarto-xref"><span>J.4</span></a>) мы отметили, что <span class="math inline">\(OD = \sin (\alpha + \beta)\)</span>, а <span class="math inline">\(DA = \cos (\alpha + \beta)\)</span>. Получается, что</p>
+<p><span class="math display">\[
+\begin{split}
+\sin (\alpha + \beta) &amp;= CB + BE \\
+\cos (\alpha + \beta) &amp;= OC - AE
+\end{split}
+\]</span></p>
+<p>Для завершения доказательства необходимо выразить отрезки <span class="math inline">\(CB\)</span>, <span class="math inline">\(BE\)</span>, <span class="math inline">\(OC\)</span> и <span class="math inline">\(AE\)</span> через тригонометрические функции углов <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span>.</p>
+<p>Рассмотрим <span class="math inline">\(\triangle BOC\)</span>. Его <span class="math inline">\(\angle BCO = 90^\circ\)</span>, а <span class="math inline">\(\angle BOC = \alpha\)</span>. Тогда</p>
 <p><span class="math display">\[
 \sin \alpha \overset{\text{def}}{=}\frac{BC}{OB} \Rightarrow BC = \sin \alpha \cdot OB = \sin \alpha \cos \beta
 \]</span></p>
 <p><span class="math display">\[
 \cos \alpha \overset{\text{def}}{=}\frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
 \]</span></p>
-<p>Для доказательства тождеств также необходимо определить тригонометрические функции угла <span class="math inline">\(\alpha + \beta\)</span>. Следовательно, необходимо найти прямоугольный треугольник, содержащий данный угол.</p>
-<p>Проведём через точку <span class="math inline">\(A\)</span> прямую <span class="math inline">\(b_1\)</span>, параллельную прямой <span class="math inline">\(a_1\)</span>, а также опустим из точки <span class="math inline">\(O\)</span> перпендикуляр <span class="math inline">\(OD\)</span> на прямую <span class="math inline">\(b_1\)</span>. Получим две параллельные прямые прямые <span class="math inline">\(a_1\)</span> и <span class="math inline">\(b_1\)</span>, пересеченные прямой <span class="math inline">\(a_3\)</span>.</p>
-<p>Рассмотрим образовавшиеся углы. <span class="math inline">\(\angle DAO\)</span> и <span class="math inline">\(\angle AOC\)</span> — внутренние накрест лежащие. Следовательно, <span class="math inline">\(\angle DAO = \angle AOC\)</span>. Однако по построению <span class="math inline">\(\angle AOC = \angle AOB + \angle BOC = \beta + \alpha\)</span>. Получаем, что <span class="math inline">\(\angle DAO = \alpha + \beta\)</span> и есть искомый угол.</p>
-<p>Рассмотрим <span class="math inline">\(\triangle OAD\)</span>. По построению <span class="math inline">\(\angle ODA = 90^\circ\)</span>, следовательно <span class="math inline">\(\triangle OAD\)</span> — прямоугольный, а <span class="math inline">\(OA\)</span> — его гипотенуза. Тогда</p>
-<p><span class="math display">\[
-\sin (\alpha + \beta) \overset{\text{def}}{=}= \frac{OD}{OA} = \frac{OD}{1} = OD
-\]</span></p>
-<p><span class="math display">\[
-\cos (\alpha + \beta) \overset{\text{def}}{=}\frac{AD}{OA} = \frac{AD}{1} = AD
-\]</span></p>
-<p>Проведем через точку <span class="math inline">\(B\)</span> прямую <span class="math inline">\(b_2\)</span>, параллельную <span class="math inline">\(DO\)</span>. Получим, что <span class="math inline">\(b_2 \perp b_1\)</span> и <span class="math inline">\(b_2 \perp a_1\)</span>, значит <span class="math inline">\(BC \in b_2\)</span>, а также <span class="math inline">\(b_1 \cap b_2 = E\)</span>. Рассмотрим получившийся <span class="math inline">\(\triangle ABE\)</span>. Его <span class="math inline">\(\angle AEB = 90^\circ\)</span>. Заметим также, что <span class="math inline">\(\angle ABE = \alpha\)</span>, так как</p>
-<p><span class="math display">\[
-\begin{split}
-\angle CBE &amp;= \angle CBO + \angle OBA + \angle ABE = 180^\circ \\
-\angle CBE &amp;= (90^\circ - \alpha) + 90^\circ + \angle ABE = 180^\circ
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\angle ABE = 180^\circ - (90^\circ - \alpha) - 90^\circ = \alpha
-\]</span></p>
-<p>Тогда из <span class="math inline">\(\triangle ABE\)</span></p>
+<p>Из <span class="math inline">\(\triangle ABE\)</span>, в котором <span class="math inline">\(\angle AEB = 90^\circ\)</span>, а <span class="math inline">\(\angle ABE = \alpha\)</span> (<a href="#eq-ABE-alpha" class="quarto-xref"><span>J.5</span></a>) получаем, что</p>
 <p><span class="math display">\[
 \sin \alpha \overset{\text{def}}{=}\frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
 \]</span></p>
 <p><span class="math display">\[
 \cos \alpha \overset{\text{def}}{=}\frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
 \]</span></p>
-<p>Итого, имеем</p>
+<div id="fig-sin-cos-of-sum-full" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sin-cos-of-sum-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-math-other/sin-cos-of-sum-full.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;J.6: Окончательное построение
+</figcaption>
+</figure>
+</div>
+<p>Итого, имеем (<a href="#fig-sin-cos-of-sum-full" class="quarto-xref">Иллюстрация&nbsp;<span>J.6</span></a>)</p>
 <p><span class="math display">\[
 \begin{split}
-OD &amp;= \sin (\alpha + \beta) \\
+DO &amp;= \sin (\alpha + \beta) \\
 BE &amp;= \cos \alpha \sin \beta \\
-BC &amp;= \sin \alpha \cos \beta \\
-AD &amp;= \cos (\alpha + \beta) \\
+CB &amp;= \sin \alpha \cos \beta \\
+DA &amp;= \cos (\alpha + \beta) \\
 AE &amp;= \sin \alpha \sin \beta \\
 OC &amp;= \cos \alpha \cos \beta
 \end{split}
 \]</span></p>
-<p>Получены все слагаемые, входящие в доказываемые тождества. Остается доказать, что</p>
+<p>Следовательно,</p>
 <p><span class="math display">\[
 \begin{split}
-OD &amp;\overset{?}{=} BC + BE \\
-DA &amp;\overset{?}{=} OC - AE
-\end{split}
-\]</span></p>
-<p>Рассмотрим четырёхугольник <span class="math inline">\(ODEC\)</span>. По построению <span class="math inline">\(OC \parallel DE\)</span>, а <span class="math inline">\(OD \parallel EC\)</span>. Следовательно, четырёхугольник <span class="math inline">\(ODEC\)</span> — параллелограмм<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, значит <span class="math inline">\(OD = EC\)</span> и <span class="math inline">\(OC = DE\)</span>.</p>
-<p>Тогда</p>
-<p><span class="math display">\[
-\begin{split}
-OD &amp;= CE + BE \\
-OC &amp;= AD + AE \Rightarrow AD = OC - AE
-\end{split}
-\]</span></p>
-<p>из чего получаем, что</p>
-<p><span class="math display">\[
-\begin{split}
-\sin (\alpha + \beta) &amp;= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
-\cos (\alpha + \beta) &amp;= \cos \alpha \cos \beta - \sin \alpha \sin \beta \quad \blacksquare
+DO = CB + BE &amp;\Rightarrow \sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+DA = OC - AE &amp;\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta \quad \blacksquare
 \end{split}
 \]</span></p>
 </div>
@@ -1337,13 +1387,13 @@ OC &amp;= AD + AE \Rightarrow AD = OC - AE
 <div id="prp-sin-cos-of-diff" class="theorem proposition">
 <p><span class="theorem-title"><strong>Утверждение J.22</strong></span> <span id="eq-sin-of-diff"><span class="math display">\[
 \sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta
-\tag{J.3}\]</span></span></p>
+\tag{J.6}\]</span></span></p>
 <p><span id="eq-cos-of-diff"><span class="math display">\[
 \cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta
-\tag{J.4}\]</span></span></p>
+\tag{J.7}\]</span></span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Для <a href="#eq-sin-of-diff" class="quarto-xref"><span>J.3</span></a> справедливо, что</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Для <a href="#eq-sin-of-diff" class="quarto-xref"><span>J.6</span></a> справедливо, что</p>
 <p><span class="math display">\[
 \sin (\alpha - \beta) = \sin \big( \alpha + (-\beta) \big)
 \]</span></p>
@@ -1356,7 +1406,7 @@ OC &amp;= AD + AE \Rightarrow AD = OC - AE
 &amp;= \sin \alpha \cos \beta - \cos \alpha \sin \beta
 \end{split}
 \]</span></p>
-<p>Для <a href="#eq-cos-of-diff" class="quarto-xref"><span>J.4</span></a> справедливо, что</p>
+<p>Для <a href="#eq-cos-of-diff" class="quarto-xref"><span>J.7</span></a> справедливо, что</p>
 <p><span class="math display">\[
 \cos (\alpha - \beta) = \cos \big( \alpha + (-\beta) \big)
 \]</span></p>
@@ -1376,13 +1426,13 @@ OC &amp;= AD + AE \Rightarrow AD = OC - AE
 <div id="prp-sin-cos-2a" class="theorem proposition">
 <p><span class="theorem-title"><strong>Утверждение J.23</strong></span> <span id="eq-sin-2a"><span class="math display">\[
 \sin 2\alpha = 2 \sin \alpha \cos \alpha
-\tag{J.5}\]</span></span></p>
+\tag{J.8}\]</span></span></p>
 <p><span id="eq-cos-2a"><span class="math display">\[
 \cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha
-\tag{J.6}\]</span></span></p>
+\tag{J.9}\]</span></span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Для <a href="#eq-sin-2a" class="quarto-xref"><span>J.5</span></a> справедливо, что</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Для <a href="#eq-sin-2a" class="quarto-xref"><span>J.8</span></a> справедливо, что</p>
 <p><span class="math display">\[
 \sin 2\alpha = \sin (\alpha + \alpha)
 \]</span></p>
@@ -1395,7 +1445,7 @@ OC &amp;= AD + AE \Rightarrow AD = OC - AE
 &amp;= 2 \sin \alpha \cos \alpha
 \end{split}
 \]</span></p>
-<p>Для <a href="#eq-cos-2a" class="quarto-xref"><span>J.6</span></a> справедливо, что</p>
+<p>Для <a href="#eq-cos-2a" class="quarto-xref"><span>J.9</span></a> справедливо, что</p>
 <p><span class="math display">\[
 \cos 2\alpha = \cos (\alpha + \alpha)
 \]</span></p>
@@ -1454,7 +1504,7 @@ OC &amp;= AD + AE \Rightarrow AD = OC - AE
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Дополнительно, безусловно, можно заметить, что <span class="math inline">\(ODEC\)</span> — прямоугольник.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Безусловно, можно заметить, что <span class="math inline">\(ODEC\)</span> — прямоугольник, однако для доказательства тождеств достаточно того, что он является параллелограммом.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

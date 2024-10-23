@@ -859,15 +859,11 @@ $${#eq-cos-of-sum}
 
 Будем доказывать равенства геометрически.
 
-Возьмём некоторую прямую $a_1$ и отложим от неё угол $\alpha$. Получим $\angle a_1 a_2 = \alpha$.
+Возьмём некоторую прямую $a_1$ и отложим от неё угол $\alpha$. Получим $\angle a_1 a_2 = \alpha$. От $a_2$ отложим угол $\beta$ в том же направлении, что и угол $\alpha$. Получим $\angle a_2 a_3 = \beta$. Вершины обоих углов при таком построении будут совпадать --- обозначим эту точку как $O$ (@fig-sin-cos-of-sum-draw-angles).
 
-От $a_2$ отложим угол $\beta$ в том же направлении, что и угол $\alpha$. Получим $\angle a_2 a_3 = \beta$.
+![Построение рассматриваемых углов](img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg){#fig-sin-cos-of-sum-draw-angles}
 
-Вершины обоих углов при таком построении будут совпадать --- обозначим эту точку как $O$ (@fig-sin-cos-of-sum-draw-angles).
-
-![Построение рассматриваемых углов](img/appendix-math-other/draw-angles.jpg){#fig-sin-cos-of-sum-draw-angles}
-
-Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы $\alpha$ и $\beta$. Отложим на прямой $a_3$ отрезок $OA$. Из точки $A$ опустим перпендикуляр $AB$ на прямую $a_2$. Получим $\triangle AOB$, в котором $\angle ABO = 90^\circ$. Так как значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника, положим $OA = 1$. Сразу заметим, что
+Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы $\alpha$ и $\beta$. Отложим на прямой $a_3$ отрезок $OA$. Из точки $A$ опустим перпендикуляр $AB$ на прямую $a_2$. Получим $\triangle AOB$, в котором $\angle ABO = 90^\circ$. Так как значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника, положим $OA = 1$. Из точки $B$ опустим перпендикуляр $BC$ на прямую $a_1$. Получим $\triangle BOC$, в котором $\angle BCO = 90^\circ$ (@fig-sin-cos-of-sum-draw-triangles). Сразу заметим, что
 
 $$
 \sin \beta \defin \frac{AB}{OA} = \frac{AB}{1} = AB
@@ -877,7 +873,71 @@ $$
 \cos \beta \defin \frac{OB}{OA} = \frac{OB}{1} = OB
 $$
 
-Из точки $B$ опустим перпендикуляр $BC$ на прямую $a_1$. Получим $\triangle BOC$, в котором $\angle BCO = 90^\circ$. Вновь заметим, что
+![Построение прямоугольных треугольников, содержащих рассматриваемые углы углов](img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg){#fig-sin-cos-of-sum-draw-triangles}
+
+Для доказательства тождеств также необходимо определить тригонометрические функции угла $\alpha + \beta$. Следовательно, необходимо найти прямоугольный треугольник, содержащий данный угол.
+
+Проведём через точку $A$ прямую $b_1$, параллельную прямой $a_1$, а через точку $O$ --- прямую $b_2$, перпендикулярную $b_1$. Тогда $b_1 \cap b_2 = D$.
+
+Рассмотрим образовавшиеся углы. $\angle DAO$ и $\angle AOC$ --- внутренние накрест лежащие при параллельных прямых $a_1$ и $b_1$ и секущей $a_3$. Следовательно, $\angle DAO = \angle AOC$. Однако по построению $\angle AOC = \angle AOB + \angle BOC = \beta + \alpha$. Получаем, что $\angle DAO = \alpha + \beta$ и есть искомый угол.
+
+![Построение треугольника, содержащего угол, равный сумме рассматриваемых углов](img/appendix-math-other/sin-cos-of-sum-first-perp.jpg){#fig-sin-cos-of-sum-first-perp}
+
+Рассмотрим образовавшийся $\triangle DAO$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle DAO$ --- прямоугольный, а $AO$ --- его гипотенуза. Так как $AO = 1$, имеем
+
+$$
+\sin (\alpha + \beta) \defin \frac{DO}{AO} = \frac{DO}{1} = DO
+$${#eq-sin-DO}
+
+$$
+\cos (\alpha + \beta) \defin \frac{DA}{AO} = \frac{DA}{1} = DA
+$${#eq-cos-DA}
+
+![Искомые тригонометрические фукнции в построенном треугольнике](img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg){#fig-sin-cos-of-sum-get-trigs}
+
+Проведем через точку $B$ прямую $b_3$, параллельную $b_2$. Получим, что $b_3 \perp b_1$ и $b_3 \perp a_1$, значит $BC \in b_2$, а также $b_1 \cap b_3 = E$. 
+
+Рассмотрим получившийся $\triangle ABE$. Его $\angle AEB = 90^\circ$, а $\angle ABE = \alpha$, так как
+
+$$
+\begin{split}
+\angle CBE &= \angle CBO + \angle OBA + \angle ABE = 180^\circ \\
+\angle CBE &= (90^\circ - \alpha) + 90^\circ + \angle ABE = 180^\circ \\
+\Downarrow \\
+\angle ABE &= 180^\circ - (90^\circ - \alpha) - 90^\circ = \alpha
+\end{split}
+$${#eq-ABE-alpha}
+
+
+![Построение дополнительного треугольника](img/appendix-math-other/sin-cos-of-sum-second-perp.jpg){#fig-sin-cos-of-sum-second-perp}
+
+Рассмотрим образовавшийся четырёхугольник $ODEC$.
+
+По построению $OC \parallel DE$. В свою очередь, $OD \parallel EC$, поскольку лежат на прямых, перпендикулярных $b_1$, а две прямые, перпендикулярные третьей, параллельны. Следовательно, четырёхугольник $ODEC$ --- параллелограмм[^odec-rectangle]. Значит $OD = CE$ и $OC = DE$.
+
+[^odec-rectangle]: Безусловно, можно заметить, что $ODEC$ --- прямоугольник, однако для доказательства тождеств достаточно того, что он является параллелограммом.
+
+Тогда
+
+$$
+\begin{split}
+DO &= CB + BE \\
+OC &= DA + AE \Rightarrow DA = OC - AE
+\end{split}
+$$
+
+Однако выше ([-@eq-sin-DO] и [-@eq-cos-DA]) мы отметили, что $OD = \sin (\alpha + \beta)$, а $DA = \cos (\alpha + \beta)$. Получается, что
+
+$$
+\begin{split}
+\sin (\alpha + \beta) &= CB + BE \\
+\cos (\alpha + \beta) &= OC - AE
+\end{split}
+$$
+
+Для завершения доказательства необходимо выразить отрезки $CB$, $BE$, $OC$ и $AE$ через тригонометрические функции углов $\alpha$ и $\beta$.
+
+Рассмотрим $\triangle BOC$. Его $\angle BCO = 90^\circ$, а $\angle BOC = \alpha$. Тогда
 
 $$
 \sin \alpha \defin \frac{BC}{OB} \Rightarrow BC = \sin \alpha \cdot OB = \sin \alpha \cos \beta
@@ -887,37 +947,7 @@ $$
 \cos \alpha \defin \frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
 $$
 
-Для доказательства тождеств также необходимо определить тригонометрические функции угла $\alpha + \beta$. Следовательно, необходимо найти прямоугольный треугольник, содержащий данный угол.
-
-Проведём через точку $A$ прямую $b_1$, параллельную прямой $a_1$, а также опустим из точки $O$ перпендикуляр $OD$ на прямую $b_1$. Получим две параллельные прямые прямые $a_1$ и $b_1$, пересеченные прямой $a_3$.
-
-Рассмотрим образовавшиеся углы. $\angle DAO$ и $\angle AOC$ --- внутренние накрест лежащие. Следовательно, $\angle DAO = \angle AOC$. Однако по построению $\angle AOC = \angle AOB + \angle BOC = \beta + \alpha$. Получаем, что $\angle DAO = \alpha + \beta$ и есть искомый угол.
-
-Рассмотрим $\triangle OAD$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle OAD$ --- прямоугольный, а $OA$ --- его гипотенуза. Тогда
-
-
-$$
-\sin (\alpha + \beta) \defin = \frac{OD}{OA} = \frac{OD}{1} = OD
-$$
-
-$$
-\cos (\alpha + \beta) \defin \frac{AD}{OA} = \frac{AD}{1} = AD
-$$
-
-Проведем через точку $B$ прямую $b_2$, параллельную $DO$. Получим, что $b_2 \perp b_1$ и $b_2 \perp a_1$, значит $BC \in b_2$, а также $b_1 \cap b_2 = E$. Рассмотрим получившийся $\triangle ABE$. Его $\angle AEB = 90^\circ$. Заметим также, что $\angle ABE = \alpha$, так как
-
-$$
-\begin{split}
-\angle CBE &= \angle CBO + \angle OBA + \angle ABE = 180^\circ \\
-\angle CBE &= (90^\circ - \alpha) + 90^\circ + \angle ABE = 180^\circ
-\end{split}
-$$
-
-$$
-\angle ABE = 180^\circ - (90^\circ - \alpha) - 90^\circ = \alpha
-$$
-
-Тогда из $\triangle ABE$
+Из $\triangle ABE$, в котором $\angle AEB = 90^\circ$, а $\angle ABE = \alpha$ ([-@eq-ABE-alpha]) получаем, что
 
 $$
 \sin \alpha \defin \frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
@@ -927,47 +957,27 @@ $$
 \cos \alpha \defin \frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
 $$
 
-Итого, имеем
+![Окончательное построение](img/appendix-math-other/sin-cos-of-sum-full.jpg){#fig-sin-cos-of-sum-full}
+
+Итого, имеем (@fig-sin-cos-of-sum-full)
 
 $$
 \begin{split}
-OD &= \sin (\alpha + \beta) \\
+DO &= \sin (\alpha + \beta) \\
 BE &= \cos \alpha \sin \beta \\
-BC &= \sin \alpha \cos \beta \\
-AD &= \cos (\alpha + \beta) \\
+CB &= \sin \alpha \cos \beta \\
+DA &= \cos (\alpha + \beta) \\
 AE &= \sin \alpha \sin \beta \\
 OC &= \cos \alpha \cos \beta
 \end{split}
 $$
 
-Получены все слагаемые, входящие в доказываемые тождества. Остается доказать, что
+Следовательно, 
 
 $$
 \begin{split}
-OD &\overset{?}{=} BC + BE \\
-DA &\overset{?}{=} OC - AE
-\end{split}
-$$
-
-Рассмотрим четырёхугольник $ODEC$. По построению $OC \parallel DE$, а $OD \parallel EC$. Следовательно, четырёхугольник $ODEC$ --- параллелограмм[^odec-rectangle], значит $OD = EC$ и $OC = DE$.
-
-[^odec-rectangle]: Дополнительно, безусловно, можно заметить, что $ODEC$ --- прямоугольник.
-
-Тогда
-
-$$
-\begin{split}
-OD &= CE + BE \\
-OC &= AD + AE \Rightarrow AD = OC - AE
-\end{split}
-$$
-
-из чего получаем, что
-
-$$
-\begin{split}
-\sin (\alpha + \beta) &= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
-\cos (\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta \qed
+DO = CB + BE &\Rightarrow \sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+DA = OC - AE &\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta \qed
 \end{split}
 $$
 
