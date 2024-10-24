@@ -59,21 +59,49 @@ theme_set(theme_bw())
 #   facet_wrap(~ name, nrow = 2, scales = "fixed") +
 #   coord_fixed()
 
+# tibble(
+#   x = rnorm(n),
+#   y = r * x + rnorm(n, sd = sqrt(1 - r^2))
+# ) %>% 
+#   ggplot(aes(x, y)) +
+#   geom_point(size = .5) +
+#   geom_smooth(method = "lm", se = FALSE, color = "gray70") +
+#   geom_label(aes(label = paste0(cor(x, y))),
+#              x = 0, y = 0)
 
 
 
 
-set.seed(923856)
-r <- 1
+set.seed(2525)
 n <- 500
+cors <- seq(-1, 1, by = .1)
+cors_tibble <- tibble(x = rnorm(n))
 
-tibble(
-  x = rnorm(n),
-  y = r * x + rnorm(n, sd = sqrt(1 - r^2))
-) %>% 
-  ggplot(aes(x, y)) +
-  geom_point(size = .5) +
-  # geom_smooth(method = "lm", se = FALSE) +
-  geom_label(aes(label = paste0(cor(x, y))),
-             x = 0, y = 0)
+for (cor in cors) {
+  cors_tibble[[paste0(cor, "_1")]] <- cor * cors_tibble$x + rnorm(n, sd = sqrt(1 - cor^2))
+  cors_tibble[[paste0(cor, "_2")]] <- cor * cors_tibble$x
+}
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_1$")) %>% 
+  mutate(row = ifelse(str_detect(name, "-0\\.[9876]|-1_"), "1", 
+                      ifelse(str_detect(name, "-0\\.[54321]"), "2",
+                             ifelse(str_detect(name, "0\\.[12345]"), "4",
+                                    ifelse(str_detect(name, "0\\.[6789]|1_"), "5", "3"))))) %>% 
+  mutate(name = factor(name, 
+                       ordered = TRUE, 
+                       levels = paste0(rep(seq(-1, 1, by = .1), times = 2),
+                                       rep(c("_1", "_2"), each = 21)
+                                      )
+                       )
+         ) %>% 
+  ggplot(aes(x, value)) +
+  geom_point(size = 1) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "springgreen",
+              linewidth = .5) +
+  facet_grid(row ~ name) +
+  coord_fixed(ratio = 1)
 
