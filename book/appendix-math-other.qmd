@@ -101,7 +101,7 @@ $$
 
 $$
 \begin{split}
-y'(x) \defin &= \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &\defin \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) + g(x + \Delta x) \Big) - \Big( f(x) + g(x) \Big)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) - f(x) \Big) + \Big( g(x + \Delta x) - g(x) \Big)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x) - f(x)}{\Delta x} + \frac{g(x + \Delta x) - g(x)}{\Delta x} \right) = \\
@@ -843,6 +843,70 @@ $$
 
 ## Доказательства тригонометрических тождеств {#appendix-other-math-trigids-proof}
 
+### Основное тригонометрическое тождество {#appendix-other-math-trigids-proof-pythagorean}
+
+:::{#prp-trig-pythagorean}
+$$
+\sin^2 \alpha + \cos^2 \alpha = 1
+$$
+:::
+
+:::{.proof}
+
+:::
+
+:::{#cor-trig-pythagorean-sin}
+$$
+\sin \alpha = \pm \sqrt{1 - \cos^2 \alpha}
+$$
+:::
+
+:::{.proof}
+
+:::
+
+:::{#cor-trig-pythagorean-cos}
+$$
+\cos \alpha = \pm \sqrt{1 - \sin^2 \alpha}
+$$
+:::
+
+:::{.proof}
+
+:::
+
+:::{#cor-trig-pythagorean-tan}
+$$
+\tan^2 \alpha + 1 = \sec^2 \alpha
+$$
+:::
+
+:::{.proof}
+
+:::
+
+:::{#cor-trig-pythagorean-cot}
+$$
+1 + \cot^2 \alpha = \csc^2 \alpha
+$$
+:::
+
+:::{.proof}
+
+:::
+
+:::{#cor-trig-pythagorean-sec}
+$$
+\sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \csc^2 \alpha
+$$
+:::
+
+:::{.proof}
+
+:::
+
+
+
 ### Синус и косинус суммы {#appendix-other-math-trigids-proof-sin-cos-of-sum}
 
 :::{#prp-sin-cos-of-sum}
@@ -863,7 +927,9 @@ $${#eq-cos-of-sum}
 
 ![Построение рассматриваемых углов](img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg){#fig-sin-cos-of-sum-draw-angles}
 
-Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы $\alpha$ и $\beta$. Отложим на прямой $a_3$ отрезок $OA$. Из точки $A$ опустим перпендикуляр $AB$ на прямую $a_2$. Получим $\triangle AOB$, в котором $\angle ABO = 90^\circ$. Так как значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника, положим $OA = 1$. Из точки $B$ опустим перпендикуляр $BC$ на прямую $a_1$. Получим $\triangle BOC$, в котором $\angle BCO = 90^\circ$ (@fig-sin-cos-of-sum-draw-triangles). Сразу заметим, что
+Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы $\alpha$ и $\beta$. Отложим на прямой $a_3$ отрезок $OA$. Из точки $A$ опустим перпендикуляр $AB$ на прямую $a_2$. Получим $\triangle AOB$, в котором $\angle ABO = 90^\circ$. Так как *значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника*[^trig-size], положим $OA = 1$. Из точки $B$ опустим перпендикуляр $BC$ на прямую $a_1$. Получим $\triangle BOC$, в котором $\angle BCO = 90^\circ$ (@fig-sin-cos-of-sum-draw-triangles). Сразу заметим, что
+
+[^trig-size]: Это утверждение доказывается как теорема в курсе школьной геометрии.
 
 $$
 \sin \beta \defin \frac{AB}{OA} = \frac{AB}{1} = AB
@@ -879,11 +945,13 @@ $$
 
 Проведём через точку $A$ прямую $b_1$, параллельную прямой $a_1$, а через точку $O$ --- прямую $b_2$, перпендикулярную $b_1$. Тогда $b_1 \cap b_2 = D$.
 
-Рассмотрим образовавшиеся углы. $\angle DAO$ и $\angle AOC$ --- внутренние накрест лежащие при параллельных прямых $a_1$ и $b_1$ и секущей $a_3$. Следовательно, $\angle DAO = \angle AOC$. Однако по построению $\angle AOC = \angle AOB + \angle BOC = \beta + \alpha$. Получаем, что $\angle DAO = \alpha + \beta$ и есть искомый угол.
+Рассмотрим образовавшиеся углы. $\angle DAO$ и $\angle AOC$ --- внутренние накрест лежащие при параллельных прямых $a_1$ и $b_1$ и секущей $a_3$. Следовательно[^alternate-interior-angles], $\angle DAO = \angle AOC$. Однако по построению $\angle AOC = \angle AOB + \angle BOC = \beta + \alpha$. Получаем, что $\angle DAO = \alpha + \beta$ и есть искомый угол.
+
+[^alternate-interior-angles]: Это также теорема школьной геометрии.
 
 ![Построение треугольника, содержащего угол, равный сумме рассматриваемых углов](img/appendix-math-other/sin-cos-of-sum-first-perp.jpg){#fig-sin-cos-of-sum-first-perp}
 
-Рассмотрим образовавшийся $\triangle DAO$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle DAO$ --- прямоугольный, а $AO$ --- его гипотенуза. Так как $AO = 1$, имеем
+Рассмотрим образовавшийся $\triangle DAO$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle DAO$ --- прямоугольный, а $AO$ --- его гипотенуза. Так как $AO = OA = 1$, имеем
 
 $$
 \sin (\alpha + \beta) \defin \frac{DO}{AO} = \frac{DO}{1} = DO
@@ -895,7 +963,7 @@ $${#eq-cos-DA}
 
 ![Искомые тригонометрические фукнции в построенном треугольнике](img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg){#fig-sin-cos-of-sum-get-trigs}
 
-Проведем через точку $B$ прямую $b_3$, параллельную $b_2$. Получим, что $b_3 \perp b_1$ и $b_3 \perp a_1$, значит $BC \in b_2$, а также $b_1 \cap b_3 = E$. 
+Проведем через точку $B$ прямую $b_3$, параллельную $b_2$. Получим, что $b_3 \perp b_1$ и $b_3 \perp a_1$, значит $BC \in b_2$, а также $b_1 \cap b_3 = E$ (@fig-sin-cos-of-sum-second-perp).
 
 Рассмотрим получившийся $\triangle ABE$. Его $\angle AEB = 90^\circ$, а $\angle ABE = \alpha$, так как
 
@@ -913,7 +981,9 @@ $${#eq-ABE-alpha}
 
 Рассмотрим образовавшийся четырёхугольник $ODEC$.
 
-По построению $OC \parallel DE$. В свою очередь, $OD \parallel EC$, поскольку лежат на прямых, перпендикулярных $b_1$, а две прямые, перпендикулярные третьей, параллельны. Следовательно, четырёхугольник $ODEC$ --- параллелограмм[^odec-rectangle]. Значит $OD = CE$ и $OC = DE$.
+По построению $OC \parallel DE$. В свою очередь, $OD \parallel EC$, поскольку лежат на прямых, перпендикулярных $b_1$, а *две прямые, перпендикулярные третьей, параллельны*[^two-perp-parallel]. Следовательно, четырёхугольник $ODEC$ --- параллелограмм[^odec-rectangle]. Значит $OD = CE$ и $OC = DE$.
+
+[^two-perp-parallel]: Это также теорема, доказываемая в школьной геометрии.
 
 [^odec-rectangle]: Безусловно, можно заметить, что $ODEC$ --- прямоугольник, однако для доказательства тождеств достаточно того, что он является параллелограммом.
 
@@ -940,7 +1010,7 @@ $$
 Рассмотрим $\triangle BOC$. Его $\angle BCO = 90^\circ$, а $\angle BOC = \alpha$. Тогда
 
 $$
-\sin \alpha \defin \frac{BC}{OB} \Rightarrow BC = \sin \alpha \cdot OB = \sin \alpha \cos \beta
+\sin \alpha \defin \frac{CB}{OB} \Rightarrow CB = \sin \alpha \cdot OB = \sin \alpha \cos \beta
 $$
 
 $$
@@ -986,102 +1056,69 @@ $$
 
 ### Синус и косинус разности {#appendix-other-math-trigids-proof-sin-cos-of-diff}
 
-:::{#prp-sin-cos-of-diff}
+:::{#prp-sin-of-diff}
 $$
 \sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta
-$${#eq-sin-of-diff}
-
 $$
-\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta
-$${#eq-cos-of-diff}
 :::
 
 :::{.proof}
-
-Для [-@eq-sin-of-diff] справедливо, что
-
-$$
-\sin (\alpha - \beta) = \sin \big( \alpha + (-\beta) \big)
-$$
-
-По доказанному выше (@eq-sin-of-sum):
-
 $$
 \begin{split}
-\sin \big( \alpha + (-\beta) \big) &= \\
+\sin (\alpha - \beta) &= \sin \big( \alpha + (-\beta) \big) = \\
 &= \sin \alpha \cos (-\beta) + \cos \alpha \sin (-\beta) = \\
 &= \sin \alpha \cos \beta + \cos \alpha \cdot (- \sin \beta) = \\
-&= \sin \alpha \cos \beta - \cos \alpha \sin \beta
+&= \sin \alpha \cos \beta - \cos \alpha \sin \beta \qed
 \end{split}
 $$
+:::
 
-Для [-@eq-cos-of-diff] справедливо, что
-
+:::{#prp-cos-of-diff}
 $$
-\cos (\alpha - \beta) = \cos \big( \alpha + (-\beta) \big)
+\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta
 $$
+:::
 
-По доказанному выше (@eq-cos-of-sum):
-
+:::{.proof}
 $$
 \begin{split}
-\cos \big( \alpha + (-\beta) \big) &= \\
+\cos (\alpha - \beta) = \cos \big( \alpha + (-\beta) \big) = \\
 &= \cos \alpha \cos (-\beta) - \sin \alpha \sin (-\beta) = \\
 &= \cos \alpha \cos \beta - \sin \alpha \cdot (-\sin \beta) = \\
 &= \cos \alpha \cos \beta + \sin \alpha \sin \beta \qed
 \end{split}
 $$
-
 :::
 
+:::{.remark}
+Ввиду сходства выражений [-@eq-sin-of-sum] и [-@prp-sin-of-diff], а также [-@eq-cos-of-sum] и [-@prp-cos-of-diff] их часто объединяют в следущие тождества:
+
+$$
+\sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
+$$
+
+$$
+\cos (\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
+$$
+:::
 
 ### Синус и косинус двойного угла {#appendix-other-math-trigids-proof-sin-cos-2a}
 
-:::{#prp-sin-cos-2a}
+:::{#prp-sin-2a}
 $$
 \sin 2\alpha = 2 \sin \alpha \cos \alpha
-$${#eq-sin-2a}
-
 $$
-\cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha
-$${#eq-cos-2a}
 :::
 
 :::{.proof}
-
-Для [-@eq-sin-2a] справедливо, что
-
-$$
-\sin 2\alpha = \sin (\alpha + \alpha)
-$$
-
-По доказанному выше (@eq-sin-of-sum):
-
 $$
 \begin{split}
-\sin (\alpha + \alpha) &= \\
+\sin 2\alpha &= \sin (\alpha + \alpha) = \\
 &= \sin \alpha \cos \alpha + \cos \alpha \sin \alpha = \\
 &= \sin \alpha \cos \alpha + \sin \alpha \cos \alpha = \\
-&= 2 \sin \alpha \cos \alpha
+&= 2 \sin \alpha \cos \alpha \qed
 \end{split}
 $$
-
-Для [-@eq-cos-2a] справедливо, что
-
-$$
-\cos 2\alpha = \cos (\alpha + \alpha)
-$$
-
-По доказанному выше (@eq-cos-of-sum):
-
-$$
-\begin{split}
-\cos (\alpha + \alpha) &= \\
-&= \cos \alpha \cos \alpha - \sin \alpha \sin \alpha = \\
-&= \cos^2 \alpha - \sin^2 \alpha \qed
-\end{split}
-$$
-
 :::
 
 :::{#cor-sin-2a}
@@ -1101,9 +1138,45 @@ $$
 $$
 :::
 
-:::{#cor-cos-2a}
+:::{#cor-sin-2a-from-tan}
 $$
-\cos 2\alpha = 2 \cos^2 \alpha - 1 = 1 - 2 \sin^2 \alpha
+\sin 2 \alpha = \frac{2 \tan \alpha}{1 + \tan^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin 2 \alpha &= 2 \sin \alpha \cos \alpha = \\
+&= \frac{2 \sin \alpha \cos \alpha \cdot \cos \alpha}{\cos \alpha} = \\
+&= 2 \frac{\sin \alpha}{\cos \alpha} \cdot \frac{\cos^2 \alpha}{1} = \\
+&= 2 \tan \alpha \cdot \frac{\cos^2 \alpha}{\cos^2 \alpha + \sin^2 \alpha} = \\
+&= \frac{2 \tan \alpha}{\dfrac{\cos^2 \alpha + \sin^2 \alpha}{\cos \alpha}} = 
+\frac{2 \tan \alpha}{1 + \tan^2 \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cos-2a}
+$$
+\cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos (\alpha + \alpha) = \\
+&= \cos \alpha \cos \alpha - \sin \alpha \sin \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha \qed
+\end{split}
+$$
+
+:::
+
+:::{#cor-cos-2a-cos2}
+$$
+\cos 2\alpha = 2 \cos^2 \alpha - 1
 $$
 :::
 
@@ -1113,10 +1186,19 @@ $$
 \cos 2 \alpha &= \cos 2 \alpha - \cos^2 \alpha + \cos^2 \alpha = \\
 &= \cos^2 \alpha - \sin^2 \alpha - \cos^2 \alpha + \cos^2 \alpha = \\
 &= \cos^2 \alpha + \cos^2 \alpha - (\sin^2 \alpha + \cos^2 \alpha) = \\
-&= 2 \cos^2 \alpha - 1
+&= 2 \cos^2 \alpha - 1 \qed
 \end{split}
 $$
+:::
 
+:::{#cor-cos-2a-sin2}
+$$
+\cos 2\alpha = 1 - 2 \sin^2 \alpha
+$$
+:::
+
+
+:::{.proof}
 $$
 \begin{split}
 \cos 2 \alpha &= \cos 2 \alpha + \sin^2 \alpha - \sin^2 \alpha = \\
@@ -1126,6 +1208,408 @@ $$
 \end{split}
 $$
 :::
+
+:::{#cor-cos-2a-tan}
+$$
+\cos 2 \alpha = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos^2 \alpha - \sin^2 \alpha = \\
+&= \frac{(\cos^2 \alpha - \sin^2 \alpha) \cdot \cos^2 \alpha}{\cos^2 \alpha} = \\
+&= \frac{\cos^2 \alpha - \sin^2 \alpha}{\cos^2 \alpha} \cdot \frac{\cos^2 \alpha}{1} = \\
+&= (1 - \tan^2 \alpha) \cdot \frac{\cos^2 \alpha}{\cos^2 \alpha + \sin^2 \alpha} = \\
+&= \frac{1 - \tan^2 \alpha}{\dfrac{\cos^2 \alpha + \sin^2 \alpha}{\cos^2 \alpha}} = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha \qed}
+\end{split}
+$$
+:::
+
+
+
+### Тангенс и котангенс суммы и разности {#appendix-other-math-trigids-proof-tan-cot-of-sum}
+
+:::{#prp-tan-of-sum}
+$$
+\tan (\alpha + \beta) = \frac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\tan (\alpha + \beta) &= \frac{\sin (\alpha + \beta)}{\cos (\alpha + \beta)} = \\
+&= \frac{\sin \alpha \cos \alpha + \cos \alpha \sin \beta}{\cos \alpha \cos \beta - \sin \alpha \sin \beta} = \\
+&= \frac{
+    \dfrac{\sin \alpha \cos \alpha + \cos \alpha \sin \beta}{\cos \alpha \cos \beta}
+  }{
+    \dfrac{\cos \alpha \cos \beta - \sin \alpha \sin \beta}{\cos \alpha \cos \beta}
+  } = \\
+&= \frac{
+    \dfrac{\sin \alpha \cancel{\cos \beta}}{\cos \alpha \cancel{\cos \beta}} 
+    + 
+    \dfrac{\cancel{\cos \alpha} \sin \beta}{\cancel{\cos \alpha} \cos \beta}
+  }{
+    \dfrac{\cancel{\cos \alpha} \cancel{\cos \beta}}{\cancel{\cos \alpha} \cancel{\cos \beta}}
+    -
+    \dfrac{\sin \alpha \sin \beta}{\cos \alpha \cos \beta}
+  } = \\
+&= \frac{\tan \alpha + \tan \beta}
+  {1 - \dfrac{\sin \alpha}{\cos \alpha} \cdot \dfrac{\sin \beta}{\cos \beta}} = \frac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-tan-of-diff}
+$$
+\tan (\alpha - \beta) = \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\tan (\alpha - \beta) &= \tan \big( \alpha + (- \beta) \big) = \\
+&= \frac{\tan \alpha + \tan (-\beta)}{1 - \tan \alpha \tan (-\beta)} = \\
+&= \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta} \qed
+\end{split}
+$$
+:::
+
+
+:::{#prp-cot-of-sum}
+$$
+\cot (\alpha + \beta) = \frac{\cot \alpha \cot \beta - 1}{\cot \beta + \cot \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cot (\alpha + \beta) &= \frac{\cos (\alpha + \beta)}{\sin (\alpha + \beta)} = \\
+&= \frac{\cos \alpha \cos \beta - \sin \alpha \sin \beta}{\sin \alpha \cos \beta + \cos \alpha \sin \beta} = \\
+&= \frac{
+    \dfrac{\cos \alpha \cos \beta - \sin \alpha \sin \beta}{\sin \alpha \sin \beta}
+  }{
+    \dfrac{\sin \alpha \cos \beta + \cos \alpha \sin \beta}{\sin \alpha \sin \beta}
+} = \\
+&= \frac{
+    \dfrac{\cos \alpha \cos \beta}{\sin \alpha \sin \beta} 
+    - 
+    \dfrac{\cancel{\sin \alpha} \cancel{\sin \beta}}{\cancel{\sin \alpha} \cancel{\sin \beta}}
+  }{
+    \dfrac{\cancel{\sin \alpha} \cos \beta}{\cancel{\sin \alpha} \sin \beta} 
+    + 
+    \dfrac{\cos \alpha \cancel{\sin \beta}}{\sin \alpha \cancel{\sin \beta}}
+} = \\
+&= \frac{\dfrac{\cos \alpha}{\sin \alpha} \cdot \dfrac{\cos \beta}{\sin \beta} - 1}
+  {\cot \beta + \cot \alpha} = \\
+&= \frac{\cot \alpha \cot \beta - 1}{\cot \beta + \cot \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cot-of-diff}
+$$
+\cot (\alpha - \beta) = \frac{\cot \alpha \cot \beta + 1}{\cot \beta - \cot \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cot (\alpha - \beta) &= \cot \big( \alpha + (-\beta) \big) = \\
+&= \frac{\cot \alpha \cot(-\beta) - 1}{\cot (-\beta) + \cot \alpha} = \\
+&= \frac{\cot \alpha (-\cot \beta) - 1}{-\cot \beta + \cot \alpha} = \\
+&= \frac{-(\cot \alpha \cot \beta + 1)}{-(\cot \beta - \cot \alpha)} = \\
+&= \frac{\cot \alpha \cot \beta + 1}{\cot \beta - \cot \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+Ввиду сходства выражений [-@prp-tan-of-sum] и [-@prp-tan-of-diff], а также [-@prp-cot-of-sum] и [-@prp-cot-of-diff] их часто объединяют в следущие тождества:
+
+$$
+\tan (\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
+$$
+
+$$
+\cot (\alpha \pm \beta) = \frac{\cot \alpha \cot \beta \mp 1}{\cot \beta \pm \cot \alpha}
+$$
+:::
+
+
+### Тангенс и котангенс двойного угла {#appendix-other-math-trigids-proof-tan-cot-2a}
+
+:::{#prp-tan-2a}
+$$
+\tan 2 \alpha = \frac{2 \tan \alpha}{1 - \tan^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\tan 2 \alpha &= \tan (\alpha + \alpha) = \\
+&= \frac{\tan \alpha + \tan \alpha}{1 - \tan \alpha \cdot \tan \alpha} = \\
+&= \frac{2 \tan \alpha}{1 - \tan^2 \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#cor-cot-2a-from-tan}
+$$
+\cot 2 \alpha = \frac{1 - \tan^2 \alpha}{2 \tan \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\cot 2 \alpha = \frac{1}{\tan 2\alpha} = \frac{1}{\frac{2 \tan \alpha}{1 - \tan^2 \alpha}} = \frac{1 - \tan^2 \alpha}{2 \tan \alpha} \qed
+$$
+:::
+
+:::{#prp-cot-2a}
+$$
+\cot 2 \alpha = \frac{\cot^2 \alpha - 1}{2 \cot \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cot 2 \alpha &= \cot (\alpha + \alpha) = \\
+&= \frac{\cot \alpha \cdot \cot \alpha - 1}{\cot \alpha + \cot \alpha} = \\
+&= \frac{\cot^2 \alpha - 1}{2 \cot \alpha} \qed
+\end{split}
+$$
+:::
+
+### Секанс и косеканс суммы и разности {#appendix-other-math-trigids-proof-sec-csc-of-sum}
+
+### Секанс и косеканс двойного угла {#appendix-other-math-trigids-proof-sec-csc-2a}
+
+
+### Преобразование произведения в сумму {#appendix-other-math-trigids-proof-prod-to-sum}
+
+:::{#prp-sinsin}
+$$
+\sin \alpha \sin \beta = \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos(\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+\cos(\alpha - \beta) &= \cos \alpha \cos \beta + \sin \alpha \sin \beta \\
+&\Downarrow \\
+\cos(\alpha + \beta) - \cos(\alpha - \beta) &= 
+\cancel{\cos \alpha \cos \beta} - 
+\sin \alpha \sin \beta - 
+\cancel{\cos \alpha \cos \beta} - 
+\sin \alpha \sin \beta \\
+\cos(\alpha + \beta) - \cos(\alpha - \beta) &= -2 \sin \alpha \sin \beta \\
+&\Downarrow \\ 
+2 \sin \alpha \sin \beta &= \cos (\alpha - \beta) - \cos (\alpha + \beta) \\
+\sin \alpha \sin \beta &= \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-coscos}
+$$
+\cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos(\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+\cos(\alpha - \beta) &= \cos \alpha \cos \beta + \sin \alpha \sin \beta \\
+&\Downarrow \\
+\cos(\alpha + \beta) + \cos(\alpha - \beta) &= 
+\cos \alpha \cos \beta - 
+\cancel{\sin \alpha \sin \beta} + 
+\cos \alpha \cos \beta + 
+\cancel{\sin \alpha \sin \beta} \\
+\cos(\alpha + \beta) + \cos(\alpha - \beta) &= 2 \cos \alpha \cos \beta \\
+&\Downarrow \\ 
+\cos \alpha \cos \beta &= \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-sincos}
+$$
+\sin \alpha \cos \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin(\alpha + \beta) &= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+\sin(\alpha - \beta) &= \sin \alpha \cos \beta - \cos \alpha \sin \beta \\
+&\Downarrow \\
+\sin(\alpha + \beta) + \sin(\alpha - \beta) &= 
+\sin \alpha \cos \beta + 
+\cancel{\cos \alpha \sin \beta} + 
+\sin \alpha \cos \beta - 
+\cancel{\cos \alpha \sin \beta} \\
+\sin(\alpha + \beta) + \sin(\alpha - \beta) &= 2 \sin \alpha \sin \beta \\
+&\Downarrow \\ 
+\sin \alpha \sin \beta &= \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cossin}
+$$
+\cos \alpha \sin \beta = \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin(\alpha + \beta) &= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+\sin(\alpha - \beta) &= \sin \alpha \cos \beta - \cos \alpha \sin \beta \\
+&\Downarrow \\
+\sin(\alpha + \beta) - \sin(\alpha - \beta) &= 
+\cancel{\sin \alpha \cos \beta} + 
+\cos \alpha \sin \beta - 
+\cancel{\sin \alpha \cos \beta} + 
+\cos \alpha \sin \beta \\
+\sin(\alpha + \beta) - \sin(\alpha - \beta) &= 2 \cos \alpha \sin \beta \\
+&\Downarrow \\ 
+\cos \alpha \sin \beta &= \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+$$
+\begin{split}
+\cos \alpha \sin \beta &= \sin \beta \cos \alpha = \\
+&= \frac{\sin (\beta + \alpha) + \sin(\beta - \alpha)}{2} \\
+&= \frac{\sin (\alpha + \beta) + \sin \big(-(\alpha - \beta) \big)}{2} = \\
+&= \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
+\end{split}
+$$
+:::
+
+
+
+### Преобразование суммы в произведение {#appendix-other-math-trigids-proof-sum-to-prod}
+
+:::{.remark}
+В доказательствах тождеств в этого раздела $\alpha$ и $\beta$ представляют как сумму и разность некоторых $\phi$ и $\psi$ чтобы было возможно использовать тождества [-@eq-sin-of-sum], [-@prp-sin-of-diff], [-@eq-cos-of-sum] и [-@prp-cos-of-diff], то есть $\alpha = \phi + \psi$ и $\beta = \phi - \psi$.
+
+При таком представлении получается, что
+
+$$
+\begin{split}
+\alpha + \beta &= (\phi + \psi) + (\phi - \psi) = 2 \phi \Rightarrow \phi = \frac{\alpha + \beta}{2} \\
+\alpha - \beta &= (\phi + \psi) - (\phi - \psi) = 2 \psi \Rightarrow \psi = \frac{\alpha - \beta}{2} \\
+\end{split}
+$$
+:::
+
+:::{#prp-sin-plus-sin}
+$$
+\sin \alpha + \sin \beta = 2 \sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin \alpha + \sin \beta &= \sin (\phi + \psi) + \sin (\phi - \psi) = \\
+&= 
+\sin \phi \cos \psi + 
+\cancel{\cos \phi \sin \psi} + 
+\sin \phi \cos \psi - 
+\cancel{\cos \phi \sin \psi} = \\
+&= 2 \sin \phi \cos \psi = 2 \sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-sin-minus-sin}
+$$
+\sin \alpha - \sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin \alpha - \sin \beta &= \sin (\phi + \psi) - \sin (\phi - \psi) = \\
+&= 
+\cancel{\sin \phi \cos \psi} + 
+\cos \phi \sin \psi - 
+\cancel{\sin \phi \cos \psi} + 
+\cos \phi \sin \psi = \\
+&= 2 \cos \phi \sin \psi = 2 \cos \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} = \\
+&= 2  \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2} \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+Ввиду сходства выражений [-@prp-sin-plus-sin] и [-@prp-sin-minus-sin] их часто объединяют в следующее тождество:
+
+$$
+\sin \alpha \pm \sin \beta = 2 \sin \frac{\alpha \pm \beta}{2} \cos \frac{\alpha \mp \beta}{2}
+$$
+:::
+
+:::{#prp-cos-plus-cos}
+$$
+\cos \alpha + \cos \beta = 2 \cos \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos \alpha + \cos \beta &= \cos (\phi + \psi) + \cos (\phi - \psi) = \\
+&= 
+\cos \phi \cos \psi - 
+\cancel{\sin \phi \sin \psi} + 
+\cos \phi \cos \psi + 
+\cancel{\sin \phi \sin \psi} = \\
+&= 2 \cos \phi \cos \psi = 2 \cos \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cos-minus-cos}
+$$
+\cos \alpha - \cos \beta = -2 \sin \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos \alpha - \cos \beta &= \cos (\phi + \psi) - \cos (\phi - \psi) = \\
+&= 
+\cancel{\cos \phi \cos \psi} - 
+\sin \phi \sin \psi - 
+\cancel{\cos \phi \cos \psi} - 
+\sin \phi \sin \psi = \\
+&= -2 \sin \phi \sin \psi = -2 \sin \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} \qed
+\end{split}
+$$
+:::
+
+
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
