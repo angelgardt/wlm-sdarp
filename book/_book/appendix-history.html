@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - Источники</title>
+<title>WLM SDARP - Приложение L — Разные сюжеты</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -49,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-numbers.html" rel="next">
-<link href="./common-outro.html" rel="prev">
+<link href="./appendix-keys.html" rel="next">
+<link href="./appendix-math-letters.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -115,6 +116,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -127,7 +157,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">Источники</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-history.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -137,10 +167,10 @@ background-size: cover;
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-history.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Источники</h1>
+      <h1 class="title"><span id="appendix-history" class="quarto-section-identifier">Приложение L — Разные сюжеты</span></h1>
                       </div>
   </div>
     
@@ -374,7 +404,7 @@ background-size: cover;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Источники</span></a>
   </div>
 </li>
@@ -455,7 +485,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
@@ -473,7 +503,15 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#appendix-history-trig-fun-names" id="toc-appendix-history-trig-fun-names" class="nav-link active" data-scroll-target="#appendix-history-trig-fun-names"><span class="header-section-number">L.1</span> Названия тригонометрических функций</a></li>
+  <li><a href="#appendix-history-trig-fun-names" id="toc-appendix-history-trig-fun-names" class="nav-link" data-scroll-target="#appendix-history-trig-fun-names"><span class="header-section-number">L.2</span> Эллипс, парабола и гипербола</a></li>
+  <li><a href="#appendix-history-cause-and-case" id="toc-appendix-history-cause-and-case" class="nav-link" data-scroll-target="#appendix-history-cause-and-case"><span class="header-section-number">L.3</span> Каузальность и казуальность</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -482,131 +520,82 @@ background-size: cover;
 
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-benjamin2018" class="csl-entry" role="listitem">
-Benjamin, D. J., Berger, J. O., &amp; Johannesson, M. et al. (2018).
-Redefine statistical significance. <em>Nature Human Behaviour</em>,
-<em>2</em>, 6–10. <a href="https://doi.org/10.1038/s41562-017-0189-z">https://doi.org/10.1038/s41562-017-0189-z</a>
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Decorations --->
+<!--- Common --->
+<!--- Logic --->
+<!--- Set theory --->
+<!--- Combinatorics --->
+<!--- Number sets--->
+<!--- Calculus --->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<!--- Letters --->
+<div class="intro">
+<p>Вступление</p>
 </div>
-<div id="ref-britanica-latin-alphabet" class="csl-entry" role="listitem">
-Britannica, T. Editors of Encyclopaedia. (2024). Latin alphabet. In
-<em>Encyclopedia britannica</em>. <a href="https://www.britannica.com/topic/Latin-alphabet">https://www.britannica.com/topic/Latin-alphabet</a>
+<section id="appendix-history-trig-fun-names" class="level2" data-number="L.1">
+<h2 data-number="L.1" class="anchored" data-anchor-id="appendix-history-trig-fun-names"><span class="header-section-number">L.1</span> Названия тригонометрических функций</h2>
+<div class="quote small">
+<p>— Вот скажи мне, автор, почему синус называется синусом? Причём тут пазухи? А тангенс? Почему он танген<strong>с</strong>, а когда пытаешься загуглить по-английски <em>tangens</em>, выясняешь, что он <em>tangent</em>? И откуда <em>ко-</em> у косинуса и котангенса? <br> — О-о-о, ты спрашиваешь очень интересный вопрос. Сейчас расскажу!</p>
 </div>
-<div id="ref-fay-rassignment" class="csl-entry" role="listitem">
-Fay, C. (n.d.). <em>Why do we use arrow as an assignment operator?</em>
-<a href="https://colinfay.me/r-assignment/">https://colinfay.me/r-assignment/</a>
+<p>Тригонометрией великие умы человечества занимаются с древнейших времен по всему земному шару. Наиболее значительные успехи, конечно, возникали в местах древних цивилизаций. История названий тригонометрических функций берез своё начало в Древней Индии <span class="citation" data-cites="jushkevich-v1-1970">(<a href="references.html#ref-jushkevich-v1-1970" role="doc-biblioref">Юшкевич, 1970</a>)</span>.</p>
+<p>Индийские математики изучали окружность и связанные с ней углы — практически как и мы сейчас, вводя тригонометрические функции для любых углов. Их построение приблизительно выглядело так (<a href="#fig-indian-trig-circle" class="quarto-xref">Иллюстрация&nbsp;<span>L.1</span></a>).</p>
+<div id="fig-indian-trig-circle" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-indian-trig-circle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-history/indian-trig-circle.jpg" class="img-fluid figure-img">
 </div>
-<div id="ref-ifrah2000" class="csl-entry" role="listitem">
-Ifrah, G. (2000). <em>The universal history of numbers: From prehistory
-to the invention of the computer</em>. John Wiley &amp; Sons, Inc.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-indian-trig-circle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;L.1: Стрела и тетива в тригонометрической окружности Древней Индии
+</figcaption>
+</figure>
 </div>
-<div id="ref-iso80000-2-2019" class="csl-entry" role="listitem">
-ISO. (2019). <em>Quantities and units — part 2: mathematics</em>
-(<span>ISO 80000-2:2019</span>). International Organization for
-Standardization. <a href="https://www.iso.org/standard/64973.html">https://www.iso.org/standard/64973.html</a>
+<p>Они знали хорды, и называли их «джива», что можно перевести как «тетива». Линия перпендикуляра, опущенная на хорду из середины дуги, стягиваемой этой хордой, называлась «стрела». В целом, разумно, если присмотреться в картинке (<a href="#fig-indian-trig-circle" class="quarto-xref"><span>L.1</span></a>) — действительно построение похоже на лук. Индийским математикам была известна и линия синуса — «ардха-джива», или «полутетива». Логично, так как линия синуса — это половина такой хорды. Позднее название линии синуса упростилось и из «ардха-джива» превратилось просто в «джива», видимо, для краткости. Однако такое название всё ещё хранило в себе некоторую осмысленность.</p>
+<p>Когда индийские тексты попали в руки арабов, арабские переводчики не стали переводить «джива» арабским словом — хотя оно было и звучало примерно как «ватар» (собственно, та же «тетива»). Вместо этого они решили затранскрибировать арабскими буквами исходное «джива», в результате чего получилось «джиба». Этим термином и стали пользоваться. Однако ввиду того, что краткие гласные в арабской письменности не обозначаются<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, а долгое «и» в слове «джиба» обозначается так же, как и полугласный «й», новый термин стал произноситься как «джайб», что буквально обозначает «впадина», «пазуха».</p>
+<p>Языком науки в Европе была латынь. Соответственно, когда арабские тексты оказались в Европе, возникла необходимость их перевода. Европейские переводчики честно сделали свою работу и перевели «джайб» как «sinus», что буквально означает<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> «пазуха, изгиб». Так мы и получили современный «синус».</p>
+<div class="quote small">
+<p>— Шок… То есть если бы арабы не стали транскрибировать «дживу» синус мог бы назваться «ватар»… <br> — Всё так.</p>
 </div>
-<div id="ref-iso80000-10646" class="csl-entry" role="listitem">
-ISO. (2020). <em>Information technology — universal coded character set
-(UCS)</em> (<span>ISO/IEC 10646:2020</span>). International Organization
-for Standardization. <a href="https://www.iso.org/standard/76835.html">https://www.iso.org/standard/76835.html</a>
+<p>С названиями остальных функций всё гораздо прозаичнее. Хотя косинус был известен и древнеиндийским ученым — они называли его «котиджива» («синус остатка») — он получил современное название позднее как «дополнительный синус» (лат. <em>sinus <strong>co</strong>mplementi</em>) — так как <span class="math inline">\(\cos x = \sin (90^\circ - x)\)</span> — которое впоследствии сократилось до <em>cosinus</em>. Тангенс (лат. <em>tangens</em> — касающийся, от <em>tangere</em> — трогать, касаться), действительно, лежит на касательной к окружности, а секанс (лат. <em>secans</em> — секущий, от <em>secare</em> — обрезать, вырезать) является частью секущей. Названия для <strong>ко</strong>тангенса и <strong>ко</strong>секанса были образованы по аналогии с косинусом <span class="citation" data-cites="gleizer-1964">(<a href="references.html#ref-gleizer-1964" role="doc-biblioref">Глейзер, 1964</a>)</span>.</p>
+<p>Английские названия — (co)sine, (co)tangent, (co)secant — обязаны своей формой историческим фонетическим процессам. В результате фонетических изменений у слов отпали окончания, и они стали состоять только из основ. Латинская основа тоже была устроена довольно хитро и определялась из формы генетива (родительного падежа). С синусом и косинусом всё просто — они потеряли окончание <em>-us</em> (вернее, сменили его на <em>-e</em>): <em>(co)sin-us</em> → <em>(co)sin-e</em>. Основы (ко)тангенса и (ко)секанса — это <em>(co)tangent-</em> и <em>(co)secant-</em>, так как в форме генетива они выглядят как <em>(co)tangent-is</em> и <em>(co)secant-is</em>. Потеряв окончание <em>-is</em>, они стали <em>(co)tangent</em> и <em>(co)secant</em>.</p>
+<p>Вот такие лингвистические дела.</p>
+</section>
+<section id="appendix-history-trig-fun-names" class="level2" data-number="L.2">
+<h2 data-number="L.2" class="anchored" data-anchor-id="appendix-history-trig-fun-names"><span class="header-section-number">L.2</span> Эллипс, парабола и гипербола</h2>
+<div class="quote small">
+<p>— А вот скажи мне, автор, почему эллипс называется эллипсом? Или гипербола — гиперболой? Вообще-то ellipsis — это когда мы аргументы в функции пропускаем. Я книжку твою читал. А гипербола — так-то преувеличение. Это я из уроков литры смутно помню. И всякие кривые математические тут вообще никак рядом не лежали! Парабола ещё вообще неясно откуда взялась… <br> — Коллега, вы даже не представляете, насколько вы близки к истине!</p>
 </div>
-<div id="ref-iso24765-2017" class="csl-entry" role="listitem">
-ISO/IEC/IEEE. (2017). <em>Systems and software engineering —
-vocabulary</em> (<span>ISO/IEC/IEEE 24765:2017</span>). International
-Organization for Standardization. <a href="https://www.iso.org/standard/64973.html">https://www.iso.org/standard/64973.html</a>
+</section>
+<section id="appendix-history-cause-and-case" class="level2" data-number="L.3">
+<h2 data-number="L.3" class="anchored" data-anchor-id="appendix-history-cause-and-case"><span class="header-section-number">L.3</span> Каузальность и казуальность</h2>
+<div class="quote small">
+<p>— Дорогой автор, это совершенно невозможно. Я уже который год не могу запомнить, как по-умному называется причинно-следственный вывод — каузальный или казуальный. Нельзя было как-то поразнообразнее слова придумывать? <br> — Я сам долго путался. Сейчас расскажу, в чём тут дело.</p>
 </div>
-<div id="ref-kumar-peano" class="csl-entry" role="listitem">
-Kumar, N. M. (n.d.). <em>Construstion of number systems</em>. Washington
-University in St. Louis, Department of Mathematics. Retrieved May 30,
-2024, from <a href="https://www.math.wustl.edu/~kumar/courses/310-2011/Peano.pdf">https://www.math.wustl.edu/~kumar/courses/310-2011/Peano.pdf</a>
-</div>
-<div id="ref-lakens2018" class="csl-entry" role="listitem">
-Lakens, D., Adolfi, F. G., &amp; Albers, C. J. et al. (2018). Justify
-your alpha. <em>Nature Human Behaviour</em>, <em>2</em>, 168–171. <a href="https://doi.org/10.1038/s41562-018-0311-x">https://doi.org/10.1038/s41562-018-0311-x</a>
-</div>
-<div id="ref-peano1889" class="csl-entry" role="listitem">
-Peano, I. (1889). <em>Arithmetices principia: Nova methodo</em>. Fratres
-Bocca.
-</div>
-<div id="ref-pelayo-peano" class="csl-entry" role="listitem">
-Pelayo, R. (n.d.). <em>The peano axioms</em>. Retrieved May 30, 2024,
-from <a href="https://www2.hawaii.edu/~robertop/Courses/TMP/7_Peano_Axioms.pdf">https://www2.hawaii.edu/~robertop/Courses/TMP/7_Peano_Axioms.pdf</a>
-</div>
-<div id="ref-rstudio-core-team" class="csl-entry" role="listitem">
-Posit team. (2024). <em>RStudio: Integrated development environment for
-r</em>. Posit Software, PBC. <a href="http://www.posit.co/">http://www.posit.co/</a>
-</div>
-<div id="ref-r-core-team" class="csl-entry" role="listitem">
-R Core Team. (2023). <em>R: A language and environment for statistical
-computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
-</div>
-<div id="ref-ross2022" class="csl-entry" role="listitem">
-Ross, I. (n.d.). <em>The r project: A brief history and thoughts about
-the future</em>. The University of Auckland. Retrieved May 19, 2024,
-from <a href="https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf">https://web.archive.org/web/20221228043824/https://www.stat.auckland.ac.nz/~ihaka/downloads/Otago.pdf</a>
-</div>
-<div id="ref-ruiter2019" class="csl-entry" role="listitem">
-Ruiter, J. de. (2019). Redefine or justify? Comments on the alpha
-debate. <em>Psychonomic Bulletin &amp; Review</em>, <em>26</em>,
-430–433. <a href="https://doi.org/10.3758/s13423-018-1523-9">https://doi.org/10.3758/s13423-018-1523-9</a>
-</div>
-<div id="ref-philos-enc" class="csl-entry" role="listitem">
-SLOVARonline. (2010). <em>Философский энциклопедический словарь</em>.
-Словари онлайн. <a href="https://rus-philosophy-enc.slovaronline.com/">https://rus-philosophy-enc.slovaronline.com/</a>
-</div>
-<div id="ref-wickham-advr-2019" class="csl-entry" role="listitem">
-Wickham, H. (2019). <em>Advanced r, second edition (2nd ed.)</em>.
-Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781351201315">https://doi.org/10.1201/9781351201315</a>
-</div>
-<div id="ref-math-enc" class="csl-entry" role="listitem">
-Виноградов, И. М. (1985). <em>Математическая энциклопедия (в 5 томах).
-Том 5</em>. Советская энциклопедия.
-</div>
+<script type="text/javascript" src="./js/chapter.js"></script>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-gleizer-1964" class="csl-entry" role="listitem">
-Глейзер, Г. И. (1964). <em>История математики в школе. Пособие для
-учителей</em>. М.: Просвещение.
-</div>
-<div id="ref-zaytsev2011" class="csl-entry" role="listitem">
-Зайцев, Ю. A., &amp; Хван, А. А. (2011). Стандартизация методик
-диагностики тревожности спилбергера-ханина и дж. тейлор.
-<em>Психологическая Диагностика</em>, <em>3</em>, 13–34.
-</div>
-<div id="ref-segeth1985" class="csl-entry" role="listitem">
-Зегет, В. (1985). <em>Элементарная логика</em>. Высшая школа.
-</div>
-<div id="ref-kolmogorov1974" class="csl-entry" role="listitem">
-Колмогоров, А. Н. (1974). <em>Основные понятия теории вероятностей</em>.
-М.: Наука.
-</div>
-<div id="ref-savvina2016" class="csl-entry" role="listitem">
-Саввина, О. А. (2016). Математику уже затем учить надо…. <em>Журнал
-Педагогических Исследований</em>, <em>1</em>(6), 6.
-</div>
-<div id="ref-serdobolskaya2019" class="csl-entry" role="listitem">
-Сердобольская, М. Л. (2017). Основные понятия теории вероятностей. In
-<em>Теория вероятностей и математическая статистика. Курс лекций</em>.
-Физический факультет, Московский государственный университет имени М. В.
-Ломоносова. <a href="https://youtu.be/ClRpDrVuoNY?si=Vc4VVGTc5fRta1NR">https://youtu.be/ClRpDrVuoNY?si=Vc4VVGTc5fRta1NR</a>
-</div>
-<div id="ref-sirotin2018" class="csl-entry" role="listitem">
-Сиротин, В. П. (2018). <em>Курс «прикладной статистический анализ»</em>.
-НИУ ВШЭ, платформа «Открытое образование».
-</div>
-<div id="ref-khanin1976" class="csl-entry" role="listitem">
-Ханин, Ю. Л. (1976). <em>Краткое руководство к применению шкалы
-реактивной и личностной тревожности спилбергера</em>. Л.: ЛНИИФК.
-</div>
-<div id="ref-erlikh2019" class="csl-entry" role="listitem">
-Эрлих, И. Г. (2017). Теория меры 0. Вводная лекция. In <em>Теория меры
-(2 курс, 2019)</em>. Лекторий ФПМИ. <a href="https://youtu.be/_zSZgR2khpY?si=A0A-JVtZFKkCkZmc">https://youtu.be/_zSZgR2khpY?si=A0A-JVtZFKkCkZmc</a>
+Глейзер, Г. И. (1964). <em>История математики в школе. Пособие для учителей</em>. М.: Просвещение.
 </div>
 <div id="ref-jushkevich-v1-1970" class="csl-entry" role="listitem">
-Юшкевич, А. П. (1970). <em>История математики. Том 1. С дрейневнейших
-времен до начала нового времени</em>. М.: Наука.
+Юшкевич, А. П. (1970). <em>История математики. Том 1. С дрейневнейших времен до начала нового времени</em>. М.: Наука.
 </div>
 </div>
-
-
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Система огласовок, по-видимому, возникла гораздо позже.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Отсюда же происходит «синусит» (лат. <em>sinusitis</em>) — воспаление придаточных пазух носа (в чатсности, верхнечелюстных, клиновидной и лобной — <em><strong>sinus</strong> maxillares, sphenoidalis et frontalis</em>). Также в анатомии есть <strong>синусы</strong> твёрдой мозговой оболочки (например, верхний сагиттальный синус, <em><strong>sinus</strong> sagittalis superior</em>).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1164,13 +1153,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./common-outro.html" class="pagination-link" aria-label="Заключение">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Заключение</span>
+      <a href="./appendix-math-letters.html" class="pagination-link" aria-label="Математические буквы">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-numbers.html" class="pagination-link" aria-label="Числа">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Числа</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./appendix-keys.html" class="pagination-link" aria-label="Ответы на листки">
+        <span class="nav-page-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
