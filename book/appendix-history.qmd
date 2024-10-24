@@ -1,0 +1,21 @@
+# Исторические комментарии {#appendix-history}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+## Названия тригонометрических функций {#appendix-history-trig-fun-names}
+
+
+
+## Эллипс, парабола и гипербола {#appendix-history-trig-fun-names}
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```
