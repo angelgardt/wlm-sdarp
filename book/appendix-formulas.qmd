@@ -284,14 +284,40 @@ tibble(
 gridExtra::grid.arrange(acute, obtuse, ncol=2)
 ```
 
-### Производные тригонометрические функции {#trig_funs_def}
+### Базовые соотношения {#trig_basic}
 
+:::{.columns}
+
+:::{.column}
 $$
-\sec \alpha = \frac{1}{\cos \alpha} \qquad
-\csc \alpha = \frac{1}{\sin \alpha} \qquad
-\tan \alpha = \frac{\sin \alpha}{\cos \alpha} \qquad
-\cot \alpha = \frac{\cos \alpha}{\sin \alpha}
+\sec \alpha = \frac{1}{\cos \alpha}
 $$
+$$
+\csc \alpha = \frac{1}{\sin \alpha}
+$$
+$$
+\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{1}{\cot \alpha}
+$$
+$$
+\cot \alpha = \frac{\cos \alpha}{\sin \alpha} = \frac{1}{\tan \alpha}
+$$
+:::
+
+:::{.column}
+$$
+\frac{\sec \alpha}{\csc \alpha} = \tan \alpha
+$$
+$$
+\frac{\csc \alpha}{\sec \alpha} = \cot \alpha
+$$
+$$
+\frac{\tan \alpha}{\cot \alpha} = 1
+$$
+$$
+\tan \alpha \cot \alpha = 1
+$$
+:::
+:::
 
 ### Основное тригонометрическое тождество {#trig_pythagorean_identities}
 

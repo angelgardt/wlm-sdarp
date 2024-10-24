@@ -1245,7 +1245,31 @@ a^x \ln a \quad \blacksquare
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span></p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Данное утверждение можно доказать двумя способами.</p>
+<p><strong>Способ 1 (строго говоря, справедлив для <span class="math inline">\(\alpha &lt; 90^\circ\)</span>).</strong> Рассмотрим прямоугольный треугольник с катетами <span class="math inline">\(a\)</span> и <span class="math inline">\(b\)</span> и гипотенузой <span class="math inline">\(c\)</span>. Пусть <span class="math inline">\(a\)</span> есть катет, противолежащий углу <span class="math inline">\(\alpha\)</span>. Тогда</p>
+<p><span class="math display">\[
+\begin{split}
+\sin \alpha &amp;\overset{\text{def}}{=}\frac{a}{c} \Rightarrow a = c \sin \alpha \\
+\cos \alpha &amp;\overset{\text{def}}{=}\frac{b}{c} \Rightarrow b = c \cos \alpha
+\end{split}
+\]</span></p>
+<p>По теореме Пифагора <span class="math inline">\(a^2 + b^2 = c^2\)</span>. Следовательно,</p>
+<p><span class="math display">\[
+c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
+\]</span></p>
+<p>Так <span class="math inline">\(c\)</span> — длина гипотенузы, <span class="math inline">\(c &gt; 0\)</span>. Тогда</p>
+<p><span class="math display">\[
+\begin{split}
+\frac{c^2 \sin^2 \alpha}{c^2} + \frac{c^2 \sin^2 \beta}{c^2} &amp;= \frac{c^2}{c^2} \\
+\sin^2 \alpha + \cos^2 \alpha = 1 \quad \blacksquare
+\end{split}
+\]</span></p>
+<p><strong>Способ 2 (справедлив для любого <span class="math inline">\(alpha\)</span>).</strong> Рассмотрим тригонометрическую окружность. Тригонометрическая окружность — это окружность с центром в начале координат и радуисом, равным единице. Тогда координаты всех её точек удовлетворяют уравнению <span class="math inline">\(x^2 + y^2 = 1\)</span>, так как это уравнение задает окружность единичного радиуса с центром в начале координат.</p>
+<p>Координаты <span class="math inline">\(x\)</span> и <span class="math inline">\(y\)</span> любой точки окружности определяются как <span class="math inline">\(\cos \alpha\)</span> и <span class="math inline">\(\sin \alpha\)</span> соответственно, где <span class="math inline">\(\alpha\)</span> — мера угла, задающего дугу окружности между точками <span class="math inline">\((1, 0)\)</span> и <span class="math inline">\((x, y)\)</span>.</p>
+<p>Так как <span class="math inline">\((x, y) = (\cos \alpha, \sin \alpha)\)</span>, то числа <span class="math inline">\(\cos \alpha\)</span> и <span class="math inline">\(\sin \alpha\)</span> удовлетворяют уравнению окружности</p>
+<p><span class="math display">\[
+\cos^2 \alpha + \sin^2 \alpha = 1 \quad \blacksquare
+\]</span></p>
 </div>
 <div id="cor-trig-pythagorean-sin" class="theorem corollary">
 <p><span class="theorem-title"><strong>Следствие J.8</strong></span> <span class="math display">\[
