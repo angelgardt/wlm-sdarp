@@ -862,7 +862,17 @@ $$
 :::
 
 :::{.proof}
+$$
+\sin^2 \alpha + \cos^2 \alpha = 1 \Rightarrow \sin^2 \alpha = 1 - \cos^2 \alpha
+$$
 
+$$
+\begin{split}
+\sqrt{\sin^2 \alpha} &= \sqrt{1 - \cos^2 \alpha} \\
+| \sin \alpha | &= \sqrt{1 - \cos^2 \alpha} \\
+\sin \alpha &= \pm \sqrt{1 - \cos^2 \alpha} \qed
+\end{split}
+$$
 :::
 
 :::{#cor-trig-pythagorean-cos}
@@ -872,7 +882,17 @@ $$
 :::
 
 :::{.proof}
+$$
+\sin^2 \alpha + \cos^2 \alpha = 1 \Rightarrow \cos^2 \alpha = 1 - \sin^2 \alpha
+$$
 
+$$
+\begin{split}
+\sqrt{\cos^2 \alpha} &= \sqrt{1 - \sin^2 \alpha} \\
+| \cos \alpha | &= \sqrt{1 - \sin^2 \alpha} \\
+\cos \alpha &= \pm \sqrt{1 - \sin^2 \alpha} \qed
+\end{split}
+$$
 :::
 
 :::{#cor-trig-pythagorean-tan}
@@ -882,7 +902,13 @@ $$
 :::
 
 :::{.proof}
-
+$$
+\begin{split}
+\sin^2 \alpha + \cos^2 \alpha &= 1 \\
+\frac{\sin^2 \alpha}{\cos^2 \alpha} + \frac{\cos^2 \alpha}{\cos^2 \alpha} &= \frac{1}{\cos^2 \alpha} \\
+\tan^2 \alpha + 1 &= \sec^2 \alpha \qed
+\end{split}
+$$
 :::
 
 :::{#cor-trig-pythagorean-cot}
@@ -892,7 +918,13 @@ $$
 :::
 
 :::{.proof}
-
+$$
+\begin{split}
+\sin^2 \alpha + \cos^2 \alpha &= 1 \\
+\frac{\sin^2 \alpha}{\sin^2 \alpha} + \frac{\cos^2 \alpha}{\sin^2 \alpha} &= \frac{1}{\sin^2 \alpha} \\
+1 + \cot^2 \alpha &= \csc^2 \alpha \qed
+\end{split}
+$$
 :::
 
 :::{#cor-trig-pythagorean-sec}
@@ -902,7 +934,24 @@ $$
 :::
 
 :::{.proof}
-
+$$
+\begin{split}
+\sin^2 \alpha + \cos^2 \alpha &= 1 \\
+\frac{
+    \cancel{\sin^2 \alpha}
+  }{
+    \cancel{\sin^2 \alpha} \cos^2 \alpha
+  } + 
+\frac{
+    \cancel{\cos^2 \alpha}
+  }{
+    \sin^2 \alpha \cancel{\cos^2 \alpha}
+  } 
+&= \frac{1}{\sin^2 \alpha \cos^2 \alpha} \\
+\frac{1}{\cos^2 \alpha} + \frac{1}{\sin^2 \alpha} &= \frac{1}{\sin^2 \alpha} \cdot \frac{1}{\cos^2 \alpha} \\
+\sec^2 \alpha + \csc^2 \alpha &= \sec^2 \alpha \csc^2 \alpha \qed
+\end{split}
+$$
 :::
 
 
@@ -1053,10 +1102,7 @@ $$
 
 :::
 
-
-### Синус и косинус разности {#appendix-other-math-trigids-proof-sin-cos-of-diff}
-
-:::{#prp-sin-of-diff}
+:::{#cor-sin-of-diff}
 $$
 \sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta
 $$
@@ -1073,7 +1119,7 @@ $$
 $$
 :::
 
-:::{#prp-cos-of-diff}
+:::{#cor-cos-of-diff}
 $$
 \cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta
 $$
@@ -1082,7 +1128,7 @@ $$
 :::{.proof}
 $$
 \begin{split}
-\cos (\alpha - \beta) = \cos \big( \alpha + (-\beta) \big) = \\
+\cos (\alpha - \beta) &= \cos \big( \alpha + (-\beta) \big) = \\
 &= \cos \alpha \cos (-\beta) - \sin \alpha \sin (-\beta) = \\
 &= \cos \alpha \cos \beta - \sin \alpha \cdot (-\sin \beta) = \\
 &= \cos \alpha \cos \beta + \sin \alpha \sin \beta \qed
@@ -1091,7 +1137,7 @@ $$
 :::
 
 :::{.remark}
-Ввиду сходства выражений [-@eq-sin-of-sum] и [-@prp-sin-of-diff], а также [-@eq-cos-of-sum] и [-@prp-cos-of-diff] их часто объединяют в следущие тождества:
+Ввиду сходства выражений [-@eq-sin-of-sum] и [-@cor-sin-of-diff], а также [-@eq-cos-of-sum] и [-@cor-cos-of-diff] их часто объединяют в следующие тождества:
 
 $$
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
@@ -1508,7 +1554,7 @@ $$
 ### Преобразование суммы в произведение {#appendix-other-math-trigids-proof-sum-to-prod}
 
 :::{.remark}
-В доказательствах тождеств в этого раздела $\alpha$ и $\beta$ представляют как сумму и разность некоторых $\phi$ и $\psi$ чтобы было возможно использовать тождества [-@eq-sin-of-sum], [-@prp-sin-of-diff], [-@eq-cos-of-sum] и [-@prp-cos-of-diff], то есть $\alpha = \phi + \psi$ и $\beta = \phi - \psi$.
+В доказательствах тождеств в этого раздела $\alpha$ и $\beta$ представляют как сумму и разность некоторых $\phi$ и $\psi$ чтобы было возможно использовать тождества [-@eq-sin-of-sum], [-@cor-sin-of-diff], [-@eq-cos-of-sum] и [-@cor-cos-of-diff], то есть $\alpha = \phi + \psi$ и $\beta = \phi - \psi$.
 
 При таком представлении получается, что
 
