@@ -19,7 +19,6 @@
 <!--- Common --->
 \newcommand{\const}{\text{const}}
 \newcommand{\fix}{\text{fix}}
-\DeclareMathOperator{\mmod}{mod}
 \DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
@@ -92,7 +91,7 @@
 \newcommand{\norm}{\mathcal{N}}
 
 <!--- Other --->
-\newcommand{\defin}{\overset{\text{def}}{=}}
+\newcommand{\defin}[1]{\overset{\text{def}}{#1}}
 \newcommand{\toas}{\overset{\text{a.s.}}{\to}}
 \newcommand{\toprob}{\overset{p}{\to}}
 \newcommand{\todist}{\overset{d}{\to}}
@@ -101,9 +100,13 @@
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\arccsc}{arccsc}
-\DeclareMathOperator\artanh{artanh}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcoth}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcoth}{arcoth}
 
 <!--- Stats --->
+\newcommand{\mode}{\text{mode}}
 \newcommand{\median}{\text{median}}
 \newcommand{\mean}{\mathbb{mean}}
 \newcommand{\skewness}{\text{skew}}
@@ -111,5 +114,5 @@
 
 
 <!--- Letters --->
-\newcommand{\phi}{\varphi}
-\newcommand{\epsilon}{\varepsilon}
+\newcommand{\vphi}{\varphi}
+\newcommand{\vepsilon}{\varepsilon}
