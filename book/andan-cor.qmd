@@ -273,13 +273,12 @@ print(cov4)
 
 sim_cov %>% 
   summarise(
-    `$$\\text{cov}(X_1, Y_1)$$` = cov(x1, y1),
-    `$$\\text{cov}(X_2, Y_2)$$` = cov(x2, y2),
-    `$$\\text{cov}(X_3, Y_3)$$` = cov(x3, y3),
-    `$$\\text{cov}(X_4, Y_4)$$` = cov(x4, y4)
+    `$$\\text{cov}(X_1, Y_1)$$` = cov(x1, y1) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov}(X_2, Y_2)$$` = cov(x2, y2) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov}(X_3, Y_3)$$` = cov(x3, y3) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov}(X_4, Y_4)$$` = cov(x4, y4) %>% round(2) %>% paste0("$$", ., "$$")
   ) %>% 
   knitr::kable(format = "html",
-               digits = 2,
                align = "c")
 ```
 
@@ -303,25 +302,26 @@ sim_cov %>%
     # `$$\\overline Y$$__$$c$$` = mean(y3),
     # `$$\\overline X$$__$$d$$` = mean(x4),
     # `$$\\overline Y$$__$$d$$` = mean(y4),
-    `$$\\text{var} \\,X$$__a` = var(x1),
-    `$$\\text{var} \\,Y$$__a` = var(y1),
-    `$$\\text{var} \\,X$$__b` = var(x2),
-    `$$\\text{var} \\,Y$$__b` = var(y2),
-    `$$\\text{var} \\,X$$__c` = var(x3),
-    `$$\\text{var} \\,Y$$__c` = var(y3),
-    `$$\\text{var} \\,X$$__d` = var(x4),
-    `$$\\text{var} \\,Y$$__d` = var(y4),
-    `$$\\text{cov} (X,Y)$$__a` = cov(x1, y1),
-    `$$\\text{cov} (X,Y)$$__b` = cov(x2, y2),
-    `$$\\text{cov} (X,Y)$$__c` = cov(x3, y3),
-    `$$\\text{cov} (X,Y)$$__d` = cov(x4, y4)
+    `$$\\text{var} \\,X$$__a` = var(x1) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,Y$$__a` = var(y1) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,X$$__b` = var(x2) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,Y$$__b` = var(y2) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,X$$__c` = var(x3) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,Y$$__c` = var(y3) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,X$$__d` = var(x4) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{var} \\,Y$$__d` = var(y4) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov} (X,Y)$$__a` = cov(x1, y1) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov} (X,Y)$$__b` = cov(x2, y2) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov} (X,Y)$$__c` = cov(x3, y3) %>% round(2) %>% paste0("$$", ., "$$"),
+    `$$\\text{cov} (X,Y)$$__d` = cov(x4, y4) %>% round(2) %>% paste0("$$", ., "$$")
   ) %>% 
   pivot_longer(cols = everything()) %>% 
   separate(name, into = c("stat", "Визуализация"), sep = "__") %>% 
   pivot_wider(names_from = stat, values_from = value) %>% 
   knitr::kable(format = "html",
-               digits = 2,
-               align = "c")
+               align = "c") %>% 
+  kableExtra::column_spec(1, extra_css = 'vertical-align: middle !important;') %>% 
+  kableExtra::row_spec(0, extra_css = 'vertical-align: middle !important;')
 ```
 
 Итак, мы пронаблюдали, что
@@ -423,6 +423,13 @@ $$
 :::{.lab-junior}
 :::
 
+$$
+\begin{split}
+H_0 &: \rho = 0 \\
+H_1 &: \rho \neq 0
+\end{split}
+$$
+
 ### Доверительный интервал для коэффициента корреляции {#andan-cor-pearson-ci}
 
 :::{.lab-junior}
@@ -442,6 +449,22 @@ $$
 
 :::{.lab-junior}
 :::
+
+:::{#tbl-cors-scales}
+
+| Первая переменная | Вторая переменная | Мера взаимосвязи |
+|:---:|:---:|:---:|
+| Интервальная или абсолютная | Интервальная или абсолютная | Корреляция Пирсона |
+| Ранговая, интервальная или абсолютная | Ранговая, интервальная или абсолютная | Корреляция Спирмена |
+| Ранговая | Ранговая | Корреляция Кенделла |
+| Интервальная или абсолютная | Дихотомическая | Бисериальный коэффициент |
+| Ранговая | Дихотомическая | Рагново-бисериальный коэффициент |
+| Дихотомическая | Дихотомическая | $\vphi$-коэффициент |
+
+Меры корреляции для переменных, измеренных в различных шкалах
+
+:::
+
 
 ### Коэффициент корреляции Спирмена {#andan-cor-spearman}
 

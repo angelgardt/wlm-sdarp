@@ -129,6 +129,8 @@ background-image: url(img/other/title-block-banner.jpg);
 background-size: cover;
       }
 </style>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -951,14 +953,13 @@ window.Quarto = {
 <summary>Код расчета ковариаций</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sim_cov <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_1, Y_1)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x1, y1),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_2, Y_2)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x2, y2),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_3, Y_3)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x3, y3),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_4, Y_4)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x4, y4)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_1, Y_1)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x1, y1) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_2, Y_2)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x2, y2) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_3, Y_3)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x3, y3) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov}(X_4, Y_4)$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x4, y4) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"html"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="tbl-cov-var-values" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -979,10 +980,10 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">0.23</td>
-<td style="text-align: center;">1.02</td>
-<td style="text-align: center;">-0.81</td>
-<td style="text-align: center;">-10.71</td>
+<td style="text-align: center;">$$0.23$$</td>
+<td style="text-align: center;">$$1.02$$</td>
+<td style="text-align: center;">$$-0.81$$</td>
+<td style="text-align: center;">$$-10.71$$</td>
 </tr>
 </tbody>
 </table>
@@ -1009,25 +1010,26 @@ window.Quarto = {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `$$\\overline Y$$__$$c$$` = mean(y3),</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `$$\\overline X$$__$$d$$` = mean(x4),</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `$$\\overline Y$$__$$d$$` = mean(y4),</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x1),</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y1),</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x2),</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y2),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x3),</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y3),</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x4),</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y4),</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x1, y1),</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x2, y2),</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x3, y3),</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x4, y4)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x1) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y1) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x2) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y2) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x3) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y3) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x4) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y4) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x1, y1) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x2, y2) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x3, y3) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x4, y4) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">paste0</span>(<span class="st">"$$"</span>, ., <span class="st">"$$"</span>)</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(name, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"stat"</span>, <span class="st">"Визуализация"</span>), <span class="at">sep =</span> <span class="st">"__"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> stat, <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"html"</span>,</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>               <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">align =</span> <span class="st">"c"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">extra_css =</span> <span class="st">'vertical-align: middle !important;'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">extra_css =</span> <span class="st">'vertical-align: middle !important;'</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="tbl-cov-var-vars" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1040,36 +1042,36 @@ window.Quarto = {
 <table class="do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">Визуализация</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">$$\text{var} \,X$$</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">$$\text{var} \,Y$$</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">$$\text{cov} (X,Y)$$</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; vertical-align: middle !important;">Визуализация</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; vertical-align: middle !important;">$$\text{var} \,X$$</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; vertical-align: middle !important;">$$\text{var} \,Y$$</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; vertical-align: middle !important;">$$\text{cov} (X,Y)$$</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">a</td>
-<td style="text-align: center;">0.93</td>
-<td style="text-align: center;">0.95</td>
-<td style="text-align: center;">0.23</td>
+<td style="text-align: center; vertical-align: middle !important;">a</td>
+<td style="text-align: center;">$$0.93$$</td>
+<td style="text-align: center;">$$0.95$$</td>
+<td style="text-align: center;">$$0.23$$</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">3.80</td>
-<td style="text-align: center;">3.29</td>
-<td style="text-align: center;">1.02</td>
+<td style="text-align: center; vertical-align: middle !important;">b</td>
+<td style="text-align: center;">$$3.8$$</td>
+<td style="text-align: center;">$$3.29$$</td>
+<td style="text-align: center;">$$1.02$$</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">1.02</td>
-<td style="text-align: center;">0.77</td>
-<td style="text-align: center;">-0.81</td>
+<td style="text-align: center; vertical-align: middle !important;">c</td>
+<td style="text-align: center;">$$1.02$$</td>
+<td style="text-align: center;">$$0.77$$</td>
+<td style="text-align: center;">$$-0.81$$</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">13.30</td>
-<td style="text-align: center;">10.14</td>
-<td style="text-align: center;">-10.71</td>
+<td style="text-align: center; vertical-align: middle !important;">d</td>
+<td style="text-align: center;">$$13.3$$</td>
+<td style="text-align: center;">$$10.14$$</td>
+<td style="text-align: center;">$$-10.71$$</td>
 </tr>
 </tbody>
 </table>
@@ -1169,6 +1171,12 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div class="lab-junior">
 
 </div>
+<p><span class="math display">\[
+\begin{split}
+H_0 &amp;: \rho = 0 \\
+H_1 &amp;: \rho \neq 0
+\end{split}
+\]</span></p>
 </section>
 <section id="andan-cor-pearson-ci" class="level3" data-number="17.4.2">
 <h3 data-number="17.4.2" class="anchored" data-anchor-id="andan-cor-pearson-ci"><span class="header-section-number">17.4.2</span> Доверительный интервал для коэффициента корреляции</h3>
@@ -1193,6 +1201,61 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <h2 data-number="17.6" class="anchored" data-anchor-id="andan-cor-scales"><span class="header-section-number">17.6</span> Коэффициенты корреляции для разных шкал</h2>
 <div class="lab-junior">
 
+</div>
+<div id="tbl-cors-scales" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cors-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;17.3: Меры корреляции для переменных, измеренных в различных шкалах
+</figcaption>
+<div aria-describedby="tbl-cors-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Первая переменная</th>
+<th style="text-align: center;">Вторая переменная</th>
+<th style="text-align: center;">Мера взаимосвязи</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Интервальная или абсолютная</td>
+<td style="text-align: center;">Интервальная или абсолютная</td>
+<td style="text-align: center;">Корреляция Пирсона</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ранговая, интервальная или абсолютная</td>
+<td style="text-align: center;">Ранговая, интервальная или абсолютная</td>
+<td style="text-align: center;">Корреляция Спирмена</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ранговая</td>
+<td style="text-align: center;">Ранговая</td>
+<td style="text-align: center;">Корреляция Кенделла</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Интервальная или абсолютная</td>
+<td style="text-align: center;">Дихотомическая</td>
+<td style="text-align: center;">Бисериальный коэффициент</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ранговая</td>
+<td style="text-align: center;">Дихотомическая</td>
+<td style="text-align: center;">Рагново-бисериальный коэффициент</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Дихотомическая</td>
+<td style="text-align: center;">Дихотомическая</td>
+<td style="text-align: center;"><span class="math inline">\(\varphi\)</span>-коэффициент</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
 </div>
 <section id="andan-cor-spearman" class="level3" data-number="17.6.1">
 <h3 data-number="17.6.1" class="anchored" data-anchor-id="andan-cor-spearman"><span class="header-section-number">17.6.1</span> Коэффициент корреляции Спирмена</h3>
@@ -1342,17 +1405,19 @@ other attached packages:
  [9] ggplot2_3.5.1   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] Matrix_1.7-0      gtable_0.3.5      jsonlite_1.8.8    highr_0.11       
- [5] compiler_4.4.0    tidyselect_1.2.1  splines_4.4.0     scales_1.3.0     
- [9] yaml_2.3.8        fastmap_1.2.0     lattice_0.22-6    R6_2.5.1         
-[13] labeling_0.4.3    generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4
-[17] munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4      
-[21] utf8_1.2.4        stringi_1.8.4     xfun_0.44         timechange_0.3.0 
-[25] cli_3.6.2         mgcv_1.9-1        withr_3.0.0       magrittr_2.0.3   
-[29] digest_0.6.35     grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3        
-[33] nlme_3.1-164      lifecycle_1.0.4   vctrs_0.6.5       evaluate_0.23    
-[37] glue_1.7.0        farver_2.1.2      fansi_1.0.6       colorspace_2.1-0 
-[41] rmarkdown_2.27    tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+ [1] utf8_1.2.4        generics_0.1.3    xml2_1.3.6        stringi_1.8.4    
+ [5] lattice_0.22-6    hms_1.1.3         digest_0.6.35     magrittr_2.0.3   
+ [9] evaluate_0.23     grid_4.4.0        timechange_0.3.0  fastmap_1.2.0    
+[13] jsonlite_1.8.8    Matrix_1.7-0      mgcv_1.9-1        fansi_1.0.6      
+[17] viridisLite_0.4.2 scales_1.3.0      cli_3.6.2         rlang_1.1.4      
+[21] munsell_0.5.1     splines_4.4.0     withr_3.0.0       yaml_2.3.8       
+[25] tools_4.4.0       tzdb_0.4.0        colorspace_2.1-0  kableExtra_1.4.0 
+[29] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   htmlwidgets_1.6.4
+[33] pkgconfig_2.0.3   pillar_1.9.0      gtable_0.3.5      glue_1.7.0       
+[37] systemfonts_1.1.0 xfun_0.44         tidyselect_1.2.1  highr_0.11       
+[41] rstudioapi_0.16.0 knitr_1.47        farver_2.1.2      htmltools_0.5.8.1
+[45] nlme_3.1-164      svglite_2.1.3     rmarkdown_2.27    labeling_0.4.3   
+[49] compiler_4.4.0   </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
