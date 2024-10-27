@@ -539,7 +539,31 @@ window.Quarto = {
   <ul>
   <li><a href="#andan-cor-cov-interpret" id="toc-andan-cor-cov-interpret" class="nav-link" data-scroll-target="#andan-cor-cov-interpret"><span class="header-section-number">17.2.1</span> Интерпретация значения ковариации</a></li>
   </ul></li>
-  <li><a href="#andan-cor-correlation" id="toc-andan-cor-correlation" class="nav-link" data-scroll-target="#andan-cor-correlation"><span class="header-section-number">17.3</span> Корреляция</a></li>
+  <li><a href="#andan-cor-correlation" id="toc-andan-cor-correlation" class="nav-link" data-scroll-target="#andan-cor-correlation"><span class="header-section-number">17.3</span> Корреляция</a>
+  <ul>
+  <li><a href="#andan-cor-cor-interpret" id="toc-andan-cor-cor-interpret" class="nav-link" data-scroll-target="#andan-cor-cor-interpret"><span class="header-section-number">17.3.1</span> Интерпретация значения коэффициента корреляции</a></li>
+  </ul></li>
+  <li><a href="#andan-cor-pearson" id="toc-andan-cor-pearson" class="nav-link" data-scroll-target="#andan-cor-pearson"><span class="header-section-number">17.4</span> Коэффициент корреляции Пирсона</a>
+  <ul>
+  <li><a href="#andan-cor-pearson-sig" id="toc-andan-cor-pearson-sig" class="nav-link" data-scroll-target="#andan-cor-pearson-sig"><span class="header-section-number">17.4.1</span> Тестирование статистической значимости коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-pearson-ci" id="toc-andan-cor-pearson-ci" class="nav-link" data-scroll-target="#andan-cor-pearson-ci"><span class="header-section-number">17.4.2</span> Доверительный интервал для коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-effectsize" id="toc-andan-cor-effectsize" class="nav-link" data-scroll-target="#andan-cor-effectsize"><span class="header-section-number">17.4.3</span> Размер эффекта для коэффициента корреляции</a></li>
+  </ul></li>
+  <li><a href="#andan-cor-pearson-in-r" id="toc-andan-cor-pearson-in-r" class="nav-link" data-scroll-target="#andan-cor-pearson-in-r"><span class="header-section-number">17.5</span> Корреляция Пирсона в R</a></li>
+  <li><a href="#andan-cor-scales" id="toc-andan-cor-scales" class="nav-link" data-scroll-target="#andan-cor-scales"><span class="header-section-number">17.6</span> Коэффициенты корреляции для разных шкал</a>
+  <ul>
+  <li><a href="#andan-cor-spearman" id="toc-andan-cor-spearman" class="nav-link" data-scroll-target="#andan-cor-spearman"><span class="header-section-number">17.6.1</span> Коэффициент корреляции Спирмена</a></li>
+  <li><a href="#andan-cor-kendall" id="toc-andan-cor-kendall" class="nav-link" data-scroll-target="#andan-cor-kendall"><span class="header-section-number">17.6.2</span> Коэффициент корреляции Кенделла</a></li>
+  <li><a href="#andan-cor-biserial" id="toc-andan-cor-biserial" class="nav-link" data-scroll-target="#andan-cor-biserial"><span class="header-section-number">17.6.3</span> Бисериальный коэффициент корреляции</a></li>
+  <li><a href="#andan-cor-rank-biserial" id="toc-andan-cor-rank-biserial" class="nav-link" data-scroll-target="#andan-cor-rank-biserial"><span class="header-section-number">17.6.4</span> Рангово-бисериальный коэффициент корреляции</a></li>
+  <li><a href="#andan-cor-phi" id="toc-andan-cor-phi" class="nav-link" data-scroll-target="#andan-cor-phi"><span class="header-section-number">17.6.5</span> <span class="math inline">\(\varphi\)</span>-коэффициент</a></li>
+  </ul></li>
+  <li><a href="#andan-cor-scales-in-r" id="toc-andan-cor-scales-in-r" class="nav-link" data-scroll-target="#andan-cor-scales-in-r"><span class="header-section-number">17.7</span> Коэффициенты корреляции для разных шкал в R</a></li>
+  <li><a href="#andan-cor-angle-cos" id="toc-andan-cor-angle-cos" class="nav-link" data-scroll-target="#andan-cor-angle-cos"><span class="header-section-number">17.8</span> Угол между векторами</a></li>
+  <li><a href="#andan-cor-ci-details" id="toc-andan-cor-ci-details" class="nav-link" data-scroll-target="#andan-cor-ci-details"><span class="header-section-number">17.9</span> Детали доверительного интервала</a>
+  <ul>
+  <li><a href="#andan-cor-fisher-transform" id="toc-andan-cor-fisher-transform" class="nav-link" data-scroll-target="#andan-cor-fisher-transform"><span class="header-section-number">17.9.1</span> Преобразование Фишера</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -773,6 +797,20 @@ window.Quarto = {
 \text{cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y),
 \tag{17.5}\]</span></span></p>
 <p>где <span class="math inline">\(\text{cov}(X, Y)\)</span> — ковариация переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>, <span class="math inline">\(n\)</span> — количество наблюдений, <span class="math inline">\(\overline X\)</span> и <span class="math inline">\(\overline Y\)</span> — выборочные средние.</p>
+<div id="exr-cov-xx" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 17.2</strong></span> Чему будет равна ковариация переменной с самой собой, то есть <span class="math inline">\(\text{cov}(X, X)\)</span>?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p><span class="math display">\[
+\begin{split}
+\text{cov}(X,X) &amp;= \frac{1}{n-1}\sum_{i=1}^n (x_i - \overline X)(x_i - \overline X) = \\
+&amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X)^2 \overset{\text{def}}{=} \text{var}X
+\end{split}
+\]</span></p>
+</div>
+</div>
 <section id="andan-cor-cov-interpret" class="level3" data-number="17.2.1">
 <h3 data-number="17.2.1" class="anchored" data-anchor-id="andan-cor-cov-interpret"><span class="header-section-number">17.2.1</span> Интерпретация значения ковариации</h3>
 <div class="lab-junior">
@@ -971,18 +1009,18 @@ window.Quarto = {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `$$\\overline Y$$__$$c$$` = mean(y3),</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `$$\\overline X$$__$$d$$` = mean(x4),</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `$$\\overline Y$$__$$d$$` = mean(y4),</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__$$a$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x1),</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__$$a$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y1),</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__$$b$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x2),</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__$$b$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y2),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__$$c$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x3),</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__$$c$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y3),</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__$$d$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x4),</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__$$d$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y4),</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__$$a$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x1, y1),</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__$$b$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x2, y2),</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__$$c$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x3, y3),</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__$$d$$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x4, y4)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x1),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y1),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x2),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y2),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x3),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y3),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,X$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(x4),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{var} </span><span class="sc">\\</span><span class="at">,Y$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">var</span>(y4),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__a</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x1, y1),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__b</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x2, y2),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__c</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x3, y3),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$$</span><span class="sc">\\</span><span class="at">text{cov} (X,Y)$$__d</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">cov</span>(x4, y4)</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>()) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(name, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"stat"</span>, <span class="st">"Визуализация"</span>), <span class="at">sep =</span> <span class="st">"__"</span>) <span class="sc">%&gt;%</span> </span>
@@ -1010,25 +1048,25 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">$$a$$</td>
+<td style="text-align: center;">a</td>
 <td style="text-align: center;">0.93</td>
 <td style="text-align: center;">0.95</td>
 <td style="text-align: center;">0.23</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">$$b$$</td>
+<td style="text-align: center;">b</td>
 <td style="text-align: center;">3.80</td>
 <td style="text-align: center;">3.29</td>
 <td style="text-align: center;">1.02</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">$$c$$</td>
+<td style="text-align: center;">c</td>
 <td style="text-align: center;">1.02</td>
 <td style="text-align: center;">0.77</td>
 <td style="text-align: center;">-0.81</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">$$d$$</td>
+<td style="text-align: center;">d</td>
 <td style="text-align: center;">13.30</td>
 <td style="text-align: center;">10.14</td>
 <td style="text-align: center;">-10.71</td>
@@ -1062,9 +1100,223 @@ window.Quarto = {
 <div class="lab-junior">
 
 </div>
+<p>Перед нами стоит задача избавиться от влияния дисперсии на значение ковариации. Но избавляться от дисперсии мы уже умеем — в этом нам поможет <strong>стандартизация</strong>.</p>
+<p>Мы можем перед расчетом ковариации между переменными <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> стандартизировать эти переменные. Получим новые переменные <span class="math inline">\(X^\star\)</span> и <span class="math inline">\(Y^\star\)</span>, которые будут определяться как</p>
+<p><span class="math display">\[
+\begin{split}
+X^\star &amp;= \frac{X - \overline X}{\text{sd}_X} \\
+Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
+\end{split}
+\]</span></p>
+<p>Дисперсия этих переменных будет равна единице, а попутно мы ещё получим среднее, равное нулю. Теперь мы можем рассчитать ковариацию между ними — получим <strong>корреляцию</strong> между переменными <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>:</p>
+<p><span id="eq-cor-stand-vars"><span class="math display">\[
+\text{cov}(X^\star, Y^\star) = \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) = \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \overset{\text{def}}{=} \text{cor}(X, Y)
+\tag{17.6}\]</span></span></p>
+<div id="def-cor-stand-vars" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 17.2</strong></span> Коэффициентом корреляции называется ковариация стандартизированных случайных величин.</p>
+</div>
+<p>Мы можем не стандартизировать переменные изначально, а выполнить преобразования по ходу расчета корреляции. Тогда получим, что</p>
+<p><span id="eq-cor-stand-cov"><span class="math display">\[
+\begin{split}
+\text{cor}(X, Y) &amp;\overset{\text{def}}{=} \text{cov}(X^\star, Y^\star) = \\
+&amp;= \frac{1}{n-1} \sum_{i=1}^n \frac{x_i - \overline X}{\text{sd}_X} \cdot \frac{y_i - \overline Y}{\text{sd}_Y} = \\
+&amp;= \frac{1}{n-1} \sum_{i=1}^n \frac{1}{\text{sd}_X \, \text{sd}_Y} (x_i - \overline X)(y_i - \overline Y) = \\
+&amp;= \frac{1}{\text{sd}_X \, \text{sd}_Y} \left(\frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \right)= \\
+&amp;= \frac{\text{cov}(X,Y)}{\text{sd}_X \, \text{sd}_Y}
+\end{split}
+\tag{17.7}\]</span></span></p>
+<div id="def-cor-stand-cov" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 17.3</strong></span> Коэффициентом корреляции называется стандартизированное значение ковариации.</p>
+</div>
+<section id="andan-cor-cor-interpret" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="andan-cor-cor-interpret"><span class="header-section-number">17.3.1</span> Интерпретация значения коэффициента корреляции</h3>
+<div class="lab-junior">
+
+</div>
+<div id="def-correlation" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 17.4</strong></span> Корреляция — мера линейной взаимосвязи двух переменных (случайных величин).</p>
+</div>
+</section>
+</section>
+<section id="andan-cor-pearson" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="andan-cor-pearson"><span class="header-section-number">17.4</span> Коэффициент корреляции Пирсона</h2>
+<div class="lab-junior">
+
+</div>
+<p>Преобразовав <a href="#eq-cor-stand-cov" class="quarto-xref"><span>17.7</span></a> мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:</p>
+<p><span id="eq-cor-pearson-formula"><span class="math display">\[
+\text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\tag{17.8}\]</span></span></p>
+<div id="exr-cor-pearson-formula" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 17.3</strong></span> Получите из формулы <a href="#eq-cor-stand-cov" class="quarto-xref"><span>17.7</span></a> формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>17.8</span></a>.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p><span class="math display">\[
+\begin{split}
+\text{cor}(X, Y) &amp;= \frac{\text{cov}(X, Y)}{\text{sd}_X \, \text{sd}_y} = \\
+&amp;= \frac{\dfrac{1}{n-1} \sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} \sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}} = \\
+&amp;= \frac{\dfrac{1}{n-1} \sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\dfrac{1}{n-1}\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} = \\
+&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\end{split}
+\]</span></p>
+</div>
+</div>
+<p>За формулой <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>17.8</span></a> скрывается некоторый интересный смысл, но к нему мы <a href="#andan-cor-angle-cos">обратимся позже</a>, когда будем копаться в математических деталях. Сейчас займемся более насущными вопросами.</p>
+<section id="andan-cor-pearson-sig" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="andan-cor-pearson-sig"><span class="header-section-number">17.4.1</span> Тестирование статистической значимости коэффициента корреляции</h3>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="andan-cor-pearson-ci" class="level3" data-number="17.4.2">
+<h3 data-number="17.4.2" class="anchored" data-anchor-id="andan-cor-pearson-ci"><span class="header-section-number">17.4.2</span> Доверительный интервал для коэффициента корреляции</h3>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="andan-cor-effectsize" class="level3" data-number="17.4.3">
+<h3 data-number="17.4.3" class="anchored" data-anchor-id="andan-cor-effectsize"><span class="header-section-number">17.4.3</span> Размер эффекта для коэффициента корреляции</h3>
+<div class="lab-junior">
+
+</div>
+</section>
+</section>
+<section id="andan-cor-pearson-in-r" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="andan-cor-pearson-in-r"><span class="header-section-number">17.5</span> Корреляция Пирсона в R</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="andan-cor-scales" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="andan-cor-scales"><span class="header-section-number">17.6</span> Коэффициенты корреляции для разных шкал</h2>
+<div class="lab-junior">
+
+</div>
+<section id="andan-cor-spearman" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="andan-cor-spearman"><span class="header-section-number">17.6.1</span> Коэффициент корреляции Спирмена</h3>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="andan-cor-kendall" class="level3" data-number="17.6.2">
+<h3 data-number="17.6.2" class="anchored" data-anchor-id="andan-cor-kendall"><span class="header-section-number">17.6.2</span> Коэффициент корреляции Кенделла</h3>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="andan-cor-biserial" class="level3" data-number="17.6.3">
+<h3 data-number="17.6.3" class="anchored" data-anchor-id="andan-cor-biserial"><span class="header-section-number">17.6.3</span> Бисериальный коэффициент корреляции</h3>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="andan-cor-rank-biserial" class="level3" data-number="17.6.4">
+<h3 data-number="17.6.4" class="anchored" data-anchor-id="andan-cor-rank-biserial"><span class="header-section-number">17.6.4</span> Рангово-бисериальный коэффициент корреляции</h3>
+<div class="lab-middle">
+
+</div>
+</section>
+<section id="andan-cor-phi" class="level3" data-number="17.6.5">
+<h3 data-number="17.6.5" class="anchored" data-anchor-id="andan-cor-phi"><span class="header-section-number">17.6.5</span> <span class="math inline">\(\varphi\)</span>-коэффициент</h3>
+<div class="lab-middle">
+
+</div>
+</section>
+</section>
+<section id="andan-cor-scales-in-r" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="andan-cor-scales-in-r"><span class="header-section-number">17.7</span> Коэффициенты корреляции для разных шкал в R</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="andan-cor-angle-cos" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="andan-cor-angle-cos"><span class="header-section-number">17.8</span> Угол между векторами</h2>
+<div class="lab-senior">
+
+</div>
+<p>Не будет большим открытием, что наблюдения по выборке можно представить в виде вектора. Тогда наши переменные (случайные величины) <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> будут представлять собой векторы <span class="math inline">\(\mathbf{x}\)</span> и <span class="math inline">\(\mathbf{y}\)</span> в некотором пространстве <span class="math inline">\(\mathbb{R}^n\)</span>, где <span class="math inline">\(n\)</span> — количество наблюдений:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbf{x} &amp;= \pmatrix{x_1 &amp; x_2 &amp; x_3 &amp; \ldots &amp; x_n} \\
+\mathbf{y} &amp;= \pmatrix{y_1 &amp; y_2 &amp; y_3 &amp; \ldots &amp; y_n}
+\end{split}
+\]</span></p>
+<p>Присмотримся поближе к формуле <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>17.8</span></a>:</p>
+<p><span class="math display">\[
+\text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\]</span></p>
+<p>В этой формуле происходит <em>центрирование</em> случайных величин <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> — часть стандартизации. Введём центрированные случайные величины <span class="math inline">\(\tilde X\)</span> и <span class="math inline">\(\tilde Y\)</span>, которые определим как</p>
+<p><span class="math display">\[
+\begin{split}
+\tilde X &amp;= X - \overline X \\
+\tilde Y &amp;= Y - \overline Y
+\end{split}
+\quad \Leftrightarrow \quad
+\begin{split}
+\tilde x_i &amp;= x_i - \overline X \\
+\tilde y_i &amp;= y_i - \overline Y
+\end{split}
+\quad \Leftrightarrow \quad
+\begin{split}
+\tilde {\mathbf{x}} &amp;= \mathbf{x} - \overline X \\
+\tilde {\mathbf{y}} &amp;= \mathbf{y} - \overline Y
+\end{split}
+\]</span></p>
+<p>Тогда формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>17.8</span></a> можно записать в следующем виде:</p>
+<p><span class="math display">\[
+\text{cor}(X, Y) = \frac{\sum_{i=1}^n \tilde x_i \tilde y_i}{\sqrt{\sum_{i=1}^n \tilde x_i^2} \sqrt{\sum_{i=1}^n \tilde y_i^2}}
+\]</span></p>
+<p>Заметим, что</p>
+<p><span class="math display">\[
+\begin{split}
+\sum_{i=1}^n \tilde x_i \tilde y_i &amp;\overset{\text{def}}{=} \tilde{\mathbf{x}} \cdot \tilde{\mathbf{y}} \\
+\sqrt{\sum_{i=1}^n \tilde x_i^2} &amp;\overset{\text{def}}{=} \|\tilde{\mathbf{x}}\| \\
+\sqrt{\sum_{i=1}^n \tilde y_i^2} &amp;\overset{\text{def}}{=} \|\tilde{\mathbf{y}}\|
+\end{split}
+\]</span></p>
+<p>Тогда</p>
+<p><span id="eq-cor-angle-cos"><span class="math display">\[
+\text{cor}(X,Y) = \frac{ \tilde{\mathbf{x}} \cdot \tilde{\mathbf{y}} }{ \| \tilde{\mathbf{x}} \| \cdot \| \tilde{\mathbf{y}} \| } \overset{\text{def}}{=} \cos \theta,
+\tag{17.9}\]</span></span></p>
+<p>где <span class="math inline">\(\theta\)</span> — угол между векторами <span class="math inline">\(\tilde{\mathbf{x}}\)</span> и <span class="math inline">\(\tilde{\mathbf{y}}\)</span>.</p>
+<p>После такого поворота событий сразу можно обнаружить несколько соответствий:</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<ul>
+<li>коэффициент корреляции изменяется в пределах <span class="math inline">\([-1, 1]\)</span> — косинус угла изменяется ровно в этих же пределах</li>
+<li>косинус равен нулю, когда угол между векторами равен <span class="math inline">\(90^\circ\)</span>, то есть когда векторы <em>ортогональны</em> — иначе говоря, <em>линейно независимы</em></li>
+<li>косинус находится в пределах <span class="math inline">\((0, 1)\)</span>, когда угол между векторами меньше <span class="math inline">\(90^\circ\)</span>, то есть когда векторы <em>сонаправлены</em></li>
+<li>косинус находится в пределах <span class="math inline">\((-1, 0)\)</span>, когда угол между векторами больше <span class="math inline">\(90^\circ\)</span>, то есть когда векторы <em>направлены в противоположные стороны</em></li>
+<li>косинус <em>по модулю</em> равен <span class="math inline">\(1\)</span>, когда векторы <em>коллинеарны</em> — иначе говоря, <em>линейно зависимы</em>
+<ul>
+<li>косинус равен <span class="math inline">\(1\)</span>, когда угол между векторами равен нулю, то есть когда векторы <em>коллинеарны</em> и <em>сонаправлены</em></li>
+<li>косинус равен <span class="math inline">\(-1\)</span>, когда угол между векторами равен <span class="math inline">\(180^\circ\)</span>, то есть когда векторы <em>коллинеарны</em> и <em>направлены в противоположные стороны</em> (<em>антиколлинеарны</em>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="andan-cor-ci-details" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="andan-cor-ci-details"><span class="header-section-number">17.9</span> Детали доверительного интервала</h2>
+<div class="lab-senior">
+
+</div>
+<section id="andan-cor-fisher-transform" class="level3" data-number="17.9.1">
+<h3 data-number="17.9.1" class="anchored" data-anchor-id="andan-cor-fisher-transform"><span class="header-section-number">17.9.1</span> Преобразование Фишера</h3>
+<div class="lab-senior">
+
+</div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>

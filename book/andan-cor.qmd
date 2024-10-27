@@ -157,6 +157,21 @@ $${#eq-cov-sample}
 
 где $\cov(X, Y)$ --- ковариация переменных $X$ и $Y$, $n$ --- количество наблюдений, $\overline X$ и $\overline Y$ --- выборочные средние.
 
+:::{#exr-cov-xx}
+Чему будет равна ковариация переменной с самой собой, то есть $\cov(X, X)$?
+:::
+
+::::{.solution}
+:::{.cell}
+$$
+\begin{split}
+\cov(X,X) &= \frac{1}{n-1}\sum_{i=1}^n (x_i - \overline X)(x_i - \overline X) = \\
+&= \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X)^2 \defin{=} \var X
+\end{split}
+$$
+:::
+::::
+
 
 ### Интерпретация значения ковариации {#andan-cor-cov-interpret}
 
@@ -288,18 +303,18 @@ sim_cov %>%
     # `$$\\overline Y$$__$$c$$` = mean(y3),
     # `$$\\overline X$$__$$d$$` = mean(x4),
     # `$$\\overline Y$$__$$d$$` = mean(y4),
-    `$$\\text{var} \\,X$$__$$a$$` = var(x1),
-    `$$\\text{var} \\,Y$$__$$a$$` = var(y1),
-    `$$\\text{var} \\,X$$__$$b$$` = var(x2),
-    `$$\\text{var} \\,Y$$__$$b$$` = var(y2),
-    `$$\\text{var} \\,X$$__$$c$$` = var(x3),
-    `$$\\text{var} \\,Y$$__$$c$$` = var(y3),
-    `$$\\text{var} \\,X$$__$$d$$` = var(x4),
-    `$$\\text{var} \\,Y$$__$$d$$` = var(y4),
-    `$$\\text{cov} (X,Y)$$__$$a$$` = cov(x1, y1),
-    `$$\\text{cov} (X,Y)$$__$$b$$` = cov(x2, y2),
-    `$$\\text{cov} (X,Y)$$__$$c$$` = cov(x3, y3),
-    `$$\\text{cov} (X,Y)$$__$$d$$` = cov(x4, y4)
+    `$$\\text{var} \\,X$$__a` = var(x1),
+    `$$\\text{var} \\,Y$$__a` = var(y1),
+    `$$\\text{var} \\,X$$__b` = var(x2),
+    `$$\\text{var} \\,Y$$__b` = var(y2),
+    `$$\\text{var} \\,X$$__c` = var(x3),
+    `$$\\text{var} \\,Y$$__c` = var(y3),
+    `$$\\text{var} \\,X$$__d` = var(x4),
+    `$$\\text{var} \\,Y$$__d` = var(y4),
+    `$$\\text{cov} (X,Y)$$__a` = cov(x1, y1),
+    `$$\\text{cov} (X,Y)$$__b` = cov(x2, y2),
+    `$$\\text{cov} (X,Y)$$__c` = cov(x3, y3),
+    `$$\\text{cov} (X,Y)$$__d` = cov(x4, y4)
   ) %>% 
   pivot_longer(cols = everything()) %>% 
   separate(name, into = c("stat", "Визуализация"), sep = "__") %>% 
@@ -324,8 +339,235 @@ sim_cov %>%
 :::{.lab-junior}
 :::
 
+Перед нами стоит задача избавиться от влияния дисперсии на значение ковариации. Но избавляться от дисперсии мы уже умеем --- в этом нам поможет **стандартизация**.
+
+Мы можем перед расчетом ковариации между переменными $X$ и $Y$ стандартизировать эти переменные. Получим новые переменные $X^\star$ и $Y^\star$, которые будут определяться как
+
+$$
+\begin{split}
+X^\star &= \frac{X - \overline X}{\sd_X} \\
+Y^\star &= \frac{Y - \overline Y}{\sd_Y}
+\end{split}
+$$
+
+Дисперсия этих переменных будет равна единице, а попутно мы ещё получим среднее, равное нулю. Теперь мы можем рассчитать ковариацию между ними --- получим **корреляцию** между переменными $X$ и $Y$:
+
+$$
+\cov(X^\star, Y^\star) = \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) = \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \defin{=} \cor(X, Y)
+$${#eq-cor-stand-vars}
+
+:::{#def-cor-stand-vars}
+Коэффициентом корреляции называется ковариация стандартизированных случайных величин.
+:::
+
+Мы можем не стандартизировать переменные изначально, а выполнить преобразования по ходу расчета корреляции. Тогда получим, что
+
+$$
+\begin{split}
+\cor (X, Y) &\defin{=} \cov(X^\star, Y^\star) = \\
+&= \frac{1}{n-1} \sum_{i=1}^n \frac{x_i - \overline X}{\sd_X} \cdot \frac{y_i - \overline Y}{\sd_Y} = \\
+&= \frac{1}{n-1} \sum_{i=1}^n \frac{1}{\sd_X \, \sd_Y} (x_i - \overline X)(y_i - \overline Y) = \\
+&= \frac{1}{\sd_X \, \sd_Y} \lp \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \rp = \\
+&= \frac{\cov(X,Y)}{\sd_X \, \sd_Y}
+\end{split}
+$${#eq-cor-stand-cov}
+
+:::{#def-cor-stand-cov}
+Коэффициентом корреляции называется стандартизированное значение ковариации.
+:::
+
+### Интерпретация значения коэффициента корреляции {#andan-cor-cor-interpret}
+
+:::{.lab-junior}
+:::
 
 
+
+:::{#def-correlation}
+Корреляция --- мера линейной взаимосвязи двух переменных (случайных величин).
+:::
+
+
+## Коэффициент корреляции Пирсона {#andan-cor-pearson}
+
+:::{.lab-junior}
+:::
+
+Преобразовав [-@eq-cor-stand-cov] мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:
+
+$$
+\cor (X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+$${#eq-cor-pearson-formula}
+
+:::{#exr-cor-pearson-formula}
+Получите из формулы [-@eq-cor-stand-cov] формулу [-@eq-cor-pearson-formula].
+:::
+
+::::{.solution}
+:::{.cell}
+$$
+\begin{split}
+\cor (X, Y) &= \frac{\cov(X, Y)}{\sd_X \, \sd_y} = \\
+&= \frac{\dfrac{1}{n-1} \sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} \sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}} = \\
+&= \frac{\dfrac{1}{n-1} \sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\dfrac{1}{n-1}\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\end{split}
+$$
+:::
+::::
+
+За формулой [-@eq-cor-pearson-formula] скрывается некоторый интересный смысл, но к нему мы [обратимся позже](#andan-cor-angle-cos), когда будем копаться в математических деталях. Сейчас займемся более насущными вопросами.
+
+### Тестирование статистической значимости коэффициента корреляции {#andan-cor-pearson-sig}
+
+:::{.lab-junior}
+:::
+
+### Доверительный интервал для коэффициента корреляции {#andan-cor-pearson-ci}
+
+:::{.lab-junior}
+:::
+
+### Размер эффекта для коэффициента корреляции {#andan-cor-effectsize}
+
+:::{.lab-junior}
+:::
+
+## Корреляция Пирсона в R {#andan-cor-pearson-in-r}
+
+:::{.lab-junior}
+:::
+
+## Коэффициенты корреляции для разных шкал {#andan-cor-scales}
+
+:::{.lab-junior}
+:::
+
+### Коэффициент корреляции Спирмена {#andan-cor-spearman}
+
+:::{.lab-middle}
+:::
+
+### Коэффициент корреляции Кенделла {#andan-cor-kendall}
+
+:::{.lab-middle}
+:::
+
+### Бисериальный коэффициент корреляции {#andan-cor-biserial}
+
+:::{.lab-middle}
+:::
+
+### Рангово-бисериальный коэффициент корреляции {#andan-cor-rank-biserial}
+
+:::{.lab-middle}
+:::
+
+### $\vphi$-коэффициент {#andan-cor-phi}
+
+:::{.lab-middle}
+:::
+
+
+## Коэффициенты корреляции для разных шкал в R {#andan-cor-scales-in-r}
+
+:::{.lab-junior}
+:::
+
+
+
+
+
+
+
+## Угол между векторами {#andan-cor-angle-cos}
+
+:::{.lab-senior}
+:::
+
+Не будет большим открытием, что наблюдения по выборке можно представить в виде вектора. Тогда наши переменные (случайные величины) $X$ и $Y$ будут представлять собой векторы $\vm x$ и $\vm y$ в некотором пространстве $\setR^n$, где $n$ --- количество наблюдений:
+
+$$
+\begin{split}
+\vm x &= \pmatrix{x_1 & x_2 & x_3 & \ldots & x_n} \\
+\vm y &= \pmatrix{y_1 & y_2 & y_3 & \ldots & y_n}
+\end{split}
+$$
+
+Присмотримся поближе к формуле [-@eq-cor-pearson-formula]:
+
+$$
+\cor (X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+$$
+
+В этой формуле происходит *центрирование* случайных величин $X$ и $Y$ --- часть стандартизации. Введём центрированные случайные величины $\tilde X$ и $\tilde Y$, которые определим как
+
+$$
+\begin{split}
+\tilde X &= X - \overline X \\
+\tilde Y &= Y - \overline Y
+\end{split}
+\quad \Leftrightarrow \quad
+\begin{split}
+\tilde x_i &= x_i - \overline X \\
+\tilde y_i &= y_i - \overline Y
+\end{split}
+\quad \Leftrightarrow \quad
+\begin{split}
+\tilde {\vm x} &= \vm x - \overline X \\
+\tilde {\vm y} &= \vm y - \overline Y
+\end{split}
+$$
+
+Тогда формулу [-@eq-cor-pearson-formula] можно записать в следующем виде:
+
+$$
+\cor (X, Y) = \frac{\sum_{i=1}^n \tilde x_i \tilde y_i}{\sqrt{\sum_{i=1}^n \tilde x_i^2} \sqrt{\sum_{i=1}^n \tilde y_i^2}}
+$$
+
+Заметим, что
+
+$$
+\begin{split}
+\sum_{i=1}^n \tilde x_i \tilde y_i &\defin{=} \tilde{\vm x} \cdot \tilde{\vm y} \\
+\sqrt{\sum_{i=1}^n \tilde x_i^2} &\defin{=} \|\tilde{\vm x}\| \\
+\sqrt{\sum_{i=1}^n \tilde y_i^2} &\defin{=} \|\tilde{\vm y}\|
+\end{split}
+$$
+
+Тогда 
+
+$$
+\cor(X,Y) = \frac{ \tilde{\vm x} \cdot \tilde{\vm y} }{ \| \tilde{\vm x} \| \cdot \| \tilde{\vm y} \| } \defin{=} \cos \theta,
+$${#eq-cor-angle-cos}
+
+где $\theta$ --- угол между векторами $\tilde{\vm x}$ и $\tilde{\vm y}$.
+
+После такого поворота событий сразу можно обнаружить несколько соответствий:
+
+:::{.callout-tip appearance="minimal"}
+
+* коэффициент корреляции изменяется в пределах $[-1, 1]$ --- косинус угла изменяется ровно в этих же пределах
+* косинус равен нулю, когда угол между векторами равен $90^\circ$, то есть когда векторы *ортогональны* --- иначе говоря, *линейно независимы*
+* косинус находится в пределах $(0, 1)$, когда угол между векторами меньше $90^\circ$, то есть когда векторы *сонаправлены*
+* косинус находится в пределах $(-1, 0)$, когда угол между векторами больше $90^\circ$, то есть когда векторы *направлены в противоположные стороны*
+* косинус *по модулю* равен $1$, когда векторы *коллинеарны* --- иначе говоря, *линейно зависимы*
+    * косинус равен $1$, когда угол между векторами равен нулю, то есть когда векторы *коллинеарны* и *сонаправлены*
+    * косинус равен $-1$, когда угол между векторами равен $180^\circ$, то есть когда векторы *коллинеарны* и *направлены в противоположные стороны* (*антиколлинеарны*)
+
+:::
+
+
+
+## Детали доверительного интервала {#andan-cor-ci-details}
+
+:::{.lab-senior}
+:::
+
+### Преобразование Фишера {#andan-cor-fisher-transform}
+
+:::{.lab-senior}
+:::
 
 
 
