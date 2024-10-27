@@ -1366,10 +1366,832 @@
     "href": "andan-cor.html#andan-cor-ci-details",
     "title": "17  Корреляционный анализ",
     "section": "17.9 Детали доверительного интервала",
-    "text": "17.9 Детали доверительного интервала\n\n\n\n\n17.9.1 Преобразование Фишера",
+    "text": "17.9 Детали доверительного интервала\n\n\n\n\n17.9.1 Преобразование Фишера\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    \n [5] purrr_1.0.2     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   \n [9] ggplot2_3.5.1   tidyverse_2.0.0\n\nloaded via a namespace (and not attached):\n [1] Matrix_1.7-0      gtable_0.3.5      jsonlite_1.8.8    highr_0.11       \n [5] compiler_4.4.0    tidyselect_1.2.1  splines_4.4.0     scales_1.3.0     \n [9] yaml_2.3.8        fastmap_1.2.0     lattice_0.22-6    R6_2.5.1         \n[13] labeling_0.4.3    generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4\n[17] munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4      \n[21] utf8_1.2.4        stringi_1.8.4     xfun_0.44         timechange_0.3.0 \n[25] cli_3.6.2         mgcv_1.9-1        withr_3.0.0       magrittr_2.0.3   \n[29] digest_0.6.35     grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3        \n[33] nlme_3.1-164      lifecycle_1.0.4   vctrs_0.6.5       evaluate_0.23    \n[37] glue_1.7.0        farver_2.1.2      fansi_1.0.6       colorspace_2.1-0 \n[41] rmarkdown_2.27    tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1",
     "crumbs": [
       "Методы анализа данных",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Корреляционный анализ</span>"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q1-title",
+    "href": "debug_quiz.html#q1-title",
+    "title": "Квиз [отладка]",
+    "section": "#1",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q2-title",
+    "href": "debug_quiz.html#q2-title",
+    "title": "Квиз [отладка]",
+    "section": "#2",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{\\frac}{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q3-title",
+    "href": "debug_quiz.html#q3-title",
+    "title": "Квиз [отладка]",
+    "section": "#3",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q4-title",
+    "href": "debug_quiz.html#q4-title",
+    "title": "Квиз [отладка]",
+    "section": "#4",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q5-title",
+    "href": "debug_quiz.html#q5-title",
+    "title": "Квиз [отладка]",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q6-title",
+    "href": "debug_quiz.html#q6-title",
+    "title": "Квиз [отладка]",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q7-title",
+    "href": "debug_quiz.html#q7-title",
+    "title": "Квиз [отладка]",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q8-title",
+    "href": "debug_quiz.html#q8-title",
+    "title": "Квиз [отладка]",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q9-title",
+    "href": "debug_quiz.html#q9-title",
+    "title": "Квиз [отладка]",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q10-title",
+    "href": "debug_quiz.html#q10-title",
+    "title": "Квиз [отладка]",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q11-title",
+    "href": "debug_quiz.html#q11-title",
+    "title": "Квиз [отладка]",
+    "section": "#11",
+    "text": "#11\n\n\n\n\n\n\n\n\n\n\n Question 11  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q12-title",
+    "href": "debug_quiz.html#q12-title",
+    "title": "Квиз [отладка]",
+    "section": "#12",
+    "text": "#12\n\n\n\n\n\n\n\n\n\n\n Question 12  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q13-title",
+    "href": "debug_quiz.html#q13-title",
+    "title": "Квиз [отладка]",
+    "section": "#13",
+    "text": "#13\n\n\n\n\n\n\n\n\n\n\n Question 13  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q14-title",
+    "href": "debug_quiz.html#q14-title",
+    "title": "Квиз [отладка]",
+    "section": "#14",
+    "text": "#14\n\n\n\n\n\n\n\n\n\n\n Question 14  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q15-title",
+    "href": "debug_quiz.html#q15-title",
+    "title": "Квиз [отладка]",
+    "section": "#15",
+    "text": "#15\n\n\n\n\n\n\n\n\n\n\n Question 15  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q16-title",
+    "href": "debug_quiz.html#q16-title",
+    "title": "Квиз [отладка]",
+    "section": "#16",
+    "text": "#16\n\n\n\n\n\n\n\n\n\n\n Question 16  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q17-title",
+    "href": "debug_quiz.html#q17-title",
+    "title": "Квиз [отладка]",
+    "section": "#17",
+    "text": "#17\n\n\n\n\n\n\n\n\n\n\n Question 17  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q18-title",
+    "href": "debug_quiz.html#q18-title",
+    "title": "Квиз [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\n\n\n\n\n\n\n Question 18  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q19-title",
+    "href": "debug_quiz.html#q19-title",
+    "title": "Квиз [отладка]",
+    "section": "#19",
+    "text": "#19\n\n\n\n\n\n\n\n\n\n\n Question 19  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_quiz.html#q20-title",
+    "href": "debug_quiz.html#q20-title",
+    "title": "Квиз [отладка]",
+    "section": "#20",
+    "text": "#20\n\n\n\n\n\n\n\n\n\n\n Question 20  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
+    "crumbs": [
+      "Debug",
+      "Квиз [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html",
+    "href": "debug_sheet.html",
+    "title": "Листок [отладка]",
+    "section": "",
+    "text": "#1",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t1-title",
+    "href": "debug_sheet.html#t1-title",
+    "title": "Листок [отладка]",
+    "section": "",
+    "text": "Task with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t2-title",
+    "href": "debug_sheet.html#t2-title",
+    "title": "Листок [отладка]",
+    "section": "#2",
+    "text": "#2\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t3-title",
+    "href": "debug_sheet.html#t3-title",
+    "title": "Листок [отладка]",
+    "section": "#3",
+    "text": "#3\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t4-title",
+    "href": "debug_sheet.html#t4-title",
+    "title": "Листок [отладка]",
+    "section": "#4",
+    "text": "#4\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t5-title",
+    "href": "debug_sheet.html#t5-title",
+    "title": "Листок [отладка]",
+    "section": "#5",
+    "text": "#5\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t6-title",
+    "href": "debug_sheet.html#t6-title",
+    "title": "Листок [отладка]",
+    "section": "#6",
+    "text": "#6\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t7-title",
+    "href": "debug_sheet.html#t7-title",
+    "title": "Листок [отладка]",
+    "section": "#7",
+    "text": "#7\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t8-title",
+    "href": "debug_sheet.html#t8-title",
+    "title": "Листок [отладка]",
+    "section": "#8",
+    "text": "#8\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t9-title",
+    "href": "debug_sheet.html#t9-title",
+    "title": "Листок [отладка]",
+    "section": "#9",
+    "text": "#9\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t10-title",
+    "href": "debug_sheet.html#t10-title",
+    "title": "Листок [отладка]",
+    "section": "#10",
+    "text": "#10\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t11-title",
+    "href": "debug_sheet.html#t11-title",
+    "title": "Листок [отладка]",
+    "section": "#11",
+    "text": "#11\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t12-title",
+    "href": "debug_sheet.html#t12-title",
+    "title": "Листок [отладка]",
+    "section": "#12",
+    "text": "#12\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t13-title",
+    "href": "debug_sheet.html#t13-title",
+    "title": "Листок [отладка]",
+    "section": "#13",
+    "text": "#13\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t14-title",
+    "href": "debug_sheet.html#t14-title",
+    "title": "Листок [отладка]",
+    "section": "#14",
+    "text": "#14\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t15-title",
+    "href": "debug_sheet.html#t15-title",
+    "title": "Листок [отладка]",
+    "section": "#15",
+    "text": "#15\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t16-title",
+    "href": "debug_sheet.html#t16-title",
+    "title": "Листок [отладка]",
+    "section": "#16",
+    "text": "#16\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t17-title",
+    "href": "debug_sheet.html#t17-title",
+    "title": "Листок [отладка]",
+    "section": "#17",
+    "text": "#17\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t18-title",
+    "href": "debug_sheet.html#t18-title",
+    "title": "Листок [отладка]",
+    "section": "#18",
+    "text": "#18\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t19-title",
+    "href": "debug_sheet.html#t19-title",
+    "title": "Листок [отладка]",
+    "section": "#19",
+    "text": "#19\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t20-title",
+    "href": "debug_sheet.html#t20-title",
+    "title": "Листок [отладка]",
+    "section": "#20",
+    "text": "#20\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t21-title",
+    "href": "debug_sheet.html#t21-title",
+    "title": "Листок [отладка]",
+    "section": "#21",
+    "text": "#21\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t22-title",
+    "href": "debug_sheet.html#t22-title",
+    "title": "Листок [отладка]",
+    "section": "#22",
+    "text": "#22\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t23-title",
+    "href": "debug_sheet.html#t23-title",
+    "title": "Листок [отладка]",
+    "section": "#23",
+    "text": "#23\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t24-title",
+    "href": "debug_sheet.html#t24-title",
+    "title": "Листок [отладка]",
+    "section": "#24",
+    "text": "#24\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#25-title",
+    "href": "debug_sheet.html#25-title",
+    "title": "Листок [отладка]",
+    "section": "#25",
+    "text": "#25\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t26-title",
+    "href": "debug_sheet.html#t26-title",
+    "title": "Листок [отладка]",
+    "section": "#26",
+    "text": "#26\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t27-title",
+    "href": "debug_sheet.html#t27-title",
+    "title": "Листок [отладка]",
+    "section": "#27",
+    "text": "#27\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t28-title",
+    "href": "debug_sheet.html#t28-title",
+    "title": "Листок [отладка]",
+    "section": "#28",
+    "text": "#28\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t29-title",
+    "href": "debug_sheet.html#t29-title",
+    "title": "Листок [отладка]",
+    "section": "#29",
+    "text": "#29\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_sheet.html#t30-title",
+    "href": "debug_sheet.html#t30-title",
+    "title": "Листок [отладка]",
+    "section": "#30",
+    "text": "#30\n\n\n\n\nTask with inline_code.\n\n\n\nInput format. В качестве десятичного разделителя используйте точку. Проверка игнорирует все пробелы.\n\n\n\n\n\n\n\n\n\n\nПодсказки\n\n\nHint 1\nHint 2\n\n\n\n\nReferences & Attribution",
+    "crumbs": [
+      "Debug",
+      "Листок [отладка]"
+    ]
+  },
+  {
+    "objectID": "debug_chapter.html",
+    "href": "debug_chapter.html",
+    "title": "1  Глава книги [отладка]",
+    "section": "",
+    "text": "1.1 Заголовок раздела\nРазнообразный testquiz и богатый опыт постоянный количественный рост и сфера нашей активности требуют от нас анализа модели развития. С другой стороны постоянный количественный рост и сфера нашей активности требуют определения и уточнения существенных финансовых и административных условий. С другой стороны постоянный количественный рост и сфера нашей активности позволяет оценить значение направлений прогрессивного развития.\nРавным образом новая модель организационной деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации соответствующий условий активизации.\nИдейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений. Товарищи! рамки и место обучения кадров влечет за собой процесс внедрения и модернизации систем массового участия.",
+    "crumbs": [
+      "Debug",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Глава книги [отладка]</span>"
+    ]
+  },
+  {
+    "objectID": "debug_chapter.html#заголовок-раздела-1",
+    "href": "debug_chapter.html#заголовок-раздела-1",
+    "title": "1  Глава книги [отладка]",
+    "section": "1.2 Заголовок раздела",
+    "text": "1.2 Заголовок раздела\n\n\n\nНе следует, однако забывать, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации дальнейших направлений развития.\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n1.2.1 Заголовок подраздела\n\n\n\nРавным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки форм развития. Таким образом сложившаяся структура организации играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что новая модель организационной деятельности позволяет оценить значение модели развития. Разнообразный и богатый опыт реализация намеченных плановых заданий требуют от нас анализа направлений прогрессивного развития.\nС другой стороны реализация намеченных плановых заданий представляет собой интересный эксперимент проверки направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Идейные соображения высшего порядка, а также рамки и место обучения кадров требуют определения и уточнения систем массового участия. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития. Товарищи! реализация намеченных плановых заданий позволяет оценить значение форм развития (Иллюстрация 1.1).\n{.xml xml-example} &lt;breakfast_menu&gt;   &lt;food&gt;     &lt;name&gt;Belgian Waffles&lt;/name&gt;     &lt;price&gt;$5.95&lt;/price&gt;     &lt;description&gt;Two of our famous Belgian Waffles with plenty of real maple syrup&lt;/description&gt;     &lt;calories&gt;650&lt;/calories&gt;   &lt;/food&gt;   &lt;food&gt;     &lt;name&gt;Strawberry Belgian Waffles&lt;/name&gt;     &lt;price&gt;$7.95&lt;/price&gt;     &lt;description&gt;Light Belgian waffles covered with strawberries and whipped cream&lt;/description&gt;     &lt;calories&gt;900&lt;/calories&gt;   &lt;/food&gt;   &lt;food&gt;     &lt;name&gt;Berry-Berry Belgian Waffles&lt;/name&gt;     &lt;price&gt;$8.95&lt;/price&gt;     &lt;description&gt;Light Belgian waffles covered with an assortment of fresh berries and whipped cream&lt;/description&gt;     &lt;calories&gt;900&lt;/calories&gt;   &lt;/food&gt;   &lt;food&gt;     &lt;name&gt;French Toast&lt;/name&gt;     &lt;price&gt;$4.50&lt;/price&gt;     &lt;description&gt;Thick slices made from our homemade sourdough bread&lt;/description&gt;     &lt;calories&gt;600&lt;/calories&gt;   &lt;/food&gt;   &lt;food&gt;     &lt;name&gt;Homestyle Breakfast&lt;/name&gt;     &lt;price&gt;$6.95&lt;/price&gt;     &lt;description&gt;Two eggs, bacon or sausage, toast, and our ever-popular hash browns&lt;/description&gt;     &lt;calories&gt;950&lt;/calories&gt;   &lt;/food&gt; &lt;/breakfast_menu&gt;\n\n\n\nКод 1.1: Пример файла JSON.\n\n\n{\n    \"glossary\": {\n        \"title\": \"example glossary\",\n        \"GlossDiv\": {\n            \"title\": \"S\",\n            \"GlossList\": {\n                \"GlossEntry\": {\n                    \"ID\": \"SGML\",\n                    \"SortAs\": \"SGML\",\n                    \"GlossTerm\": \"Standard Generalized Markup Language\",\n                    \"Acronym\": \"SGML\",\n                    \"Abbrev\": \"ISO 8879:1986\",\n                    \"GlossDef\": {\n                        \"para\": \"A meta-markup language, used to create markup languages such as DocBook.\",\n                        \"GlossSeeAlso\": [\"GML\", \"XML\"]\n                    },\n                    \"GlossSee\": \"markup\"\n                }\n            }\n        }\n    }\n}\n\n\n\nКод 1.1\n\n\n\nКод 1.2: Пример цикла for\n\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n\n\nКод 1.2\n\n\n\nКод 1.3: Аннотированный чанк.\n\n\n\n## большой код для аггрегации\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\")))\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n\n\n\n# A tibble: 53,940 × 13\n   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x\n   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95\n 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93\n 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35\n 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31\n 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49\n 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49\n 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49\n 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93\n 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45\n10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 \n# ℹ 53,930 more rows\n# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;\n\n\n\n\n\n\n## большой код для графика\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n5  ggplot(aes(clarity, price,\n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n5\n\nНачинаем рисовать\n\n\n\n\n\n\n\n\n\n\nИллюстрация 1.1: Это картинка, нарисованная большим кодом\n\n\n\n\n\n\n\n\nТаблица 1.1: Это knitr-таблица\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n1\nakjsfv\n\n\n2\nakejrhvae\n\n\n3\nkvuhaefrv\n\n\n\n\n\n\n\n\n\n\n\nТаблица 1.2: Это обычная таблица\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n1\nabc\nда\n\\(\\sin (2)\\)\n\n\n2\ndef\nнет\n\\(\\sqrt {4+2i}\\)\n\n\n3\nghi\nда\n\\(e^{i\\pi} + 1 = 0\\)\n\n\n\n\n\n\nРавным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\nСсылка на knirt-таблицу (Таблица 1.1). Ссылка на нормальную таблицу (Таблица 1.2).\n\n1.2.1.1 Заголовок 4 уровня\n\n\n\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\nИллюстрация 1.2: Это схема из Mermaid\n\n\n\n\n\n\n\n\n\n\n\nЗаметка\n\n\n\nБез заголовка\n\n\n\n\n\n\n\n\nСовет\n\n\n\nБез заголовка\n\n\n\n\n\n\n\n\nПредупреждение\n\n\n\nБез заголовка\n\n\n\n\n\n\n\n\nВажность\n\n\n\nБез заголовка\n\n\n\n\n\n\n\n\nПредостережение\n\n\n\nБез заголовка\n\n\nСсылка на блоки ниже — Note 1.1, Tip 1.1, Warning 1.1, Important 1.1, Caution 1.1.\n\n\n\n\n\n\nNote 1.1\n\n\n\nWith cross-ref\n\n\n\n\n\n\n\n\nTip 1.1\n\n\n\nWith cross-ref\n\n\n\n\n\n\n\n\nWarning 1.1\n\n\n\nWith cross-ref\n\n\n\n\n\n\n\n\nImportant 1.1\n\n\n\nWith cross-ref\n\n\n\n\n\n\n\n\nCaution 1.1\n\n\n\nWith cross-ref\n\n\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nЗдесь схема из Mermaid (Иллюстрация 16.7).\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nЗначимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет выполнять важные задания по разработке систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа форм развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения дальнейших направлений развития.\n\n\n\n\n1.2.1.1.1 Заголовок 5 уровня with code\nА тут вставляется картинка (Иллюстрация 16.1):\n\n\n\n\n\n\nИллюстрация 1.3: Превью репозитория\n\n\n\nОбъединяющие джойны (Иллюстрация 16.3):\n\nлевый джойн (Иллюстрация 16.3 (a))\nправый джойн (Иллюстрация 16.3 (b))\nполный джойн (Иллюстрация 16.3 (c))\nвнутренний джойн (Иллюстрация 16.3 (d)).\n\n\n\n\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\n\n\n\nИллюстрация 1.4: Объединяющие джойны\n\n\n\n\n\n\n1.2.1.2 Заголовок 4 уровня with code\nСогласно Теорема 16.1:\n\nТеорема 1.1 Среднее арифметическое является несмещенной оценкой математического ожидания.\n\n\nДоказательство. \\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\\[\n\\hat \\mu = \\frac{1}{m}\\sum_{j=1}^m x_j = \\bar X\n\\]\n\\[\n\\mathbb{E}(\\hat \\mu) = \\mathbb{E}(\\bar X) \\overset{?}{=} \\mu\n\\]\n\\[\n\\begin{split}\n\\mathbb{E}(\\bar X) &= \\\\\n&= \\mathbb{E}\\big (\\frac{1}{n} \\sum_{i=1}^n X_i \\big ) = \\\\\n&= \\frac{1}{n} \\mathbb{E}\\Big( \\sum_{i=1}^n X_i \\Big) = \\\\\n&= \\frac{1}{n} \\sum_{i=1}^n \\mathbb{E}X_i \\overset{X_i \\overset{\\text{i.i.d.}}{\\sim} (\\mu, \\sigma^2)}{=} \\frac{1}{n} \\cdot n \\cdot \\mathbb{E}X = \\\\\n& = \\frac{n}{n} \\cdot \\mu = \\mu\n\\end{split}\n\\]\n\n\nЛемма 1.1 Это лемма.\n\n\nСледствие 1.1 Это следствие.\n\n\nУтверждение 1.1 Это утверждение.\n\n\nПредположение 1.1 Это conjecutre.\n\n\nОпределение 1.1 Это определение.\n\n\nПример 1.1 Это пример.\n\n\nЗадание 1.1 Это задание.\n\n\nРешение. Это решение.\n\n\nЗамечание. Это замечание.\n\n\n1.2.1.2.1 Заголовок 5 уровня\nЭто уравнение прямой (Уравнение 16.1):\n\\[\ny = kx + b\n\\tag{1.1}\\]\n\n1.2.1.2.1.1 Совсем мелкий заголовок\n\n\n\n\n\n\n\n\nИллюстрация 1.5: Тут родился R\n\n\n\n\nТут (Иллюстрация 16.6) видео, на которое ссылка как на рисунок.\n\n\n\n\n\n\nИллюстрация 1.6: Разбор третьей домашки\n\n\n\nВыше была карта (Иллюстрация 16.5) с местом рождения R.",
+    "crumbs": [
+      "Debug",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Глава книги [отладка]</span>"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q1-title",
+    "href": "debug_pretest.html#q1-title",
+    "title": "Претест",
+    "section": "#1",
+    "text": "#1\n\n\n\n\n\n\n\n\n\n\n Question 1 with inline equation \\(x^2 + y^2 = R^2\\)  \n\n  Option \\(\\sin 1\\) \n\n\n  Option \\(\\cos 2\\) \n\n\n  Option \\(\\tan 3\\) \n\n\n  Option \\(\\exp(4)\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q2-title",
+    "href": "debug_pretest.html#q2-title",
+    "title": "Претест",
+    "section": "#2",
+    "text": "#2\n\n\n\n\n\n\n\n\n\n\n Question 2 with equation \\[\n\\mathbb{E}X = \\frac{1}{n} \\sum_{i=1}^n x_i\n\\]  \n\n  \\(\\displaystyle \\text{Option} \\sin x = 0\\) \n\n\n  \\(\\displaystyle \\text{Option} \\cos 2 = \\text{var}(X + Y)\\) \n\n\n  \\(\\displaystyle \\text{Option} \\tan 3 \\overset{\\text{def}}{\\frac}{\\sin 3}{\\cos 3}\\) \n\n\n  \\(\\displaystyle \\text{Option} \\exp(4) = \\mathbb{E}X\\) \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q3-title",
+    "href": "debug_pretest.html#q3-title",
+    "title": "Претест",
+    "section": "#3",
+    "text": "#3\n\n\n\n\n\n\n\n\n\n\n Question 3 with inline_code  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q4-title",
+    "href": "debug_pretest.html#q4-title",
+    "title": "Претест",
+    "section": "#4",
+    "text": "#4\n\n\n\n\n\n\n\n\n\n\n Question 4 with bold and italic  \n\n  Option 1 bold \n\n\n  Option 2 italic \n\n\n  Option 3 strike \n\n\n  Option 4 → 5 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q5-title",
+    "href": "debug_pretest.html#q5-title",
+    "title": "Претест",
+    "section": "#5",
+    "text": "#5\n\n\n\n\n\n\n\n\n\n\n Question 5 with code \n\nfor (i in vec) {\n  print(i)\n}\n\n\n\n  A\n\nif (x &gt; 5) {\n  print(\"no\")\n} else {\n  print(\"yes\")\n}\n\n\n\n\n  B\n\nx &lt;- 1\n\n\n\n\n  C\n\nsave.image(\"hihik.RData\")\n\n\n\n\n  D\n\ninstalled.packages()\n\n\n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q6-title",
+    "href": "debug_pretest.html#q6-title",
+    "title": "Претест",
+    "section": "#6",
+    "text": "#6\n\n\n\n\n\n\n\n\n\n\n Question 6  \n\n   \n\n\n   \n\n\n   \n\n\n   \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q7-title",
+    "href": "debug_pretest.html#q7-title",
+    "title": "Претест",
+    "section": "#7",
+    "text": "#7\n\n\n\n\n\n\n\n\n\n\n Question 7  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q8-title",
+    "href": "debug_pretest.html#q8-title",
+    "title": "Претест",
+    "section": "#8",
+    "text": "#8\n\n\n\n\n\n\n\n\n\n\n Question 8  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q9-title",
+    "href": "debug_pretest.html#q9-title",
+    "title": "Претест",
+    "section": "#9",
+    "text": "#9\n\n\n\n\n\n\n\n\n\n\n Question 9  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "debug_pretest.html#q10-title",
+    "href": "debug_pretest.html#q10-title",
+    "title": "Претест",
+    "section": "#10",
+    "text": "#10\n\n\n\n\n\n\n\n\n\n\n Question 10  \n\n  Option 1 \n\n\n  Option 2 \n\n\n  Option 3 \n\n\n  Option 4 \n\n\n\nCorrect Feedback\n\n\nIncorrect Feedback\n\n\n\nResult\n\n\nMessage",
+    "crumbs": [
+      "Debug",
+      "Претест"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html",
+    "href": "r-datatypes.html",
+    "title": "3  Типы данных",
+    "section": "",
+    "text": "3.1 Концепт «тип данных»\nЧто вообще такое тип данных? Определение можно дать много разных, но все они сводятся к следующей идее:\nСтоит отметить, что в разных языках программирования выделяются разные типы данных, а в сущности одни и те же типы могут называться по-разному. Мы, разумеется, будем рассматривать типы данных языка R, ибо изучаем именно его, однако сопоставить их с типами данных других языков программирования на составляет труда.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#r-datatypes-concept",
+    "href": "r-datatypes.html#r-datatypes-concept",
+    "title": "3  Типы данных",
+    "section": "",
+    "text": "Определение 3.1 Тип данных — это характеристика данных, которая определяет допустимые значения, которые могут принимать данные этого типа, и допустимые операции над данными этого типа (ISO/IEC/IEEE, 2017).\n\n\n— Это, конечно, хорошо. Но что это означает на деле?  — Сейчас разберемся, рассмотрев типы данных в R.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#r-datatypes-numbers",
+    "href": "r-datatypes.html#r-datatypes-numbers",
+    "title": "3  Типы данных",
+    "section": "3.2 Числа",
+    "text": "3.2 Числа\n\n\n\nПервое, с чем должно быть возможно работать, это, конечно же, числа. Для них в R предусмотрен тип numeric.\n\n3.2.1 numeric\n\n\n\nКак нам удостовериться в очевидном факте, что 2 — это число? Для этого в R существует функция class(), которая позволяет узнать тип данных конкретного объекта.\nУзнаем, действительно ли 2 является числом:\n\n\n\nКод 3.1: Работа функции class()\n\n\n\nclass(2)\n\n[1] \"numeric\"\n\n\n\n\n\nАналогично, можем убедиться, что 3.14 также является числом:\n\nclass(3.14)\n\n[1] \"numeric\"\n\n\nФункция class() также успешно справится и с переменными. Например,\n\nx &lt;- cos(4)\nx\n\n[1] -0.6536436\n\nclass(x)\n\n[1] \"numeric\"\n\n\n\n3.2.1.1 Что можно сделать с числом?\nС числами, как и следовало ожидать, можно выполнять все математические операции — складывать, вычитать, делить, умножать и т. д. — а также вызывать на них математические функции — корни, логарифмы, экспоненты, синусы и др. Собственно, этим мы занимались в предыдущей главе. Давайте вспомним.\nСоздадим три числовые переменные x, y и z и поразвлекаемся.\n\nx &lt;- 3.5\ny &lt;- 5.67\nz &lt;- -12.3\n\nУже знакомые нам математические операции:\n\n\n\nКод 3.2: Математические операции с числовыми переменными\n\n\n\nx + y # сложение\n\n[1] 9.17\n\nx - y # вычитание\n\n[1] -2.17\n\nx * y # умножение\n\n[1] 19.845\n\nx / y # деление\n\n[1] 0.617284\n\nx %/% y # целочисленное деление\n\n[1] 0\n\ny %/% x # целочисленное деление\n\n[1] 1\n\ny %% x # взятие остатка от деления\n\n[1] 2.17\n\nx ^ y # возведение в степень\n\n[1] 1215.81\n\n\n\n\n\nЗнакомые и новые математические функции:\n\n\n\nКод 3.3: Математические функции с числовыми переменными\n\n\n\nlog(x, y) # логарифм\n\n[1] 0.7219749\n\nsqrt(x) # квадратный корень\n\n[1] 1.870829\n\nsin(x); cos(x); tan(x)  # тригонометрия\n\n[1] -0.3507832\n\n\n[1] -0.9364567\n\n\n[1] 0.3745856\n\nexp(x) # экспонента, e^x\n\n[1] 33.11545\n\nabs(z) # модуль\n\n[1] 12.3\n\nsum(x, y, z) # сумма нескольких переменных\n\n[1] -3.13\n\nround(y, 1) # округлить до заданного числа знаков после точки\n\n[1] 5.7\n\nceiling(z) # округлить до ближайшего целого вверх\n\n[1] -12\n\nfloor(z) # округлить до ближайшего целого вниз\n\n[1] -13\n\n\n\n\n\nВ общем, арсенал вполне приличный.\n\n\n\n3.2.2 integer\n\n\n\nДотошный читатель, имевший опыт работы с другими языками программирования, мог озадачиться, увидев Код 3.1. Отчасти справедливо, так как \\(2\\) — это целое число, а практически во всех языках программирования под целые числа выделяется отдельный тип данных1.\nВ R такой тип данных тоже есть, и называется он классически integer. Однако по умолчанию все числа рассматриваются в R как numeric. Иначе говоря, запись 2 рассматривается как 2.0. Это довольно удобно для аналитических задач, где у нас целые числа появляются не то чтобы часто.\nТем не менее, создать целое число всё же можно — для этого надо указать, что нам нужно именно целое число с помощью буквы L сразу после числа2. Например, чтобы положить в переменную целое число \\(2\\), нужно записать так:\n\ny &lt;- 2L\n\nМы можем удостовериться, что y — это переменная целочисленного типа, то есть integer:\n\nclass(y)\n\n[1] \"integer\"\n\n\nЕдва ли вам придется когда-либо вручную прописывать, что необходимы именно целочисленные значения переменной. Однако вы с ними можете столкнуться при работе с циклами — они там появляются сами, и если не знать, что это такое, можно сильно удивиться числу, например, 11L.\nДля целых чисел выполняются те же операции, что и для чисел типа numeric:\n\n\n\nКод 3.4: Математические операции и функции на целочисленных переменных\n\n\n\na &lt;- 24L\nb &lt;- 12L\nc &lt;- -7L\n\na + b # сложение\n\n[1] 36\n\na - b # вычитание\n\n[1] 12\n\na * b # умножение\n\n[1] 288\n\na / b # деление\n\n[1] 2\n\na %/% b # целочисленное деление\n\n[1] 2\n\na %/% c # целочисленное деление\n\n[1] -4\n\na %% c # взятие остатка от деления\n\n[1] -4\n\na ^ b # возведение в степень\n\n[1] 3.652035e+16\n\na ^ c # возведение в степень\n\n[1] 2.180325e-10\n\nlog(a, b) # логарифм\n\n[1] 1.278943\n\nsqrt(a) # квадратный корень\n\n[1] 4.898979\n\nsin(a); cos(b); tan(c)  # тригонометрия\n\n[1] -0.9055784\n\n\n[1] 0.843854\n\n\n[1] -0.871448\n\nexp(a) # экспонента, e^x\n\n[1] 26489122130\n\nabs(c) # модуль\n\n[1] 7\n\nsum(a, b, c) # сумма нескольких переменных\n\n[1] 29\n\n\n\n\n\nФункции округления бессмысленны, так как числа изначально целые, то есть не имеют дробной части.\n\n\n3.2.3 numeric vs integer vs double + typeof()\n\n\n\nВообще говоря, термин numeric внутри самого R используется непоследовательно (см. Wickham, 2019, sec. 12.3.1). С одной стороны, numeric используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу double3, который также существует, но достаётся с помощью функции typeof(), которая «более низкоуровневая»:\n\nclass(2.20)\n\n[1] \"numeric\"\n\ntypeof(2.20)\n\n[1] \"double\"\n\n\nДве функции — class и typeof — согласны и в отношении целочисленного типа данных:\n\nclass(2L)\n\n[1] \"integer\"\n\ntypeof(2L)\n\n[1] \"integer\"\n\n\nОднако если залезть глубже и посмотреть на числа с точки зрения ООП, то можно обнаружить неожиданное:\n\nsloop::s3_class(1)\n\n[1] \"double\"  \"numeric\"\n\nsloop::s3_class(1L)\n\n[1] \"integer\" \"numeric\"\n\n\nИ у целого числа, и у числа с плавающей точкой есть атрибут numeric. Получается, что numeric является обобщением для типов integer и double.\n\n\n3.2.4 complex\n\n\n\nВ R существуют и комплексные числа4. Они крайне редко встречаются в статистике и анализе данных — разве что при выводе каких-нибудь теорем в суровой математической части статистики. Соответственно, в практической работе они вам вряд ли встретятся.\nОднако даже если вы не понимаете, кто такие есть эти числа, вы все равно можете с ними взаимодействовать в R — ведь это просто некие числа. Да, со своими приколами и особенностями, но всё же числа. А значит с ними можно выполнять все операции, которые можно выполнять с другими числами.\n\n\n\nКод 3.5: Операции с комплексными числами\n\n\n\nclass(2+3i)\n\n[1] \"complex\"\n\n8-6i + 2+3i\n\n[1] 10-3i\n\n(8-6i) * (2+3i)\n\n[1] 34+12i\n\n(-7-1.5i) / (1.1i)\n\n[1] -1.363636+6.363636i\n\nsqrt(-12+0i)\n\n[1] 0+3.464102i",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#r-datatypes-logical",
+    "href": "r-datatypes.html#r-datatypes-logical",
+    "title": "3  Типы данных",
+    "section": "3.3 logical",
+    "text": "3.3 logical\n\n\n\nПомимо чисел в прошлой главе мы видели два особенных значения — TRUE и FALSE.\n\n— Это явно не числа. По крайне мере, не похожи на них.  — Всё так. Это данные итого типа.\n\nМы столкнулись с логическим типом данных, именуемым в R logical5. У этого типа данных всего два возможных значения — те самые TRUE и FALSE. Первый обозначает «истину», второй — «ложь»6. Это довольно справедливо, если учесть, что мы их получали как результат сравнения двух чисел:\n\n2 == 2 # довольно трудно спорить с тем, что это утверждение истинно\n\n[1] TRUE\n\n1 != 1 # весьма непросто возразить, что это утверждение ложно\n\n[1] FALSE\n\n\n\n\n\n\n\n\nЛогические константы\n\n\n\nЗначения TRUE и FALSE — это зарезервированные константы. Это значит, что они защищены от перезаписи — их значение зафиксировано и не может измениться.\n\nTRUE &lt;- 2\n\nError in TRUE &lt;- 2: invalid (do_set) left-hand side to assignment\n\nFALSE &lt;- -50 + 13\n\nError in FALSE &lt;- -50 + 13: invalid (do_set) left-hand side to assignment\n\nTRUE &lt;- FALSE\n\nError in TRUE &lt;- FALSE: invalid (do_set) left-hand side to assignment\n\n\n\n\n\nМы видим, что у логического типа данных всего два возможных значения, в то время как у числового типа данных их было бесконечно много. Это и есть «допустимые значения», упомянутые в определении 3.1.\n\n\n\n\n\n\n\nCase sensitivity\n\n\n\nR чувствителен к регистру (case sensitive), поэтому TRUE, true и True — это разные сущности!\n\nclass(TRUE); class(FALSE)\n\n[1] \"logical\"\n\n\n[1] \"logical\"\n\nclass(True); class(False)\n\nError in eval(expr, envir, enclos): object 'True' not found\n\n\nError in eval(expr, envir, enclos): object 'False' not found\n\nclass(true); class(false)\n\nError in eval(expr, envir, enclos): object 'true' not found\n\n\nError in eval(expr, envir, enclos): object 'false' not found\n\n\n\n\nМы уже знакомы с операторами сравнения (==, !=, &lt;, &gt;, &lt;=, &gt;=), результатом действия которых являются логические значения. Однако существуют собственно логические операторы, которые работают только с логическими значениями.\n\n3.3.1 Логические операторы\n\n\n\nСуществует всего три основных оператора — НЕ (!), И (&) и ИЛИ (|). Вообще они к нам пришли из формальной логики и не являются чем-то специфичным для программирования и тем более для R. Соответственно, и работают они так, как им предписывают законы формальной логики7.\nОднако даже если вы с этой отраслью знаний не знакомы, вполне можно понять, как эти операторы работают, просто посмотрев на них в деле.\n\n3.3.1.1 НЕ (!)\n\n\n\nОператор НЕ занимается, не поверите, отрицанием. Он превращает «истину» в «ложь», а «ложь» — в «истину»:\n\n\n\nКод 3.6: Логическое отрицание в R\n\n\n\n!TRUE\n\n[1] FALSE\n\n!FALSE\n\n[1] TRUE\n\n\n\n\n\nВсё.\nНу, ладно. Можно заметить ещё кое-что: это унарный оператор, то есть он работает только с одним объектом.\nТеперь точно всё.\n\n\n3.3.1.2 И (&)\n\n\n\nТут уже интереснее: И — это бинарный оператор, то есть он работает с двумя объектами. Если объекта всего два и у каждого может быть одно и двух значений — либо «истина», либо «ложь» — то всего комбинаций может быть четыре. Посмотрим, что возвращает оператор в каждом из случаев:\n\n\n\nКод 3.7: Логическое И в R\n\n\n\nTRUE & TRUE\n\n[1] TRUE\n\nTRUE & FALSE\n\n[1] FALSE\n\nFALSE & TRUE\n\n[1] FALSE\n\nFALSE & FALSE\n\n[1] FALSE\n\n\n\n\n\nЗакономерность проста: логическое И возвращает «истину» (TRUE) только в том случае, если по обеим сторонам от него стоит «истина». Если же хотя бы с одной из сторон «ложь», то и в результате будет «ложь».\n\n— Это очевидно, потому что это конъюнкция…  — Всё так. Но вообще-то неискушенный в формальной логике читатель об этом знать не обязан. Попозже его с этим познакомим.\n\n\n\n3.3.1.3 ИЛИ (|)\n\n\n\nИЛИ — это тоже бинарный оператор. Посмотрим, чем он отличается от И:\n\n\n\nКод 3.8: Логическое И в R\n\n\n\nTRUE | TRUE\n\n[1] TRUE\n\nTRUE | FALSE\n\n[1] TRUE\n\nFALSE | TRUE\n\n[1] TRUE\n\nFALSE | FALSE\n\n[1] FALSE\n\n\n\n\n\nЗдесь ситуация в каком-то смысле противоположная — ИЛИ возвращает «ложь» только с том случае, если по обеим сторонам от него стоит «ложь». Если же хотя бы с одной стороны есть «истина», то и в результате будет «истина».\n\n— Естественно, потому что это дизъюнкция.  — Верно, но прекрати уже пугать читателя непонятными словами, пожалуйста…\n\n\n\n3.3.1.4 ИЛИ-ИЛИ (xor())\n\n\n\nКроме трех упомянутых выше и наиболее популярных операторов, есть ещё один — ИЛИ-ИЛИ. Если вы шарите за логику или имели дело, например, с низкоуровневым программированием, то это знакомых вам XOR. Он реализован в R как функция:\n\n\n\nКод 3.9: Исключающее ИЛИ в R\n\n\n\nxor(TRUE, TRUE)\n\n[1] FALSE\n\nxor(TRUE, FALSE)\n\n[1] TRUE\n\nxor(FALSE, TRUE)\n\n[1] TRUE\n\nxor(FALSE, FALSE)\n\n[1] FALSE\n\n\n\n\n\nОн возвращает «истину» только тогда, когда ровно с одной стороны от него стоит «истина». Если же по обеим сторонам от него стоит «истина» или же с обеих сторон стоит «ложь», он вернет «ложь».\n\n\n\n3.3.2 Логические операции в практике\n\n\n\nКонечно же, в реальной ситуации мы не будет проверять, что 2 == 2 или выяснять, что TRUE & FALSE — это FALSE в явном виде. Мы будем активно использовать эти операции в предобработке данных.\nСкажем, у вас есть большая таблица с данными исследования, из которой вам нужно отобрать только молодежь. Тогда будет использоваться примерно такое условие (age — столбец с возрастом):\nage &gt;=18 & age &lt;= 35\nИли же у вас данные эксперимента и вам надо удалить статистические выбросы по времени реакции. Вы создали колонку is_outlier, в которой для каждого наблюдения указано, является ли оно выбросом (TRUE) или не является (FALSE). Тогда в условии отбора наблюдений мы напишем:\n!is_outlier\nЭто пока что просто примеры, свидетельствующие о том, что логические операции нам нужны. В следующей главе мы познакомимся со структурами данных, и уже сможем немного попрактиковаться.\nПока же нам надо доделать фундамент. Продолжим знакомиться с типами данных.\n\n\n\n\n\n\nАналитик! Не ленись! Пиши TRUE полностью!\n\n\n\nВ R есть возможность не прописывать полностью логические константы, а использовать только первые буквы от них — T и F. Это в принципе будет работать:\n\nclass(T); class(F)\n\n[1] \"logical\"\n\n\n[1] \"logical\"\n\nT & F\n\n[1] FALSE\n\nF | F\n\n[1] FALSE\n\n\nОднако этим крайне не рекомендуется пользоваться!\nИ вот почему. В отличие от TRUE и FALSE буквы T и F не защищены от перезаписи и могут служить названием каких-либо переменных. Это может привести к неожиданным последствиям:\n\nT &lt;- 0\nT & FALSE\n\n[1] FALSE\n\nF &lt;- 12.5\nF | FALSE\n\n[1] TRUE\n\n\nКонечно, с целью минимизации возможных ошибок использовать T и F в качестве названий переменных не рекомендуется. Однако кто-то будет следовать этой рекомендации, а кто-то не будет.\nПоэтому на всякий случай прописывайте логические константы полностью — тогда точно подобных казусов удастся избежать.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#character",
+    "href": "r-datatypes.html#character",
+    "title": "3  Типы данных",
+    "section": "3.4 character",
+    "text": "3.4 character\nТекст тоже надо как-то хранить.\n\ns1 &lt;- 'a'\ns2 &lt;- \"это строка\"\n\nclass(s1)\n\n[1] \"character\"\n\nclass(s2)\n\n[1] \"character\"\n\n\nКавычки не важны, если у вас не встречаются кавычки внутри кавычек. Тогда надо использовать разные:\n\ns &lt;- 'Мужчина громко зашёл в комнату и высказал решительное \"здравствуйте\"'\ns\n\n[1] \"Мужчина громко зашёл в комнату и высказал решительное \\\"здравствуйте\\\"\"",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#factor",
+    "href": "r-datatypes.html#factor",
+    "title": "3  Типы данных",
+    "section": "3.5 factor",
+    "text": "3.5 factor\nБывают такие переменные, которые группируют наши данные. Например,\n\nгород проживания (Москва, Санкт-Петербург, Казань, Екатеринбург)\nуровень образования (бакалавриат, специалитет, магистратура, аспирантура)\nэкспериментальная группа (group1, group2, control)\nи др.\n\nОбычно они текстовые. Для них был придуман тип данных factor, чтобы их было дешевле хранить. Однако большинство современных пакетов сами могут решить, когда надо текст перевести в фактор.\nOrdered factor (упорядоченный фактор) — тип данных, который позволяет задать порядок групп. Например,\n\nуровень образования: bachelor &lt; master &lt; phd &lt; postdoc\nсложность экспериментальной задачи: easy &lt; medium &lt; hard\nи др.\n\nВот упорядоченный фактор нам время от времени может понадобиться — например, для создания визуалиация или в некоторых статистических моделях.\n\ntypeof(factor(\"x\"))\n\n[1] \"integer\"\n\nis.integer(factor(\"x\"))\n\n[1] FALSE\n\nis.numeric(factor(\"x\"))\n\n[1] FALSE",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#приведение-типов",
+    "href": "r-datatypes.html#приведение-типов",
+    "title": "3  Типы данных",
+    "section": "3.6 Приведение типов",
+    "text": "3.6 Приведение типов\nКод 2.5",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#специальные-литералы",
+    "href": "r-datatypes.html#специальные-литералы",
+    "title": "3  Типы данных",
+    "section": "3.7 Специальные литералы",
+    "text": "3.7 Специальные литералы\n\n3.7.1 NA\nПропущенное значение (Not Available). Обозначает отсутствие значения там, где оно вроде бы должно быть. Причины могут быть разные:\n\nтехнические ошибки записи данных\nошибки настройки платформы — забыли сделать ответы обязательными\nорганизация исследования — ограничили время на ответ\n«честный» пропуск — дали возможность не отвечать на вопрос\nпредобработка данных — специально создали NA, чтобы далее с ними работать\nи др.\n\n\n\n3.7.2 NaN\nЭто не число (Not a Number).\n\n0 / 0\n\n[1] NaN\n\n\n\n\n3.7.3 NULL\nЭто ничто. Пустота. Используется для задания аргументов функций.\n\nggplot(data = NULL)\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] rvest_1.0.4     lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1  \n [5] dplyr_1.1.4     purrr_1.0.2     readr_2.1.5     tidyr_1.3.1    \n [9] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0\n\nloaded via a namespace (and not attached):\n [1] gtable_0.3.5      jsonlite_1.8.8    compiler_4.4.0    tidyselect_1.2.1 \n [5] xml2_1.3.6        scales_1.3.0      sloop_1.0.1       fastmap_1.2.0    \n [9] R6_2.5.1          generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4\n[13] munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4      \n[17] utf8_1.2.4        stringi_1.8.4     xfun_0.44         timechange_0.3.0 \n[21] cli_3.6.2         withr_3.0.0       magrittr_2.0.3    digest_0.6.35    \n[25] grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3         lifecycle_1.0.4  \n[29] vctrs_0.6.5       evaluate_0.23     glue_1.7.0        fansi_1.0.6      \n[33] colorspace_2.1-0  httr_1.4.7        rmarkdown_2.27    tools_4.4.0      \n[37] pkgconfig_2.0.3   htmltools_0.5.8.1\n\n\n\n\n\n\n\nISO/IEC/IEEE. (2017). Systems and software engineering — vocabulary (ISO/IEC/IEEE 24765:2017). International Organization for Standardization. https://www.iso.org/standard/64973.html\n\n\nWickham, H. (2019). Advanced r, second edition (2nd ed.). Chapman; Hall/CRC. https://doi.org/10.1201/9781351201315",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-datatypes.html#footnotes",
+    "href": "r-datatypes.html#footnotes",
+    "title": "3  Типы данных",
+    "section": "",
+    "text": "Это связано с различиями в способе хранения целых чисел и чисел с плавающей точкой. Подробнее см. приложение.↩︎\nЛитерал L обозначает, что это long integer (Wickham, 2019). Подробнее см. приложение.↩︎\nЭто наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. приложение.↩︎\nКто это такие, описывается в приложении.↩︎\nДругое название этого типа — boolean. В данному случае мы имеем дело с полными синонимами.↩︎\nВариантов, кроме «истина» и «ложь», не существует, так как мы имеем дело с двузначной логикой. Вообще это не единственный вариант построить логическую систему, однако других мы касаться в этой книжке не будем.↩︎\nПод знакомство с этой наукой выделена соответствующая глава.↩︎",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Типы данных</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "WLM SDARP",
+    "section": "",
+    "text": "Аннотация",
+    "crumbs": [
+      "Аннотация"
+    ]
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "WLM SDARP",
+    "section": "",
+    "text": "Текущая версия\n\n\n\n0.0.1\n\n\n\n\n\n\n\n\nDev-версия\n\n\n\nЭта версия книги в процессе разработки. В ней могут содержаться ошибки, баги и недоделки. Текущий релиз находится здесь.\n\n\n\n\nAttribution\n\nВ дизайне книги использовано изображение от Shubham Dhage.\nГарнитура текста — Montserrat.\nHTML-темы (темная и светлая) кастомизированы на основе darkly и flatly.\nКнига свёрстана на Quarto.\n\n\n\n\n\n\n\n\nПредыдущие версии\n\n\n\n\n\nПока что таких нет. Это первая",
+    "crumbs": [
+      "Аннотация"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgement",
+    "href": "index.html#acknowledgement",
+    "title": "WLM SDARP",
+    "section": "Благодарности",
+    "text": "Благодарности\n\nAttribution\n\nВ дизайне книги использовано изображение от Shubham Dhage.\nГарнитура текста — Montserrat.\nHTML-темы (темная и светлая) кастомизированы на основе darkly и flatly.\nКнига свёрстана на Quarto.\n\n\n\n\n\n\n\n\nПредыдущие версии\n\n\n\n\n\nПока что таких нет. Это первая",
+    "crumbs": [
+      "Аннотация"
     ]
   }
 ]
