@@ -39,7 +39,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $y(x) = c$. Тогда $\displaystyle c' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = c$. Тогда $\displaystyle c' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Рассмотрим отдельно приращение функции $\Delta y$:
 
@@ -71,7 +71,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $y(x) = cf(x)$. Тогда $\displaystyle \big( cf(x) \big)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = cf(x)$. Тогда $\displaystyle \big( cf(x) \big)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 $$
 \begin{split}
@@ -101,7 +101,7 @@ $$
 
 $$
 \begin{split}
-y'(x) &\defin \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &\defin{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) + g(x + \Delta x) \Big) - \Big( f(x) + g(x) \Big)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) - f(x) \Big) + \Big( g(x + \Delta x) - g(x) \Big)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x) - f(x)}{\Delta x} + \frac{g(x + \Delta x) - g(x)}{\Delta x} \right) = \\
@@ -126,7 +126,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $y(x) = f(x) g(x)$. Тогда $\displaystyle \Big( f(x) g(x) \Big)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = f(x) g(x)$. Тогда $\displaystyle \Big( f(x) g(x) \Big)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Опишем также приращения функций $f(x)$ и $g(x)$ для случая, когда приращение аргумента равно $\Delta x$:
 
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{split}
-y'(x) &\defin \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &\defin{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) \, g(x + \Delta x) - f(x)\, g(x)}{\Delta x} = \\
 &\overset{\circled{1} + \circled{2}}{=} 
 \frac{\big( f(x) + \Delta f(x) \big) \big( g(x) + \Delta g(x) \big) - f(x) g(x)}{\Delta x} = \\
@@ -163,7 +163,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $\displaystyle y(x) = \frac{f(x)}{g(x)}$. Тогда $\displaystyle \left( \frac{f(x)}{g(x)} \right)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $\displaystyle y(x) = \frac{f(x)}{g(x)}$. Тогда $\displaystyle \left( \frac{f(x)}{g(x)} \right)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Опишем также приращения функций $f(x)$ и $g(x)$ для случая, когда приращение аргумента равно $\Delta x$:
 
@@ -176,7 +176,7 @@ $$
 
 $$
 \begin{split}
-y'(x) &\defin \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &\defin{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{\dfrac{f(x + \Delta x)}{g(x + \Delta x)} - \dfrac{f(x)}{g(x)}}{\Delta x} = \\
 &= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{g(x + \Delta x) g(x) \Delta x} = \\
 &=
@@ -217,7 +217,8 @@ $$
 
 $$
 \begin{split}
-y'(x) = \left( \frac{f(x)}{g(x)} \right)' &= \frac{1}{g^2(x)} \cdot g(x) f'(x) - f(x) g'(x) = \\
+y'(x) &= \left( \frac{f(x)}{g(x)} \right)' = \\
+&= \frac{1}{g^2(x)} \cdot g(x) f'(x) - f(x) g'(x) = \\
 &= \frac{g(x) f'(x) - f(x) g'(x)}{g^2(x)} \qed
 \end{split}
 $$
@@ -235,7 +236,11 @@ $$
 
 :::{.proof}
 $$
-\left( \frac{c}{g(x)} \right)' = c \cdot \left( \frac{1}{g(x)} \right)' = c \cdot \frac{(1)' \cdot g(x) - 1 \cdot g'(x)}{g^2(x)} = c \cdot \frac{0 \cdot g(x) - g'(x)}{g^2(x)} = c \cdot \frac{-g'(x)}{g^2(x)} = - \frac{c \, g'(x)}{g^2(x)} \qed
+\begin{split}
+\left( \frac{c}{g(x)} \right)' &= \\
+&= c \cdot \left( \frac{1}{g(x)} \right)' = c \cdot \frac{(1)' \cdot g(x) - 1 \cdot g'(x)}{g^2(x)} = \\
+&= c \cdot \frac{0 \cdot g(x) - g'(x)}{g^2(x)} = c \cdot \frac{-g'(x)}{g^2(x)} = - \frac{c \, g'(x)}{g^2(x)} \qed
+\end{split}
 $$
 :::
 
@@ -270,7 +275,7 @@ $$
 
 :::{.proof}
 
-Пусть $y(x) = x^n$. Тогда $\displaystyle (x^n)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = x^n$. Тогда $\displaystyle (x^n)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Рассмотрим отдельно приращение функции $\Delta y$:
 
@@ -380,7 +385,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $y(x) = a^x$. Тогда $\displaystyle (a^x)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = a^x$. Тогда $\displaystyle (a^x)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Рассмотрим отдельно приращение функции $\Delta y$:
 
@@ -449,7 +454,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $y(x) = \sin x$. Тогда $\displaystyle (\sin x)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = \sin x$. Тогда $\displaystyle (\sin x)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Рассмотрим отдельно приращение функции $\Delta y$:
 
@@ -512,7 +517,7 @@ $$
 :::
 
 :::{.proof}
-Пусть $y(x) = \cos x$. Тогда $\displaystyle (\cos x)' = y'(x) \defin \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+Пусть $y(x) = \cos x$. Тогда $\displaystyle (\cos x)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
 
 Рассмотрим отдельно приращение функции $\Delta y$:
 
@@ -859,8 +864,8 @@ $$
 
 $$
 \begin{split}
-\sin \alpha &\defin \frac{a}{c} \Rightarrow a = c \sin \alpha \\
-\cos \alpha &\defin \frac{b}{c} \Rightarrow b = c \cos \alpha
+\sin \alpha &\defin{=} \frac{a}{c} \Rightarrow a = c \sin \alpha \\
+\cos \alpha &\defin{=} \frac{b}{c} \Rightarrow b = c \cos \alpha
 \end{split}
 $$
 
@@ -1016,11 +1021,11 @@ $${#eq-cos-of-sum}
 [^trig-size]: Это утверждение доказывается как теорема в курсе школьной геометрии.
 
 $$
-\sin \beta \defin \frac{AB}{OA} = \frac{AB}{1} = AB
+\sin \beta \defin{=} \frac{AB}{OA} = \frac{AB}{1} = AB
 $$
 
 $$
-\cos \beta \defin \frac{OB}{OA} = \frac{OB}{1} = OB
+\cos \beta \defin{=} \frac{OB}{OA} = \frac{OB}{1} = OB
 $$
 
 ![Построение прямоугольных треугольников, содержащих рассматриваемые углы углов](img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg){#fig-sin-cos-of-sum-draw-triangles}
@@ -1038,11 +1043,11 @@ $$
 Рассмотрим образовавшийся $\triangle DAO$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle DAO$ --- прямоугольный, а $AO$ --- его гипотенуза. Так как $AO = OA = 1$, имеем
 
 $$
-\sin (\alpha + \beta) \defin \frac{DO}{AO} = \frac{DO}{1} = DO
+\sin (\alpha + \beta) \defin{=} \frac{DO}{AO} = \frac{DO}{1} = DO
 $${#eq-sin-DO}
 
 $$
-\cos (\alpha + \beta) \defin \frac{DA}{AO} = \frac{DA}{1} = DA
+\cos (\alpha + \beta) \defin{=} \frac{DA}{AO} = \frac{DA}{1} = DA
 $${#eq-cos-DA}
 
 ![Искомые тригонометрические фукнции в построенном треугольнике](img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg){#fig-sin-cos-of-sum-get-trigs}
@@ -1094,21 +1099,21 @@ $$
 Рассмотрим $\triangle BOC$. Его $\angle BCO = 90^\circ$, а $\angle BOC = \alpha$. Тогда
 
 $$
-\sin \alpha \defin \frac{CB}{OB} \Rightarrow CB = \sin \alpha \cdot OB = \sin \alpha \cos \beta
+\sin \alpha \defin{=} \frac{CB}{OB} \Rightarrow CB = \sin \alpha \cdot OB = \sin \alpha \cos \beta
 $$
 
 $$
-\cos \alpha \defin \frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
+\cos \alpha \defin{=} \frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
 $$
 
 Из $\triangle ABE$, в котором $\angle AEB = 90^\circ$, а $\angle ABE = \alpha$ ([-@eq-ABE-alpha]) получаем, что
 
 $$
-\sin \alpha \defin \frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
+\sin \alpha \defin{=} \frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
 $$
 
 $$
-\cos \alpha \defin \frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
+\cos \alpha \defin{=} \frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
 $$
 
 ![Окончательное построение](img/appendix-math-other/sin-cos-of-sum-full.jpg){#fig-sin-cos-of-sum-full}

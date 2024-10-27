@@ -373,8 +373,21 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Методы анализа данных</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Методы анализа данных</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -465,8 +478,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -576,7 +595,7 @@ c' = 0, \, c = \text{const}
 <p>Ох, щас будет высокоинтеллектуальная деятельность!</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = c\)</span>. Тогда <span class="math inline">\(\displaystyle c' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = c\)</span>. Тогда <span class="math inline">\(\displaystyle c' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Рассмотрим отдельно приращение функции <span class="math inline">\(\Delta y\)</span>:</p>
 <p><span class="math display">\[
 \Delta y = y(x+\Delta x) - y(x) = c - c = 0
@@ -601,7 +620,7 @@ c' = \lim_{\Delta x \to 0} \frac{0}{\Delta x} = \lim_{\Delta x \to 0} 0 = 0 \qua
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = cf(x)\)</span>. Тогда <span class="math inline">\(\displaystyle \big( cf(x) \big)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = cf(x)\)</span>. Тогда <span class="math inline">\(\displaystyle \big( cf(x) \big)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p><span class="math display">\[
 \begin{split}
 \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &amp;= \\
@@ -627,7 +646,7 @@ c' = \lim_{\Delta x \to 0} \frac{0}{\Delta x} = \lim_{\Delta x \to 0} 0 = 0 \qua
 <p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = f(x) + g(x)\)</span>. Тогда</p>
 <p><span class="math display">\[
 \begin{split}
-y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &amp;\overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &amp;= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) + g(x + \Delta x) \Big) - \Big( f(x) + g(x) \Big)}{\Delta x} = \\
 &amp;= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) - f(x) \Big) + \Big( g(x + \Delta x) - g(x) \Big)}{\Delta x} = \\
 &amp;= \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x) - f(x)}{\Delta x} + \frac{g(x + \Delta x) - g(x)}{\Delta x} \right) = \\
@@ -650,7 +669,7 @@ y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - 
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = f(x) g(x)\)</span>. Тогда <span class="math inline">\(\displaystyle \Big( f(x) g(x) \Big)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = f(x) g(x)\)</span>. Тогда <span class="math inline">\(\displaystyle \Big( f(x) g(x) \Big)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Опишем также приращения функций <span class="math inline">\(f(x)\)</span> и <span class="math inline">\(g(x)\)</span> для случая, когда приращение аргумента равно <span class="math inline">\(\Delta x\)</span>:</p>
 <p><span class="math display">\[
 \begin{split}
@@ -660,7 +679,7 @@ y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - 
 \]</span></p>
 <p><span class="math display">\[
 \begin{split}
-y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &amp;\overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &amp;= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) \, g(x + \Delta x) - f(x)\, g(x)}{\Delta x} = \\
 &amp;\overset{\enclose{circle}{1} + \enclose{circle}{2}}{=}
 \frac{\big( f(x) + \Delta f(x) \big) \big( g(x) + \Delta g(x) \big) - f(x) g(x)}{\Delta x} = \\
@@ -682,7 +701,7 @@ y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - 
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(\displaystyle y(x) = \frac{f(x)}{g(x)}\)</span>. Тогда <span class="math inline">\(\displaystyle \left( \frac{f(x)}{g(x)} \right)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(\displaystyle y(x) = \frac{f(x)}{g(x)}\)</span>. Тогда <span class="math inline">\(\displaystyle \left( \frac{f(x)}{g(x)} \right)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Опишем также приращения функций <span class="math inline">\(f(x)\)</span> и <span class="math inline">\(g(x)\)</span> для случая, когда приращение аргумента равно <span class="math inline">\(\Delta x\)</span>:</p>
 <p><span class="math display">\[
 \begin{split}
@@ -692,7 +711,7 @@ y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - 
 \]</span></p>
 <p><span class="math display">\[
 \begin{split}
-y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+y'(x) &amp;\overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
 &amp;= \lim_{\Delta x \to 0} \frac{\dfrac{f(x + \Delta x)}{g(x + \Delta x)} - \dfrac{f(x)}{g(x)}}{\Delta x} = \\
 &amp;= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{g(x + \Delta x) g(x) \Delta x} = \\
 &amp;=
@@ -727,7 +746,8 @@ y'(x) &amp;\overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{y(x + \Delta x) - 
 <p>Тогда</p>
 <p><span class="math display">\[
 \begin{split}
-y'(x) = \left( \frac{f(x)}{g(x)} \right)' &amp;= \frac{1}{g^2(x)} \cdot g(x) f'(x) - f(x) g'(x) = \\
+y'(x) &amp;= \left( \frac{f(x)}{g(x)} \right)' = \\
+&amp;= \frac{1}{g^2(x)} \cdot g(x) f'(x) - f(x) g'(x) = \\
 &amp;= \frac{g(x) f'(x) - f(x) g'(x)}{g^2(x)} \quad \blacksquare
 \end{split}
 \]</span></p>
@@ -740,7 +760,11 @@ y'(x) = \left( \frac{f(x)}{g(x)} \right)' &amp;= \frac{1}{g^2(x)} \cdot g(x) f'(
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
-\left( \frac{c}{g(x)} \right)' = c \cdot \left( \frac{1}{g(x)} \right)' = c \cdot \frac{(1)' \cdot g(x) - 1 \cdot g'(x)}{g^2(x)} = c \cdot \frac{0 \cdot g(x) - g'(x)}{g^2(x)} = c \cdot \frac{-g'(x)}{g^2(x)} = - \frac{c \, g'(x)}{g^2(x)} \quad \blacksquare
+\begin{split}
+\left( \frac{c}{g(x)} \right)' &amp;= \\
+&amp;= c \cdot \left( \frac{1}{g(x)} \right)' = c \cdot \frac{(1)' \cdot g(x) - 1 \cdot g'(x)}{g^2(x)} = \\
+&amp;= c \cdot \frac{0 \cdot g(x) - g'(x)}{g^2(x)} = c \cdot \frac{-g'(x)}{g^2(x)} = - \frac{c \, g'(x)}{g^2(x)} \quad \blacksquare
+\end{split}
 \]</span></p>
 </div>
 </section>
@@ -768,7 +792,7 @@ y'(x) = \left( \frac{f(x)}{g(x)} \right)' &amp;= \frac{1}{g^2(x)} \cdot g(x) f'(
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = x^n\)</span>. Тогда <span class="math inline">\(\displaystyle (x^n)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = x^n\)</span>. Тогда <span class="math inline">\(\displaystyle (x^n)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Рассмотрим отдельно приращение функции <span class="math inline">\(\Delta y\)</span>:</p>
 <p><span class="math display">\[
 \Delta y =
@@ -860,7 +884,7 @@ nx^{n-1} \quad \blacksquare
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = a^x\)</span>. Тогда <span class="math inline">\(\displaystyle (a^x)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = a^x\)</span>. Тогда <span class="math inline">\(\displaystyle (a^x)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Рассмотрим отдельно приращение функции <span class="math inline">\(\Delta y\)</span>:</p>
 <p><span class="math display">\[
 \Delta y = a^{x + \Delta x} - a^x = a^x \left( a^{\Delta x - 1} \right)
@@ -914,7 +938,7 @@ a^x \ln a \quad \blacksquare
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = \sin x\)</span>. Тогда <span class="math inline">\(\displaystyle (\sin x)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = \sin x\)</span>. Тогда <span class="math inline">\(\displaystyle (\sin x)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Рассмотрим отдельно приращение функции <span class="math inline">\(\Delta y\)</span>:</p>
 <p><span class="math display">\[
 \begin{split}
@@ -965,7 +989,7 @@ a^x \ln a \quad \blacksquare
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = \cos x\)</span>. Тогда <span class="math inline">\(\displaystyle (\cos x)' = y'(x) \overset{\text{def}}{=}\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
+<p><span class="proof-title"><em>Доказательство</em>. </span>Пусть <span class="math inline">\(y(x) = \cos x\)</span>. Тогда <span class="math inline">\(\displaystyle (\cos x)' = y'(x) \overset{\text{def}}{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}\)</span>.</p>
 <p>Рассмотрим отдельно приращение функции <span class="math inline">\(\Delta y\)</span>:</p>
 <p><span class="math display">\[
 \begin{split}
@@ -1249,8 +1273,8 @@ a^x \ln a \quad \blacksquare
 <p><strong>Способ 1 (строго говоря, справедлив для <span class="math inline">\(\alpha &lt; 90^\circ\)</span>).</strong> Рассмотрим прямоугольный треугольник с катетами <span class="math inline">\(a\)</span> и <span class="math inline">\(b\)</span> и гипотенузой <span class="math inline">\(c\)</span>. Пусть <span class="math inline">\(a\)</span> есть катет, противолежащий углу <span class="math inline">\(\alpha\)</span>. Тогда</p>
 <p><span class="math display">\[
 \begin{split}
-\sin \alpha &amp;\overset{\text{def}}{=}\frac{a}{c} \Rightarrow a = c \sin \alpha \\
-\cos \alpha &amp;\overset{\text{def}}{=}\frac{b}{c} \Rightarrow b = c \cos \alpha
+\sin \alpha &amp;\overset{\text{def}}{=} \frac{a}{c} \Rightarrow a = c \sin \alpha \\
+\cos \alpha &amp;\overset{\text{def}}{=} \frac{b}{c} \Rightarrow b = c \cos \alpha
 \end{split}
 \]</span></p>
 <p>По теореме Пифагора <span class="math inline">\(a^2 + b^2 = c^2\)</span>. Следовательно,</p>
@@ -1384,10 +1408,10 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 </div>
 <p>Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span>. Отложим на прямой <span class="math inline">\(a_3\)</span> отрезок <span class="math inline">\(OA\)</span>. Из точки <span class="math inline">\(A\)</span> опустим перпендикуляр <span class="math inline">\(AB\)</span> на прямую <span class="math inline">\(a_2\)</span>. Получим <span class="math inline">\(\triangle AOB\)</span>, в котором <span class="math inline">\(\angle ABO = 90^\circ\)</span>. Так как <em>значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, положим <span class="math inline">\(OA = 1\)</span>. Из точки <span class="math inline">\(B\)</span> опустим перпендикуляр <span class="math inline">\(BC\)</span> на прямую <span class="math inline">\(a_1\)</span>. Получим <span class="math inline">\(\triangle BOC\)</span>, в котором <span class="math inline">\(\angle BCO = 90^\circ\)</span> (<a href="#fig-sin-cos-of-sum-draw-triangles" class="quarto-xref">Иллюстрация&nbsp;<span>J.2</span></a>). Сразу заметим, что</p>
 <p><span class="math display">\[
-\sin \beta \overset{\text{def}}{=}\frac{AB}{OA} = \frac{AB}{1} = AB
+\sin \beta \overset{\text{def}}{=} \frac{AB}{OA} = \frac{AB}{1} = AB
 \]</span></p>
 <p><span class="math display">\[
-\cos \beta \overset{\text{def}}{=}\frac{OB}{OA} = \frac{OB}{1} = OB
+\cos \beta \overset{\text{def}}{=} \frac{OB}{OA} = \frac{OB}{1} = OB
 \]</span></p>
 <div id="fig-sin-cos-of-sum-draw-triangles" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1414,10 +1438,10 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 </div>
 <p>Рассмотрим образовавшийся <span class="math inline">\(\triangle DAO\)</span>. По построению <span class="math inline">\(\angle ODA = 90^\circ\)</span>, следовательно <span class="math inline">\(\triangle DAO\)</span> — прямоугольный, а <span class="math inline">\(AO\)</span> — его гипотенуза. Так как <span class="math inline">\(AO = OA = 1\)</span>, имеем</p>
 <p><span id="eq-sin-DO"><span class="math display">\[
-\sin (\alpha + \beta) \overset{\text{def}}{=}\frac{DO}{AO} = \frac{DO}{1} = DO
+\sin (\alpha + \beta) \overset{\text{def}}{=} \frac{DO}{AO} = \frac{DO}{1} = DO
 \tag{J.3}\]</span></span></p>
 <p><span id="eq-cos-DA"><span class="math display">\[
-\cos (\alpha + \beta) \overset{\text{def}}{=}\frac{DA}{AO} = \frac{DA}{1} = DA
+\cos (\alpha + \beta) \overset{\text{def}}{=} \frac{DA}{AO} = \frac{DA}{1} = DA
 \tag{J.4}\]</span></span></p>
 <div id="fig-sin-cos-of-sum-get-trigs" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1468,17 +1492,17 @@ OC &amp;= DA + AE \Rightarrow DA = OC - AE
 <p>Для завершения доказательства необходимо выразить отрезки <span class="math inline">\(CB\)</span>, <span class="math inline">\(BE\)</span>, <span class="math inline">\(OC\)</span> и <span class="math inline">\(AE\)</span> через тригонометрические функции углов <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span>.</p>
 <p>Рассмотрим <span class="math inline">\(\triangle BOC\)</span>. Его <span class="math inline">\(\angle BCO = 90^\circ\)</span>, а <span class="math inline">\(\angle BOC = \alpha\)</span>. Тогда</p>
 <p><span class="math display">\[
-\sin \alpha \overset{\text{def}}{=}\frac{CB}{OB} \Rightarrow CB = \sin \alpha \cdot OB = \sin \alpha \cos \beta
+\sin \alpha \overset{\text{def}}{=} \frac{CB}{OB} \Rightarrow CB = \sin \alpha \cdot OB = \sin \alpha \cos \beta
 \]</span></p>
 <p><span class="math display">\[
-\cos \alpha \overset{\text{def}}{=}\frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
+\cos \alpha \overset{\text{def}}{=} \frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
 \]</span></p>
 <p>Из <span class="math inline">\(\triangle ABE\)</span>, в котором <span class="math inline">\(\angle AEB = 90^\circ\)</span>, а <span class="math inline">\(\angle ABE = \alpha\)</span> (<a href="#eq-ABE-alpha" class="quarto-xref"><span>J.5</span></a>) получаем, что</p>
 <p><span class="math display">\[
-\sin \alpha \overset{\text{def}}{=}\frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
+\sin \alpha \overset{\text{def}}{=} \frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
 \]</span></p>
 <p><span class="math display">\[
-\cos \alpha \overset{\text{def}}{=}\frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
+\cos \alpha \overset{\text{def}}{=} \frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
 \]</span></p>
 <div id="fig-sin-cos-of-sum-full" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1912,12 +1936,12 @@ DA = OC - AE &amp;\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \
 <section id="appendix-other-math-trigids-proof-sum-to-prod" class="level3" data-number="J.4.9">
 <h3 data-number="J.4.9" class="anchored" data-anchor-id="appendix-other-math-trigids-proof-sum-to-prod"><span class="header-section-number">J.4.9</span> Преобразование суммы в произведение</h3>
 <div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>В доказательствах тождеств в этого раздела <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span> представляют как сумму и разность некоторых <span class="math inline">\(\varphi\)</span> и <span class="math inline">\(\psi\)</span> чтобы было возможно использовать тождества <a href="#eq-sin-of-sum" class="quarto-xref"><span>J.1</span></a>, <a href="#cor-sin-of-diff" class="quarto-xref"><span>J.13</span></a>, <a href="#eq-cos-of-sum" class="quarto-xref"><span>J.2</span></a> и <a href="#cor-cos-of-diff" class="quarto-xref"><span>J.14</span></a>, то есть <span class="math inline">\(\alpha = \varphi+ \psi\)</span> и <span class="math inline">\(\beta = \varphi- \psi\)</span>.</p>
+<p><span class="proof-title"><em>Замечание</em>. </span>В доказательствах тождеств в этого раздела <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\beta\)</span> представляют как сумму и разность некоторых <span class="math inline">\(\phi\)</span> и <span class="math inline">\(\psi\)</span> чтобы было возможно использовать тождества <a href="#eq-sin-of-sum" class="quarto-xref"><span>J.1</span></a>, <a href="#cor-sin-of-diff" class="quarto-xref"><span>J.13</span></a>, <a href="#eq-cos-of-sum" class="quarto-xref"><span>J.2</span></a> и <a href="#cor-cos-of-diff" class="quarto-xref"><span>J.14</span></a>, то есть <span class="math inline">\(\alpha = \phi + \psi\)</span> и <span class="math inline">\(\beta = \phi - \psi\)</span>.</p>
 <p>При таком представлении получается, что</p>
 <p><span class="math display">\[
 \begin{split}
-\alpha + \beta &amp;= (\varphi+ \psi) + (\varphi- \psi) = 2 \varphi\Rightarrow \varphi= \frac{\alpha + \beta}{2} \\
-\alpha - \beta &amp;= (\varphi+ \psi) - (\varphi- \psi) = 2 \psi \Rightarrow \psi = \frac{\alpha - \beta}{2} \\
+\alpha + \beta &amp;= (\phi + \psi) + (\phi - \psi) = 2 \phi \Rightarrow \phi = \frac{\alpha + \beta}{2} \\
+\alpha - \beta &amp;= (\phi + \psi) - (\phi - \psi) = 2 \psi \Rightarrow \psi = \frac{\alpha - \beta}{2} \\
 \end{split}
 \]</span></p>
 </div>
@@ -1929,13 +1953,13 @@ DA = OC - AE &amp;\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
 \begin{split}
-\sin \alpha + \sin \beta &amp;= \sin (\varphi+ \psi) + \sin (\varphi- \psi) = \\
+\sin \alpha + \sin \beta &amp;= \sin (\phi + \psi) + \sin (\phi - \psi) = \\
 &amp;=
-\sin \varphi\cos \psi +
-\cancel{\cos \varphi\sin \psi} +
-\sin \varphi\cos \psi -
-\cancel{\cos \varphi\sin \psi} = \\
-&amp;= 2 \sin \varphi\cos \psi = 2 \sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \quad \blacksquare
+\sin \phi \cos \psi +
+\cancel{\cos \phi \sin \psi} +
+\sin \phi \cos \psi -
+\cancel{\cos \phi \sin \psi} = \\
+&amp;= 2 \sin \phi \cos \psi = 2 \sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \quad \blacksquare
 \end{split}
 \]</span></p>
 </div>
@@ -1947,13 +1971,13 @@ DA = OC - AE &amp;\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
 \begin{split}
-\sin \alpha - \sin \beta &amp;= \sin (\varphi+ \psi) - \sin (\varphi- \psi) = \\
+\sin \alpha - \sin \beta &amp;= \sin (\phi + \psi) - \sin (\phi - \psi) = \\
 &amp;=
-\cancel{\sin \varphi\cos \psi} +
-\cos \varphi\sin \psi -
-\cancel{\sin \varphi\cos \psi} +
-\cos \varphi\sin \psi = \\
-&amp;= 2 \cos \varphi\sin \psi = 2 \cos \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} = \\
+\cancel{\sin \phi \cos \psi} +
+\cos \phi \sin \psi -
+\cancel{\sin \phi \cos \psi} +
+\cos \phi \sin \psi = \\
+&amp;= 2 \cos \phi \sin \psi = 2 \cos \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} = \\
 &amp;= 2  \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2} \quad \blacksquare
 \end{split}
 \]</span></p>
@@ -1972,13 +1996,13 @@ DA = OC - AE &amp;\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
 \begin{split}
-\cos \alpha + \cos \beta &amp;= \cos (\varphi+ \psi) + \cos (\varphi- \psi) = \\
+\cos \alpha + \cos \beta &amp;= \cos (\phi + \psi) + \cos (\phi - \psi) = \\
 &amp;=
-\cos \varphi\cos \psi -
-\cancel{\sin \varphi\sin \psi} +
-\cos \varphi\cos \psi +
-\cancel{\sin \varphi\sin \psi} = \\
-&amp;= 2 \cos \varphi\cos \psi = 2 \cos \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \quad \blacksquare
+\cos \phi \cos \psi -
+\cancel{\sin \phi \sin \psi} +
+\cos \phi \cos \psi +
+\cancel{\sin \phi \sin \psi} = \\
+&amp;= 2 \cos \phi \cos \psi = 2 \cos \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \quad \blacksquare
 \end{split}
 \]</span></p>
 </div>
@@ -1990,13 +2014,13 @@ DA = OC - AE &amp;\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
 \begin{split}
-\cos \alpha - \cos \beta &amp;= \cos (\varphi+ \psi) - \cos (\varphi- \psi) = \\
+\cos \alpha - \cos \beta &amp;= \cos (\phi + \psi) - \cos (\phi - \psi) = \\
 &amp;=
-\cancel{\cos \varphi\cos \psi} -
-\sin \varphi\sin \psi -
-\cancel{\cos \varphi\cos \psi} -
-\sin \varphi\sin \psi = \\
-&amp;= -2 \sin \varphi\sin \psi = -2 \sin \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} \quad \blacksquare
+\cancel{\cos \phi \cos \psi} -
+\sin \phi \sin \psi -
+\cancel{\cos \phi \cos \psi} -
+\sin \phi \sin \psi = \\
+&amp;= -2 \sin \phi \sin \psi = -2 \sin \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} \quad \blacksquare
 \end{split}
 \]</span></p>
 </div>

@@ -427,8 +427,21 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Методы анализа данных</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Методы анализа данных</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -519,8 +532,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -603,7 +622,7 @@ window.Quarto = {
 </div>
 <p>Что вообще такое тип данных? Определение можно дать много разных, но все они сводятся к следующей идее:</p>
 <div id="def-datatype" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 3.1</strong></span> <strong>Тип данных</strong> — это характеристика данных, которая определяет <strong>допустимые значения</strong>, которые могут принимать данные этого типа, и <strong>допустимые операции</strong> над данными этого типа <span class="citation" data-cites="iso24765-2017">(<a href="references.html#ref-iso24765-2017" role="doc-biblioref">ISO/IEC/IEEE, 2017</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Определение 3.1</strong></span> <strong>Тип данных</strong> — это характеристика данных, которая определяет <strong>допустимые значения</strong>, которые могут принимать данные этого типа, и <strong>допустимые операции</strong> над данными этого типа <span class="citation" data-cites="iso24765-2017">(<a href="#ref-iso24765-2017" role="doc-biblioref">ISO/IEC/IEEE, 2017</a>)</span>.</p>
 </div>
 <div class="quote small">
 <p>— Это, конечно, хорошо. Но что это означает на деле? <br> — Сейчас разберемся, рассмотрев типы данных в R.</p>
@@ -772,7 +791,7 @@ window.Quarto = {
 <div class="lab-middle">
 
 </div>
-<p>Дотошный читатель, имевший опыт работы с другими языками программирования, мог озадачиться, увидев <a href="#lst-class-of-2" class="quarto-xref">Код&nbsp;<span>3.1</span></a>. Отчасти справедливо, так как <span class="math inline">\(2\)</span> — это целое число, а практически во всех языках программирования под целые числа выделяется отдельный тип данных<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Дотошный читатель, имевший опыт работы с другими языками программирования, мог озадачиться, увидев <a href="#lst-class-of-2" class="quarto-xref">Код&nbsp;<span class="quarto-unresolved-ref">lst-class-of-2</span></a>. Отчасти справедливо, так как <span class="math inline">\(2\)</span> — это целое число, а практически во всех языках программирования под целые числа выделяется отдельный тип данных<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>В R такой тип данных тоже есть, и называется он классически <code>integer</code>. Однако <strong>по умолчанию все числа рассматриваются в R как <code>numeric</code>.</strong> Иначе говоря, запись <code>2</code> рассматривается как <code>2.0</code>. Это довольно удобно для аналитических задач, где у нас целые числа появляются не то чтобы часто.</p>
 <p>Тем не менее, создать целое число всё же можно — для этого надо указать, что нам нужно именно целое число с помощью буквы <code>L</code> сразу после числа<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Например, чтобы положить в переменную целое число <span class="math inline">\(2\)</span>, нужно записать так:</p>
 <div class="cell">
@@ -875,7 +894,7 @@ window.Quarto = {
 <div class="lab-guru">
 
 </div>
-<p>Вообще говоря, термин <code>numeric</code> внутри самого R используется непоследовательно <span class="citation" data-cites="wickham-advr-2019">(см. <a href="references.html#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019, sec. 12.3.1</a>)</span>. С одной стороны, <code>numeric</code> используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу <code>double</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, который также существует, но достаётся с помощью функции <code>typeof()</code>, которая «более низкоуровневая»:</p>
+<p>Вообще говоря, термин <code>numeric</code> внутри самого R используется непоследовательно <span class="citation" data-cites="wickham-advr-2019">(см. <a href="#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019, sec. 12.3.1</a>)</span>. С одной стороны, <code>numeric</code> используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу <code>double</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, который также существует, но достаётся с помощью функции <code>typeof()</code>, которая «более низкоуровневая»:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -998,7 +1017,7 @@ window.Quarto = {
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Мы видим, что у логического типа данных всего два возможных значения, в то время как у числового типа данных их было бесконечно много. Это и есть «допустимые значения», упомянутые в определении <a href="#def-datatype" class="quarto-xref"><span>3.1</span></a>.</p>
+<p>Мы видим, что у логического типа данных всего два возможных значения, в то время как у числового типа данных их было бесконечно много. Это и есть «допустимые значения», упомянутые в определении <a href="#def-datatype" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">def-datatype</span></a>.</p>
 </blockquote>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1304,7 +1323,7 @@ Case sensitivity
 </section>
 <section id="приведение-типов" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="приведение-типов"><span class="header-section-number">3.6</span> Приведение типов</h2>
-<p><a href="r-intro.html#lst-logic-vs-arithm" class="quarto-xref">Код&nbsp;<span>2.5</span></a></p>
+<p><a href="#lst-logic-vs-arithm" class="quarto-xref">Код&nbsp;<span class="quarto-unresolved-ref">lst-logic-vs-arithm</span></a></p>
 </section>
 <section id="специальные-литералы" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="специальные-литералы"><span class="header-section-number">3.7</span> Специальные литералы</h2>
@@ -1380,7 +1399,7 @@ loaded via a namespace (and not attached):
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-iso24765-2017" class="csl-entry" role="listitem">
 ISO/IEC/IEEE. (2017). <em>Systems and software engineering — vocabulary</em> (<span>ISO/IEC/IEEE 24765:2017</span>). International Organization for Standardization. <a href="https://www.iso.org/standard/64973.html">https://www.iso.org/standard/64973.html</a>
 </div>
@@ -1395,7 +1414,7 @@ Wickham, H. (2019). <em>Advanced r, second edition (2nd ed.)</em>. Chapman; Hall
 <hr>
 <ol>
 <li id="fn1"><p>Это связано с различиями в способе хранения целых чисел и чисел с плавающей точкой. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Литерал <code>L</code> обозначает, что это <code>long integer</code> <span class="citation" data-cites="wickham-advr-2019">(<a href="references.html#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019</a>)</span>. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Литерал <code>L</code> обозначает, что это <code>long integer</code> <span class="citation" data-cites="wickham-advr-2019">(<a href="#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019</a>)</span>. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Это наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Кто это такие, описывается в <a href="./appendix-numbers.html#appendix-numbers-c">приложении</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Другое название этого типа — <code>boolean</code>. В данному случае мы имеем дело с полными синонимами.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

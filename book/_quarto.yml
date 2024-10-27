@@ -53,6 +53,8 @@ book:
         - prob-hyptesting.qmd
         - prob-falsepositive.qmd
     - part: part-andan.qmd
+      chapters:
+        - andan-cor.qmd
     - common-outro.qmd
     - references.qmd
   appendices:

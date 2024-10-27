@@ -14,7 +14,7 @@ theme_set(theme_bw())
 ### Определения {#appendix-formulas-power-def}
 
 $$
-a^n \defin{=} \prod_{i=1}^n a, \, a \in \setR, \, b \in \setNstar
+a^n \defin{=} \prod_{i=1}^n a, \, a \in \setR, \, n \in \setNstar
 $${#eq-frmapp-power-n-def}
 
 $$
@@ -22,7 +22,7 @@ a^{-n} \defin{=} \frac{1}{a^n}, \, a \neq 0
 $${#eq-frmapp-power-neq-def}
 
 $$
-\sqrt[n]a \defin{=} b \Leftrightarrow b^n = a, a \geq 0, \, n \in \setNstar
+\sqrt[n]a \defin{=} b \Leftrightarrow b^n = a, \, n \in \setNstar
 $${#eq-frmapp-root-n-def}
 
 $$
@@ -37,6 +37,9 @@ $$
 a^{\frac{p}{q}} \defin{=} \sqrt[q]{a^p}
 $${#eq-frmapp-power-frac-def}
 
+$$
+a^0 \defin{=} 1
+$${#eq-frmapp-power-zero-def}
 
 ### Свойства {#appendix-formulas-power-identities}
 
@@ -46,7 +49,6 @@ $${#eq-frmapp-power-frac-def}
 $$a^n \cdot a^m = a^{n+m}$${#eq-frmapp-power-prod}
 $$\frac{a^n}{a^m} = a^{n-m}$${#eq-frmapp-power-frac}
 $$(a^n)^m = a^{nm}$${#eq-frmapp-power-pow}
-$$a^0 = 1$${#eq-frmapp-power-zero}
 $$(a \cdot b)^n = a^n \cdot b^n$${#eq-frmapp-power-prod-pow}
 $$\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$${#eq-frmapp-power-frac-pow}
 :::
@@ -84,16 +86,20 @@ $$\log_{c^b} a = \frac{1}{b} \log_c a$${#eq-frmapp-log-basepow}
 
 $$
 \forall a \in \setR \quad
-|a| = 
+|a| \defin{=} 
 \begin{cases}
 a, &a \geq 0 \\
 -a, &a < 0
 \end{cases}
+$${#eq-frmapp-module-def}
+
 $$
+|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]
+$${#eq-frmapp-module-leq}
 
-$$|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]$$
-
-$$|x| \geq a \Rightarrow x \leq -a \vee x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)$$
+$$
+|x| \geq a \Rightarrow x \leq -a \vee x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)
+$${#eq-frmapp-module-leq}
 
 
 ## Предел {#appendox-formulas-lim}
