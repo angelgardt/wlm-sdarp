@@ -143,6 +143,42 @@ b_1 &= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
 \end{split}
 $$
 
+### TSS = ESS + RSS?
+
+:::{.lab-guru}
+:::
+
+$$
+\begin{split}
+\TSS &= \sum_{i=1}^n (y_i - \overline Y)^2 = \\
+&= \sum_{i=1}^n (y_i - \hat y + \hat y - \overline Y)^2 = \\
+&= \sum_{i=1}^n \big( (y_i - \hat y_i) + (\hat y_i - \overline Y) \big)^2 = \\
+&= \sum_{i=1}^n (y_i - \hat y_i) + \sum_{i=1}^n (\hat y_i - \overline Y) + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = \\
+&= \RSS + \ESS + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \bar y)
+\end{split}
+$$
+
+
+Окей, осталось доказать, что $2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = 0$, и все будет найс.
+
+Так как $b_0 = \overline Y - b_1 \overline X$, а $b_1 = \dfrac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}$ имеем
+
+$$
+\begin{split}
+\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) 
+&= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \overline Y) = \\
+&= \sum_{i=1}^n (y_i - \overline Y + b_1 \overline X - b_1x_i) (\overline Y - b_1 \overline X + b_1 x_i - \overline Y) = \\
+&= \sum_{i=1}^n \big( (y_i - \overline Y) - b_1 (x_i - \overline X) \big) \cdot b_1 (x_i - \overline X) = \\ 
+&= \sum_{i=1}^n \big( b_1 (x_i - \overline X) (y_i - \overline Y) - b_1^2 (x_i - \overline X)^2 \big) = \\
+&= \sum_{i=1}^n b_1 (x_i - \overline X) (y_i - \overline Y) - \sum_{i=1}^n b_1^2 (x_i - \overline X)^2 = \\
+&= b_1 \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) - b_1^2 \sum_{i=1}^n (x_i - \overline X) = \\
+&= \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2 \cdot \cancel{ \sum_{i=1}^n (x_i - \overline X)^2} }{\Big( \sum_{i=1}^n (x_i - \overline X)^2\Big)^\cancel{2}} = \\
+& = \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} = 0
+\end{split}
+$$
+
+При доказательстве соотношения мы использовали интерсепт $b_0$ --- соотношение справедливо для моделей с интерсептом. Если в модели интерсепта нет, то оно не выполняется.
+
 
 
 ***

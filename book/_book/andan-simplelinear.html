@@ -543,6 +543,7 @@ window.Quarto = {
   <li><a href="#andan-simplelinear-solve-deriv" id="toc-andan-simplelinear-solve-deriv" class="nav-link active" data-scroll-target="#andan-simplelinear-solve-deriv"><span class="header-section-number">18.0.1</span> Аналитическое вычисление коэффициентов</a></li>
   <li><a href="#andan-simplelinear-solve-matrix" id="toc-andan-simplelinear-solve-matrix" class="nav-link" data-scroll-target="#andan-simplelinear-solve-matrix"><span class="header-section-number">18.0.2</span> Матричное вычисление коэффициентов</a></li>
   <li><a href="#andan-simplelinear-solve-cor" id="toc-andan-simplelinear-solve-cor" class="nav-link" data-scroll-target="#andan-simplelinear-solve-cor"><span class="header-section-number">18.0.3</span> Угловой коэффициент и коэффициент корреляции</a></li>
+  <li><a href="#tss-ess-rss" id="toc-tss-ess-rss" class="nav-link" data-scroll-target="#tss-ess-rss"><span class="header-section-number">18.0.4</span> TSS = ESS + RSS?</a></li>
   </ul>
 </nav>
     </div>
@@ -569,6 +570,7 @@ window.Quarto = {
 <!--- Trig --->
 <!--- Stats --->
 <!--- Letters --->
+<!--- Linear Models --->
 <div class="intro">
 <p>Вступление</p>
 </div>
@@ -690,6 +692,37 @@ b_1 &amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
 &amp;= \frac{\overline {XY} - \overline X \cdot \overline Y}{\sigma_X}
 \end{split}
 \]</span></p>
+</section>
+<section id="tss-ess-rss" class="level3" data-number="18.0.4">
+<h3 data-number="18.0.4" class="anchored" data-anchor-id="tss-ess-rss"><span class="header-section-number">18.0.4</span> TSS = ESS + RSS?</h3>
+<div class="lab-guru">
+
+</div>
+<p><span class="math display">\[
+\begin{split}
+\text{TSS}&amp;= \sum_{i=1}^n (y_i - \overline Y)^2 = \\
+&amp;= \sum_{i=1}^n (y_i - \hat y + \hat y - \overline Y)^2 = \\
+&amp;= \sum_{i=1}^n \big( (y_i - \hat y_i) + (\hat y_i - \overline Y) \big)^2 = \\
+&amp;= \sum_{i=1}^n (y_i - \hat y_i) + \sum_{i=1}^n (\hat y_i - \overline Y) + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = \\
+&amp;= \text{RSS}+ \text{ESS}+ 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \bar y)
+\end{split}
+\]</span></p>
+<p>Окей, осталось доказать, что <span class="math inline">\(2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = 0\)</span>, и все будет найс.</p>
+<p>Так как <span class="math inline">\(b_0 = \overline Y - b_1 \overline X\)</span>, а <span class="math inline">\(b_1 = \dfrac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}\)</span> имеем</p>
+<p><span class="math display">\[
+\begin{split}
+\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y)
+&amp;= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \overline Y) = \\
+&amp;= \sum_{i=1}^n (y_i - \overline Y + b_1 \overline X - b_1x_i) (\overline Y - b_1 \overline X + b_1 x_i - \overline Y) = \\
+&amp;= \sum_{i=1}^n \big( (y_i - \overline Y) - b_1 (x_i - \overline X) \big) \cdot b_1 (x_i - \overline X) = \\
+&amp;= \sum_{i=1}^n \big( b_1 (x_i - \overline X) (y_i - \overline Y) - b_1^2 (x_i - \overline X)^2 \big) = \\
+&amp;= \sum_{i=1}^n b_1 (x_i - \overline X) (y_i - \overline Y) - \sum_{i=1}^n b_1^2 (x_i - \overline X)^2 = \\
+&amp;= b_1 \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) - b_1^2 \sum_{i=1}^n (x_i - \overline X) = \\
+&amp;= \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2 \cdot \cancel{ \sum_{i=1}^n (x_i - \overline X)^2} }{\Big( \sum_{i=1}^n (x_i - \overline X)^2\Big)^\cancel{2}} = \\
+&amp; = \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} = 0
+\end{split}
+\]</span></p>
+<p>При доказательстве соотношения мы использовали интерсепт <span class="math inline">\(b_0\)</span> — соотношение справедливо для моделей с интерсептом. Если в модели интерсепта нет, то оно не выполняется.</p>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>

@@ -116,3 +116,9 @@
 <!--- Letters --->
 \newcommand{\vphi}{\varphi}
 \newcommand{\vepsilon}{\varepsilon}
+
+
+<!--- Linear Models --->
+\newcommand{\TSS}{\text{TSS}}
+\newcommand{\RSS}{\text{RSS}}
+\newcommand{\ESS}{\text{ESS}}
