@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./common-outro.html" rel="next">
+<link href="./andan-simplelinear.html" rel="next">
 <link href="./part-andan.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -421,6 +421,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
       </ul>
@@ -1147,7 +1153,7 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 </div>
 <p>Преобразовав <a href="#eq-cor-stand-cov" class="quarto-xref"><span>17.7</span></a> мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:</p>
 <p><span id="eq-cor-pearson-formula"><span class="math display">\[
-\text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} = r_{X, Y}
 \tag{17.8}\]</span></span></p>
 <div id="exr-cor-pearson-formula" class="theorem exercise">
 <p><span class="theorem-title"><strong>Задание 17.3</strong></span> Получите из формулы <a href="#eq-cor-stand-cov" class="quarto-xref"><span>17.7</span></a> формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>17.8</span></a>.</p>
@@ -1994,8 +2000,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./common-outro.html" class="pagination-link" aria-label="Заключение">
-        <span class="nav-page-text">Заключение</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./andan-simplelinear.html" class="pagination-link" aria-label="Простая линейная регрессия">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

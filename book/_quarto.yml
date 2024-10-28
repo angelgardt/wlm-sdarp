@@ -55,6 +55,7 @@ book:
     - part: part-andan.qmd
       chapters:
         - andan-cor.qmd
+        - andan-simplelinear.qmd
     - common-outro.qmd
     - references.qmd
   appendices:

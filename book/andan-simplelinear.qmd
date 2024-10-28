@@ -1,0 +1,158 @@
+# Простая линейная регрессия {#andan-simplelinear}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+
+### Аналитическое вычисление коэффициентов {#andan-simplelinear-solve-deriv}
+
+$$
+f(b_0, b_1) = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
+$$
+
+$$
+\begin{split}
+f(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
+f(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
+f(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
+\end{split}
+$$
+
+$$
+\begin{split}
+\frac{f(b_0, b_1)}{\partial b_0} &= 
+\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) = 
+-2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
+\frac{f(b_0, b_1)}{\partial b_1} &= 
+\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = 
+-2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
+\end{split}
+$$
+
+$$
+\begin{split}
+&\cases {
+-2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
+-2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
+} \\
+&\cases{
+\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
+\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
+} \\
+&\cases{
+\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = 0 \\
+\sum_{i=1}^n y_i x_i - \sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x^2_i = 0
+} \\
+&\cases{
+\sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = \sum_{i=1}^n y_i \\
+\sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x_i^2 = \sum_{i=1}^n y_i x_i
+} \\
+&\cases{
+n b_0 + b_1 \sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\
+b_0 \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
+}
+\end{split}
+$$
+
+$$
+\begin{split}
+b_0 &= \frac{\sum_{i=1}^n y_i}{n} - b_1 \frac{\sum_{i=1}^n x_i}{n} \\
+b_0 &= \overline Y - b_1 \overline X
+\end{split}
+$$
+
+$$
+\begin{split}
+\underline{b_1 \sum_{i=1}^n x_i^2} + 
+\overline Y \sum_{i=1}^n x_i - 
+\underline{b_1 \overline X \sum_{i=1}^n x_i} = 
+\sum_{i=1}^n x_i y_i \\
+b_1 \Big( \sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i \Big) = 
+\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i
+\end{split}
+$$
+
+$$
+\begin{split}
+b_1 &= 
+\frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}
+{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i} = 
+\frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n}}
+{ \dfrac{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i}{n}} \\
+b_1 &= \frac{\overline{XY} - \overline X \cdot \overline Y}
+{\overline{X^2} - \overline X^2} = 
+\frac{\overline{XY} - \overline X \cdot \overline Y}
+{\sigma_X^2}
+\end{split}
+$$
+
+
+
+### Матричное вычисление коэффициентов {#andan-simplelinear-solve-matrix}
+
+$$
+\vm b = (\tp{\vm X} \vm X)^{-1} \tp{\vm X} \vm y
+$$
+
+
+### Угловой коэффициент и коэффициент корреляции {#andan-simplelinear-solve-cor}
+
+$$
+b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X}
+$$
+
+Коэффициент корреляции Пирсона, как мы помним ([-@eq-cor-pearson-formula]), вычисляется как
+
+$$
+r_{X,Y} = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+$$
+
+Тогда справедливо, что
+
+$$
+\begin{split}
+b_1 &= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\cdot \frac{s_Y}{s_X} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\cdot
+\frac{\sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}}
+{\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}}} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
+\cdot
+\frac{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
+{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \boxed{ \sum_{i=1}^n (y_i - \overline Y) }} }{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
+&= \frac{\overline {XY} - \overline X \cdot \overline Y}{\sigma_X}
+\end{split}
+$$
+
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

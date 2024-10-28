@@ -395,8 +395,9 @@ $${#eq-cor-stand-cov}
 
 Преобразовав [-@eq-cor-stand-cov] мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:
 
+
 $$
-\cor (X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\cor (X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} = r_{X, Y}
 $${#eq-cor-pearson-formula}
 
 :::{#exr-cor-pearson-formula}
