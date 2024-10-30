@@ -37,6 +37,7 @@ book:
       - r-datetime.qmd
       - r-visbase.qmd
       - r-visggplot.qmd
+      - r-oop.qmd
     - part: part-math.qmd
       chapters: 
         - math-logic.qmd
