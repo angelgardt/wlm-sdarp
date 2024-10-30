@@ -74,9 +74,9 @@
 \newcommand{\Bcal}{\mathcal{B}}
 \newcommand{\prob}{\mathbb{P}}
 \newcommand{\dens}{\mathbb{p}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
+\newcommand{\expect}{\mathbb{E}\,}
+\newcommand{\disp}{\mathbb{D}\,}
+\newcommand{\var}{\text{var}\,}
 \newcommand{\cov}{\text{cov}}
 \newcommand{\cor}{\text{cor}}
 \newcommand{\se}{\text{se}}
@@ -97,13 +97,17 @@
 \newcommand{\todist}{\overset{d}{\to}}
 
 <!--- Trig --->
-\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
 \DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccsc}{arccsc}
 \DeclareMathOperator{\arsinh}{arsinh}
-\DeclareMathOperator{\arcosh}{arcoth}
+\DeclareMathOperator{\arcosh}{arcosh}
 \DeclareMathOperator{\artanh}{artanh}
 \DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
 
 <!--- Stats --->
 \newcommand{\mode}{\text{mode}}

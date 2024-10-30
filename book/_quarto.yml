@@ -40,8 +40,8 @@ book:
       chapters:
       - desc-statintro.qmd
       - desc-centaltend.qmd
-      #- desc-variation.qmd
-      #- desc-distshape.qmd
+      - desc-variation.qmd
+      - desc-distshape.qmd
       #- desc-prodmetrics.qmd
     - part: part-prob.qmd
       chapters: 
