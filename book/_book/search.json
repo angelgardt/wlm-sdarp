@@ -2208,12 +2208,12 @@
   {
     "objectID": "andan-simplelinear.html",
     "href": "andan-simplelinear.html",
-    "title": "18  Простая линейная регрессия",
+    "title": "26  Простая линейная регрессия",
     "section": "",
-    "text": "Вступление\n\n\n18.0.1 Аналитическое вычисление коэффициентов\n\\[\nf(b_0, b_1) = \\sum_{i=1}^n (y_i - \\hat y_i)^2 = \\sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \\rightarrow \\min_{b_0, b_1}\n\\]\n\\[\n\\begin{split}\nf(b_0, b_1) &= \\sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\\\\nf(b_0, b_1) &= \\sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\\\\nf(b_0, b_1) &= \\sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)\n\\end{split}\n\\]\n\\[\n\\begin{split}\n\\frac{f(b_0, b_1)}{\\partial b_0} &=\n\\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) =\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) \\\\\n\\frac{f(b_0, b_1)}{\\partial b_1} &=\n\\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) =\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) x_i\n\\end{split}\n\\]\n\\[\n\\begin{split}\n&\\cases {\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) = 0 \\\\\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) x_i = 0\n} \\\\\n&\\cases{\n\\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) = 0 \\\\\n\\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) x_i = 0\n} \\\\\n&\\cases{\n\\sum_{i=1}^n y_i - \\sum_{i=1}^n b_0 + \\sum_{i=1}^n b_1 x_i = 0 \\\\\n\\sum_{i=1}^n y_i x_i - \\sum_{i=1}^n b_0 x_i + \\sum_{i=1}^n b_1 x^2_i = 0\n} \\\\\n&\\cases{\n\\sum_{i=1}^n b_0 + \\sum_{i=1}^n b_1 x_i = \\sum_{i=1}^n y_i \\\\\n\\sum_{i=1}^n b_0 x_i + \\sum_{i=1}^n b_1 x_i^2 = \\sum_{i=1}^n y_i x_i\n} \\\\\n&\\cases{\nn b_0 + b_1 \\sum_{i=1}^n x_i = \\sum_{i=1}^n y_i \\\\\nb_0 \\sum_{i=1}^n x_i + b_1 \\sum_{i=1}^n x^2_i = \\sum_{i=1}^n y_i x_i\n}\n\\end{split}\n\\]\n\\[\n\\begin{split}\nb_0 &= \\frac{\\sum_{i=1}^n y_i}{n} - b_1 \\frac{\\sum_{i=1}^n x_i}{n} \\\\\nb_0 &= \\overline Y - b_1 \\overline X\n\\end{split}\n\\]\n\\[\n\\begin{split}\n\\underline{b_1 \\sum_{i=1}^n x_i^2} +\n\\overline Y \\sum_{i=1}^n x_i -\n\\underline{b_1 \\overline X \\sum_{i=1}^n x_i} =\n\\sum_{i=1}^n x_i y_i \\\\\nb_1 \\Big( \\sum_{i=1}^n x_i^2 - \\overline X \\sum_{i=1}^n x_i \\Big) =\n\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i\n\\end{split}\n\\]\n\\[\n\\begin{split}\nb_1 &=\n\\frac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}\n{\\sum_{i=1}^n x_i^2 - \\overline X \\sum_{i=1}^n x_i} =\n\\frac{ \\dfrac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}{n}}\n{ \\dfrac{\\sum_{i=1}^n x_i^2 - \\overline X \\sum_{i=1}^n x_i}{n}} \\\\\nb_1 &= \\frac{\\overline{XY} - \\overline X \\cdot \\overline Y}\n{\\overline{X^2} - \\overline X^2} =\n\\frac{\\overline{XY} - \\overline X \\cdot \\overline Y}\n{\\sigma_X^2}\n\\end{split}\n\\]\n\n\n18.0.2 Матричное вычисление коэффициентов\n\\[\n\\mathbf{b} = ({\\mathbf{X}}\\!^{\\mathsf{T}} \\mathbf{X})^{-1} {\\mathbf{X}}\\!^{\\mathsf{T}} \\mathbf{y}\n\\]\n\n\n18.0.3 Угловой коэффициент и коэффициент корреляции\n\\[\nb_1 = r_{X,Y} \\cdot \\frac{s_Y}{s_X}\n\\]\nКоэффициент корреляции Пирсона, как мы помним (17.8), вычисляется как\n\\[\nr_{X,Y} = \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2}}\n\\]\nТогда справедливо, что\n\\[\n\\begin{split}\nb_1 &= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}\n{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2}}\n\\cdot \\frac{s_Y}{s_X} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}\n{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2}}\n\\cdot\n\\frac{\\sqrt{\\dfrac{\\sum_{i=1}^n (y_i - \\overline Y)^2}{n-1}}}\n{\\sqrt{\\dfrac{\\sum_{i=1}^n (x_i - \\overline X)^2}{n-1}}} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}\n{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\cancel{ \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2} }}\n\\cdot\n\\frac{ \\cancel{ \\sqrt{\\dfrac{1}{n-1}} } \\cdot \\cancel{ \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2} }}\n{ \\cancel{ \\sqrt{\\dfrac{1}{n-1}} } \\cdot \\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2}} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n \\big( x_i (y_i - \\overline Y) - \\overline X (y_i - \\overline Y) \\big)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i (y_i - \\overline Y) - \\sum_{i=1}^n \\overline X (y_i - \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i (y_i - \\overline Y) - \\overline X \\overset{=0}{ \\enclose{box}{ \\sum_{i=1}^n (y_i - \\overline Y) }} }{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i (y_i - \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i y_i - x_i \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{ \\dfrac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}{n} }{ \\dfrac{\\sum_{i=1}^n (x_i - \\overline X)^2}{n} } = \\\\\n&= \\frac{\\overline {XY} - \\overline X \\cdot \\overline Y}{\\sigma_X}\n\\end{split}\n\\]\n\n\n18.0.4 TSS = ESS + RSS?\n\n\n\n\\[\n\\begin{split}\n\\text{TSS}&= \\sum_{i=1}^n (y_i - \\overline Y)^2 = \\\\\n&= \\sum_{i=1}^n (y_i - \\hat y + \\hat y - \\overline Y)^2 = \\\\\n&= \\sum_{i=1}^n \\big( (y_i - \\hat y_i) + (\\hat y_i - \\overline Y) \\big)^2 = \\\\\n&= \\sum_{i=1}^n (y_i - \\hat y_i) + \\sum_{i=1}^n (\\hat y_i - \\overline Y) + 2 \\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\overline Y) = \\\\\n&= \\text{RSS}+ \\text{ESS}+ 2 \\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\bar y)\n\\end{split}\n\\]\nОкей, осталось доказать, что \\(2 \\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\overline Y) = 0\\), и все будет найс.\nТак как \\(b_0 = \\overline Y - b_1 \\overline X\\), а \\(b_1 = \\dfrac{\\sum_{i=1}^n (x_i - \\bar x)(y_i - \\bar y)}{\\sum_{i=1}^n (x_i - \\bar x)^2}\\) имеем\n\\[\n\\begin{split}\n\\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\overline Y)\n&= \\sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \\overline Y) = \\\\\n&= \\sum_{i=1}^n (y_i - \\overline Y + b_1 \\overline X - b_1x_i) (\\overline Y - b_1 \\overline X + b_1 x_i - \\overline Y) = \\\\\n&= \\sum_{i=1}^n \\big( (y_i - \\overline Y) - b_1 (x_i - \\overline X) \\big) \\cdot b_1 (x_i - \\overline X) = \\\\\n&= \\sum_{i=1}^n \\big( b_1 (x_i - \\overline X) (y_i - \\overline Y) - b_1^2 (x_i - \\overline X)^2 \\big) = \\\\\n&= \\sum_{i=1}^n b_1 (x_i - \\overline X) (y_i - \\overline Y) - \\sum_{i=1}^n b_1^2 (x_i - \\overline X)^2 = \\\\\n&= b_1 \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) - b_1^2 \\sum_{i=1}^n (x_i - \\overline X) = \\\\\n&= \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2}{\\sum_{i=1}^n (x_i - \\overline X)^2} - \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2 \\cdot \\cancel{ \\sum_{i=1}^n (x_i - \\overline X)^2} }{\\Big( \\sum_{i=1}^n (x_i - \\overline X)^2\\Big)^\\cancel{2}} = \\\\\n& = \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2}{\\sum_{i=1}^n (x_i - \\overline X)^2} - \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2}{\\sum_{i=1}^n (x_i - \\overline X)^2} = 0\n\\end{split}\n\\]\nПри доказательстве соотношения мы использовали интерсепт \\(b_0\\) — соотношение справедливо для моделей с интерсептом. Если в модели интерсепта нет, то оно не выполняется.\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "text": "Вступление\n\n\n26.0.1 Аналитическое вычисление коэффициентов\n\\[\nf(b_0, b_1) = \\sum_{i=1}^n (y_i - \\hat y_i)^2 = \\sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \\rightarrow \\min_{b_0, b_1}\n\\]\n\\[\n\\begin{split}\nf(b_0, b_1) &= \\sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\\\\nf(b_0, b_1) &= \\sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\\\\nf(b_0, b_1) &= \\sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)\n\\end{split}\n\\]\n\\[\n\\begin{split}\n\\frac{f(b_0, b_1)}{\\partial b_0} &=\n\\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) =\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) \\\\\n\\frac{f(b_0, b_1)}{\\partial b_1} &=\n\\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) =\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) x_i\n\\end{split}\n\\]\n\\[\n\\begin{split}\n&\\cases {\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) = 0 \\\\\n-2 \\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) x_i = 0\n} \\\\\n&\\cases{\n\\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) = 0 \\\\\n\\sum_{i=1}^n \\big( y_i - (b_0 + b_1 x_i) \\big) x_i = 0\n} \\\\\n&\\cases{\n\\sum_{i=1}^n y_i - \\sum_{i=1}^n b_0 + \\sum_{i=1}^n b_1 x_i = 0 \\\\\n\\sum_{i=1}^n y_i x_i - \\sum_{i=1}^n b_0 x_i + \\sum_{i=1}^n b_1 x^2_i = 0\n} \\\\\n&\\cases{\n\\sum_{i=1}^n b_0 + \\sum_{i=1}^n b_1 x_i = \\sum_{i=1}^n y_i \\\\\n\\sum_{i=1}^n b_0 x_i + \\sum_{i=1}^n b_1 x_i^2 = \\sum_{i=1}^n y_i x_i\n} \\\\\n&\\cases{\nn b_0 + b_1 \\sum_{i=1}^n x_i = \\sum_{i=1}^n y_i \\\\\nb_0 \\sum_{i=1}^n x_i + b_1 \\sum_{i=1}^n x^2_i = \\sum_{i=1}^n y_i x_i\n}\n\\end{split}\n\\]\n\\[\n\\begin{split}\nb_0 &= \\frac{\\sum_{i=1}^n y_i}{n} - b_1 \\frac{\\sum_{i=1}^n x_i}{n} \\\\\nb_0 &= \\overline Y - b_1 \\overline X\n\\end{split}\n\\]\n\\[\n\\begin{split}\n\\underline{b_1 \\sum_{i=1}^n x_i^2} +\n\\overline Y \\sum_{i=1}^n x_i -\n\\underline{b_1 \\overline X \\sum_{i=1}^n x_i} =\n\\sum_{i=1}^n x_i y_i \\\\\nb_1 \\Big( \\sum_{i=1}^n x_i^2 - \\overline X \\sum_{i=1}^n x_i \\Big) =\n\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i\n\\end{split}\n\\]\n\\[\n\\begin{split}\nb_1 &=\n\\frac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}\n{\\sum_{i=1}^n x_i^2 - \\overline X \\sum_{i=1}^n x_i} =\n\\frac{ \\dfrac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}{n}}\n{ \\dfrac{\\sum_{i=1}^n x_i^2 - \\overline X \\sum_{i=1}^n x_i}{n}} \\\\\nb_1 &= \\frac{\\overline{XY} - \\overline X \\cdot \\overline Y}\n{\\overline{X^2} - \\overline X^2} =\n\\frac{\\overline{XY} - \\overline X \\cdot \\overline Y}\n{\\sigma_X^2}\n\\end{split}\n\\]\n\n\n26.0.2 Матричное вычисление коэффициентов\n\\[\n\\mathbf{b} = ({\\mathbf{X}}\\!^{\\mathsf{T}} \\mathbf{X})^{-1} {\\mathbf{X}}\\!^{\\mathsf{T}} \\mathbf{y}\n\\]\n\n\n26.0.3 Угловой коэффициент и коэффициент корреляции\n\\[\nb_1 = r_{X,Y} \\cdot \\frac{s_Y}{s_X}\n\\]\nКоэффициент корреляции Пирсона, как мы помним (17.8), вычисляется как\n\\[\nr_{X,Y} = \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2}}\n\\]\nТогда справедливо, что\n\\[\n\\begin{split}\nb_1 &= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}\n{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2}}\n\\cdot \\frac{s_Y}{s_X} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}\n{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2}}\n\\cdot\n\\frac{\\sqrt{\\dfrac{\\sum_{i=1}^n (y_i - \\overline Y)^2}{n-1}}}\n{\\sqrt{\\dfrac{\\sum_{i=1}^n (x_i - \\overline X)^2}{n-1}}} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}\n{\\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2} \\cdot \\cancel{ \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2} }}\n\\cdot\n\\frac{ \\cancel{ \\sqrt{\\dfrac{1}{n-1}} } \\cdot \\cancel{ \\sqrt{\\sum_{i=1}^n (y_i - \\overline Y)^2} }}\n{ \\cancel{ \\sqrt{\\dfrac{1}{n-1}} } \\cdot \\sqrt{\\sum_{i=1}^n (x_i - \\overline X)^2}} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i - \\overline X)(y_i - \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n \\big( x_i (y_i - \\overline Y) - \\overline X (y_i - \\overline Y) \\big)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i (y_i - \\overline Y) - \\sum_{i=1}^n \\overline X (y_i - \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i (y_i - \\overline Y) - \\overline X \\overset{=0}{ \\enclose{box}{ \\sum_{i=1}^n (y_i - \\overline Y) }} }{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i (y_i - \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n (x_i y_i - x_i \\overline Y)}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}{\\sum_{i=1}^n (x_i - \\overline X)^2} = \\\\\n&= \\frac{ \\dfrac{\\sum_{i=1}^n x_i y_i - \\overline Y \\sum_{i=1}^n x_i}{n} }{ \\dfrac{\\sum_{i=1}^n (x_i - \\overline X)^2}{n} } = \\\\\n&= \\frac{\\overline {XY} - \\overline X \\cdot \\overline Y}{\\sigma_X}\n\\end{split}\n\\]\n\n\n26.0.4 TSS = ESS + RSS?\n\n\n\n\\[\n\\begin{split}\n\\text{TSS}&= \\sum_{i=1}^n (y_i - \\overline Y)^2 = \\\\\n&= \\sum_{i=1}^n (y_i - \\hat y + \\hat y - \\overline Y)^2 = \\\\\n&= \\sum_{i=1}^n \\big( (y_i - \\hat y_i) + (\\hat y_i - \\overline Y) \\big)^2 = \\\\\n&= \\sum_{i=1}^n (y_i - \\hat y_i) + \\sum_{i=1}^n (\\hat y_i - \\overline Y) + 2 \\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\overline Y) = \\\\\n&= \\text{RSS}+ \\text{ESS}+ 2 \\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\bar y)\n\\end{split}\n\\]\nОкей, осталось доказать, что \\(2 \\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\overline Y) = 0\\), и все будет найс.\nТак как \\(b_0 = \\overline Y - b_1 \\overline X\\), а \\(b_1 = \\dfrac{\\sum_{i=1}^n (x_i - \\bar x)(y_i - \\bar y)}{\\sum_{i=1}^n (x_i - \\bar x)^2}\\) имеем\n\\[\n\\begin{split}\n\\sum_{i=1}^n (y_i - \\hat y_i)(\\hat y_i - \\overline Y)\n&= \\sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \\overline Y) = \\\\\n&= \\sum_{i=1}^n (y_i - \\overline Y + b_1 \\overline X - b_1x_i) (\\overline Y - b_1 \\overline X + b_1 x_i - \\overline Y) = \\\\\n&= \\sum_{i=1}^n \\big( (y_i - \\overline Y) - b_1 (x_i - \\overline X) \\big) \\cdot b_1 (x_i - \\overline X) = \\\\\n&= \\sum_{i=1}^n \\big( b_1 (x_i - \\overline X) (y_i - \\overline Y) - b_1^2 (x_i - \\overline X)^2 \\big) = \\\\\n&= \\sum_{i=1}^n b_1 (x_i - \\overline X) (y_i - \\overline Y) - \\sum_{i=1}^n b_1^2 (x_i - \\overline X)^2 = \\\\\n&= b_1 \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) - b_1^2 \\sum_{i=1}^n (x_i - \\overline X) = \\\\\n&= \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2}{\\sum_{i=1}^n (x_i - \\overline X)^2} - \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2 \\cdot \\cancel{ \\sum_{i=1}^n (x_i - \\overline X)^2} }{\\Big( \\sum_{i=1}^n (x_i - \\overline X)^2\\Big)^\\cancel{2}} = \\\\\n& = \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2}{\\sum_{i=1}^n (x_i - \\overline X)^2} - \\frac{\\Big( \\sum_{i=1}^n (x_i - \\overline X) (y_i - \\overline Y) \\Big)^2}{\\sum_{i=1}^n (x_i - \\overline X)^2} = 0\n\\end{split}\n\\]\nПри доказательстве соотношения мы использовали интерсепт \\(b_0\\) — соотношение справедливо для моделей с интерсептом. Если в модели интерсепта нет, то оно не выполняется.\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
     "crumbs": [
       "Методы анализа данных",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Простая линейная регрессия</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Простая линейная регрессия</span>"
     ]
   },
   {
@@ -2296,6 +2296,255 @@
     "crumbs": [
       "Описательная статистика",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Глава книги</span>"
+    ]
+  },
+  {
+    "objectID": "r-functions.html",
+    "href": "r-functions.html",
+    "title": "5  Функции",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Функции</span>"
+    ]
+  },
+  {
+    "objectID": "r-tidy.html",
+    "href": "r-tidy.html",
+    "title": "7  Предобработка данных",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Предобработка данных</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html",
+    "href": "r-strings.html",
+    "title": "8  Строки",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html#chapterid-sectionid",
+    "href": "r-strings.html#chapterid-sectionid",
+    "title": "8  Строки",
+    "section": "",
+    "text": "8.1.1 Заголовок подраздела\n\n\n\nТест со ссылкой.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html#chapterid-code-examples",
+    "href": "r-strings.html#chapterid-code-examples",
+    "title": "8  Строки",
+    "section": "8.2 Примеры кода",
+    "text": "8.2 Примеры кода\n\n\n\n\n8.2.1 Чанк без подписи\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n\n8.2.2 Чанк с подписью\n\n\n\nКод 8.1: Пример чанка с подписью\n\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n\n\nСсылка на чанк с подписью (Код 1.2).\n\n\n8.2.3 Аннотированный чанк\n\n\n\nКод 8.2\n\n\n\n## большой код для агрегации\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\")))\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n\n\n\n# A tibble: 53,940 × 13\n   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x\n   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95\n 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93\n 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35\n 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31\n 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49\n 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49\n 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49\n 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93\n 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45\n10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 \n# ℹ 53,930 more rows\n# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html#chapterid-figures",
+    "href": "r-strings.html#chapterid-figures",
+    "title": "8  Строки",
+    "section": "8.3 Примеры иллюстраций",
+    "text": "8.3 Примеры иллюстраций\n\n\n\n\n8.3.1 Импорт графического файла\nСсылка на импортированную картинку (Иллюстрация 16.1):\n\n\n\n\n\n\nИллюстрация 8.1: Превью репозитория\n\n\n\n\n\n8.3.2 График, построенный с помощью кода\n\n## большой код для графика\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n5  ggplot(aes(clarity, price,\n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n5\n\nНачинаем рисовать\n\n\n\n\n\n\n\n\n\n\nИллюстрация 8.2: Это картинка, нарисованная большим кодом, который аннотирован\n\n\n\n\n\n\n\n8.3.3 Несколько изображений в одной иллюстрации\n\n\n\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\n\n\n\nИллюстрация 8.3: Объединяющие джойны\n\n\n\n\nplot(0:1) -&gt; plot1\n\n\n\n\n\n\n\nplot(0:2) -&gt; plot2\n\n\n\n\n\n\n\nplot(0:3) -&gt; plot3\n\n\n\n\n\n\n\nplot(0:4) -&gt; plot4\n\n\n\n\n\n\n\n\nprint(plot1)\nprint(plot2)\nprint(plot3)\nprint(plot4)\n\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nИллюстрация 8.4: Несколько картинок с помощью кода в одной иллюстрации\n\n\n\n\n\n8.3.4 Карта\n\n\n\n\n\n\n\n\nИллюстрация 8.5: Тут родился R\n\n\n\n\nСсылка неа карту (Иллюстрация 16.5).\n\n\n8.3.5 Видео\n\n\n\n\n\n\nИллюстрация 8.6: Разбор третьей домашки\n\n\n\nСсылка на видео (Иллюстрация 16.6).\n\n\n8.3.6 Схема\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\nИллюстрация 8.7: Это схема из Mermaid\n\n\n\n\n\nСсылка на схему (Иллюстрация 16.7).",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html#chapterid-tables",
+    "href": "r-strings.html#chapterid-tables",
+    "title": "8  Строки",
+    "section": "8.4 Таблицы",
+    "text": "8.4 Таблицы\nСсылка на таблицу из tibble (Таблица 16.1).\nСсылка на таблицу из R Markdown (Таблица 16.2).\n\n8.4.1 Таблица из kable()\n\n\n\nТаблица 8.1: Это kable-таблица\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n1\nakjsfv\n\n\n2\nakejrhvae\n\n\n3\nkvuhaefrv\n\n\n\n\n\n\n\n\n\n\n8.4.2 Таблица из R Markdown\n\n\n\nТаблица 8.2: Это Markdown-таблица\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n1\nabc\nда\n\\(\\sin (2)\\)\n\n\n2\ndef\nнет\n\\(\\sqrt {4+2i}\\)\n\n\n3\nghi\nда\n\\(e^{i\\pi} + 1 = 0\\)",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html#chapterid-math",
+    "href": "r-strings.html#chapterid-math",
+    "title": "8  Строки",
+    "section": "8.5 Математика",
+    "text": "8.5 Математика\nЭто уравнение прямой (Уравнение 16.1):\n\\[\ny = kx + b\n\\tag{8.1}\\]\n\nТеорема 8.1 Это теорема.\n\n\nДоказательство. Это доказательство.\n\\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\n\nЛемма 8.1 Это лемма.\n\n\nСледствие 8.1 Это следствие.\n\n\nУтверждение 8.1 Это утверждение.\n\n\nПредположение 8.1 Это conjecutre.\n\n\nОпределение 8.1 Это определение.\n\n\nПример 8.1 Это пример.\n\n\nЗадание 8.1 Это задание.\n\n\nРешение. \n\nЭто решение\n\n\n\nРешение. \n\n\nprint(0)\n\n[1] 0\n\n\n\n\nЗамечание. Это замечание.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-strings.html#chapterid-callouts",
+    "href": "r-strings.html#chapterid-callouts",
+    "title": "8  Строки",
+    "section": "8.6 Блоки",
+    "text": "8.6 Блоки\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nТекст заметки.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nТекст лайфхака.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nТекст предупреждения.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nТекст важности.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nТекст предупреждения.\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] leaflet_2.2.2   lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1  \n [5] dplyr_1.1.4     purrr_1.0.2     readr_2.1.5     tidyr_1.3.1    \n [9] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0\n\nloaded via a namespace (and not attached):\n [1] utf8_1.2.4        generics_0.1.3    stringi_1.8.4     hms_1.1.3        \n [5] digest_0.6.35     magrittr_2.0.3    evaluate_0.23     grid_4.4.0       \n [9] timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.8    backports_1.5.0  \n[13] nnet_7.3-19       Formula_1.2-5     gridExtra_2.3     fansi_1.0.6      \n[17] crosstalk_1.2.1   viridisLite_0.4.2 scales_1.3.0      jquerylib_0.1.4  \n[21] cli_3.6.2         rlang_1.1.4       munsell_0.5.1     Hmisc_5.1-3      \n[25] base64enc_0.1-3   withr_3.0.0       yaml_2.3.8        tools_4.4.0      \n[29] tzdb_0.4.0        checkmate_2.3.1   htmlTable_2.4.2   colorspace_2.1-0 \n[33] vctrs_0.6.5       R6_2.5.1          rpart_4.1.23      lifecycle_1.0.4  \n[37] htmlwidgets_1.6.4 foreign_0.8-86    cluster_2.1.6     pkgconfig_2.0.3  \n[41] pillar_1.9.0      gtable_0.3.5      data.table_1.15.4 glue_1.7.0       \n[45] xfun_0.44         tidyselect_1.2.1  rstudioapi_0.16.0 knitr_1.47       \n[49] farver_2.1.2      htmltools_0.5.8.1 labeling_0.4.3    rmarkdown_2.27   \n[53] compiler_4.4.0",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Строки</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html",
+    "href": "r-datetime.html",
+    "title": "9  Дата и время",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html#chapterid-sectionid",
+    "href": "r-datetime.html#chapterid-sectionid",
+    "title": "9  Дата и время",
+    "section": "",
+    "text": "9.1.1 Заголовок подраздела\n\n\n\nТест со ссылкой.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html#chapterid-code-examples",
+    "href": "r-datetime.html#chapterid-code-examples",
+    "title": "9  Дата и время",
+    "section": "9.2 Примеры кода",
+    "text": "9.2 Примеры кода\n\n\n\n\n9.2.1 Чанк без подписи\n\n## подключаем самую лучшую библиотеку\nlibrary(tidyverse)\ntheme_set(theme_bw()) ## устанавливаем тему\n\nhead(diamonds)\n\n# A tibble: 6 × 10\n  carat cut       color clarity depth table price     x     y     z\n  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43\n2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31\n3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31\n4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63\n5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75\n6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48\n\n\n\n\n9.2.2 Чанк с подписью\n\n\n\nКод 9.1: Пример чанка с подписью\n\n\n\nds &lt;- tibble()\n\nfor (i in 1:100) {\n  if (i %% 2 == 1) {\n    read_csv(files[i]) %&gt;% \n      bind_rows(ds) -&gt; ds\n  } else {\n    print('a')\n    stop()\n  }\n}\n\n\n\n\nСсылка на чанк с подписью (Код 1.2).\n\n\n9.2.3 Аннотированный чанк\n\n\n\nКод 9.2\n\n\n\n## большой код для агрегации\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\")))\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n\n\n\n# A tibble: 53,940 × 13\n   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x\n   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95\n 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93\n 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35\n 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31\n 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49\n 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49\n 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49\n 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93\n 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45\n10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 \n# ℹ 53,930 more rows\n# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html#chapterid-figures",
+    "href": "r-datetime.html#chapterid-figures",
+    "title": "9  Дата и время",
+    "section": "9.3 Примеры иллюстраций",
+    "text": "9.3 Примеры иллюстраций\n\n\n\n\n9.3.1 Импорт графического файла\nСсылка на импортированную картинку (Иллюстрация 16.1):\n\n\n\n\n\n\nИллюстрация 9.1: Превью репозитория\n\n\n\n\n\n9.3.2 График, построенный с помощью кода\n\n## большой код для графика\n\n1diamonds %&gt;%\n2  summarise(mean_price_cut = mean(price),\n            sd_price_cut = sd(price),\n            .by = cut) %&gt;% \n3  right_join(diamonds, join_by(cut)) %&gt;%\n4  mutate(price_group = ifelse(price &gt; mean_price_cut + sd_price_cut, \"expensive\",\n                              ifelse(price &lt; mean_price_cut - sd_price_cut, \"cheap\",\n                                     \"average\"))) %&gt;% \n5  ggplot(aes(clarity, price,\n             shape = price_group, color = color)) +\n  stat_summary(geom = \"pointrange\", \n               fun.data = mean_cl_boot,\n               position = position_dodge(.3)) +\n  scale_shape_manual(values = c(21, 22, 23)) +\n  theme(legend.position = \"bottom\")\n\n\n1\n\nБерем датасет diamonds, что нарисовать график про бриллианты\n\n2\n\nРассчитываем базовые описательные статистики\n\n3\n\nОбъединяем агрегированные данные с исходными\n\n4\n\nРазделяем наблюдения на группы\n\n5\n\nНачинаем рисовать\n\n\n\n\n\n\n\n\n\n\nИллюстрация 9.2: Это картинка, нарисованная большим кодом, который аннотирован\n\n\n\n\n\n\n\n9.3.3 Несколько изображений в одной иллюстрации\n\n\n\n\n\n\n\n\n\n\n\n(a) left_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(b) right_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) full_join(x, y)\n\n\n\n\n\n\n\n\n\n\n\n(d) inner_join(x, y)\n\n\n\n\n\n\n\nИллюстрация 9.3: Объединяющие джойны\n\n\n\n\nplot(0:1) -&gt; plot1\n\n\n\n\n\n\n\nplot(0:2) -&gt; plot2\n\n\n\n\n\n\n\nplot(0:3) -&gt; plot3\n\n\n\n\n\n\n\nplot(0:4) -&gt; plot4\n\n\n\n\n\n\n\n\nprint(plot1)\nprint(plot2)\nprint(plot3)\nprint(plot4)\n\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nNULL\n\n\nNULL\n\n\n\n\nИллюстрация 9.4: Несколько картинок с помощью кода в одной иллюстрации\n\n\n\n\n\n9.3.4 Карта\n\n\n\n\n\n\n\n\nИллюстрация 9.5: Тут родился R\n\n\n\n\nСсылка неа карту (Иллюстрация 16.5).\n\n\n9.3.5 Видео\n\n\n\n\n\n\nИллюстрация 9.6: Разбор третьей домашки\n\n\n\nСсылка на видео (Иллюстрация 16.6).\n\n\n9.3.6 Схема\n\n\n\n\n\n\nflowchart LR\n  A(Step 1) --&gt; B(Step 2)\n  B --&gt; C(Step 3)\n  C --&gt; D(Step 4)\n  D --&gt; E(Step 5)\n  E --&gt; A\n\n\n\n\nИллюстрация 9.7: Это схема из Mermaid\n\n\n\n\n\nСсылка на схему (Иллюстрация 16.7).",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html#chapterid-tables",
+    "href": "r-datetime.html#chapterid-tables",
+    "title": "9  Дата и время",
+    "section": "9.4 Таблицы",
+    "text": "9.4 Таблицы\nСсылка на таблицу из tibble (Таблица 16.1).\nСсылка на таблицу из R Markdown (Таблица 16.2).\n\n9.4.1 Таблица из kable()\n\n\n\nТаблица 9.1: Это kable-таблица\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n1\nakjsfv\n\n\n2\nakejrhvae\n\n\n3\nkvuhaefrv\n\n\n\n\n\n\n\n\n\n\n9.4.2 Таблица из R Markdown\n\n\n\nТаблица 9.2: Это Markdown-таблица\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\n1\nabc\nда\n\\(\\sin (2)\\)\n\n\n2\ndef\nнет\n\\(\\sqrt {4+2i}\\)\n\n\n3\nghi\nда\n\\(e^{i\\pi} + 1 = 0\\)",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html#chapterid-math",
+    "href": "r-datetime.html#chapterid-math",
+    "title": "9  Дата и время",
+    "section": "9.5 Математика",
+    "text": "9.5 Математика\nЭто уравнение прямой (Уравнение 16.1):\n\\[\ny = kx + b\n\\tag{9.1}\\]\n\nТеорема 9.1 Это теорема.\n\n\nДоказательство. Это доказательство.\n\\[\nX_1, X_2, \\dots , X_n \\overset{\\text{i.i.d.}}{\\thicksim} (\\mu, \\sigma^2)\n\\]\n\n\nЛемма 9.1 Это лемма.\n\n\nСледствие 9.1 Это следствие.\n\n\nУтверждение 9.1 Это утверждение.\n\n\nПредположение 9.1 Это conjecutre.\n\n\nОпределение 9.1 Это определение.\n\n\nПример 9.1 Это пример.\n\n\nЗадание 9.1 Это задание.\n\n\nРешение. \n\nЭто решение\n\n\n\nРешение. \n\n\nprint(0)\n\n[1] 0\n\n\n\n\nЗамечание. Это замечание.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-datetime.html#chapterid-callouts",
+    "href": "r-datetime.html#chapterid-callouts",
+    "title": "9  Дата и время",
+    "section": "9.6 Блоки",
+    "text": "9.6 Блоки\n\n\n\n\n\n\nЗаголовок заметки\n\n\n\nТекст заметки.\n\n\n\n\n\n\n\n\nЗаголовок лайфхака\n\n\n\nТекст лайфхака.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\nТекст предупреждения.\n\n\n\n\n\n\n\n\nЗаголовок важности\n\n\n\nТекст важности.\n\n\n\n\n\n\n\n\nЗаголовок предупреждения\n\n\n\n\n\nТекст предупреждения.\n\n\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] leaflet_2.2.2   lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1  \n [5] dplyr_1.1.4     purrr_1.0.2     readr_2.1.5     tidyr_1.3.1    \n [9] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0\n\nloaded via a namespace (and not attached):\n [1] utf8_1.2.4        generics_0.1.3    stringi_1.8.4     hms_1.1.3        \n [5] digest_0.6.35     magrittr_2.0.3    evaluate_0.23     grid_4.4.0       \n [9] timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.8    backports_1.5.0  \n[13] nnet_7.3-19       Formula_1.2-5     gridExtra_2.3     fansi_1.0.6      \n[17] crosstalk_1.2.1   viridisLite_0.4.2 scales_1.3.0      jquerylib_0.1.4  \n[21] cli_3.6.2         rlang_1.1.4       munsell_0.5.1     Hmisc_5.1-3      \n[25] base64enc_0.1-3   withr_3.0.0       yaml_2.3.8        tools_4.4.0      \n[29] tzdb_0.4.0        checkmate_2.3.1   htmlTable_2.4.2   colorspace_2.1-0 \n[33] vctrs_0.6.5       R6_2.5.1          rpart_4.1.23      lifecycle_1.0.4  \n[37] htmlwidgets_1.6.4 foreign_0.8-86    cluster_2.1.6     pkgconfig_2.0.3  \n[41] pillar_1.9.0      gtable_0.3.5      data.table_1.15.4 glue_1.7.0       \n[45] xfun_0.44         tidyselect_1.2.1  rstudioapi_0.16.0 knitr_1.47       \n[49] farver_2.1.2      htmltools_0.5.8.1 labeling_0.4.3    rmarkdown_2.27   \n[53] compiler_4.4.0",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Дата и время</span>"
+    ]
+  },
+  {
+    "objectID": "r-visbase.html",
+    "href": "r-visbase.html",
+    "title": "10  Визуализация в базовом R",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Визуализация в базовом R</span>"
+    ]
+  },
+  {
+    "objectID": "r-visggplot.html",
+    "href": "r-visggplot.html",
+    "title": "11  Визуализация в ggplot2",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    \n[13] rlang_1.1.4       evaluate_0.23",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Визуализация в `ggplot2`</span>"
+    ]
+  },
+  {
+    "objectID": "r-data.html",
+    "href": "r-data.html",
+    "title": "6  Работа с данными",
+    "section": "",
+    "text": "6.1 RStudio Projects",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Работа с данными</span>"
+    ]
+  },
+  {
+    "objectID": "part-math.html",
+    "href": "part-math.html",
+    "title": "Математика для анализа данных",
+    "section": "",
+    "text": "Почему стоит изучать математику?\nЦитата, которая может быть известна вам ещё со школы, звучащая настолько пафосно, что может даже отталкивать в современное время — с чего бы мне вдруг «ум в порядок приводить»? он у меня и так в норме! Зайдём с других сторон.\nВо-первых, потому что это красиво (Иллюстрация 1 и Иллюстрация 2).\nВо-вторых, потому что в математике происходит дикий экшон (Иллюстрация 3).\nНу, а в-третьих, почему-то так складывается, что математика крайне удачно подходит3 в качестве инструмента для описания наблюдаемых явлений, в том числе того, что мы наблюдаем в наших исследованиях — и научных, и индустриальных. К тому же, статистика, на которой стоят все методы анализа данных, является разделом математики, так что ситуация весьма понятная — придется погрузиться в этот дивный мир.\nБезусловно, есть еще много причин — на математике работаю все цифровые устройства и современные алгоритмы, окружающие нас повсюду, являясь формальной наукой, она знакомит нас с логическими рассуждениями и доказательствами, позволяет изучать мир за пределами нашего перцептивного опыта4 и т. д. Частично мы попробуем прикоснуться к ним в рамках данной книги.",
+    "crumbs": [
+      "Математика для анализа данных"
+    ]
+  },
+  {
+    "objectID": "part-math.html#почему-стоит-изучать-математику",
+    "href": "part-math.html#почему-стоит-изучать-математику",
+    "title": "Математика для анализа данных",
+    "section": "",
+    "text": "Математику уже затем учить надо, что она ум в порядок приводит\n\nМ. В. Ломоносов1\n\n\n\n\n\n\n\n\n\n\nИллюстрация 1: Curlicue Fractals by Chirag Dudhat\n\n\n\n\n\n\n\n\n\nИллюстрация 2: π painting “The area of a Circle” ENDLESSLY by Chirag Dudhat\n\n\n\n\n\n\n\n\n\n\nИллюстрация 3: Animation vs Math by Alan Becker Team2",
+    "crumbs": [
+      "Математика для анализа данных"
+    ]
+  },
+  {
+    "objectID": "part-math.html#размышления-о-математической-тревожности",
+    "href": "part-math.html#размышления-о-математической-тревожности",
+    "title": "Математика для анализа данных",
+    "section": "Размышления о «математической тревожности»",
+    "text": "Размышления о «математической тревожности»\n\n\n\n\nСаввина, О. А. (2016). Математику уже затем учить надо…. Журнал Педагогических Исследований, 1(6), 6.",
+    "crumbs": [
+      "Математика для анализа данных"
+    ]
+  },
+  {
+    "objectID": "part-math.html#footnotes",
+    "href": "part-math.html#footnotes",
+    "title": "Математика для анализа данных",
+    "section": "",
+    "text": "См. Саввина (2016)↩︎\nДля впечатлившихся: от команды Алана есть ещё аналогичный видос про физику. Там не всё полностью корректно, но с учетом художественных допущений произведение крайне достойное! Про геометрию также есть.↩︎\nНа тему описания мира через математику хорошо повествует А. М. Семихатов. См. «Математика и интуиция», «Абстрактное и конкретное в математике» и другие лекции.↩︎\nНа тему открытий и предсказаний силами математики безумно интересно рассказывает всё тот же А. М. Семихатов. Есть два варианта примерно одной и той же лекции: для всех и для программистов.↩︎",
+    "crumbs": [
+      "Математика для анализа данных"
     ]
   }
 ]

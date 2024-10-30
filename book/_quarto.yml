@@ -30,7 +30,13 @@ book:
       - r-intro.qmd
       - r-datatypes.qmd
       - r-datastructures.qmd
+      - r-functions.qmd
       - r-data.qmd
+      - r-tidy.qmd
+      - r-strings.qmd
+      - r-datetime.qmd
+      - r-visbase.qmd
+      - r-visggplot.qmd
     - part: part-math.qmd
       chapters: 
         - math-logic.qmd
