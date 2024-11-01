@@ -42,6 +42,9 @@ book:
       chapters: 
         - math-logic.qmd
         - math-settheory.qmd
+        - math-combs.qmd
+        - math-calculus.qmd
+        - math-linal.qmd
     - part: part-measures.qmd
     - part: part-desc.qmd
       chapters:

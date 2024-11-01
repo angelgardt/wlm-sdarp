@@ -50,7 +50,7 @@ get_json <- function(pretest_name,
            paste0(" ", pretest_order %>% filter(pretest == pretest_name) %>% pull(number)),
            "'") %>% 
     write(paste0(
-      #"book/", 
+      "book/", 
       "js/", 
       pretest_name, 
       ".json"))
