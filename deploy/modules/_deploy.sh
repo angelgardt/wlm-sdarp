@@ -51,11 +51,16 @@ function deploy() {
     printf "${RED}DEPLOYMENT NOT COMPLETED\n${NC}"
 		printf "${RED}File copying error\n${NC}"
 		printf "${RED}=====\n\n${NC}"
+		say "deployment not completed"
+		say "file copying error"
 		exit
   }
   
   printf "${GREEN}\n=====\nDEPLOY COMPLETED\n=====\n\n${NC}"
   printf "${GRAY}Document this deployment in README.md\nCommit and push to save changes.\n${NC}"
+  say "deployment completed"
+	say "Document this deployment in README"
+	say "Commit and push to save changes"
   
   open docs/dpl/README.md
   

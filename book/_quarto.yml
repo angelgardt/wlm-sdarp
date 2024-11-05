@@ -21,26 +21,37 @@ book:
     - common-signs.qmd
     - part: Debug
       chapters: 
+      - debug_pretest.qmd
       - debug_chapter.qmd
       - debug_quiz.qmd
       - debug_sheet.qmd
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
-      # - r-datatypes.qmd
-      # - r-datastructures.qmd
-      # - r-data.qmd
+      - r-datatypes.qmd
+      - r-datastructures.qmd
+      - r-functions.qmd
+      - r-data.qmd
+      - r-tidy.qmd
+      - r-strings.qmd
+      - r-datetime.qmd
+      - r-visbase.qmd
+      - r-visggplot.qmd
+      - r-oop.qmd
     - part: part-math.qmd
       chapters: 
         - math-logic.qmd
         - math-settheory.qmd
+        - math-combs.qmd
+        - math-calculus.qmd
+        - math-linal.qmd
     - part: part-measures.qmd
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
       - desc-centaltend.qmd
-      #- desc-variation.qmd
-      #- desc-distshape.qmd
+      - desc-variation.qmd
+      - desc-distshape.qmd
       #- desc-prodmetrics.qmd
     - part: part-prob.qmd
       chapters: 
@@ -52,6 +63,9 @@ book:
         - prob-hyptesting.qmd
         - prob-falsepositive.qmd
     - part: part-andan.qmd
+      chapters:
+        - andan-cor.qmd
+        - andan-simplelinear.qmd
     - common-outro.qmd
     - references.qmd
   appendices:
@@ -64,8 +78,9 @@ book:
     - appendix-git.qmd
     - appendix-research-design.qmd
     - appendix-design.qmd
-    - appendix-other-math.qmd
+    - appendix-math-other.qmd
     - appendix-math-letters.qmd
+    - appendix-history.qmd
     - appendix-keys.qmd
     
   favicon: img/other/favicon.png
@@ -86,10 +101,10 @@ format:
     title-block-banner-color: "#f5f5f5"
     toc: true
     toc-depth: 4
-    grid: 
-      body-width: 900px
-      sidebar-width: 210px
-      margin-width: 210px
+    # grid:
+    #   body-width: 1200px
+      # sidebar-width: 210px
+      # margin-width: 210px
     cover-image: img/other/cover.jpg
     cover-image-alt: |
       Тут должна быть обложка книги, но что-то пошло не так...

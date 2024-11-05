@@ -32,6 +32,8 @@ for (let i = 1; i <= N_tasks; i++) {
   }
 }
 
+// Add number of quiz dynamically
+document.getElementsByTagName("h1")[0].innerHTML += quiz;
 
 // Change TOC title
 document.getElementById("toc-title").innerHTML = "Вопросы";

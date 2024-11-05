@@ -30,6 +30,9 @@ for (let i = 1; i <= N_tasks; i++) {
   }
 }
 
+// Add number of sheet dynamically
+document.getElementsByTagName("h1")[0].innerHTML += sheet;
+
 // Change TOC title
 document.getElementById("toc-title").innerHTML = "Задания";
 

@@ -35,11 +35,13 @@ function render() {
   } || {
     # catch
     return 1
+    say "render not completed"
+    say "quarto error"
   }
   
   ## print render success
   printf "${BLUE}book rendered${NC}\n"
   
   printf "${GREEN}\n=====\nRENDER COMPLETED\n=====\n\n${NC}"
-  
+  say "render completed"
 }

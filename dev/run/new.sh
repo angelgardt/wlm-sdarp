@@ -23,6 +23,9 @@ then
   printf "${GRAY}CHAPTER\n"
   printf "dev/run/new.sh chapter <chapter name> <part name>\n"
   printf "${BLUE}-----\n"
+  printf "${GRAY}PRETEST\n"
+  printf "dev/run/new.sh pretest <pretest name>\n"
+  printf "${BLUE}-----\n"
   printf "${GRAY}QUIZ\n"
   printf "dev/run/new.sh quiz <quiz name>\n"
   printf "${BLUE}-----\n"
@@ -95,6 +98,25 @@ then
   
   printf "${GREEN}=====\n"
   printf "quiz ${GRAY}${2}${GREEN} was created\n"
+  printf "=====${NC}\n"
+
+elif [ $1 = "pretest" ]
+then
+  
+  if [ -f `echo book/pretest-"$2".qmd` ]
+  then
+    printf "${RED}=====\n"
+    printf "nothing was created\nfile `echo book/pretest-"$2".qmd` exists\n"
+    printf "=====${NC}\n"
+    exit
+  fi
+  
+  mkdir `echo book/img/pretest-"$2"`
+  mkdir `echo book/tbl/pretest-"$2"`
+  cp dev/_templates/pretest.qmd `echo book/pretest-"$2".qmd`
+  
+  printf "${GREEN}=====\n"
+  printf "pretest ${GRAY}${2}${GREEN} was created\n"
   printf "=====${NC}\n"
   
 elif [ $1 = "sheet" ]

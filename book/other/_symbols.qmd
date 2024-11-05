@@ -3,6 +3,7 @@
 \usepackage{xcolor}
 \usepackage{soul}
 \usepackage{amsmath, amsfonts, amssymb}
+\usepackage{commath}
 \usepackage{tensor}
 \usepackage[bb=tgdm]{unicode-math}
 \usepackage{tikz}
@@ -18,13 +19,13 @@
 <!--- Common --->
 \newcommand{\const}{\text{const}}
 \newcommand{\fix}{\text{fix}}
-\DeclareMathOperator{\mmod}{mod}
 \DeclareMathOperator{\sgn}{sgn}
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
 \newcommand{\rb}{\right]}
-\newcommand{\suchd}{\,:\,}
+
+\newcommand{\qed}{\quad \blacksquare}
 
 
 <!--- Logic --->
@@ -49,13 +50,17 @@
 
 <!--- Number sets--->
 \newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNstar}{\mathbb{N}^{\ast}}
+\newcommand{\setNstar}{\mathbb{N}^{\star}}
 \newcommand{\setZ}{\mathbb{Z}}
 \newcommand{\setQ}{\mathbb{Q}}
 \newcommand{\setI}{\mathbb{I}}
 \newcommand{\setR}{\mathbb{R}}
 \newcommand{\setRplus}{\mathbb{R}_{+}}
 \newcommand{\setC}{\mathbb{C}}
+
+<!--- Calculus --->
+\newcommand{\dom}{\mathcal{D}}
+\newcommand{\im}{\mathcal{E}}
 
 <!--- Linear Algebra --->
 \newcommand{\vm}[1]{\mathbf{#1}} <!--- vectors and matrices --->
@@ -69,9 +74,9 @@
 \newcommand{\Bcal}{\mathcal{B}}
 \newcommand{\prob}{\mathbb{P}}
 \newcommand{\dens}{\mathbb{p}}
-\newcommand{\expect}{\mathbb{E}}
-\newcommand{\disp}{\mathbb{D}}
-\newcommand{\var}{\text{var}}
+\newcommand{\expect}{\mathbb{E}\,}
+\newcommand{\disp}{\mathbb{D}\,}
+\newcommand{\var}{\text{var}\,}
 \newcommand{\cov}{\text{cov}}
 \newcommand{\cor}{\text{cor}}
 \newcommand{\se}{\text{se}}
@@ -86,15 +91,26 @@
 \newcommand{\norm}{\mathcal{N}}
 
 <!--- Other --->
-\newcommand{\defin}{\overset{\text{def}}{=}}
+\newcommand{\defin}[1]{\overset{\text{def}}{#1}}
 \newcommand{\toas}{\overset{\text{a.s.}}{\to}}
 \newcommand{\toprob}{\overset{p}{\to}}
 \newcommand{\todist}{\overset{d}{\to}}
 
 <!--- Trig --->
-\DeclareMathOperator\artanh{artanh}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
 
 <!--- Stats --->
+\newcommand{\mode}{\text{mode}}
 \newcommand{\median}{\text{median}}
 \newcommand{\mean}{\mathbb{mean}}
 \newcommand{\skewness}{\text{skew}}
@@ -102,5 +118,11 @@
 
 
 <!--- Letters --->
-\newcommand{\phi}{\varphi}
-\newcommand{\epsilon}{\varepsilon}
+\newcommand{\vphi}{\varphi}
+\newcommand{\vepsilon}{\varepsilon}
+
+
+<!--- Linear Models --->
+\newcommand{\TSS}{\text{TSS}}
+\newcommand{\RSS}{\text{RSS}}
+\newcommand{\ESS}{\text{ESS}}

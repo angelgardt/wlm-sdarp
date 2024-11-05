@@ -1,1 +1,64 @@
 # Дизайн {#appendix-design}
+
+## Цвет {#appendix-design-color}
+
+:::{#fig-color-lec}
+
+{{< video https://youtu.be/SUCVj3qBmNQ?si=GGr1WKV_ApA0M0r1 >}}
+
+ФКН НИУ ВШЭ [Коллоквиум]: Дмитрий Николаев «Как устроен цвет»
+:::
+
+### Цветовая модель {#appendix-design-color-model}
+
+#### RGB {#appendix-design-color-rgb}
+
+$$
+256 \cdot 256 \cdot 256 = 256^3 = 16\,777\,216
+$$
+
+#### HEX {#appendix-design-color-hex}
+
+$$
+\text{FF}_{16} = 15 \cdot 16^1 + 15 \cdot 16^0 = 255
+$$
+
+$$
+\text{FF}\,\text{FF}\,\text{FF}_{16} = 15 \cdot 16^5 + 15 \cdot 16^4 + 15 \cdot 16^3 + 15 \cdot 16^2 + 15 \cdot 16^1 + 15 \cdot 16^0 = 16\,777\,215
+$$
+
+#### HSL (HSI) {#appendix-design-color-hsl}
+
+Hue Saturation Lightness (Intensity)
+
+$$
+\begin{split}
+H & \in [0, 360^\circ] \\
+S & \in [0, 100] \\
+L & \in [0, 100]
+\end{split}
+$$
+
+$$
+360 \cdot 101 \cdot 101 = 3\,672\,360
+$$
+
+#### HSB (HSV) {#appendix-design-color-hsb}
+
+Hue Saturation Brightness (Value)
+
+$$
+\begin{split}
+\text{H} & \in [0, 360^\circ] \\
+\text{S} & \in [0, 100] \\
+\text{B} & \in [0, 100]
+\end{split}
+$$
+
+$$
+360 \cdot 101 \cdot 101 = 3\,672\,360
+$$
+
+#### CMYK {#appendix-design-color-cmyk}
+
+

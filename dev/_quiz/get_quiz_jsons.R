@@ -10,6 +10,11 @@ quizzes <- list()
 #            col_types = "c",
 #            skip = 1) -> tags
 
+read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
+           sheet = "order",
+           col_types = "c") %>% 
+  select(quiz, number) -> quiz_order
+
 for (quiz_name in quizzes_names) {
   read_sheet(ss = "https://docs.google.com/spreadsheets/d/1lNWFJAZ5xOgqRxNUL2CjzTp5K7ErveR9BYF7CZCUXlo/edit?usp=sharing",
              sheet = quiz_name,
@@ -41,7 +46,9 @@ get_json <- function(quiz_name,
                 values_from = value) %>% 
     jsonlite::toJSON(dataframe = "rows") %>%
     paste0("quiz_json='", ., "'", 
-           "\nquiz='", quiz_name, "'") %>% 
+           "\nquiz='", 
+           paste0(" ", quiz_order %>% filter(quiz == quiz_name) %>% pull(number)),
+           "'") %>% 
     write(paste0(
       "book/", 
       "js/", 

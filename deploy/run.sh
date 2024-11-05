@@ -34,6 +34,8 @@ if [ "$mode" = "none" ]; then
   echo -e "${GREEN}NOTHING DONE${NC}"
   echo -e "${NC}none ${GREEN}mode set${NC}"
   echo -e "${GREEN}\n=====\n=====\n${NC}"
+  say "nothing done"
+  say "none mode set"
   exit
   
 elif [ "$mode" = "render" ]; then
@@ -64,6 +66,8 @@ else
   echo -e "${RED}Unknown first inline argument value${NC} ${mode}"
   echo -e "Valid options are ${GRAY}${modes[@]}${NC} (first is default)"
   echo -e "${RED}\n=====\n=====\n${NC}"
+  say "run failed"
+  say "unknown first inline argument value"
   exit
   
 fi

@@ -9,43 +9,58 @@ library(latex2exp)
 theme_set(theme_bw())
 ```
 
-## Степени, корни, логарифмы {#appendix-formulas_power}
+## Степени, корни, логарифмы {#appendix-formulas-power}
 
-### Определения {#formulas_power_def}
-
-$$
-a^b \defin \prod_{i=1}^b a_i
-$$
+### Определения {#appendix-formulas-power-def}
 
 $$
-\sqrt[n]a \defin b \Leftrightarrow b^n = a
+a^n \defin{=} \prod_{i=1}^n a, \, a \in \setR, \, n \in \setNstar
+$${#eq-frmapp-power-n-def}
+
 $$
+a^{-n} \defin{=} \frac{1}{a^n}, \, a \neq 0
+$${#eq-frmapp-power-neq-def}
 
-### Свойства {#formulas_power_identities}
+$$
+\sqrt[n]a \defin{=} b \Leftrightarrow b^n = a, \, n \in \setNstar
+$${#eq-frmapp-root-n-def}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-      $$a^n \cdot a^m = a^{n+m}$$
-      $$\frac{a^n}{a^m} = a^{n-m}$$
-      $$(a^n)^m = a^{nm}$$
-      $$a^0 = 1$$
-      $$a^{-n}=\frac{1}{a^n}$$
-      $$(a \cdot b)^n = a^n \cdot b^n$$
-      $$\Big(\frac{a}{b}\Big)^n = \frac{a^n}{b^n}$$
-    </td>
-    <td valign="top">
-      $$a^{\frac{1}{n}}=\sqrt[n]{a}$$
-      $$a^{\frac{m}{n}}=\sqrt[n]{a^m}$$
-      $$\sqrt[n]{a \cdot b} = \sqrt[n]{a} \cdot \sqrt[n]{b}$$
-      $$(a \cdot b)^{\frac{1}{n}} = a^{\frac{1}{n}} \cdot b^{\frac{1}{n}}$$
-      $$\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}$$
-      $$\Big(\frac{a}{b}\Big)^{\frac{1}{n}} = \frac{a^{\frac{1}{n}}}{b^{\frac{1}{n}}}$$
-    </td>
-   </tr>
-</table>
+$$
+\log_{a}n \defin{=} b \Leftrightarrow a^n = b, \, a > 0, \, a \neq 1, \, n > 0
+$${#eq-frmapp-log-def}
 
- $$
+$$
+a^{\frac{1}{n}} \defin{=} \sqrt[n]{a}
+$${#eq-frmapp-power-frac-def}
+
+$$
+a^{\frac{p}{q}} \defin{=} \sqrt[q]{a^p}
+$${#eq-frmapp-power-frac-def}
+
+$$
+a^0 \defin{=} 1
+$${#eq-frmapp-power-zero-def}
+
+### Свойства {#appendix-formulas-power-identities}
+
+::::{.columns}
+
+:::{.column}
+$$a^n \cdot a^m = a^{n+m}$${#eq-frmapp-power-prod}
+$$\frac{a^n}{a^m} = a^{n-m}$${#eq-frmapp-power-frac}
+$$(a^n)^m = a^{nm}$${#eq-frmapp-power-pow}
+$$(a \cdot b)^n = a^n \cdot b^n$${#eq-frmapp-power-prod-pow}
+$$\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$${#eq-frmapp-power-frac-pow}
+:::
+:::{.column}
+$$\sqrt[n]{a \cdot b} = \sqrt[n]{a} \cdot \sqrt[n]{b}$${#eq-frmapp-root-prod}
+$$(a \cdot b)^{\frac{1}{n}} = a^{\frac{1}{n}} \cdot b^{\frac{1}{n}}$${#eq-frmapp-power-prod-frac-pow}
+$$\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}$${#eq-frmapp-root-frac}
+$$\Big(\frac{a}{b}\Big)^{\frac{1}{n}} = \frac{a^{\frac{1}{n}}}{b^{\frac{1}{n}}} = \frac{b^n}{a^n}$${#eq-frmapp-power-frac-frac-pow}
+:::
+::::
+
+$$
 x^n = a \Rightarrow x = 
 \begin{cases}
 \pm \sqrt[n]{a}, &\quad x \mod 2 = 0 \\ 
@@ -53,105 +68,220 @@ x^n = a \Rightarrow x =
 \end{cases}
 $$
 
-## Логарифмы {#formulas_log}
 
-### Определение {#formulas_log_def}
+::::{.columns}
+:::{.column}
+$$\log_a a = 1$${#eq-frmapp-log-samebase}
+$$\log_c(ab) = \log_c a + \log_c b$${#eq-frmapp-log-prod}
+$$\log_c\Big(\frac{a}{b}\Big) = \log_c a - \log_c b$${#eq-frmapp-log-frac}
+:::
+:::{.column}
+$$\log_c 1 = 0$${#eq-frmapp-log-1}
+$$\log_c a^b = b \log_c a$${#eq-frmapp-log-argpow}
+$$\log_{c^b} a = \frac{1}{b} \log_c a$${#eq-frmapp-log-basepow}
+:::
+::::
 
-$$\log_b a \defin c \Leftrightarrow a^c = b, a > 0, b > 0, b \neq 1$$
-
-
-### Свойства {#formulas_log_identities}
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\log_a a = 1$$
-    $$\log_c(ab) = \log_c a + \log_c b$$
-    $$\log_c\Big(\frac{a}{b}\Big) = \log_c a - \log_c b$$
-    </td>
-    <td valign="top">
-    $$\log_c 1 = 0$$
-    $$\log_c a^b = b \log_c a$$
-    $$\log_{c^b} a = \frac{1}{b} \log_c a$$
-    </td>
-   </tr>
-</table>
-
-
-## Модуль {#formulas_abs}
+## Модуль {#appendix-formulas-abs}
 
 $$
-|a| = 
+\forall a \in \setR \quad
+|a| \defin{=} 
 \begin{cases}
 a, &a \geq 0 \\
 -a, &a < 0
 \end{cases}
+$${#eq-frmapp-module-def}
+
 $$
+|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]
+$${#eq-frmapp-module-leq}
 
-$$|x| \leq a \Rightarrow -a \leq x \leq a \Leftrightarrow x \in [-a, a]$$
-
-$$|x| \geq a \Rightarrow x \leq -a \wedge x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)$$
-
-## Производная {#formulas_deriv}
-
-### Свойства производной {#formulas_deriv_props}
-
-$$c' = 0, \, c = \const$$
-$$(Cu)' = Cu'$$
-$$(u + v)' = u' + v'$$
-$$(uv)' = u'v + uv'$$
-$$\Big( \frac{u}{v} \Big)' = \frac{u'v - uv'}{v^2}$$
-$$\Big(u\big(v(x)\big)\Big)' = u'(v) \cdot v'(x)$$
+$$
+|x| \geq a \Rightarrow x \leq -a \vee x \geq a \Leftrightarrow x \in (-\infty, -a] \cup [a, +\infty)
+$${#eq-frmapp-module-leq}
 
 
-### Производные элементарных функций {#formulas_deriv_funcs}
+## Предел {#appendox-formulas-lim}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$(x^n)' = nx^{n-1}$$
-    $$(a^x)' = a^x \ln a$$
-    $$(e^x)' = e^x$$
-    </td>
-    <td valign="top">
-    $$(\log_a x)' = \frac{1}{x \ln a}$$
-    $$(\ln_a x)' = \frac{1}{x}$$
-    $$(\sqrt{x})' = \frac{1}{2\sqrt{x}}$$
-    </td>
-   </tr>
-</table>
-
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$(\sin x)' = \cos x$$
-    $$(\cos x)' = -\sin x$$
-    </td>
-    <td valign="top">
-    $$(\tan x)' = \frac{1}{\cos^2 x}$$
-    $$(\cot x)' = \frac{1}{\sin^2 x}$$
-    </td>
-   </tr>
-</table>
-
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$$
-    $$(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}$$
-    $$(\arctan x)' = \frac{1}{1 + x^2}$$
-    $$(\text{arccot}\, x)' = -\frac{1}{1 + x^2}$$
-    </td>
-    <td valign="top">
-    $$(\sinh x)' = \cosh x$$
-    $$(\cosh x)' = \sinh x$$
-    $$(\tanh x)' = \frac{1}{\cosh^2 x}$$
-    $$(\coth x)' = -\frac{1}{\sinh^2 x}$$
-    </td>
-   </tr>
-</table>
+### Определение {#appendix-formulas-lim-def}
+$$
+\lim x_n = a \defin{\Leftrightarrow} \forall \vepsilon > 0 \; \exists N(\vepsilon) : \forall n > N(\vepsilon) \; |x_n - a| < \vepsilon
+$${#eq-frmapp-lim-def}
 
 
-## Тригонометрия {#formulas_trig}
+### Свойства {#appendix-formulas-lim-props}
+
+Если существуют $\lim x_n$ и $\lim y_n$, то
+
+$$
+\lim c = c, \, c = \const
+$${#eq-frmapp-lim-c}
+
+$$
+\lim (cx_n) = c \lim x_n, \, c = \const
+$${#eq-frmapp-lim-const}
+
+$$
+\lim (x_n + y_n) = \lim x_n + \lim y_n
+$${#eq-frmapp-lim-sum}
+
+$$
+\lim (x_n y_n) = \lim x_n \lim y_n
+$${#eq-frmapp-lim-prod}
+
+$$
+\lim \left( \frac{x_n}{y_n} \right) = \frac{\lim x_n}{\lim y_n}, \lim y_n \neq 0
+$${#eq-frmapp-lim-frac}
+
+$$
+\forall n \, a_n > x_n > b_n \wedge \lim a_n = \lim b_n \Rightarrow \lim x_n = \lim a_n = \lim b_n
+$${#eq-frmapp-lim-squeez}
+
+
+
+## Производная {#appendix-formulas-deriv}
+
+### Определение{#appendix-formulas-deriv-def}
+
+$$
+f'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta f(x)}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x)}{\Delta x}
+$${#eq-frmapp-deriv-def}
+
+
+### Свойства производной {#appendix-formulas-deriv-props}
+
+$$
+c' = 0, \, c = \const
+$${#eq-frmapp-deriv-c}
+
+$$
+(cu)' = cu', \, c = \const
+$${#eq-frmapp-deriv-const}
+
+$$
+\big( f(x) + g(x) \big)' = f'(x) + g(x)'
+$${#eq-frmapp-deriv-sum}
+
+$$
+\big( f(x) g(x) \big)' = f'(x) g(x) + f(x) g(x)'
+$${#eq-frmapp-deriv-prod}
+
+$$
+\left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x) g(x) - f(x) g'(x)}{g^2(x)}, \, g(x) \not \equiv 0
+$${#eq-frmapp-deriv-frac}
+
+$$
+\left( \frac{c}{g(x)} \right)' = - \frac{cg'(x)}{g^2(x)}, \, c = \const, \, g(x) \not \equiv 0
+$${#eq-frmapp-deriv-fracconst}
+
+$$
+\Big( f \big( g(x) \big) \Big)' = f'(g) \cdot g'(x)
+$${#eq-deriv-compose}
+
+
+### Производные элементарных функций {#appendix-formulas-deriv-funcs}
+
+::::{.columns}
+:::{.column}
+$$
+(x^n)' = nx^{n-1}
+$${#eq-frmapp-deriv-pow}
+
+$$
+(a^x)' = a^x \ln a
+$${#eq-frmapp-deriv-exp}
+
+$$
+(e^x)' = e^x
+$${#eq-frmapp-deriv-expe}
+:::
+:::{.column}
+$$
+(\log_a x)' = \frac{1}{x \ln a}
+$${#eq-frmapp-deriv-log}
+
+$$
+(\ln x)' = \frac{1}{x}
+$${#eq-frmapp-deriv-ln}
+
+$$
+(\sqrt{x})' = \frac{1}{2\sqrt{x}}
+$${#eq-frmapp-deriv-sqrt}
+:::
+::::
+
+::::{.columns}
+:::{.column}
+$$
+(\sin x)' = \cos x
+$${#eq-frmapp-deriv-sin}
+
+$$
+(\cos x)' = -\sin x
+$${#eq-frmapp-deriv-cos}
+
+$$
+(\tan x)' = \frac{1}{\cos^2 x}
+$${#eq-frmapp-deriv-tan}
+
+$$
+(\cot x)' = -\frac{1}{\sin^2 x}
+$${#eq-frmapp-deriv-cot}
+
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}
+$${#eq-frmapp-deriv-arcsin}
+
+$$
+(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
+$${#eq-frmapp-deriv-arccos}
+
+$$
+(\arctan x)' = \frac{1}{1 + x^2}
+$${#eq-frmapp-deriv-arctan}
+
+$$
+(\arccot x)' = -\frac{1}{1 + x^2}
+$${#eq-frmapp-deriv-arccot}
+:::
+:::{.column}
+$$
+(\sinh x)' = \cosh x
+$${#eq-frmapp-deriv-sinh}
+
+$$
+(\cosh x)' = \sinh x
+$${#eq-frmapp-deriv-cosh}
+
+$$
+(\tanh x)' = \frac{1}{\cosh^2 x}
+$${#eq-frmapp-deriv-tanh}
+
+$$
+(\coth x)' = -\frac{1}{\sinh^2 x}
+$${#eq-frmapp-deriv-coth}
+
+$$
+(\arsinh)' = \frac{1}{\sqrt{x^2 + 1}}
+$${#eq-frmapp-deriv-arsinh}
+
+$$
+(\arcoth)' = \frac{1}{\sqrt{x^2 - 1}}
+$${#eq-frmapp-deriv-arcosh}
+
+$$
+(\artanh)' = \frac{1}{1 - x^2}
+$${#eq-frmapp-deriv-artanh}
+
+$$
+(\arcoth)' = \frac{1}{1 - x^2}
+$${#eq-frmapp-deriv-arcoth}
+:::
+::::
+
+
+## Тригонометрия {#appendix-formulas-trig}
 
 ```{r trig_circle, echo=FALSE, message=FALSE, warning=FALSE}
 # set angle
@@ -270,35 +400,77 @@ tibble(
 gridExtra::grid.arrange(acute, obtuse, ncol=2)
 ```
 
-### Производные тригонометрические функции {#trig_funs_def}
+### Базовые соотношения {#appendix-formulas-trig-basic}
+
+:::{.columns}
+
+:::{.column}
+$$
+\sec \alpha = \frac{1}{\cos \alpha}
+$${#eq-frmapp-trig-basic-sec}
 
 $$
-\sec \alpha = \frac{1}{\cos \alpha} \qquad
-\csc \alpha = \frac{1}{\sin \alpha} \qquad
-\tan \alpha = \frac{\sin \alpha}{\cos \alpha} \qquad
-\cot \alpha = \frac{\cos \alpha}{\sin \alpha}
-$$
+\csc \alpha = \frac{1}{\sin \alpha}
+$${#eq-frmapp-trig-basic-csc}
 
-### Основное тригонометрическое тождество {#trig_pythagorean_identities}
+$$
+\tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{1}{\cot \alpha}
+$${#eq-frmapp-trig-basic-tan}
+
+$$
+\cot \alpha = \frac{\cos \alpha}{\sin \alpha} = \frac{1}{\tan \alpha}
+$${#eq-frmapp-trig-basic-cot}
+:::
+
+:::{.column}
+$$
+\frac{\sec \alpha}{\csc \alpha} = \tan \alpha
+$${#eq-frmapp-trig-basic-seccsc-to-tan}
+
+$$
+\frac{\csc \alpha}{\sec \alpha} = \cot \alpha
+$${#eq-frmapp-trig-basic-cscsec-to-cot}
+
+$$
+\frac{\tan \alpha}{\cot \alpha} = 1
+$${#eq-frmapp-trig-basic-tancot-frac1}
+
+$$
+\tan \alpha \cot \alpha = 1
+$${#eq-frmapp-trig-basic-tancot-prod1}
+:::
+:::
+
+
+
+### Основное тригонометрическое тождество {#appendix-formulas-trig-pythagorean-identities}
 
 $$
 \sin^2 \alpha + \cos^2 \alpha = 1
-$$
+$${#eq-frmapp-trigmain}
 
 $$
-\sin \alpha = \pm \sqrt{1 - \cos^2 \alpha} \qquad \cos \alpha = \pm \sqrt{1 - \sin^2 \alpha}
-$$
+\sin \alpha = \pm \sqrt{1 - \cos^2 \alpha}
+$${#eq-frmapp-trigmain-sin}
 
 $$
-1 + \cot^2 \alpha = \csc^2 \alpha \qquad
+\cos \alpha = \pm \sqrt{1 - \sin^2 \alpha}
+$${#eq-frmapp-trigmain-cos}
+
+$$
+1 + \cot^2 \alpha = \csc^2 \alpha
+$${#eq-frmapp-trigmain-cot}
+
+$$
 \tan^2 \alpha + 1 = \sec ^2 \alpha
-$$
+$${#eq-frmapp-trigmain-tan}
 
 $$
 \sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \cdot \csc^2 \alpha
-$$
+$${#eq-frmapp-trigmain-sec}
 
-### Отражения {#trig_reflections}
+
+### Отражения {#appendix-formulas-trig-reflections}
 
 ```{r trig_reflections_circle, echo=FALSE, message=FALSE, warning=FALSE}
 x = cos(pi/6); y = sin(pi/6)
@@ -423,97 +595,83 @@ ggplot() +
   labs(x = NULL, y = NULL)
 ```
 
-#### Относительно $\varphi = 0$ {#trig_reflections_0}
+#### Относительно $\varphi = 0$ {#appendix-formulas-trig-reflections-0}
 
 Выражает свойство чётности функции[^trig_odd_even_funs].
 
 [^trig_odd_even_funs]: Функция называется *чётной*, если $f(-x) = f(x)$, и нечётной, если $f(-x) = -f(x)$.
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin (-\alpha) = -\sin \alpha$$
-    $$\tan (-\alpha) = -\tan \alpha$$
-    $$\sec (-\alpha) = \sec \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos (-\alpha) = \cos \alpha$$
-    $$\cot (-\alpha) = -\cot \alpha$$
-    $$\csc (-\alpha) = -\csc \alpha$$
-    </td>
-   </tr>
-</table>
+:::{.columns}
+:::{.column}
+$$\sin (-\alpha) = -\sin \alpha$${#eq-frmapp-mirr-0-sin}
+$$\tan (-\alpha) = -\tan \alpha$${#eq-frmapp-mirr-0-tan}
+$$\sec (-\alpha) = \sec \alpha$${#eq-frmapp-mirr-0-sec}
+:::
+:::{.column}
+$$\cos (-\alpha) = \cos \alpha$${#eq-frmapp-mirr-0-cos}
+$$\cot (-\alpha) = -\cot \alpha$${#eq-frmapp-mirr-0-cot}
+$$\csc (-\alpha) = -\csc \alpha$${#eq-frmapp-mirr-0-csc}
+:::
+::::
 
 
-#### Относительно $\varphi = \frac{\pi}{4}$ {#trig_reflections_pi4}
+#### Относительно $\varphi = \frac{\pi}{4}$ {#appendix-formulas-trig-reflections-pi4}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin (\frac{\pi}{2}-\alpha) = \cos \alpha$$
-    $$\tan \Big(\frac{\pi}{2}-\alpha\Big) = \cot \alpha$$
-    $$\sec \Big(\frac{\pi}{2}-\alpha\Big) = \csc \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos \Big(\frac{\pi}{2}-\alpha\Big) = \sin \alpha$$
-    $$\cot \Big(\frac{\pi}{2}-\alpha\Big) = \tan \alpha$$
-    $$\csc \Big(\frac{\pi}{2}-\alpha\Big) = \sec \alpha$$
-    </td>
-   </tr>
-</table>
+::::{.columns}
+:::{.column}
+$$\sin (\frac{\pi}{2}-\alpha) = \cos \alpha$${#eq-frmapp-mirr-pi4-sin}
+$$\tan \Big(\frac{\pi}{2}-\alpha\Big) = \cot \alpha$${#eq-frmapp-mirr-pi4-tan}
+$$\sec \Big(\frac{\pi}{2}-\alpha\Big) = \csc \alpha$${#eq-frmapp-mirr-pi4-sec}
+:::
+:::{.column}
+$$\cos \Big(\frac{\pi}{2}-\alpha\Big) = \sin \alpha$${#eq-frmapp-mirr-pi4-cos}
+$$\cot \Big(\frac{\pi}{2}-\alpha\Big) = \tan \alpha$${#eq-frmapp-mirr-pi4-cot}
+$$\csc \Big(\frac{\pi}{2}-\alpha\Big) = \sec \alpha$${#eq-frmapp-mirr-pi4-csc}
+:::
+::::
 
-#### Относительно $\varphi = \frac{\pi}{2}$ {#trig_reflections_pi2}
+#### Относительно $\varphi = \frac{\pi}{2}$ {#appendix-formulas-trig-reflections-pi2}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin (\pi-\alpha) = \sin \alpha$$
-    $$\tan (\pi-\alpha) = -\tan \alpha$$
-    $$\sec (\pi-\alpha) = -\sec \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos (\pi-\alpha) = -\cos \alpha$$
-    $$\cot (\pi-\alpha) = -\cot \alpha$$
-    $$\csc (\pi-\alpha) = \csc \alpha$$
-    </td>
-   </tr>
-</table>
+::::{.columns}
+:::{.column}
+$$\sin (\pi-\alpha) = \sin \alpha$${#eq-frmapp-mirr-pi2-sin}
+$$\tan (\pi-\alpha) = -\tan \alpha$${#eq-frmapp-mirr-pi2-tan}
+$$\sec (\pi-\alpha) = -\sec \alpha$${#eq-frmapp-mirr-pi2-sec}
+:::
+:::{.column}
+$$\cos (\pi-\alpha) = -\cos \alpha$${#eq-frmapp-mirr-pi2-cos}
+$$\cot (\pi-\alpha) = -\cot \alpha$${#eq-frmapp-mirr-pi2-cot}
+$$\csc (\pi-\alpha) = \csc \alpha$${#eq-frmapp-mirr-pi2-csc}
+:::
+::::
 
-#### Относительно $\varphi = \frac{3\pi}{4}$ {#trig_reflections_3pi2}
+#### Относительно $\varphi = \frac{3\pi}{4}$ {#appendix-formulas-trig-reflections-3pi2}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin \Big(\frac{3\pi}{2}-\alpha\Big) = -\cos \alpha$$
-    $$\tan \Big(\frac{3\pi}{2}-\alpha\Big) = \cot \alpha$$
-    $$\sec \Big(\frac{3\pi}{2}-\alpha\Big) = -\csc \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos \Big(\frac{3\pi}{2}-\alpha\Big) = -\sin \alpha$$
-    $$\cot \Big(\frac{3\pi}{2}-\alpha\Big) = \tan \alpha$$
-    $$\csc \Big(\frac{3\pi}{2}-\alpha\Big) = -\sec \alpha$$
-    </td>
-   </tr>
-</table>
+::::{.columns}
+:::{.column}
+$$\sin \Big(\frac{3\pi}{2}-\alpha\Big) = -\cos \alpha$${#eq-frmapp-mirr-3pi2-sin}
+$$\tan \Big(\frac{3\pi}{2}-\alpha\Big) = \cot \alpha$${#eq-frmapp-mirr-3pi2-tan}
+$$\sec \Big(\frac{3\pi}{2}-\alpha\Big) = -\csc \alpha$${#eq-frmapp-mirr-3pi2-sec}
+:::
+:::{.column}
+$$\cos \Big(\frac{3\pi}{2}-\alpha\Big) = -\sin \alpha$${#eq-frmapp-mirr-3pi2-cos}
+$$\cot \Big(\frac{3\pi}{2}-\alpha\Big) = \tan \alpha$${#eq-frmapp-mirr-3pi2-cot}
+$$\csc \Big(\frac{3\pi}{2}-\alpha\Big) = -\sec \alpha$${#eq-frmapp-mirr-3pi2-csc}
+:::
+::::
 
-#### Относительно $\varphi = \pi$ {#trig_reflections_pi}
+#### Относительно $\varphi = \pi$ {#appendix-formulas-trig-reflections-pi}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin (2\pi - \alpha) = -\sin \alpha = \sin (-\alpha)$$
-    $$\tan (2\pi - \alpha) = -\tan \alpha = \tan (-\alpha)$$
-    $$\sec (2\pi - \alpha) = \sec \alpha = \sec (-\alpha)$$
-    </td>
-    <td valign="top">
-    $$\cos (2\pi - \alpha) = \cos \alpha = \cos (-\alpha)$$
-    $$\cot (2\pi - \alpha) = -\cot \alpha = \cot (-\alpha)$$
-    $$\csc (2\pi - \alpha) = -\csc \alpha = \csc (-\alpha)$$
-    </td>
-   </tr>
-</table>
+$$\sin (2\pi - \alpha) = -\sin \alpha = \sin (-\alpha)$${#eq-frmapp-mirr-pi-sin}
+$$\tan (2\pi - \alpha) = -\tan \alpha = \tan (-\alpha)$${#eq-frmapp-mirr-pi-tan}
+$$\sec (2\pi - \alpha) = \sec \alpha = \sec (-\alpha)$${#eq-frmapp-mirr-pi-sec}
+$$\cos (2\pi - \alpha) = \cos \alpha = \cos (-\alpha)$${#eq-frmapp-mirr-pi-cos}
+$$\cot (2\pi - \alpha) = -\cot \alpha = \cot (-\alpha)$${#eq-frmapp-mirr-pi-cot}
+$$\csc (2\pi - \alpha) = -\csc \alpha = \csc (-\alpha)$${#eq-frmapp-mirr-pi-csc}
 
-### Сдвиг {#trig_shift}
+
+
+### Сдвиг {#appendix-formulas-trig-shift}
 
 ```{r trig_shift_circle, echo=FALSE, message=FALSE, warning=FALSE}
 x = cos(pi/6); y = sin(pi/6)
@@ -623,258 +781,274 @@ ggplot(data = graphs,
 
 Так как все тригонометрические функции периодические, результат сдвига функции определяется её периодом. Для функций $\sin, \cos, \sec$ и $\csc$ период равен $2\pi$. Для $\tan$ и $\cot$ он составляет $\pi$.
 
-#### На четверть периода {#trig_shift_by_one_quarter}
+#### На четверть периода {#appendix-formulas-trig-shift-by-one-quarter}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm\cos \alpha$$
-    $$\tan \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\tan \alpha \pm 1}{1 \mp \tan \alpha}$$
-    $$\sec \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \csc \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \sin \alpha$$
-    $$\cot \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\cot \alpha \mp 1}{1 \pm \cot \alpha}$$
-    $$\csc \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm \sec \alpha$$
-    </td>
-   </tr>
-</table>
+::::{.columns}
+:::{.column}
+$$\sin \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm\cos \alpha$${#eq-frmapp-shift-quart-sin}
+$$\tan \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\tan \alpha \pm 1}{1 \mp \tan \alpha}$${#eq-frmapp-shift-quart-tan}
+$$\sec \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \csc \alpha$${#eq-frmapp-shift-quart-sec}
+:::
+:::{.column}
+$$\cos \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \sin \alpha$${#eq-frmapp-shift-quart-cos}
+$$\cot \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\cot \alpha \mp 1}{1 \pm \cot \alpha}$${#eq-frmapp-shift-quart-cot}
+$$\csc \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm \sec \alpha$${#eq-frmapp-shift-quart-csc}
+:::
+::::
 
 
-#### На половину периода {#trig_shift_by_half}
+#### На половину периода {#appendix-formulas-trig-shift-by-half}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin (\alpha + \pi) = -\sin \alpha$$
-    $$\tan \Big(\alpha + \frac{\pi}{2}\Big) = -\cot \alpha$$
-    $$\sec (\alpha + \pi) = -\sec \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos (\alpha + \pi) = -\cos \alpha$$
-    $$\cot \Big(\alpha + \frac{\pi}{2}\Big) = -\tan \alpha$$
-    $$\csc (\alpha + \pi) = -\csc \alpha$$
-    </td>
-   </tr>
-</table>
+::::{.columns}
+:::{.column}
+$$\sin (\alpha + \pi) = -\sin \alpha$${#eq-frmapp-shift-half-sin}
+$$\tan \Big(\alpha + \frac{\pi}{2}\Big) = -\cot \alpha$${#eq-frmapp-shift-half-tan}
+$$\sec (\alpha + \pi) = -\sec \alpha$${#eq-frmapp-shift-half-sec}
+:::
+:::{.column}
+$$\cos (\alpha + \pi) = -\cos \alpha$${#eq-frmapp-shift-half-cos}
+$$\cot \Big(\alpha + \frac{\pi}{2}\Big) = -\tan \alpha$${#eq-frmapp-shift-half-cot}
+$$\csc (\alpha + \pi) = -\csc \alpha$${#eq-frmapp-shift-half-csc}
+:::
+::::
 
 
-#### На полный период {#trig_shift_by_full}
+#### На полный период {#appendix-formulas-trig-shift-by-full}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
-    $$\sin (\alpha + 2\pi) = \sin \alpha$$
-    $$\tan (\alpha + \pi) = \tan \alpha$$
-    $$\sec (\alpha + 2\pi) = \sec \alpha$$
-    </td>
-    <td valign="top">
-    $$\cos (\alpha + 2\pi) = \cos \alpha$$
-    $$\cot (\alpha + \pi) = \cot \alpha$$
-    $$\csc (\alpha + 2\pi) = \csc \alpha$$
-    </td>
-   </tr>
-</table>
+::::{.columns}
+:::{.column}
+$$\sin (\alpha + 2\pi) = \sin \alpha$${#eq-frmapp-shift-full-sin}
+$$\tan (\alpha + \pi) = \tan \alpha$${#eq-frmapp-shift-full-tan}
+$$\sec (\alpha + 2\pi) = \sec \alpha$${#eq-frmapp-shift-full-sec}
+:::
+:::{.column}
+$$\cos (\alpha + 2\pi) = \cos \alpha$${#eq-frmapp-shift-full-cos}
+$$\cot (\alpha + \pi) = \cot \alpha$${#eq-frmapp-shift-full-cot}
+$$\csc (\alpha + 2\pi) = \csc \alpha$${#eq-frmapp-shift-full-csc}
+:::
+::::
 
-### Соотношение знаков {#trig_sgn}
+
+
+### Соотношение знаков {#appendix-formulas-trig-sgn}
 
 $$
-\sgn \sin \alpha = \sgn \csc \alpha \qquad \sgn \cos \alpha = \sgn \sec \alpha
+\sgn x \defin{=}
+\cases{
+1, \, x > 0 \\
+0, \, x = 0 \\
+-1, \, x < 0
+}
+$${#eq-frmapp-sgn-def}
+
 $$
+\sgn \sin \alpha = \sgn \csc \alpha
+$${#eq-frmapp-sgn-sincsc}
+
+$$
+\sgn \cos \alpha = \sgn \sec \alpha
+$${#eq-frmapp-sgn-cotsec}
+
 $$
 \sgn \tan \alpha = \sgn \cot \alpha
-$$
+$${#eq-frmapp-sgn-tancot}
 
-### Функции суммы с разности аргументов {#trig_angle_sum}
+
+
+### Функции суммы и разности аргументов {#appendix-formulas-trig-angle-sum}
+
 $$
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
-$$
+$${#eq-frmapp-sin-of-sum}
 
 $$
 \cos (\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
-$$
+$${#eq-frmapp-cos-of-sum}
 
 $$
 \tan (\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
-$$
+$${#eq-frmapp-tan-of-sum}
 
 $$
 \cot (\alpha \pm \beta) = \frac{\cot \alpha \cot \beta \mp 1}{\cot \beta \pm \cot \alpha}
-$$
+$${#eq-frmapp-cot-of-sum}
+
 $$
 \sec (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\csc \alpha \csc \beta \mp \sec \alpha \sec \beta}
-$$
+$${#eq-frmapp-sec-of-sum}
 
 $$
 \csc (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\sec \alpha \csc \beta \pm \sec \alpha \sec \beta}
-$$
+$${#eq-frmapp-csc-of-sum}
 
-### Формулы двойного аргумента {#trig_double_arg}
+
+
+### Формулы двойного аргумента {#appendix-formulas-trig-double-arg}
 
 $$
 \sin 2\alpha = 2\sin \alpha \cos \alpha = (\sin \alpha + \cos \alpha)^2 -1 = \frac{2\tan \alpha}{1 + \tan^2 \alpha}
-$$
+$${#eq-frmapp-sin-2a}
 
 $$
 \cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha = 2\cos^2 \alpha - 1 = 1 - 2\sin^2 \alpha = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha}
-$$
+$${#eq-frmapp-cos-2a}
 
 $$
 \tan 2\alpha = \frac{2\tan \alpha}{1 - \tan^2 \alpha}
-$$
+$${#eq-frmapp-tan-2a}
 
 $$
 \cot 2\alpha = \frac{\cot^2 \alpha - 1}{2 \cot \alpha} = \frac{1 - \tan^2 \alpha}{2 \tan \alpha}
-$$
+$${#eq-frmapp-cot-2a}
 
 $$
 \sec 2\alpha = \frac{\sec^2 \alpha}{2 - \sec^2 \alpha} = \frac{1 + \tan^2 \alpha}{1 - \tan^2 \alpha}
-$$
+$${#eq-frmapp-sec-2a}
 
 $$
 \csc 2\alpha = \frac{\sec \alpha \csc \alpha}{2} = \frac{1 + \tan^2 \alpha}{2 \tan \alpha}
-$$
+$${#eq-frmapp-csc-2a}
 
-### Формулы тройного аргумента {#trig_triple_arg}
+### Формулы тройного аргумента {#appendix-formulas-trig-triple-arg}
 
 $$
 \sin 3\alpha = 3\sin \alpha - 4 \sin^3 \alpha = 4\sin \alpha \sin \Big( \frac{\pi}{3} - \alpha\Big) \sin \Big( \frac{\pi}{3} + \alpha \Big)
-$$
+$${#eq-frmapp-sin-3a}
 
 $$
 \cos 3\alpha = 4\cos^3 \alpha - 3 \cos \alpha = 4\cos \alpha \cos \Big(\frac{\pi}{3} - \alpha\Big) \cos \Big(\frac{\pi}{3} + \alpha\Big)
-$$
+$${#eq-frmapp-cos-3a}
 
 $$
 \tan 3\alpha = \frac{3\tan \alpha - \tan^3 \alpha}{1 - 3\tan^2 \alpha} = \tan \alpha \tan \Big( \frac{\pi}{3} - \alpha \Big) \tan \Big(\frac{\pi}{3} + \alpha \Big)
-$$
+$${#eq-frmapp-tan-3a}
 
 $$
 \cot 3\alpha = \frac{3 \cot \alpha - \cot^3 \alpha}{1 - 3\cot^2 \alpha}
-$$
+$${#eq-frmapp-cot-3a}
 
 $$
 \sec 3\alpha = \frac{\sec^3 \alpha}{4 - 3\sec^2 \alpha}
-$$
+$${#eq-frmapp-sec-3a}
 
 $$
 \csc 3\alpha = \frac{\csc^3 \alpha}{3\csc^2 \alpha -4}
-$$
+$${#eq-frmapp-csc-3a}
 
 
-### Формулы половинного аргумента {#trig_half_arg}
+### Формулы половинного аргумента {#appendix-formulas-trig-half-arg}
 
 $$
 \sin \frac{\alpha}{2} = \sgn \Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
-$$
+$${#eq-frmapp-sin-halfa}
 
 $$
 \cos \frac{\alpha}{2} = \sgn \Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
-$$
+$${#eq-frmapp-cos-halfa}
 
 $$
 \tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \sgn (\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
-$$
+$${#eq-frmapp-tan-halfa}
 
 $$
 \cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \sgn(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
-$$
+$${#eq-frmapp-cot-halfa}
 
 $$
 \sec \frac{\alpha}{2} = \sgn \Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
-$$
+$${#eq-frmapp-sec-halfa}
 
 $$
 \csc \frac{\alpha}{2} = \sgn \Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
-$$
+$${#eq-frmapp-csc-halfa}
 
-### Формулы понижения степени {#trig_power_reduction}
+### Формулы понижения степени {#appendix-formulas-trig-power-reduction}
 
-<table width="100%" cellspacing="0" cellpadding="5">
-   <tr> 
-    <td width="50%" valign="top">
+::::{.columns}
+:::{.column}
 $$
 \sin^2 \alpha = \frac{1 - \cos 2\alpha}{2}
-$$
-    </td>
-    <td valign="top">
-$$
-\cos^2 \alpha = \frac{1 + \cos 2\alpha}{2}
-$$
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
+$${#eq-frmapp-sin-sqa}
 $$
 \tan^2 \alpha = \frac{1 - \cos 2\alpha}{1 + \cos 2\alpha}
-$$
-    </td>
-    <td valign="top">
-$$
-\cot^2 \alpha = \frac{1 + \cos 2\alpha}{1 - \cos 2\alpha}
-$$
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
+$${#eq-frmapp-tan-sqa}
 $$
 \sec^2 \alpha = \frac{2}{1 + \cos 2\alpha}
+$${#eq-frmapp-sec-sqa}
+:::
+:::{.column}
 $$
-    </td>
-    <td valign="top">
+\cos^2 \alpha = \frac{1 + \cos 2\alpha}{2}
+$${#eq-frmapp-cos-sqa}
+$$
+\cot^2 \alpha = \frac{1 + \cos 2\alpha}{1 - \cos 2\alpha}
+$${#eq-frmapp-cot-sqa}
 $$
 \csc^2 \alpha = \frac{2}{1 - \cos 2\alpha}
-$$
-    </td>
-    <td valign="top">
-  </tr>
-</table>
+$${#eq-frmapp-csc-sqa}
+:::
+::::
 
 
-### Преобразование произведения в сумму {#trig_prod_to_sum}
+
+### Преобразование произведения в сумму {#appendix-formulas-trig-prod-to-sum}
 
 $$
 \cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
-$$
+$${#eq-frmapp-pts-coscos}
 
 $$
 \sin \alpha \sin \beta = \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2}
-$$
+$${#eq-frmapp-pts-sinsin}
 
 $$
 \sin \alpha \cos \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2}
-$$
+$${#eq-frmapp-pts-sincos}
 
 $$
 \cos \alpha \sin \beta = \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
-$$
+$${#eq-frmapp-pts-cossin}
 
 $$
-\tan \alpha \tan \beta = \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{\cos (\alpha - \beta) + \cos (\alpha + \beta)}
-$$
+\tan \alpha \tan \beta = 
+\frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{\cos (\alpha - \beta) + \cos (\alpha + \beta)} =
+\frac{\tan \alpha + \tan \beta}{\cot \alpha + \cot \beta} = 
+- \frac{\tan \alpha - \tan \beta}{\cot \alpha - \cot \beta}
+$${#eq-frmapp-pts-tantan}
 
 $$
-\tan \alpha \cot \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{\sin (\alpha + \beta) - \sin (\alpha - \beta)}
+\cot \alpha \cot \beta = 
+\frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{\cos (\alpha - \beta) - \cos (\alpha + \beta)} =
+\frac{\cot \alpha + \cot \beta}{\tan \alpha + \tan \beta} = 
+- \frac{\cot \alpha - \cot \beta}{\tan \alpha - \tan \beta}
+$${#eq-frmapp-pts-cotcot}
+
 $$
+\tan \alpha \cot \beta = 
+\frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{\sin (\alpha + \beta) - \sin (\alpha - \beta)} = 
+\frac{\tan \alpha + \cot \beta}{\cot \alpha + \tan \beta} = 
+- \frac{\tan \alpha - \cot \beta}{\cot \alpha - \tan \beta}
+$${#eq-frmapp-pts-tancot}
 
 
-### Преобразование суммы в произведение {#trig_sum_to_prod}
+
+### Преобразование суммы в произведение {#appendix-formulas-trig-sum-to-prod}
 
 $$
 \sin \alpha \pm \sin \beta = 2 \sin \Big(\frac{\alpha \pm \beta}{2}\Big) \cos \Big(\frac{\alpha \mp \beta}{2}\Big)
-$$
+$${#eq-frmapp-stp-sin}
 
 $$
 \cos \alpha + \cos \beta = 2 \cos \Big(\frac{\alpha + \beta}{2}\Big) \cos \Big(\frac{\alpha - \beta}{2}\Big)
-$$
+$${#eq-frmapp-stp-cos-plus}
 
 $$
 \cos \alpha - \cos \beta = -2 \sin \Big(\frac{\alpha + \beta}{2}\Big) \sin \Big(\frac{\alpha - \beta}{2}\Big)
-$$
+$${#eq-frmapp-stp-cos-minus}
 
 $$
 \tan \alpha \pm \tan \beta = \frac{\sin(\alpha + \beta)}{\cos \alpha \cos \beta}
-$$
+$${#eq-frmapp-stp-tan}
 
 
 

@@ -10,6 +10,12 @@ sheets <- list()
 #            col_types = "c",
 #            skip = 1) -> tags
 
+
+read_sheet(ss = "https://docs.google.com/spreadsheets/d/1v9XWnb7DfJawpn4FOV2SxSy3nmBIG4t_7OK3OIeS6WE/edit?usp=sharing",
+           sheet = "order",
+           col_types = "c") %>% 
+  select(sheet, number) -> sheet_order
+
 for (sheet_name in sheets_names) {
   read_sheet(ss = "https://docs.google.com/spreadsheets/d/1v9XWnb7DfJawpn4FOV2SxSy3nmBIG4t_7OK3OIeS6WE/edit?usp=sharing",
              sheet = sheet_name,
@@ -40,7 +46,9 @@ get_json <- function(sheet_name,
                 values_from = value) %>% 
     jsonlite::toJSON(dataframe = "rows") %>%
     paste0("sheet_json='", ., "'", 
-           "\nsheet='", sheet_name, "'") %>% 
+           "\nsheet='",
+           paste0(" ", sheet_order %>% filter(sheet == sheet_name) %>% pull(number)),
+           "'") %>% 
     write(paste0(
       "book/", 
       "js/", 

@@ -25,6 +25,9 @@ function release() {
     printf "${RED}RELEASE NOT COMPLETED\n${NC}"
 		printf "${RED}You rejected your input. Restart release.\n${NC}"
 		printf "${RED}=====\n\n${NC}"
+		say "release not completed"
+		say "You rejected your input"
+		say "Restart release"
 		exit
   }
   
@@ -38,6 +41,8 @@ function release() {
     printf "${RED}RELEASE NOT COMPLETED\n${NC}"
 		printf "${RED}Deploy and double check first, then restart release.\n${NC}"
 		printf "${RED}=====\n\n${NC}"
+		say "release not completed"
+		say "Deploy and double check first, then restart release."
 		exit
   }
   
@@ -71,13 +76,18 @@ function release() {
     printf "${RED}RELEASE NOT COMPLETED\n${NC}"
 		printf "${RED}File copying error\n${NC}"
 		printf "${RED}=====\n\n${NC}"
+		say "release not completed"
+		say "File copying error"
 		exit
   }
   
   cp docs/prev/`echo "${previous_version}"`/README.md docs/cr/README.md
   
-  printf "${GREEN}\n=====\nDEPLOY COMPLETED\n=====\n\n${NC}"
+  printf "${GREEN}\n=====\nRELEASE COMPLETED\n=====\n\n${NC}"
   printf "${GRAY}Document this release in README.md\nCommit and push to save changes.\n${NC}"
+  say "release completed"
+	say "Document this release in README"
+	say "Commit and push to save changes."
   
   open docs/cr/README.md
   

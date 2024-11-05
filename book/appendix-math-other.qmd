@@ -1,0 +1,1702 @@
+# Прочие математические штуки {#appendix-other-math}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+
+
+## Гипероператор {#appendix-other-math-hyperop}
+
+
+## Доказательства свойств производной {#appendix-other-math-deriv-props}
+
+:::{.lab-senior}
+:::
+
+Свойства производной практически всегда берутся без доказательства --- в общем-то они достаточно простые и интуитивно понятные. Однако если мы собираемся строго что-либо обосновывать, то доказательство необходимо. Что ж, обоснуем то, что и так нам было хорошо известно.
+
+
+### Производная константы {#appendix-other-math-deriv-const1}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-const1}
+$$
+c' = 0, \, c = \const
+$$
+:::
+
+:::{.quote .small}
+Ох, щас будет высокоинтеллектуальная деятельность!
+:::
+
+:::{.proof}
+Пусть $y(x) = c$. Тогда $\displaystyle c' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\Delta y = y(x+\Delta x) - y(x) = c - c = 0
+$$
+
+Тогда
+
+$$
+\frac{\Delta y}{\Delta x} = \frac{0}{\Delta x} = 0 = \const
+$$
+
+$$
+c' = \lim_{\Delta x \to 0} \frac{0}{\Delta x} = \lim_{\Delta x \to 0} 0 = 0 \qed
+$$
+:::
+
+
+### Константа в производной {#appendix-other-math-deriv-const2}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-const2}
+$$
+\Big( cf(x) \Big)' = cf'(x)
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = cf(x)$. Тогда $\displaystyle \big( cf(x) \big)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+$$
+\begin{split}
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \\
+&= \lim_{\Delta x \to 0} \frac{c f(x + \Delta x)  - c f(x) }{\Delta x} = \\
+&= \lim_{\Delta x \to 0} c \cdot \frac{f(x + \Delta x)  - f(x) }{\Delta x} = \\
+&= c \cdot \lim_{\Delta x \to 0} \frac{f(x + \Delta x)  - f(x) }{\Delta x} = \\
+&= c f'(x)
+\end{split}
+$$
+:::
+
+
+### Производная суммы {#appendix-other-math-deriv-sum}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-sum}
+$$
+\big( f(x) + g(x) \big)' = f'(x) + g'(x)
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = f(x) + g(x)$. Тогда
+
+$$
+\begin{split}
+y'(x) &\defin{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) + g(x + \Delta x) \Big) - \Big( f(x) + g(x) \Big)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{\Big(f(x + \Delta x) - f(x) \Big) + \Big( g(x + \Delta x) - g(x) \Big)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x) - f(x)}{\Delta x} + \frac{g(x + \Delta x) - g(x)}{\Delta x} \right) = \\
+&= 
+\lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x} + 
+\lim_{\Delta x \to 0} \frac{g(x + \Delta x) - g(x)}{\Delta x} = \\
+&= f'(x) + g'(x) \qed
+\end{split}
+$$
+:::
+
+
+### Производная произведения {#appendix-other-math-deriv-prod}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-prod}
+$$
+\Big( f(x) g(x) \Big)' = f'(x) g(x) + f(x) g'(x)
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = f(x) g(x)$. Тогда $\displaystyle \Big( f(x) g(x) \Big)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Опишем также приращения функций $f(x)$ и $g(x)$ для случая, когда приращение аргумента равно $\Delta x$:
+
+$$
+\begin{split}
+\Delta f(x) &= f(x + \Delta x) - f(x) \quad & \circled{1} \\
+\Delta g(x) &= g(x + \Delta x) - g(x) \quad & \circled{2}
+\end{split}
+$$
+
+$$
+\begin{split}
+y'(x) &\defin{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) \, g(x + \Delta x) - f(x)\, g(x)}{\Delta x} = \\
+&\overset{\circled{1} + \circled{2}}{=} 
+\frac{\big( f(x) + \Delta f(x) \big) \big( g(x) + \Delta g(x) \big) - f(x) g(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{ \cancel{ f(x) g(x) } + f(x) \Delta g(x) + \Delta f(x) g(x) + \Delta f(x) \Delta g(x) - \cancel{ f(x) g(x) }}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \Bigg( f(x) \frac{\Delta g(x)}{\Delta x} + g(x) \frac{\delta f(x)}{\Delta x} + \Delta g(x) \frac{\Delta f(x)}{\Delta x}\Bigg) = \\
+&\overset{\Delta g(x) \to 0}{=} f(x) g'(x) + g(x) f'(x) \qed
+\end{split}
+$$
+
+:::
+
+### Производная частного {#appendix-other-math-deriv-frac}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-frac}
+$$
+\left(\frac{f(x)}{g(x)} \right)' = \frac{f'(x) g(x) - f(x) g'(x)}{g^2(x)}, \, g(x) \not \equiv 0
+$$
+:::
+
+:::{.proof}
+Пусть $\displaystyle y(x) = \frac{f(x)}{g(x)}$. Тогда $\displaystyle \left( \frac{f(x)}{g(x)} \right)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Опишем также приращения функций $f(x)$ и $g(x)$ для случая, когда приращение аргумента равно $\Delta x$:
+
+$$
+\begin{split}
+\Delta f(x) &= f(x + \Delta x) - f(x) \quad & \circled{1} \\
+\Delta g(x) &= g(x + \Delta x) - g(x) \quad & \circled{2}
+\end{split}
+$$
+
+$$
+\begin{split}
+y'(x) &\defin{=} \lim_{\Delta x \to 0} \frac{y(x + \Delta x) - y(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{\dfrac{f(x + \Delta x)}{g(x + \Delta x)} - \dfrac{f(x)}{g(x)}}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{g(x + \Delta x) g(x) \Delta x} = \\
+&=
+\underset{\circled{3}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{1}{g(x + \Delta x) g(x)}
+}
+}
+\cdot
+\underset{\circled{4}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{\Delta x}
+}
+}
+\end{split}
+$$
+
+Рассмотрим множитель $\circled{3}$. При стремлении приращения аргумента к нулю, первый множитель в знаменателе стремится к $g(x)$: $\Delta x \to 0 \Rightarrow g(x + \Delta x) \to g(x)$. Следовательно,
+
+$$
+\lim_{\Delta x \to 0} \frac{1}{g(x + \Delta x) g(x)} = \frac{1}{g^2(x)}
+$$
+
+Рассмотрим множитель $\circled{4}$.
+
+$$
+\begin{split}
+&\lim_{\Delta x \to 0} \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{\Delta x} = \\
+&\overset{\circled{1} + \circled{2}}{=}
+\lim_{\Delta x \to 0} \Bigg( \frac{\Big(f(x) + \Delta f(x) \Big) g(x) - f(x) \Big(g(x) + \Delta g(x) \Big)}{\Delta x} \Bigg) = \\
+&= \lim_{\Delta x \to 0} \frac{ \cancel{ f(x) g(x) } + \Delta f(x) g(x) - \cancel{ f(x) g(x) } + f(x) \Delta g(x)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \Bigg( g(x) \frac{\Delta f(x)}{\Delta x} - f(x) \frac{\Delta g(x)}{\Delta x}\Bigg) = g(x) \lim_{\Delta x \to 0} \frac{\Delta f(x)}{\Delta x} - f(x) \lim_{\Delta x \to 0} \frac{\Delta g(x)}{\Delta x} = \\
+&= g(x) f'(x) - f(x) g'(x)
+\end{split}
+$$
+
+Тогда
+
+$$
+\begin{split}
+y'(x) &= \left( \frac{f(x)}{g(x)} \right)' = \\
+&= \frac{1}{g^2(x)} \cdot g(x) f'(x) - f(x) g'(x) = \\
+&= \frac{g(x) f'(x) - f(x) g'(x)}{g^2(x)} \qed
+\end{split}
+$$
+
+:::
+
+
+Объединив свойства из утверждений [-@prp-deriv-const2], [-@prp-deriv-frac] и [-@prp-deriv-const1] можно получить ещё одно:
+
+:::{#cor-deriv-const3}
+$$
+\left( \frac{c}{g(x)} \right)' = -\frac{c \, g'(x)}{g^2(x)}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\left( \frac{c}{g(x)} \right)' &= \\
+&= c \cdot \left( \frac{1}{g(x)} \right)' = c \cdot \frac{(1)' \cdot g(x) - 1 \cdot g'(x)}{g^2(x)} = \\
+&= c \cdot \frac{0 \cdot g(x) - g'(x)}{g^2(x)} = c \cdot \frac{-g'(x)}{g^2(x)} = - \frac{c \, g'(x)}{g^2(x)} \qed
+\end{split}
+$$
+:::
+
+### Производная сложной функции {#appendix-other-math-deriv-composition}
+
+:::{.lab-senior}
+:::
+
+
+
+
+
+
+## Доказательства формул для производных элементарных функций {#appendix-other-math-deriv-proof}
+
+:::{.lab-senior}
+:::
+
+И в курсе школьной математики, и в этой книге формулы для производных элементарных функций даются, как правило, как факты, ниспосланные свыше. Тем не менее, это вовсе не так --- все формулы выводимы из определения производной и свойств пределов. Здесь представлены доказательства формул для производных, пожалуй, всех элементарных функций.
+
+
+### Степенная функция {#appendix-other-math-deriv-proof-power}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-proof-power}
+$$
+(x^n)' = nx^{n-1}
+$$
+:::
+
+:::{.proof}
+
+Пусть $y(x) = x^n$. Тогда $\displaystyle (x^n)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\Delta y = 
+(x + \Delta x)^n - x^n = x^n \left( 1 + \frac{\Delta x}{x} \right) - x^n = 
+x^n \left( \left( 1 + \frac{\Delta x}{x} \right) -1 \right)
+$$
+
+Тогда
+
+$$
+(x^n)' = 
+\lim_{\Delta x \to 0} \frac{x^n \left( \left( 1 + \dfrac{\Delta x}{x} \right) -1 \right)}{\Delta x} = 
+\lim_{\Delta x \to 0} \frac{n \cdot x^n \cdot \dfrac{\Delta x}{x}}{\Delta x} = 
+\lim_{\Delta x \to 0} \frac{n \cdot x^n \cdot \Delta x}{\Delta x \cdot x} = 
+nx^{n-1} \qed
+$$
+:::
+
+Доказанное влечет ряд следствий.
+
+:::{#cor-deriv-proof-power1}
+$$
+(x)' = 1
+$$
+:::
+
+:::{.proof}
+$$
+(x)' = (x^1)' = 1 \cdot x^{1-1} = x^0 = 1 \qed
+$$
+:::
+
+:::{#cor-deriv-proof-1byx}
+$$
+\left( \frac{1}{x} \right)' = -\frac{1}{x^2}
+$$
+:::
+
+:::{.proof}
+$$
+\left( \frac{1}{x} \right)' =
+(x^{-1})' = (-1) \cdot x^{-1-1} = 
+-x^{-2} = -\frac{1}{x^2} \qed
+$$
+:::
+
+:::{#cor-deriv-proof-1byx}
+$$
+\left( \frac{1}{x^n} \right)' = -\frac{n}{x^{n+1}}
+$$
+:::
+
+:::{.proof}
+$$
+\left( \frac{1}{x^n} \right)' = 
+(x^{-n})' = -n \cdot x^{-n-1} = 
+-n \cdot x^{-(n+1)} = 
+-\frac{n}{x^{n+1}} \qed
+$$
+:::
+
+:::{#cor-deriv-proof-sqrt}
+$$
+(\sqrt{x})' = \frac{1}{2\sqrt{x}}
+$$
+:::
+
+:::{.proof}
+$$
+(\sqrt{x})' = 
+\left( x^{\frac{1}{2}}\right)' = 
+\frac{1}{2} \cdot x^{\frac{1}{2}-1} = 
+\frac{1}{2} x^{-\frac{1}{2}} = 
+\frac{1}{2 x^{\frac{1}{2}}} = 
+\frac{1}{2 \sqrt{x}} \qed
+$$
+:::
+
+:::{#cor-deriv-proof-sqrt}
+$$
+(\sqrt[q]{x^p})' = \frac{p}{q}x^{\frac{p-q}{q}}
+$$
+:::
+
+:::{.proof}
+$$
+(\sqrt[q]{x^p})' = 
+\left( x^\frac{p}{q} \right)' = \frac{p}{q} x^{\frac{p}{q}-1} = 
+\frac{p}{q} x^{\frac{p}{q} - \frac{q}{q}} = 
+\frac{p}{q} x^\frac{p - q}{q} \qed
+$$
+:::
+
+
+
+### Показательная функция {#appendix-other-math-deriv-proof-exp}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-proof-exp}
+$$
+(a^x)' = a^x \ln a
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = a^x$. Тогда $\displaystyle (a^x)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\Delta y = a^{x + \Delta x} - a^x = a^x \left( a^{\Delta x - 1} \right)
+$$
+
+Тогда
+
+$$
+(a^x)' = \lim_{\Delta x \to 0} \frac{a^x \left( a^{\Delta x - 1} \right)}{\Delta x} = 
+\lim_{\Delta x \to 0} \frac{a^x \cdot \Delta x \cdot \ln a}{\Delta x} = 
+a^x \ln a \qed
+$$
+:::
+
+:::{#cor-deriv-proof-expe}
+$$
+(e^x)' = e^x
+$$
+:::
+
+:::{.proof}
+$$
+(e^x)' = e^x \cdot \ln e = e^x \cdot 1 = e^x \qed
+$$
+:::
+
+
+
+### Логарифмическая функция {#appendix-other-math-deriv-proof-log}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-deriv-proof-log}
+$$
+(\log_a x)' = \frac{1}{x \ln a}
+$$
+:::
+
+:::{.proof}
+
+:::
+
+
+
+### Тригонометрические функции {#appendix-other-math-deriv-proof-trig}
+
+:::{.lab-guru}
+:::
+
+В доказательствах формул производных для тригонометрических функций используются свойства тригонометрических функций.
+
+
+
+#### Синус {#appendix-other-math-deriv-proof-sin}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-sin}
+$$
+(\sin x)' = \cos x
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = \sin x$. Тогда $\displaystyle (\sin x)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\begin{split}
+\Delta y &= 
+\sin(x + \Delta x) - \sin x = \\
+&\overset{\circled{1}}{=} 2 \sin \left( \frac{x + \Delta x - x}{2} \right) \cos \left( \frac{x + \Delta x + x}{2} \right) = \\
+&= 2 \sin \left( \frac{\Delta x}{2} \right) \cos \left( x + \frac{\Delta x}{2} \right)
+\end{split}
+$$
+
+В переходе $\circled{1}$ использована формула преобразование суммы в произведение, согласно которой $\sin \alpha - \sin \beta = 2 \sin \Big(\frac{\alpha - \beta}{2}\Big) \cos \Big(\frac{\alpha + \beta}{2}\Big)$.
+
+Тогда имеем
+
+$$
+\begin{split}
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \\
+&= \lim_{\Delta x \to 0} \frac{2 \sin \left( \frac{\Delta x}{2} \right) \cos \left( x + \frac{\Delta x}{2} \right)}{\Delta x} = \\ 
+&= \lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right) \cos \left( x + \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = \\
+&= \underset{\circled{2}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}}
+}
+}
+\cdot 
+\underset{\circled{3}}{
+\boxed{
+\lim_{\Delta x \to 0} \cos \left( x + \frac{\Delta x}{2} \right)
+}
+}
+\end{split}
+$$
+
+Множитель $\circled{2}$ представляет собой **первый замечательный предел** --- $\displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1$. Соответственно, $\displaystyle \lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = 1$. Выражение под знаком предела во множителе $\circled{3}$, как несложно заметить, при стремлении приращения аргумента к нулю стремится к $\cos x$:
+
+$$
+\lim_{\Delta x \to 0} \cos \left( x + \frac{\Delta x}{2} \right) = \cos x
+$$
+
+Получается,
+
+$$
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = 1 \cdot \cos x = \cos x \qed
+$$
+:::
+
+
+
+#### Косинус {#appendix-other-math-deriv-proof-cos}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-cos}
+$$
+(\cos x)' = -\sin x
+$$
+:::
+
+:::{.proof}
+Пусть $y(x) = \cos x$. Тогда $\displaystyle (\cos x)' = y'(x) \defin{=} \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$.
+
+Рассмотрим отдельно приращение функции $\Delta y$:
+
+$$
+\begin{split}
+\Delta y &= 
+\cos (x + \Delta x) - \cos x = \\
+&\overset{\circled{1}}{=} -2 \sin \left( \frac{x + \Delta x + x}{2} \right) \sin \left( \frac{x + \Delta x - x}{2} \right) = \\
+&= -2 \sin \left( x + \frac{\Delta x}{2}\right) \sin \left( \frac{\Delta x}{2} \right)
+\end{split}
+$$
+
+В переходе $\circled{1}$ использована формула преобразование суммы в произведение, согласно которой $\cos \alpha - \cos \beta = -2 \sin \Big(\frac{\alpha + \beta}{2}\Big) \sin \Big(\frac{\alpha - \beta}{2}\Big)$.
+
+Тогда имеем 
+
+$$
+\begin{split}
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \\
+&= \lim_{\Delta x \to 0} \frac{-2 \sin \left( x + \frac{\Delta x}{2}\right) \sin \left( \frac{\Delta x}{2} \right)}{\Delta x} = \\
+&= \lim_{\Delta x \to 0} \frac{-\sin \left( x + \frac{\Delta x}{2}\right) \sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = \\
+&= 
+\underset{\circled{2}}{
+\boxed{
+\lim_{\Delta x \to 0} - \sin \left( x + \frac{\Delta x}{2} \right)
+}
+}
+\cdot 
+\underset{\circled{3}}{
+\boxed{
+\lim_{\Delta x \to 0} \frac{\sin \frac{\Delta x}{2}}{\frac{\Delta x}{2}}
+}
+}
+\end{split}
+$$
+
+Множитель $\circled{2}$ представляет собой **первый замечательный предел** --- $\displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1$. Соответственно, $\displaystyle \lim_{\Delta x \to 0} \frac{\sin \left( \frac{\Delta x}{2} \right)}{\frac{\Delta x}{2}} = 1$. Выражение под знаком предела во множителе $\circled{2}$, как несложно заметить, при стремлении приращения аргумента к нулю стремится к $-\sin x$:
+
+$$
+\lim_{\Delta x \to 0} - \sin \left( x + \frac{\Delta x}{2} \right) = - \lim_{\Delta x \to 0} \sin \left( x + \frac{\Delta x}{2} \right) = -\sin x
+$$
+
+Получается,
+
+$$
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = -\sin x \cdot 1 = - \sin x \qed
+$$
+
+:::
+
+#### Тангенс {#appendix-other-math-deriv-proof-tan}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-tan}
+$$
+(\tan x)' = \frac{1}{\cos^2 x}
+$$
+:::
+
+Доказать справедливость формулы для производной тангенса можно разными способами. Один из вариантов --- рассмотреть приращение функции, обнаружить там замечательный предел и получить искомый ответ, как было сделано выше (см. [-@prp-deriv-proof-sin] и [-@prp-deriv-proof-cos]). Я же воспользуюсь правилом взятия производной от частного функций (@prp-deriv-frac).
+
+:::{.proof}
+$$
+\begin{split}
+(\tan x)' & = \left( \frac{\sin x}{\cos x} \right)' = \\
+&= \frac{(\sin x)' \cos x - \sin x (\cos x)'}{\cos^2 x} = \\
+&= \frac{\cos x \cdot \cos x + \sin x \cdot \sin x}{\cos^2 x} = \\
+&= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} \qed
+\end{split}
+$$
+:::
+
+
+
+#### Котангенс {#appendix-other-math-deriv-proof-cot}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-cot}
+$$
+(\cot x)' = -\frac{1}{\sin^2 x}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+(\cot x)' &= \left( \frac{\cos x}{\sin x} \right)' = \\
+&= \frac{(\cos x)' \sin x - \cos x (\sin x)'}{\sin^2x} = \\
+&= \frac{-\sin x \cdot \sin x - \cos x \cos x}{\sin^2 x} = \\
+&= - \frac{\sin^2x + \cos^2 x}{\sin^2 x} = - \frac{1}{\sin^2 x} \qed
+\end{split}
+$$
+:::
+
+
+
+#### Секанс {#appendix-other-math-deriv-proof-sec}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-sec}
+$$
+(\sec x)' = \tan x \sec x
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+(\sec x)' &= \left( \frac{1}{\cos x} \right)' = \\
+&= \frac{(1)' \cdot \cos x - 1 \cdot (\cos x)'}{\cos^2 x} = \\
+&= \frac{\sin x}{\cos^2 x} = \frac{\sin x}{\cos x} \cdot \frac{1}{\cos x} = \tan x \sec x \qed
+\end{split}
+$$
+:::
+
+
+
+#### Косеканс {#appendix-other-math-deriv-proof-csc}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-csc}
+$$
+(\csc x)' = -\cot x \csc x
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+(\csc x)' &= \left( \frac{1}{\sin x} \right)' = \\
+&= \frac{(1)' \cdot \sin x - 1 \cdot (\sin x)'}{\sin^2 x} = \\
+&= - \frac{\cos x}{\sin^2 x} = - \frac{\cos x}{\sin x} \cdot \frac{1}{\sin x} = - \cot x \csc x \qed
+\end{split}
+$$
+:::
+
+
+
+#### Арксинус {#appendix-other-math-deriv-proof-arcsin}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arcsin}
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1-x^2}}
+$$
+:::
+
+:::{.proof}
+
+$$
+\sin \arcsin x = x \Rightarrow \big( \sin \arcsin x \big)' = x'
+$$
+
+$$
+\cos(\arcsin x) \cdot (\arcsin x)' = 1 \Rightarrow (\arcsin x)' = \frac{1}{\cos \arcsin x}
+$$
+
+$$
+\sin^2 x + \cos^2 x = 1 \Rightarrow (\arcsin x)' = \frac{1}{\pm \sqrt{1 - \sin^2 \arcsin x}}
+$$
+
+$$
+\im \arcsin x = [-\frac{\pi}{2}, \frac{\pi}{2}] \Rightarrow \cos(\arcsin x) > 0 \Rightarrow \sqrt{1 - \sin^2 \arcsin x} > 0
+$$
+
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1 - \sin^2 \arcsin x}} = \frac{1}{\sqrt{1 - x^2}} \qed
+$$
+
+:::
+
+
+
+#### Арккосинус {#appendix-other-math-deriv-proof-arccos}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arccos}
+$$
+(\arccos x)' = -\frac{1}{\sqrt{1-x^2}}
+$$
+:::
+
+:::{.proof}
+$$
+\arcsin x + \arccos x = \frac{\pi}{2}
+$$
+
+$$
+(\arcsin x + \arccos x)' = \left( \frac{\pi}{2} \right)' = 0
+$$
+
+$$
+(\arccos x)' = -(\arcsin x)'
+$$
+
+$$
+(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
+$$
+
+:::
+
+
+
+#### Арктангенс {#appendix-other-math-deriv-proof-arctan}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arctan}
+$$
+(\arctan x)' = \frac{1}{1+x^2}
+$$
+:::
+
+:::{.proof}
+$$
+\tan \arctan x = x \Rightarrow \big( \tan \arctan x \big)' = x'
+$$
+
+$$
+\frac{1}{\cos^2 \arctan x} \cdot (\arctan x)' = 1 \Rightarrow (\arctan x)' = \cos^2 \arctan x
+$$
+
+$$
+\cos x = \frac{1}{\sqrt{1 + \tan^2 x}} \Rightarrow (\arctan x)' = \left( \frac{1}{\sqrt{1 + \tan^2 \arctan x}} \right)^2 = \frac{1}{1 + x^2} \qed
+$$
+:::
+
+
+
+#### Арккотангенс {#appendix-other-math-deriv-proof-arccot}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arccot}
+$$
+(\arccot x)' = -\frac{1}{1+x^2}
+$$
+:::
+
+:::{.proof}
+$$
+\arctan x + \arccot x = \frac{\pi}{2}
+$$
+
+$$
+(\arctan x + \arccot x)' = \left( \frac{\pi}{2} \right)' = 0
+$$
+$$
+(\arccot x)' = -(\arctan x) = -\frac{1}{1 + x^2} \qed
+$$
+
+:::
+
+
+
+#### Арксеканс {#appendix-other-math-deriv-proof-arcsec}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arcsec}
+$$
+(\arcsec x)' = \frac{1}{|x| \sqrt{x^2-1}}
+$$
+:::
+
+:::{.proof}
+$$
+\arcsec x = \arccos \frac{1}{x}
+$$
+
+$$
+(\arcsec x)' = \left( \arccos \frac{1}{x} \right)'
+$$
+
+$$
+\begin{split}
+(\arcsec x)' &= -\frac{1}{\sqrt{1 - \dfrac{1}{x^2}}} \cdot \left( -\frac{1}{x^2} \right) = \\
+&= \frac{1}{x^2 \sqrt{\dfrac{x^2 - 1}{x^2}}} = \frac{1}{x^2 \dfrac{\sqrt{x^2 - 1}}{|x|}} = 
+\frac{1}{|x| \sqrt{x^2 -1}} \qed
+\end{split}
+$$
+
+:::
+
+
+
+#### Арккосеканс {#appendix-other-math-deriv-proof-arccsc}
+
+:::{.lab-guru}
+:::
+
+:::{#prp-deriv-proof-arccsc}
+$$
+(\arccsc x)' = - \frac{1}{|x| \sqrt{x^2-1}}
+$$
+:::
+
+:::{.proof}
+$$
+\arcsec x + \arccsc x = \frac{\pi}{2}
+$$
+
+$$
+(\arcsec x + \arccsc x)' = \left( \frac{\pi}{2} \right)'
+$$
+
+$$
+(\arccsc x)' = -(\arcsec x)' = - \frac{1}{|x| \sqrt{x^2 -1}}
+$$
+:::
+
+
+
+## Доказательства тригонометрических тождеств {#appendix-other-math-trigids-proof}
+
+### Основное тригонометрическое тождество {#appendix-other-math-trigids-proof-pythagorean}
+
+:::{#prp-trig-pythagorean}
+$$
+\sin^2 \alpha + \cos^2 \alpha = 1
+$$
+:::
+
+:::{.proof}
+
+Данное утверждение можно доказать двумя способами.
+
+**Способ 1 (строго говоря, справедлив для $\alpha < 90^\circ$).** Рассмотрим прямоугольный треугольник с катетами $a$ и $b$ и гипотенузой $c$. Пусть $a$ есть катет, противолежащий углу $\alpha$. Тогда
+
+$$
+\begin{split}
+\sin \alpha &\defin{=} \frac{a}{c} \Rightarrow a = c \sin \alpha \\
+\cos \alpha &\defin{=} \frac{b}{c} \Rightarrow b = c \cos \alpha
+\end{split}
+$$
+
+По теореме Пифагора $a^2 + b^2 = c^2$. Следовательно,
+
+$$
+c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
+$$
+
+Так $c$ --- длина гипотенузы, $c > 0$. Тогда
+
+$$
+\begin{split}
+\frac{c^2 \sin^2 \alpha}{c^2} + \frac{c^2 \sin^2 \beta}{c^2} &= \frac{c^2}{c^2} \\
+\sin^2 \alpha + \cos^2 \alpha = 1 \qed
+\end{split}
+$$
+
+**Способ 2 (справедлив для любого $alpha$).** Рассмотрим тригонометрическую окружность. Тригонометрическая окружность --- это окружность с центром в начале координат и радуисом, равным единице. Тогда координаты всех её точек удовлетворяют уравнению $x^2 + y^2 = 1$, так как это уравнение задает окружность единичного радиуса с центром в начале координат.
+
+Координаты $x$ и $y$ любой точки окружности определяются как $\cos \alpha$ и $\sin \alpha$ соответственно, где $\alpha$ --- мера угла, задающего дугу окружности между точками $(1, 0)$ и $(x, y)$.
+
+Так как $(x, y) = (\cos \alpha, \sin \alpha)$, то числа $\cos \alpha$ и $\sin \alpha$ удовлетворяют уравнению окружности
+
+$$
+\cos^2 \alpha + \sin^2 \alpha = 1 \qed
+$$
+:::
+
+:::{#cor-trig-pythagorean-sin}
+$$
+\sin \alpha = \pm \sqrt{1 - \cos^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\sin^2 \alpha + \cos^2 \alpha = 1 \Rightarrow \sin^2 \alpha = 1 - \cos^2 \alpha
+$$
+
+$$
+\begin{split}
+\sqrt{\sin^2 \alpha} &= \sqrt{1 - \cos^2 \alpha} \\
+| \sin \alpha | &= \sqrt{1 - \cos^2 \alpha} \\
+\sin \alpha &= \pm \sqrt{1 - \cos^2 \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#cor-trig-pythagorean-cos}
+$$
+\cos \alpha = \pm \sqrt{1 - \sin^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\sin^2 \alpha + \cos^2 \alpha = 1 \Rightarrow \cos^2 \alpha = 1 - \sin^2 \alpha
+$$
+
+$$
+\begin{split}
+\sqrt{\cos^2 \alpha} &= \sqrt{1 - \sin^2 \alpha} \\
+| \cos \alpha | &= \sqrt{1 - \sin^2 \alpha} \\
+\cos \alpha &= \pm \sqrt{1 - \sin^2 \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#cor-trig-pythagorean-tan}
+$$
+\tan^2 \alpha + 1 = \sec^2 \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin^2 \alpha + \cos^2 \alpha &= 1 \\
+\frac{\sin^2 \alpha}{\cos^2 \alpha} + \frac{\cos^2 \alpha}{\cos^2 \alpha} &= \frac{1}{\cos^2 \alpha} \\
+\tan^2 \alpha + 1 &= \sec^2 \alpha \qed
+\end{split}
+$$
+:::
+
+:::{#cor-trig-pythagorean-cot}
+$$
+1 + \cot^2 \alpha = \csc^2 \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin^2 \alpha + \cos^2 \alpha &= 1 \\
+\frac{\sin^2 \alpha}{\sin^2 \alpha} + \frac{\cos^2 \alpha}{\sin^2 \alpha} &= \frac{1}{\sin^2 \alpha} \\
+1 + \cot^2 \alpha &= \csc^2 \alpha \qed
+\end{split}
+$$
+:::
+
+:::{#cor-trig-pythagorean-sec}
+$$
+\sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \csc^2 \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin^2 \alpha + \cos^2 \alpha &= 1 \\
+\frac{
+    \cancel{\sin^2 \alpha}
+  }{
+    \cancel{\sin^2 \alpha} \cos^2 \alpha
+  } + 
+\frac{
+    \cancel{\cos^2 \alpha}
+  }{
+    \sin^2 \alpha \cancel{\cos^2 \alpha}
+  } 
+&= \frac{1}{\sin^2 \alpha \cos^2 \alpha} \\
+\frac{1}{\cos^2 \alpha} + \frac{1}{\sin^2 \alpha} &= \frac{1}{\sin^2 \alpha} \cdot \frac{1}{\cos^2 \alpha} \\
+\sec^2 \alpha + \csc^2 \alpha &= \sec^2 \alpha \csc^2 \alpha \qed
+\end{split}
+$$
+:::
+
+
+
+### Синус и косинус суммы {#appendix-other-math-trigids-proof-sin-cos-of-sum}
+
+:::{#prp-sin-cos-of-sum}
+$$
+\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta
+$${#eq-sin-of-sum}
+
+$$
+\cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta
+$${#eq-cos-of-sum}
+:::
+
+:::{.proof}
+
+Будем доказывать равенства геометрически.
+
+Возьмём некоторую прямую $a_1$ и отложим от неё угол $\alpha$. Получим $\angle a_1 a_2 = \alpha$. От $a_2$ отложим угол $\beta$ в том же направлении, что и угол $\alpha$. Получим $\angle a_2 a_3 = \beta$. Вершины обоих углов при таком построении будут совпадать --- обозначим эту точку как $O$ (@fig-sin-cos-of-sum-draw-angles).
+
+![Построение рассматриваемых углов](img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg){#fig-sin-cos-of-sum-draw-angles}
+
+Чтобы получить тригонометрические функции углов, необходимо построить прямоугольные треугольники, содержащие углы $\alpha$ и $\beta$. Отложим на прямой $a_3$ отрезок $OA$. Из точки $A$ опустим перпендикуляр $AB$ на прямую $a_2$. Получим $\triangle AOB$, в котором $\angle ABO = 90^\circ$. Так как *значения тригонометрических функций зависят только от величины угла и не зависят от расположения и размера треугольника*[^trig-size], положим $OA = 1$. Из точки $B$ опустим перпендикуляр $BC$ на прямую $a_1$. Получим $\triangle BOC$, в котором $\angle BCO = 90^\circ$ (@fig-sin-cos-of-sum-draw-triangles). Сразу заметим, что
+
+[^trig-size]: Это утверждение доказывается как теорема в курсе школьной геометрии.
+
+$$
+\sin \beta \defin{=} \frac{AB}{OA} = \frac{AB}{1} = AB
+$$
+
+$$
+\cos \beta \defin{=} \frac{OB}{OA} = \frac{OB}{1} = OB
+$$
+
+![Построение прямоугольных треугольников, содержащих рассматриваемые углы углов](img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg){#fig-sin-cos-of-sum-draw-triangles}
+
+Для доказательства тождеств также необходимо определить тригонометрические функции угла $\alpha + \beta$. Следовательно, необходимо найти прямоугольный треугольник, содержащий данный угол.
+
+Проведём через точку $A$ прямую $b_1$, параллельную прямой $a_1$, а через точку $O$ --- прямую $b_2$, перпендикулярную $b_1$. Тогда $b_1 \cap b_2 = D$.
+
+Рассмотрим образовавшиеся углы. $\angle DAO$ и $\angle AOC$ --- внутренние накрест лежащие при параллельных прямых $a_1$ и $b_1$ и секущей $a_3$. Следовательно[^alternate-interior-angles], $\angle DAO = \angle AOC$. Однако по построению $\angle AOC = \angle AOB + \angle BOC = \beta + \alpha$. Получаем, что $\angle DAO = \alpha + \beta$ и есть искомый угол.
+
+[^alternate-interior-angles]: Это также теорема школьной геометрии.
+
+![Построение треугольника, содержащего угол, равный сумме рассматриваемых углов](img/appendix-math-other/sin-cos-of-sum-first-perp.jpg){#fig-sin-cos-of-sum-first-perp}
+
+Рассмотрим образовавшийся $\triangle DAO$. По построению $\angle ODA = 90^\circ$, следовательно $\triangle DAO$ --- прямоугольный, а $AO$ --- его гипотенуза. Так как $AO = OA = 1$, имеем
+
+$$
+\sin (\alpha + \beta) \defin{=} \frac{DO}{AO} = \frac{DO}{1} = DO
+$${#eq-sin-DO}
+
+$$
+\cos (\alpha + \beta) \defin{=} \frac{DA}{AO} = \frac{DA}{1} = DA
+$${#eq-cos-DA}
+
+![Искомые тригонометрические фукнции в построенном треугольнике](img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg){#fig-sin-cos-of-sum-get-trigs}
+
+Проведем через точку $B$ прямую $b_3$, параллельную $b_2$. Получим, что $b_3 \perp b_1$ и $b_3 \perp a_1$, значит $BC \in b_2$, а также $b_1 \cap b_3 = E$ (@fig-sin-cos-of-sum-second-perp).
+
+Рассмотрим получившийся $\triangle ABE$. Его $\angle AEB = 90^\circ$, а $\angle ABE = \alpha$, так как
+
+$$
+\begin{split}
+\angle CBE &= \angle CBO + \angle OBA + \angle ABE = 180^\circ \\
+\angle CBE &= (90^\circ - \alpha) + 90^\circ + \angle ABE = 180^\circ \\
+\Downarrow \\
+\angle ABE &= 180^\circ - (90^\circ - \alpha) - 90^\circ = \alpha
+\end{split}
+$${#eq-ABE-alpha}
+
+
+![Построение дополнительного треугольника](img/appendix-math-other/sin-cos-of-sum-second-perp.jpg){#fig-sin-cos-of-sum-second-perp}
+
+Рассмотрим образовавшийся четырёхугольник $ODEC$.
+
+По построению $OC \parallel DE$. В свою очередь, $OD \parallel EC$, поскольку лежат на прямых, перпендикулярных $b_1$, а *две прямые, перпендикулярные третьей, параллельны*[^two-perp-parallel]. Следовательно, четырёхугольник $ODEC$ --- параллелограмм[^odec-rectangle]. Значит $OD = CE$ и $OC = DE$.
+
+[^two-perp-parallel]: Это также теорема, доказываемая в школьной геометрии.
+
+[^odec-rectangle]: Безусловно, можно заметить, что $ODEC$ --- прямоугольник, однако для доказательства тождеств достаточно того, что он является параллелограммом.
+
+Тогда
+
+$$
+\begin{split}
+DO &= CB + BE \\
+OC &= DA + AE \Rightarrow DA = OC - AE
+\end{split}
+$$
+
+Однако выше ([-@eq-sin-DO] и [-@eq-cos-DA]) мы отметили, что $OD = \sin (\alpha + \beta)$, а $DA = \cos (\alpha + \beta)$. Получается, что
+
+$$
+\begin{split}
+\sin (\alpha + \beta) &= CB + BE \\
+\cos (\alpha + \beta) &= OC - AE
+\end{split}
+$$
+
+Для завершения доказательства необходимо выразить отрезки $CB$, $BE$, $OC$ и $AE$ через тригонометрические функции углов $\alpha$ и $\beta$.
+
+Рассмотрим $\triangle BOC$. Его $\angle BCO = 90^\circ$, а $\angle BOC = \alpha$. Тогда
+
+$$
+\sin \alpha \defin{=} \frac{CB}{OB} \Rightarrow CB = \sin \alpha \cdot OB = \sin \alpha \cos \beta
+$$
+
+$$
+\cos \alpha \defin{=} \frac{OC}{OB} \Rightarrow OC = \cos \alpha \cdot OB = \cos \alpha \cos \beta
+$$
+
+Из $\triangle ABE$, в котором $\angle AEB = 90^\circ$, а $\angle ABE = \alpha$ ([-@eq-ABE-alpha]) получаем, что
+
+$$
+\sin \alpha \defin{=} \frac{AE}{AB} \Rightarrow AE = \sin \alpha \cdot AB = \sin \alpha \sin \beta
+$$
+
+$$
+\cos \alpha \defin{=} \frac{BE}{AB} \Rightarrow BE = \cos \alpha \cdot AB = \cos \alpha \sin \beta
+$$
+
+![Окончательное построение](img/appendix-math-other/sin-cos-of-sum-full.jpg){#fig-sin-cos-of-sum-full}
+
+Итого, имеем (@fig-sin-cos-of-sum-full)
+
+$$
+\begin{split}
+DO &= \sin (\alpha + \beta) \\
+BE &= \cos \alpha \sin \beta \\
+CB &= \sin \alpha \cos \beta \\
+DA &= \cos (\alpha + \beta) \\
+AE &= \sin \alpha \sin \beta \\
+OC &= \cos \alpha \cos \beta
+\end{split}
+$$
+
+Следовательно, 
+
+$$
+\begin{split}
+DO = CB + BE &\Rightarrow \sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+DA = OC - AE &\Rightarrow \cos (\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta \qed
+\end{split}
+$$
+
+:::
+
+:::{#cor-sin-of-diff}
+$$
+\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin (\alpha - \beta) &= \sin \big( \alpha + (-\beta) \big) = \\
+&= \sin \alpha \cos (-\beta) + \cos \alpha \sin (-\beta) = \\
+&= \sin \alpha \cos \beta + \cos \alpha \cdot (- \sin \beta) = \\
+&= \sin \alpha \cos \beta - \cos \alpha \sin \beta \qed
+\end{split}
+$$
+:::
+
+:::{#cor-cos-of-diff}
+$$
+\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos (\alpha - \beta) &= \cos \big( \alpha + (-\beta) \big) = \\
+&= \cos \alpha \cos (-\beta) - \sin \alpha \sin (-\beta) = \\
+&= \cos \alpha \cos \beta - \sin \alpha \cdot (-\sin \beta) = \\
+&= \cos \alpha \cos \beta + \sin \alpha \sin \beta \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+Ввиду сходства выражений [-@eq-sin-of-sum] и [-@cor-sin-of-diff], а также [-@eq-cos-of-sum] и [-@cor-cos-of-diff] их часто объединяют в следующие тождества:
+
+$$
+\sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
+$$
+
+$$
+\cos (\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
+$$
+:::
+
+### Синус и косинус двойного угла {#appendix-other-math-trigids-proof-sin-cos-2a}
+
+:::{#prp-sin-2a}
+$$
+\sin 2\alpha = 2 \sin \alpha \cos \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin 2\alpha &= \sin (\alpha + \alpha) = \\
+&= \sin \alpha \cos \alpha + \cos \alpha \sin \alpha = \\
+&= \sin \alpha \cos \alpha + \sin \alpha \cos \alpha = \\
+&= 2 \sin \alpha \cos \alpha \qed
+\end{split}
+$$
+:::
+
+:::{#cor-sin-2a}
+$$
+\sin 2 \alpha = (\sin \alpha + \cos \alpha)^2 - 1
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin 2 \alpha &= \sin 2 \alpha + 1 - 1 = \\
+&= 2 \sin \alpha \cos \alpha + (\sin^2 \alpha + \cos^2 \alpha) - 1 = \\
+&= (\sin^2 \alpha + 2 \sin \alpha \cos \alpha + \cos^2 \alpha) - 1 = \\
+&= (\sin \alpha + \cos \alpha)^2 - 1 \qed
+\end{split}
+$$
+:::
+
+:::{#cor-sin-2a-from-tan}
+$$
+\sin 2 \alpha = \frac{2 \tan \alpha}{1 + \tan^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin 2 \alpha &= 2 \sin \alpha \cos \alpha = \\
+&= \frac{2 \sin \alpha \cos \alpha \cdot \cos \alpha}{\cos \alpha} = \\
+&= 2 \frac{\sin \alpha}{\cos \alpha} \cdot \frac{\cos^2 \alpha}{1} = \\
+&= 2 \tan \alpha \cdot \frac{\cos^2 \alpha}{\cos^2 \alpha + \sin^2 \alpha} = \\
+&= \frac{2 \tan \alpha}{\dfrac{\cos^2 \alpha + \sin^2 \alpha}{\cos \alpha}} = 
+\frac{2 \tan \alpha}{1 + \tan^2 \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cos-2a}
+$$
+\cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos (\alpha + \alpha) = \\
+&= \cos \alpha \cos \alpha - \sin \alpha \sin \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha \qed
+\end{split}
+$$
+
+:::
+
+:::{#cor-cos-2a-cos2}
+$$
+\cos 2\alpha = 2 \cos^2 \alpha - 1
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos 2 \alpha - \cos^2 \alpha + \cos^2 \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha - \cos^2 \alpha + \cos^2 \alpha = \\
+&= \cos^2 \alpha + \cos^2 \alpha - (\sin^2 \alpha + \cos^2 \alpha) = \\
+&= 2 \cos^2 \alpha - 1 \qed
+\end{split}
+$$
+:::
+
+:::{#cor-cos-2a-sin2}
+$$
+\cos 2\alpha = 1 - 2 \sin^2 \alpha
+$$
+:::
+
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos 2 \alpha + \sin^2 \alpha - \sin^2 \alpha = \\
+&= \cos^2 \alpha - \sin^2 \alpha + \sin^2 \alpha - \sin^2 \alpha = \\
+&= (\cos^2 \alpha + \sin^2 \alpha) - \sin^2 \alpha - \sin^2 \alpha = \\
+&= 1 - 2 \sin^2 \alpha \qed
+\end{split}
+$$
+:::
+
+:::{#cor-cos-2a-tan}
+$$
+\cos 2 \alpha = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos 2 \alpha &= \cos^2 \alpha - \sin^2 \alpha = \\
+&= \frac{(\cos^2 \alpha - \sin^2 \alpha) \cdot \cos^2 \alpha}{\cos^2 \alpha} = \\
+&= \frac{\cos^2 \alpha - \sin^2 \alpha}{\cos^2 \alpha} \cdot \frac{\cos^2 \alpha}{1} = \\
+&= (1 - \tan^2 \alpha) \cdot \frac{\cos^2 \alpha}{\cos^2 \alpha + \sin^2 \alpha} = \\
+&= \frac{1 - \tan^2 \alpha}{\dfrac{\cos^2 \alpha + \sin^2 \alpha}{\cos^2 \alpha}} = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha \qed}
+\end{split}
+$$
+:::
+
+
+
+### Тангенс и котангенс суммы и разности {#appendix-other-math-trigids-proof-tan-cot-of-sum}
+
+:::{#prp-tan-of-sum}
+$$
+\tan (\alpha + \beta) = \frac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\tan (\alpha + \beta) &= \frac{\sin (\alpha + \beta)}{\cos (\alpha + \beta)} = \\
+&= \frac{\sin \alpha \cos \alpha + \cos \alpha \sin \beta}{\cos \alpha \cos \beta - \sin \alpha \sin \beta} = \\
+&= \frac{
+    \dfrac{\sin \alpha \cos \alpha + \cos \alpha \sin \beta}{\cos \alpha \cos \beta}
+  }{
+    \dfrac{\cos \alpha \cos \beta - \sin \alpha \sin \beta}{\cos \alpha \cos \beta}
+  } = \\
+&= \frac{
+    \dfrac{\sin \alpha \cancel{\cos \beta}}{\cos \alpha \cancel{\cos \beta}} 
+    + 
+    \dfrac{\cancel{\cos \alpha} \sin \beta}{\cancel{\cos \alpha} \cos \beta}
+  }{
+    \dfrac{\cancel{\cos \alpha} \cancel{\cos \beta}}{\cancel{\cos \alpha} \cancel{\cos \beta}}
+    -
+    \dfrac{\sin \alpha \sin \beta}{\cos \alpha \cos \beta}
+  } = \\
+&= \frac{\tan \alpha + \tan \beta}
+  {1 - \dfrac{\sin \alpha}{\cos \alpha} \cdot \dfrac{\sin \beta}{\cos \beta}} = \frac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-tan-of-diff}
+$$
+\tan (\alpha - \beta) = \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\tan (\alpha - \beta) &= \tan \big( \alpha + (- \beta) \big) = \\
+&= \frac{\tan \alpha + \tan (-\beta)}{1 - \tan \alpha \tan (-\beta)} = \\
+&= \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta} \qed
+\end{split}
+$$
+:::
+
+
+:::{#prp-cot-of-sum}
+$$
+\cot (\alpha + \beta) = \frac{\cot \alpha \cot \beta - 1}{\cot \beta + \cot \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cot (\alpha + \beta) &= \frac{\cos (\alpha + \beta)}{\sin (\alpha + \beta)} = \\
+&= \frac{\cos \alpha \cos \beta - \sin \alpha \sin \beta}{\sin \alpha \cos \beta + \cos \alpha \sin \beta} = \\
+&= \frac{
+    \dfrac{\cos \alpha \cos \beta - \sin \alpha \sin \beta}{\sin \alpha \sin \beta}
+  }{
+    \dfrac{\sin \alpha \cos \beta + \cos \alpha \sin \beta}{\sin \alpha \sin \beta}
+} = \\
+&= \frac{
+    \dfrac{\cos \alpha \cos \beta}{\sin \alpha \sin \beta} 
+    - 
+    \dfrac{\cancel{\sin \alpha} \cancel{\sin \beta}}{\cancel{\sin \alpha} \cancel{\sin \beta}}
+  }{
+    \dfrac{\cancel{\sin \alpha} \cos \beta}{\cancel{\sin \alpha} \sin \beta} 
+    + 
+    \dfrac{\cos \alpha \cancel{\sin \beta}}{\sin \alpha \cancel{\sin \beta}}
+} = \\
+&= \frac{\dfrac{\cos \alpha}{\sin \alpha} \cdot \dfrac{\cos \beta}{\sin \beta} - 1}
+  {\cot \beta + \cot \alpha} = \\
+&= \frac{\cot \alpha \cot \beta - 1}{\cot \beta + \cot \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cot-of-diff}
+$$
+\cot (\alpha - \beta) = \frac{\cot \alpha \cot \beta + 1}{\cot \beta - \cot \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cot (\alpha - \beta) &= \cot \big( \alpha + (-\beta) \big) = \\
+&= \frac{\cot \alpha \cot(-\beta) - 1}{\cot (-\beta) + \cot \alpha} = \\
+&= \frac{\cot \alpha (-\cot \beta) - 1}{-\cot \beta + \cot \alpha} = \\
+&= \frac{-(\cot \alpha \cot \beta + 1)}{-(\cot \beta - \cot \alpha)} = \\
+&= \frac{\cot \alpha \cot \beta + 1}{\cot \beta - \cot \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+Ввиду сходства выражений [-@prp-tan-of-sum] и [-@prp-tan-of-diff], а также [-@prp-cot-of-sum] и [-@prp-cot-of-diff] их часто объединяют в следущие тождества:
+
+$$
+\tan (\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
+$$
+
+$$
+\cot (\alpha \pm \beta) = \frac{\cot \alpha \cot \beta \mp 1}{\cot \beta \pm \cot \alpha}
+$$
+:::
+
+
+### Тангенс и котангенс двойного угла {#appendix-other-math-trigids-proof-tan-cot-2a}
+
+:::{#prp-tan-2a}
+$$
+\tan 2 \alpha = \frac{2 \tan \alpha}{1 - \tan^2 \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\tan 2 \alpha &= \tan (\alpha + \alpha) = \\
+&= \frac{\tan \alpha + \tan \alpha}{1 - \tan \alpha \cdot \tan \alpha} = \\
+&= \frac{2 \tan \alpha}{1 - \tan^2 \alpha} \qed
+\end{split}
+$$
+:::
+
+:::{#cor-cot-2a-from-tan}
+$$
+\cot 2 \alpha = \frac{1 - \tan^2 \alpha}{2 \tan \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\cot 2 \alpha = \frac{1}{\tan 2\alpha} = \frac{1}{\frac{2 \tan \alpha}{1 - \tan^2 \alpha}} = \frac{1 - \tan^2 \alpha}{2 \tan \alpha} \qed
+$$
+:::
+
+:::{#prp-cot-2a}
+$$
+\cot 2 \alpha = \frac{\cot^2 \alpha - 1}{2 \cot \alpha}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cot 2 \alpha &= \cot (\alpha + \alpha) = \\
+&= \frac{\cot \alpha \cdot \cot \alpha - 1}{\cot \alpha + \cot \alpha} = \\
+&= \frac{\cot^2 \alpha - 1}{2 \cot \alpha} \qed
+\end{split}
+$$
+:::
+
+### Секанс и косеканс суммы и разности {#appendix-other-math-trigids-proof-sec-csc-of-sum}
+
+### Секанс и косеканс двойного угла {#appendix-other-math-trigids-proof-sec-csc-2a}
+
+
+### Преобразование произведения в сумму {#appendix-other-math-trigids-proof-prod-to-sum}
+
+:::{#prp-sinsin}
+$$
+\sin \alpha \sin \beta = \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos(\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+\cos(\alpha - \beta) &= \cos \alpha \cos \beta + \sin \alpha \sin \beta \\
+&\Downarrow \\
+\cos(\alpha + \beta) - \cos(\alpha - \beta) &= 
+\cancel{\cos \alpha \cos \beta} - 
+\sin \alpha \sin \beta - 
+\cancel{\cos \alpha \cos \beta} - 
+\sin \alpha \sin \beta \\
+\cos(\alpha + \beta) - \cos(\alpha - \beta) &= -2 \sin \alpha \sin \beta \\
+&\Downarrow \\ 
+2 \sin \alpha \sin \beta &= \cos (\alpha - \beta) - \cos (\alpha + \beta) \\
+\sin \alpha \sin \beta &= \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-coscos}
+$$
+\cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos(\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+\cos(\alpha - \beta) &= \cos \alpha \cos \beta + \sin \alpha \sin \beta \\
+&\Downarrow \\
+\cos(\alpha + \beta) + \cos(\alpha - \beta) &= 
+\cos \alpha \cos \beta - 
+\cancel{\sin \alpha \sin \beta} + 
+\cos \alpha \cos \beta + 
+\cancel{\sin \alpha \sin \beta} \\
+\cos(\alpha + \beta) + \cos(\alpha - \beta) &= 2 \cos \alpha \cos \beta \\
+&\Downarrow \\ 
+\cos \alpha \cos \beta &= \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-sincos}
+$$
+\sin \alpha \cos \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin(\alpha + \beta) &= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+\sin(\alpha - \beta) &= \sin \alpha \cos \beta - \cos \alpha \sin \beta \\
+&\Downarrow \\
+\sin(\alpha + \beta) + \sin(\alpha - \beta) &= 
+\sin \alpha \cos \beta + 
+\cancel{\cos \alpha \sin \beta} + 
+\sin \alpha \cos \beta - 
+\cancel{\cos \alpha \sin \beta} \\
+\sin(\alpha + \beta) + \sin(\alpha - \beta) &= 2 \sin \alpha \sin \beta \\
+&\Downarrow \\ 
+\sin \alpha \sin \beta &= \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cossin}
+$$
+\cos \alpha \sin \beta = \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin(\alpha + \beta) &= \sin \alpha \cos \beta + \cos \alpha \sin \beta \\
+\sin(\alpha - \beta) &= \sin \alpha \cos \beta - \cos \alpha \sin \beta \\
+&\Downarrow \\
+\sin(\alpha + \beta) - \sin(\alpha - \beta) &= 
+\cancel{\sin \alpha \cos \beta} + 
+\cos \alpha \sin \beta - 
+\cancel{\sin \alpha \cos \beta} + 
+\cos \alpha \sin \beta \\
+\sin(\alpha + \beta) - \sin(\alpha - \beta) &= 2 \cos \alpha \sin \beta \\
+&\Downarrow \\ 
+\cos \alpha \sin \beta &= \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2} \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+$$
+\begin{split}
+\cos \alpha \sin \beta &= \sin \beta \cos \alpha = \\
+&= \frac{\sin (\beta + \alpha) + \sin(\beta - \alpha)}{2} \\
+&= \frac{\sin (\alpha + \beta) + \sin \big(-(\alpha - \beta) \big)}{2} = \\
+&= \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
+\end{split}
+$$
+:::
+
+
+
+### Преобразование суммы в произведение {#appendix-other-math-trigids-proof-sum-to-prod}
+
+:::{.remark}
+В доказательствах тождеств в этого раздела $\alpha$ и $\beta$ представляют как сумму и разность некоторых $\phi$ и $\psi$ чтобы было возможно использовать тождества [-@eq-sin-of-sum], [-@cor-sin-of-diff], [-@eq-cos-of-sum] и [-@cor-cos-of-diff], то есть $\alpha = \phi + \psi$ и $\beta = \phi - \psi$.
+
+При таком представлении получается, что
+
+$$
+\begin{split}
+\alpha + \beta &= (\phi + \psi) + (\phi - \psi) = 2 \phi \Rightarrow \phi = \frac{\alpha + \beta}{2} \\
+\alpha - \beta &= (\phi + \psi) - (\phi - \psi) = 2 \psi \Rightarrow \psi = \frac{\alpha - \beta}{2} \\
+\end{split}
+$$
+:::
+
+:::{#prp-sin-plus-sin}
+$$
+\sin \alpha + \sin \beta = 2 \sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin \alpha + \sin \beta &= \sin (\phi + \psi) + \sin (\phi - \psi) = \\
+&= 
+\sin \phi \cos \psi + 
+\cancel{\cos \phi \sin \psi} + 
+\sin \phi \cos \psi - 
+\cancel{\cos \phi \sin \psi} = \\
+&= 2 \sin \phi \cos \psi = 2 \sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-sin-minus-sin}
+$$
+\sin \alpha - \sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\sin \alpha - \sin \beta &= \sin (\phi + \psi) - \sin (\phi - \psi) = \\
+&= 
+\cancel{\sin \phi \cos \psi} + 
+\cos \phi \sin \psi - 
+\cancel{\sin \phi \cos \psi} + 
+\cos \phi \sin \psi = \\
+&= 2 \cos \phi \sin \psi = 2 \cos \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} = \\
+&= 2  \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2} \qed
+\end{split}
+$$
+:::
+
+:::{.remark}
+Ввиду сходства выражений [-@prp-sin-plus-sin] и [-@prp-sin-minus-sin] их часто объединяют в следующее тождество:
+
+$$
+\sin \alpha \pm \sin \beta = 2 \sin \frac{\alpha \pm \beta}{2} \cos \frac{\alpha \mp \beta}{2}
+$$
+:::
+
+:::{#prp-cos-plus-cos}
+$$
+\cos \alpha + \cos \beta = 2 \cos \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos \alpha + \cos \beta &= \cos (\phi + \psi) + \cos (\phi - \psi) = \\
+&= 
+\cos \phi \cos \psi - 
+\cancel{\sin \phi \sin \psi} + 
+\cos \phi \cos \psi + 
+\cancel{\sin \phi \sin \psi} = \\
+&= 2 \cos \phi \cos \psi = 2 \cos \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} \qed
+\end{split}
+$$
+:::
+
+:::{#prp-cos-minus-cos}
+$$
+\cos \alpha - \cos \beta = -2 \sin \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2}
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\cos \alpha - \cos \beta &= \cos (\phi + \psi) - \cos (\phi - \psi) = \\
+&= 
+\cancel{\cos \phi \cos \psi} - 
+\sin \phi \sin \psi - 
+\cancel{\cos \phi \cos \psi} - 
+\sin \phi \sin \psi = \\
+&= -2 \sin \phi \sin \psi = -2 \sin \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} \qed
+\end{split}
+$$
+:::
+
+
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```
