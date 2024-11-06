@@ -39,10 +39,18 @@ r_ci_ds %>%
   mutate(has_zero = ifelse(sign(ci_lower) != sign(ci_upper), TRUE, FALSE)) %>% 
   # filter(r > 0) %>% 
   # filter(n > 100 & n < 500) %>% 
+  group_by(has_zero, n) %>% 
+  filter(has_zero & (r == min(r) | r == max(r))) %>% 
+  mutate(group = ifelse(r > 0, "top", "bottom")) %>% 
   ggplot(aes(x = n, y = r, color = has_zero)) +
-  geom_point(size = 1) +
-  scale_color_manual(values = c("TRUE" = "salmon", "FALSE" = "springgreen")) +
+  # geom_point(size = 1.5, shape = 15) +
+  geom_line(aes(group = group)) +
+  scale_color_manual(values = c("TRUE" = "gray30", "FALSE" = "gray70"),
+                     labels = c("TRUE" = "включает ноль", "FALSE" = "не включает ноль")) +
   scale_x_continuous(breaks = seq(10, 1000, by = 10)) +
-  scale_y_continuous(breaks = seq(-1, 1, length.out = 51)) +
+  scale_y_continuous(breaks = seq(-1, 1, by = .05)) +
+  labs(x = "Объем выборки", 
+       y = "Выборочный коэффициент корреляции",
+       color = "Доверительный интервал") +
   theme(axis.text.x = element_text(angle = 90))
 
