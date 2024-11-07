@@ -386,7 +386,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -622,6 +622,7 @@ window.Quarto = {
   <li><a href="#appendix-formulas-trig-prod-to-sum" id="toc-appendix-formulas-trig-prod-to-sum" class="nav-link" data-scroll-target="#appendix-formulas-trig-prod-to-sum"><span class="header-section-number">F.5.11</span> Преобразование произведения в сумму</a></li>
   <li><a href="#appendix-formulas-trig-sum-to-prod" id="toc-appendix-formulas-trig-sum-to-prod" class="nav-link" data-scroll-target="#appendix-formulas-trig-sum-to-prod"><span class="header-section-number">F.5.12</span> Преобразование суммы в произведение</a></li>
   </ul></li>
+  <li><a href="#appendix-formulas-hyperbolic" id="toc-appendix-formulas-hyperbolic" class="nav-link" data-scroll-target="#appendix-formulas-hyperbolic"><span class="header-section-number">F.6</span> Гиперболические функции</a></li>
   </ul>
 </nav>
     </div>
@@ -819,43 +820,67 @@ c' = 0, \, c = \text{const}
 <p><span id="eq-frmapp-deriv-cot"><span class="math display">\[
 (\cot x)' = -\frac{1}{\sin^2 x}
 \tag{F.50}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-sec"><span class="math display">\[
+(\sec x)' = \frac{\sin x}{\cos^2 x}
+\tag{F.51}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-sec"><span class="math display">\[
+(\csc x)' = -\frac{\cos x}{\sin^2 x}
+\tag{F.52}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arcsin"><span class="math display">\[
 (\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}
-\tag{F.51}\]</span></span></p>
+\tag{F.53}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arccos"><span class="math display">\[
 (\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
-\tag{F.52}\]</span></span></p>
+\tag{F.54}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arctan"><span class="math display">\[
 (\arctan x)' = \frac{1}{1 + x^2}
-\tag{F.53}\]</span></span></p>
+\tag{F.55}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arccot"><span class="math display">\[
 (\mathop{\mathrm{arccot}}x)' = -\frac{1}{1 + x^2}
-\tag{F.54}\]</span></span></p>
+\tag{F.56}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arcsec"><span class="math display">\[
+(\mathop{\mathrm{arcsec}}x)' = \frac{1}{|x|\sqrt{x^2 - 1}}
+\tag{F.57}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arccsc"><span class="math display">\[
+(\mathop{\mathrm{arccsc}}x)' = -\frac{1}{|x|\sqrt{x^2 - 1}}
+\tag{F.58}\]</span></span></p>
 </div><div class="column">
 <p><span id="eq-frmapp-deriv-sinh"><span class="math display">\[
 (\sinh x)' = \cosh x
-\tag{F.55}\]</span></span></p>
+\tag{F.59}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-cosh"><span class="math display">\[
 (\cosh x)' = \sinh x
-\tag{F.56}\]</span></span></p>
+\tag{F.60}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-tanh"><span class="math display">\[
 (\tanh x)' = \frac{1}{\cosh^2 x}
-\tag{F.57}\]</span></span></p>
+\tag{F.61}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-coth"><span class="math display">\[
 (\coth x)' = -\frac{1}{\sinh^2 x}
-\tag{F.58}\]</span></span></p>
+\tag{F.62}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-sech"><span class="math display">\[
+(\mathop{\mathrm{sech}}x)' = -\frac{\sinh x}{\cosh^2 x}
+\tag{F.63}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-csch"><span class="math display">\[
+(\mathop{\mathrm{csch}}x)' = -\frac{\cosh x}{\sinh^2 x}
+\tag{F.64}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arsinh"><span class="math display">\[
 (\mathop{\mathrm{arsinh}})' = \frac{1}{\sqrt{x^2 + 1}}
-\tag{F.59}\]</span></span></p>
+\tag{F.65}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arcosh"><span class="math display">\[
 (\mathop{\mathrm{arcoth}})' = \frac{1}{\sqrt{x^2 - 1}}
-\tag{F.60}\]</span></span></p>
+\tag{F.66}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-artanh"><span class="math display">\[
 (\mathop{\mathrm{artanh}})' = \frac{1}{1 - x^2}
-\tag{F.61}\]</span></span></p>
+\tag{F.67}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arcoth"><span class="math display">\[
 (\mathop{\mathrm{arcoth}})' = \frac{1}{1 - x^2}
-\tag{F.62}\]</span></span></p>
+\tag{F.68}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arsech"><span class="math display">\[
+(\mathop{\mathrm{arsech}})' = -\frac{1}{x(x+1)\sqrt{\dfrac{1 - x}{1 + x}}}
+\tag{F.69}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arcsch"><span class="math display">\[
+(\mathop{\mathrm{arcsch}})' = -\frac{1}{x^2\sqrt{1 + \dfrac{1}{x^2}}}
+\tag{F.70}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -877,29 +902,29 @@ c' = 0, \, c = \text{const}
 <div class="column">
 <p><span id="eq-frmapp-trig-basic-sec"><span class="math display">\[
 \sec \alpha = \frac{1}{\cos \alpha}
-\tag{F.63}\]</span></span></p>
+\tag{F.71}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-csc"><span class="math display">\[
 \csc \alpha = \frac{1}{\sin \alpha}
-\tag{F.64}\]</span></span></p>
+\tag{F.72}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-tan"><span class="math display">\[
 \tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{1}{\cot \alpha}
-\tag{F.65}\]</span></span></p>
+\tag{F.73}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-cot"><span class="math display">\[
 \cot \alpha = \frac{\cos \alpha}{\sin \alpha} = \frac{1}{\tan \alpha}
-\tag{F.66}\]</span></span></p>
+\tag{F.74}\]</span></span></p>
 </div><div class="column">
 <p><span id="eq-frmapp-trig-basic-seccsc-to-tan"><span class="math display">\[
 \frac{\sec \alpha}{\csc \alpha} = \tan \alpha
-\tag{F.67}\]</span></span></p>
+\tag{F.75}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-cscsec-to-cot"><span class="math display">\[
 \frac{\csc \alpha}{\sec \alpha} = \cot \alpha
-\tag{F.68}\]</span></span></p>
+\tag{F.76}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-tancot-frac1"><span class="math display">\[
 \frac{\tan \alpha}{\cot \alpha} = 1
-\tag{F.69}\]</span></span></p>
+\tag{F.77}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-tancot-prod1"><span class="math display">\[
 \tan \alpha \cot \alpha = 1
-\tag{F.70}\]</span></span></p>
+\tag{F.78}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -907,22 +932,22 @@ c' = 0, \, c = \text{const}
 <h3 data-number="F.5.2" class="anchored" data-anchor-id="appendix-formulas-trig-pythagorean-identities"><span class="header-section-number">F.5.2</span> Основное тригонометрическое тождество</h3>
 <p><span id="eq-frmapp-trigmain"><span class="math display">\[
 \sin^2 \alpha + \cos^2 \alpha = 1
-\tag{F.71}\]</span></span></p>
+\tag{F.79}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-sin"><span class="math display">\[
 \sin \alpha = \pm \sqrt{1 - \cos^2 \alpha}
-\tag{F.72}\]</span></span></p>
+\tag{F.80}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-cos"><span class="math display">\[
 \cos \alpha = \pm \sqrt{1 - \sin^2 \alpha}
-\tag{F.73}\]</span></span></p>
+\tag{F.81}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-cot"><span class="math display">\[
 1 + \cot^2 \alpha = \csc^2 \alpha
-\tag{F.74}\]</span></span></p>
+\tag{F.82}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-tan"><span class="math display">\[
 \tan^2 \alpha + 1 = \sec ^2 \alpha
-\tag{F.75}\]</span></span></p>
+\tag{F.83}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-sec"><span class="math display">\[
 \sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \cdot \csc^2 \alpha
-\tag{F.76}\]</span></span></p>
+\tag{F.84}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-reflections" class="level3" data-number="F.5.3">
 <h3 data-number="F.5.3" class="anchored" data-anchor-id="appendix-formulas-trig-reflections"><span class="header-section-number">F.5.3</span> Отражения</h3>
@@ -940,9 +965,9 @@ c' = 0, \, c = \text{const}
 <p>Выражает свойство чётности функции<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-0-sin"><span class="math display">\[\sin (-\alpha) = -\sin \alpha \tag{F.77}\]</span></span> <span id="eq-frmapp-mirr-0-tan"><span class="math display">\[\tan (-\alpha) = -\tan \alpha \tag{F.78}\]</span></span> <span id="eq-frmapp-mirr-0-sec"><span class="math display">\[\sec (-\alpha) = \sec \alpha \tag{F.79}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-0-sin"><span class="math display">\[\sin (-\alpha) = -\sin \alpha \tag{F.85}\]</span></span> <span id="eq-frmapp-mirr-0-tan"><span class="math display">\[\tan (-\alpha) = -\tan \alpha \tag{F.86}\]</span></span> <span id="eq-frmapp-mirr-0-sec"><span class="math display">\[\sec (-\alpha) = \sec \alpha \tag{F.87}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-0-cos"><span class="math display">\[\cos (-\alpha) = \cos \alpha \tag{F.80}\]</span></span> <span id="eq-frmapp-mirr-0-cot"><span class="math display">\[\cot (-\alpha) = -\cot \alpha \tag{F.81}\]</span></span> <span id="eq-frmapp-mirr-0-csc"><span class="math display">\[\csc (-\alpha) = -\csc \alpha \tag{F.82}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-0-cos"><span class="math display">\[\cos (-\alpha) = \cos \alpha \tag{F.88}\]</span></span> <span id="eq-frmapp-mirr-0-cot"><span class="math display">\[\cot (-\alpha) = -\cot \alpha \tag{F.89}\]</span></span> <span id="eq-frmapp-mirr-0-csc"><span class="math display">\[\csc (-\alpha) = -\csc \alpha \tag{F.90}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -950,9 +975,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.3.2" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi4"><span class="header-section-number">F.5.3.2</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{4}\)</span></h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-pi4-sin"><span class="math display">\[\sin (\frac{\pi}{2}-\alpha) = \cos \alpha \tag{F.83}\]</span></span> <span id="eq-frmapp-mirr-pi4-tan"><span class="math display">\[\tan \Big(\frac{\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.84}\]</span></span> <span id="eq-frmapp-mirr-pi4-sec"><span class="math display">\[\sec \Big(\frac{\pi}{2}-\alpha\Big) = \csc \alpha \tag{F.85}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi4-sin"><span class="math display">\[\sin (\frac{\pi}{2}-\alpha) = \cos \alpha \tag{F.91}\]</span></span> <span id="eq-frmapp-mirr-pi4-tan"><span class="math display">\[\tan \Big(\frac{\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.92}\]</span></span> <span id="eq-frmapp-mirr-pi4-sec"><span class="math display">\[\sec \Big(\frac{\pi}{2}-\alpha\Big) = \csc \alpha \tag{F.93}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-pi4-cos"><span class="math display">\[\cos \Big(\frac{\pi}{2}-\alpha\Big) = \sin \alpha \tag{F.86}\]</span></span> <span id="eq-frmapp-mirr-pi4-cot"><span class="math display">\[\cot \Big(\frac{\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.87}\]</span></span> <span id="eq-frmapp-mirr-pi4-csc"><span class="math display">\[\csc \Big(\frac{\pi}{2}-\alpha\Big) = \sec \alpha \tag{F.88}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi4-cos"><span class="math display">\[\cos \Big(\frac{\pi}{2}-\alpha\Big) = \sin \alpha \tag{F.94}\]</span></span> <span id="eq-frmapp-mirr-pi4-cot"><span class="math display">\[\cot \Big(\frac{\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.95}\]</span></span> <span id="eq-frmapp-mirr-pi4-csc"><span class="math display">\[\csc \Big(\frac{\pi}{2}-\alpha\Big) = \sec \alpha \tag{F.96}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -960,9 +985,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.3.3" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi2"><span class="header-section-number">F.5.3.3</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{2}\)</span></h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-pi2-sin"><span class="math display">\[\sin (\pi-\alpha) = \sin \alpha \tag{F.89}\]</span></span> <span id="eq-frmapp-mirr-pi2-tan"><span class="math display">\[\tan (\pi-\alpha) = -\tan \alpha \tag{F.90}\]</span></span> <span id="eq-frmapp-mirr-pi2-sec"><span class="math display">\[\sec (\pi-\alpha) = -\sec \alpha \tag{F.91}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi2-sin"><span class="math display">\[\sin (\pi-\alpha) = \sin \alpha \tag{F.97}\]</span></span> <span id="eq-frmapp-mirr-pi2-tan"><span class="math display">\[\tan (\pi-\alpha) = -\tan \alpha \tag{F.98}\]</span></span> <span id="eq-frmapp-mirr-pi2-sec"><span class="math display">\[\sec (\pi-\alpha) = -\sec \alpha \tag{F.99}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-pi2-cos"><span class="math display">\[\cos (\pi-\alpha) = -\cos \alpha \tag{F.92}\]</span></span> <span id="eq-frmapp-mirr-pi2-cot"><span class="math display">\[\cot (\pi-\alpha) = -\cot \alpha \tag{F.93}\]</span></span> <span id="eq-frmapp-mirr-pi2-csc"><span class="math display">\[\csc (\pi-\alpha) = \csc \alpha \tag{F.94}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi2-cos"><span class="math display">\[\cos (\pi-\alpha) = -\cos \alpha \tag{F.100}\]</span></span> <span id="eq-frmapp-mirr-pi2-cot"><span class="math display">\[\cot (\pi-\alpha) = -\cot \alpha \tag{F.101}\]</span></span> <span id="eq-frmapp-mirr-pi2-csc"><span class="math display">\[\csc (\pi-\alpha) = \csc \alpha \tag{F.102}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -970,15 +995,15 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.3.4" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-3pi2"><span class="header-section-number">F.5.3.4</span> Относительно <span class="math inline">\(\varphi = \frac{3\pi}{4}\)</span></h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-3pi2-sin"><span class="math display">\[\sin \Big(\frac{3\pi}{2}-\alpha\Big) = -\cos \alpha \tag{F.95}\]</span></span> <span id="eq-frmapp-mirr-3pi2-tan"><span class="math display">\[\tan \Big(\frac{3\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.96}\]</span></span> <span id="eq-frmapp-mirr-3pi2-sec"><span class="math display">\[\sec \Big(\frac{3\pi}{2}-\alpha\Big) = -\csc \alpha \tag{F.97}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-3pi2-sin"><span class="math display">\[\sin \Big(\frac{3\pi}{2}-\alpha\Big) = -\cos \alpha \tag{F.103}\]</span></span> <span id="eq-frmapp-mirr-3pi2-tan"><span class="math display">\[\tan \Big(\frac{3\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.104}\]</span></span> <span id="eq-frmapp-mirr-3pi2-sec"><span class="math display">\[\sec \Big(\frac{3\pi}{2}-\alpha\Big) = -\csc \alpha \tag{F.105}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-3pi2-cos"><span class="math display">\[\cos \Big(\frac{3\pi}{2}-\alpha\Big) = -\sin \alpha \tag{F.98}\]</span></span> <span id="eq-frmapp-mirr-3pi2-cot"><span class="math display">\[\cot \Big(\frac{3\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.99}\]</span></span> <span id="eq-frmapp-mirr-3pi2-csc"><span class="math display">\[\csc \Big(\frac{3\pi}{2}-\alpha\Big) = -\sec \alpha \tag{F.100}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-3pi2-cos"><span class="math display">\[\cos \Big(\frac{3\pi}{2}-\alpha\Big) = -\sin \alpha \tag{F.106}\]</span></span> <span id="eq-frmapp-mirr-3pi2-cot"><span class="math display">\[\cot \Big(\frac{3\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.107}\]</span></span> <span id="eq-frmapp-mirr-3pi2-csc"><span class="math display">\[\csc \Big(\frac{3\pi}{2}-\alpha\Big) = -\sec \alpha \tag{F.108}\]</span></span></p>
 </div>
 </div>
 </section>
 <section id="appendix-formulas-trig-reflections-pi" class="level4" data-number="F.5.3.5">
 <h4 data-number="F.5.3.5" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi"><span class="header-section-number">F.5.3.5</span> Относительно <span class="math inline">\(\varphi = \pi\)</span></h4>
-<p><span id="eq-frmapp-mirr-pi-sin"><span class="math display">\[\sin (2\pi - \alpha) = -\sin \alpha = \sin (-\alpha) \tag{F.101}\]</span></span> <span id="eq-frmapp-mirr-pi-tan"><span class="math display">\[\tan (2\pi - \alpha) = -\tan \alpha = \tan (-\alpha) \tag{F.102}\]</span></span> <span id="eq-frmapp-mirr-pi-sec"><span class="math display">\[\sec (2\pi - \alpha) = \sec \alpha = \sec (-\alpha) \tag{F.103}\]</span></span> <span id="eq-frmapp-mirr-pi-cos"><span class="math display">\[\cos (2\pi - \alpha) = \cos \alpha = \cos (-\alpha) \tag{F.104}\]</span></span> <span id="eq-frmapp-mirr-pi-cot"><span class="math display">\[\cot (2\pi - \alpha) = -\cot \alpha = \cot (-\alpha) \tag{F.105}\]</span></span> <span id="eq-frmapp-mirr-pi-csc"><span class="math display">\[\csc (2\pi - \alpha) = -\csc \alpha = \csc (-\alpha) \tag{F.106}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi-sin"><span class="math display">\[\sin (2\pi - \alpha) = -\sin \alpha = \sin (-\alpha) \tag{F.109}\]</span></span> <span id="eq-frmapp-mirr-pi-tan"><span class="math display">\[\tan (2\pi - \alpha) = -\tan \alpha = \tan (-\alpha) \tag{F.110}\]</span></span> <span id="eq-frmapp-mirr-pi-sec"><span class="math display">\[\sec (2\pi - \alpha) = \sec \alpha = \sec (-\alpha) \tag{F.111}\]</span></span> <span id="eq-frmapp-mirr-pi-cos"><span class="math display">\[\cos (2\pi - \alpha) = \cos \alpha = \cos (-\alpha) \tag{F.112}\]</span></span> <span id="eq-frmapp-mirr-pi-cot"><span class="math display">\[\cot (2\pi - \alpha) = -\cot \alpha = \cot (-\alpha) \tag{F.113}\]</span></span> <span id="eq-frmapp-mirr-pi-csc"><span class="math display">\[\csc (2\pi - \alpha) = -\csc \alpha = \csc (-\alpha) \tag{F.114}\]</span></span></p>
 </section>
 </section>
 <section id="appendix-formulas-trig-shift" class="level3" data-number="F.5.4">
@@ -1006,9 +1031,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.4.1" class="anchored" data-anchor-id="appendix-formulas-trig-shift-by-one-quarter"><span class="header-section-number">F.5.4.1</span> На четверть периода</h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-shift-quart-sin"><span class="math display">\[\sin \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm\cos \alpha \tag{F.107}\]</span></span> <span id="eq-frmapp-shift-quart-tan"><span class="math display">\[\tan \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\tan \alpha \pm 1}{1 \mp \tan \alpha} \tag{F.108}\]</span></span> <span id="eq-frmapp-shift-quart-sec"><span class="math display">\[\sec \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \csc \alpha \tag{F.109}\]</span></span></p>
+<p><span id="eq-frmapp-shift-quart-sin"><span class="math display">\[\sin \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm\cos \alpha \tag{F.115}\]</span></span> <span id="eq-frmapp-shift-quart-tan"><span class="math display">\[\tan \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\tan \alpha \pm 1}{1 \mp \tan \alpha} \tag{F.116}\]</span></span> <span id="eq-frmapp-shift-quart-sec"><span class="math display">\[\sec \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \csc \alpha \tag{F.117}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-shift-quart-cos"><span class="math display">\[\cos \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \sin \alpha \tag{F.110}\]</span></span> <span id="eq-frmapp-shift-quart-cot"><span class="math display">\[\cot \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\cot \alpha \mp 1}{1 \pm \cot \alpha} \tag{F.111}\]</span></span> <span id="eq-frmapp-shift-quart-csc"><span class="math display">\[\csc \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm \sec \alpha \tag{F.112}\]</span></span></p>
+<p><span id="eq-frmapp-shift-quart-cos"><span class="math display">\[\cos \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \sin \alpha \tag{F.118}\]</span></span> <span id="eq-frmapp-shift-quart-cot"><span class="math display">\[\cot \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\cot \alpha \mp 1}{1 \pm \cot \alpha} \tag{F.119}\]</span></span> <span id="eq-frmapp-shift-quart-csc"><span class="math display">\[\csc \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm \sec \alpha \tag{F.120}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1016,9 +1041,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.4.2" class="anchored" data-anchor-id="appendix-formulas-trig-shift-by-half"><span class="header-section-number">F.5.4.2</span> На половину периода</h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-shift-half-sin"><span class="math display">\[\sin (\alpha + \pi) = -\sin \alpha \tag{F.113}\]</span></span> <span id="eq-frmapp-shift-half-tan"><span class="math display">\[\tan \Big(\alpha + \frac{\pi}{2}\Big) = -\cot \alpha \tag{F.114}\]</span></span> <span id="eq-frmapp-shift-half-sec"><span class="math display">\[\sec (\alpha + \pi) = -\sec \alpha \tag{F.115}\]</span></span></p>
+<p><span id="eq-frmapp-shift-half-sin"><span class="math display">\[\sin (\alpha + \pi) = -\sin \alpha \tag{F.121}\]</span></span> <span id="eq-frmapp-shift-half-tan"><span class="math display">\[\tan \Big(\alpha + \frac{\pi}{2}\Big) = -\cot \alpha \tag{F.122}\]</span></span> <span id="eq-frmapp-shift-half-sec"><span class="math display">\[\sec (\alpha + \pi) = -\sec \alpha \tag{F.123}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-shift-half-cos"><span class="math display">\[\cos (\alpha + \pi) = -\cos \alpha \tag{F.116}\]</span></span> <span id="eq-frmapp-shift-half-cot"><span class="math display">\[\cot \Big(\alpha + \frac{\pi}{2}\Big) = -\tan \alpha \tag{F.117}\]</span></span> <span id="eq-frmapp-shift-half-csc"><span class="math display">\[\csc (\alpha + \pi) = -\csc \alpha \tag{F.118}\]</span></span></p>
+<p><span id="eq-frmapp-shift-half-cos"><span class="math display">\[\cos (\alpha + \pi) = -\cos \alpha \tag{F.124}\]</span></span> <span id="eq-frmapp-shift-half-cot"><span class="math display">\[\cot \Big(\alpha + \frac{\pi}{2}\Big) = -\tan \alpha \tag{F.125}\]</span></span> <span id="eq-frmapp-shift-half-csc"><span class="math display">\[\csc (\alpha + \pi) = -\csc \alpha \tag{F.126}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1026,9 +1051,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.4.3" class="anchored" data-anchor-id="appendix-formulas-trig-shift-by-full"><span class="header-section-number">F.5.4.3</span> На полный период</h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-shift-full-sin"><span class="math display">\[\sin (\alpha + 2\pi) = \sin \alpha \tag{F.119}\]</span></span> <span id="eq-frmapp-shift-full-tan"><span class="math display">\[\tan (\alpha + \pi) = \tan \alpha \tag{F.120}\]</span></span> <span id="eq-frmapp-shift-full-sec"><span class="math display">\[\sec (\alpha + 2\pi) = \sec \alpha \tag{F.121}\]</span></span></p>
+<p><span id="eq-frmapp-shift-full-sin"><span class="math display">\[\sin (\alpha + 2\pi) = \sin \alpha \tag{F.127}\]</span></span> <span id="eq-frmapp-shift-full-tan"><span class="math display">\[\tan (\alpha + \pi) = \tan \alpha \tag{F.128}\]</span></span> <span id="eq-frmapp-shift-full-sec"><span class="math display">\[\sec (\alpha + 2\pi) = \sec \alpha \tag{F.129}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-shift-full-cos"><span class="math display">\[\cos (\alpha + 2\pi) = \cos \alpha \tag{F.122}\]</span></span> <span id="eq-frmapp-shift-full-cot"><span class="math display">\[\cot (\alpha + \pi) = \cot \alpha \tag{F.123}\]</span></span> <span id="eq-frmapp-shift-full-csc"><span class="math display">\[\csc (\alpha + 2\pi) = \csc \alpha \tag{F.124}\]</span></span></p>
+<p><span id="eq-frmapp-shift-full-cos"><span class="math display">\[\cos (\alpha + 2\pi) = \cos \alpha \tag{F.130}\]</span></span> <span id="eq-frmapp-shift-full-cot"><span class="math display">\[\cot (\alpha + \pi) = \cot \alpha \tag{F.131}\]</span></span> <span id="eq-frmapp-shift-full-csc"><span class="math display">\[\csc (\alpha + 2\pi) = \csc \alpha \tag{F.132}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1042,100 +1067,100 @@ c' = 0, \, c = \text{const}
 0, \, x = 0 \\
 -1, \, x &lt; 0
 }
-\tag{F.125}\]</span></span></p>
+\tag{F.133}\]</span></span></p>
 <p><span id="eq-frmapp-sgn-sincsc"><span class="math display">\[
 \mathop{\mathrm{sgn}}\sin \alpha = \mathop{\mathrm{sgn}}\csc \alpha
-\tag{F.126}\]</span></span></p>
+\tag{F.134}\]</span></span></p>
 <p><span id="eq-frmapp-sgn-cotsec"><span class="math display">\[
 \mathop{\mathrm{sgn}}\cos \alpha = \mathop{\mathrm{sgn}}\sec \alpha
-\tag{F.127}\]</span></span></p>
+\tag{F.135}\]</span></span></p>
 <p><span id="eq-frmapp-sgn-tancot"><span class="math display">\[
 \mathop{\mathrm{sgn}}\tan \alpha = \mathop{\mathrm{sgn}}\cot \alpha
-\tag{F.128}\]</span></span></p>
+\tag{F.136}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-angle-sum" class="level3" data-number="F.5.6">
 <h3 data-number="F.5.6" class="anchored" data-anchor-id="appendix-formulas-trig-angle-sum"><span class="header-section-number">F.5.6</span> Функции суммы и разности аргументов</h3>
 <p><span id="eq-frmapp-sin-of-sum"><span class="math display">\[
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
-\tag{F.129}\]</span></span></p>
+\tag{F.137}\]</span></span></p>
 <p><span id="eq-frmapp-cos-of-sum"><span class="math display">\[
 \cos (\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
-\tag{F.130}\]</span></span></p>
+\tag{F.138}\]</span></span></p>
 <p><span id="eq-frmapp-tan-of-sum"><span class="math display">\[
 \tan (\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
-\tag{F.131}\]</span></span></p>
+\tag{F.139}\]</span></span></p>
 <p><span id="eq-frmapp-cot-of-sum"><span class="math display">\[
 \cot (\alpha \pm \beta) = \frac{\cot \alpha \cot \beta \mp 1}{\cot \beta \pm \cot \alpha}
-\tag{F.132}\]</span></span></p>
+\tag{F.140}\]</span></span></p>
 <p><span id="eq-frmapp-sec-of-sum"><span class="math display">\[
 \sec (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\csc \alpha \csc \beta \mp \sec \alpha \sec \beta}
-\tag{F.133}\]</span></span></p>
+\tag{F.141}\]</span></span></p>
 <p><span id="eq-frmapp-csc-of-sum"><span class="math display">\[
 \csc (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\sec \alpha \csc \beta \pm \sec \alpha \sec \beta}
-\tag{F.134}\]</span></span></p>
+\tag{F.142}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-double-arg" class="level3" data-number="F.5.7">
 <h3 data-number="F.5.7" class="anchored" data-anchor-id="appendix-formulas-trig-double-arg"><span class="header-section-number">F.5.7</span> Формулы двойного аргумента</h3>
 <p><span id="eq-frmapp-sin-2a"><span class="math display">\[
 \sin 2\alpha = 2\sin \alpha \cos \alpha = (\sin \alpha + \cos \alpha)^2 -1 = \frac{2\tan \alpha}{1 + \tan^2 \alpha}
-\tag{F.135}\]</span></span></p>
+\tag{F.143}\]</span></span></p>
 <p><span id="eq-frmapp-cos-2a"><span class="math display">\[
 \cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha = 2\cos^2 \alpha - 1 = 1 - 2\sin^2 \alpha = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha}
-\tag{F.136}\]</span></span></p>
+\tag{F.144}\]</span></span></p>
 <p><span id="eq-frmapp-tan-2a"><span class="math display">\[
 \tan 2\alpha = \frac{2\tan \alpha}{1 - \tan^2 \alpha}
-\tag{F.137}\]</span></span></p>
+\tag{F.145}\]</span></span></p>
 <p><span id="eq-frmapp-cot-2a"><span class="math display">\[
 \cot 2\alpha = \frac{\cot^2 \alpha - 1}{2 \cot \alpha} = \frac{1 - \tan^2 \alpha}{2 \tan \alpha}
-\tag{F.138}\]</span></span></p>
+\tag{F.146}\]</span></span></p>
 <p><span id="eq-frmapp-sec-2a"><span class="math display">\[
 \sec 2\alpha = \frac{\sec^2 \alpha}{2 - \sec^2 \alpha} = \frac{1 + \tan^2 \alpha}{1 - \tan^2 \alpha}
-\tag{F.139}\]</span></span></p>
+\tag{F.147}\]</span></span></p>
 <p><span id="eq-frmapp-csc-2a"><span class="math display">\[
 \csc 2\alpha = \frac{\sec \alpha \csc \alpha}{2} = \frac{1 + \tan^2 \alpha}{2 \tan \alpha}
-\tag{F.140}\]</span></span></p>
+\tag{F.148}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-triple-arg" class="level3" data-number="F.5.8">
 <h3 data-number="F.5.8" class="anchored" data-anchor-id="appendix-formulas-trig-triple-arg"><span class="header-section-number">F.5.8</span> Формулы тройного аргумента</h3>
 <p><span id="eq-frmapp-sin-3a"><span class="math display">\[
 \sin 3\alpha = 3\sin \alpha - 4 \sin^3 \alpha = 4\sin \alpha \sin \Big( \frac{\pi}{3} - \alpha\Big) \sin \Big( \frac{\pi}{3} + \alpha \Big)
-\tag{F.141}\]</span></span></p>
+\tag{F.149}\]</span></span></p>
 <p><span id="eq-frmapp-cos-3a"><span class="math display">\[
 \cos 3\alpha = 4\cos^3 \alpha - 3 \cos \alpha = 4\cos \alpha \cos \Big(\frac{\pi}{3} - \alpha\Big) \cos \Big(\frac{\pi}{3} + \alpha\Big)
-\tag{F.142}\]</span></span></p>
+\tag{F.150}\]</span></span></p>
 <p><span id="eq-frmapp-tan-3a"><span class="math display">\[
 \tan 3\alpha = \frac{3\tan \alpha - \tan^3 \alpha}{1 - 3\tan^2 \alpha} = \tan \alpha \tan \Big( \frac{\pi}{3} - \alpha \Big) \tan \Big(\frac{\pi}{3} + \alpha \Big)
-\tag{F.143}\]</span></span></p>
+\tag{F.151}\]</span></span></p>
 <p><span id="eq-frmapp-cot-3a"><span class="math display">\[
 \cot 3\alpha = \frac{3 \cot \alpha - \cot^3 \alpha}{1 - 3\cot^2 \alpha}
-\tag{F.144}\]</span></span></p>
+\tag{F.152}\]</span></span></p>
 <p><span id="eq-frmapp-sec-3a"><span class="math display">\[
 \sec 3\alpha = \frac{\sec^3 \alpha}{4 - 3\sec^2 \alpha}
-\tag{F.145}\]</span></span></p>
+\tag{F.153}\]</span></span></p>
 <p><span id="eq-frmapp-csc-3a"><span class="math display">\[
 \csc 3\alpha = \frac{\csc^3 \alpha}{3\csc^2 \alpha -4}
-\tag{F.146}\]</span></span></p>
+\tag{F.154}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-half-arg" class="level3" data-number="F.5.9">
 <h3 data-number="F.5.9" class="anchored" data-anchor-id="appendix-formulas-trig-half-arg"><span class="header-section-number">F.5.9</span> Формулы половинного аргумента</h3>
 <p><span id="eq-frmapp-sin-halfa"><span class="math display">\[
 \sin \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
-\tag{F.147}\]</span></span></p>
+\tag{F.155}\]</span></span></p>
 <p><span id="eq-frmapp-cos-halfa"><span class="math display">\[
 \cos \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
-\tag{F.148}\]</span></span></p>
+\tag{F.156}\]</span></span></p>
 <p><span id="eq-frmapp-tan-halfa"><span class="math display">\[
 \tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \mathop{\mathrm{sgn}}(\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
-\tag{F.149}\]</span></span></p>
+\tag{F.157}\]</span></span></p>
 <p><span id="eq-frmapp-cot-halfa"><span class="math display">\[
 \cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \mathop{\mathrm{sgn}}(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
-\tag{F.150}\]</span></span></p>
+\tag{F.158}\]</span></span></p>
 <p><span id="eq-frmapp-sec-halfa"><span class="math display">\[
 \sec \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
-\tag{F.151}\]</span></span></p>
+\tag{F.159}\]</span></span></p>
 <p><span id="eq-frmapp-csc-halfa"><span class="math display">\[
 \csc \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
-\tag{F.152}\]</span></span></p>
+\tag{F.160}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-power-reduction" class="level3" data-number="F.5.10">
 <h3 data-number="F.5.10" class="anchored" data-anchor-id="appendix-formulas-trig-power-reduction"><span class="header-section-number">F.5.10</span> Формулы понижения степени</h3>
@@ -1143,19 +1168,19 @@ c' = 0, \, c = \text{const}
 <div class="column">
 <p><span id="eq-frmapp-sin-sqa"><span class="math display">\[
 \sin^2 \alpha = \frac{1 - \cos 2\alpha}{2}
-\tag{F.153}\]</span></span> <span id="eq-frmapp-tan-sqa"><span class="math display">\[
+\tag{F.161}\]</span></span> <span id="eq-frmapp-tan-sqa"><span class="math display">\[
 \tan^2 \alpha = \frac{1 - \cos 2\alpha}{1 + \cos 2\alpha}
-\tag{F.154}\]</span></span> <span id="eq-frmapp-sec-sqa"><span class="math display">\[
+\tag{F.162}\]</span></span> <span id="eq-frmapp-sec-sqa"><span class="math display">\[
 \sec^2 \alpha = \frac{2}{1 + \cos 2\alpha}
-\tag{F.155}\]</span></span></p>
+\tag{F.163}\]</span></span></p>
 </div><div class="column">
 <p><span id="eq-frmapp-cos-sqa"><span class="math display">\[
 \cos^2 \alpha = \frac{1 + \cos 2\alpha}{2}
-\tag{F.156}\]</span></span> <span id="eq-frmapp-cot-sqa"><span class="math display">\[
+\tag{F.164}\]</span></span> <span id="eq-frmapp-cot-sqa"><span class="math display">\[
 \cot^2 \alpha = \frac{1 + \cos 2\alpha}{1 - \cos 2\alpha}
-\tag{F.157}\]</span></span> <span id="eq-frmapp-csc-sqa"><span class="math display">\[
+\tag{F.165}\]</span></span> <span id="eq-frmapp-csc-sqa"><span class="math display">\[
 \csc^2 \alpha = \frac{2}{1 - \cos 2\alpha}
-\tag{F.158}\]</span></span></p>
+\tag{F.166}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1163,52 +1188,91 @@ c' = 0, \, c = \text{const}
 <h3 data-number="F.5.11" class="anchored" data-anchor-id="appendix-formulas-trig-prod-to-sum"><span class="header-section-number">F.5.11</span> Преобразование произведения в сумму</h3>
 <p><span id="eq-frmapp-pts-coscos"><span class="math display">\[
 \cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
-\tag{F.159}\]</span></span></p>
+\tag{F.167}\]</span></span></p>
 <p><span id="eq-frmapp-pts-sinsin"><span class="math display">\[
 \sin \alpha \sin \beta = \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2}
-\tag{F.160}\]</span></span></p>
+\tag{F.168}\]</span></span></p>
 <p><span id="eq-frmapp-pts-sincos"><span class="math display">\[
 \sin \alpha \cos \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2}
-\tag{F.161}\]</span></span></p>
+\tag{F.169}\]</span></span></p>
 <p><span id="eq-frmapp-pts-cossin"><span class="math display">\[
 \cos \alpha \sin \beta = \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
-\tag{F.162}\]</span></span></p>
+\tag{F.170}\]</span></span></p>
 <p><span id="eq-frmapp-pts-tantan"><span class="math display">\[
 \tan \alpha \tan \beta =
 \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{\cos (\alpha - \beta) + \cos (\alpha + \beta)} =
 \frac{\tan \alpha + \tan \beta}{\cot \alpha + \cot \beta} =
 - \frac{\tan \alpha - \tan \beta}{\cot \alpha - \cot \beta}
-\tag{F.163}\]</span></span></p>
+\tag{F.171}\]</span></span></p>
 <p><span id="eq-frmapp-pts-cotcot"><span class="math display">\[
 \cot \alpha \cot \beta =
 \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{\cos (\alpha - \beta) - \cos (\alpha + \beta)} =
 \frac{\cot \alpha + \cot \beta}{\tan \alpha + \tan \beta} =
 - \frac{\cot \alpha - \cot \beta}{\tan \alpha - \tan \beta}
-\tag{F.164}\]</span></span></p>
+\tag{F.172}\]</span></span></p>
 <p><span id="eq-frmapp-pts-tancot"><span class="math display">\[
 \tan \alpha \cot \beta =
 \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{\sin (\alpha + \beta) - \sin (\alpha - \beta)} =
 \frac{\tan \alpha + \cot \beta}{\cot \alpha + \tan \beta} =
 - \frac{\tan \alpha - \cot \beta}{\cot \alpha - \tan \beta}
-\tag{F.165}\]</span></span></p>
+\tag{F.173}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-sum-to-prod" class="level3" data-number="F.5.12">
 <h3 data-number="F.5.12" class="anchored" data-anchor-id="appendix-formulas-trig-sum-to-prod"><span class="header-section-number">F.5.12</span> Преобразование суммы в произведение</h3>
 <p><span id="eq-frmapp-stp-sin"><span class="math display">\[
 \sin \alpha \pm \sin \beta = 2 \sin \Big(\frac{\alpha \pm \beta}{2}\Big) \cos \Big(\frac{\alpha \mp \beta}{2}\Big)
-\tag{F.166}\]</span></span></p>
+\tag{F.174}\]</span></span></p>
 <p><span id="eq-frmapp-stp-cos-plus"><span class="math display">\[
 \cos \alpha + \cos \beta = 2 \cos \Big(\frac{\alpha + \beta}{2}\Big) \cos \Big(\frac{\alpha - \beta}{2}\Big)
-\tag{F.167}\]</span></span></p>
+\tag{F.175}\]</span></span></p>
 <p><span id="eq-frmapp-stp-cos-minus"><span class="math display">\[
 \cos \alpha - \cos \beta = -2 \sin \Big(\frac{\alpha + \beta}{2}\Big) \sin \Big(\frac{\alpha - \beta}{2}\Big)
-\tag{F.168}\]</span></span></p>
+\tag{F.176}\]</span></span></p>
 <p><span id="eq-frmapp-stp-tan"><span class="math display">\[
 \tan \alpha \pm \tan \beta = \frac{\sin(\alpha + \beta)}{\cos \alpha \cos \beta}
-\tag{F.169}\]</span></span></p>
-
-
+\tag{F.177}\]</span></span></p>
 </section>
+</section>
+<section id="appendix-formulas-hyperbolic" class="level2" data-number="F.6">
+<h2 data-number="F.6" class="anchored" data-anchor-id="appendix-formulas-hyperbolic"><span class="header-section-number">F.6</span> Гиперболические функции</h2>
+<p><span id="eq-frmapp-def-sinh"><span class="math display">\[
+\sinh x = \frac{e^x - e^{-x}}{2}
+\tag{F.178}\]</span></span></p>
+<p><span id="eq-frmapp-def-cosh"><span class="math display">\[
+\cosh x = \frac{e^x + e^{-x}}{2}
+\tag{F.179}\]</span></span></p>
+<p><span id="eq-frmapp-def-tanh"><span class="math display">\[
+\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1}
+\tag{F.180}\]</span></span></p>
+<p><span id="eq-frmapp-def-sinh"><span class="math display">\[
+\coth x = \frac{\cosh x}{\sinh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}} = \frac{e^{2x} + 1}{e^{2x} - 1}
+\tag{F.181}\]</span></span></p>
+<p><span id="eq-frmapp-def-sech"><span class="math display">\[
+\mathop{\mathrm{sech}}x = \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}}
+\tag{F.182}\]</span></span></p>
+<p><span id="eq-frmapp-def-csch"><span class="math display">\[
+\mathop{\mathrm{csch}}x = \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}}
+\tag{F.183}\]</span></span></p>
+<p><span id="eq-frmapp-def-arsinh"><span class="math display">\[
+\mathop{\mathrm{arsinh}}x = \ln (x + \sqrt{x^2 + 1})
+\tag{F.184}\]</span></span></p>
+<p><span id="eq-frmapp-def-arcosh"><span class="math display">\[
+\mathop{\mathrm{arcosh}}x = \ln (x + \sqrt{x^2 - 1}), \, x \geqslant 1
+\tag{F.185}\]</span></span></p>
+<p><span id="eq-frmapp-def-artanh"><span class="math display">\[
+\mathop{\mathrm{artanh}}x = \ln \frac{\sqrt{1 - x^2}}{1 - x} = \frac{1}{2} \ln \frac{1 + x}{1 - x}, \, |x| &lt; 1
+\tag{F.186}\]</span></span></p>
+<p><span id="eq-frmapp-def-arcoth"><span class="math display">\[
+\mathop{\mathrm{arcoth}}x = \ln \frac{\sqrt{x^2 - 1}}{x - 1} = \frac{1}{2} \ln \frac{x + 1}{x - 1}, \, |x| &gt; 1
+\tag{F.187}\]</span></span></p>
+<p><span id="eq-frmapp-def-arsech"><span class="math display">\[
+\mathop{\mathrm{arsech}}x = \ln \frac{1 + \sqrt{1 - x^2}}{x}, \, 0 &lt; x \leqslant 1
+\tag{F.188}\]</span></span></p>
+<p><span id="eq-frmapp-def-arcsch"><span class="math display">\[
+\mathop{\mathrm{arcsch}}x = \ln \frac{1 + \mathop{\mathrm{sgn}}x \sqrt{1 + x^2}}{x}, \, x \neq 0
+\tag{F.189}\]</span></span></p>
+
+
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
