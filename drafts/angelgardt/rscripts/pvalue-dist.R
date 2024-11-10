@@ -180,3 +180,60 @@ results %>%
   ggplot(aes(sample_size, mean, color = name)) +
   geom_line() +
   geom_hline(yintercept = .05)
+
+
+
+
+
+## p-value with no effect
+
+set.seed(614)
+
+n_max <- 500
+results <- tibble()
+m0 <- 1
+m1 <- 1
+m2 <- 1
+m3 <- 1
+m4 <- 1
+m5 <- 1
+
+v0 <- rnorm(9, m0, 10)
+v1 <- rnorm(9, m1, 10)
+v2 <- rnorm(9, m2, 10)
+v3 <- rnorm(9, m3, 10)
+v4 <- rnorm(9, m4, 10)
+v5 <- rnorm(9, m5, 10)
+
+for (j in 10:n_max) {
+  v0[j] <- rnorm(1, 1, 10)
+  v1[j] <- rnorm(1, m1, 10)
+  v2[j] <- rnorm(1, m2, 10)
+  v3[j] <- rnorm(1, m3, 10)
+  v4[j] <- rnorm(1, m4, 10)
+  v5[j] <- rnorm(1, m5, 10)
+  res <- tibble(
+    sim = i,
+    sample_size = j,
+    v1 = t.test(v0, v1)$p.value,
+    v2 = t.test(v0, v2)$p.value,
+    v3 = t.test(v0, v3)$p.value,
+    v4 = t.test(v0, v4)$p.value,
+    v5 = t.test(v0, v5)$p.value,
+  )
+  results %>% 
+    bind_rows(res) -> results
+}
+beepr::beep()
+
+
+results %>% 
+  pivot_longer(cols = c(v1, v2, v3, v4, v5)) %>% 
+  ggplot(aes(sample_size, value, color = name)) +
+  geom_line() +
+  geom_hline(yintercept = .05, linetype = "dashed") +
+  scale_x_continuous(breaks = seq(10, 500, 10)) +
+  scale_color_discrete(labels = c(v1 = 0, v2 = 0, v3 = 0, v4 = 0, v5 = 0)) +
+  labs(x = "Sample Size",
+       y = "p-value",
+       color = "Difference of Means")
