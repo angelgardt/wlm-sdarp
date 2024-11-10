@@ -98,8 +98,12 @@ all_results %>%
 
 
 
+
+
+## p-value with effect comparing to is effect
+
 # set.seed(781) # bad results
-set.seed(614) # good results
+set.seed(912) # good results
 # set.seed(95384)
 
 n_max <- 500
@@ -107,81 +111,47 @@ results <- tibble()
 
 v0 <- rnorm(9, 1, 10)
 v1 <- rnorm(9, 1, 10)
-v2 <- rnorm(9, 2, 10)
-v3 <- rnorm(9, 3, 10)
+v2 <- rnorm(9, 1.5, 10)
+v3 <- rnorm(9, 2, 10)
+v4 <- rnorm(9, 2.5, 10)
+v5 <- rnorm(9, 3, 10)
 
 
 for (j in 10:n_max) {
   v0[j] <- rnorm(1, 1, 10)
   v1[j] <- rnorm(1, 1, 10)
-  v2[j] <- rnorm(1, 2, 10)
-  v3[j] <- rnorm(1, 3, 10)
+  v2[j] <- rnorm(1, 1.5, 10)
+  v3[j] <- rnorm(1, 2, 10)
+  v4[j] <- rnorm(1, 2.5, 10)
+  v5[j] <- rnorm(1, 3, 10)
   res <- tibble(
     sim = i,
     sample_size = j,
     v1 = t.test(v0, v1)$p.value,
     v2 = t.test(v0, v2)$p.value,
     v3 = t.test(v0, v3)$p.value,
+    v4 = t.test(v0, v4)$p.value,
+    v5 = t.test(v0, v5)$p.value,
   )
   results %>% 
     bind_rows(res) -> results
 }
+beepr::beep()
 
 results %>% 
-  pivot_longer(cols = c(v1, v2, v3)) %>% 
+  pivot_longer(cols = c(v1, v2, v3, v4, v5)) %>% 
   ggplot(aes(sample_size, value, color = name)) +
-  geom_line(linewidth = 1) +
+  geom_line() +
   geom_hline(yintercept = .05, linetype = "dashed") +
   scale_x_continuous(breaks = seq(10, 500, 10)) +
-  scale_color_discrete(labels = c(v1 = 0, v2 = 2, v3 = 3)) +
+  scale_color_discrete(labels = c(v1 = 0.0,
+                                  v2 = 0.5,
+                                  v3 = 1.0,
+                                  v4 = 1.5,
+                                  v5 = 2.0)) +
   labs(x = "Sample Size",
        y = "p-value",
        color = "Difference of Means")
-  
-
-
-
-# set.seed(781) # bad results
-set.seed(614) # good results
-# set.seed(95384)
-
-n_max <- 500
-results <- tibble()
-
-v0 <- rnorm(9, 1, 10)
-v1 <- rnorm(9, 1, 10)
-v2 <- rnorm(9, 2, 10)
-v3 <- rnorm(9, 3, 10)
-
-for (i in 1:100) {
-  for (j in 10:n_max) {
-    v0[j] <- rnorm(1, 1, 10)
-    v1[j] <- rnorm(1, 1, 10)
-    v2[j] <- rnorm(1, 2, 10)
-    v3[j] <- rnorm(1, 3, 10)
-    res <- tibble(
-      sim = i,
-      sample_size = j,
-      v1 = t.test(v0, v1)$p.value,
-      v2 = t.test(v0, v2)$p.value,
-      v3 = t.test(v0, v3)$p.value,
-    )
-    results %>% 
-      bind_rows(res) -> results
-  }
-}
-
-results %>% 
-  pivot_longer(cols = c(v1, v2, v3)) %>% 
-  summarise(mean = mean(value),
-            se_lower = mean_se(value)$ymin,
-            se_upper = mean_se(value)$ymax,
-            .by = c(name, sample_size)) %>% 
-  ggplot(aes(sample_size, mean, color = name)) +
-  geom_line() +
-  geom_hline(yintercept = .05)
-
-
 
 
 
@@ -237,3 +207,47 @@ results %>%
   labs(x = "Sample Size",
        y = "p-value",
        color = "Difference of Means")
+
+
+
+
+
+# # set.seed(781) # bad results
+# set.seed(614) # good results
+# # set.seed(95384)
+# 
+# n_max <- 500
+# results <- tibble()
+# 
+# v0 <- rnorm(9, 1, 10)
+# v1 <- rnorm(9, 1, 10)
+# v2 <- rnorm(9, 2, 10)
+# v3 <- rnorm(9, 3, 10)
+# 
+# for (i in 1:100) {
+#   for (j in 10:n_max) {
+#     v0[j] <- rnorm(1, 1, 10)
+#     v1[j] <- rnorm(1, 1, 10)
+#     v2[j] <- rnorm(1, 2, 10)
+#     v3[j] <- rnorm(1, 3, 10)
+#     res <- tibble(
+#       sim = i,
+#       sample_size = j,
+#       v1 = t.test(v0, v1)$p.value,
+#       v2 = t.test(v0, v2)$p.value,
+#       v3 = t.test(v0, v3)$p.value,
+#     )
+#     results %>% 
+#       bind_rows(res) -> results
+#   }
+# }
+# 
+# results %>% 
+#   pivot_longer(cols = c(v1, v2, v3)) %>% 
+#   summarise(mean = mean(value),
+#             se_lower = mean_se(value)$ymin,
+#             se_upper = mean_se(value)$ymax,
+#             .by = c(name, sample_size)) %>% 
+#   ggplot(aes(sample_size, mean, color = name)) +
+#   geom_line() +
+#   geom_hline(yintercept = .05)
