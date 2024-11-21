@@ -12,19 +12,40 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 ## Логика как наука {#logic-as-science}
 
+:::{.lab-senior}
+:::
+
 :::{#def-logic}
-Формальна логика --- наука об общих структурах правильного мышления в его языковой форме [@segeth1985, с. 19].
+**Формальна логика** --- наука об общих структурах правильного мышления в его языковой форме [@segeth1985, с. 19].
 :::
 
 ## Высказывания {#logic-propositions}
 
+:::{.lab-senior}
+:::
+
+Мы будем иметь дело только с **логикой высказываний**, которая занимается --- не поверите --- высказываниями. Неплохо было бы понять, что это такое.
+
+
 ### Атомарные высказывания {#logic-propositions-atomic}
+
+:::{.lab-senior}
+:::
 
 ![Графическое представление высказывания](img/math-logic/proposition.jpg){#fig-proposition}
 
 ### Операции с высказываниями {#logic-propositions-operations}
 
+:::{.lab-senior}
+:::
+
 #### Отрицание {#logic-propositions-operations-neg}
+
+:::{#def-negation}
+**Отрицание (negation)** --- операция, посредством которого из исходного высказывания получают новое с противоположным значением истинности.
+
+Обозначение: $\neg$
+:::
 
 ![Графическое представление отрицания](img/math-logic/negation.jpg){#fig-negation}
 
@@ -38,7 +59,15 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Таблица истинности отрицания
 :::
 
+
+
 #### Конъюнкция {#logic-propositions-and}
+
+:::{#def-conjunction}
+**Конъюнкция (conjunction)** --- сложное высказывание, которое истинно тогда и только тогда, когда истинны оба входящие в него атомарные высказывания.
+
+Обозначение: $\and$
+:::
 
 ![Графическое представление конъюнкции](img/math-logic/conjunction.jpg){#fig-conjunction}
 
@@ -54,7 +83,15 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Таблица истинности конъюнкции
 :::
 
+
+
 #### Дизъюнкция {#logic-propositions-operations-or}
+
+:::{#def-disjunction}
+**Дизъюнкция (disjunction)** --- сложное высказывание, которое истинно тогда и только тогда, когда истинно хотя бы одно входящее в него атомарное высказывание.
+
+Обозначение: $\or$
+:::
 
 ![Графическое представление дизъюнкции](img/math-logic/disjunction.jpg){#fig-disjunction}
 
@@ -70,7 +107,15 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Таблица истинности дизъюнкции
 :::
 
+
+
 #### Разделительная дизъюнкция {#logic-propositions-operations-xor}
+
+:::{#def-xor}
+**Разделительная дизъюнкция (exclusive disjunction)** --- сложное высказывание, которое истинно тогда и только тогда, когда истинно хотя бы одно входящее в него атомарное высказывание.
+
+Обозначение: $\or$
+:::
 
 ![Графическое представление разделительной конъюнкции](img/math-logic/xor.jpg){#fig-xor}
 
@@ -89,7 +134,16 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 ### Условные высказывания {#logic-propositions-conditional}
 
+:::{.lab-senior}
+:::
+
 #### Импликация {#logic-propositions-conditional-impl}
+
+:::{#def-implication}
+**Импликация (implication)** --- сложное высказывание, которое ложно тогда и только тогда, когда его антецедент истинен, а консеквент ложен.
+
+Обозначение: $\impl$
+:::
 
 ![Графическое представление импликации](img/math-logic/implication.jpg){#fig-implication}
 
@@ -108,6 +162,12 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 #### Репликация {#logic-propositions-conditional-repl}
 
+:::{#def-implication}
+**Репликация (converse)** --- сложное высказывание, которое ложно тогда и только тогда, когда его антецедент ложен, а консеквент истинен.
+
+Обозначение: $\repl$
+:::
+
 ![Графическое представление репликации](img/math-logic/replication.jpg){#fig-replication}
 
 :::{#tbl-replication}
@@ -125,6 +185,12 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 #### Эквиваленция {#logic-propositions-conditional-equi}
 
+:::{#def-equivalence}
+**Эквиваленция (equivalence)** --- сложное высказывание, которое истинно тогда и только тогда, когда его антецедент и консеквент имеют одинаковые значения истинности.
+
+Обозначение: $\equi$
+:::
+
 ![Графическое представление эквиваленции](img/math-logic/equivalence.jpg){#fig-equivalence}
 
 :::{#tbl-equivalence}
@@ -139,12 +205,38 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Таблица истинности эквиваленции
 :::
 
+Нетрудно заметить, что эквиваленция представляет собой конъюнкцию импликации и репликации.
+
+:::{#exr-equi-as-conj}
+Проверьте, построив таблицу истинности, что значения истинности высказывания $(p \impl q) \and (p \repl q)$ совпадают со значениями истинности высказывания $p \equi q$ при всех комбинациях значений истинности $p$ и $q$.
+:::
+
+::::{.solution}
+:::{.cell}
+|$p$|$q$|$p \impl q$|$p \repl q$|$(p \impl q) \and (p \repl q)$|$p \equi q$|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|$\true$|$\true$|$\true$|$\true$|$\true$|$\true$|
+|$\true$|$\false$|$\false$|$\true$|$\false$|$\false$|
+|$\false$|$\true$|$\true$|$\false$|$\false$|$\false$|
+|$\false$|$\false$|$\true$|$\true$|$\true$|$\true$|
+:::
+::::
+
 
 
 ## Умозаключения {#logic-consequence}
 
+:::{.lab-senior}
+:::
+
+:::{#def-consequence}
+**Логическое умозаключение (consequence)** состоит в том, что из одного или нескольких данных высказываний (*посылок*), применяя к ним правила умозаключения, получают новое высказывание (*заключение*).
+:::
+
 ### Правила умозаключений {#logic-consequence-rules}
 
+:::{.lab-senior}
+:::
 
 #### Законы де Моргана {#logic-consequence-rules-demorgan}
 
@@ -198,6 +290,9 @@ $${#eq-modus-tollens}
 
 
 ### Логические ошибки в умозаключениях {#logic-consequence-errors}
+
+:::{.lab-senior}
+:::
 
 $$
 \begin{split}
@@ -265,12 +360,12 @@ $$
 
 Построим следующую таблицу истинности:
 
-|$p < \alpha$|$H_1$|$(p < \alpha) \impl H_1$|$(p \geq \alpha)$|$\big( (p < \alpha) \impl H_1 \big) \and (p \geq \alpha)$|$H_0$|$\big( (p < \alpha) \impl H_1 \big) \and (p \geq \alpha) \impl H_0$|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|$\true$|$\true$|$\true$|$\false$|$\false$|$\false$|$\true$|
-|$\true$|$\false$|$\false$|$\false$|$\false$|$\true$|$\true$|
-|$\false$|$\true$|$\true$|$\true$|$\true$|$\false$|$\false$|
-|$\false$|$\false$|$\true$|$\true$|$\true$|$\true$|$\true$|
+|$p < \alpha$|$H_1$|$(p < \alpha) \impl H_1$|$(p \geq \alpha)$|$\big( (p < \alpha) \impl H_1 \big) \and (p \geq \alpha)$|$H_0$|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|$\true$|$\true$|$\true$|$\false$|$\false$|$\false$|
+|$\true$|$\false$|$\false$|$\false$|$\false$|$\true$|
+|$\false$|$\true$|$\true$|$\true$|$\true$|$\false$|
+|$\false$|$\false$|$\true$|$\true$|$\true$|$\true$|
 
 Обратим внимание на две последние строчки получившейся таблицы: обе посылки в обоих случая истинны, однако заключение истинно только в одном из случаев. Значит такое правило для умозаключение применять нельзя --- оно не гарантирует истинность заключения при истинности обеих посылок.
 :::
