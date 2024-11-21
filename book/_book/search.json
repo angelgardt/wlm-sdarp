@@ -1261,12 +1261,12 @@
   {
     "objectID": "math-logic.html",
     "href": "math-logic.html",
-    "title": "13  Логика и алгебра логики",
+    "title": "13  Логика",
     "section": "",
-    "text": "13.1 Заголовок раздела\nТест со ссылкой.",
+    "text": "13.1 Логика как наука",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика и алгебра логики</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
     ]
   },
   {
@@ -2783,6 +2783,72 @@
     "crumbs": [
       "Приложения",
       "<span class='chapter-number'>F</span>  <span class='chapter-title'>Формулы</span>"
+    ]
+  },
+  {
+    "objectID": "math-logic.html#logic-as-science",
+    "href": "math-logic.html#logic-as-science",
+    "title": "13  Логика",
+    "section": "",
+    "text": "Определение 13.1 Формальна логика — наука об общих структурах правильного мышления в его языковой форме (Зегет, 1985, с. 19).",
+    "crumbs": [
+      "Математика для анализа данных",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
+    ]
+  },
+  {
+    "objectID": "math-logic.html#высказывания",
+    "href": "math-logic.html#высказывания",
+    "title": "13  Логика",
+    "section": "13.2 Высказывания",
+    "text": "13.2 Высказывания\n\n13.2.1 Атомарные высказывания\n\n\n\n\n\n\nИллюстрация 13.1: Графическое представление высказывания\n\n\n\n\n\n13.2.2 Операции с высказываниями\n\n13.2.2.1 Отрицание\n\n\n\n\n\n\nИллюстрация 13.2: Графическое представление отрицания\n\n\n\n\n\n\nТаблица 13.1: Таблица истинности отрицания\n\n\n\n\n\n\\(p\\)\n\\(\\neg p\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\n\n13.2.2.2 Конъюнкция\n\n\n\n\n\n\nИллюстрация 13.3: Графическое представление конъюнкции\n\n\n\n\n\n\nТаблица 13.2: Таблица истинности конъюнкции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\wedge q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\n\n\n\n\n\n13.2.2.3 Дизъюнкция\n\n\n\n\n\n\nИллюстрация 13.4: Графическое представление дизъюнкции\n\n\n\n\n\n\nТаблица 13.3: Таблица истинности дизъюнкции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\vee q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\n\n\n\n\n\n13.2.2.4 Разделительная дизъюнкция\n\n\n\n\n\n\nИллюстрация 13.5: Графическое представление разделительной конъюнкции\n\n\n\n\n\n\nТаблица 13.4: Таблица истинности разделительной дизъюнкции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\veebar q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\n\n\n\n\n\n\n13.2.3 Условные высказывания\n\n13.2.3.1 Импликация\n\n\n\n\n\n\nИллюстрация 13.6: Графическое представление импликации\n\n\n\n\n\n\nТаблица 13.5: Таблица истинности импликации\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Rightarrow q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\n\n13.2.3.2 Репликация\n\n\n\n\n\n\nИллюстрация 13.7: Графическое представление репликации\n\n\n\n\n\n\nТаблица 13.6: Таблица истинности репликации\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Leftarrow q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\n\n13.2.3.3 Эквиваленция\n\n\n\n\n\n\nИллюстрация 13.8: Графическое представление эквиваленции\n\n\n\n\n\n\nТаблица 13.7: Таблица истинности эквиваленции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Leftrightarrow q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)",
+    "crumbs": [
+      "Математика для анализа данных",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
+    ]
+  },
+  {
+    "objectID": "math-logic.html#умозаключения",
+    "href": "math-logic.html#умозаключения",
+    "title": "13  Логика",
+    "section": "13.3 Умозаключения",
+    "text": "13.3 Умозаключения\n\n13.3.1 Правила умозаключений\n\n\n\\[\n\\begin{split}\n\\neg (p \\wedge q) \\\\\n\\hline\n\\neg p \\vee\\neg q\n\\end{split}\n\\tag{13.1}\\]\n\n\\[\n\\begin{split}\n\\neg (p \\vee q) \\\\\n\\hline\n\\neg p \\wedge\\neg q\n\\end{split}\n\\tag{13.2}\\]\n\n\n\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\np \\\\\n\\hline\nq\n\\end{split}\n\\tag{13.3}\\]\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\n\\neg q \\\\\n\\hline\n\\neg p\n\\end{split}\n\\tag{13.4}\\]\n\n\n\n\n\n\n\nЗегет, В. (1985). Элементарная логика. Высшая школа.",
+    "crumbs": [
+      "Математика для анализа данных",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
+    ]
+  },
+  {
+    "objectID": "math-logic.html#logic-propositions",
+    "href": "math-logic.html#logic-propositions",
+    "title": "13  Логика",
+    "section": "13.2 Высказывания",
+    "text": "13.2 Высказывания\n\n13.2.1 Атомарные высказывания\n\n\n\n\n\n\nИллюстрация 13.1: Графическое представление высказывания\n\n\n\n\n\n13.2.2 Операции с высказываниями\n\n13.2.2.1 Отрицание\n\n\n\n\n\n\nИллюстрация 13.2: Графическое представление отрицания\n\n\n\n\n\n\nТаблица 13.1: Таблица истинности отрицания\n\n\n\n\n\n\\(p\\)\n\\(\\neg p\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\n\n13.2.2.2 Конъюнкция\n\n\n\n\n\n\nИллюстрация 13.3: Графическое представление конъюнкции\n\n\n\n\n\n\nТаблица 13.2: Таблица истинности конъюнкции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\wedge q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\n\n\n\n\n\n13.2.2.3 Дизъюнкция\n\n\n\n\n\n\nИллюстрация 13.4: Графическое представление дизъюнкции\n\n\n\n\n\n\nТаблица 13.3: Таблица истинности дизъюнкции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\vee q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\n\n\n\n\n\n13.2.2.4 Разделительная дизъюнкция\n\n\n\n\n\n\nИллюстрация 13.5: Графическое представление разделительной конъюнкции\n\n\n\n\n\n\nТаблица 13.4: Таблица истинности разделительной дизъюнкции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\veebar q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\n\n\n\n\n\n\n13.2.3 Условные высказывания\n\n13.2.3.1 Импликация\n\n\n\n\n\n\nИллюстрация 13.6: Графическое представление импликации\n\n\n\n\n\n\nТаблица 13.5: Таблица истинности импликации\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Rightarrow q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\n\n13.2.3.2 Репликация\n\n\n\n\n\n\nИллюстрация 13.7: Графическое представление репликации\n\n\n\n\n\n\nТаблица 13.6: Таблица истинности репликации\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Leftarrow q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\n\n13.2.3.3 Эквиваленция\n\n\n\n\n\n\nИллюстрация 13.8: Графическое представление эквиваленции\n\n\n\n\n\n\nТаблица 13.7: Таблица истинности эквиваленции\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Leftrightarrow q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)",
+    "crumbs": [
+      "Математика для анализа данных",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
+    ]
+  },
+  {
+    "objectID": "math-logic.html#logic-consequence",
+    "href": "math-logic.html#logic-consequence",
+    "title": "13  Логика",
+    "section": "13.3 Умозаключения",
+    "text": "13.3 Умозаключения\n\n13.3.1 Правила умозаключений\n\n13.3.1.1 Законы де Моргана\n\n\n\\[\n\\begin{split}\n\\neg (p \\wedge q) \\\\\n\\hline\n\\neg p \\vee\\neg q\n\\end{split}\n\\tag{13.1}\\]\n\n\\[\n\\begin{split}\n\\neg (p \\vee q) \\\\\n\\hline\n\\neg p \\wedge\\neg q\n\\end{split}\n\\tag{13.2}\\]\n\n\n\n\n13.3.1.2 Modus ponens и Modus tollens\nModus ponens (13.3) и Modus tollens (13.4)\n\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\np \\\\\n\\hline\nq\n\\end{split}\n\\tag{13.3}\\]\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\n\\neg q \\\\\n\\hline\n\\neg p\n\\end{split}\n\\tag{13.4}\\]\n\n\n\n\n\n13.3.2 Логические ошибки в умозаключениях\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\nq \\\\\n\\hline\np\n\\end{split}\n\\tag{13.5}\\]\n\n\n\nТаблица 13.8: Проверка правила 13.5\n\n\n\n\n\n\n\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(p \\Rightarrow q\\)\n\\((p \\Rightarrow q) \\wedge q\\)\n\\(\\big( (p \\Rightarrow q) \\wedge q \\big) \\Rightarrow p\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\n\\neg p \\\\\n\\hline\n\\neg q\n\\end{split}\n\\tag{13.6}\\]\n\n\n\nТаблица 13.9: Проверка правила 13.6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(p\\)\n\\(q\\)\n\\(\\neg p\\)\n\\(\\neg q\\)\n\\(p \\Rightarrow q\\)\n\\((p \\Rightarrow q) \\wedge\\neg p\\)\n\\(\\big( (p \\Rightarrow q) \\wedge\\neg p \\big) \\Rightarrow\\neg q\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\n\n\n\n\nЗадание 13.1 Пусть даны атомарные высказывания \\((p &lt; \\alpha)\\), \\(H_1\\) и \\(H_0\\). Третье таково, что \\(H_0 \\Leftrightarrow\\neg H_1\\), а первые два связаны следующим образом: \\((p &lt; \\alpha) \\Rightarrow H_1\\).\nПредлагается следующее правило для умозаключения:\n\\[\n\\begin{split}\n(p &lt; \\alpha) \\Rightarrow H_1 \\\\\n(p \\geqslant\\alpha) \\\\\n\\hline\nH_0\n\\end{split}\n\\]\nПроверьте, можно ли пользоваться этим правилом при умозаключениях.\n\n\nРешение. \n\nДля того, чтобы проверить, можно ли пользоваться предложенным правилом для умозаключения, необходимо выяснить, всегда ли заключение — в данном случае \\(H_0\\) — будет истинно, если истинны обе посылки — в данном случае \\((p &lt; \\alpha) \\Rightarrow H_1\\) и \\((p \\geqslant\\alpha)\\).\nПостроим следующую таблицу истинности:\n\n\n\n\n\n\n\n\n\n\n\n\n\\(p &lt; \\alpha\\)\n\\(H_1\\)\n\\((p &lt; \\alpha) \\Rightarrow H_1\\)\n\\((p \\geqslant\\alpha)\\)\n\\(\\big( (p &lt; \\alpha) \\Rightarrow H_1 \\big) \\wedge(p \\geqslant\\alpha)\\)\n\\(H_0\\)\n\\(\\big( (p &lt; \\alpha) \\Rightarrow H_1 \\big) \\wedge(p \\geqslant\\alpha) \\Rightarrow H_0\\)\n\n\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\n\n\\(\\mathsf{F}\\)\n\\(\\mathsf{F}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\\(\\mathsf{T}\\)\n\n\n\nОбратим внимание на две последние строчки получившейся таблицы: обе посылки в обоих случая истинны, однако заключение истинно только в одном из случаев. Значит такое правило для умозаключение применять нельзя — оно не гарантирует истинность заключения при истинности обеих посылок.\n\n\n\n\n\n\n\nЗегет, В. (1985). Элементарная логика. Высшая школа.",
+    "crumbs": [
+      "Математика для анализа данных",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
+    ]
+  },
+  {
+    "objectID": "math-logic.html#logic-consequence-rules-modus",
+    "href": "math-logic.html#logic-consequence-rules-modus",
+    "title": "13  Логика",
+    "section": "13.4 Modus ponens и Modus tollens",
+    "text": "13.4 Modus ponens и Modus tollens\n\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\np \\\\\n\\hline\nq\n\\end{split}\n\\tag{13.3}\\]\n\n\\[\n\\begin{split}\np \\Rightarrow q \\\\\n\\neg q \\\\\n\\hline\n\\neg p\n\\end{split}\n\\tag{13.4}\\]\n\n\n\n\n\n\n\nЗегет, В. (1985). Элементарная логика. Высшая школа.",
+    "crumbs": [
+      "Математика для анализа данных",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Логика</span>"
     ]
   }
 ]

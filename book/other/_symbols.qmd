@@ -29,7 +29,14 @@
 
 
 <!--- Logic --->
+\newcommand{\true}{\mathsf{T}}
+\newcommand{\false}{\mathsf{F}}
+\newcommand{\and}{\wedge}
+\newcommand{\or}{\vee}
 \newcommand{\xor}{\veebar}
+\newcommand{\impl}{\Rightarrow}
+\newcommand{\repl}{\Leftarrow}
+\newcommand{\equi}{\Leftrightarrow}
 
 
 <!--- Set theory --->

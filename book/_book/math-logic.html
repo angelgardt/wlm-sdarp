@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.6.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 13&nbsp; Логика и алгебра логики</title>
+<title>13&nbsp; Логика – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -92,12 +58,12 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6be77e4cef73b3d50f1c1da6b27d3573.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-a9f6e1d2fb7ac98f9b75bceb046b45e0.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4ba5baf4ef852dc805d879b5bfd9194c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d9361d4d472de8067759cf488741c728.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -149,21 +115,8 @@ background-image: url(img/other/title-block-banner.jpg);
 background-size: cover;
       }
 </style>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -201,23 +154,23 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-math.html">Математика для анализа данных</a></li><li class="breadcrumb-item"><a href="./math-logic.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-math.html">Математика для анализа данных</a></li><li class="breadcrumb-item"><a href="./math-logic.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-math.html">Математика для анализа данных</a></li><li class="breadcrumb-item"><a href="./math-logic.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="logic" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-math.html">Математика для анализа данных</a></li><li class="breadcrumb-item"><a href="./math-logic.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></a></li></ol></nav>
+      <h1 class="title"><span id="logic" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></h1>
                       </div>
   </div>
     
@@ -268,9 +221,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -305,7 +258,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -382,7 +335,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -390,7 +343,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -427,7 +380,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -453,7 +406,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -462,7 +415,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -515,7 +468,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -548,9 +501,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -645,32 +598,33 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#chapterid-sectionid" id="toc-chapterid-sectionid" class="nav-link active" data-scroll-target="#chapterid-sectionid"><span class="header-section-number">13.1</span> Заголовок раздела</a>
+  <li><a href="#logic-as-science" id="toc-logic-as-science" class="nav-link active" data-scroll-target="#logic-as-science"><span class="header-section-number">13.1</span> Логика как наука</a></li>
+  <li><a href="#logic-propositions" id="toc-logic-propositions" class="nav-link" data-scroll-target="#logic-propositions"><span class="header-section-number">13.2</span> Высказывания</a>
   <ul>
-  <li><a href="#chapterid-subsectionid" id="toc-chapterid-subsectionid" class="nav-link" data-scroll-target="#chapterid-subsectionid"><span class="header-section-number">13.1.1</span> Заголовок подраздела</a></li>
+  <li><a href="#logic-propositions-atomic" id="toc-logic-propositions-atomic" class="nav-link" data-scroll-target="#logic-propositions-atomic"><span class="header-section-number">13.2.1</span> Атомарные высказывания</a></li>
+  <li><a href="#logic-propositions-operations" id="toc-logic-propositions-operations" class="nav-link" data-scroll-target="#logic-propositions-operations"><span class="header-section-number">13.2.2</span> Операции с высказываниями</a>
+  <ul class="collapse">
+  <li><a href="#logic-propositions-operations-neg" id="toc-logic-propositions-operations-neg" class="nav-link" data-scroll-target="#logic-propositions-operations-neg"><span class="header-section-number">13.2.2.1</span> Отрицание</a></li>
+  <li><a href="#logic-propositions-and" id="toc-logic-propositions-and" class="nav-link" data-scroll-target="#logic-propositions-and"><span class="header-section-number">13.2.2.2</span> Конъюнкция</a></li>
+  <li><a href="#logic-propositions-operations-or" id="toc-logic-propositions-operations-or" class="nav-link" data-scroll-target="#logic-propositions-operations-or"><span class="header-section-number">13.2.2.3</span> Дизъюнкция</a></li>
+  <li><a href="#logic-propositions-operations-xor" id="toc-logic-propositions-operations-xor" class="nav-link" data-scroll-target="#logic-propositions-operations-xor"><span class="header-section-number">13.2.2.4</span> Разделительная дизъюнкция</a></li>
   </ul></li>
-  <li><a href="#chapterid-code-examples" id="toc-chapterid-code-examples" class="nav-link" data-scroll-target="#chapterid-code-examples"><span class="header-section-number">13.2</span> Примеры <code>кода</code></a>
+  <li><a href="#logic-propositions-conditional" id="toc-logic-propositions-conditional" class="nav-link" data-scroll-target="#logic-propositions-conditional"><span class="header-section-number">13.2.3</span> Условные высказывания</a>
+  <ul class="collapse">
+  <li><a href="#logic-propositions-conditional-impl" id="toc-logic-propositions-conditional-impl" class="nav-link" data-scroll-target="#logic-propositions-conditional-impl"><span class="header-section-number">13.2.3.1</span> Импликация</a></li>
+  <li><a href="#logic-propositions-conditional-repl" id="toc-logic-propositions-conditional-repl" class="nav-link" data-scroll-target="#logic-propositions-conditional-repl"><span class="header-section-number">13.2.3.2</span> Репликация</a></li>
+  <li><a href="#logic-propositions-conditional-equi" id="toc-logic-propositions-conditional-equi" class="nav-link" data-scroll-target="#logic-propositions-conditional-equi"><span class="header-section-number">13.2.3.3</span> Эквиваленция</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#logic-consequence" id="toc-logic-consequence" class="nav-link" data-scroll-target="#logic-consequence"><span class="header-section-number">13.3</span> Умозаключения</a>
   <ul>
-  <li><a href="#chapterid-code-nolst" id="toc-chapterid-code-nolst" class="nav-link" data-scroll-target="#chapterid-code-nolst"><span class="header-section-number">13.2.1</span> Чанк без подписи</a></li>
-  <li><a href="#chapterid-code-lst" id="toc-chapterid-code-lst" class="nav-link" data-scroll-target="#chapterid-code-lst"><span class="header-section-number">13.2.2</span> Чанк с подписью</a></li>
-  <li><a href="#chapterid-code-annotated" id="toc-chapterid-code-annotated" class="nav-link" data-scroll-target="#chapterid-code-annotated"><span class="header-section-number">13.2.3</span> Аннотированный чанк</a></li>
+  <li><a href="#logic-consequence-rules" id="toc-logic-consequence-rules" class="nav-link" data-scroll-target="#logic-consequence-rules"><span class="header-section-number">13.3.1</span> Правила умозаключений</a>
+  <ul class="collapse">
+  <li><a href="#logic-consequence-rules-demorgan" id="toc-logic-consequence-rules-demorgan" class="nav-link" data-scroll-target="#logic-consequence-rules-demorgan"><span class="header-section-number">13.3.1.1</span> Законы де Моргана</a></li>
+  <li><a href="#logic-consequence-rules-modus" id="toc-logic-consequence-rules-modus" class="nav-link" data-scroll-target="#logic-consequence-rules-modus"><span class="header-section-number">13.3.1.2</span> Modus ponens и Modus tollens</a></li>
   </ul></li>
-  <li><a href="#chapterid-figures" id="toc-chapterid-figures" class="nav-link" data-scroll-target="#chapterid-figures"><span class="header-section-number">13.3</span> Примеры иллюстраций</a>
-  <ul>
-  <li><a href="#chapterid-import-pic" id="toc-chapterid-import-pic" class="nav-link" data-scroll-target="#chapterid-import-pic"><span class="header-section-number">13.3.1</span> Импорт графического файла</a></li>
-  <li><a href="#chapterid-plot" id="toc-chapterid-plot" class="nav-link" data-scroll-target="#chapterid-plot"><span class="header-section-number">13.3.2</span> График, построенный с помощью кода</a></li>
-  <li><a href="#chapterid-several-pics" id="toc-chapterid-several-pics" class="nav-link" data-scroll-target="#chapterid-several-pics"><span class="header-section-number">13.3.3</span> Несколько изображений в одной иллюстрации</a></li>
-  <li><a href="#chapterid-map" id="toc-chapterid-map" class="nav-link" data-scroll-target="#chapterid-map"><span class="header-section-number">13.3.4</span> Карта</a></li>
-  <li><a href="#chapterid-video" id="toc-chapterid-video" class="nav-link" data-scroll-target="#chapterid-video"><span class="header-section-number">13.3.5</span> Видео</a></li>
-  <li><a href="#chapterid-scheme" id="toc-chapterid-scheme" class="nav-link" data-scroll-target="#chapterid-scheme"><span class="header-section-number">13.3.6</span> Схема</a></li>
+  <li><a href="#logic-consequence-errors" id="toc-logic-consequence-errors" class="nav-link" data-scroll-target="#logic-consequence-errors"><span class="header-section-number">13.3.2</span> Логические ошибки в умозаключениях</a></li>
   </ul></li>
-  <li><a href="#chapterid-tables" id="toc-chapterid-tables" class="nav-link" data-scroll-target="#chapterid-tables"><span class="header-section-number">13.4</span> Таблицы</a>
-  <ul>
-  <li><a href="#chapterid-kabletable" id="toc-chapterid-kabletable" class="nav-link" data-scroll-target="#chapterid-kabletable"><span class="header-section-number">13.4.1</span> Таблица из <code>kable()</code></a></li>
-  <li><a href="#chapterid-markdowntable" id="toc-chapterid-markdowntable" class="nav-link" data-scroll-target="#chapterid-markdowntable"><span class="header-section-number">13.4.2</span> Таблица из R Markdown</a></li>
-  </ul></li>
-  <li><a href="#chapterid-math" id="toc-chapterid-math" class="nav-link" data-scroll-target="#chapterid-math"><span class="header-section-number">13.5</span> Математика</a></li>
-  <li><a href="#chapterid-callouts" id="toc-chapterid-callouts" class="nav-link" data-scroll-target="#chapterid-callouts"><span class="header-section-number">13.6</span> Блоки</a></li>
   </ul>
 </nav>
     </div>
@@ -701,483 +655,221 @@ window.Quarto = {
 <div class="intro">
 <p>Вступление</p>
 </div>
-<p><span class="citation" data-cites="segeth1985">Зегет (<a href="references.html#ref-segeth1985" role="doc-biblioref">1985</a>)</span></p>
-<div class="quote">
-<p>— Текст цитаты <br> — Тоже текст цитаты <br></p>
-<div class="quote-sign">
-<p>Источник цитаты <br> Год цитаты</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Цитата</p>
-</blockquote>
-<section id="chapterid-sectionid" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="chapterid-sectionid"><span class="header-section-number">13.1</span> Заголовок раздела</h2>
-<div class="lab-junior">
-
-</div>
-<p>Тест со <a href="./debug_quiz.html">ссылкой</a>.</p>
-<section id="chapterid-subsectionid" class="level3" data-number="13.1.1">
-<h3 data-number="13.1.1" class="anchored" data-anchor-id="chapterid-subsectionid"><span class="header-section-number">13.1.1</span> Заголовок подраздела</h3>
-<div class="lab-junior">
-
-</div>
-<p>Тест со <a href="./debug_sheet.html">ссылкой</a>.</p>
-</section>
-</section>
-<section id="chapterid-code-examples" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="chapterid-code-examples"><span class="header-section-number">13.2</span> Примеры <code>кода</code></h2>
-<div class="lab-middle">
-
-</div>
-<section id="chapterid-code-nolst" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="chapterid-code-nolst"><span class="header-section-number">13.2.1</span> Чанк без подписи</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## подключаем самую лучшую библиотеку</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="do">## устанавливаем тему</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 10
-  carat cut       color clarity depth table price     x     y     z
-  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
-2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
-3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
-4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
-5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
-6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
-</div>
+<section id="logic-as-science" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="logic-as-science"><span class="header-section-number">13.1</span> Логика как наука</h2>
+<div id="def-logic" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 13.1</strong></span> Формальна логика — наука об общих структурах правильного мышления в его языковой форме <span class="citation" data-cites="segeth1985">(<a href="references.html#ref-segeth1985" role="doc-biblioref">Зегет, 1985</a>, с. 19)</span>.</p>
 </div>
 </section>
-<section id="chapterid-code-lst" class="level3" data-number="13.2.2">
-<h3 data-number="13.2.2" class="anchored" data-anchor-id="chapterid-code-lst"><span class="header-section-number">13.2.2</span> Чанк с подписью</h3>
-<div id="lst-code-example" class="listing quarto-float">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;13.1: Пример чанка с подписью
-</figcaption>
-<div aria-describedby="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(files[i]) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(ds) <span class="ot">-&gt;</span> ds</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">'a'</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</figure>
-</div>
-<p>Ссылка на чанк с подписью (<a href="debug_chapter.html#lst-for-example" class="quarto-xref">Код&nbsp;<span>1.2</span></a>).</p>
-</section>
-<section id="chapterid-code-annotated" class="level3" data-number="13.2.3">
-<h3 data-number="13.2.3" class="anchored" data-anchor-id="chapterid-code-annotated"><span class="header-section-number">13.2.3</span> Аннотированный чанк</h3>
-<div id="lst-code-annotated" class="listing quarto-float">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-code-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;13.2
-</figcaption>
-<div aria-describedby="lst-code-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для агрегации</span></span>
-<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-3" class="code-annotation-target"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
-<span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
-<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-14-7" class="code-annotation-target"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-8" class="code-annotation-target"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
-<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
-<span id="annotated-cell-14-10"><a href="#annotated-cell-14-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>)))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
-</dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
-</dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
-</dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
-</dd>
-</dl>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 53,940 × 13
-   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x
-   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
- 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95
- 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93
- 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35
- 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31
- 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49
- 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49
- 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49
- 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93
- 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45
-10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 
-# ℹ 53,930 more rows
-# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;</code></pre>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</section>
-</section>
-<section id="chapterid-figures" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="chapterid-figures"><span class="header-section-number">13.3</span> Примеры иллюстраций</h2>
-<div class="lab-senior">
-
-</div>
-<section id="chapterid-import-pic" class="level3" data-number="13.3.1">
-<h3 data-number="13.3.1" class="anchored" data-anchor-id="chapterid-import-pic"><span class="header-section-number">13.3.1</span> Импорт графического файла</h3>
-<p>Ссылка на импортированную картинку (<a href="prob-falsepositive.html#fig-gh-soc-preview" class="quarto-xref">Иллюстрация&nbsp;<span>28.1</span></a>):</p>
-<div id="fig-gh-soc-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
+<section id="logic-propositions" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="logic-propositions"><span class="header-section-number">13.2</span> Высказывания</h2>
+<section id="logic-propositions-atomic" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="logic-propositions-atomic"><span class="header-section-number">13.2.1</span> Атомарные высказывания</h3>
+<div id="fig-proposition" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/test-gh-social-preview.png" class="img-fluid figure-img">
+<div aria-describedby="fig-proposition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/proposition.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.1: Превью репозитория
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-proposition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.1: Графическое представление высказывания
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="chapterid-plot" class="level3" data-number="13.3.2">
-<h3 data-number="13.3.2" class="anchored" data-anchor-id="chapterid-plot"><span class="header-section-number">13.3.2</span> График, построенный с помощью кода</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для графика</span></span>
-<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
-<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
-<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
-<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>))) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-11" class="code-annotation-target"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(clarity, price,</span>
-<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> price_group, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"pointrange"</span>, </span>
-<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">fun.data =</span> mean_cl_boot,</span>
-<span id="annotated-cell-3-15"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-17"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="11" data-code-annotation="5">Начинаем рисовать</span>
-</dd>
-</dl>
-</div>
-<div class="cell-output-display">
-<div id="fig-huge-chunk-annotated" class="quarto-figure quarto-figure-center quarto-float anchored">
+<section id="logic-propositions-operations" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="logic-propositions-operations"><span class="header-section-number">13.2.2</span> Операции с высказываниями</h3>
+<section id="logic-propositions-operations-neg" class="level4" data-number="13.2.2.1">
+<h4 data-number="13.2.2.1" class="anchored" data-anchor-id="logic-propositions-operations-neg"><span class="header-section-number">13.2.2.1</span> Отрицание</h4>
+<div id="fig-negation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-huge-chunk-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="math-logic_files/figure-html/fig-huge-chunk-annotated-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-negation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/negation.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-huge-chunk-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.2: Это картинка, нарисованная большим кодом, который аннотирован
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-negation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.2: Графическое представление отрицания
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
-</section>
-<section id="chapterid-several-pics" class="level3" data-number="13.3.3">
-<h3 data-number="13.3.3" class="anchored" data-anchor-id="chapterid-several-pics"><span class="header-section-number">13.3.3</span> Несколько изображений в одной иллюстрации</h3>
-<div id="fig-merging-joins" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-merging-joins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-left-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-left-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/left_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-left-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) left_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-right-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-right-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/right_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-right-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) right_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-full-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-full-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/full_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-full-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) full_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-inner-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-inner-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/inner_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inner-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(d) inner_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-merging-joins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.3: Объединяющие джойны
-</figcaption>
-</figure>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>) <span class="ot">-&gt;</span> plot1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="math-logic_files/figure-html/several-plots-one-figure-plots-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>) <span class="ot">-&gt;</span> plot2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="math-logic_files/figure-html/several-plots-one-figure-plots-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="ot">-&gt;</span> plot3</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="math-logic_files/figure-html/several-plots-one-figure-plots-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>) <span class="ot">-&gt;</span> plot4</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="math-logic_files/figure-html/several-plots-one-figure-plots-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot1)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot3)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot4)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-several-plots-one-figure" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-several-plots-one-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-several-plots-one-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.4: Несколько картинок с помощью кода в одной иллюстрации
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="chapterid-map" class="level3" data-number="13.3.4">
-<h3 data-number="13.3.4" class="anchored" data-anchor-id="chapterid-map"><span class="header-section-number">13.3.4</span> Карта</h3>
-<div class="cell">
-<div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-51f030fb16558e76e524" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-51f030fb16558e76e524">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.5: Тут родился R
-</figcaption>
-</figure>
-</div>
-</div>
-<p>Ссылка неа карту (<a href="prob-falsepositive.html#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>28.5</span></a>).</p>
-</section>
-<section id="chapterid-video" class="level3" data-number="13.3.5">
-<h3 data-number="13.3.5" class="anchored" data-anchor-id="chapterid-video"><span class="header-section-number">13.3.5</span> Видео</h3>
-<div id="fig-razbor" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-razbor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-razbor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.6: Разбор третьей домашки
-</figcaption>
-</figure>
-</div>
-<p>Ссылка на видео (<a href="prob-falsepositive.html#fig-razbor" class="quarto-xref">Иллюстрация&nbsp;<span>28.6</span></a>).</p>
-</section>
-<section id="chapterid-scheme" class="level3" data-number="13.3.6">
-<h3 data-number="13.3.6" class="anchored" data-anchor-id="chapterid-scheme"><span class="header-section-number">13.3.6</span> Схема</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-mermaidtest" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaidtest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaidtest">flowchart LR
-  A(Step 1) --&gt; B(Step 2)
-  B --&gt; C(Step 3)
-  C --&gt; D(Step 4)
-  D --&gt; E(Step 5)
-  E --&gt; A
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaidtest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;13.7: Это схема из Mermaid
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Ссылка на схему (<a href="prob-falsepositive.html#fig-mermaidtest" class="quarto-xref">Иллюстрация&nbsp;<span>28.7</span></a>).</p>
-</section>
-</section>
-<section id="chapterid-tables" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="chapterid-tables"><span class="header-section-number">13.4</span> Таблицы</h2>
-<p>Ссылка на таблицу из <code>tibble</code> (<a href="prob-falsepositive.html#tbl-kabletable" class="quarto-xref">Таблица&nbsp;<span>28.1</span></a>).</p>
-<p>Ссылка на таблицу из R Markdown (<a href="prob-falsepositive.html#tbl-markdowntable" class="quarto-xref">Таблица&nbsp;<span>28.2</span></a>).</p>
-<section id="chapterid-kabletable" class="level3" data-number="13.4.1">
-<h3 data-number="13.4.1" class="anchored" data-anchor-id="chapterid-kabletable"><span class="header-section-number">13.4.1</span> Таблица из <code>kable()</code></h3>
-<div id="tbl-kabletable" class="quarto-float anchored">
+<div id="tbl-negation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-kabletable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;13.1: Это kable-таблица
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-negation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.1: Таблица истинности отрицания
 </figcaption>
-<div aria-describedby="tbl-kabletable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<div aria-describedby="tbl-negation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: right;">A</th>
-<th style="text-align: left;">B</th>
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg p\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">akjsfv</td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">akejrhvae</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">kvuhaefrv</td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-</div>
 </figure>
 </div>
 </section>
-<section id="chapterid-markdowntable" class="level3" data-number="13.4.2">
-<h3 data-number="13.4.2" class="anchored" data-anchor-id="chapterid-markdowntable"><span class="header-section-number">13.4.2</span> Таблица из R Markdown</h3>
-<div id="tbl-markdowntable" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-markdowntable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;13.2: Это Markdown-таблица
+<section id="logic-propositions-and" class="level4" data-number="13.2.2.2">
+<h4 data-number="13.2.2.2" class="anchored" data-anchor-id="logic-propositions-and"><span class="header-section-number">13.2.2.2</span> Конъюнкция</h4>
+<div id="fig-conjunction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/conjunction.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.3: Графическое представление конъюнкции
 </figcaption>
-<div aria-describedby="tbl-markdowntable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+</figure>
+</div>
+<div id="tbl-conjunction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-conjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.2: Таблица истинности конъюнкции
+</figcaption>
+<div aria-describedby="tbl-conjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th>A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \wedge q\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td style="text-align: center;">abc</td>
-<td style="text-align: center;">да</td>
-<td style="text-align: center;"><span class="math inline">\(\sin (2)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td style="text-align: center;">def</td>
-<td style="text-align: center;">нет</td>
-<td style="text-align: center;"><span class="math inline">\(\sqrt {4+2i}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td style="text-align: center;">ghi</td>
-<td style="text-align: center;">да</td>
-<td style="text-align: center;"><span class="math inline">\(e^{i\pi} + 1 = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="logic-propositions-operations-or" class="level4" data-number="13.2.2.3">
+<h4 data-number="13.2.2.3" class="anchored" data-anchor-id="logic-propositions-operations-or"><span class="header-section-number">13.2.2.3</span> Дизъюнкция</h4>
+<div id="fig-disjunction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-disjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/disjunction.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-disjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.4: Графическое представление дизъюнкции
+</figcaption>
+</figure>
+</div>
+<div id="tbl-disjunction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-disjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.3: Таблица истинности дизъюнкции
+</figcaption>
+<div aria-describedby="tbl-disjunction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \vee q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="logic-propositions-operations-xor" class="level4" data-number="13.2.2.4">
+<h4 data-number="13.2.2.4" class="anchored" data-anchor-id="logic-propositions-operations-xor"><span class="header-section-number">13.2.2.4</span> Разделительная дизъюнкция</h4>
+<div id="fig-xor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/xor.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-xor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.5: Графическое представление разделительной конъюнкции
+</figcaption>
+</figure>
+</div>
+<div id="tbl-xor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-xor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.4: Таблица истинности разделительной дизъюнкции
+</figcaption>
+<div aria-describedby="tbl-xor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \veebar q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1186,130 +878,444 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="chapterid-math" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="chapterid-math"><span class="header-section-number">13.5</span> Математика</h2>
-<p>Это уравнение прямой (<a href="prob-falsepositive.html#eq-line" class="quarto-xref">Уравнение&nbsp;<span>28.1</span></a>):</p>
-<p><span id="eq-line"><span class="math display">\[
-y = kx + b
+<section id="logic-propositions-conditional" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="logic-propositions-conditional"><span class="header-section-number">13.2.3</span> Условные высказывания</h3>
+<section id="logic-propositions-conditional-impl" class="level4" data-number="13.2.3.1">
+<h4 data-number="13.2.3.1" class="anchored" data-anchor-id="logic-propositions-conditional-impl"><span class="header-section-number">13.2.3.1</span> Импликация</h4>
+<div id="fig-implication" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-implication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/implication.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-implication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.6: Графическое представление импликации
+</figcaption>
+</figure>
+</div>
+<div id="tbl-implication" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-implication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.5: Таблица истинности импликации
+</figcaption>
+<div aria-describedby="tbl-implication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \Rightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="logic-propositions-conditional-repl" class="level4" data-number="13.2.3.2">
+<h4 data-number="13.2.3.2" class="anchored" data-anchor-id="logic-propositions-conditional-repl"><span class="header-section-number">13.2.3.2</span> Репликация</h4>
+<div id="fig-replication" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-replication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/replication.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-replication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.7: Графическое представление репликации
+</figcaption>
+</figure>
+</div>
+<div id="tbl-replication" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-replication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.6: Таблица истинности репликации
+</figcaption>
+<div aria-describedby="tbl-replication-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \Leftarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="logic-propositions-conditional-equi" class="level4" data-number="13.2.3.3">
+<h4 data-number="13.2.3.3" class="anchored" data-anchor-id="logic-propositions-conditional-equi"><span class="header-section-number">13.2.3.3</span> Эквиваленция</h4>
+<div id="fig-equivalence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-equivalence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/math-logic/equivalence.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-equivalence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;13.8: Графическое представление эквиваленции
+</figcaption>
+</figure>
+</div>
+<div id="tbl-equivalence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-equivalence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.7: Таблица истинности эквиваленции
+</figcaption>
+<div aria-describedby="tbl-equivalence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \Leftrightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="logic-consequence" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="logic-consequence"><span class="header-section-number">13.3</span> Умозаключения</h2>
+<section id="logic-consequence-rules" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="logic-consequence-rules"><span class="header-section-number">13.3.1</span> Правила умозаключений</h3>
+<section id="logic-consequence-rules-demorgan" class="level4" data-number="13.3.1.1">
+<h4 data-number="13.3.1.1" class="anchored" data-anchor-id="logic-consequence-rules-demorgan"><span class="header-section-number">13.3.1.1</span> Законы де Моргана</h4>
+<div class="columns">
+<div class="column">
+<p><span id="eq-demorgan-negand"><span class="math display">\[
+\begin{split}
+\neg (p \wedge q) \\
+\hline
+\neg p \vee\neg q
+\end{split}
 \tag{13.1}\]</span></span></p>
-<div id="thm-nonbiasmean" class="theorem">
-<p><span class="theorem-title"><strong>Теорема 13.1</strong></span> Это теорема.</p>
+</div><div class="column">
+<p><span id="eq-demorgan-negor"><span class="math display">\[
+\begin{split}
+\neg (p \vee q) \\
+\hline
+\neg p \wedge\neg q
+\end{split}
+\tag{13.2}\]</span></span></p>
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Это доказательство.</p>
-<p><span class="math display">\[
-X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
-\]</span></p>
-</div>
-<div id="lem-test" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 13.1</strong></span> Это лемма.</p>
-</div>
-<div id="cor-test" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 13.1</strong></span> Это следствие.</p>
-</div>
-<div id="prp-test" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 13.1</strong></span> Это утверждение.</p>
-</div>
-<div id="cnj-test" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Предположение 13.1</strong></span> Это conjecutre.</p>
-</div>
-<div id="def-test" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 13.1</strong></span> Это определение.</p>
-</div>
-<div id="exm-test" class="theorem example">
-<p><span class="theorem-title"><strong>Пример 13.1</strong></span> Это пример.</p>
-</div>
-<div id="exr-test" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 13.1</strong></span> Это задание.</p>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>Решение</em>. </span></p>
-<div class="cell">
-<p>Это решение</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>Решение</em>. </span></p>
-<!--Это решение, где есть только код.-->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
-</div>
-</div>
-</div>
-<div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>Это замечание.</p>
 </div>
 </section>
-<section id="chapterid-callouts" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="chapterid-callouts"><span class="header-section-number">13.6</span> Блоки</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Заголовок заметки
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Текст заметки.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Заголовок лайфхака
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Текст лайфхака.</p>
+<section id="logic-consequence-rules-modus" class="level4" data-number="13.3.1.2">
+<h4 data-number="13.3.1.2" class="anchored" data-anchor-id="logic-consequence-rules-modus"><span class="header-section-number">13.3.1.2</span> Modus ponens и Modus tollens</h4>
+<p>Modus ponens (<a href="#eq-modus-ponens" class="quarto-xref"><span>13.3</span></a>) и Modus tollens (<a href="#eq-modus-tollens" class="quarto-xref"><span>13.4</span></a>)</p>
+<div class="columns">
+<div class="column">
+<p><span id="eq-modus-ponens"><span class="math display">\[
+\begin{split}
+p \Rightarrow q \\
+p \\
+\hline
+q
+\end{split}
+\tag{13.3}\]</span></span></p>
+</div><div class="column">
+<p><span id="eq-modus-tollens"><span class="math display">\[
+\begin{split}
+p \Rightarrow q \\
+\neg q \\
+\hline
+\neg p
+\end{split}
+\tag{13.4}\]</span></span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section>
+</section>
+<section id="logic-consequence-errors" class="level3" data-number="13.3.2">
+<h3 data-number="13.3.2" class="anchored" data-anchor-id="logic-consequence-errors"><span class="header-section-number">13.3.2</span> Логические ошибки в умозаключениях</h3>
+<p><span id="eq-affirm-conseq"><span class="math display">\[
+\begin{split}
+p \Rightarrow q \\
+q \\
+\hline
+p
+\end{split}
+\tag{13.5}\]</span></span></p>
+<div id="tbl-affirm-conseq" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-affirm-conseq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.8: Проверка правила <a href="#eq-affirm-conseq" class="quarto-xref"><span>13.5</span></a>
+</figcaption>
+<div aria-describedby="tbl-affirm-conseq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \Rightarrow q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((p \Rightarrow q) \wedge q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\big( (p \Rightarrow q) \wedge q \big) \Rightarrow p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="callout-title-container flex-fill">
-Заголовок предупреждения
+</figure>
 </div>
+<p><span id="eq-neg-antec"><span class="math display">\[
+\begin{split}
+p \Rightarrow q \\
+\neg p \\
+\hline
+\neg q
+\end{split}
+\tag{13.6}\]</span></span></p>
+<div id="tbl-affirm-conseq" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-affirm-conseq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;13.9: Проверка правила <a href="#eq-neg-antec" class="quarto-xref"><span>13.6</span></a>
+</figcaption>
+<div aria-describedby="tbl-affirm-conseq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p \Rightarrow q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((p \Rightarrow q) \wedge\neg p\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\big( (p \Rightarrow q) \wedge\neg p \big) \Rightarrow\neg q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="callout-body-container callout-body">
-<p>Текст предупреждения.</p>
+</figure>
 </div>
+<div id="exr-stat-inf-logic" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 13.1</strong></span> Пусть даны атомарные высказывания <span class="math inline">\((p &lt; \alpha)\)</span>, <span class="math inline">\(H_1\)</span> и <span class="math inline">\(H_0\)</span>. Третье таково, что <span class="math inline">\(H_0 \Leftrightarrow\neg H_1\)</span>, а первые два связаны следующим образом: <span class="math inline">\((p &lt; \alpha) \Rightarrow H_1\)</span>.</p>
+<p>Предлагается следующее правило для умозаключения:</p>
+<p><span class="math display">\[
+\begin{split}
+(p &lt; \alpha) \Rightarrow H_1 \\
+(p \geqslant\alpha) \\
+\hline
+H_0
+\end{split}
+\]</span></p>
+<p>Проверьте, можно ли пользоваться этим правилом при умозаключениях.</p>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Заголовок важности
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Текст важности.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Заголовок предупреждения
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Текст предупреждения.</p>
-</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Для того, чтобы проверить, можно ли пользоваться предложенным правилом для умозаключения, необходимо выяснить, всегда ли заключение — в данном случае <span class="math inline">\(H_0\)</span> — будет истинно, если истинны обе посылки — в данном случае <span class="math inline">\((p &lt; \alpha) \Rightarrow H_1\)</span> и <span class="math inline">\((p \geqslant\alpha)\)</span>.</p>
+<p>Построим следующую таблицу истинности:</p>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p &lt; \alpha\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(H_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((p &lt; \alpha) \Rightarrow H_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((p \geqslant\alpha)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\big( (p &lt; \alpha) \Rightarrow H_1 \big) \wedge(p \geqslant\alpha)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(H_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\big( (p &lt; \alpha) \Rightarrow H_1 \big) \wedge(p \geqslant\alpha) \Rightarrow H_0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathsf{T}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Обратим внимание на две последние строчки получившейся таблицы: обе посылки в обоих случая истинны, однако заключение истинно только в одном из случаев. Значит такое правило для умозаключение применять нельзя — оно не гарантирует истинность заключения при истинности обеих посылок.</p>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -1320,6 +1326,7 @@ X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
 Зегет, В. (1985). <em>Элементарная логика</em>. Высшая школа.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1502,18 +1509,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1545,7 +1541,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1553,7 +1569,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1650,7 +1666,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
