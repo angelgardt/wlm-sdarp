@@ -24,12 +24,24 @@ tibble(
   r = seq(-.99, .99, by = .01) %>% rep(each = 199),
   n = seq(10, 1000, by = 5) %>% rep(times = 199),
   ci_lower = numeric(39601),
-  ci_upper = numeric(39601)
+  ci_upper = numeric(39601),
+  ci_lower_lazy = numeric(39601),
+  ci_upper_lazy = numeric(39601)
 ) -> r_ci_ds
 
 for (i in 1:nrow(r_ci_ds)) {
-  r_ci_ds$ci_lower[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], limits = "lower")
-  r_ci_ds$ci_upper[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], limits = "upper")
+  r_ci_ds$ci_lower_lazy[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = TRUE,
+                              limits = "lower")
+  r_ci_ds$ci_upper_lazy[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = TRUE,
+                              limits = "upper")
+  r_ci_ds$ci_lower[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = FALSE,
+                              limits = "lower")
+  r_ci_ds$ci_upper[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = FALSE,
+                              limits = "upper")
 }
 beepr::beep()
 
@@ -37,20 +49,37 @@ beepr::beep()
 
 r_ci_ds %>% 
   mutate(has_zero = ifelse(sign(ci_lower) != sign(ci_upper), TRUE, FALSE)) %>% 
-  # filter(r > 0) %>% 
-  # filter(n > 100 & n < 500) %>% 
   group_by(has_zero, n) %>% 
   filter(has_zero & (r == min(r) | r == max(r))) %>% 
-  mutate(group = ifelse(r > 0, "top", "bottom")) %>% 
+  mutate(group = ifelse(r > 0, "top", "bottom")) -> r_ci_ds_lines
+
+r_ci_ds %>% 
+  mutate(has_zero = ifelse(sign(ci_lower) != sign(ci_upper), TRUE, FALSE)) %>% 
   ggplot(aes(x = n, y = r, color = has_zero)) +
-  # geom_point(size = 1.5, shape = 15) +
-  geom_line(aes(group = group)) +
-  scale_color_manual(values = c("TRUE" = "gray30", "FALSE" = "gray70"),
+  geom_point(size = 1.5, shape = 15) +
+  # geom_line(aes(group = group)) +
+  scale_color_manual(values = c("TRUE" = "gray20", "FALSE" = "gray80"),
                      labels = c("TRUE" = "включает ноль", "FALSE" = "не включает ноль")) +
   scale_x_continuous(breaks = seq(10, 1000, by = 10)) +
   scale_y_continuous(breaks = seq(-1, 1, by = .05)) +
   labs(x = "Объем выборки", 
        y = "Выборочный коэффициент корреляции",
-       color = "Доверительный интервал") +
+       color = "Доверительный интервал",
+       caption = "“non-lazy”") +
+  theme(axis.text.x = element_text(angle = 90))
+
+r_ci_ds %>% 
+  mutate(has_zero = ifelse(sign(ci_lower_lazy) != sign(ci_upper_lazy), TRUE, FALSE)) %>% 
+  ggplot(aes(x = n, y = r, color = has_zero)) +
+  geom_point(size = 1.5, shape = 15) +
+  # geom_line(aes(group = group)) +
+  scale_color_manual(values = c("TRUE" = "gray20", "FALSE" = "gray80"),
+                     labels = c("TRUE" = "включает ноль", "FALSE" = "не включает ноль")) +
+  scale_x_continuous(breaks = seq(10, 1000, by = 10)) +
+  scale_y_continuous(breaks = seq(-1, 1, by = .05)) +
+  labs(x = "Объем выборки", 
+       y = "Выборочный коэффициент корреляции",
+       color = "Доверительный интервал",
+       caption = "“lazy”") +
   theme(axis.text.x = element_text(angle = 90))
 
