@@ -1,0 +1,31 @@
+# Основы психометрики {#measures-psychometrics}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+$$
+\alpha = \frac{k}{k-1} \lp 1 - \frac{\sum_{j=1}^k \sigma^2_j}{\sigma^2_X} \rp
+$$
+
+$$
+\omega_t = \frac{\sum_{j=1}^k \lambda_j^2}{\sum_{j=1}^k \lambda_j^2 + \sum_{j=1}^k (1 - \lambda_j^2)}
+$$
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

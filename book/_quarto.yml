@@ -46,6 +46,8 @@ book:
         - math-calculus.qmd
         - math-linal.qmd
     - part: part-measures.qmd
+      chapters: 
+        - measures-psychometrics.qmd
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
