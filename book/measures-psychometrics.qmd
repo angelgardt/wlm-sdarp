@@ -18,6 +18,34 @@ $$
 \omega_t = \frac{\sum_{j=1}^k \lambda_j^2}{\sum_{j=1}^k \lambda_j^2 + \sum_{j=1}^k (1 - \lambda_j^2)}
 $$
 
+$$
+\omega_h = \frac{\sum_{j=1}^k \lambda_j^2}{\sigma^2_X}
+$$
+
+$$
+\lambda_1 = 1 - \frac{\sum_{j=1}^n s_j^2}{s_t^2}
+$$
+
+$$
+\lambda_2 = \lambda_1 + \frac{\sqrt{\frac{n}{n-1} \sum_{j_1,j_2, j_1 \neq j_2} s^2_{j_1 j_2}}}{s_t^2}
+$$
+
+$$
+\lambda_3 = \frac{n}{n-1} \lambda_1
+$$
+
+$$
+\lambda_4 = 2 \lp 1 - \frac{s_a^2 + s_b^2}{s_t^2} \rp
+$$
+
+$$
+\lambda_5 = \lambda_1 + \frac{2 \sqrt{\max s^2_{j_1 j_2}}}{s_t^2}
+$$
+
+$$
+\lambda_6 = 1 - \frac{\sum_{j=1}^n e_j^2}{s_t^2}
+$$
+
 ***
 
 ###### Session Info {#session_info .unnumbered}
