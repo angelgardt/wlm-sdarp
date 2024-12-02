@@ -46,6 +46,11 @@ $$
 \lambda_6 = 1 - \frac{\sum_{j=1}^n e_j^2}{s_t^2}
 $$
 
+
+$$
+\text{df} = \frac{n(n+1)}{2} - 2n - \frac{x(x-1)}{2}
+$$
+
 ***
 
 ###### Session Info {#session_info .unnumbered}
