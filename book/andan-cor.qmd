@@ -496,29 +496,169 @@ $$
 :::
 
 
+### Ранговые коэффициенты корреляции {#andan-cor-rank}
+
+:::{.lab-middle}
+:::
+
+Коррелировать можно не только сами значения переменных, но и их *ранги*.
+
+Ранговые коэффициенты корреляции инвариантны относительно любого монотонного преобразования переменной.
+
+
+
 ### Коэффициент корреляции Спирмена {#andan-cor-spearman}
 
 :::{.lab-middle}
 :::
+
+$$
+\rho = 1 - \frac{6}{n (n-1) (n+1)} \sum_{i=1}^n \big( R_{x_i} - R_{y_i} \big)^2,
+$$
+
+где
+
+* $n$ --- объём выборок,
+* $R_{x_i}$ --- ранг наблюдения $x_i$ в ряду $X$,
+* $R_{y_i}$ --- ранг наблюдения $y_i$ в ряду $Y$.
+
+
 
 ### Коэффициент корреляции Кенделла {#andan-cor-kendall}
 
 :::{.lab-middle}
 :::
 
-### Бисериальный коэффициент корреляции {#andan-cor-biserial}
+$$
+\begin{split}
+\tau &= 1 - \frac{4}{n (n-1)} R, \\
+R &= \sum_{i=1}^{n-1} \sum_{j=i+1}^n \Big[ [x_i < x_j] \neq [y_i < y_j]\Big]
+\end{split}
+$$
+
+
+
+
+### Точечно-бисериальная корреляция {#andan-cor-pointbiserial}
 
 :::{.lab-middle}
 :::
 
-### Рангово-бисериальный коэффициент корреляции {#andan-cor-rank-biserial}
+Точечно-бисериальный коэффициент корреляции (point-biserial correlation)
+
+$$
+r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{s_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n(n-1)}},
+$$
+
+где 
+
+* $\overline Y_\text{A}$ --- среднее по переменной $Y$ в группе $\text{A}$,
+* $\overline Y_\text{B}$ --- среднее по переменной $Y$ в группе $\text{B}$,
+* $n$ --- объём выборки (общее количество наблюдений),
+* $n_\text{A}$ --- количество наблюдений в группе $\text{A}$,
+* $n_\text{B}$ --- количество наблюдений в группе $\text{B}$,
+* $s_Y$ --- выборочное стандартное отклонение по переменной $Y$ (по всей выборке)
+
+
+#### Эквивалентность точечно-бисериальной корреляции и корреляции Пирсона {#andan-cor-pointbiserial-reapsonequiv}
+
+:::{.lab-senior}
+:::
+
+$$
+\begin{split}
+\frac{
+  \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y)
+  }{n}&= \\
+&= \frac{
+  \sum_{i=1}^n (x_i y_i - x_i \overline Y - \overline X y_i + \overline X \cdot \overline Y)
+  }{n} = \\
+&= \frac{
+  \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \overline Y - \sum_{i=1}^n \overline X y_i + \sum_{i=1}^n (\overline X \cdot \overline Y)
+  }{n} = \\
+&= \frac{
+  \sum_{i \,:\, x_i = 1}^n y_i - n_1 \overline Y - \overline X \sum_{i=1}^n y_i + n \cdot \overline X \cdot \overline Y
+  }{n} = \\
+&= \frac{\sum_{i \,:\, x_i = 1}^n y_i}{n} - 
+    \frac{n_1 \overline Y}{n} - 
+    \frac{\overline X \sum_{i=1}^n y_i}{n} + 
+    \frac{n \cdot \overline X \cdot \overline Y}{n} = \\
+&= \overline Y_1 - \overline X \cdot \overline Y - \overline X \cdot \overline Y + \overline X \cdot \overline Y ???????????
+\end{split}
+$$
+
+
+
+$$
+\begin{split}
+\sd_X &\defin{=} \sqrt{\frac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} = \\
+&= \sqrt{\frac{\sum_{i=1}^n x_i^2 - \sum_{i=1}^n 2\overline X x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
+&= \sqrt{\frac{\sum_{i=1}^n x_i - 2\overline X \sum_{i=1}^n x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
+&= \sqrt{\frac{n_1 - 2 \dfrac{n_1}{n} n_1 + n \dfrac{n_1^2}{n^2}}{n-1}} = \\
+&= \sqrt{\frac{nn_1 - 2 \dfrac{n_1}{n} n_1n + n^2 \dfrac{n_1^2}{n^2}}{n(n-1)}} = \\
+&= \sqrt{\frac{n_1(n - 2 n_1 + n_1)}{n(n-1)}} = \\
+&= \sqrt{\frac{n_1(n - n_1)}{n(n-1)}} = \\
+&= \sqrt{\frac{n_1 n_0}{n(n-1)}}
+\end{split}
+$$
+
+
+
+
+### Рангово-бисериальная корреляция {#andan-cor-rankbiserial}
 
 :::{.lab-middle}
 :::
+
+$$
+r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
+$$
+
+где
+
+* $\overline Y_\text{A}$ --- средний ранг по переменной $Y$ в группе $\text{A}$,
+* $\overline Y_\text{B}$ --- средний ранг по переменной $Y$ в группе $\text{B}$,
+* $n$ --- объём выборки (общее количество наблюдений)
+
+
 
 ### $\vphi$-коэффициент {#andan-cor-phi}
 
-:::{.lab-middle}
+:::{.lab-senior}
+:::
+
+:::{#tbl-crosstab-phi}
+|  | $Y_\text{A}$ | $Y_\text{B}$ |  |
+|:---:|:---:|:---:|:---:|
+| $X_\text{A}$ | $n_\text{AA}$ | $n_\text{AB}$ | $n_{\text{A} \bullet}$ |
+| $X_\text{B}$ | $n_\text{BA}$ | $n_\text{BB}$ | $n_{\text{B} \bullet}$ |
+|  | $n_{\bullet \text{A}}$ | $n_{\bullet \text{B}}$ | $n$ |
+
+Таблица сопряжённости для двух дихотомических переменных $X$ и $Y$
+:::
+
+$$
+\vphi = \frac
+{n_\text{AA} n_\text{BB} - n_\text{AB} n_\text{BA}}
+{\sqrt{
+  n_{\text{A} \bullet}
+  n_{\text{B} \bullet}
+  n_{\bullet \text{A}}
+  n_{\bullet \text{B}}
+  }
+}
+$$
+
+
+$$
+\vphi = \sqrt{\frac{\chi^2}{n}}
+$$
+
+
+
+### Коэффициент Крамера {#andan-cor-kramer}
+
+:::{.lab-senior}
 :::
 
 
