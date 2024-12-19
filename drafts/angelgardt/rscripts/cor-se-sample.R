@@ -83,3 +83,66 @@ r_ci_ds %>%
        caption = "“lazy”") +
   theme(axis.text.x = element_text(angle = 90))
 
+
+r <- .9
+n <- 200
+alpha <- .05
+
+integrate(f = dnorm, 
+          mean = atanh(r), 
+          sd = sqrt(1/(n-3)),
+          lower = qnorm(p = 1 - alpha, 
+                        mean = 0, 
+                        sd = sqrt(1/(n-3))),
+          upper = Inf)
+
+pwr::pwr.r.test(n = n, r = r, sig.level = alpha, alternative = "gr")
+
+ggplot() +
+  stat_function(fun = dnorm, args = list(mean = 0, 
+                                         sd = sqrt(1/(n-3))
+                                         )
+                ) +
+  stat_function(fun = dnorm, args = list(mean = 0, 
+                                         sd = sqrt(1/(n-3))
+                                         ),
+                xlim = c(qnorm(p = 1 - alpha, 
+                               mean = 0, 
+                               sd = sqrt(1/(n-3))),
+                         1),
+                geom = "area",
+                alpha = .5
+                ) +
+  stat_function(fun = dnorm, args = list(mean = atanh(r), 
+                                         sd = sqrt(1/(n-3))
+                                         ),
+                color = "red"
+                ) +
+  stat_function(fun = dnorm, args = list(mean = atanh(r), 
+                                         sd = sqrt(1/(n-3))
+                                         ),
+                xlim = c(-1, 
+                         qnorm(p = 1 - alpha, 
+                               mean = 0, 
+                               sd = sqrt(1/(n-3)))
+                         ),
+                geom = "area",
+                alpha = .5,
+                fill = "blue"
+  ) +
+  stat_function(fun = dnorm, args = list(mean = atanh(r), 
+                                         sd = sqrt(1/(n-3))
+                                         ),
+                xlim = c(qnorm(p = 1 - alpha, 
+                               mean = 0, 
+                               sd = sqrt(1/(n-3))),
+                         1),
+                geom = "area",
+                alpha = .5,
+                fill = "springgreen"
+                ) +
+  geom_vline(xintercept = qnorm(p = 1 - alpha, 
+                                mean = 0, 
+                                sd = sqrt(1/(n-3))),
+             linetype = "dashed") +
+  xlim(-100, 100)
