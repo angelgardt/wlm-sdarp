@@ -548,7 +548,7 @@ $$
 
 $$
 r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{s_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n(n-1)}},
-$$
+$${#eq-rpb-s}
 
 где 
 
@@ -558,6 +558,119 @@ $$
 * $n_\text{A}$ --- количество наблюдений в группе $\text{A}$,
 * $n_\text{B}$ --- количество наблюдений в группе $\text{B}$,
 * $s_Y$ --- выборочное стандартное отклонение по переменной $Y$ (по всей выборке)
+
+
+Другая формула использует смещённую оценку дисперсии, однако результат получится тот же:
+
+$$
+r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{\sigma_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n^2}},
+$${#eq-rpb-sigma}
+
+где
+
+* $\overline Y_\text{A}$ --- среднее по переменной $Y$ в группе $\text{A}$,
+* $\overline Y_\text{B}$ --- среднее по переменной $Y$ в группе $\text{B}$,
+* $n$ --- объём выборки (общее количество наблюдений),
+* $n_\text{A}$ --- количество наблюдений в группе $\text{A}$,
+* $n_\text{B}$ --- количество наблюдений в группе $\text{B}$,
+* $\sigma_Y$ --- выборочное стандартное отклонение по переменной $Y$ (по всей выборке)
+
+
+:::{#exr-rpb-equiv}
+Покажите, что @eq-rpb-s и @eq-rpb-sigma эквивалентны.
+:::
+
+::::{.solution}
+:::{.cell}
+$$
+\begin{split}
+r_{\text{pb}} &= 
+\frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{s_Y} 
+  \sqrt{\frac{n_\text{A} n_\text{B}}{n(n-1)}} = \\
+&= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)}{n-1}}
+  } 
+  \sqrt{
+    \frac{n_\text{A} n_\text{B}}{n(n-1)}
+    } = \\
+&= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n-1}}
+  } 
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n-1}} = \\
+&= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n-1}}
+  } 
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n-1}} 
+  \cdot
+  \frac{\sqrt{n}}{\sqrt{n-1}}
+  \cdot 
+  \frac{\sqrt{n-1}}{\sqrt{n}} = \\ 
+&= \lp \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n-1}}
+  } 
+  \cdot
+  \frac{\sqrt{n}}{\sqrt{n-1}}
+  \rp
+  \cdot
+  \lp
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n-1}} 
+  \cdot 
+  \frac{\sqrt{n-1}}{\sqrt{n}} 
+  \rp = \\
+&= \lp \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\cancel{\sqrt{n-1}}}
+  \cdot
+  \dfrac{\cancel{\sqrt{n-1}}}{\sqrt{n}}
+  } 
+  \rp
+  \cdot
+  \lp
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \cancel{\sqrt{n-1}}} 
+  \cdot 
+  \frac{\cancel{\sqrt{n-1}}}{\sqrt{n}} 
+  \rp = \\
+&= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n}}
+  } 
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n}} = \\
+&= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \sqrt{
+    \dfrac{\sum_{i=1}^n (y_i - \overline Y)}{n}
+    }
+  } 
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n^2}} = \\
+&= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \sigma_Y
+  } 
+  \cdot
+  \sqrt{\frac{n_\text{A} n_\text{B}}{n^2}} \qed
+\end{split}
+$$
+:::
+::::
+
 
 
 #### Эквивалентность точечно-бисериальной корреляции и корреляции Пирсона {#andan-cor-pointbiserial-reapsonequiv}

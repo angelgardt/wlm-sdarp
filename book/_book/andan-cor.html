@@ -1412,9 +1412,9 @@ R &amp;= \sum_{i=1}^{n-1} \sum_{j=i+1}^n \Big[ [x_i &lt; x_j] \neq [y_i &lt; y_j
 
 </div>
 <p>Точечно-бисериальный коэффициент корреляции (point-biserial correlation)</p>
-<p><span class="math display">\[
+<p><span id="eq-rpb-s"><span class="math display">\[
 r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{s_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n(n-1)}},
-\]</span></p>
+\tag{30.9}\]</span></span></p>
 <p>где</p>
 <ul>
 <li><span class="math inline">\(\overline Y_\text{A}\)</span> — среднее по переменной <span class="math inline">\(Y\)</span> в группе <span class="math inline">\(\text{A}\)</span>,</li>
@@ -1424,6 +1424,113 @@ r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{s_Y} \sqrt{
 <li><span class="math inline">\(n_\text{B}\)</span> — количество наблюдений в группе <span class="math inline">\(\text{B}\)</span>,</li>
 <li><span class="math inline">\(s_Y\)</span> — выборочное стандартное отклонение по переменной <span class="math inline">\(Y\)</span> (по всей выборке)</li>
 </ul>
+<p>Другая формула использует смещённую оценку дисперсии, однако результат получится тот же:</p>
+<p><span id="eq-rpb-sigma"><span class="math display">\[
+r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{\sigma_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n^2}},
+\tag{30.10}\]</span></span></p>
+<p>где</p>
+<ul>
+<li><span class="math inline">\(\overline Y_\text{A}\)</span> — среднее по переменной <span class="math inline">\(Y\)</span> в группе <span class="math inline">\(\text{A}\)</span>,</li>
+<li><span class="math inline">\(\overline Y_\text{B}\)</span> — среднее по переменной <span class="math inline">\(Y\)</span> в группе <span class="math inline">\(\text{B}\)</span>,</li>
+<li><span class="math inline">\(n\)</span> — объём выборки (общее количество наблюдений),</li>
+<li><span class="math inline">\(n_\text{A}\)</span> — количество наблюдений в группе <span class="math inline">\(\text{A}\)</span>,</li>
+<li><span class="math inline">\(n_\text{B}\)</span> — количество наблюдений в группе <span class="math inline">\(\text{B}\)</span>,</li>
+<li><span class="math inline">\(\sigma_Y\)</span> — выборочное стандартное отклонение по переменной <span class="math inline">\(Y\)</span> (по всей выборке)</li>
+</ul>
+<div id="exr-rpb-equiv" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 30.4</strong></span> Покажите, что <a href="#eq-rpb-s" class="quarto-xref">Уравнение&nbsp;<span>30.9</span></a> и <a href="#eq-rpb-sigma" class="quarto-xref">Уравнение&nbsp;<span>30.10</span></a> эквивалентны.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p><span class="math display">\[
+\begin{split}
+r_{\text{pb}} &amp;=
+\frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{s_Y}
+  \sqrt{\frac{n_\text{A} n_\text{B}}{n(n-1)}} = \\
+&amp;= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)}{n-1}}
+  }
+  \sqrt{
+    \frac{n_\text{A} n_\text{B}}{n(n-1)}
+    } = \\
+&amp;= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n-1}}
+  }
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n-1}} = \\
+&amp;= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n-1}}
+  }
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n-1}}
+  \cdot
+  \frac{\sqrt{n}}{\sqrt{n-1}}
+  \cdot
+  \frac{\sqrt{n-1}}{\sqrt{n}} = \\
+&amp;= \left(\frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n-1}}
+  }
+  \cdot
+  \frac{\sqrt{n}}{\sqrt{n-1}}
+  \right)
+  \cdot
+  \left(
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n-1}}
+  \cdot
+  \frac{\sqrt{n-1}}{\sqrt{n}}
+  \right)= \\
+&amp;= \left(\frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\cancel{\sqrt{n-1}}}
+  \cdot
+  \dfrac{\cancel{\sqrt{n-1}}}{\sqrt{n}}
+  }
+  \right)
+  \cdot
+  \left(
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \cancel{\sqrt{n-1}}}
+  \cdot
+  \frac{\cancel{\sqrt{n-1}}}{\sqrt{n}}
+  \right)= \\
+&amp;= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \dfrac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)}}{\sqrt{n}}
+  }
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n} \cdot \sqrt{n}} = \\
+&amp;= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \sqrt{
+    \dfrac{\sum_{i=1}^n (y_i - \overline Y)}{n}
+    }
+  }
+  \cdot
+  \frac{\sqrt{n_\text{A} n_\text{B}}}{\sqrt{n^2}} = \\
+&amp;= \frac{
+  \overline Y_\text{A} - \overline Y_{\text{B}}
+  }{
+  \sigma_Y
+  }
+  \cdot
+  \sqrt{\frac{n_\text{A} n_\text{B}}{n^2}} \quad \blacksquare
+\end{split}
+\]</span></p>
+</div>
+</div>
 <section id="andan-cor-pointbiserial-reapsonequiv" class="level4" data-number="30.6.4.1">
 <h4 data-number="30.6.4.1" class="anchored" data-anchor-id="andan-cor-pointbiserial-reapsonequiv"><span class="header-section-number">30.6.4.1</span> Эквивалентность точечно-бисериальной корреляции и корреляции Пирсона</h4>
 <div class="lab-senior">
@@ -1605,7 +1712,7 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 <p>Тогда</p>
 <p><span id="eq-cor-angle-cos"><span class="math display">\[
 \text{cor}(X,Y) = \frac{ \tilde{\mathbf{x}} \cdot \tilde{\mathbf{y}} }{ \| \tilde{\mathbf{x}} \| \cdot \| \tilde{\mathbf{y}} \| } \overset{\text{def}}{=} \cos \theta,
-\tag{30.9}\]</span></span></p>
+\tag{30.11}\]</span></span></p>
 <p>где <span class="math inline">\(\theta\)</span> — угол между векторами <span class="math inline">\(\tilde{\mathbf{x}}\)</span> и <span class="math inline">\(\tilde{\mathbf{y}}\)</span>.</p>
 <p>После такого поворота событий сразу можно обнаружить несколько соответствий:</p>
 <div class="callout callout-style-simple callout-tip no-icon">
