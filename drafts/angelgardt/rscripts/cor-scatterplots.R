@@ -80,28 +80,141 @@ cors_tibble <- tibble(x = rnorm(n))
 for (cor in cors) {
   cors_tibble[[paste0(cor, "_1")]] <- cor * cors_tibble$x + rnorm(n, sd = sqrt(1 - cor^2))
   cors_tibble[[paste0(cor, "_2")]] <- cor * cors_tibble$x
+  cors_tibble[[paste0(cor, "_3")]] <- 0.5 * cors_tibble$x + rnorm(n, sd = sqrt(1 - cor^2))
 }
 
 cors_tibble %>% 
   pivot_longer(cols = -x) %>% 
   filter(str_detect(name, "_1$")) %>% 
-  mutate(row = ifelse(str_detect(name, "-0\\.[9876]|-1_"), "1", 
-                      ifelse(str_detect(name, "-0\\.[54321]"), "2",
-                             ifelse(str_detect(name, "0\\.[12345]"), "4",
-                                    ifelse(str_detect(name, "0\\.[6789]|1_"), "5", "3"))))) %>% 
-  mutate(name = factor(name, 
-                       ordered = TRUE, 
-                       levels = paste0(rep(seq(-1, 1, by = .1), times = 2),
-                                       rep(c("_1", "_2"), each = 21)
-                                      )
-                       )
+  mutate(name = str_remove(name, "_1$") %>% 
+           str_replace("-", "−") %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1)) %>% str_replace("-", "−")
+           )
          ) %>% 
+  # mutate(row = ifelse(str_detect(name, "-0\\.[9876]|-1_"), "1", 
+  #                     ifelse(str_detect(name, "-0\\.[54321]"), "2",
+  #                            ifelse(str_detect(name, "0\\.[12345]"), "4",
+  #                                   ifelse(str_detect(name, "0\\.[6789]|1_"), "5", "3"))))) %>% 
+  # mutate(name = factor(name, 
+  #                      ordered = TRUE, 
+  #                      levels = paste0(rep(seq(-1, 1, by = .1), times = 2),
+  #                                      rep(c("_1", "_2"), each = 21)
+  #                                     )
+  #                      )
+  #        ) %>% 
   ggplot(aes(x, value)) +
-  geom_point(size = 1) +
+  geom_point(size = 1,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
   geom_smooth(method = "lm", 
               se = FALSE, 
-              color = "springgreen",
-              linewidth = .5) +
-  facet_grid(row ~ name) +
-  coord_fixed(ratio = 1)
+              color = "red",
+              linewidth = 1) +
+  facet_wrap( ~ name, ncol = 7) +
+  coord_fixed(ratio = 1) +
+  labs(x = "X", y = "Y")
 
+
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_2$")) %>% 
+  mutate(name = str_remove(name, "_2$") %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1))
+           )
+  ) %>% 
+  ggplot(aes(x, value)) +
+  geom_point(size = 1,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 1) +
+  facet_wrap( ~ name, ncol = 7,
+              labeller = labeller(
+                name = c(
+                  `-1` = "−1",
+                  `-0.9` = "−1",
+                  `-0.8` = "−1",
+                  `-0.7` = "−1",
+                  `-0.6` = "−1",
+                  `-0.5` = "−1",
+                  `-0.4` = "−1",
+                  `-0.3` = "−1",
+                  `-0.2` = "−1",
+                  `-0.1` = "−1",
+                  `0` = "NaN",
+                  `0.1` = "1",
+                  `0.2` = "1",
+                  `0.3` = "1",
+                  `0.4` = "1",
+                  `0.5` = "1",
+                  `0.6` = "1",
+                  `0.7` = "1",
+                  `0.8` = "1",
+                  `0.9` = "1",
+                  `1` = "1"
+                )
+              )) +
+  coord_fixed(ratio = 1) +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold"))
+
+
+
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_3$")) %>% 
+  mutate(name = str_remove(name, "_3$") %>% 
+           as.numeric() %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1))
+           )
+  ) %>% 
+  filter(name %in% seq(.4, 1, by = .1)) %>% 
+  summarise(cor = cor(x, value),
+            .by = name) -> cor_same_slope
+lbls <- cor_same_slope$cor
+names(lbls) <- cor_same_slope$name
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_3$")) %>% 
+  mutate(name = str_remove(name, "_3$") %>% 
+           as.numeric() %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1))
+           )
+  ) %>% 
+  filter(name %in% seq(.4, 1, by = .1)) %>% 
+  ggplot(aes(x, value)) +
+  geom_point(size = 1,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 1) +
+  facet_wrap( ~ name, ncol = 7,
+              labeller = labeller(
+                name = c(
+                  `0.4` = "0.47",
+                  `0.5` = "0.55",
+                  `0.6` = "0.53",
+                  `0.7` = "0.57",
+                  `0.8` = "0.63",
+                  `0.9` = "0.74",
+                  `1` = "1.00"
+                  )
+                )
+              ) +
+  coord_fixed(ratio = 1) +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold"))

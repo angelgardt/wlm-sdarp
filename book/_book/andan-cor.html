@@ -634,13 +634,20 @@ window.Quarto = {
   </ul></li>
   <li><a href="#andan-cor-correlation" id="toc-andan-cor-correlation" class="nav-link" data-scroll-target="#andan-cor-correlation"><span class="header-section-number">30.3</span> Корреляция</a>
   <ul>
-  <li><a href="#andan-cor-cor-interpret" id="toc-andan-cor-cor-interpret" class="nav-link" data-scroll-target="#andan-cor-cor-interpret"><span class="header-section-number">30.3.1</span> Интерпретация значения коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-cor-interpret" id="toc-andan-cor-cor-interpret" class="nav-link" data-scroll-target="#andan-cor-cor-interpret"><span class="header-section-number">30.3.1</span> Интерпретация значения коэффициента корреляции</a>
+  <ul class="collapse">
+  <li><a href="#andan-cor-cor-interpret-force-direction" id="toc-andan-cor-cor-interpret-force-direction" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-force-direction"><span class="header-section-number">30.3.1.1</span> Сила и направление взаимосвязи</a></li>
+  <li><a href="#andan-cor-cor-interpret-slope" id="toc-andan-cor-cor-interpret-slope" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-slope"><span class="header-section-number">30.3.1.2</span> Наклон линии тренда</a></li>
+  <li><a href="#andan-cor-cor-interpret-linearity" id="toc-andan-cor-cor-interpret-linearity" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-linearity"><span class="header-section-number">30.3.1.3</span> Линейность взаимосвязи</a></li>
+  <li><a href="#andan-cor-cor-interpret-independence" id="toc-andan-cor-cor-interpret-independence" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-independence"><span class="header-section-number">30.3.1.4</span> Некоррелированность и независимость</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#andan-cor-pearson" id="toc-andan-cor-pearson" class="nav-link" data-scroll-target="#andan-cor-pearson"><span class="header-section-number">30.4</span> Коэффициент корреляции Пирсона</a>
   <ul>
   <li><a href="#andan-cor-pearson-sig" id="toc-andan-cor-pearson-sig" class="nav-link" data-scroll-target="#andan-cor-pearson-sig"><span class="header-section-number">30.4.1</span> Тестирование статистической значимости коэффициента корреляции</a></li>
   <li><a href="#andan-cor-pearson-ci" id="toc-andan-cor-pearson-ci" class="nav-link" data-scroll-target="#andan-cor-pearson-ci"><span class="header-section-number">30.4.2</span> Доверительный интервал для коэффициента корреляции</a></li>
-  <li><a href="#andan-cor-effectsize" id="toc-andan-cor-effectsize" class="nav-link" data-scroll-target="#andan-cor-effectsize"><span class="header-section-number">30.4.3</span> Размер эффекта для коэффициента корреляции</a></li>
+  <li><a href="#точность-оценки-коэффициента-корреляции" id="toc-точность-оценки-коэффициента-корреляции" class="nav-link" data-scroll-target="#точность-оценки-коэффициента-корреляции"><span class="header-section-number">30.4.3</span> Точность оценки коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-effectsize" id="toc-andan-cor-effectsize" class="nav-link" data-scroll-target="#andan-cor-effectsize"><span class="header-section-number">30.4.4</span> Размер эффекта для коэффициента корреляции</a></li>
   </ul></li>
   <li><a href="#andan-cor-pearson-in-r" id="toc-andan-cor-pearson-in-r" class="nav-link" data-scroll-target="#andan-cor-pearson-in-r"><span class="header-section-number">30.5</span> Корреляция Пирсона в R</a></li>
   <li><a href="#andan-cor-scales" id="toc-andan-cor-scales" class="nav-link" data-scroll-target="#andan-cor-scales"><span class="header-section-number">30.6</span> Коэффициенты корреляции для разных шкал</a>
@@ -648,10 +655,7 @@ window.Quarto = {
   <li><a href="#andan-cor-rank" id="toc-andan-cor-rank" class="nav-link" data-scroll-target="#andan-cor-rank"><span class="header-section-number">30.6.1</span> Ранговые коэффициенты корреляции</a></li>
   <li><a href="#andan-cor-spearman" id="toc-andan-cor-spearman" class="nav-link" data-scroll-target="#andan-cor-spearman"><span class="header-section-number">30.6.2</span> Коэффициент корреляции Спирмена</a></li>
   <li><a href="#andan-cor-kendall" id="toc-andan-cor-kendall" class="nav-link" data-scroll-target="#andan-cor-kendall"><span class="header-section-number">30.6.3</span> Коэффициент корреляции Кенделла</a></li>
-  <li><a href="#andan-cor-pointbiserial" id="toc-andan-cor-pointbiserial" class="nav-link" data-scroll-target="#andan-cor-pointbiserial"><span class="header-section-number">30.6.4</span> Точечно-бисериальная корреляция</a>
-  <ul class="collapse">
-  <li><a href="#andan-cor-pointbiserial-reapsonequiv" id="toc-andan-cor-pointbiserial-reapsonequiv" class="nav-link" data-scroll-target="#andan-cor-pointbiserial-reapsonequiv"><span class="header-section-number">30.6.4.1</span> Эквивалентность точечно-бисериальной корреляции и корреляции Пирсона</a></li>
-  </ul></li>
+  <li><a href="#andan-cor-pointbiserial" id="toc-andan-cor-pointbiserial" class="nav-link" data-scroll-target="#andan-cor-pointbiserial"><span class="header-section-number">30.6.4</span> Точечно-бисериальная корреляция</a></li>
   <li><a href="#andan-cor-rankbiserial" id="toc-andan-cor-rankbiserial" class="nav-link" data-scroll-target="#andan-cor-rankbiserial"><span class="header-section-number">30.6.5</span> Рангово-бисериальная корреляция</a></li>
   <li><a href="#andan-cor-phi" id="toc-andan-cor-phi" class="nav-link" data-scroll-target="#andan-cor-phi"><span class="header-section-number">30.6.6</span> <span class="math inline">\(\varphi\)</span>-коэффициент</a></li>
   <li><a href="#andan-cor-kramer" id="toc-andan-cor-kramer" class="nav-link" data-scroll-target="#andan-cor-kramer"><span class="header-section-number">30.6.7</span> Коэффициент Крамера</a></li>
@@ -661,6 +665,11 @@ window.Quarto = {
   <li><a href="#andan-cor-ci-details" id="toc-andan-cor-ci-details" class="nav-link" data-scroll-target="#andan-cor-ci-details"><span class="header-section-number">30.9</span> Детали доверительного интервала</a>
   <ul>
   <li><a href="#andan-cor-fisher-transform" id="toc-andan-cor-fisher-transform" class="nav-link" data-scroll-target="#andan-cor-fisher-transform"><span class="header-section-number">30.9.1</span> Преобразование Фишера</a></li>
+  </ul></li>
+  <li><a href="#andan-cor-pearsonequiv" id="toc-andan-cor-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-pearsonequiv"><span class="header-section-number">30.10</span> Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона</a>
+  <ul>
+  <li><a href="#andan-cor-spearman-pearsonequiv" id="toc-andan-cor-spearman-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-spearman-pearsonequiv"><span class="header-section-number">30.10.1</span> Корреляция Спирмена и корреляция Пирсона</a></li>
+  <li><a href="#andan-cor-pointbiser-pearsonequiv" id="toc-andan-cor-pointbiser-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-pointbiser-pearsonequiv"><span class="header-section-number">30.10.2</span> Точечно-бисериальная корреляция и корреляция Пирсона</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -888,7 +897,7 @@ window.Quarto = {
 </div>
 <p>По сути, в предыдущем разделе мы изучали <em>ковариацию</em>.</p>
 <div id="def-cov" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 30.1</strong></span> Ковариация — мера совместной изменчивости двух переменных (случайных величин).</p>
+<p><span class="theorem-title"><strong>Определение 30.1</strong></span> <strong>Ковариация</strong> — мера совместной изменчивости двух переменных (случайных величин).</p>
 </div>
 <p>Само название <strong>ковариация (covariance)</strong> обозначает <strong>совместную</strong> (<strong>ко-</strong>) <strong>изменчивость</strong> (<strong>-вариацию</strong>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>Более того, мы практически получили формулу расчета ковариации двух переменных — <a href="#eq-mean-codeviation-gzero" class="quarto-xref">Уравнение&nbsp;<span>30.3</span></a> (и <a href="#eq-mean-codeviation-lzero" class="quarto-xref"><span>30.4</span></a>). Однако полученные нами формулы будут давать смещённую оценку ковариации. Причина абсолютно аналогична той, что была в дисперсии — мы используем выборочные средние, чтобы рассчитать отклонения. Для того, чтобы получить несмещенную оценку ковариации, необходимо скорректировать формулу — делить не на <span class="math inline">\(n\)</span> (количество наблюдений), а на <span class="math inline">\(n-1\)</span>. Тогда получим, что ковариацию двух переменных можно вычислить по имеющимся наблюдениям по формуле:</p>
@@ -930,7 +939,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Таким образом, теперь мы можем определять <strong>направление</strong> связи на основе ковариации.</p>
+<p>Таким образом, теперь на основе ковариации мы можем определять <strong>направление</strong> связи.</p>
 <p>Можно ли что-либо сказать о <em>силе связи</em> на основе ковариации? Тут хорошо бы сначала определиться с тем, что вообще такое сила связи. Не совсем понятно, как это определить строго, но давайте посмотрим на следующие картинки (<a href="#fig-cov-var" class="quarto-xref">Иллюстрация&nbsp;<span>30.11</span></a>).</p>
 <div class="cell">
 <details class="code-fold">
@@ -993,7 +1002,7 @@ window.Quarto = {
 <img src="andan-cor_files/figure-html/fig-cov-var-1.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) <span class="math inline">\(X_1 \thicksim \mathcal{N}(0, 1)\)</span>, <span class="math inline">\(Y_1 \thicksim \mathcal{N}(2, ???)\)</span>
+(a) <span class="math inline">\(X_1 \thicksim \mathcal{N}(0, 1)\)</span>, <span class="math inline">\(\,Y_1 \thicksim \mathcal{N}(2, 0.95)\)</span>, <span class="math inline">\(\text{cov}(X_1, Y_1) = 0.23\)</span>
 </figcaption>
 </figure>
 </div>
@@ -1005,7 +1014,7 @@ window.Quarto = {
 <img src="andan-cor_files/figure-html/fig-cov-var-2.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) <span class="math inline">\(X_2 \thicksim \mathcal{N}(0, 4)\)</span>, <span class="math inline">\(Y_2 \thicksim \mathcal{N}(2, ???)\)</span>
+(b) <span class="math inline">\(X_2 \thicksim \mathcal{N}(0, 4)\)</span>, <span class="math inline">\(\,Y_2 \thicksim \mathcal{N}(2, 3.30)\)</span>, <span class="math inline">\(\text{cov}(X_2, Y_2) = 1.02\)</span>
 </figcaption>
 </figure>
 </div>
@@ -1019,7 +1028,7 @@ window.Quarto = {
 <img src="andan-cor_files/figure-html/fig-cov-var-3.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) <span class="math inline">\(X_3 \thicksim \mathcal{N}(0, 1)\)</span>, <span class="math inline">\(Y_3 \thicksim \mathcal{N}(2, ???)\)</span>
+(c) <span class="math inline">\(X_3 \thicksim \mathcal{N}(0, 1)\)</span>, <span class="math inline">\(\,Y_3 \thicksim \mathcal{N}(2, 0.80)\)</span>, <span class="math inline">\(\text{cov}(X_3, Y_3) = -0.81\)</span>
 </figcaption>
 </figure>
 </div>
@@ -1031,7 +1040,7 @@ window.Quarto = {
 <img src="andan-cor_files/figure-html/fig-cov-var-4.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(d) <span class="math inline">\(X_4 \thicksim \mathcal{N}(0, 16)\)</span>, <span class="math inline">\(Y_4 \thicksim \mathcal{N}(4, ???)\)</span>
+(d) <span class="math inline">\(X_4 \thicksim \mathcal{N}(0, 16)\)</span>, <span class="math inline">\(\,Y_4 \thicksim \mathcal{N}(4, 10.20)\)</span>, <span class="math inline">\(\text{cov}(X_4, Y_4) = -10.71\)</span>
 </figcaption>
 </figure>
 </div>
@@ -1090,7 +1099,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<p>Наблюдаем нечто интересное: визуально связи между <span class="math inline">\(X_1\)</span> и <span class="math inline">\(Y_1\)</span> (<a href="#fig-cov-var-1" class="quarto-xref"><span>30.11 (a)</span></a>) и между <span class="math inline">\(X_2\)</span> и <span class="math inline">\(Y_2\)</span> (<a href="#fig-cov-var-2" class="quarto-xref"><span>30.11 (b)</span></a>) примерно равны по силе, однако значения ковариаций различаются: <span class="math inline">\(\text{cov}(X_1, Y_1) =\)</span> 0.23, <span class="math inline">\(\text{cov}(X_2, Y_2) =\)</span> 1.02. Конечно, значения различаются не сильно — может быть это не так существенно? Посмотрим на обратные связи. Визуально связи между <span class="math inline">\(X_3\)</span> и <span class="math inline">\(Y_3\)</span> (<a href="#fig-cov-var-3" class="quarto-xref"><span>30.11 (c)</span></a>) и между <span class="math inline">\(X_4\)</span> и <span class="math inline">\(Y_4\)</span> (<a href="#fig-cov-var-4" class="quarto-xref"><span>30.11 (d)</span></a>) также примерно равны по силе, однако значения ковариаций существенно различаются — на целый порядок: <span class="math inline">\(\text{cov}(X_3, Y_3) =\)</span> -0.81, <span class="math inline">\(\text{cov}(X_4, Y_4) =\)</span> -10.71.</p>
+<p>Наблюдаем нечто интересное: визуально связи между <span class="math inline">\(X_1\)</span> и <span class="math inline">\(Y_1\)</span> (<a href="#fig-cov-var-1" class="quarto-xref"><span>30.11 (a)</span></a>) и между <span class="math inline">\(X_2\)</span> и <span class="math inline">\(Y_2\)</span> (<a href="#fig-cov-var-2" class="quarto-xref"><span>30.11 (b)</span></a>) примерно равны по силе, однако значения ковариаций различаются: <span class="math inline">\(\text{cov}(X_1, Y_1) =\)</span> 0.23, <span class="math inline">\(\text{cov}(X_2, Y_2) =\)</span> 1.02. Конечно, значения различаются не сильно — может быть это не так существенно? Посмотрим на обратные связи. Визуально связи между <span class="math inline">\(X_3\)</span> и <span class="math inline">\(Y_3\)</span> (<a href="#fig-cov-var-3" class="quarto-xref"><span>30.11 (c)</span></a>) и между <span class="math inline">\(X_4\)</span> и <span class="math inline">\(Y_4\)</span> (<a href="#fig-cov-var-4" class="quarto-xref"><span>30.11 (d)</span></a>) также примерно равны по силе, однако значения ковариаций существенно различаются — на целый порядок: <span class="math inline">\(\text{cov}(X_3, Y_3) =\)</span> −0.81, <span class="math inline">\(\text{cov}(X_4, Y_4) =\)</span> −10.71.</p>
 <p>Почему же ковариация так сильно различается? Всё дело в дисперсии. Давайте рассчитаем дисперсию переменных и сопоставим её с ковариацией (<a href="#tbl-cov-var-vars" class="quarto-xref">Таблица&nbsp;<span>30.2</span></a>). Мы видим, что в случаях, где дисперсия переменных выше, ковариация оказывается также выше.</p>
 <div class="cell">
 <details class="code-fold">
@@ -1129,7 +1138,7 @@ window.Quarto = {
 <div id="tbl-cov-var-vars" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cov-var-vars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;30.2: Значения вариаций и ковариаций в симуляции
+Таблица&nbsp;30.2: Значения выборочных вариаций (дисперсий) и ковариаций в симуляции
 </figcaption>
 <div aria-describedby="tbl-cov-var-vars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1205,10 +1214,13 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 \]</span></p>
 <p>Дисперсия этих переменных будет равна единице, а попутно мы ещё получим среднее, равное нулю. Теперь мы можем рассчитать ковариацию между ними — получим <strong>корреляцию</strong> между переменными <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>:</p>
 <p><span id="eq-cor-stand-vars"><span class="math display">\[
-\text{cov}(X^\star, Y^\star) = \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) = \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \overset{\text{def}}{=} \text{cor}(X, Y)
+\begin{split}
+\text{cov}(X^\star, Y^\star) &amp;= \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) =\\
+&amp;= \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \overset{\text{def}}{=} \text{cor}(X, Y)
+\end{split}
 \tag{30.6}\]</span></span></p>
 <div id="def-cor-stand-vars" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 30.2</strong></span> Коэффициентом корреляции называется ковариация стандартизированных случайных величин.</p>
+<p><span class="theorem-title"><strong>Определение 30.2</strong></span> <strong>Коэффициентом корреляции</strong> называется ковариация стандартизированных случайных величин.</p>
 </div>
 <p>Мы можем не стандартизировать переменные изначально, а выполнить преобразования по ходу расчета корреляции. Тогда получим, что</p>
 <p><span id="eq-cor-stand-cov"><span class="math display">\[
@@ -1221,16 +1233,434 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 \end{split}
 \tag{30.7}\]</span></span></p>
 <div id="def-cor-stand-cov" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 30.3</strong></span> Коэффициентом корреляции называется стандартизированное значение ковариации.</p>
+<p><span class="theorem-title"><strong>Определение 30.3</strong></span> <strong>Коэффициентом корреляции</strong> называется стандартизированное значение ковариации.</p>
+</div>
+<p>Стандартизация случайных величин — или же стандартизация значения ковариации — приводит к следующим свойствам коэффициента корреляции:</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<ul>
+<li>Знак коэффициента корреляции совпадает со знаком ковариации:
+<ul>
+<li>при <strong>прямой взаимосвязи</strong> коэффициент корреляции <strong>положителен</strong>,</li>
+<li>при <strong>обратной</strong> — <strong>отрицателен</strong>,</li>
+<li>при <strong>отсутствии взаимосвязи</strong> — <strong>равен нулю</strong>.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\mathop{\mathrm{sgn}}\text{cor}(X, Y) = \mathop{\mathrm{sgn}}\text{cov}(X, Y)
+\]</span></p>
+<ul>
+<li>Значение коэффициента корреляции может изменяться от <span class="math inline">\(-1\)</span> до <span class="math inline">\(1\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\text{cor}(X, Y) \in [-1, 1]
+\]</span></p>
+</div>
+</div>
 </div>
 <section id="andan-cor-cor-interpret" class="level3" data-number="30.3.1">
 <h3 data-number="30.3.1" class="anchored" data-anchor-id="andan-cor-cor-interpret"><span class="header-section-number">30.3.1</span> Интерпретация значения коэффициента корреляции</h3>
 <div class="lab-junior">
 
 </div>
+<p>Итак, мы выяснили, как вычисляется коэффициент корреляции. Что мы можем сказать по его значению?</p>
+<p>Прежде всего, давайте отметим следующее:</p>
 <div id="def-correlation" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 30.4</strong></span> Корреляция — мера линейной взаимосвязи двух переменных (случайных величин).</p>
+<p><span class="theorem-title"><strong>Определение 30.4</strong></span> <strong>Корреляция</strong> — мера <em>линейной</em> взаимосвязи двух переменных (случайных величин).</p>
 </div>
+<p>Теперь разберемся с этим подробнее.</p>
+<section id="andan-cor-cor-interpret-force-direction" class="level4" data-number="30.3.1.1">
+<h4 data-number="30.3.1.1" class="anchored" data-anchor-id="andan-cor-cor-interpret-force-direction"><span class="header-section-number">30.3.1.1</span> Сила и направление взаимосвязи</h4>
+<div class="lab-junior">
+
+</div>
+<p>В отличие от ковариации, коэффициент корреляции показывается не только <strong>направление</strong> взаимосвязи между переменными, но и её <strong>силу</strong>. Как отмечалось несколькими строками выше,</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Знак коэффициента корреляции</strong> соответствует <strong>направлению</strong> взаимосвязи между переменными:</p>
+<ul>
+<li>при <strong>прямой взаимосвязи</strong> коэффициент корреляции <strong>положителен</strong>,</li>
+<li>при <strong>обратной</strong> — <strong>отрицателен</strong>,</li>
+<li>при <strong>отсутствии взаимосвязи</strong> — <strong>равен нулю</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Силе связи между переменными будет соответствовать абсолютное значение корреляции, то есть <span class="math inline">\(|r|\)</span>. Совершенно однозначно можно определить три значения и соответствующую им интерпретацию:</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<ul>
+<li><span class="math inline">\(|r| = 1\)</span> — полная линейная взаимосвязь между переменными
+<ul>
+<li><span class="math inline">\(r = 1\)</span> — полная прямая линейная взаимосвязь</li>
+<li><span class="math inline">\(r = -1\)</span> — полная обратная линейная взаимосвязь</li>
+</ul></li>
+<li><span class="math inline">\(r = 0\)</span> — отсутствие линейной взаимосвязи</li>
+</ul>
+</div>
+</div>
+</div>
+<p>С другими значениями возникают сложности. Базово, конечно, можно разделить диапазон на какие-либо равные части и сопоставить им некоторую интерпретацию. Один из вариантов представлен в таблице <a href="#tbl-cor-interpret-basic" class="quarto-xref"><span>30.3</span></a>.</p>
+<div id="tbl-cor-interpret-basic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cor-interpret-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;30.3: Один из базовых вариантов интерпретации значения коэффициента корреляции как меры силы взаимосвязи между переменными
+</figcaption>
+<div aria-describedby="tbl-cor-interpret-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Абсолютное значение коэффициента <span class="math inline">\(|r|\)</span></th>
+<th style="text-align: center;">Интерпретация силы взаимосвязи</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(1.0\)</span> — <span class="math inline">\(0.8\)</span></td>
+<td style="text-align: center;">очень сильная</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0.8\)</span> — <span class="math inline">\(0.6\)</span></td>
+<td style="text-align: center;">сильная</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0.6\)</span> — <span class="math inline">\(0.4\)</span></td>
+<td style="text-align: center;">средняя</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0.4\)</span> — <span class="math inline">\(0.2\)</span></td>
+<td style="text-align: center;">слабая</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0.2\)</span> — <span class="math inline">\(0.0\)</span></td>
+<td style="text-align: center;">очень слабая</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Код создания симуляции</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2525</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cors <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>cors_tibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(n))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (cor <span class="cf">in</span> cors) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  cors_tibble[[<span class="fu">paste0</span>(cor, <span class="st">"_1"</span>)]] <span class="ot">&lt;-</span> cor <span class="sc">*</span> cors_tibble<span class="sc">$</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> cor<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  cors_tibble[[<span class="fu">paste0</span>(cor, <span class="st">"_2"</span>)]] <span class="ot">&lt;-</span> cor <span class="sc">*</span> cors_tibble<span class="sc">$</span>x</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  cors_tibble[[<span class="fu">paste0</span>(cor, <span class="st">"_3"</span>)]] <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> cors_tibble<span class="sc">$</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> cor<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Код построения визуализации</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cors_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>x) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">"_1$"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"_1$"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_replace</span>(<span class="st">"-"</span>, <span class="st">"−"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">levels =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="fu">str_replace</span>(<span class="st">"-"</span>, <span class="st">"−"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, value)) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"black"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span> name, <span class="at">ncol =</span> <span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Y"</span>) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)) <span class="ot">-&gt;</span> cor_force_plot</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_force_plot)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-cor-force" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cor-force-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-force-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-force-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;30.12: Визуализация силы взаимосвязи переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> и соответствующих значений коэффициента корреляции (<span class="math inline">\(n = 500\)</span>)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Такой подход имеет право на существование, и вполне интуитивен, если присмотреться к визуализации различных значений корреляции (<a href="#fig-cor-force" class="quarto-xref">Иллюстрация&nbsp;<span>30.12</span></a>). Однако необходимо помнить две важные вещи:</p>
+<ul>
+<li>разные области науки — как и разные области психологии — используют <strong>разные измерительные инструменты</strong>
+<ul>
+<li>в измерениях содержится <em>различная доля ошибки</em></li>
+</ul></li>
+<li>разные области науки — как и, опять же, разные области психологии — изучают <strong>различные феномены</strong>
+<ul>
+<li>сила взаимосвязей, которые мы <em>можем ожидать</em>, будет разной</li>
+</ul></li>
+</ul>
+</section>
+<section id="andan-cor-cor-interpret-slope" class="level4" data-number="30.3.1.2">
+<h4 data-number="30.3.1.2" class="anchored" data-anchor-id="andan-cor-cor-interpret-slope"><span class="header-section-number">30.3.1.2</span> Наклон линии тренда</h4>
+<div class="lab-junior">
+
+</div>
+<p>Рассматривая визуализацию <a href="#fig-cor-force" class="quarto-xref"><span>30.12</span></a> хочется заключить, что корреляция определяет угол наклона линии тренда. Такое желание интуитивно оправдано, однако <strong>подобное заключение будет неверным</strong>.</p>
+<p>Действительно, коэффициент корреляции <a href="./andan-simplelinear.html#andan-simplelinear-solve-cor">связан</a> с углом наклона линии тренда, однако <strong>не определяет его напрямую</strong>. Как именно устроена эта связь, мы узнаем чуть позже, пока же приведем два контрпримера:</p>
+<ul>
+<li>при одинаковом значении корреляции линия тренда может быть расположена по-разному (<a href="#fig-cor-slope-1" class="quarto-xref">Иллюстрация&nbsp;<span>30.13 (a)</span></a>)</li>
+<li>при одинаковом положении линии тренда значения корреляции могут быть различны (<a href="#fig-cor-slope-2" class="quarto-xref">Иллюстрация&nbsp;<span>30.13 (b)</span></a>)</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Код построения визуализации</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cors_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>x) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">"_2$"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"_2$"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">levels =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, value)) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"black"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span> name, <span class="at">ncol =</span> <span class="dv">7</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>              <span class="at">labeller =</span> <span class="fu">labeller</span>(</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">name =</span> <span class="fu">c</span>(</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.9</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.8</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.7</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.6</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.5</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.4</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">-0.1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"−1"</span>,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"NA"</span>,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.4</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.5</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.6</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.7</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.8</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.9</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span>,</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1"</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>              )) <span class="sc">+</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Y"</span>) <span class="sc">+</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)) <span class="ot">-&gt;</span> cor_slope1_plot</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>cors_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>x) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">"_3$"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"_3$"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>             <span class="at">levels =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>))</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">seq</span>(.<span class="dv">4</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">cor =</span> <span class="fu">cor</span>(x, value),</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> name) <span class="ot">-&gt;</span> cor_same_slope</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>lbls <span class="ot">&lt;-</span> cor_same_slope<span class="sc">$</span>cor</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lbls) <span class="ot">&lt;-</span> cor_same_slope<span class="sc">$</span>name</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>cors_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>x) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">"_3$"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"_3$"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>           <span class="fu">as.numeric</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>             <span class="at">levels =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>))</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(.<span class="dv">4</span>, .<span class="dv">5</span>, .<span class="dv">7</span>, .<span class="dv">8</span>, .<span class="dv">9</span>, <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, value)) <span class="sc">+</span></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>,</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"black"</span>,</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>              <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="sc">~</span> name, <span class="at">ncol =</span> <span class="dv">3</span>,</span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>              <span class="at">labeller =</span> <span class="fu">labeller</span>(</span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>                <span class="at">name =</span> <span class="fu">c</span>(</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.4</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"0.47"</span>,</span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.5</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"0.55"</span>,</span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.7</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"0.57"</span>,</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.8</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"0.63"</span>,</span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">0.9</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"0.74"</span>,</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1.00"</span></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">+</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Y"</span>) <span class="sc">+</span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)) <span class="ot">-&gt;</span> cor_slope2_plot</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_slope1_plot)</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_slope2_plot)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-cor-slope" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cor-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="fig-cor-slope-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cor-slope-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-slope-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-slope" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-slope-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Одинаковая корреляции при разном наклоне линии тренда
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div id="fig-cor-slope-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cor-slope-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-slope-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-slope" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-slope-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Разная корреляция при одинаковом наклоне линии тренда
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;30.13: Корреляция и наклон линии тренда (<span class="math inline">\(n = 500\)</span>)
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="exr-cor-nan" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 30.3</strong></span> В самом центре визуализации <a href="#fig-cor-slope-1" class="quarto-xref"><span>30.13 (a)</span></a> расположена диаграмма рассеяния, для&nbsp;которой значение коэффициента корреляции обозначено как&nbsp;<code>NA</code> (Not Available). Иначе говоря, в&nbsp;этом случае значение коэффициента корреляции не&nbsp;определено. Однако если&nbsp;посмотреть на&nbsp;картинку <a href="#fig-cor-force" class="quarto-xref"><span>30.12</span></a>, то&nbsp;там на&nbsp;таком&nbsp;же месте визуализируется корреляция, равная нулю.</p>
+<p>Для удобства оба графика представлены ниже. Почему в случае <a href="#fig-cor-nan-plot-2" class="quarto-xref"><span>30.14 (b)</span></a> корреляция не&nbsp;определена, хотя положение линии тренда такое&nbsp;же, как&nbsp;и&nbsp;в&nbsp;случае <a href="#fig-cor-nan-plot-1" class="quarto-xref"><span>30.14 (a)</span></a>?</p>
+<div id="fig-cor-nan-plot" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cor-nan-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cor-nan-plot" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-cor-nan-plot-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cor-nan-plot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-nan-plot-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-nan-plot" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-nan-plot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Коэффициент корреляции равен нулю
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cor-nan-plot" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-cor-nan-plot-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cor-nan-plot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-nan-plot-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-nan-plot" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-nan-plot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Коэффициент корреляции не&nbsp;определён
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-nan-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;30.14: Два похожих, но различных случая (<span class="math inline">\(n = 500\)</span>)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Как отмечалось выше, коэффициент корреляции не&nbsp;определяет напрямую положение линии тренда. Осмыслим обе ситуации, используя формулу для&nbsp;расчета корреляции <a href="#eq-cor-stand-cov" class="quarto-xref"><span>30.7</span></a>:</p>
+<p><span class="math display">\[
+\text{cor}(X, Y) = \frac{\text{cov}(X, Y)}{\text{sd}_X \, \text{sd}_Y}
+\]</span></p>
+<p>В&nbsp;случае <a href="#fig-cor-nan-plot-1" class="quarto-xref"><span>30.14 (a)</span></a> <span class="math inline">\(\text{cov}(X, Y) = 0\)</span> (см. <a href="#exr-cov-0" class="quarto-xref">Задание&nbsp;<span>30.1</span></a>). Тогда</p>
+<p><span class="math display">\[
+\text{cor}(X, Y) = \frac{\text{cov}(X, Y)}{\text{sd}_X  \, \text{sd}_Y} = \frac{0}{\text{sd}_X \, \text{sd}_Y} = 0,
+\]</span></p>
+<p>что мы и&nbsp;наблюдаем.</p>
+<p>В&nbsp;случае <a href="#fig-cor-nan-plot-2" class="quarto-xref"><span>30.14 (b)</span></a> <span class="math inline">\(\text{cov}(X, Y) = 0\)</span>, как и в&nbsp;предыдущем, но&nbsp;также <span class="math inline">\(Y = \text{const}\)</span>. Значит и&nbsp;<span class="math inline">\(\text{var}\,Y = 0\)</span>, из&nbsp;чего следует, что <span class="math inline">\(\text{sd}_Y = 0\)</span>. Получаем, что</p>
+<p><span class="math display">\[
+\text{cor}(X, Y) = \frac{\text{cov}(X, Y)}{\text{sd}_X  \, \text{sd}_Y} = \frac{0}{0},
+\]</span></p>
+<p>а&nbsp;результат такого выражения не&nbsp;определен — об&nbsp;этом нам свидетельствует матан. Вообще в&nbsp;R результат такого выражения обозначается как&nbsp;<code>NaN</code> (Not a Number), то&nbsp;есть «не-число»:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> <span class="sc">/</span> <span class="dv">0</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+</div>
+<p>Однако в случае с корреляцией возвращается <code>NA</code> (Not Available). Почему было реализовано именно так, неизвестно, но в общем-то трудно спорить с тем, что при такой ситуации значение корреляции «недоступно». Функция расчета корреляции также дополнительно нас оповещает, что причина <code>NA</code> в том, что стандартное отклонение равно нулю:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in cor(x, y): the standard deviation is zero</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="andan-cor-cor-interpret-linearity" class="level4" data-number="30.3.1.3">
+<h4 data-number="30.3.1.3" class="anchored" data-anchor-id="andan-cor-cor-interpret-linearity"><span class="header-section-number">30.3.1.3</span> Линейность взаимосвязи</h4>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="andan-cor-cor-interpret-independence" class="level4" data-number="30.3.1.4">
+<h4 data-number="30.3.1.4" class="anchored" data-anchor-id="andan-cor-cor-interpret-independence"><span class="header-section-number">30.3.1.4</span> Некоррелированность и независимость</h4>
+<div class="lab-junior">
+
+</div>
+</section>
 </section>
 </section>
 <section id="andan-cor-pearson" class="level2" data-number="30.4">
@@ -1238,12 +1668,13 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div class="lab-junior">
 
 </div>
+<p>Мера корреляции, которую мы обсуждали выше, называется <strong>корреляцией Пирсона (Pearson correlation coefficient (PCC), Pearson’s <span class="math inline">\(r\)</span>, Pearson product-moment correlation coefficient (PPMCC), bivariate correlation)</strong>.</p>
 <p>Преобразовав <a href="#eq-cor-stand-cov" class="quarto-xref"><span>30.7</span></a> мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:</p>
 <p><span id="eq-cor-pearson-formula"><span class="math display">\[
 \text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} = r_{X, Y}
 \tag{30.8}\]</span></span></p>
 <div id="exr-cor-pearson-formula" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 30.3</strong></span> Получите из формулы <a href="#eq-cor-stand-cov" class="quarto-xref"><span>30.7</span></a> формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>30.8</span></a>.</p>
+<p><span class="theorem-title"><strong>Задание 30.4</strong></span> Получите из формулы <a href="#eq-cor-stand-cov" class="quarto-xref"><span>30.7</span></a> формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>30.8</span></a>.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
@@ -1298,8 +1729,134 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 95\% \text{CI} \, [\tanh(z_{X,Y} - 1.96 \text{se}), \, \tanh(z_{X,Y} + 1.96 \text{se})]
 \]</span></p>
 </section>
-<section id="andan-cor-effectsize" class="level3" data-number="30.4.3">
-<h3 data-number="30.4.3" class="anchored" data-anchor-id="andan-cor-effectsize"><span class="header-section-number">30.4.3</span> Размер эффекта для коэффициента корреляции</h3>
+<section id="точность-оценки-коэффициента-корреляции" class="level3" data-number="30.4.3">
+<h3 data-number="30.4.3" class="anchored" data-anchor-id="точность-оценки-коэффициента-корреляции"><span class="header-section-number">30.4.3</span> Точность оценки коэффициента корреляции</h3>
+<div class="lab-middle">
+
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Код создания симуляции</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## create function for CI calculation</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>r_ci <span class="ot">&lt;-</span> <span class="cf">function</span>(r,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                 n,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">ci =</span> .<span class="dv">95</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">lazy =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">limits =</span> <span class="st">"both"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                 ) {</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (lazy) {</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="dv">1</span> <span class="sc">-</span> r<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">2</span>))</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    ci_lower <span class="ot">&lt;-</span> r <span class="sc">+</span> <span class="fu">qnorm</span>((<span class="dv">1</span> <span class="sc">-</span> ci) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span> se</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    ci_upper <span class="ot">&lt;-</span> r <span class="sc">+</span> <span class="fu">qnorm</span>(ci <span class="sc">+</span> ((<span class="dv">1</span> <span class="sc">-</span> ci) <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">*</span> se</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    z_r <span class="ot">&lt;-</span> <span class="fu">atanh</span>(r)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    se <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> <span class="fu">sqrt</span>(n <span class="sc">-</span> <span class="dv">3</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    ci_lower <span class="ot">&lt;-</span> <span class="fu">tanh</span>(z_r <span class="sc">+</span> <span class="fu">qnorm</span>((<span class="dv">1</span> <span class="sc">-</span> ci) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span> se)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    ci_upper <span class="ot">&lt;-</span> <span class="fu">tanh</span>(z_r <span class="sc">+</span> <span class="fu">qnorm</span>(ci <span class="sc">+</span> ((<span class="dv">1</span> <span class="sc">-</span> ci) <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">*</span> se)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (limits <span class="sc">==</span> <span class="st">"upper"</span>) <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">upper =</span> ci_upper))</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (limits <span class="sc">==</span> <span class="st">"lower"</span>) <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">lower =</span> ci_lower))</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(<span class="at">lower =</span> ci_lower, </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">upper =</span> ci_upper))</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> <span class="fu">seq</span>(<span class="sc">-</span>.<span class="dv">99</span>, .<span class="dv">99</span>, <span class="at">by =</span> .<span class="dv">01</span>) <span class="sc">%&gt;%</span> <span class="fu">rep</span>(<span class="at">each =</span> <span class="dv">199</span>),</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">1000</span>, <span class="at">by =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">rep</span>(<span class="at">times =</span> <span class="dv">199</span>),</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_lower =</span> <span class="fu">numeric</span>(<span class="dv">39601</span>),</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_upper =</span> <span class="fu">numeric</span>(<span class="dv">39601</span>),</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_lower_lazy =</span> <span class="fu">numeric</span>(<span class="dv">39601</span>),</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_upper_lazy =</span> <span class="fu">numeric</span>(<span class="dv">39601</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>) <span class="ot">-&gt;</span> r_ci_ds</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(r_ci_ds)) {</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  r_ci_ds<span class="sc">$</span>ci_lower_lazy[i] <span class="ot">&lt;-</span> <span class="fu">r_ci</span>(r_ci_ds<span class="sc">$</span>r[i], r_ci_ds<span class="sc">$</span>n[i], </span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>                              <span class="at">lazy =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>                              <span class="at">limits =</span> <span class="st">"lower"</span>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>  r_ci_ds<span class="sc">$</span>ci_upper_lazy[i] <span class="ot">&lt;-</span> <span class="fu">r_ci</span>(r_ci_ds<span class="sc">$</span>r[i], r_ci_ds<span class="sc">$</span>n[i], </span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>                              <span class="at">lazy =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>                              <span class="at">limits =</span> <span class="st">"upper"</span>)</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>  r_ci_ds<span class="sc">$</span>ci_lower[i] <span class="ot">&lt;-</span> <span class="fu">r_ci</span>(r_ci_ds<span class="sc">$</span>r[i], r_ci_ds<span class="sc">$</span>n[i], </span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>                              <span class="at">lazy =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>                              <span class="at">limits =</span> <span class="st">"lower"</span>)</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>  r_ci_ds<span class="sc">$</span>ci_upper[i] <span class="ot">&lt;-</span> <span class="fu">r_ci</span>(r_ci_ds<span class="sc">$</span>r[i], r_ci_ds<span class="sc">$</span>n[i], </span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>                              <span class="at">lazy =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>                              <span class="at">limits =</span> <span class="st">"upper"</span>)</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<details class="code-fold">
+<summary>Код построения визуализации</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>r_ci_ds <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">has_zero =</span> <span class="fu">ifelse</span>(<span class="fu">sign</span>(ci_lower) <span class="sc">!=</span> <span class="fu">sign</span>(ci_upper), <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> r, <span class="at">color =</span> has_zero)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">shape =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_line(aes(group = group)) +</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"gray20"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"gray80"</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"включает ноль"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"не включает ноль"</span>)) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">1000</span>, <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">05</span>)) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Объем выборки"</span>, </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Выборочный коэффициент корреляции"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Доверительный интервал"</span>) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>)) <span class="ot">-&gt;</span> cor_ci_non_lazy</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>r_ci_ds <span class="sc">%&gt;%</span> </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">has_zero =</span> <span class="fu">ifelse</span>(<span class="fu">sign</span>(ci_lower_lazy) <span class="sc">!=</span> <span class="fu">sign</span>(ci_upper_lazy), <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> r, <span class="at">color =</span> has_zero)) <span class="sc">+</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">shape =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"gray20"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"gray80"</span>),</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"включает ноль"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"не включает ноль"</span>)) <span class="sc">+</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">1000</span>, <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">05</span>)) <span class="sc">+</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Объем выборки"</span>, </span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Выборочный коэффициент корреляции"</span>,</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Доверительный интервал"</span>) <span class="sc">+</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>)) <span class="ot">-&gt;</span> cor_ci_lazy</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_ci_non_lazy)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_ci_lazy)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-cor-se-ci" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cor-se-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cor-se-ci" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-cor-se-ci-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cor-se-ci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-se-ci-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-se-ci" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-se-ci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Способ вычисления «non-lazy»
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cor-se-ci" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-cor-se-ci-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cor-se-ci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="andan-cor_files/figure-html/fig-cor-se-ci-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-se-ci" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-se-ci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Способ вычисления «lazy»
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-se-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;30.15: Точность оценки корреляции (ширина доверительного интервала) в зависимости от значения коэффициента корреляции и объема выборки
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="andan-cor-effectsize" class="level3" data-number="30.4.4">
+<h3 data-number="30.4.4" class="anchored" data-anchor-id="andan-cor-effectsize"><span class="header-section-number">30.4.4</span> Размер эффекта для коэффициента корреляции</h3>
 <div class="lab-junior">
 
 </div>
@@ -1319,7 +1876,7 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 <div id="tbl-cors-scales" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cors-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;30.3: Меры корреляции для переменных, измеренных в различных шкалах
+Таблица&nbsp;30.4: Меры корреляции для переменных, измеренных в различных шкалах
 </figcaption>
 <div aria-describedby="tbl-cors-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1438,7 +1995,7 @@ r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{\sigma_Y} \
 <li><span class="math inline">\(\sigma_Y\)</span> — выборочное стандартное отклонение по переменной <span class="math inline">\(Y\)</span> (по всей выборке)</li>
 </ul>
 <div id="exr-rpb-equiv" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 30.4</strong></span> Покажите, что <a href="#eq-rpb-s" class="quarto-xref">Уравнение&nbsp;<span>30.9</span></a> и <a href="#eq-rpb-sigma" class="quarto-xref">Уравнение&nbsp;<span>30.10</span></a> эквивалентны.</p>
+<p><span class="theorem-title"><strong>Задание 30.5</strong></span> Покажите, что <a href="#eq-rpb-s" class="quarto-xref">Уравнение&nbsp;<span>30.9</span></a> и <a href="#eq-rpb-sigma" class="quarto-xref">Уравнение&nbsp;<span>30.10</span></a> эквивалентны.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
@@ -1531,45 +2088,6 @@ r_{\text{pb}} &amp;=
 \]</span></p>
 </div>
 </div>
-<section id="andan-cor-pointbiserial-reapsonequiv" class="level4" data-number="30.6.4.1">
-<h4 data-number="30.6.4.1" class="anchored" data-anchor-id="andan-cor-pointbiserial-reapsonequiv"><span class="header-section-number">30.6.4.1</span> Эквивалентность точечно-бисериальной корреляции и корреляции Пирсона</h4>
-<div class="lab-senior">
-
-</div>
-<p><span class="math display">\[
-\begin{split}
-\frac{
-  \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y)
-  }{n}&amp;= \\
-&amp;= \frac{
-  \sum_{i=1}^n (x_i y_i - x_i \overline Y - \overline X y_i + \overline X \cdot \overline Y)
-  }{n} = \\
-&amp;= \frac{
-  \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \overline Y - \sum_{i=1}^n \overline X y_i + \sum_{i=1}^n (\overline X \cdot \overline Y)
-  }{n} = \\
-&amp;= \frac{
-  \sum_{i \,:\, x_i = 1}^n y_i - n_1 \overline Y - \overline X \sum_{i=1}^n y_i + n \cdot \overline X \cdot \overline Y
-  }{n} = \\
-&amp;= \frac{\sum_{i \,:\, x_i = 1}^n y_i}{n} -
-    \frac{n_1 \overline Y}{n} -
-    \frac{\overline X \sum_{i=1}^n y_i}{n} +
-    \frac{n \cdot \overline X \cdot \overline Y}{n} = \\
-&amp;= \overline Y_1 - \overline X \cdot \overline Y - \overline X \cdot \overline Y + \overline X \cdot \overline Y ???????????
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-\text{sd}_X &amp;\overset{\text{def}}{=} \sqrt{\frac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} = \\
-&amp;= \sqrt{\frac{\sum_{i=1}^n x_i^2 - \sum_{i=1}^n 2\overline X x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
-&amp;= \sqrt{\frac{\sum_{i=1}^n x_i - 2\overline X \sum_{i=1}^n x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
-&amp;= \sqrt{\frac{n_1 - 2 \dfrac{n_1}{n} n_1 + n \dfrac{n_1^2}{n^2}}{n-1}} = \\
-&amp;= \sqrt{\frac{nn_1 - 2 \dfrac{n_1}{n} n_1n + n^2 \dfrac{n_1^2}{n^2}}{n(n-1)}} = \\
-&amp;= \sqrt{\frac{n_1(n - 2 n_1 + n_1)}{n(n-1)}} = \\
-&amp;= \sqrt{\frac{n_1(n - n_1)}{n(n-1)}} = \\
-&amp;= \sqrt{\frac{n_1 n_0}{n(n-1)}}
-\end{split}
-\]</span></p>
-</section>
 </section>
 <section id="andan-cor-rankbiserial" class="level3" data-number="30.6.5">
 <h3 data-number="30.6.5" class="anchored" data-anchor-id="andan-cor-rankbiserial"><span class="header-section-number">30.6.5</span> Рангово-бисериальная корреляция</h3>
@@ -1594,7 +2112,7 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 <div id="tbl-crosstab-phi" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-crosstab-phi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;30.4: Таблица сопряжённости для двух дихотомических переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>
+Таблица&nbsp;30.5: Таблица сопряжённости для двух дихотомических переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>
 </figcaption>
 <div aria-describedby="tbl-crosstab-phi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1746,11 +2264,72 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 <div class="lab-senior">
 
 </div>
+<p><span class="math display">\[
+z_{r_i} = \frac{1}{2} \ln \frac{1 + r_i}{1 - r_i} = \mathop{\mathrm{artanh}}r_i
+\]</span></p>
+<p><span class="math display">\[
+r_\text{P} = \frac{e^{2z_\text{P}} - 1}{e^{2z_\text{P}} + 1} = \tanh z_\text{P}
+\]</span></p>
+</section>
+</section>
+<section id="andan-cor-pearsonequiv" class="level2" data-number="30.10">
+<h2 data-number="30.10" class="anchored" data-anchor-id="andan-cor-pearsonequiv"><span class="header-section-number">30.10</span> Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона</h2>
+<div class="lab-senior">
+
+</div>
+<section id="andan-cor-spearman-pearsonequiv" class="level3" data-number="30.10.1">
+<h3 data-number="30.10.1" class="anchored" data-anchor-id="andan-cor-spearman-pearsonequiv"><span class="header-section-number">30.10.1</span> Корреляция Спирмена и корреляция Пирсона</h3>
+<div class="lab-senior">
+
+</div>
+<p>Если мы имеем две выборки нормально распределенных случайных величин, то корреляция Спирмена <span class="math inline">\(\rho\)</span> и корреляция Пирсона <span class="math inline">\(r\)</span> оказываются связаны следующим соотношением:</p>
+<p><span class="math display">\[
+r = 2 \sin \frac{\pi}{6} \rho
+\]</span></p>
+</section>
+<section id="andan-cor-pointbiser-pearsonequiv" class="level3" data-number="30.10.2">
+<h3 data-number="30.10.2" class="anchored" data-anchor-id="andan-cor-pointbiser-pearsonequiv"><span class="header-section-number">30.10.2</span> Точечно-бисериальная корреляция и корреляция Пирсона</h3>
+<div class="lab-senior">
+
+</div>
+<p><span class="math display">\[
+\begin{split}
+\frac{
+  \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y)
+  }{n}&amp;= \\
+&amp;= \frac{
+  \sum_{i=1}^n (x_i y_i - x_i \overline Y - \overline X y_i + \overline X \cdot \overline Y)
+  }{n} = \\
+&amp;= \frac{
+  \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \overline Y - \sum_{i=1}^n \overline X y_i + \sum_{i=1}^n (\overline X \cdot \overline Y)
+  }{n} = \\
+&amp;= \frac{
+  \sum_{i \,:\, x_i = 1}^n y_i - n_1 \overline Y - \overline X \sum_{i=1}^n y_i + n \cdot \overline X \cdot \overline Y
+  }{n} = \\
+&amp;= \frac{\sum_{i \,:\, x_i = 1}^n y_i}{n} -
+    \frac{n_1 \overline Y}{n} -
+    \frac{\overline X \sum_{i=1}^n y_i}{n} +
+    \frac{n \cdot \overline X \cdot \overline Y}{n} = \\
+&amp;= \overline Y_1 - \overline X \cdot \overline Y - \overline X \cdot \overline Y + \overline X \cdot \overline Y ???????????
+\end{split}
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+\text{sd}_X &amp;\overset{\text{def}}{=} \sqrt{\frac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} = \\
+&amp;= \sqrt{\frac{\sum_{i=1}^n x_i^2 - \sum_{i=1}^n 2\overline X x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
+&amp;= \sqrt{\frac{\sum_{i=1}^n x_i - 2\overline X \sum_{i=1}^n x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
+&amp;= \sqrt{\frac{n_1 - 2 \dfrac{n_1}{n} n_1 + n \dfrac{n_1^2}{n^2}}{n-1}} = \\
+&amp;= \sqrt{\frac{nn_1 - 2 \dfrac{n_1}{n} n_1n + n^2 \dfrac{n_1^2}{n^2}}{n(n-1)}} = \\
+&amp;= \sqrt{\frac{n_1(n - 2 n_1 + n_1)}{n(n-1)}} = \\
+&amp;= \sqrt{\frac{n_1(n - n_1)}{n(n-1)}} = \\
+&amp;= \sqrt{\frac{n_1 n_0}{n(n-1)}}
+\end{split}
+\]</span></p>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20

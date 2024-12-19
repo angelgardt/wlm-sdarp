@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 ```{r pkgs, echo=FALSE}
 library(tidyverse)
 theme_set(theme_bw())
+theme_update(legend.position = "bottom")
 ```
 
 :::{.intro}
@@ -142,7 +143,7 @@ $$
 По сути, в предыдущем разделе мы изучали *ковариацию*.
 
 :::{#def-cov}
-Ковариация --- мера совместной изменчивости двух переменных (случайных величин).
+**Ковариация** --- мера совместной изменчивости двух переменных (случайных величин).
 :::
 
 Само название **ковариация (covariance)** обозначает **совместную** (**ко-**) **изменчивость** (**-вариацию**)[^co-variance].
@@ -188,7 +189,7 @@ $$
 
 :::
 
-Таким образом, теперь мы можем определять **направление** связи на основе ковариации.
+Таким образом, теперь на основе ковариации мы можем определять **направление** связи.
 
 Можно ли что-либо сказать о *силе связи* на основе ковариации? Тут хорошо бы сначала определиться с тем, что вообще такое сила связи. Не совсем понятно, как это определить строго, но давайте посмотрим на следующие картинки (@fig-cov-var).
 
@@ -249,10 +250,10 @@ sim_cov %>%
 #| label: fig-cov-var
 #| fig-cap: "Визуализация симуляций при разных параметрах распределений случайных величин $X$ и $Y$ ($n = 100$)"
 #| fig-subcap:
-#|   - "$X_1 \\thicksim \\norm(0, 1)$, $Y_1 \\thicksim \\norm(2, ???)$"
-#|   - "$X_2 \\thicksim \\norm(0, 4)$, $Y_2 \\thicksim \\norm(2, ???)$"
-#|   - "$X_3 \\thicksim \\norm(0, 1)$, $Y_3 \\thicksim \\norm(2, ???)$"
-#|   - "$X_4 \\thicksim \\norm(0, 16)$, $Y_4 \\thicksim \\norm(4, ???)$"
+#|   - "$X_1 \\thicksim \\norm(0, 1)$, $\\,Y_1 \\thicksim \\norm(2, 0.95)$, $\\cov(X_1, Y_1) = 0.23$"
+#|   - "$X_2 \\thicksim \\norm(0, 4)$, $\\,Y_2 \\thicksim \\norm(2, 3.30)$, $\\cov(X_2, Y_2) = 1.02$"
+#|   - "$X_3 \\thicksim \\norm(0, 1)$, $\\,Y_3 \\thicksim \\norm(2, 0.80)$, $\\cov(X_3, Y_3) = -0.81$"
+#|   - "$X_4 \\thicksim \\norm(0, 16)$, $\\,Y_4 \\thicksim \\norm(4, 10.20)$, $\\cov(X_4, Y_4) = -10.71$"
 #| layout-ncol: 2
 
 print(cov1)
@@ -282,7 +283,7 @@ sim_cov %>%
                align = "c")
 ```
 
-Наблюдаем нечто интересное: визуально связи между $X_1$ и $Y_1$ ([-@fig-cov-var-1]) и между $X_2$ и $Y_2$ ([-@fig-cov-var-2]) примерно равны по силе, однако значения ковариаций различаются: $\cov(X_1, Y_1) =$ `r round(cov(sim_cov$x1, sim_cov$y1), 2)`, $\cov(X_2, Y_2) =$ `r round(cov(sim_cov$x2, sim_cov$y2), 2)`. Конечно, значения различаются не сильно --- может быть это не так существенно? Посмотрим на обратные связи. Визуально связи между $X_3$ и $Y_3$ ([-@fig-cov-var-3]) и между $X_4$ и $Y_4$ ([-@fig-cov-var-4]) также примерно равны по силе, однако значения ковариаций существенно различаются --- на целый порядок: $\cov(X_3, Y_3) =$ `r round(cov(sim_cov$x3, sim_cov$y3), 2)`, $\cov(X_4, Y_4) =$ `r round(cov(sim_cov$x4, sim_cov$y4), 2)`.
+Наблюдаем нечто интересное: визуально связи между $X_1$ и $Y_1$ ([-@fig-cov-var-1]) и между $X_2$ и $Y_2$ ([-@fig-cov-var-2]) примерно равны по силе, однако значения ковариаций различаются: $\cov(X_1, Y_1) =$ `r round(cov(sim_cov$x1, sim_cov$y1), 2) %>% str_replace("-", "−")`, $\cov(X_2, Y_2) =$ `r round(cov(sim_cov$x2, sim_cov$y2), 2) %>% str_replace("-", "−")`. Конечно, значения различаются не сильно --- может быть это не так существенно? Посмотрим на обратные связи. Визуально связи между $X_3$ и $Y_3$ ([-@fig-cov-var-3]) и между $X_4$ и $Y_4$ ([-@fig-cov-var-4]) также примерно равны по силе, однако значения ковариаций существенно различаются --- на целый порядок: $\cov(X_3, Y_3) =$ `r round(cov(sim_cov$x3, sim_cov$y3), 2) %>% str_replace("-", "−")`, $\cov(X_4, Y_4) =$ `r round(cov(sim_cov$x4, sim_cov$y4), 2) %>% str_replace("-", "−")`.
 
 Почему же ковариация так сильно различается? Всё дело в дисперсии. Давайте рассчитаем дисперсию переменных и сопоставим её с ковариацией (@tbl-cov-var-vars). Мы видим, что в случаях, где дисперсия переменных выше, ковариация оказывается также выше.
 
@@ -290,7 +291,7 @@ sim_cov %>%
 #| code-fold: true
 #| code-summary: "Код расчета вариаций"
 #| label: tbl-cov-var-vars
-#| tbl-cap: Значения вариаций и ковариаций в симуляции
+#| tbl-cap: Значения выборочных вариаций (дисперсий) и ковариаций в симуляции
 
 sim_cov %>% 
   summarise(
@@ -353,11 +354,14 @@ $$
 Дисперсия этих переменных будет равна единице, а попутно мы ещё получим среднее, равное нулю. Теперь мы можем рассчитать ковариацию между ними --- получим **корреляцию** между переменными $X$ и $Y$:
 
 $$
-\cov(X^\star, Y^\star) = \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) = \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \defin{=} \cor(X, Y)
+\begin{split}
+\cov(X^\star, Y^\star) &= \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) =\\
+&= \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \defin{=} \cor(X, Y)
+\end{split}
 $${#eq-cor-stand-vars}
 
 :::{#def-cor-stand-vars}
-Коэффициентом корреляции называется ковариация стандартизированных случайных величин.
+**Коэффициентом корреляции** называется ковариация стандартизированных случайных величин.
 :::
 
 Мы можем не стандартизировать переменные изначально, а выполнить преобразования по ходу расчета корреляции. Тогда получим, что
@@ -373,25 +377,388 @@ $$
 $${#eq-cor-stand-cov}
 
 :::{#def-cor-stand-cov}
-Коэффициентом корреляции называется стандартизированное значение ковариации.
+**Коэффициентом корреляции** называется стандартизированное значение ковариации.
 :::
+
+Стандартизация случайных величин --- или же стандартизация значения ковариации --- приводит к следующим свойствам коэффициента корреляции:
+
+:::{.callout-important appearance="minimal"}
+
+* Знак коэффициента корреляции совпадает со знаком ковариации:
+  * при **прямой взаимосвязи** коэффициент корреляции **положителен**,
+  * при **обратной** --- **отрицателен**,
+  * при **отсутствии взаимосвязи** --- **равен нулю**.
+
+$$
+\sgn \cor(X, Y) = \sgn \cov(X, Y)
+$$
+
+* Значение коэффициента корреляции может изменяться от $-1$ до $1$.
+
+$$
+\cor(X, Y) \in [-1, 1]
+$$
+
+:::
+
+
 
 ### Интерпретация значения коэффициента корреляции {#andan-cor-cor-interpret}
 
 :::{.lab-junior}
 :::
 
+Итак, мы выяснили, как вычисляется коэффициент корреляции. Что мы можем сказать по его значению?
 
+Прежде всего, давайте отметим следующее:
 
 :::{#def-correlation}
-Корреляция --- мера линейной взаимосвязи двух переменных (случайных величин).
+**Корреляция** --- мера *линейной* взаимосвязи двух переменных (случайных величин).
 :::
+
+Теперь разберемся с этим подробнее.
+
+
+#### Сила и направление взаимосвязи {#andan-cor-cor-interpret-force-direction}
+
+:::{.lab-junior}
+:::
+
+В отличие от ковариации, коэффициент корреляции показывается не только **направление** взаимосвязи между переменными, но и её **силу**. Как отмечалось несколькими строками выше,
+
+:::{.callout-important appearance="minimal"}
+
+**Знак коэффициента корреляции** соответствует **направлению** взаимосвязи между переменными:
+
+* при **прямой взаимосвязи** коэффициент корреляции **положителен**,
+* при **обратной** --- **отрицателен**,
+* при **отсутствии взаимосвязи** --- **равен нулю**.
+
+:::
+
+Силе связи между переменными будет соответствовать абсолютное значение корреляции, то есть $|r|$. Совершенно однозначно можно определить три значения и соответствующую им интерпретацию:
+
+:::{.callout-important appearance="minimal"}
+
+* $|r| = 1$ --- полная линейная взаимосвязь между переменными
+  * $r = 1$ --- полная прямая линейная взаимосвязь
+  * $r = -1$ --- полная обратная линейная взаимосвязь
+* $r = 0$ --- отсутствие линейной взаимосвязи
+
+:::
+
+С другими значениями возникают сложности. Базово, конечно, можно разделить диапазон на какие-либо равные части и сопоставить им некоторую интерпретацию. Один из вариантов представлен в таблице [-@tbl-cor-interpret-basic].
+
+:::{#tbl-cor-interpret-basic}
+
+| Абсолютное значение коэффициента $|r|$ | Интерпретация силы взаимосвязи |
+|:---:|:---:|
+| $1.0$ --- $0.8$ | очень сильная |
+| $0.8$ --- $0.6$ | сильная |
+| $0.6$ --- $0.4$ | средняя |
+| $0.4$ --- $0.2$ | слабая |
+| $0.2$ --- $0.0$ | очень слабая |
+
+Один из базовых вариантов интерпретации значения коэффициента корреляции как меры силы взаимосвязи между переменными
+:::
+
+```{r cor-linear-data, cache=TRUE}
+#| code-fold: true
+#| code-summary: "Код создания симуляции"
+
+set.seed(2525)
+n <- 500
+cors <- seq(-1, 1, by = .1)
+cors_tibble <- tibble(x = rnorm(n))
+
+for (cor in cors) {
+  cors_tibble[[paste0(cor, "_1")]] <- cor * cors_tibble$x + rnorm(n, sd = sqrt(1 - cor^2))
+  cors_tibble[[paste0(cor, "_2")]] <- cor * cors_tibble$x
+  cors_tibble[[paste0(cor, "_3")]] <- 0.5 * cors_tibble$x + rnorm(n, sd = sqrt(1 - cor^2))
+}
+```
+
+```{r cor-force-plot}
+#| code-fold: true
+#| code-summary: "Код построения визуализации"
+#| label: fig-cor-force
+#| fig-cap: "Визуализация силы взаимосвязи переменных $X$ и $Y$ и соответствующих значений коэффициента корреляции ($n = 500$)"
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_1$")) %>% 
+  mutate(name = str_remove(name, "_1$") %>% 
+           str_replace("-", "−") %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1)) %>% str_replace("-", "−")
+           )
+         ) %>% 
+  ggplot(aes(x, value)) +
+  geom_point(size = 1,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 1) +
+  facet_wrap( ~ name, ncol = 7) +
+  coord_fixed(ratio = 1) +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold")) -> cor_force_plot
+
+print(cor_force_plot)
+```
+
+Такой подход имеет право на существование, и вполне интуитивен, если присмотреться к визуализации различных значений корреляции (@fig-cor-force). Однако необходимо помнить две важные вещи:
+
+* разные области науки --- как и разные области психологии --- используют **разные измерительные инструменты**
+  * в измерениях содержится *различная доля ошибки*
+* разные области науки --- как и, опять же, разные области психологии --- изучают **различные феномены**
+  * сила взаимосвязей, которые мы *можем ожидать*, будет разной
+
+
+
+#### Наклон линии тренда {#andan-cor-cor-interpret-slope}
+
+:::{.lab-junior}
+:::
+
+Рассматривая визуализацию [-@fig-cor-force] хочется заключить, что корреляция определяет угол наклона линии тренда. Такое желание интуитивно оправдано, однако **подобное заключение будет неверным**.
+
+Действительно, коэффициент корреляции [связан](andan-simplelinear.qmd#andan-simplelinear-solve-cor) с углом наклона линии тренда, однако **не определяет его напрямую**. Как именно устроена эта связь, мы узнаем чуть позже, пока же приведем два контрпримера:
+
+* при одинаковом значении корреляции линия тренда может быть расположена по-разному (@fig-cor-slope-1)
+* при одинаковом положении линии тренда значения корреляции могут быть различны (@fig-cor-slope-2)
+
+```{r cor-slope-plot}
+#| code-fold: true
+#| code-summary: "Код построения визуализации"
+#| label: fig-cor-slope
+#| fig-cap: "Корреляция и наклон линии тренда ($n = 500$)"
+#| fig-subcap:
+#|   - "Одинаковая корреляции при разном наклоне линии тренда"
+#|   - "Разная корреляция при одинаковом наклоне линии тренда"
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_2$")) %>% 
+  mutate(name = str_remove(name, "_2$") %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1))
+           )
+  ) %>% 
+  ggplot(aes(x, value)) +
+  geom_point(size = 1,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 1) +
+  facet_wrap( ~ name, ncol = 7,
+              labeller = labeller(
+                name = c(
+                  `-1` = "−1",
+                  `-0.9` = "−1",
+                  `-0.8` = "−1",
+                  `-0.7` = "−1",
+                  `-0.6` = "−1",
+                  `-0.5` = "−1",
+                  `-0.4` = "−1",
+                  `-0.3` = "−1",
+                  `-0.2` = "−1",
+                  `-0.1` = "−1",
+                  `0` = "NA",
+                  `0.1` = "1",
+                  `0.2` = "1",
+                  `0.3` = "1",
+                  `0.4` = "1",
+                  `0.5` = "1",
+                  `0.6` = "1",
+                  `0.7` = "1",
+                  `0.8` = "1",
+                  `0.9` = "1",
+                  `1` = "1"
+                )
+              )) +
+  coord_fixed(ratio = 1) +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold")) -> cor_slope1_plot
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_3$")) %>% 
+  mutate(name = str_remove(name, "_3$") %>% 
+           as.numeric() %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1))
+           )
+  ) %>% 
+  filter(name %in% seq(.4, 1, by = .1)) %>% 
+  summarise(cor = cor(x, value),
+            .by = name) -> cor_same_slope
+lbls <- cor_same_slope$cor
+names(lbls) <- cor_same_slope$name
+
+cors_tibble %>% 
+  pivot_longer(cols = -x) %>% 
+  filter(str_detect(name, "_3$")) %>% 
+  mutate(name = str_remove(name, "_3$") %>% 
+           as.numeric() %>% 
+           factor(
+             levels = rep(seq(-1, 1, by = .1))
+           )
+  ) %>% 
+  filter(name %in% c(.4, .5, .7, .8, .9, 1)) %>% 
+  ggplot(aes(x, value)) +
+  geom_point(size = 1,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 1) +
+  facet_wrap( ~ name, ncol = 3,
+              labeller = labeller(
+                name = c(
+                  `0.4` = "0.47",
+                  `0.5` = "0.55",
+                  `0.7` = "0.57",
+                  `0.8` = "0.63",
+                  `0.9` = "0.74",
+                  `1` = "1.00"
+                  )
+                )
+              ) +
+  coord_fixed(ratio = 1) +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold")) -> cor_slope2_plot
+
+print(cor_slope1_plot)
+print(cor_slope2_plot)
+```
+
+
+:::{#exr-cor-nan}
+В самом центре визуализации [-@fig-cor-slope-1] расположена диаграмма рассеяния, для которой значение коэффициента корреляции обозначено как `NA` (Not Available). Иначе говоря, в этом случае значение коэффициента корреляции не определено. Однако если посмотреть на картинку [-@fig-cor-force], то там на таком же месте визуализируется корреляция, равная нулю.
+
+Для удобства оба графика представлены ниже. Почему в случае [-@fig-cor-nan-plot-2] корреляция не определена, хотя положение линии тренда такое же, как и в случае [-@fig-cor-nan-plot-1]?
+
+```{r exr-cor-nan-plot, echo=FALSE}
+#| label: fig-cor-nan-plot
+#| fig-cap: "Два похожих, но различных случая ($n = 500$)"
+#| fig-subcap:
+#|   - "Коэффициент корреляции равен нулю"
+#|   - "Коэффициент корреляции не определён"
+#| layout-ncol: 2
+
+set.seed(2525)
+tibble(
+  x = rnorm(500),
+  y1 = rnorm(500),
+  y2 = 0
+) -> cor_nan
+
+cor_nan %>% 
+  ggplot(aes(x, y1)) +
+  geom_point(size = 3,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 2) +
+  coord_fixed(ratio = 1) +
+  facet_wrap(~ "0") +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold",
+                                  size = 18)) -> cor_nan_1
+
+cor_nan %>% 
+  ggplot(aes(x, y2)) +
+  geom_point(size = 3,
+             shape = 21,
+             fill = "black",
+             alpha = .5) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "red",
+              linewidth = 2) +
+  coord_fixed(ratio = 1) +
+  ylim(-3, 3) +
+  facet_wrap(~ "NA") +
+  labs(x = "X", y = "Y") +
+  theme(strip.text = element_text(face = "bold",
+                                  size = 18)) -> cor_nan_2
+
+print(cor_nan_1)
+print(cor_nan_2)
+```
+:::
+
+::::{.solution}
+:::{.cell}
+
+Как отмечалось выше, коэффициент корреляции не определяет напрямую положение линии тренда. Осмыслим обе ситуации, используя формулу для расчета корреляции [-@eq-cor-stand-cov]:
+
+$$
+\cor(X, Y) = \frac{\cov(X, Y)}{\sd_X \, \sd_Y}
+$$
+
+В случае [-@fig-cor-nan-plot-1] $\cov (X, Y) = 0$ (см. @exr-cov-0). Тогда
+
+$$
+\cor(X, Y) = \frac{\cov(X, Y)}{\sd_X  \, \sd_Y} = \frac{0}{\sd_X \, \sd_Y} = 0,
+$$
+
+что мы и наблюдаем.
+
+В случае [-@fig-cor-nan-plot-2] $\cov (X, Y) = 0$, как и в предыдущем, но также $Y = \const$. Значит и $\var Y = 0$, из чего следует, что $\sd_Y = 0$. Получаем, что
+
+$$
+\cor(X, Y) = \frac{\cov(X, Y)}{\sd_X  \, \sd_Y} = \frac{0}{0},
+$$
+
+а результат такого выражения не определен --- об этом нам свидетельствует матан. Вообще в R результат такого выражения обозначается как `NaN` (Not a Number), то есть «не-число»:
+
+```{r zero-by-zero-nan}
+0 / 0
+```
+
+Однако в случае с корреляцией возвращается `NA` (Not Available). Почему было реализовано именно так, неизвестно, но в общем-то трудно спорить с тем, что при такой ситуации значение корреляции «недоступно». Функция расчета корреляции также дополнительно нас оповещает, что причина `NA` в том, что стандартное отклонение равно нулю:
+
+```{r zero-sd-cor, warning=TRUE}
+x <- rnorm(500)
+y <- rep(0, 500)
+cor(x, y)
+```
+:::
+::::
+
+#### Линейность взаимосвязи {#andan-cor-cor-interpret-linearity}
+
+:::{.lab-junior}
+:::
+
+
+#### Некоррелированность и независимость {#andan-cor-cor-interpret-independence}
+
+:::{.lab-junior}
+:::
+
+
 
 
 ## Коэффициент корреляции Пирсона {#andan-cor-pearson}
 
 :::{.lab-junior}
 :::
+
+Мера корреляции, которую мы обсуждали выше, называется **корреляцией Пирсона (Pearson correlation coefficient (PCC), Pearson’s $r$, Pearson product-moment correlation coefficient (PPMCC), bivariate correlation)**.
 
 Преобразовав [-@eq-cor-stand-cov] мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:
 
@@ -419,6 +786,8 @@ $$
 
 За формулой [-@eq-cor-pearson-formula] скрывается некоторый интересный смысл, но к нему мы [обратимся позже](#andan-cor-angle-cos), когда будем копаться в математических деталях. Сейчас займемся более насущными вопросами.
 
+
+
 ### Тестирование статистической значимости коэффициента корреляции {#andan-cor-pearson-sig}
 
 :::{.lab-junior}
@@ -434,6 +803,8 @@ $$
 $$
 t = \frac{r_{X,Y}}{\sqrt{\frac{1 - r_{X, Y}^2}{n-2}}} \overset{H_0}{\thicksim} t(n\!-\!2)
 $$
+
+
 
 ### Доверительный интервал для коэффициента корреляции {#andan-cor-pearson-ci}
 
@@ -465,10 +836,112 @@ $$
 95\% \text{CI} \, [\tanh(z_{X,Y} - 1.96 \se), \, \tanh(z_{X,Y} + 1.96 \se)]
 $$
 
+
+### Точность оценки коэффициента корреляции
+
+:::{.lab-middle}
+:::
+
+```{r cor-se-ci-data, cache=TRUE}
+#| code-fold: true
+#| code-summary: "Код создания симуляции"
+
+## create function for CI calculation
+r_ci <- function(r,
+                 n,
+                 ci = .95,
+                 lazy = FALSE,
+                 limits = "both"
+                 ) {
+  if (lazy) {
+    se <- sqrt((1 - r^2) / (n - 2))
+    ci_lower <- r + qnorm((1 - ci) / 2) * se
+    ci_upper <- r + qnorm(ci + ((1 - ci) / 2)) * se
+  } else {
+    z_r <- atanh(r)
+    se <- 1 / sqrt(n - 3)
+    ci_lower <- tanh(z_r + qnorm((1 - ci) / 2) * se)
+    ci_upper <- tanh(z_r + qnorm(ci + ((1 - ci) / 2)) * se)
+  }
+  if (limits == "upper") return(c(upper = ci_upper))
+  if (limits == "lower") return(c(lower = ci_lower))
+  return(c(lower = ci_lower, 
+           upper = ci_upper))
+}
+
+tibble(
+  r = seq(-.99, .99, by = .01) %>% rep(each = 199),
+  n = seq(10, 1000, by = 5) %>% rep(times = 199),
+  ci_lower = numeric(39601),
+  ci_upper = numeric(39601),
+  ci_lower_lazy = numeric(39601),
+  ci_upper_lazy = numeric(39601)
+) -> r_ci_ds
+
+for (i in 1:nrow(r_ci_ds)) {
+  r_ci_ds$ci_lower_lazy[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = TRUE,
+                              limits = "lower")
+  r_ci_ds$ci_upper_lazy[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = TRUE,
+                              limits = "upper")
+  r_ci_ds$ci_lower[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = FALSE,
+                              limits = "lower")
+  r_ci_ds$ci_upper[i] <- r_ci(r_ci_ds$r[i], r_ci_ds$n[i], 
+                              lazy = FALSE,
+                              limits = "upper")
+}
+```
+
+```{r cor-se-ci}
+#| code-fold: true
+#| code-summary: "Код построения визуализации"
+#| label: fig-cor-se-ci
+#| fig-cap: "Точность оценки корреляции (ширина доверительного интервала) в зависимости от значения коэффициента корреляции и объема выборки"
+#| fig-subcap:
+#|   - "Способ вычисления «non-lazy»"
+#|   - "Способ вычисления «lazy»"
+#| layout-ncol: 1
+
+r_ci_ds %>% 
+  mutate(has_zero = ifelse(sign(ci_lower) != sign(ci_upper), TRUE, FALSE)) %>% 
+  ggplot(aes(x = n, y = r, color = has_zero)) +
+  geom_point(size = 1.5, shape = 15) +
+  # geom_line(aes(group = group)) +
+  scale_color_manual(values = c("TRUE" = "gray20", "FALSE" = "gray80"),
+                     labels = c("TRUE" = "включает ноль", "FALSE" = "не включает ноль")) +
+  scale_x_continuous(breaks = seq(10, 1000, by = 10)) +
+  scale_y_continuous(breaks = seq(-1, 1, by = .05)) +
+  labs(x = "Объем выборки", 
+       y = "Выборочный коэффициент корреляции",
+       color = "Доверительный интервал") +
+  theme(axis.text.x = element_text(angle = 90)) -> cor_ci_non_lazy
+
+r_ci_ds %>% 
+  mutate(has_zero = ifelse(sign(ci_lower_lazy) != sign(ci_upper_lazy), TRUE, FALSE)) %>% 
+  ggplot(aes(x = n, y = r, color = has_zero)) +
+  geom_point(size = 1.5, shape = 15) +
+  scale_color_manual(values = c("TRUE" = "gray20", "FALSE" = "gray80"),
+                     labels = c("TRUE" = "включает ноль", "FALSE" = "не включает ноль")) +
+  scale_x_continuous(breaks = seq(10, 1000, by = 10)) +
+  scale_y_continuous(breaks = seq(-1, 1, by = .05)) +
+  labs(x = "Объем выборки", 
+       y = "Выборочный коэффициент корреляции",
+       color = "Доверительный интервал") +
+  theme(axis.text.x = element_text(angle = 90)) -> cor_ci_lazy
+
+print(cor_ci_non_lazy)
+print(cor_ci_lazy)
+```
+
+
 ### Размер эффекта для коэффициента корреляции {#andan-cor-effectsize}
 
 :::{.lab-junior}
 :::
+
+
 
 ## Корреляция Пирсона в R {#andan-cor-pearson-in-r}
 
@@ -673,50 +1146,6 @@ $$
 
 
 
-#### Эквивалентность точечно-бисериальной корреляции и корреляции Пирсона {#andan-cor-pointbiserial-reapsonequiv}
-
-:::{.lab-senior}
-:::
-
-$$
-\begin{split}
-\frac{
-  \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y)
-  }{n}&= \\
-&= \frac{
-  \sum_{i=1}^n (x_i y_i - x_i \overline Y - \overline X y_i + \overline X \cdot \overline Y)
-  }{n} = \\
-&= \frac{
-  \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \overline Y - \sum_{i=1}^n \overline X y_i + \sum_{i=1}^n (\overline X \cdot \overline Y)
-  }{n} = \\
-&= \frac{
-  \sum_{i \,:\, x_i = 1}^n y_i - n_1 \overline Y - \overline X \sum_{i=1}^n y_i + n \cdot \overline X \cdot \overline Y
-  }{n} = \\
-&= \frac{\sum_{i \,:\, x_i = 1}^n y_i}{n} - 
-    \frac{n_1 \overline Y}{n} - 
-    \frac{\overline X \sum_{i=1}^n y_i}{n} + 
-    \frac{n \cdot \overline X \cdot \overline Y}{n} = \\
-&= \overline Y_1 - \overline X \cdot \overline Y - \overline X \cdot \overline Y + \overline X \cdot \overline Y ???????????
-\end{split}
-$$
-
-
-
-$$
-\begin{split}
-\sd_X &\defin{=} \sqrt{\frac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} = \\
-&= \sqrt{\frac{\sum_{i=1}^n x_i^2 - \sum_{i=1}^n 2\overline X x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
-&= \sqrt{\frac{\sum_{i=1}^n x_i - 2\overline X \sum_{i=1}^n x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
-&= \sqrt{\frac{n_1 - 2 \dfrac{n_1}{n} n_1 + n \dfrac{n_1^2}{n^2}}{n-1}} = \\
-&= \sqrt{\frac{nn_1 - 2 \dfrac{n_1}{n} n_1n + n^2 \dfrac{n_1^2}{n^2}}{n(n-1)}} = \\
-&= \sqrt{\frac{n_1(n - 2 n_1 + n_1)}{n(n-1)}} = \\
-&= \sqrt{\frac{n_1(n - n_1)}{n(n-1)}} = \\
-&= \sqrt{\frac{n_1 n_0}{n(n-1)}}
-\end{split}
-$$
-
-
-
 
 ### Рангово-бисериальная корреляция {#andan-cor-rankbiserial}
 
@@ -875,6 +1304,81 @@ $${#eq-cor-angle-cos}
 :::{.lab-senior}
 :::
 
+
+$$
+z_{r_i} = \frac{1}{2} \ln \frac{1 + r_i}{1 - r_i} = \artanh r_i
+$$
+
+$$
+r_\text{P} = \frac{e^{2z_\text{P}} - 1}{e^{2z_\text{P}} + 1} = \tanh z_\text{P}
+$$
+
+
+
+
+
+
+## Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона {#andan-cor-pearsonequiv}
+
+:::{.lab-senior}
+:::
+
+### Корреляция Спирмена и корреляция Пирсона {#andan-cor-spearman-pearsonequiv}
+
+:::{.lab-senior}
+:::
+
+Если мы имеем две выборки нормально распределенных случайных величин, то корреляция Спирмена $\rho$ и корреляция Пирсона $r$ оказываются связаны следующим соотношением:
+
+$$
+r = 2 \sin \frac{\pi}{6} \rho
+$$
+
+
+
+
+
+### Точечно-бисериальная корреляция и корреляция Пирсона {#andan-cor-pointbiser-pearsonequiv}
+
+:::{.lab-senior}
+:::
+
+$$
+\begin{split}
+\frac{
+  \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y)
+  }{n}&= \\
+&= \frac{
+  \sum_{i=1}^n (x_i y_i - x_i \overline Y - \overline X y_i + \overline X \cdot \overline Y)
+  }{n} = \\
+&= \frac{
+  \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \overline Y - \sum_{i=1}^n \overline X y_i + \sum_{i=1}^n (\overline X \cdot \overline Y)
+  }{n} = \\
+&= \frac{
+  \sum_{i \,:\, x_i = 1}^n y_i - n_1 \overline Y - \overline X \sum_{i=1}^n y_i + n \cdot \overline X \cdot \overline Y
+  }{n} = \\
+&= \frac{\sum_{i \,:\, x_i = 1}^n y_i}{n} - 
+    \frac{n_1 \overline Y}{n} - 
+    \frac{\overline X \sum_{i=1}^n y_i}{n} + 
+    \frac{n \cdot \overline X \cdot \overline Y}{n} = \\
+&= \overline Y_1 - \overline X \cdot \overline Y - \overline X \cdot \overline Y + \overline X \cdot \overline Y ???????????
+\end{split}
+$$
+
+
+
+$$
+\begin{split}
+\sd_X &\defin{=} \sqrt{\frac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}} = \\
+&= \sqrt{\frac{\sum_{i=1}^n x_i^2 - \sum_{i=1}^n 2\overline X x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
+&= \sqrt{\frac{\sum_{i=1}^n x_i - 2\overline X \sum_{i=1}^n x_i + \sum_{i=1}^n \overline X^2}{n-1}} = \\
+&= \sqrt{\frac{n_1 - 2 \dfrac{n_1}{n} n_1 + n \dfrac{n_1^2}{n^2}}{n-1}} = \\
+&= \sqrt{\frac{nn_1 - 2 \dfrac{n_1}{n} n_1n + n^2 \dfrac{n_1^2}{n^2}}{n(n-1)}} = \\
+&= \sqrt{\frac{n_1(n - 2 n_1 + n_1)}{n(n-1)}} = \\
+&= \sqrt{\frac{n_1(n - n_1)}{n(n-1)}} = \\
+&= \sqrt{\frac{n_1 n_0}{n(n-1)}}
+\end{split}
+$$
 
 
 ***
