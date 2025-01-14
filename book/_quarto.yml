@@ -48,6 +48,7 @@ book:
     - part: part-measures.qmd
       chapters: 
         - measures-psychometrics.qmd
+        - measures-irt.qmd
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
