@@ -650,6 +650,7 @@ window.Quarto = {
   <li><a href="#measures-irt-dichotomous-2pl" id="toc-measures-irt-dichotomous-2pl" class="nav-link" data-scroll-target="#measures-irt-dichotomous-2pl"><span class="header-section-number">19.2.2</span> Двухпараметрическая модель</a></li>
   <li><a href="#measures-irt-dichotomous-3pl" id="toc-measures-irt-dichotomous-3pl" class="nav-link" data-scroll-target="#measures-irt-dichotomous-3pl"><span class="header-section-number">19.2.3</span> Трёхпараметрическая модель</a></li>
   </ul></li>
+  <li><a href="#measures-irt-info-curves" id="toc-measures-irt-info-curves" class="nav-link" data-scroll-target="#measures-irt-info-curves"><span class="header-section-number">19.3</span> Информативность заданий</a></li>
   </ul>
 </nav>
     </div>
@@ -1080,9 +1081,22 @@ y = \frac{e^x}{1 + e^x}
 <p><span id="eq-3pl-model"><span class="math display">\[
 \mathbb{P}_i (\theta \mid b_i, a_i, c_i) = c_i + (1 - c_i)\frac{e^{a_i(\theta - b_i)}}{1 + e^{a_i(\theta - b_i)}}
 \tag{19.6}\]</span></span></p>
+</section>
+</section>
+<section id="measures-irt-info-curves" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="measures-irt-info-curves"><span class="header-section-number">19.3</span> Информативность заданий</h2>
 <p><span class="math display">\[
 I_i(\theta) = \mathbb{P}_i (\theta) \cdot (1 \ \mathbb{P}_i(\theta))
 \]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="measures-irt_files/figure-html/info-curves-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><span class="math display">\[
 I(\theta) = D^2 \sum_{i=1}^k I_i(\theta)
 \]</span></p>
@@ -1133,7 +1147,6 @@ loaded via a namespace (and not attached):
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
-</section>
 </section>
 </section>
 

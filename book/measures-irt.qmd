@@ -486,9 +486,35 @@ $${#eq-3pl-model}
 
 
 
+
+## Информативность заданий {#measures-irt-info-curves}
+
 $$
 I_i(\theta) = \prob_i (\theta) \cdot (1 \ \prob_i(\theta))
 $$
+
+```{r info-curves, echo=FALSE}
+tibble(theta = seq(-6, 6, by = .01),
+       b0_a0 = raschFun(theta),
+       b1_a1 = raschFun(theta, a = 1.5, b = 1.5),
+       b2_a2 = raschFun(theta, a = .4, b = -.8),
+       b3_a3 = raschFun(theta, a = 2, b = 2.7),
+       b4_a4 = raschFun(theta, a = .7, b = -1.4),
+       b5_a5 = raschFun(theta, a = -.6, b = .3)) %>% 
+  pivot_longer(cols = -theta, 
+               names_to = "pars", 
+               values_to = "char") %>% 
+  mutate(info = char * (1 - char)) %>% 
+  pivot_longer(cols = -c(theta, pars), 
+               names_to = "curve", 
+               values_to = "y") %>% 
+  ggplot() +
+  geom_line(aes(theta, y, color = pars)) +
+  facet_grid(curve ~ ., scale = "free_y")
+```
+
+
+
 
 $$
 I(\theta) = D^2 \sum_{i=1}^k I_i(\theta)
@@ -497,6 +523,8 @@ $$
 $$
 \mathrm{SE}(\theta) = \frac{1}{\sqrt{I(\theta)}}
 $$
+
+
 
 
 
