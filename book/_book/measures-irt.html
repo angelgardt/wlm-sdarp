@@ -1086,7 +1086,12 @@ y = \frac{e^x}{1 + e^x}
 <section id="measures-irt-info-curves" class="level2" data-number="19.3">
 <h2 data-number="19.3" class="anchored" data-anchor-id="measures-irt-info-curves"><span class="header-section-number">19.3</span> Информативность заданий</h2>
 <p><span class="math display">\[
-I_i(\theta) = \mathbb{P}_i (\theta) \cdot (1 \ \mathbb{P}_i(\theta))
+I_i(\theta \mid b_i) = \mathbb{P}_i (\theta \mid b_i) \cdot (1 - \mathbb{P}_i(\theta \mid b_i))
+\]</span></p>
+<p><span class="math display">\[
+I_i(\theta \mid b_i, a_i) = a_i^2 \mathbb{P}_i (\theta \mid b_i, a_i) \cdot (1 - \mathbb{P}_i(\theta \mid b_i, a_i))
+\]</span> <span class="math display">\[
+I_i(\theta \mid b_i, a_i, c_i) = a_i^2 \frac{(\mathbb{P}_i (\theta\mid b_i, a_i, c_i) - c_i)^2}{(1 - c_i)^2} \cdot \frac{1 - \mathbb{P}_i(\theta \mid b_i, a_i, c_i)}{\mathbb{P}_i(\theta \mid b_i, a_i, c_i)}
 \]</span></p>
 <div class="cell">
 <div class="cell-output-display">

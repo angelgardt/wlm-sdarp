@@ -17,6 +17,10 @@ library(latex2exp)
 raschFun <- function(theta = 0, a = 1, b = 0, c = 0) {
   c + (1 - c) * exp(a * (theta - b)) / (1 + exp(a * (theta - b)))
 }
+infoFun <- function(theta = 0, a = 1, b = 0, c = 0) {
+  prob <- raschFun(theta = theta, a = a, b = b, c = c)
+  a^2 * ((prob - c)^2 / (1 - c)^2) * ((1 - prob) / prob)
+}
 ```
 
 :::{.intro}
@@ -490,24 +494,32 @@ $${#eq-3pl-model}
 ## Информативность заданий {#measures-irt-info-curves}
 
 $$
-I_i(\theta) = \prob_i (\theta) \cdot (1 \ \prob_i(\theta))
+I_i(\theta \mid b_i) = \prob_i (\theta \mid b_i) \cdot (1 - \prob_i(\theta \mid b_i))
 $$
 
+$$
+I_i(\theta \mid b_i, a_i) = a_i^2 \prob_i (\theta \mid b_i, a_i) \cdot (1 - \prob_i(\theta \mid b_i, a_i))
+$$
+$$
+I_i(\theta \mid b_i, a_i, c_i) = a_i^2 \frac{(\prob_i (\theta\mid b_i, a_i, c_i) - c_i)^2}{(1 - c_i)^2} \cdot \frac{1 - \prob_i(\theta \mid b_i, a_i, c_i)}{\prob_i(\theta \mid b_i, a_i, c_i)}
+$$
 ```{r info-curves, echo=FALSE}
 tibble(theta = seq(-6, 6, by = .01),
-       b0_a0 = raschFun(theta),
-       b1_a1 = raschFun(theta, a = 1.5, b = 1.5),
-       b2_a2 = raschFun(theta, a = .4, b = -.8),
-       b3_a3 = raschFun(theta, a = 2, b = 2.7),
-       b4_a4 = raschFun(theta, a = .7, b = -1.4),
-       b5_a5 = raschFun(theta, a = -.6, b = .3)) %>% 
+       b0_a0__char = raschFun(theta),
+       b0_a0__info = infoFun(theta),
+       b1_a1__char = raschFun(theta, a = 1.5, b = 1.5),
+       b1_a1__info = infoFun(theta, a = 1.5, b = 1.5),
+       b2_a2__char = raschFun(theta, a = .4, b = -.8),
+       b2_a2__info = infoFun(theta, a = .4, b = -.8),
+       b3_a3__char = raschFun(theta, a = 2, b = 2.7),
+       b3_a3__info = infoFun(theta, a = 2, b = 2.7),
+       b4_a4__char = raschFun(theta, a = .7, b = -1.4),
+       b4_a4__info = infoFun(theta, a = .7, b = -1.4),
+       b5_a5__char = raschFun(theta, a = -.6, b = .3),
+       b5_a5__info = infoFun(theta, a = -.6, b = .3)) %>% 
   pivot_longer(cols = -theta, 
-               names_to = "pars", 
-               values_to = "char") %>% 
-  mutate(info = char * (1 - char)) %>% 
-  pivot_longer(cols = -c(theta, pars), 
-               names_to = "curve", 
                values_to = "y") %>% 
+  separate(name, into = c("pars", "curve"), sep = "__") %>% 
   ggplot() +
   geom_line(aes(theta, y, color = pars)) +
   facet_grid(curve ~ ., scale = "free_y")
