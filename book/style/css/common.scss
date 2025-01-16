@@ -196,6 +196,15 @@ code {
   font-size: .8em;
 }
 
+.quote.pers:before {
+    content: "🧐 ";
+}
+
+.column.pers {
+  font-size: 3em;
+  text-align: center;
+}
+
 .question {
   border-style: solid;
   border-width: 1px;
