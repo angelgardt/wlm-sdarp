@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.6.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 19&nbsp; Меры центральной тенденции</title>
+<title>21&nbsp; Меры центральной тенденции – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -72,12 +92,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6be77e4cef73b3d50f1c1da6b27d3573.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-a9f6e1d2fb7ac98f9b75bceb046b45e0.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4ba5baf4ef852dc805d879b5bfd9194c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d9361d4d472de8067759cf488741c728.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -129,21 +149,8 @@ background-image: url(img/other/title-block-banner.jpg);
 background-size: cover;
       }
 </style>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -181,23 +188,23 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-centaltend.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-centaltend.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-centaltend.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="desc-centraltend" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-centaltend.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></a></li></ol></nav>
+      <h1 class="title"><span id="desc-centraltend" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></h1>
                       </div>
   </div>
     
@@ -248,9 +255,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -285,7 +292,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -362,7 +369,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -370,7 +377,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -400,14 +407,33 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория измерений</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория измерений</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -415,25 +441,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -442,7 +468,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -450,43 +476,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -495,7 +521,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -503,13 +529,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -528,9 +566,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -625,32 +663,28 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#chapterid-sectionid" id="toc-chapterid-sectionid" class="nav-link active" data-scroll-target="#chapterid-sectionid"><span class="header-section-number">19.1</span> Заголовок раздела</a>
+  <li><a href="#desc-centraltend-mode" id="toc-desc-centraltend-mode" class="nav-link active" data-scroll-target="#desc-centraltend-mode"><span class="header-section-number">21.1</span> Мода</a>
   <ul>
-  <li><a href="#chapterid-subsectionid" id="toc-chapterid-subsectionid" class="nav-link" data-scroll-target="#chapterid-subsectionid"><span class="header-section-number">19.1.1</span> Заголовок подраздела</a></li>
+  <li><a href="#desc-centraltend-mode-contunious" id="toc-desc-centraltend-mode-contunious" class="nav-link" data-scroll-target="#desc-centraltend-mode-contunious"><span class="header-section-number">21.1.1</span> Мода для непрерывной переменной</a></li>
+  <li><a href="#desc-centraltend-unimodal-bimodal" id="toc-desc-centraltend-unimodal-bimodal" class="nav-link" data-scroll-target="#desc-centraltend-unimodal-bimodal"><span class="header-section-number">21.1.2</span> Унимодальные и полимодальные распределения</a></li>
   </ul></li>
-  <li><a href="#chapterid-code-examples" id="toc-chapterid-code-examples" class="nav-link" data-scroll-target="#chapterid-code-examples"><span class="header-section-number">19.2</span> Примеры <code>кода</code></a>
+  <li><a href="#desc-centraltend-median" id="toc-desc-centraltend-median" class="nav-link" data-scroll-target="#desc-centraltend-median"><span class="header-section-number">21.2</span> Медиана</a></li>
+  <li><a href="#desc-centraltend-mean" id="toc-desc-centraltend-mean" class="nav-link" data-scroll-target="#desc-centraltend-mean"><span class="header-section-number">21.3</span> Среднее</a>
   <ul>
-  <li><a href="#chapterid-code-nolst" id="toc-chapterid-code-nolst" class="nav-link" data-scroll-target="#chapterid-code-nolst"><span class="header-section-number">19.2.1</span> Чанк без подписи</a></li>
-  <li><a href="#chapterid-code-lst" id="toc-chapterid-code-lst" class="nav-link" data-scroll-target="#chapterid-code-lst"><span class="header-section-number">19.2.2</span> Чанк с подписью</a></li>
-  <li><a href="#chapterid-code-annotated" id="toc-chapterid-code-annotated" class="nav-link" data-scroll-target="#chapterid-code-annotated"><span class="header-section-number">19.2.3</span> Аннотированный чанк</a></li>
+  <li><a href="#desc-centraltend-arithmetic-mean" id="toc-desc-centraltend-arithmetic-mean" class="nav-link" data-scroll-target="#desc-centraltend-arithmetic-mean"><span class="header-section-number">21.3.1</span> Арифметическое среднее</a>
+  <ul class="collapse">
+  <li><a href="#desc-centraltend-arithmetic-mean-features" id="toc-desc-centraltend-arithmetic-mean-features" class="nav-link" data-scroll-target="#desc-centraltend-arithmetic-mean-features"><span class="header-section-number">21.3.1.1</span> Свойства среднего арифметического</a></li>
   </ul></li>
-  <li><a href="#chapterid-figures" id="toc-chapterid-figures" class="nav-link" data-scroll-target="#chapterid-figures"><span class="header-section-number">19.3</span> Примеры иллюстраций</a>
+  <li><a href="#desc-centraltend-trimmed-mean" id="toc-desc-centraltend-trimmed-mean" class="nav-link" data-scroll-target="#desc-centraltend-trimmed-mean"><span class="header-section-number">21.3.2</span> Усеченное среднее</a></li>
+  <li><a href="#desc-centraltend-weighted-mean" id="toc-desc-centraltend-weighted-mean" class="nav-link" data-scroll-target="#desc-centraltend-weighted-mean"><span class="header-section-number">21.3.3</span> Взвешенное среднее</a></li>
+  </ul></li>
+  <li><a href="#desc-centraltend-mean-vs-median" id="toc-desc-centraltend-mean-vs-median" class="nav-link" data-scroll-target="#desc-centraltend-mean-vs-median"><span class="header-section-number">21.4</span> Среднее vs медиана</a></li>
+  <li><a href="#desc-centraltend-other-means" id="toc-desc-centraltend-other-means" class="nav-link" data-scroll-target="#desc-centraltend-other-means"><span class="header-section-number">21.5</span> Другие средние</a>
   <ul>
-  <li><a href="#chapterid-import-pic" id="toc-chapterid-import-pic" class="nav-link" data-scroll-target="#chapterid-import-pic"><span class="header-section-number">19.3.1</span> Импорт графического файла</a></li>
-  <li><a href="#chapterid-plot" id="toc-chapterid-plot" class="nav-link" data-scroll-target="#chapterid-plot"><span class="header-section-number">19.3.2</span> График, построенный с помощью кода</a></li>
-  <li><a href="#chapterid-several-pics" id="toc-chapterid-several-pics" class="nav-link" data-scroll-target="#chapterid-several-pics"><span class="header-section-number">19.3.3</span> Несколько изображений в одной иллюстрации</a></li>
-  <li><a href="#chapterid-map" id="toc-chapterid-map" class="nav-link" data-scroll-target="#chapterid-map"><span class="header-section-number">19.3.4</span> Карта</a></li>
-  <li><a href="#chapterid-video" id="toc-chapterid-video" class="nav-link" data-scroll-target="#chapterid-video"><span class="header-section-number">19.3.5</span> Видео</a></li>
-  <li><a href="#chapterid-scheme" id="toc-chapterid-scheme" class="nav-link" data-scroll-target="#chapterid-scheme"><span class="header-section-number">19.3.6</span> Схема</a></li>
+  <li><a href="#desc-centraltend-geometric-mean" id="toc-desc-centraltend-geometric-mean" class="nav-link" data-scroll-target="#desc-centraltend-geometric-mean"><span class="header-section-number">21.5.1</span> Геометрическое среднее</a></li>
+  <li><a href="#desc-centraltend-quandratic-mean" id="toc-desc-centraltend-quandratic-mean" class="nav-link" data-scroll-target="#desc-centraltend-quandratic-mean"><span class="header-section-number">21.5.2</span> Квадратичное среднее</a></li>
+  <li><a href="#desc-centraltend-harmonic-mean" id="toc-desc-centraltend-harmonic-mean" class="nav-link" data-scroll-target="#desc-centraltend-harmonic-mean"><span class="header-section-number">21.5.3</span> Гармоническое среднее</a></li>
   </ul></li>
-  <li><a href="#chapterid-tables" id="toc-chapterid-tables" class="nav-link" data-scroll-target="#chapterid-tables"><span class="header-section-number">19.4</span> Таблицы</a>
-  <ul>
-  <li><a href="#chapterid-kabletable" id="toc-chapterid-kabletable" class="nav-link" data-scroll-target="#chapterid-kabletable"><span class="header-section-number">19.4.1</span> Таблица из <code>kable()</code></a></li>
-  <li><a href="#chapterid-markdowntable" id="toc-chapterid-markdowntable" class="nav-link" data-scroll-target="#chapterid-markdowntable"><span class="header-section-number">19.4.2</span> Таблица из R Markdown</a></li>
-  </ul></li>
-  <li><a href="#chapterid-math" id="toc-chapterid-math" class="nav-link" data-scroll-target="#chapterid-math"><span class="header-section-number">19.5</span> Математика</a></li>
-  <li><a href="#chapterid-callouts" id="toc-chapterid-callouts" class="nav-link" data-scroll-target="#chapterid-callouts"><span class="header-section-number">19.6</span> Блоки</a></li>
   </ul>
 </nav>
     </div>
@@ -682,619 +716,840 @@ window.Quarto = {
 <p>Мы ввелись в статистику, поговорили о ключевых понятиях — выборка, генеральная совокупность, параметры и выборочные оценки — а также изучили способы формирования выборки. Теперь пришло время подумать о том, что делать, когда выборка собрана. Первоначально хотелось бы понять, что собственно в выборке у нас происходит — <em>описать всю эту ситуацию</em>.</p>
 <p>Этим и займемся.</p>
 </div>
-<div class="quote">
-<p>— Текст цитаты <br> — Тоже текст цитаты <br></p>
-<div class="quote-sign">
-<p>Источник цитаты <br> Год цитаты</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Цитата</p>
-</blockquote>
-<section id="chapterid-sectionid" class="level2" data-number="19.1">
-<h2 data-number="19.1" class="anchored" data-anchor-id="chapterid-sectionid"><span class="header-section-number">19.1</span> Заголовок раздела</h2>
-<div class="lab-junior">
-
-</div>
-<p>Тест со <a href="./debug_quiz.html">ссылкой</a>.</p>
-<section id="chapterid-subsectionid" class="level3" data-number="19.1.1">
-<h3 data-number="19.1.1" class="anchored" data-anchor-id="chapterid-subsectionid"><span class="header-section-number">19.1.1</span> Заголовок подраздела</h3>
-<div class="lab-junior">
-
-</div>
-<p>Тест со <a href="./debug_sheet.html">ссылкой</a>.</p>
-</section>
-</section>
-<section id="chapterid-code-examples" class="level2" data-number="19.2">
-<h2 data-number="19.2" class="anchored" data-anchor-id="chapterid-code-examples"><span class="header-section-number">19.2</span> Примеры <code>кода</code></h2>
-<div class="lab-middle">
-
-</div>
-<section id="chapterid-code-nolst" class="level3" data-number="19.2.1">
-<h3 data-number="19.2.1" class="anchored" data-anchor-id="chapterid-code-nolst"><span class="header-section-number">19.2.1</span> Чанк без подписи</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## подключаем самую лучшую библиотеку</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="do">## устанавливаем тему</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 10
-  carat cut       color clarity depth table price     x     y     z
-  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
-2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
-3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
-4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
-5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
-6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
-</div>
-</div>
-</section>
-<section id="chapterid-code-lst" class="level3" data-number="19.2.2">
-<h3 data-number="19.2.2" class="anchored" data-anchor-id="chapterid-code-lst"><span class="header-section-number">19.2.2</span> Чанк с подписью</h3>
-<div id="lst-code-example" class="listing quarto-float">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;19.1: Пример чанка с подписью
-</figcaption>
-<div aria-describedby="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(files[i]) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(ds) <span class="ot">-&gt;</span> ds</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">'a'</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</figure>
-</div>
-<p>Ссылка на чанк с подписью (<a href="debug_chapter.html#lst-for-example" class="quarto-xref">Код&nbsp;<span>1.2</span></a>).</p>
-</section>
-<section id="chapterid-code-annotated" class="level3" data-number="19.2.3">
-<h3 data-number="19.2.3" class="anchored" data-anchor-id="chapterid-code-annotated"><span class="header-section-number">19.2.3</span> Аннотированный чанк</h3>
-<div id="lst-code-annotated" class="listing quarto-float">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-code-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;19.2
-</figcaption>
-<div aria-describedby="lst-code-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для агрегации</span></span>
-<span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-3" class="code-annotation-target"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
-<span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
-<span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-14-7" class="code-annotation-target"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-8" class="code-annotation-target"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
-<span id="annotated-cell-14-9"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
-<span id="annotated-cell-14-10"><a href="#annotated-cell-14-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>)))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
-</dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
-</dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
-</dd>
-<dt data-target-cell="annotated-cell-14" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
-</dd>
-</dl>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 53,940 × 13
-   cut   mean_price_cut sd_price_cut carat color clarity depth table price     x
-   &lt;ord&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
- 1 Ideal          3458.        3808.  0.23 E     SI2      61.5    55   326  3.95
- 2 Ideal          3458.        3808.  0.23 J     VS1      62.8    56   340  3.93
- 3 Ideal          3458.        3808.  0.31 J     SI2      62.2    54   344  4.35
- 4 Ideal          3458.        3808.  0.3  I     SI2      62      54   348  4.31
- 5 Ideal          3458.        3808.  0.33 I     SI2      61.8    55   403  4.49
- 6 Ideal          3458.        3808.  0.33 I     SI2      61.2    56   403  4.49
- 7 Ideal          3458.        3808.  0.33 J     SI1      61.1    56   403  4.49
- 8 Ideal          3458.        3808.  0.23 G     VS1      61.9    54   404  3.93
- 9 Ideal          3458.        3808.  0.32 I     SI1      60.9    55   404  4.45
-10 Ideal          3458.        3808.  0.3  I     SI2      61      59   405  4.3 
-# ℹ 53,930 more rows
-# ℹ 3 more variables: y &lt;dbl&gt;, z &lt;dbl&gt;, price_group &lt;chr&gt;</code></pre>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</section>
-</section>
-<section id="chapterid-figures" class="level2" data-number="19.3">
-<h2 data-number="19.3" class="anchored" data-anchor-id="chapterid-figures"><span class="header-section-number">19.3</span> Примеры иллюстраций</h2>
-<div class="lab-senior">
-
-</div>
-<section id="chapterid-import-pic" class="level3" data-number="19.3.1">
-<h3 data-number="19.3.1" class="anchored" data-anchor-id="chapterid-import-pic"><span class="header-section-number">19.3.1</span> Импорт графического файла</h3>
-<p>Ссылка на импортированную картинку (<a href="prob-falsepositive.html#fig-gh-soc-preview" class="quarto-xref">Иллюстрация&nbsp;<span>28.1</span></a>):</p>
-<div id="fig-gh-soc-preview" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/test-gh-social-preview.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gh-soc-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.1: Превью репозитория
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="chapterid-plot" class="level3" data-number="19.3.2">
-<h3 data-number="19.3.2" class="anchored" data-anchor-id="chapterid-plot"><span class="header-section-number">19.3.2</span> График, построенный с помощью кода</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## большой код для графика</span></span>
-<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_price_cut =</span> <span class="fu">mean</span>(price),</span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_price_cut =</span> <span class="fu">sd</span>(price),</span>
-<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> cut) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(diamonds, <span class="fu">join_by</span>(cut)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">price_group =</span> <span class="fu">ifelse</span>(price <span class="sc">&gt;</span> mean_price_cut <span class="sc">+</span> sd_price_cut, <span class="st">"expensive"</span>,</span>
-<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(price <span class="sc">&lt;</span> mean_price_cut <span class="sc">-</span> sd_price_cut, <span class="st">"cheap"</span>,</span>
-<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"average"</span>))) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-11" class="code-annotation-target"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(clarity, price,</span>
-<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> price_group, <span class="at">color =</span> color)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"pointrange"</span>, </span>
-<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">fun.data =</span> mean_cl_boot,</span>
-<span id="annotated-cell-3-15"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-3-17"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Берем датасет <code>diamonds</code>, что нарисовать график про бриллианты</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">Рассчитываем базовые описательные статистики</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="3">Объединяем агрегированные данные с исходными</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="8" data-code-annotation="4">Разделяем наблюдения на группы</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="11" data-code-annotation="5">Начинаем рисовать</span>
-</dd>
-</dl>
-</div>
-<div class="cell-output-display">
-<div id="fig-huge-chunk-annotated" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-huge-chunk-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-centaltend_files/figure-html/fig-huge-chunk-annotated-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-huge-chunk-annotated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.2: Это картинка, нарисованная большим кодом, который аннотирован
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="chapterid-several-pics" class="level3" data-number="19.3.3">
-<h3 data-number="19.3.3" class="anchored" data-anchor-id="chapterid-several-pics"><span class="header-section-number">19.3.3</span> Несколько изображений в одной иллюстрации</h3>
-<div id="fig-merging-joins" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-merging-joins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-left-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-left-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/left_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-left-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) left_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-right-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-right-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/right_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-right-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) right_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-full-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-full-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/full_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-full-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) full_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-merging-joins" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-inner-join" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-inner-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/data-wrangling/inner_join.png" class="img-fluid figure-img" data-ref-parent="fig-merging-joins">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-inner-join-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(d) inner_join(x, y)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-merging-joins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.3: Объединяющие джойны
-</figcaption>
-</figure>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>) <span class="ot">-&gt;</span> plot1</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="desc-centaltend_files/figure-html/several-plots-one-figure-plots-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>) <span class="ot">-&gt;</span> plot2</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="desc-centaltend_files/figure-html/several-plots-one-figure-plots-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="ot">-&gt;</span> plot3</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="desc-centaltend_files/figure-html/several-plots-one-figure-plots-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>) <span class="ot">-&gt;</span> plot4</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="desc-centaltend_files/figure-html/several-plots-one-figure-plots-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot1)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot3)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot4)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-several-plots-one-figure" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-several-plots-one-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-<div class="cell-output cell-output-stdout quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<pre><code>NULL</code></pre>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-several-plots-one-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.4: Несколько картинок с помощью кода в одной иллюстрации
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="chapterid-map" class="level3" data-number="19.3.4">
-<h3 data-number="19.3.4" class="anchored" data-anchor-id="chapterid-map"><span class="header-section-number">19.3.4</span> Карта</h3>
-<div class="cell">
-<div id="fig-rbirthplace" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-aff90707d300f690d211" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-aff90707d300f690d211">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.5: Тут родился R
-</figcaption>
-</figure>
-</div>
-</div>
-<p>Ссылка неа карту (<a href="prob-falsepositive.html#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>28.5</span></a>).</p>
-</section>
-<section id="chapterid-video" class="level3" data-number="19.3.5">
-<h3 data-number="19.3.5" class="anchored" data-anchor-id="chapterid-video"><span class="header-section-number">19.3.5</span> Видео</h3>
-<div id="fig-razbor" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-razbor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WoffShoneY8?si=Du9xHiOVBHZaOYuE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-razbor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.6: Разбор третьей домашки
-</figcaption>
-</figure>
-</div>
-<p>Ссылка на видео (<a href="prob-falsepositive.html#fig-razbor" class="quarto-xref">Иллюстрация&nbsp;<span>28.6</span></a>).</p>
-</section>
-<section id="chapterid-scheme" class="level3" data-number="19.3.6">
-<h3 data-number="19.3.6" class="anchored" data-anchor-id="chapterid-scheme"><span class="header-section-number">19.3.6</span> Схема</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-mermaidtest" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaidtest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaidtest">flowchart LR
-  A(Step 1) --&gt; B(Step 2)
-  B --&gt; C(Step 3)
-  C --&gt; D(Step 4)
-  D --&gt; E(Step 5)
-  E --&gt; A
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaidtest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;19.7: Это схема из Mermaid
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Ссылка на схему (<a href="prob-falsepositive.html#fig-mermaidtest" class="quarto-xref">Иллюстрация&nbsp;<span>28.7</span></a>).</p>
-</section>
-</section>
-<section id="chapterid-tables" class="level2" data-number="19.4">
-<h2 data-number="19.4" class="anchored" data-anchor-id="chapterid-tables"><span class="header-section-number">19.4</span> Таблицы</h2>
-<p>Ссылка на таблицу из <code>tibble</code> (<a href="prob-falsepositive.html#tbl-kabletable" class="quarto-xref">Таблица&nbsp;<span>28.1</span></a>).</p>
-<p>Ссылка на таблицу из R Markdown (<a href="prob-falsepositive.html#tbl-markdowntable" class="quarto-xref">Таблица&nbsp;<span>28.2</span></a>).</p>
-<section id="chapterid-kabletable" class="level3" data-number="19.4.1">
-<h3 data-number="19.4.1" class="anchored" data-anchor-id="chapterid-kabletable"><span class="header-section-number">19.4.1</span> Таблица из <code>kable()</code></h3>
-<div id="tbl-kabletable" class="quarto-float anchored">
+<p>Итак, мы хотим описать наши данные. Точнее, распределения переменных, которые у нас в данных есть. Хотим сделать это просто и ёмко. Насколько просто и ёмко? Ну, допустим максимально — одним числом. Для этого неплохо подойдет значение переменной, которое лежит <em>в центре</em> распределения.</p>
+<p>Как мы будем искать, что там в центре распределения? Зависит от <a href="">шкалы</a> <span class="citation" data-cites="stevens46">(<a href="references.html#ref-stevens46" role="doc-biblioref">Stevens, 1946</a>)</span>, в которой измерена конкретная переменная (<a href="#tbl-scales-cental-tendencies" class="quarto-xref">Таблица&nbsp;<span>21.1</span></a>).</p>
+<div id="tbl-scales-cental-tendencies" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-kabletable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;19.1: Это kable-таблица
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scales-cental-tendencies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;21.1: Шкалы и меры центральной тенденции
 </figcaption>
-<div aria-describedby="tbl-kabletable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<div aria-describedby="tbl-scales-cental-tendencies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: right;">A</th>
-<th style="text-align: left;">B</th>
+<th style="text-align: left;"><strong>Шкала</strong></th>
+<th style="text-align: left;"><strong>Мера центральной тенденции</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">akjsfv</td>
+<td style="text-align: left;"><em>Номинальная</em></td>
+<td style="text-align: left;">Мода</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">akejrhvae</td>
+<td style="text-align: left;"><em>Порядковая</em></td>
+<td style="text-align: left;">Медиана</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">kvuhaefrv</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</section>
-<section id="chapterid-markdowntable" class="level3" data-number="19.4.2">
-<h3 data-number="19.4.2" class="anchored" data-anchor-id="chapterid-markdowntable"><span class="header-section-number">19.4.2</span> Таблица из R Markdown</h3>
-<div id="tbl-markdowntable" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-markdowntable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;19.2: Это Markdown-таблица
-</figcaption>
-<div aria-describedby="tbl-markdowntable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<thead>
-<tr class="header">
-<th>A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td style="text-align: center;">abc</td>
-<td style="text-align: center;">да</td>
-<td style="text-align: center;"><span class="math inline">\(\sin (2)\)</span></td>
+<td style="text-align: left;"><em>Интервальная</em></td>
+<td style="text-align: left;">Среднее арифметическое</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td style="text-align: center;">def</td>
-<td style="text-align: center;">нет</td>
-<td style="text-align: center;"><span class="math inline">\(\sqrt {4+2i}\)</span></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td style="text-align: center;">ghi</td>
-<td style="text-align: center;">да</td>
-<td style="text-align: center;"><span class="math inline">\(e^{i\pi} + 1 = 0\)</span></td>
+<td style="text-align: left;"><em>Абсолютная</em></td>
+<td style="text-align: left;">Среднее арифметическое, геометрическое и др.</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-</section>
-</section>
-<section id="chapterid-math" class="level2" data-number="19.5">
-<h2 data-number="19.5" class="anchored" data-anchor-id="chapterid-math"><span class="header-section-number">19.5</span> Математика</h2>
-<p>Это уравнение прямой (<a href="prob-falsepositive.html#eq-line" class="quarto-xref">Уравнение&nbsp;<span>28.1</span></a>):</p>
-<p><span id="eq-line"><span class="math display">\[
-y = kx + b
-\tag{19.1}\]</span></span></p>
-<div id="thm-nonbiasmean" class="theorem">
-<p><span class="theorem-title"><strong>Теорема 19.1</strong></span> Это теорема.</p>
+<p>Однако есть некоторые нюансы.</p>
+<section id="desc-centraltend-mode" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="desc-centraltend-mode"><span class="header-section-number">21.1</span> Мода</h2>
+<div class="lab-chapter lab-junior">
+
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span>Это доказательство.</p>
+<p>Самый простой вариант найти центральную тенденцию — это определить наиболее часто встречающееся значение переменной. Это значение называется <em>модой (mode)</em>.</p>
+<div id="def-mode-discrete" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 21.1</strong></span> <strong>Мода</strong> [дискретной переменной] — наиболее часто встречающееся значение данной переменной.</p>
+</div>
+<p>Например, у нас есть следующий ряд наблюдений по какой-то переменной:</p>
 <p><span class="math display">\[
-X_1, X_2, \dots , X_n \overset{\text{i.i.d.}}{\thicksim} (\mu, \sigma^2)
+\begin{bmatrix}
+1 &amp; 3 &amp; 4 &amp; 6 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 2 &amp; 4 &amp; 1
+\end{bmatrix}
 \]</span></p>
+<p>Если мы посчитаем, сколько раз встретилась каждое значение переменной и составим таблицу частот, то получим следующее:</p>
+<p><span class="math display">\[
+\begin{matrix}
+\text{Значение} &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 6 \\
+\text{Частота}  &amp; 2 &amp; 2 &amp; 4 &amp; 2 &amp; 1
+\end{matrix}
+\]</span></p>
+<p>Очевидно, что <span class="math inline">\(3\)</span> встречается чаще других значений — это и есть мода.</p>
+<p>Понятно, что если на нашей шкале нет чисел, а есть текстовые лейблы, это ничего не меняет. Пусть у нас есть переменная с кодами аэропортов:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\text{DME} &amp; \text{LED} &amp; \text{IST} &amp; \text{AER} &amp; \text{IST} &amp;\text{SVO} &amp; \text{LED} &amp; \text{VKO} &amp; \text{LED} &amp; \text{IST} &amp; \text{IST} &amp; \text{VKO} &amp; \text{AER} &amp; \text{DME}
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{matrix}
+\text{Значение} &amp; \text{DME} &amp; \text{LED} &amp; \text{IST} &amp; \text{AER} &amp; \text{SVO} &amp; \text{VKO}\\
+\text{Частота}  &amp; 2 &amp; 3 &amp; 4 &amp; 2 &amp; 1 &amp; 2
+\end{matrix}
+\]</span></p>
+<p>Мода — <span class="math inline">\(\text{IST}\)</span> (Международный аэропорт Стамбула, İstanbul Havalimanı).</p>
+<p>Так мы действуем в случае с эмпирическим распределением. Если нам известна <a href="">функция вероятности переменной (probability mass function, PMF)</a>, то мы можем определить моду, основываясь на ней:</p>
+<div id="def-mode-discrete-pmf" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 21.2</strong></span> <strong>Мода</strong> [дискретной переменной] — это значение переменной, при котором её функция вероятности принимает своё максимальное значение.</p>
 </div>
-<div id="lem-test" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 19.1</strong></span> Это лемма.</p>
-</div>
-<div id="cor-test" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 19.1</strong></span> Это следствие.</p>
-</div>
-<div id="prp-test" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 19.1</strong></span> Это утверждение.</p>
-</div>
-<div id="cnj-test" class="theorem conjecture">
-<p><span class="theorem-title"><strong>Предположение 19.1</strong></span> Это conjecutre.</p>
-</div>
-<div id="def-test" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 19.1</strong></span> Это определение.</p>
-</div>
-<div id="exm-test" class="theorem example">
-<p><span class="theorem-title"><strong>Пример 19.1</strong></span> Это пример.</p>
-</div>
-<div id="exr-test" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 19.1</strong></span> Это задание.</p>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>Решение</em>. </span></p>
+<p><span id="eq-mode-pmf"><span class="math display">\[
+\text{mode}(X) = \arg \max(\text{PMF}(X)) = \arg \max_{x_i}(\mathbb{P}(X = x_i)),
+\tag{21.1}\]</span></span></p>
+<p>где <span class="math inline">\(X\)</span> — дискретная случайная величина, <span class="math inline">\(x_i\)</span> — значение этой случайной величины.</p>
 <div class="cell">
-<p>Это решение</p>
+<div class="cell-output-display">
+<div id="fig-mode-pmf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mode-pmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-mode-pmf-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mode-pmf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.1: Определение моды с помощью функции вероятности
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="proof solution">
-<p><span class="proof-title"><em>Решение</em>. </span></p>
-<!--Это решение, где есть только код.-->
+</div>
+<p>Окей, мы видим, что <em>мода отлично считается на дискретных переменных</em>. А как же быть с непрерывными?</p>
+<p><a href="">Напомним себе</a>, что вероятность того, что непрерывная случайная величина примет своё конкретное значение, равна нулю. Из этого следует, что все значения непрерывной случайное величины уникальны — каждое повторяется только один раз. Получается, что строить частотную таблицу бессмысленно…</p>
+<p>По этой причине <strong>для непрерывных переменных моду не считают</strong>.</p>
+<section id="desc-centraltend-mode-contunious" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="desc-centraltend-mode-contunious"><span class="header-section-number">21.1.1</span> Мода для непрерывной переменной</h3>
+<div class="lab-chapter lab-middle">
+
+</div>
+<p>Да, это так. Действительно, посчитать моду для непрерывной переменной способом, аналогичным тому, что мы увидели выше, не получится. Однако математиков это не остановило.</p>
+<p>Если мы посмотрим на <a href="">график плотности вероятности</a> (probability density function, PDF), который является аналогом PMF для дискретных переменных, мы увидим, что какие-то значения встречаются чаще, а какие-то реже. Что в общем-то логично. Напомним себе, <a href="">как это выглядит</a>, например, для любимого [стандартного] <a href="">нормального распределения</a>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<div class="cell-output-display">
+<div id="fig-continuous-freqs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-continuous-freqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-continuous-freqs-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-continuous-freqs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.2: Частоты интервалов значений непрерывной случайной величины на функции плотности распределения
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>Это замечание.</p>
+<p>То есть, самые часто встречающиеся значения — это <strong>пик распределения</strong>. Там и должна быть мода. Визуально это выглядит достаточно справедливо.</p>
+<p>Математики так и решили:</p>
+<div id="def-mode-continuous" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 21.3</strong></span> <strong>Мода</strong> [непрерывной переменной] — это значение переменной, при котором её функция плотности вероятности достигает локального<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> максимума.</p>
 </div>
-</section>
-<section id="chapterid-callouts" class="level2" data-number="19.6">
-<h2 data-number="19.6" class="anchored" data-anchor-id="chapterid-callouts"><span class="header-section-number">19.6</span> Блоки</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><span id="eq-mode-pdf"><span class="math display">\[
+\text{mode}(X) = \arg \max(\text{PDF}(X)) = \arg \max_{x \in S}f(x),
+\tag{21.2}\]</span></span></p>
+<p>гдe <span class="math inline">\(X\)</span> — непрерывная случайная величина, <span class="math inline">\(x\)</span> — значение этой случайной величины, <span class="math inline">\(S\)</span> — имеющаяся выборка значений переменной.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-continuous-mode" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-continuous-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-continuous-mode-1.png" class="img-fluid figure-img" width="672">
 </div>
-<div class="callout-title-container flex-fill">
-Заголовок заметки
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Текст заметки.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Заголовок лайфхака
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-continuous-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.3: Положение моды на функции плотности [стандартного] нормального распределения
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Текст лайфхака.</p>
 </div>
-</div>
+<p>Хотя моду для непрерывной переменной вычислить можно, обычно этого не делают, так как достаточно других мер центральной тенденции для описания распределения.</p>
+<hr>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Заголовок предупреждения
+Предупреждение
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Текст предупреждения.</p>
+<ul>
+<li>мода — это значение переменной, которое встречается в выборке чаще всего</li>
+<li>на практике она рассчитывается через построение частотной таблицы</li>
+<li>используется с дискретными (номинальными и порядковыми) переменными</li>
+<li>для непрерывных переменных её рассчитать можно, но обычного этого не делают</li>
+</ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+</section>
+<section id="desc-centraltend-unimodal-bimodal" class="level3" data-number="21.1.2">
+<h3 data-number="21.1.2" class="anchored" data-anchor-id="desc-centraltend-unimodal-bimodal"><span class="header-section-number">21.1.2</span> Унимодальные и полимодальные распределения</h3>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>Нормальное распределение, как и ряд других — биномиальное, отрицательное биномиальное, пуассоновское — относятся к <em>унимодальным</em>. Такие распределения имеют только <em>одну моду</em> (см. <a href="#fig-norm-mode" class="quarto-xref">Иллюстрация&nbsp;<span>21.4</span></a>, <a href="#fig-binom-mode" class="quarto-xref">Иллюстрация&nbsp;<span>21.5</span></a>, <a href="#fig-poiss-mode" class="quarto-xref">Иллюстрация&nbsp;<span>21.6</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-norm-mode" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-norm-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-norm-mode-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-norm-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.4: Нормальное распределение (μ&nbsp;=&nbsp;2$, σ&nbsp;=&nbsp;0.5). Пунктирной линией обозначено положение моды.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-binom-mode" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-binom-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-binom-mode-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-binom-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.5: Биномиальное распределение (n&nbsp;=&nbsp;50, p&nbsp;=&nbsp;0.3). Пунктирной линией обозначено положение моды.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-poiss-mode" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-poiss-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-poiss-mode-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poiss-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.6: Распределение Пуассона (λ&nbsp;=&nbsp;5.5). Пунктирной линией обозначено положение моды.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Это теоретические распределения. С эмпирическими распределениями дело обстоит так же, хотя они обычно менее гладенькие и красивые (см. <a href="#fig-mode-norm-sample" class="quarto-xref">Иллюстрация&nbsp;<span>21.7</span></a> и <a href="#fig-mode-nbinom-sample" class="quarto-xref">Иллюстрация&nbsp;<span>21.8</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-mode-norm-sample" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mode-norm-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-mode-norm-sample-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mode-norm-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.7: Эмпирическое распределение, сгенерированное из нормального распределения (μ&nbsp;=&nbsp;8, σ&nbsp;=&nbsp;4, n&nbsp;=&nbsp;100). <code>set.seed(314)</code>. Пунктирной линией обозначено положение моды.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-mode-nbinom-sample" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mode-nbinom-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-mode-nbinom-sample-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mode-nbinom-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.8: Эмпирическое распределение, сгенерированное из логнормального распределения (μ&nbsp;=&nbsp;1.1, σ&nbsp;=&nbsp;1.39, n&nbsp;=&nbsp;30). <code>set.seed(314)</code>. Пунктирной линией обозначено положение моды.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Однако на практике возможны и другие ситуации. Например, такие (<a href="#fig-bimodal" class="quarto-xref">Иллюстрация&nbsp;<span>21.9</span></a>, <a href="#fig-polymodal" class="quarto-xref">Иллюстрация&nbsp;<span>21.10</span></a>):</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-bimodal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bimodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-bimodal-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bimodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.9: Бимодальное распределение. Сгенерировано из двух нормальных распределений (μ<sub>1</sub>&nbsp;=&nbsp;1.5, σ<sub>1</sub>&nbsp;=&nbsp;0.4, n<sub>1</sub>&nbsp;=&nbsp;80; μ<sub>2</sub>&nbsp;=&nbsp;4, σ<sub>2</sub>&nbsp;=&nbsp;0.5, n<sub>2</sub>&nbsp;=&nbsp;40). <code>set.seed(65)</code>. Пунктирными линиями обозначены положения мод.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-polymodal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polymodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-polymodal-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polymodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.10: Полимодальное распределение. Сгенерировано из двух нормальных распределений (μ<sub>1</sub>&nbsp;=&nbsp;1.5, σ<sub>1</sub>&nbsp;=&nbsp;0.3, n<sub>1</sub>&nbsp;=&nbsp;80; μ<sub>2</sub>&nbsp;=&nbsp;3.4, σ<sub>2</sub>&nbsp;=&nbsp;0.5, n<sub>2</sub>&nbsp;=&nbsp;40) и бета-распределения (α&nbsp;=&nbsp;2, β&nbsp;=&nbsp;4, n&nbsp;=&nbsp;50). <code>set.seed(65)</code>. Пунктирными линиями обозначены положения мод.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>В первом случае (<a href="#fig-bimodal" class="quarto-xref">Иллюстрация&nbsp;<span>21.9</span></a>) мы видим <em>два локальных максимума</em> функции плотности вероятности — такое распределение называется <strong>бимодальным</strong>. Во втором случае (<a href="#fig-polymodal" class="quarto-xref">Иллюстрация&nbsp;<span>21.10</span></a>) функция плотности вероятности имеет <em>три локальных максимума</em> — такое распределение называется <strong>полимодальным</strong>. Бимональное распределение является частным случаем полимодального распределения.</p>
+<p>В прицнипе, пиков может быть и больше, однако при работе с реальными данными чаще всего мы сталкиваемся с бимодальными распределениями.</p>
+<p><strong>Что это значит и что с этим делать?</strong></p>
+<p>Бимодальное распределение сигнализирует нам о <strong>гетерогенности выборки</strong>. Если мы видим два выделяющихся пика, стоит подумать о том, что наша выборка неоднородна и в ней выделяются две подвыборки. Посмотрим на структуру выборки из примера выше (<a href="#fig-bimodal-struct" class="quarto-xref">Иллюстрация&nbsp;<span>21.11</span></a>):</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-bimodal-struct" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bimodal-struct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-bimodal-struct-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bimodal-struct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.11: Структура бимодального распределения из <a href="#fig-bimodal" class="quarto-xref">Иллюстрация&nbsp;<span>21.9</span></a>. Для удобства сопоставления графиков плотностей вероятности по оси ординат отложены частоты.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Действительно, наше распределение состоит из двух других распределений, у каждого из которого есть своя мода — поэтому итоговое распределение получается бимодальным. Конечно, сейчас нам это очень удобно показать, потому что мы знаем, как это распределение генерировалось. Когда же у нас есть реальные данные и мы там наблюдаем такого «верблюда», бывает достаточно сложно сказать, что «пошло не так».</p>
+<p>Само по себе распределение не даст нам ответ на вопрос, почему оно бимодальное — чтобы выяснить причины такого поведения переменной нам потребуются другие данные. Обычно у вас в данных есть «соцдем» — пол, возраст, сфера и место работы, уровень обрвазования и др. Попробуйте построить распределение с разбиением исследуемой бимодальной переменной по переменным «соцдема». Это, к сожалению, не является рецептом успеха, поскольку причина гетерогенности выборки может и не содержаться в ваших данных, но такое изучение данных станет хорошим показателем того, что вы не просто «забили» на странное распределение своей переменной, а поисследователи возможные его причины.</p>
+<p>Если вам удалось найти причины гетерогенности выборки — допустим, у вас выделяются подвыборки «бакалавры» и «магистры» — стоит подумать о том, как обойтись с этой переменной в планируемом анализе, так как игнорировать её, по-видимому, нельзя, поскольку она влияет на вариатиность данных.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Соцдем лишним не бывает">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Заголовок важности
+Соцдем лишним не бывает
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Текст важности.</p>
+<p>На этапе планирования исследования подумайте о том, чем могут отличаться ваши респонденты или испытуемые между собой, помимо индивидуальных различий.</p>
+<ul>
+<li>Если в эксперименте используете задачу мысленного вращения (mental rotation, <span class="citation" data-cites="shepard71">(<a href="references.html#ref-shepard71" role="doc-biblioref"><strong>shepard71?</strong></a>)</span>), вполне возможно, испытуемые, работающие в сфере 3D-моделирования или дизайна интерьеров, могут сформировать подвыборку.</li>
+<li>В случае HR-исследования, где фиксируется доход респондента, необходимо записать город, в котором он проживает и/или работает.</li>
+<li>При изучении удовлетворенности городским пространством важными пунктами станут беременность, наличие/отсутствие детей, наличие/отсутствие автомобиля и др.</li>
+</ul>
+<p>И так далее. Примеров для каждого случая можно подобрать много.</p>
+<p>Стоит ли, скажем, в первом случае сразу исключить из выборки 3D-моделлеров? Зависит. От количества времени и денег на проведение исследования. Однако <em>как минимум эту информацию надо зафиксировать в данных</em>. А решить, исключать ли этих респондентов из выборки или нет, можно и позже. Главно об этом написать в отчете/статье, когда будете описывать предобработку данных.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<hr>
+<div class="callout callout-style-default callout-warning callout-titled" title="Take-home: бимодальное распределение">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Заголовок предупреждения
+Take-home: бимодальное распределение
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Текст предупреждения.</p>
+<ul>
+<li>бимодальное распределение намекает на неоднородность данных — скорее всего, в выборке есть две подвыборки</li>
+<li>необходимо поискать в данных причины этой неодноросности, например, в социально-демографических переменных</li>
+<li>если удалось найти переменную, объясняющую бимодальность, стоит подумать о том, как её учитывать в планируемом анализе</li>
+</ul>
 </div>
+</div>
+</section>
+</section>
+<section id="desc-centraltend-median" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="desc-centraltend-median"><span class="header-section-number">21.2</span> Медиана</h2>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>Для номинальной шкалы мода — это единственно возможная мера центральной тенденции, потому что на этой шкале отсутствует порядок элементов. На других шкалах наблюдения уже можно сортировать по возрастнию или убыванию, поскольку начиная с ранговой (порядковой) шкалы на всех них определена операция сравнения на «больше-меньше».</p>
+<p>Возьмем тот же ряд наблюдений, что и в предыдущем разделе:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 3 &amp; 4 &amp; 6 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 2 &amp; 4 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p>Отсортируем наблюдения по возрастанию:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1  &amp; 1 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 3 &amp; 3 &amp; 4 &amp; 4 &amp; 6
+\end{bmatrix}
+\]</span></p>
+<p>Наша задача — определить центральную тенденцию. Давайте посмотрим, что оказалось в середине отсортированного ряда:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 1 &amp; 2 &amp; 2 &amp; 3 &amp; \mathbf{3} &amp; 3 &amp; 3 &amp; 4 &amp; 4 &amp; 6
+\end{bmatrix}
+\]</span></p>
+<p>Это медиана. В данном случае она равна <span class="math inline">\(3\)</span>.</p>
+<div id="def-median" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 21.4</strong></span> <strong>Медиана (median)</strong> — это значение, которое располагается на середине отсортированного ряда значений переменной.</p>
+</div>
+<p>Медиана делит все наблюдения переменной ровно пополам и половина наблюдений оказывается по одну сторону от медианы, а половина — по другую.</p>
+<p>Если число наблюдений нечётное, то всё ясно — в середине отсортированного ряда будет какое-то значение. А если число наблюдений чётное? Тогда мы попадаем между значениями.</p>
+<p>Возьмем для примера такой вектор наблюдений:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+14 &amp; 10 &amp; 9 &amp; 16 &amp; 30 &amp; 3 &amp; 25 &amp; 8 &amp; 18 &amp; 7
+\end{bmatrix}
+\]</span></p>
+<p>Отсортируем:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+3 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 14 &amp; 16 &amp; 18 &amp; 25 &amp; 30
+\end{bmatrix}
+\]</span></p>
+<p>Найдем середину:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+3 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; | &amp; 14 &amp; 16 &amp; 18 &amp; 25 &amp; 30
+\end{bmatrix}
+\]</span></p>
+<p>В таком случае в качестве медианы берется среднее между двумя срединными значениями:</p>
+<p><span class="math display">\[
+\text{median} = \frac{10 + 14}{2} = 12
+\]</span></p>
+<p>Итого, формализовать вычисление медианы можно следующим образом:</p>
+<p><span id="eq-median-formula"><span class="math display">\[
+\text{median}(X) = X(a) =
+\cases{
+X\left(\frac{n+1}{2}\right), &amp; if  2&nbsp;|&nbsp;n \\
+\dfrac{X(\frac{n}{2}) + X(\frac{n}{2} + 1)}{2}, &amp; otherwise
+}
+\tag{21.3}\]</span></span></p>
+<p>где <span class="math inline">\(X\)</span> — ряд наблюдений случайной величины, <span class="math inline">\(n\)</span> — число наблюдений, <span class="math inline">\(X(a)\)</span> — наблюдение с индексом <span class="math inline">\(a\)</span> в отсортированном векторе <span class="math inline">\(X\)</span>.</p>
+<p>Если мы будем смотреть на медиану с позиции описания распределения, то она будет той самой линией, которая разделит площадь под графиком функции плотности вероятности пополам:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-median-norm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-median-norm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-median-norm-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-norm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.12: Медиана нормального распределения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>При этом форма распределения не имеет значения — площадь под графиком всегда будет делиться пополам:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-median-left-skew" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-median-left-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-median-left-skew-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-left-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.13: Медиана распределения с отрицательной асимметрией.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-median-right-skew" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-median-right-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-median-right-skew-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-right-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.14: Медиана распределения с положительной асимметрией.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-median-bimodal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-median-bimodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="desc-centaltend_files/figure-html/fig-median-bimodal-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-bimodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;21.15: Медиана бимодального распределения.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-warning callout-titled" title="Take-home: медиана">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Take-home: медиана
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>медиану можно расчитать только на шкалах, где задан порядок (ранговая, интервальная, абсолютная)</li>
+<li>медиана делит выборку наблюдений на две равные части</li>
+<li>линия медианы раздели площадь под графиком функции плотности вероятности пополам</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="desc-centraltend-mean" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="desc-centraltend-mean"><span class="header-section-number">21.3</span> Среднее</h2>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>Если наша переменная измерена в самых мощных шкалах — интервальной или абсолютной — то нам доступна ещё одна мера центральной тенденции.</p>
+<section id="desc-centraltend-arithmetic-mean" class="level3" data-number="21.3.1">
+<h3 data-number="21.3.1" class="anchored" data-anchor-id="desc-centraltend-arithmetic-mean"><span class="header-section-number">21.3.1</span> Арифметическое среднее</h3>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>С этим существом все знакомы еще со школы. <strong>Арифметическое среднее (arithmetic mean, mean, average)</strong> считается так:</p>
+<p><span class="math display">\[
+M_{X} = \overline X = \dfrac{\sum_{i=1}^{n}x_i}{n},
+\]</span></p>
+<p>где <span class="math inline">\(\overline X\)</span> — среднее арифметическое, <span class="math inline">\(x_i\)</span> — наблюдение в векторе <span class="math inline">\(X\)</span>, <span class="math inline">\(n\)</span> — количество наблюдений.</p>
+<p>Ну, то есть всё сложить и поделить на количество того, чего сложили. Изи.</p>
+<section id="desc-centraltend-arithmetic-mean-features" class="level4" data-number="21.3.1.1">
+<h4 data-number="21.3.1.1" class="anchored" data-anchor-id="desc-centraltend-arithmetic-mean-features"><span class="header-section-number">21.3.1.1</span> Свойства среднего арифметического</h4>
+<ul>
+<li><strong>Если к каждому значению распределения прибавить некоторое число (константу), то среднее увеличится на это же константу.</strong></li>
+</ul>
+<p><span class="math display">\[
+M_{X+c} = M_X + c
+\]</span></p>
+<p>Вот почему:</p>
+<p><span class="math display">\[
+M_{X+c} = \frac{\sum_{i=1}^n (x_i + c)}{n} = \frac{\sum_{i=1}^n x_i + nc}{n} = \frac{\sum_{i=1}^n x_i}{n} + c = M_X + c
+\]</span></p>
+<p>Иначе говоря, распределение просто сдвинется. Например, если к каждому значению синего распределения прибавить <span class="math inline">\(2\)</span>, получится красное:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/mean_feature_1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Если каждое значение распределение умножить на некоторое число (константу), то среднее увеличится во столько же раз.</strong></li>
+</ul>
+<p><span class="math display">\[
+M_{X \times c} = M_X \times c
+\]</span></p>
+<p>Вот почему:</p>
+<p><span class="math display">\[
+M_{X \times c} = \frac{\sum_{i=1}^n (x_i \times c)}{n} = \frac{c \times \sum_{i=1}^n x_i}{n} = \frac{\sum_{i=1}^n x_i}{n} \times c = M_X \times c
+\]</span></p>
+<p>Например, здесь каждое значение синего распределения умножили на <span class="math inline">\(3\)</span> и получили красное:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/mean_feature_2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Тут, правда, явно <a href="#var_features">что-то ещё</a> произошло, но мы пока этого не знаем. Однако, отметит этот факт.</p>
+<ul>
+<li><strong>Сумма отклонений от среднего значения равна нулю.</strong></li>
+</ul>
+<p><span class="math display">\[
+\sum_{i=1}^n(x_i - M_X) = 0
+\]</span></p>
+<p>Элегантное доказательство:</p>
+<p><span class="math display">\[
+\sum_{i=1}^n(x_i - M_X) = \sum_{i=1}^n x_i - \sum_{i=1}^n M_X = \sum_{i=1}^n x_i - nM_X = \\
+= \sum_{i=1}^n x_i - n \times \frac{1}{n} \sum_{i=1}^n x_i = \sum_{i=1}^n x_i - \sum_{i=1}^n x_i = 0
+\]</span></p>
+<p>Но можно это осмыслить и более просто графически.</p>
+<p><strong>Отклонение</strong> — это разность между средним и конкретным значением переменной. И, действительно, так как среднее находится в центре распределения, то часть значений лежит справа, а часть слева. Значит, будут как положительные, так и отрицательные отклонения — и их сумма в итоге будет равна нулю.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/zero_deviation_sum-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="desc-centraltend-trimmed-mean" class="level3" data-number="21.3.2">
+<h3 data-number="21.3.2" class="anchored" data-anchor-id="desc-centraltend-trimmed-mean"><span class="header-section-number">21.3.2</span> Усеченное среднее</h3>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>ПРО УСЕЧЕННОЕ СРЕДНЕЕ</p>
+<p>Среднее арифметическое не одиноко — есть и другие. Встретятся они вам примерно нигде — то есть о-о-о-очень редко и, скорее всего, в каком-то изощрённом виде. Но упомянуть их, пожалуй, стоит.</p>
+</section>
+<section id="desc-centraltend-weighted-mean" class="level3" data-number="21.3.3">
+<h3 data-number="21.3.3" class="anchored" data-anchor-id="desc-centraltend-weighted-mean"><span class="header-section-number">21.3.3</span> Взвешенное среднее</h3>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>Часто бывает такая ситуация, что нас нужно посчитать среднее по каким-либо имеющимся параметрам, но одни параметры для нас важнее, чем другие. Например, мы хотим вычислить суммарный балл обучающегося за курс на основе ряда работ, выполненных в течение курса, однако мы понимаем, что тест из десяти вопросов с множественном выбором явно менее показателен, чем, например, аналитическое эссе или экзаменационная оценка. Что делать? Взвесить параметры!</p>
+<p>Что значит взвесить? Умножить на некоторое число. На самом деле, любое. Пусть мы посчитали, что написать эссе в три абстрактных раза тяжелее, чем написать тест, а сдать экзамен в два раза тяжелее, чем написать эссе. Тогда мы можем присвоить баллу за тест вес <span class="math inline">\(1\)</span>, баллу за аналитическое эссе вес <span class="math inline">\(3\)</span>, а экзамену — вес <span class="math inline">\(6\)</span>. Тогда итоговая оценка за курс будет рассчитываться следующим образом:</p>
+<p><span class="math display">\[
+\text{final score } = 1 \cdot \text{test} + 3 \cdot \text{essay} + 6 \cdot \text{exam}
+\]</span></p>
+<p>Суперкласс. Однако! Весьма вероятно, что в учебном заведении принята единая система оценки для всех видов работ (ну, скажем, некая абстрактная десятибалльная система в сферическом вакууме). Получается, если и за тест, и за эссе, и за экзамен у студента по 10 баллов, то суммарный балл 100, что, кажется, больше, чем 10. Чтобы вернуться к изначальным границам баллов, нужно моделить суммарный балл на сумму весов параметров:</p>
+<p><span class="math display">\[
+\text{final score } = \frac{1 \cdot \text{test} + 3 \cdot \text{essay} + 6 \cdot \text{exam}}{1 + 3 + 6}
+\]</span></p>
+<p>Кайф! Собственно, это и есть взвешенное среднее. Коэффициенты, на которые мы умножаем значение параметров, называются <em>весами параметров</em>. И в общем виде формула принимает следующий вид.</p>
+<p><span class="math display">\[
+\bar x = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i} = \sum_{i=1}^n w_i' x_i,
+\]</span></p>
+<p>где <span class="math inline">\(x_i\)</span> — значения конкретных параметров, <span class="math inline">\(w_i\)</span> — веса конкретных параметров, <span class="math inline">\(w_i'\)</span> — нормированные веса параметров.</p>
+<p>Вторая часть формулы показывает нам, что можно облегчить себе вычислительную жизнь, если заранее нормировать веса, то есть разделить каждый коэффициент на сумму коэффициентов:</p>
+<p><span class="math display">\[
+w_i' = \frac{w_i}{\sum_{i=1}^n w_i}
+\]</span></p>
+<p>Тогда сумма коэффициентов будет равна единице. Так чаще всего и поступают, так как тогда коэффициент будет представлять долю, которую весит данный параметр в суммарной оценке. Удобно, практично, красиво.</p>
+<p>Взвещенное среднее часто применяется именно во всякого рода ассессментах, и не только образовательных. Например, вы HR-аналитик и оцениваете персонал. Вы аналитически вычисляете веса коэффициентов (допустим, с помощью линейной регрессии), а далее на их основе высчитаете интегральный балл, по которому будете оценивать сотрудников. Это как один из индустриальных примеров.</p>
+<p>Также оно применяется, когда в наших данных есть какая-то группировка (например, когорты), при этом группы неравномерны.</p>
+</section>
+</section>
+<section id="desc-centraltend-mean-vs-median" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="desc-centraltend-mean-vs-median"><span class="header-section-number">21.4</span> Среднее vs медиана</h2>
+<div class="lab-chapter lab-junior">
+
+</div>
+<p>Помимо того, что среднее и медиана информативны сами по себе, полезно смотреть на их взаимное расположение.</p>
+<blockquote class="blockquote">
+<p>Сравнивать будем моду, медиану и среднее [арифметическое].</p>
+</blockquote>
+<p>Итак, все три статистики — мода, медиана и среднее — описывают центральную тенденцию — некоторое значение изучаемой нами переменной, вокруг которого собираются другие значения. Но если их три и все они используются, значит между ними должны быть какие-то различия. Посмотрим, какие.</p>
+<p>Во-первых, очевидно, что <em>моду невозможно посчитать для непрерывной переменной</em>.</p>
+<div class="advanced">
+<details>
+<summary>
+<em>Нет, не очевидно</em>
+</summary>
+Так как вероятность того, что непрерывная случайная величина принимает своё конкретное значение, равна нулю, каждое наблюдение в нашей выборке будет уникально — встретится ровно <em>один раз</em>. Вспомните [посмотрите] пример из предыдущей главы, где мы набирали числа из отрезка. Получается, что мода теряет свой смысл.
+</details>
+</div>
+<p>Во-вторых, <em>медиану нельзя посчитать на номинальной шкале</em>. Кстати, почему?</p>
+<div class="advanced">
+<details>
+<summary>
+<em>Потому что</em>
+</summary>
+на номинальной шкале нет отношения порядка между элементами. Помните, на ней нельзя сравнивать на больше-меньше. Поэтому невозможно отсортировать наблюдения, а значит, и найти медиану.
+</details>
+</div>
+<p>В-третьих, <em>среднее тоже нельзя посчитать на номинальной шкале</em>.</p>
+<div class="advanced">
+<details>
+<summary>
+<em>Можно, но осторожно</em>
+</summary>
+<p>Вообще, конечно, да — нельзя, потому что на номинальной шкале не определена операция сложения, входящая в вычисление среднего. Однако если на номинальной шкале есть только <em>две категории</em>, которые закодированы <code>0</code> и <code>1</code>, то посчитать среднее можно. Но что оно будет значить?</p>
+<p>Исходный математический смысл среднего явно утерян. Посмотрим на это по-другому: посчитать сумму единиц это всё равно, что посчитать <em>количество</em> единиц. То есть, если мы сложим все нули и единицы, то получим количество единиц среди всех наших наблюдений. А разделив количество единиц на количество наблюдений, мы получим <em>долю единиц</em> — то есть долю наблюдений с лейблом <code>1</code>.</p>
+Вот так вот.
+</details>
+</div>
+<p>В-четвертых, <em>для дискретной переменной значение среднего арифметического будет не особо осмысленно.</em> Ну, скажем, странно сказать, что в аудитории в среднем стоят 15.86 столов или в российских семьях в среднем 1.5 ребенка. Конечно, в ряде случаев можно это как-то более-менее водержательно интерпретировать, но это требует усилий, а мы ленивые, поэтому лучше использовать медиану.</p>
+<p><strong>Итого, делаем следующие выводы</strong>:</p>
+<ul>
+<li>для номинальной шкалы пригодна только мода</li>
+<li>для дискретных переменных подходят мода и медиана
+<ul>
+<li>мода иногда лучше, так как точно всегда будет целым числом</li>
+</ul></li>
+<li>для непрерывных переменных подходят медиана и среднее</li>
+</ul>
+<p>Теперь нам надо разобраться, как будут себя вести меры центральной тенденции в зависимости от <em>формы распределения</em>.</p>
+<p><strong>На симметричном распределении мода, медиана и среднее совпадают</strong> [или, по крайней мере, находятся очень близко друг к другу]. Здесь и далее: красная линия — среднее, синяя — медиана, зелёная — мода.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/central_tendency_symm-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>На асимметричном распределении мода [практически] в пике.</strong> Практически, потому что функция плотности вероятности [черная линия на графике] на всегда точно аппроксимирует (в данном случае то же, что и сглаживает) эмпирическое распределение. На картинке ниже мы видим, что на гистограмме мода — самый высокий столбик, что и показывает нам зелёная линия, которой обозначена мода. Однако при сглаживании гистограммы пик немного съехал, и мода оказалась не совсем в вершине графика функции плотности вероятности.</p>
+<p>Вообще-то это нормально, потому что мода для непрерывной величины, которую мы и визуализируем с помощью графика плотности, либо не может быть посчитана вовсе, либо — если так получилось, и у нас все же есть повторяющиеся значения — не слишком хорошая мера центральной тенденции. В целом, и на симметричном распределении мода тоже может находиться немного в стороне от пика.</p>
+<p><strong>На асимметричном распределении медиана и среднее смещены в сторону хвоста. Среднее смещено сильнее медианы.</strong> Это связано с тем, что медиана зависит только от количества наблюдений, а среднее ещё и от самих значений. На картинке ниже пример для распределения с <em>правосторонней</em> асимметрии (потому что хвост справа) — среднее (красная линия) <em>правее</em> медианы (синяя линия).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/central_tendency_asymm_right-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>А это пример для распределения с <em>левосторонней</em> асимметрией (так как хвост слева) — среднее (красная линия) <em>левее</em> медианы (синяя линия).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/central_tendency_asymm_left-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Для того, чтобы лучше разобраться с тем, как большие и малые значения влияют на моду и медиану посмотрим такой пример. Пусть у нас есть оценки за выпускную квалификационную работу. Например, такие:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>marks</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6 7 7 8 8</code></pre>
+</div>
+</div>
+<p>Посчитаем медиану и среднее:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(marks)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(marks)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.2</code></pre>
+</div>
+</div>
+<p>Среднее <span class="math inline">\(7.2\)</span> округлиться до <span class="math inline">\(7\)</span>, то есть можно считать, что среднее и медиана совпали. Ну, ок.</p>
+<p>Но в комиссии сидят два требовательных доктора наук, которые поставили оценки, сильно отличающиеся от остальных:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>marks</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6 7 7 8 8 3 4</code></pre>
+</div>
+</div>
+<p>Посчитаем медиану и среднее теперь:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(marks)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(marks)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.142857</code></pre>
+</div>
+</div>
+<p>Медиана осталась на месте — всё ещё <span class="math inline">\(7\)</span>. А вот среднее <span class="math inline">\(6.1\)</span> округлится до <span class="math inline">\(6\)</span>. Казалось бы, это немного, но в смысле оценок — это прилично, и может сильно повлиять на GPA.</p>
+<p>Итого, среднее более чувствительно к нетипичным значениям (очень большим или очень малым).</p>
+<p>Есть ещё один интересный вариант распределений — <strong>бимодальные</strong>. Значит ли, что у этого распределения две моды? Не всегда. Посмотрим пример ниже:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="desc-centaltend_files/figure-html/central_tendency_bimodal-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Мы видим, что на графике есть два пика, однако строго математически мода одна (зеленая линия) — и она в более высоком пике. Это логично, ибо там самые часто встречающиеся значения.</p>
+<div class="advanced">
+<p>И все жё содержательно мы не можем пренебречь вторым пиком. Почему нам он важен? Обычно бимодальное распределение — это повод задуматься о том, что наша выборка неоднородна. <em>Бимодальное распределение как бы сложено из двух с центрами в двух пиках.</em> То есть в нашей выборке как будто бы <em>две подвыборки</em>, которые обладают разными распределениями интересующего нам признака.</p>
+<p>Что с этим делать? Хорошо всегда иметь в данным какие-либо дополнительные переменные — как минимум соцдем — чтобы мы могли по данным попытаться предположить, какую группировку мы могли забыть учесть при планировании исследования.</p>
+</div>
+<p>Со средним и медианой происходит примерно то же, что и в случае асимметричного распределения. Второй пик смещает к себе обе меры центральной тенденции, причем среднее вновь сильнее, чем медиану.</p>
+</section>
+<section id="desc-centraltend-other-means" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="desc-centraltend-other-means"><span class="header-section-number">21.5</span> Другие средние</h2>
+<section id="desc-centraltend-geometric-mean" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="desc-centraltend-geometric-mean"><span class="header-section-number">21.5.1</span> Геометрическое среднее</h3>
+<div class="lab-chapter lab-middle">
+
+</div>
+<p>Редко встречается в научных работах, но заради общего представления пусть будет. Поскольку оно считается через умножение, то может быть рассчитано только на абсолютной шкале.</p>
+<p><span class="math display">\[
+G_{X} = \sqrt[n]{\prod_{i=1}^n x_i} = \Big(\prod_{i=1}^n x_i\Big)^{\tfrac{1}{n}}
+\]</span></p>
+</section>
+<section id="desc-centraltend-quandratic-mean" class="level3" data-number="21.5.2">
+<h3 data-number="21.5.2" class="anchored" data-anchor-id="desc-centraltend-quandratic-mean"><span class="header-section-number">21.5.2</span> Квадратичное среднее</h3>
+<div class="lab-chapter lab-middle">
+
+</div>
+<blockquote class="blockquote">
+<p>А вот это уже более полезная история. Мы с ним столкнёмся далее, правда под разными масками.</p>
+</blockquote>
+<p><strong>Квадратичное среднее (quadratic mean, root mean square, RMS)</strong> — это квадратный корень из среднего квадрата наблюдений. Ничего не понятно, поэтому по порядку.</p>
+<ul>
+<li>есть наблюдение <span class="math inline">\(x_i\)</span></li>
+<li>значит есть и его квадрат <span class="math inline">\(x_i^2\)</span></li>
+<li>мы умеем считать обычно среднее арифметическое, но ведь <span class="math inline">\(x_i^2\)</span> — это тоже наблюдение, просто в квадрате, так?</li>
+<li>значит можем посчитать среднее арифметическое квадратов наблюдений — <em>средний квадрат</em></li>
+</ul>
+<p><span class="math display">\[
+\frac{\sum_{i=1}^n x_i^2}{n}
+\]</span></p>
+<ul>
+<li>норм, а теперь извлечём из этого дела корень — получим то, что там надо</li>
+</ul>
+<p><span class="math display">\[
+X_{\mathrm{RMS}} = \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}}
+\]</span></p>
+<p>Per se<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> мы его вряд ли ещё когда-то увидим, но пару раз оно внезапно всплывет.</p>
+</section>
+<section id="desc-centraltend-harmonic-mean" class="level3" data-number="21.5.3">
+<h3 data-number="21.5.3" class="anchored" data-anchor-id="desc-centraltend-harmonic-mean"><span class="header-section-number">21.5.3</span> Гармоническое среднее</h3>
+<div class="lab-chapter lab-middle">
+
+</div>
+<blockquote class="blockquote">
+<p>Суперэкзотичный покемон.</p>
+</blockquote>
+<p><span class="math display">\[
+H_X = \frac{n \prod_{i=1}^n x_i}{\sum_{i=1}^n (\tfrac{1}{x} \prod_{j=1}^n x_j)} = \frac{n}{\sum_{i=1}^n \tfrac{1}{x_i}}
+\]</span></p>
+<hr>
+<section id="session_info" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.4.0 (2024-04-24)
+Platform: x86_64-apple-darwin20
+Running under: macOS Sonoma 14.5
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Moscow
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [5] purrr_1.0.2     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   
+ [9] ggplot2_3.5.1   tidyverse_2.0.0
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0    tidyselect_1.2.1 
+ [5] gridExtra_2.3     scales_1.3.0      yaml_2.3.8        fastmap_1.2.0    
+ [9] R6_2.5.1          labeling_0.4.3    generics_0.1.3    knitr_1.47       
+[13] htmlwidgets_1.6.4 munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0       
+[17] rlang_1.1.4       utf8_1.2.4        stringi_1.8.4     xfun_0.44        
+[21] timechange_0.3.0  cli_3.6.3         withr_3.0.2       magrittr_2.0.3   
+[25] digest_0.6.37     grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3        
+[29] lifecycle_1.0.4   vctrs_0.6.5       evaluate_1.0.1    glue_1.8.0       
+[33] farver_2.1.2      fansi_1.0.6       colorspace_2.1-1  rmarkdown_2.27   
+[37] tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-stevens46" class="csl-entry" role="listitem">
+Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>, <em>103</em>(2684), 677–680. <a href="https://doi.org/10.1126/science.103.2684.677">https://doi.org/10.1126/science.103.2684.677</a>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Здесь в примере локальный максимум функции плотности вероятности на интервале <span class="math inline">\((-4, \, 4)\)</span> совпадает с глобальным максимумом — мы об этом знаем, потому что форма распределения нам известна. В случае эмпрического распределения корректнее говорить именно о локальном максимуме, так как глобальный максимум нам не доступен ввиду того, что мы работаем с выборкой.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Per se (лат.) — «само по себе», «как таковое», «в чистом виде».<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1477,18 +1732,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1520,7 +1764,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1528,7 +1792,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1625,7 +1889,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1854,12 +2117,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./desc-statintro.html" class="pagination-link" aria-label="Введение в статистику">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./desc-variation.html" class="pagination-link" aria-label="Глава книги">
-        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Глава книги</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

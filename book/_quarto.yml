@@ -35,8 +35,8 @@ book:
       - r-tidy.qmd
       - r-strings.qmd
       - r-datetime.qmd
-      - r-visbase.qmd
       - r-visggplot.qmd
+      - r-visbase.qmd
       - r-oop.qmd
     - part: part-math.qmd
       chapters: 

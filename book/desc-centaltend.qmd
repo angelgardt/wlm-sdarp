@@ -6,6 +6,13 @@
 knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
 ```
 
+```{r pkgs, echo=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+theme_update(legend.position = "bottom")
+```
+
+
 :::{.intro}
 Мы ввелись в статистику, поговорили о ключевых понятиях --- выборка, генеральная совокупность, параметры и выборочные оценки --- а также изучили способы формирования выборки. Теперь пришло время подумать о том, что делать, когда выборка собрана. Первоначально хотелось бы понять, что собственно в выборке у нас происходит --- *описать всю эту ситуацию*.
 
@@ -13,403 +20,1142 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
-::::{.quote}
---- Текст цитаты <br>
---- Тоже текст цитаты <br>
 
-:::{.quote-sign}
-Источник цитаты <br>
-Год цитаты
+Итак, мы хотим описать наши данные. Точнее, распределения переменных, которые у нас в данных есть. Хотим сделать это просто и ёмко. Насколько просто и ёмко? Ну, допустим максимально --- одним числом. Для этого неплохо подойдет значение переменной, которое лежит *в центре* распределения.
+
+Как мы будем искать, что там в центре распределения? Зависит от [шкалы]() [@stevens46], в которой измерена конкретная переменная (@tbl-scales-cental-tendencies).
+
+:::{#tbl-scales-cental-tendencies}
+
+|    **Шкала**   |        **Мера центральной тенденции**        |
+|:---------------|:---------------------------------------------|
+| _Номинальная_  | Мода                                         |
+| _Порядковая_   | Медиана                                      |
+| _Интервальная_ | Среднее арифметическое                       |
+| _Абсолютная_   | Среднее арифметическое, геометрическое и др. |
+
+Шкалы и меры центральной тенденции
+
 :::
 
-::::
-
-> Цитата
+Однако есть некоторые нюансы.
 
 
-
-
-## Заголовок раздела {#chapterid-sectionid}
-
-:::{.lab-junior}
+## Мода {#desc-centraltend-mode}
+::: {.lab-chapter .lab-junior}
 :::
 
-Тест со [ссылкой](debug_quiz.qmd).
+Самый простой вариант найти центральную тенденцию --- это определить наиболее часто встречающееся значение переменной. Это значение называется *модой (mode)*.
 
-
-### Заголовок подраздела {#chapterid-subsectionid}
-
-:::{.lab-junior}
+::: {#def-mode-discrete}
+**Мода** [дискретной переменной] --- наиболее часто встречающееся значение данной переменной.
 :::
 
-Тест со [ссылкой](debug_sheet.qmd).
+Например, у нас есть следующий ряд наблюдений по какой-то переменной:
 
+$$
+\begin{bmatrix}
+1 & 3 & 4 & 6 & 3 & 2 & 3 & 3 & 2 & 4 & 1
+\end{bmatrix}
+$$
 
+Если мы посчитаем, сколько раз встретилась каждое значение переменной и составим таблицу частот, то получим следующее:
 
+$$
+\begin{matrix}
+\text{Значение} & 1 & 2 & 3 & 4 & 6 \\
+\text{Частота}  & 2 & 2 & 4 & 2 & 1
+\end{matrix}
+$$
 
-## Примеры `кода` {#chapterid-code-examples}
+Очевидно, что $3$ встречается чаще других значений --- это и есть мода.
 
-:::{.lab-middle}
+Понятно, что если на нашей шкале нет чисел, а есть текстовые лейблы, это ничего не меняет. Пусть у нас есть переменная с кодами аэропортов:
+
+$$
+\begin{bmatrix}
+\text{DME} & \text{LED} & \text{IST} & \text{AER} & \text{IST} &\text{SVO} & \text{LED} & \text{VKO} & \text{LED} & \text{IST} & \text{IST} & \text{VKO} & \text{AER} & \text{DME}
+\end{bmatrix}
+$$
+
+$$
+\begin{matrix}
+\text{Значение} & \text{DME} & \text{LED} & \text{IST} & \text{AER} & \text{SVO} & \text{VKO}\\
+\text{Частота}  & 2 & 3 & 4 & 2 & 1 & 2
+\end{matrix}
+$$
+
+Мода --- $\text{IST}$ (Международный аэропорт Стамбула, İstanbul Havalimanı).
+
+Так мы действуем в случае с эмпирическим распределением. Если нам известна [функция вероятности переменной (probability mass function, PMF)](), то мы можем определить моду, основываясь на ней:
+
+::: {#def-mode-discrete-pmf}
+**Мода** [дискретной переменной] --- это значение переменной, при котором её функция вероятности принимает своё максимальное значение.
 :::
 
+$$
+\text{mode}(X) = \arg \max(\text{PMF}(X)) = \arg \max_{x_i}(\prob (X = x_i)),
+$$ {#eq-mode-pmf}
 
-### Чанк без подписи {#chapterid-code-nolst}
+где $X$ --- дискретная случайная величина, $x_i$ --- значение этой случайной величины.
 
-```{r simple-chunk}
-## подключаем самую лучшую библиотеку
-library(tidyverse)
-theme_set(theme_bw()) ## устанавливаем тему
+```{r mode-pmf, echo=FALSE}
+#| label: fig-mode-pmf
+#| fig-cap: "Определение моды с помощью функции вероятности"
 
-head(diamonds)
 
+tibble(x = 1:10,
+       y = c(.01, .03, .07, .1, .1, .15, .2, .1, .09, .15)) |> 
+  ggplot(aes(x, y)) +
+  annotate(geom = "point", x = 7, y = 0.2, size = 7, shape = 21, color = "darkred", fill = "red", alpha = .5) +
+  geom_point() +
+  geom_vline(xintercept = 7, color = "darkred", linetype = "dashed") +
+  annotate(geom = "text", label = "это максимум функции", 
+           x = 8.5, y = 0.2, color = "darkred") +
+  annotate(geom = "text", label = "это мода", 
+           x = 7, y = 0, color = "darkred") +
+  scale_x_continuous(breaks = 1:10) +
+  labs(x = "Value", y = "Probability")
 ```
 
+Окей, мы видим, что *мода отлично считается на дискретных переменных*. А как же быть с непрерывными?
 
-### Чанк с подписью {#chapterid-code-lst}
+[Напомним себе](), что вероятность того, что непрерывная случайная величина примет своё конкретное значение, равна нулю. Из этого следует, что все значения непрерывной случайное величины уникальны --- каждое повторяется только один раз. Получается, что строить частотную таблицу бессмысленно...
 
-::: {#lst-code-example}
+По этой причине **для непрерывных переменных моду не считают**.
 
-```{r code-example, eval=FALSE}
-ds <- tibble()
 
-for (i in 1:100) {
-  if (i %% 2 == 1) {
-    read_csv(files[i]) %>% 
-      bind_rows(ds) -> ds
-  } else {
-    print('a')
-    stop()
-  }
+### Мода для непрерывной переменной {#desc-centraltend-mode-contunious}
+::: {.lab-chapter .lab-middle}
+:::
+
+Да, это так. Действительно, посчитать моду для непрерывной переменной способом, аналогичным тому, что мы увидели выше, не получится. Однако математиков это не остановило.
+
+Если мы посмотрим на [график плотности вероятности]() (probability density function, PDF), который является аналогом PMF для дискретных переменных, мы увидим, что какие-то значения встречаются чаще, а какие-то реже. Что в общем-то логично. Напомним себе, [как это выглядит](), например, для любимого [стандартного] [нормального распределения]():
+
+```{r mode-continuous-data, echo=FALSE}
+mode_cont_data <- tibble(x = seq(-4, 4, by = .01), y = dnorm(x))
+mode_high_freq <- mode_cont_data |> filter(x > -.5 & x < .5)
+mode_low_freq <- mode_cont_data |> filter(x > -2.5 & x < -1.5)
+```
+
+```{r mode-continuous-freqs, echo=FALSE}
+#| label: fig-continuous-freqs
+#| fig-cap: "Частоты интервалов значений непрерывной случайной величины на функции плотности распределения"
+
+
+ggplot(mode_cont_data,
+       aes(x, y)) +
+  geom_line() +
+  geom_polygon(data = tibble(y = c(0, 0), x = c(.5, -.5)) |> 
+                 bind_rows(mode_high_freq),
+               fill = "seagreen", alpha = .5) +
+  geom_polygon(data = tibble(y = c(0, 0), x = c(-1.5, -2.5)) |>
+                 bind_rows(mode_low_freq),
+               fill = "royalblue", alpha = .5) +
+  annotate(geom = "text", label = "эти значения встречаются часто",
+           x = 0, y = .2, angle = 90, color = "darkgreen") +
+  annotate(geom = "text", label = "эти значения\nвстречаются реже",
+           x = -2.2, y = .15, angle = 90, color = "darkblue") +
+  labs(x = "Value", y = "Density")
+```
+
+То есть, самые часто встречающиеся значения --- это **пик распределения**. Там и должна быть мода. Визуально это выглядит достаточно справедливо.
+
+Математики так и решили:
+
+::: {#def-mode-continuous}
+**Мода** [непрерывной переменной] --- это значение переменной, при котором её функция плотности вероятности достигает локального[^local-max-mode] максимума.
+:::
+
+[^local-max-mode]: Здесь в примере локальный максимум функции плотности вероятности на интервале $(-4, \, 4)$ совпадает с глобальным максимумом --- мы об этом знаем, потому что форма распределения нам известна. В случае эмпрического распределения корректнее говорить именно о локальном максимуме, так как глобальный максимум нам не доступен ввиду того, что мы работаем с выборкой.
+
+$$
+\text{mode}(X) = \arg \max(\text{PDF}(X)) = \arg \max_{x \in S}f(x),
+$$ {#eq-mode-pdf}
+
+гдe $X$ --- непрерывная случайная величина, $x$ --- значение этой случайной величины, $S$ --- имеющаяся выборка значений переменной.
+
+```{r mode-continuous-mode, echo=FALSE}
+#| label: fig-continuous-mode
+#| fig-cap: "Положение моды на функции плотности [стандартного] нормального распределения"
+
+
+ggplot(mode_cont_data,
+       aes(x, y)) +
+  geom_line() +
+  geom_polygon(data = tibble(y = c(0, 0), x = c(.5, -.5)) |> 
+                 bind_rows(mode_high_freq),
+               fill = "seagreen", alpha = .5) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "darkgreen") +
+  geom_point(aes(x = 0, y = .4), color = "darkgreen", size = 2) +
+  annotate(geom = "text", label = "мода тут",
+           x = 0, y = 0, color = "darkgreen") +
+  annotate(geom = "text", label = "локальный максимум тут",
+           x = 1.5, y = 0.4, color = "darkgreen") +
+  labs(x = "Value", y = "Density")
+```
+
+Хотя моду для непрерывной переменной вычислить можно, обычно этого не делают, так как достаточно других мер центральной тенденции для описания распределения.
+
+***
+
+::: {.callout-warning}
+- мода --- это значение переменной, которое встречается в выборке чаще всего
+- на практике она рассчитывается через построение частотной таблицы
+- используется с дискретными (номинальными и порядковыми) переменными
+- для непрерывных переменных её рассчитать можно, но обычного этого не делают
+:::
+
+
+
+### Унимодальные и полимодальные распределения {#desc-centraltend-unimodal-bimodal}
+::: {.lab-chapter .lab-junior}
+:::
+
+Нормальное распределение, как и ряд других --- биномиальное, отрицательное биномиальное, пуассоновское --- относятся к *унимодальным*. Такие распределения имеют только *одну моду* (см. @fig-norm-mode, @fig-binom-mode, @fig-poiss-mode).
+
+```{r mode-norm-mode, echo=FALSE}
+#| label: fig-norm-mode
+#| fig-cap: "Нормальное распределение (μ = 2$, σ = 0.5). Пунктирной линией обозначено положение моды."
+
+
+tibble(x = seq(0, 4, by = .01),
+       y = dnorm(x, mean = 2, sd = 0.5)) |> 
+  ggplot(aes(x, y)) +
+  geom_line() +
+  geom_vline(xintercept = 2, linetype = "dashed") +
+  labs(x = "Value", y = "Density")
+```
+
+```{r mode-binom-mode, echo=FALSE}
+#| label: fig-binom-mode
+#| fig-cap: "Биномиальное распределение (n = 50, p = 0.3). Пунктирной линией обозначено положение моды."
+
+
+tibble(x = seq(0, 20, by = 1),
+       y = dbinom(x, prob = 0.3, size = 50)) |> 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  geom_vline(xintercept = 15, linetype = "dashed") +
+  labs(x = "Value", y = "Probability")
+```
+
+```{r mode-poiss-mode, echo=FALSE}
+#| label: fig-poiss-mode
+#| fig-cap: "Распределение Пуассона (λ = 5.5). Пунктирной линией обозначено положение моды."
+
+
+tibble(x = seq(0, 20, by = 1),
+       y = dpois(x, lambda = 5.5)) |> 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  geom_vline(xintercept = 5, linetype = "dashed") +
+  labs(x = "Value", y = "Probability")
+```
+
+Это теоретические распределения. С эмпирическими распределениями дело обстоит так же, хотя они обычно менее гладенькие и красивые (см. @fig-mode-norm-sample и @fig-mode-nbinom-sample).
+
+```{r mode-norm-sample, echo=FALSE}
+#| label: fig-mode-norm-sample
+#| fig-cap: "Эмпирическое распределение, сгенерированное из нормального распределения (μ = 8, σ = 4, n = 100). `set.seed(314)`. Пунктирной линией обозначено положение моды."
+
+set.seed(314)
+tibble(x = rnorm(100, mean = 8, sd = 4)) |> 
+  ggplot(aes(x = x)) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 fill = "gray90", binwidth = .5) +
+  geom_density() +
+  geom_vline(xintercept = 8.5, linetype = "dashed") +
+  labs(x = "Value", y = "Density")
+```
+
+```{r mode-norm-sample, echo=FALSE}
+#| label: fig-mode-nbinom-sample
+#| fig-cap: "Эмпирическое распределение, сгенерированное из логнормального распределения (μ = 1.1, σ = 1.39, n = 30). `set.seed(314)`. Пунктирной линией обозначено положение моды."
+
+set.seed(314)
+tibble(x = rlnorm(n = 30, meanlog = 1.1, sdlog = 1.39)) |> 
+  ggplot(aes(x = x)) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 fill = "gray90", binwidth = .5) +
+  geom_density() +
+  geom_vline(xintercept = 1.35, linetype = "dashed") +
+  labs(x = "Value", y = "Density")
+```
+
+Однако на практике возможны и другие ситуации. Например, такие (@fig-bimodal, @fig-polymodal):
+
+```{r mode-bimodal, echo=FALSE}
+#| label: fig-bimodal
+#| fig-cap: Бимодальное распределение. Сгенерировано из двух нормальных распределений (μ<sub>1</sub> = 1.5, σ<sub>1</sub> = 0.4, n<sub>1</sub> = 80; μ<sub>2</sub> = 4, σ<sub>2</sub> = 0.5, n<sub>2</sub> = 40). `set.seed(65)`. Пунктирными линиями обозначены положения мод.
+
+set.seed(65)
+tibble(x = c(rnorm(80, 1.5, 0.4), rnorm(40, 4, 0.5))) |> 
+  ggplot(aes(x)) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 fill = "gray90", binwidth = .4) +
+  geom_density() +
+  geom_vline(xintercept = 1.5, linetype = "dashed") +
+  geom_vline(xintercept = 4.1, linetype = "dashed") +
+  labs(x = "Value", y = "Density")
+```
+
+```{r mode-polymodal, echo=FALSE}
+#| label: fig-polymodal
+#| fig-cap: Полимодальное распределение. Сгенерировано из двух нормальных распределений (μ<sub>1</sub> = 1.5, σ<sub>1</sub> = 0.3, n<sub>1</sub> = 80; μ<sub>2</sub> = 3.4, σ<sub>2</sub> = 0.5, n<sub>2</sub> = 40) и бета-распределения (α = 2, β = 4, n = 50). `set.seed(65)`. Пунктирными линиями обозначены положения мод.
+
+set.seed(65)
+tibble(x = c(rnorm(80, 1.5, 0.3), rnorm(40, 3.4, 0.5), rbeta(50, 2, 4))) |> 
+  ggplot(aes(x)) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 fill = "gray90", binwidth = .4) +
+  geom_density() +
+  geom_vline(xintercept = 0.4, linetype = "dashed") +
+  geom_vline(xintercept = 1.45, linetype = "dashed") +
+  geom_vline(xintercept = 3.5, linetype = "dashed") +
+  labs(x = "Value", y = "Density")
+```
+
+В первом случае (@fig-bimodal) мы видим *два локальных максимума* функции плотности вероятности --- такое распределение называется **бимодальным**. Во втором случае (@fig-polymodal) функция плотности вероятности имеет *три локальных максимума* --- такое распределение называется **полимодальным**. Бимональное распределение является частным случаем полимодального распределения.
+
+В прицнипе, пиков может быть и больше, однако при работе с реальными данными чаще всего мы сталкиваемся с бимодальными распределениями.
+
+**Что это значит и что с этим делать?**
+
+Бимодальное распределение сигнализирует нам о **гетерогенности выборки**. Если мы видим два выделяющихся пика, стоит подумать о том, что наша выборка неоднородна и в ней выделяются две подвыборки. Посмотрим на структуру выборки из примера выше (@fig-bimodal-struct):
+
+```{r mode-bimodal-struct, echo=FALSE}
+#| label: fig-bimodal-struct
+#| fig-cap: "Структура бимодального распределения из @fig-bimodal. Для удобства сопоставления графиков плотностей вероятности по оси ординат отложены частоты."
+
+set.seed(65)
+tibble(x = c(rnorm(80, 1.5, 0.4), rnorm(40, 4, 0.5)),
+       d = c(rep("A", times = 80), rep("B", times = 40))) -> bimodal_struct_data
+gridExtra::grid.arrange(
+  bimodal_struct_data |> 
+    ggplot(aes(x)) +
+    geom_histogram(fill = "gray90", binwidth = .4) +
+    geom_density(aes(y = after_stat(count))) +
+    geom_vline(xintercept = 1.5, linetype = "dashed") +
+    geom_vline(xintercept = 4.1, linetype = "dashed") +
+    labs(x = "Value", y = "Count"),
+  
+  bimodal_struct_data |> 
+    ggplot(aes(x)) +
+    geom_histogram(aes(fill = d), 
+                   alpha = .3, binwidth = .4) +
+    geom_density(aes(y = after_stat(count), color = d)) +
+    geom_vline(xintercept = 1.5, linetype = "dashed") +
+    geom_vline(xintercept = 4.1, linetype = "dashed") +
+    guides(color = "none", fill = "none") +
+    labs(x = "Value", y = "Count")
+)
+```
+
+Действительно, наше распределение состоит из двух других распределений, у каждого из которого есть своя мода --- поэтому итоговое распределение получается бимодальным. Конечно, сейчас нам это очень удобно показать, потому что мы знаем, как это распределение генерировалось. Когда же у нас есть реальные данные и мы там наблюдаем такого «верблюда», бывает достаточно сложно сказать, что «пошло не так».
+
+Само по себе распределение не даст нам ответ на вопрос, почему оно бимодальное --- чтобы выяснить причины такого поведения переменной нам потребуются другие данные. Обычно у вас в данных есть «соцдем» --- пол, возраст, сфера и место работы, уровень обрвазования и др. Попробуйте построить распределение с разбиением исследуемой бимодальной переменной по переменным «соцдема». Это, к сожалению, не является рецептом успеха, поскольку причина гетерогенности выборки может и не содержаться в ваших данных, но такое изучение данных станет хорошим показателем того, что вы не просто «забили» на странное распределение своей переменной, а поисследователи возможные его причины.
+
+Если вам удалось найти причины гетерогенности выборки --- допустим, у вас выделяются подвыборки «бакалавры» и «магистры» --- стоит подумать о том, как обойтись с этой переменной в планируемом анализе, так как игнорировать её, по-видимому, нельзя, поскольку она влияет на вариатиность данных.
+
+::: {.callout-tip title="Соцдем лишним не бывает"}
+На этапе планирования исследования подумайте о том, чем могут отличаться ваши респонденты или испытуемые между собой, помимо индивидуальных различий.
+
+- Если в эксперименте используете задачу мысленного вращения (mental rotation, [@shepard71]), вполне возможно, испытуемые, работающие в сфере 3D-моделирования или дизайна интерьеров, могут сформировать подвыборку.
+- В случае HR-исследования, где фиксируется доход респондента, необходимо записать город, в котором он проживает и/или работает.
+- При изучении удовлетворенности городским пространством важными пунктами станут беременность, наличие/отсутствие детей, наличие/отсутствие автомобиля и др.
+
+И так далее. Примеров для каждого случая можно подобрать много.
+
+Стоит ли, скажем, в первом случае сразу исключить из выборки 3D-моделлеров? Зависит. От количества времени и денег на проведение исследования. Однако *как минимум эту информацию надо зафиксировать в данных*. А решить, исключать ли этих респондентов из выборки или нет, можно и позже. Главно об этом написать в отчете/статье, когда будете описывать предобработку данных.
+:::
+
+***
+
+::: {.callout-warning title="Take-home: бимодальное распределение"}
+- бимодальное распределение намекает на неоднородность данных --- скорее всего, в выборке есть две подвыборки
+- необходимо поискать в данных причины этой неодноросности, например, в социально-демографических переменных
+- если удалось найти переменную, объясняющую бимодальность, стоит подумать о том, как её учитывать в планируемом анализе
+:::
+
+
+
+## Медиана {#desc-centraltend-median}
+::: {.lab-chapter .lab-junior}
+:::
+
+Для номинальной шкалы мода --- это единственно возможная мера центральной тенденции, потому что на этой шкале отсутствует порядок элементов. На других шкалах наблюдения уже можно сортировать по возрастнию или убыванию, поскольку начиная с ранговой (порядковой) шкалы на всех них определена операция сравнения на «больше-меньше».
+
+Возьмем тот же ряд наблюдений, что и в предыдущем разделе:
+
+$$
+\begin{bmatrix}
+1 & 3 & 4 & 6 & 3 & 2 & 3 & 3 & 2 & 4 & 1
+\end{bmatrix}
+$$
+
+Отсортируем наблюдения по возрастанию:
+
+$$
+\begin{bmatrix}
+1  & 1 & 2 & 2 & 3 & 3 & 3 & 3 & 4 & 4 & 6
+\end{bmatrix}
+$$
+
+Наша задача --- определить центральную тенденцию. Давайте посмотрим, что оказалось в середине отсортированного ряда:
+
+
+$$
+\begin{bmatrix}
+1 & 1 & 2 & 2 & 3 & \mathbf{3} & 3 & 3 & 4 & 4 & 6
+\end{bmatrix}
+$$
+
+Это медиана. В данном случае она равна $3$.
+
+::: {#def-median}
+**Медиана (median)** --- это значение, которое располагается на середине отсортированного ряда значений переменной. 
+:::
+
+Медиана делит все наблюдения переменной ровно пополам и половина наблюдений оказывается по одну сторону от медианы, а половина --- по другую.
+
+Если число наблюдений нечётное, то всё ясно --- в середине отсортированного ряда будет какое-то значение. А если число наблюдений чётное? Тогда мы попадаем между значениями. 
+
+Возьмем для примера такой вектор наблюдений:
+
+$$
+\begin{bmatrix}
+14 & 10 & 9 & 16 & 30 & 3 & 25 & 8 & 18 & 7
+\end{bmatrix}
+$$
+
+Отсортируем:
+
+$$
+\begin{bmatrix}
+3 & 7 & 8 & 9 & 10 & 14 & 16 & 18 & 25 & 30
+\end{bmatrix}
+$$
+
+Найдем середину:
+
+$$
+\begin{bmatrix}
+3 & 7 & 8 & 9 & 10 & | & 14 & 16 & 18 & 25 & 30
+\end{bmatrix}
+$$
+
+В таком случае в качестве медианы берется среднее между двумя срединными значениями:
+
+$$
+\text{median} = \frac{10 + 14}{2} = 12
+$$
+
+Итого, формализовать вычисление медианы можно следующим образом:
+
+$$
+\text{median}(X) = X(a) =
+\cases{
+X\left(\frac{n+1}{2}\right), & if  2 | n \\
+\dfrac{X(\frac{n}{2}) + X(\frac{n}{2} + 1)}{2}, & otherwise
 }
+$$ {#eq-median-formula}
+
+где $X$ --- ряд наблюдений случайной величины, $n$ --- число наблюдений, $X(a)$ --- наблюдение с индексом $a$ в отсортированном векторе $X$.
+
+Если мы будем смотреть на медиану с позиции описания распределения, то она будет той самой линией, которая разделит площадь под графиком функции плотности вероятности пополам:
+
+```{r median-norm, echo=FALSE}
+#| label: fig-median-norm
+#| fig-cap: "Медиана нормального распределения"
+
+tibble(x = seq(-4, 4, by = .01),
+       y = dnorm(x)) -> median_norm_data 
+median_norm_data |> filter(x >= 0) -> median_norm_upper
+median_norm_data |> filter(x <= 0) -> median_norm_lower
+median_norm_data |> 
+  ggplot(aes(x, y)) +
+  geom_line() +
+  geom_polygon(data = tibble(y = c(0, 0), x = c(4, 0)) |> 
+                 bind_rows(median_norm_upper),
+               fill = "seagreen", alpha = 0.5) +
+  geom_polygon(data = tibble(y = c(0, 0), x = c(0, -4)) |> 
+                 bind_rows(median_norm_lower),
+               fill = "royalblue", alpha = 0.5) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  annotate(geom = "text", label = "эти значения\nбольше медианы \n\n 50%", 
+           color = "darkgreen", x = 1, y = 0.05) +
+  annotate(geom = "text", label = "эти значения\nменьше медианы \n\n 50%", 
+           color = "darkblue", x = -1, y = 0.05) +
+  annotate(geom = "text", label = "это медиана", 
+           x = -0.01, y = 0)
 ```
 
-Пример чанка с подписью
+При этом форма распределения не имеет значения --- площадь под графиком всегда будет делиться пополам:
 
-:::
+```{r median-left-skew, echo=FALSE}
+#| label: fig-median-left-skew
+#| fig-cap: Медиана распределения с отрицательной асимметрией.
 
-Ссылка на чанк с подписью (@lst-for-example).
+set.seed(115)
+tibble(x = seq(0.3, 1, by = .001),
+       y = dbeta(x, 7, 1.5)) -> median_leftskew_data
 
+median_leftskew_data |> 
+  filter(x >= .845) %>%
+  bind_rows(
+    tibble(y = c(0, 0),
+           x = c(max(median_leftskew_data$x), .845)),
+    .) -> median_leftskew_data_upper
 
-### Аннотированный чанк {#chapterid-code-annotated}
+median_leftskew_data |> 
+  filter(x <= .845) %>%
+  bind_rows(
+    tibble(y = c(0, 0),
+           x = c(.845, min(median_leftskew_data$x))),
+    .) -> median_leftskew_data_lower
 
-::: {#lst-code-annotated}
+# DescTools::AUC(median_leftskew_data_upper$x,
+#                median_leftskew_data_upper$y)
 
-```{r annotated-chunk}
-## большой код для агрегации
-
-diamonds %>% # <1>
-  summarise(mean_price_cut = mean(price), # <2>
-            sd_price_cut = sd(price),
-            .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>% # <3>
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive", # <4>
-                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
-                                     "average")))
-```
-1. Берем датасет `diamonds`, что нарисовать график про бриллианты
-2. Рассчитываем базовые описательные статистики
-3. Объединяем агрегированные данные с исходными
-4. Разделяем наблюдения на группы
-
-:::
-
-
-
-
-## Примеры иллюстраций {#chapterid-figures}
-
-:::{.lab-senior}
-:::
-
-
-### Импорт графического файла {#chapterid-import-pic}
-
-Ссылка на импортированную картинку (@fig-gh-soc-preview):
-
-![Превью репозитория](img/test-gh-social-preview.png){#fig-gh-soc-preview}
-
-
-### График, построенный с помощью кода {#chapterid-plot}
-
-```{r plot-huge-chunk}
-#| label: fig-huge-chunk
-#| fig-cap: "Это картинка, нарисованная большим кодом"
-
-## большой код для графика
-
-diamonds %>% # <1>
-  summarise(mean_price_cut = mean(price),
-            sd_price_cut = sd(price),
-            .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>%
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive",
-                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
-                                     "average"))) %>% 
-  ggplot(aes(clarity, price,
-             shape = price_group, color = color)) +
-  stat_summary(geom = "pointrange", 
-               fun.data = mean_cl_boot,
-               position = position_dodge(.3)) +
-  scale_shape_manual(values = c(21, 22, 23)) +
-  theme(legend.position = "bottom")
+median_leftskew_data |> 
+  ggplot(aes(x, y)) +
+  geom_line() +
+  geom_polygon(data = median_leftskew_data_lower, 
+               aes(x = x, y = y), fill = "royalblue", alpha = .5) +
+  geom_polygon(data = median_leftskew_data_upper, 
+               aes(x = x, y = y), fill = "seagreen", alpha = .5) +
+  geom_vline(xintercept = 0.845, linetype = "dashed") +
+  annotate(geom = "text", label = "50%", 
+           color = "darkgreen", x = .9, y = 1) +
+  annotate(geom = "text", label = "50%", 
+           color = "darkblue", x = .8, y = 1) +
+  labs(x = "Value", y = "Density")
 ```
 
+```{r median-right-skew, echo=FALSE}
+#| label: fig-median-right-skew
+#| fig-cap: Медиана распределения с положительной асимметрией.
 
-```{r plot-huge-chunk-annotated}
-#| label: fig-huge-chunk-annotated
-#| fig-cap: "Это картинка, нарисованная большим кодом, который аннотирован"
+set.seed(115)
+tibble(x = seq(0, 5, by = .001),
+       y = dgamma(x, 2, 2)) -> median_rightskew_data
 
-## большой код для графика
+median_rightskew_data |>
+  filter(x >= .85) %>%
+  bind_rows(
+    tibble(y = c(0, 0),
+           x = c(max(median_rightskew_data$x), .85)),
+    .) -> median_rightskew_data_upper
 
-diamonds %>% # <1>
-  summarise(mean_price_cut = mean(price), # <2>
-            sd_price_cut = sd(price),
-            .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>% # <3>
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive", # <4>
-                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
-                                     "average"))) %>% 
-  ggplot(aes(clarity, price, # <5>
-             shape = price_group, color = color)) +
-  stat_summary(geom = "pointrange", 
-               fun.data = mean_cl_boot,
-               position = position_dodge(.3)) +
-  scale_shape_manual(values = c(21, 22, 23)) +
-  theme(legend.position = "bottom")
-```
-1. Берем датасет `diamonds`, что нарисовать график про бриллианты
-2. Рассчитываем базовые описательные статистики
-3. Объединяем агрегированные данные с исходными
-4. Разделяем наблюдения на группы
-5. Начинаем рисовать
+median_rightskew_data |>
+  filter(x <= .85) %>%
+  bind_rows(
+    tibble(y = c(0, 0),
+           x = c(.85, min(median_rightskew_data$x))),
+    .) -> median_rightskew_data_lower
 
+# DescTools::AUC(median_rightskew_data_lower$x,
+#                median_rightskew_data_lower$y)
 
-### Несколько изображений в одной иллюстрации {#chapterid-several-pics}
-
-:::{#fig-merging-joins layout-nrow=2}
-![left_join(x, y)](img/data-wrangling/left_join.png){#fig-left-join}
-
-![right_join(x, y)](img/data-wrangling/right_join.png){#fig-right-join}
-
-![full_join(x, y)](img/data-wrangling/full_join.png){#fig-full-join}
-
-![inner_join(x, y)](img/data-wrangling/inner_join.png){#fig-inner-join}
-
-Объединяющие джойны
-:::
-
-
-```{r several-plots-one-figure-plots}
-plot(0:1) -> plot1
-plot(0:2) -> plot2
-plot(0:3) -> plot3
-plot(0:4) -> plot4
+median_rightskew_data |> 
+  ggplot(aes(x, y)) +
+  geom_line() +
+  geom_polygon(data = median_rightskew_data_lower, 
+               aes(x = x, y = y), fill = "royalblue", alpha = .5) +
+  geom_polygon(data = median_rightskew_data_upper, 
+               aes(x = x, y = y), fill = "seagreen", alpha = .5) +
+  annotate(geom = "text", label = "50%", 
+           color = "darkgreen", x = 1.25, y = .2) +
+  annotate(geom = "text", label = "50%", 
+           color = "darkblue", x = .5, y = .2) +
+  geom_vline(xintercept = 0.85, linetype = "dashed") +
+  labs(x = "Value", y = "Density")
 ```
 
-```{r several-plots-one-figure}
-#| label: fig-several-plots-one-figure
-#| fig-cap: "Несколько картинок с помощью кода в одной иллюстрации"
-#| fig-subcap:
-#|   - "Картинка 1"
-#|   - "Кртинка 2"
-#|   - "Картинка 3"
-#|   - "Картинка 4"
-#| layout-ncol: 2
+```{r median-bimodal, echo=FALSE}
+#| label: fig-median-bimodal
+#| fig-cap: Медиана бимодального распределения.
 
-print(plot1)
-print(plot2)
-print(plot3)
-print(plot4)
+set.seed(115)
+tibble(x = c(rnorm(80, 1.5, 0.4), rnorm(40, 4, 0.5))) -> median_bimodal_data
+
+median_bimodal_data |> 
+  ggplot(aes(x)) +
+  geom_density() -> g
+ggplot_build(g) -> b
+b$data[[1]] -> median_bimodal_data_build
+
+median_bimodal_data$x |> median() -> m
+# median_bimodal_data_build$x |> median() -> m
+
+median_bimodal_data_build |> 
+  select(y, x) |> 
+  filter(x >= m) %>% 
+  bind_rows(
+    tibble(y = c(0, 0),
+           x = c(max(median_bimodal_data_build$x), m)),
+    .) -> median_bimodal_data_build_upper
+
+median_bimodal_data_build |>
+  select(y, x) |> 
+  filter(x <= m) %>%
+  bind_rows(
+    tibble(y = c(0, 0),
+           x = c(m , min(median_bimodal_data_build$x))),
+    .) -> median_bimodal_data_build_lower
+
+# DescTools::AUC(x = median_bimodal_data_build_upper$x,
+#                y = median_bimodal_data_build_upper$y)
+# DescTools::AUC(x = median_bimodal_data_build_lower$x,
+#                y = median_bimodal_data_build_lower$y)
+
+median_bimodal_data_build |> 
+  ggplot(aes(x, y)) +
+  geom_histogram(data = median_bimodal_data,
+                 aes(x = x, y = after_stat(density)), 
+                 fill = "gray90", binwidth = .4) +
+  geom_line() +
+  geom_polygon(data = median_bimodal_data_build_lower, 
+               aes(x = x, y = y), fill = "royalblue", alpha = .5) +
+  geom_polygon(data = median_bimodal_data_build_upper, 
+               aes(x = x, y = y), fill = "seagreen", alpha = .5) +
+  geom_vline(xintercept = m, linetype = "dashed") +
+  annotate(geom = "text", label = "50%", 
+           color = "darkgreen", x = 2.25, y = .1) +
+  annotate(geom = "text", label = "50%", 
+           color = "darkblue", x = 1.25, y = .1) +
+  labs(x = "Value", y = "Density")
 ```
 
+***
 
-### Карта {#chapterid-map}
-
-```{r leaflet-map, echo=FALSE}
-#| code-fold: true
-#| label: fig-rbirthplace
-#| fig-cap: "Тут родился R"
-
-library(leaflet)
-leaflet() %>%
-  addTiles() %>% 
-  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
-```
-
-Ссылка неа карту (@fig-rbirthplace).
-
-
-### Видео {#chapterid-video}
-
-:::{#fig-razbor}
-
-{{< video https://youtu.be/WoffShoneY8?si=Du9xHiOVBHZaOYuE >}}
-
-Разбор третьей домашки
-:::
-
-Ссылка на видео (@fig-razbor).
-
-
-### Схема {#chapterid-scheme}
-
-```{mermaid}
-%%| label: fig-mermaidtest
-%%| fig-cap: Это схема из Mermaid
-%%| fig-align: center
-
-flowchart LR
-  A(Step 1) --> B(Step 2)
-  B --> C(Step 3)
-  C --> D(Step 4)
-  D --> E(Step 5)
-  E --> A
-```
-
-Ссылка на схему (@fig-mermaidtest).
-
-
-
-
-## Таблицы {#chapterid-tables}
-
-Ссылка на таблицу из `tibble` (@tbl-kabletable).
-
-Ссылка на таблицу из R Markdown (@tbl-markdowntable).
-
-
-### Таблица из `kable()` {#chapterid-kabletable}
-
-::: {#tbl-kabletable}
-
-```{r}
-#| echo: false
-
-tibble(A = 1:3, B = c("akjsfv", "akejrhvae", "kvuhaefrv")) %>% 
-knitr::kable()
-```
-
-Это kable-таблица
-
+::: {.callout-warning title="Take-home: медиана"}
+- медиану можно расчитать только на шкалах, где задан порядок (ранговая, интервальная, абсолютная)
+- медиана делит выборку наблюдений на две равные части
+- линия медианы раздели площадь под графиком функции плотности вероятности пополам
 :::
 
 
-### Таблица из R Markdown {#chapterid-markdowntable}
 
-::: {#tbl-markdowntable}
-
-| A 	|  B  	|  C  	|          D         	|
-|---	|:---:	|:---:	|:------------------:	|
-| 1 	| abc 	|  да 	|     $\sin (2)$     	|
-| 2 	| def 	| нет 	|   $\sqrt {4+2i}$   	|
-| 3 	| ghi 	|  да 	| $e^{i\pi} + 1 = 0$ 	|
-
-Это Markdown-таблица
-
+## Среднее {#desc-centraltend-mean}
+::: {.lab-chapter .lab-junior}
 :::
 
-## Математика {#chapterid-math}
+Если наша переменная измерена в самых мощных шкалах --- интервальной или абсолютной --- то нам доступна ещё одна мера центральной тенденции.
 
-Это уравнение прямой (@eq-line):
+
+### Арифметическое среднее {#desc-centraltend-arithmetic-mean}
+::: {.lab-chapter .lab-junior}
+:::
+
+С этим существом все знакомы еще со школы. **Арифметическое среднее (arithmetic mean, mean, average)** считается так:
 
 $$
-y = kx + b
-$$ {#eq-line}
-
-::: {#thm-nonbiasmean}
-Это теорема.
-:::
-
-:::{.proof}
-
-Это доказательство.
-
-$$ 
-X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
+M_{X} = \overline X = \dfrac{\sum_{i=1}^{n}x_i}{n},
 $$
 
-:::
+где $\overline X$ --- среднее арифметическое, $x_i$ --- наблюдение в векторе $X$, $n$ --- количество наблюдений.
 
-::: {#lem-test}
-Это лемма.
-:::
+Ну, то есть всё сложить и поделить на количество того, чего сложили. Изи.
 
-::: {#cor-test}
-Это следствие.
-:::
+#### Свойства среднего арифметического {#desc-centraltend-arithmetic-mean-features}
 
-::: {#prp-test}
-Это утверждение.
-:::
+* **Если к каждому значению распределения прибавить некоторое число (константу), то среднее увеличится на это же константу.**
 
-::: {#cnj-test}
-Это conjecutre.
-:::
 
-::: {#def-test}
-Это определение.
-:::
+$$
+M_{X+c} = M_X + c
+$$
 
-::: {#exm-test}
-Это пример.
-:::
+Вот почему:
 
-::: {#exr-test}
-Это задание.
-:::
+$$
+M_{X+c} = \frac{\sum_{i=1}^n (x_i + c)}{n} = \frac{\sum_{i=1}^n x_i + nc}{n} = \frac{\sum_{i=1}^n x_i}{n} + c = M_X + c
+$$
 
-::::{.solution}
 
-:::{.cell}
-Это решение
-:::
-::::
+Иначе говоря, распределение просто сдвинется. Например, если к каждому значению синего распределения прибавить $2$, получится красное:
 
-::: {.solution}
-<!--Это решение, где есть только код.-->
-```{r}
-print(0)
+```{r creating_tibble_for_feature_vis_1, include=FALSE}
+smpl1 <- tibble(x1 = seq(-3, 3, by = .001),
+               y1 = dnorm(x1),
+               x2 = x1 + 2,
+               y2 = dnorm(x2, mean = 2))
 ```
+
+```{r mean_feature_1, echo=FALSE}
+smpl1 %>% 
+  ggplot() +
+  geom_line(aes(x1, y1), color = "blue4") +
+  geom_line(aes(x2, y2), color = "red4") +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "blue4") +
+  geom_vline(xintercept = 2, linetype = "dashed", color = "red4") +
+  labs(x = "Value", y = "Density")
+```
+
+
+* **Если каждое значение распределение умножить на некоторое число (константу), то среднее увеличится во столько же раз.**
+
+$$
+M_{X \times c} = M_X \times c
+$$
+
+Вот почему:
+
+$$
+M_{X \times c} = \frac{\sum_{i=1}^n (x_i \times c)}{n} = \frac{c \times \sum_{i=1}^n x_i}{n} = \frac{\sum_{i=1}^n x_i}{n} \times c = M_X \times c
+$$
+
+Например, здесь каждое значение синего распределения умножили на $3$ и получили красное:
+
+```{r creating_tibble_for_feature_vis_2, include=FALSE}
+smpl2 <- tibble(x1 = seq(-2, 4, by = .001),
+               y1 = dnorm(x1, mean = 1),
+               x2 = x1 * 3,
+               y2 = dnorm(x2, mean = 3, sd = 3))
+```
+
+```{r mean_feature_2, echo=FALSE}
+smpl2 %>% 
+  ggplot() +
+  geom_line(aes(x1, y1), color = "blue4") +
+  geom_line(aes(x2, y2), color = "red4") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "blue4") +
+  geom_vline(xintercept = 3, linetype = "dashed", color = "red4") +
+  labs(x = "Value", y = "Density")
+```
+
+Тут, правда, явно [что-то ещё](#var_features) произошло, но мы пока этого не знаем. Однако, отметит этот факт.
+
+
+* **Сумма отклонений от среднего значения равна нулю.**
+
+$$
+\sum_{i=1}^n(x_i - M_X) = 0
+$$
+
+Элегантное доказательство:
+
+$$
+\sum_{i=1}^n(x_i - M_X) = \sum_{i=1}^n x_i - \sum_{i=1}^n M_X = \sum_{i=1}^n x_i - nM_X = \\
+= \sum_{i=1}^n x_i - n \times \frac{1}{n} \sum_{i=1}^n x_i = \sum_{i=1}^n x_i - \sum_{i=1}^n x_i = 0
+$$
+
+Но можно это осмыслить и более просто графически.
+
+**Отклонение** --- это разность между средним и конкретным значением переменной. И, действительно, так как среднее находится в центре распределения, то часть значений лежит справа, а часть слева. Значит, будут как положительные, так и отрицательные отклонения --- и их сумма в итоге будет равна нулю.
+
+```{r df_polygons, include=FALSE}
+poly_left <- smpl1 %>% 
+  select(x1, y1) %>% 
+  filter(x1 < 0) %>% 
+  bind_rows(tibble(x1 = c(0, -3), y1 = c(0, 0)))
+poly_right <- smpl1 %>% 
+  select(x1, y1) %>% 
+  filter(x1 > 0) %>% 
+  bind_rows(tibble(x1 = c(3, 0), y1 = c(0, 0)))
+```
+
+```{r zero_deviation_sum, echo=FALSE}
+smpl1 %>% 
+  ggplot() +
+  geom_line(aes(x1, y1)) +
+  geom_polygon(data = poly_left, aes(x=x1, y=y1), fill="red4", alpha = .5) +
+  geom_polygon(data = poly_right, aes(x=x1, y=y1), fill="green4", alpha = .5) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  annotate(geom="text", x = -1, y = .05, label ="отрицательные\nотклонения") +
+  annotate(geom="text", x = 1, y = .05, label ="положительные\nотклонения") +
+  labs(x = "Value", y = "Density")
+```
+
+
+
+
+### Усеченное среднее {#desc-centraltend-trimmed-mean}
+::: {.lab-chapter .lab-junior}
 :::
 
-::: {.remark}
-Это замечание.
+ПРО УСЕЧЕННОЕ СРЕДНЕЕ
+
+
+Среднее арифметическое не одиноко --- есть и другие. Встретятся они вам примерно нигде --- то есть о-о-о-очень редко и, скорее всего, в каком-то изощрённом виде. Но упомянуть их, пожалуй, стоит.
+
+
+
+### Взвешенное среднее {#desc-centraltend-weighted-mean}
+::: {.lab-chapter .lab-junior}
 :::
 
+Часто бывает такая ситуация, что нас нужно посчитать среднее по каким-либо имеющимся параметрам, но одни параметры для нас важнее, чем другие. Например, мы хотим вычислить суммарный балл обучающегося за курс на основе ряда работ, выполненных в течение курса, однако мы понимаем, что тест из десяти вопросов с множественном выбором явно менее показателен, чем, например, аналитическое эссе или экзаменационная оценка. Что делать? Взвесить параметры!
+
+Что значит взвесить? Умножить на некоторое число. На самом деле, любое. Пусть мы посчитали, что написать эссе в три абстрактных раза тяжелее, чем написать тест, а сдать экзамен в два раза тяжелее, чем написать эссе. Тогда мы можем присвоить баллу за тест вес $1$, баллу за аналитическое эссе вес $3$, а экзамену --- вес $6$. Тогда итоговая оценка за курс будет рассчитываться следующим образом:
+
+$$
+\text{final score } = 1 \cdot \text{test} + 3 \cdot \text{essay} + 6 \cdot \text{exam}
+$$
+
+Суперкласс. Однако! Весьма вероятно, что в учебном заведении принята единая система оценки для всех видов работ (ну, скажем, некая абстрактная десятибалльная система в сферическом вакууме). Получается, если и за тест, и за эссе, и за экзамен у студента по 10 баллов, то суммарный балл 100, что, кажется, больше, чем 10. Чтобы вернуться к изначальным границам баллов, нужно моделить суммарный балл на сумму весов параметров:
+
+$$
+\text{final score } = \frac{1 \cdot \text{test} + 3 \cdot \text{essay} + 6 \cdot \text{exam}}{1 + 3 + 6}
+$$
+
+Кайф! Собственно, это и есть взвешенное среднее. Коэффициенты, на которые мы умножаем значение параметров, называются *весами параметров*. И в общем виде формула принимает следующий вид.
+
+$$
+\bar x = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i} = \sum_{i=1}^n w_i' x_i,
+$$
+
+где $x_i$ --- значения конкретных параметров, $w_i$ --- веса конкретных параметров, $w_i'$ --- нормированные веса параметров.
+
+Вторая часть формулы показывает нам, что можно облегчить себе вычислительную жизнь, если заранее нормировать веса, то есть разделить каждый коэффициент на сумму коэффициентов:
+
+$$
+w_i' = \frac{w_i}{\sum_{i=1}^n w_i}
+$$
+
+Тогда сумма коэффициентов будет равна единице. Так чаще всего и поступают, так как тогда коэффициент будет представлять долю, которую весит данный параметр в суммарной оценке. Удобно, практично, красиво.
+
+Взвещенное среднее часто применяется именно во всякого рода ассессментах, и не только образовательных. Например, вы HR-аналитик и оцениваете персонал. Вы аналитически вычисляете веса коэффициентов (допустим, с помощью линейной регрессии), а далее на их основе высчитаете интегральный балл, по которому будете оценивать сотрудников. Это как один из индустриальных примеров.
+
+Также оно применяется, когда в наших данных есть какая-то группировка (например, когорты), при этом группы неравномерны.
 
 
 
-## Блоки {#chapterid-callouts}
-
-:::{.callout-note}
-###### Заголовок заметки
-
-Текст заметки.
+## Среднее vs медиана {#desc-centraltend-mean-vs-median}
+::: {.lab-chapter .lab-junior}
 :::
 
-:::{.callout-tip}
-###### Заголовок лайфхака
+Помимо того, что среднее и медиана информативны сами по себе, полезно смотреть на их взаимное расположение.
 
-Текст лайфхака.
+> Сравнивать будем моду, медиану и среднее [арифметическое].
+
+Итак, все три статистики --- мода, медиана и среднее --- описывают центральную тенденцию --- некоторое значение изучаемой нами переменной, вокруг которого собираются другие значения. Но если их три и все они используются, значит между ними должны быть какие-то различия. Посмотрим, какие.
+
+Во-первых, очевидно, что *моду невозможно посчитать для непрерывной переменной*.
+
+<div class="advanced">
+<details>
+<summary>*Нет, не очевидно*</summary>
+Так как вероятность того, что непрерывная случайная величина принимает своё конкретное значение, равна нулю, каждое наблюдение в нашей выборке будет уникально --- встретится ровно *один раз*. Вспомните [посмотрите] пример из предыдущей главы, где мы набирали числа из отрезка. Получается, что мода теряет свой смысл.
+</details>
+</div>
+
+Во-вторых, *медиану нельзя посчитать на номинальной шкале*. Кстати, почему?
+
+<div class="advanced">
+<details>
+<summary>*Потому что*</summary>
+на номинальной шкале нет отношения порядка между элементами. Помните, на ней нельзя сравнивать на больше-меньше. Поэтому невозможно отсортировать наблюдения, а значит, и найти медиану.
+</details>
+</div>
+
+В-третьих, *среднее тоже нельзя посчитать на номинальной шкале*.
+
+<div class="advanced">
+<details>
+<summary>*Можно, но осторожно*</summary>
+Вообще, конечно, да --- нельзя, потому что на номинальной шкале не определена операция сложения, входящая в вычисление среднего. Однако если на номинальной шкале есть только *две категории*, которые закодированы `0` и `1`, то посчитать среднее можно. Но что оно будет значить?
+
+Исходный математический смысл среднего явно утерян. Посмотрим на это по-другому: посчитать сумму единиц это всё равно, что посчитать *количество* единиц. То есть, если мы сложим все нули и единицы, то получим количество единиц среди всех наших наблюдений. А разделив количество единиц на количество наблюдений, мы получим *долю единиц* --- то есть долю наблюдений с лейблом `1`.
+
+Вот так вот.
+</details>
+</div>
+
+В-четвертых, *для дискретной переменной значение среднего арифметического будет не особо осмысленно.* Ну, скажем, странно сказать, что в аудитории в среднем стоят 15.86 столов или в российских семьях в среднем 1.5 ребенка. Конечно, в ряде случаев можно это как-то более-менее водержательно интерпретировать, но это требует усилий, а мы ленивые, поэтому лучше использовать медиану.
+
+
+**Итого, делаем следующие выводы**:
+
+* для номинальной шкалы пригодна только мода
+* для дискретных переменных подходят мода и медиана
+   * мода иногда лучше, так как точно всегда будет целым числом
+* для непрерывных переменных подходят медиана и среднее
+
+
+Теперь нам надо разобраться, как будут себя вести меры центральной тенденции в зависимости от *формы распределения*.
+
+```{r central_tendency_sampling, include=FALSE}
+set.seed(108)
+symm <- sample(
+  x = seq(1, 10, 0.5),
+  size = 600,
+  replace = TRUE,
+  prob = c(
+    .05,
+    .05,
+    .07,
+    .1,
+    .1,
+    .15,
+    .20,
+    .30,
+    .35,
+    .5,
+    .35,
+    .30,
+    .20,
+    .15,
+    .1,
+    .1,
+    .07,
+    .05,
+    .05
+  )
+)
+asymm_right <- sample(
+  x = seq(1, 10, 0.5),
+  size = 600,
+  replace = TRUE,
+  prob = c(
+    .1,
+    .2,
+    .25,
+    .4,
+    .5,
+    .5,
+    .4,
+    .35,
+    .3,
+    .25,
+    .2,
+    .25,
+    .2,
+    .15,
+    .1,
+    .1,
+    .07,
+    .05,
+    .05
+  )
+)
+asymm_left <- sample(
+  x = seq(1, 10, 0.5),
+  size = 600,
+  replace = TRUE,
+  prob = c(
+    .03,
+    .05,
+    .07,
+    .1,
+    .15,
+    .15,
+    .2,
+    .2,
+    .25,
+    .25,
+    .3,
+    .35,
+    .5,
+    .5,
+    .4,
+    .4,
+    .25,
+    .2,
+    .2
+  )
+)
+bimodal <- sample(
+  x = seq(1, 10, 0.5),
+  size = 600,
+  replace = TRUE,
+  prob = c(
+    .05,
+    .05,
+    .07,
+    .1,
+    .1,
+    .2,
+    .3,
+    .35,
+    .3,
+    .15,
+    .1,
+    .15,
+    .20,
+    .40,
+    .50,
+    .25,
+    .1,
+    .05,
+    .05
+  )
+)
+colors <- c("Mean" = "red4", "Median" = "blue4", "Mode" = "green4")
+```
+
+**На симметричном распределении мода, медиана и среднее совпадают** [или, по крайней мере, находятся очень близко друг к другу]. Здесь и далее: красная линия --- среднее, синяя --- медиана, зелёная --- мода.
+
+
+```{r central_tendency_symm, echo=FALSE}
+ggplot(NULL, aes(symm)) +
+  geom_histogram(aes(y = ..density..), alpha =.5, binwidth = .5) +
+  geom_density() +
+  geom_vline(xintercept = mean(symm), color = colors['Mean']) +
+  geom_vline(xintercept = median(symm), color = colors['Median']) +
+  # geom_vline(xintercept = mode(symm)-0.04, color = colors['Mode']) +
+  labs(x = 'Value',
+       y = 'Density')
+```
+
+**На асимметричном распределении мода [практически] в пике.** Практически, потому что функция плотности вероятности [черная линия на графике] на всегда точно аппроксимирует (в данном случае то же, что и сглаживает) эмпирическое распределение. На картинке ниже мы видим, что на гистограмме мода --- самый высокий столбик, что и показывает нам зелёная линия, которой обозначена мода. Однако при сглаживании гистограммы пик немного съехал, и мода оказалась не совсем в вершине графика функции плотности вероятности.
+
+Вообще-то это нормально, потому что мода для непрерывной величины, которую мы и визуализируем с помощью графика плотности, либо не может быть посчитана вовсе, либо --- если так получилось, и у нас все же есть повторяющиеся значения --- не слишком хорошая мера центральной тенденции. В целом, и на симметричном распределении мода тоже может находиться немного в стороне от пика.
+
+**На асимметричном распределении медиана и среднее смещены в сторону хвоста. Среднее смещено сильнее медианы.** Это связано с тем, что медиана зависит только от количества наблюдений, а среднее ещё и от самих значений. На картинке ниже пример для распределения с *правосторонней* асимметрии (потому что хвост справа) --- среднее (красная линия) *правее* медианы (синяя линия).
+
+
+```{r central_tendency_asymm_right, echo=FALSE}
+ggplot(NULL, aes(asymm_right)) +
+  geom_histogram(aes(y = ..density..), alpha =.5, binwidth = .5) +
+  geom_density() +
+  geom_vline(xintercept = mean(asymm_right), color = colors['Mean']) +
+  geom_vline(xintercept = median(asymm_right), color = colors['Median']) +
+  # geom_vline(xintercept = mode(asymm_right), color = colors['Mode']) +
+  labs(x = 'Value',
+       y = 'Density')
+```
+
+А это пример для распределения с *левосторонней* асимметрией (так как хвост слева) --- среднее (красная линия) *левее* медианы (синяя линия).
+
+
+```{r central_tendency_asymm_left, echo=FALSE}
+ggplot(NULL, aes(asymm_left)) +
+  geom_histogram(aes(y = ..density..), alpha =.5, binwidth = .5) +
+  geom_density() +
+  geom_vline(xintercept = mean(asymm_left), color = colors['Mean']) +
+  geom_vline(xintercept = median(asymm_left), color = colors['Median']) +
+  # geom_vline(xintercept = mode(asymm_left), color = colors['Mode']) +
+  labs(x = 'Value',
+       y = 'Density')
+```
+
+Для того, чтобы лучше разобраться с тем, как большие и малые значения влияют на моду и медиану посмотрим такой пример. Пусть у нас есть оценки за выпускную квалификационную работу. Например, такие:
+
+```{r marks_creating, include=FALSE}
+marks <- c(6, 7, 7, 8, 8)
+```
+```{r marks_vector}
+marks
+```
+
+Посчитаем медиану и среднее:
+
+```{r}
+median(marks)
+mean(marks)
+```
+
+Среднее $7.2$ округлиться до $7$, то есть можно считать, что среднее и медиана совпали. Ну, ок.
+
+Но в комиссии сидят два требовательных доктора наук, которые поставили оценки, сильно отличающиеся от остальных:
+
+```{r marks_creating_2, include=FALSE}
+marks <- c(6, 7, 7, 8, 8, 3, 4)
+```
+```{r marks_vector_2}
+marks
+```
+
+Посчитаем медиану и среднее теперь:
+
+```{r}
+median(marks)
+mean(marks)
+```
+
+Медиана осталась на месте --- всё ещё $7$. А вот среднее $6.1$ округлится до $6$. Казалось бы, это немного, но в смысле оценок --- это прилично, и может сильно повлиять на GPA.
+
+Итого, среднее более чувствительно к нетипичным значениям (очень большим или очень малым).
+
+
+Есть ещё один интересный вариант распределений --- **бимодальные**. Значит ли, что у этого распределения две моды? Не всегда. Посмотрим пример ниже:
+
+```{r central_tendency_bimodal, echo=FALSE}
+ggplot(NULL, aes(bimodal)) +
+  geom_histogram(aes(y = ..density..), alpha =.5, binwidth = .5) +
+  geom_density() +
+  geom_vline(xintercept = mean(bimodal), color = 'red4') +
+  geom_vline(xintercept = median(bimodal), color = 'blue4') +
+  # geom_vline(xintercept = mode(bimodal), color = 'green4') +
+  labs(x = 'Value',
+       y = 'Density')
+```
+
+Мы видим, что на графике есть два пика, однако строго математически мода одна (зеленая линия) --- и она в более высоком пике. Это логично, ибо там самые часто встречающиеся значения.
+
+<div class="advanced">
+И все жё содержательно мы не можем пренебречь вторым пиком. Почему нам он важен? Обычно бимодальное распределение --- это повод задуматься о том, что наша выборка неоднородна. *Бимодальное распределение как бы сложено из двух с центрами в двух пиках.* То есть в нашей выборке как будто бы *две подвыборки*, которые обладают разными распределениями интересующего нам признака.
+
+Что с этим делать? Хорошо всегда иметь в данным какие-либо дополнительные переменные --- как минимум соцдем --- чтобы мы могли по данным попытаться предположить, какую группировку мы могли забыть учесть при планировании исследования.
+</div>
+
+Со средним и медианой происходит примерно то же, что и в случае асимметричного распределения. Второй пик смещает к себе обе меры центральной тенденции, причем среднее вновь сильнее, чем медиану.
+
+
+## Другие средние {#desc-centraltend-other-means}
+
+### Геометрическое среднее {#desc-centraltend-geometric-mean}
+::: {.lab-chapter .lab-middle}
 :::
 
-:::{.callout-warning}
-###### Заголовок предупреждения
+Редко встречается в научных работах, но заради общего представления пусть будет. Поскольку оно считается через умножение, то может быть рассчитано только на абсолютной шкале.
 
-Текст предупреждения.
+$$
+G_{X} = \sqrt[n]{\prod_{i=1}^n x_i} = \Big(\prod_{i=1}^n x_i\Big)^{\tfrac{1}{n}}
+$$
+
+### Квадратичное среднее {#desc-centraltend-quandratic-mean}
+::: {.lab-chapter .lab-middle}
 :::
 
-:::{.callout-important}
-###### Заголовок важности
+> А вот это уже более полезная история. Мы с ним столкнёмся далее, правда под разными масками.
 
-Текст важности.
+**Квадратичное среднее (quadratic mean, root mean square, RMS)** --- это квадратный корень из среднего квадрата наблюдений. Ничего не понятно, поэтому по порядку.
+
+* есть наблюдение $x_i$
+* значит есть и его квадрат $x_i^2$
+* мы умеем считать обычно среднее арифметическое, но ведь $x_i^2$ --- это тоже наблюдение, просто в квадрате, так?
+* значит можем посчитать среднее арифметическое квадратов наблюдений --- *средний квадрат*
+
+$$
+\frac{\sum_{i=1}^n x_i^2}{n}
+$$
+
+* норм, а теперь извлечём из этого дела корень --- получим то, что там надо
+
+$$
+X_{\mathrm{RMS}} = \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}}
+$$
+
+Per se[^per-se] мы его вряд ли ещё когда-то увидим, но пару раз оно внезапно всплывет.
+
+[^per-se]: Per se (лат.) --- «само по себе», «как таковое», «в чистом виде».
+
+
+### Гармоническое среднее {#desc-centraltend-harmonic-mean}
+::: {.lab-chapter .lab-middle}
 :::
 
-:::{.callout-caution collapse="true"}
-###### Заголовок предупреждения
+> Суперэкзотичный покемон.
 
-Текст предупреждения.
-:::
+$$
+H_X = \frac{n \prod_{i=1}^n x_i}{\sum_{i=1}^n (\tfrac{1}{x} \prod_{j=1}^n x_j)} = \frac{n}{\sum_{i=1}^n \tfrac{1}{x_i}}
+$$
+
+
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
