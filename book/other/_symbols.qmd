@@ -122,6 +122,7 @@
 \newcommand{\mean}{\mathbb{mean}}
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
+\newcommand{\df}{\text{df}}
 
 
 <!--- Letters --->
@@ -133,3 +134,4 @@
 \newcommand{\TSS}{\text{TSS}}
 \newcommand{\RSS}{\text{RSS}}
 \newcommand{\ESS}{\text{ESS}}
+\newcommand{\MS}{\text{MS}}

@@ -11,10 +11,88 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
+## Идея линейной регрессии {#andan-simplelinear-idea}
+
+## Математическая модель {#andan-simplelinear-model}
+
+$$
+y_i = \beta_0 + \beta_1 x_i + \vepsilon_i
+$$
+
+$$
+y_i = \hat \beta_0 + \hat \beta_1 x_i + \hat \vepsilon_i = b_0 + b_1 x_i + e_i
+$$
+
+$$
+\hat y_i = b_0 + b_1 x_i
+$$
+
+## Тестирование качества модели {#andan-simplelinear-test}
+
+### Структура изменчивости данных с точки зрения регрессионной модели {#andan-simplelinear-test-datavar}
+
+$$
+\TSS = \sum_{i=1}^n (y_i - \overline Y)^2
+$$
+
+$$
+\ESS = \sum_{i=1}^n (\hat y_i - \overline Y)^2
+$$
+
+$$
+\RSS = \sum_{i=1}^n (y_i - \hat y_i)^2
+$$
+
+
+$$
+\MS_\text{t} = \frac{\TSS}{n-1} = \frac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1} = \hat \sigma^2_Y = s^2_Y
+$$
+
+$$
+\MS_\text{e} = \hat \sigma^2_\text{e}
+$$
+
+$$
+\MS_\text{r} = \hat \sigma^2_\text{r}
+$$
+
+
+### F-критерий {#andan-simplelinear-test-fisher}
+
+$$
+\begin{split}
+H_0 &: \sigma_\text{e} \leq \sigma_\text{r} \\
+H_1 &: \sigma_\text{e} > \sigma_\text{r}
+\end{split}
+$$
+
+
+$$
+F = \frac{\MS_\text{e}}{\MS_\text{r}} = \frac{\hat \sigma^2_\text{e}}{\hat \sigma^2_\text{r}}
+\overset{H_0}{\thicksim} F(\df_1, \df_2)
+$$
+
+
+## Тестирование значимости коэффициентов {#andan-simplelinear-test-student}
+
+
+$$
+\begin{split}
+H_0 &: \beta_1 = 0 \\
+H_1 &: \beta_1 \neq 0
+\end{split}
+$$
+
+
+
+
+
+## Математика простой линейной регрессии {#andan-simplelinear-math}
+
 ### Аналитическое вычисление коэффициентов {#andan-simplelinear-solve-deriv}
 
 $$
-f(b_0, b_1) = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
+f(b_0, b_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
 $$
 
 $$
@@ -94,6 +172,26 @@ b_1 &= \frac{\overline{XY} - \overline X \cdot \overline Y}
 $$
 
 
+### Матричное представление модели {#andan-simplelinear-model-matrix}
+
+$$
+y_i = b_0 + b_1 x_i + e_i
+$$
+
+$$
+\begin{cases}
+y_1 = b_0 + b_1 x_1 + e_1 \\
+y_2 = b_0 + b_1 x_2 + e_2 \\
+y_3 = b_0 + b_1 x_3 + e_3 \\
+\vdots \\
+y_n = b_0 + b_1 x_n + e_n
+\end{cases}
+$$
+
+
+$$
+\vm y = \vm b \vm X + \vm e
+$$
 
 ### Матричное вычисление коэффициентов {#andan-simplelinear-solve-matrix}
 
@@ -143,23 +241,56 @@ b_1 &= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
 \end{split}
 $$
 
+
+
 ### TSS = ESS + RSS?
 
 :::{.lab-guru}
 :::
 
+:::{.quote .small .pers}
+--- Назрел вопросик. Ты выше сказал, что общая сумма квадратов --- это объяснённая сумма квадратов плюс остаточная сумма квадратов. Но на картинке отображены не квадраты, а разницы между реальными значениями, модельными значениями и средним. Для них равенство очевидно. А вот будет ли так работать с суммами квадратов --- совершенно не факт! Что-то ты, автор, не договариваешь…<br>
+--- Ты прав. Давай разбираться.
+:::
+
+$$
+\begin{split}
+d_\text{t} &= y_i - \overline Y \\
+d_\text{e} &= \hat y_i - \overline Y \\
+d_\text{t} &= y_i - \hat y_i
+\end{split}
+$$
+
+$$
+\begin{split}
+d_\text{t} &= y_i - \overline Y = \\
+&= y_i - \overline Y + \hat y_i - \hat y_i = \\
+&= (\hat y_i - \overline Y) + (y_i - \hat y_i) = \\
+&= d_\text{e} + d_\text{r}
+\end{split}
+$$
+
+Однако я утверждаю ([-@prp-tss]), что
+
+:::{#prp-tss}
+$$
+\TSS = \ESS + \RSS
+$$
+:::
+
+:::{.proof}
 $$
 \begin{split}
 \TSS &= \sum_{i=1}^n (y_i - \overline Y)^2 = \\
 &= \sum_{i=1}^n (y_i - \hat y + \hat y - \overline Y)^2 = \\
 &= \sum_{i=1}^n \big( (y_i - \hat y_i) + (\hat y_i - \overline Y) \big)^2 = \\
-&= \sum_{i=1}^n (y_i - \hat y_i) + \sum_{i=1}^n (\hat y_i - \overline Y) + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = \\
+&= \sum_{i=1}^n (y_i - \hat y_i)^2 + \sum_{i=1}^n (\hat y_i - \overline Y)^2 + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = \\
 &= \RSS + \ESS + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \bar y)
 \end{split}
 $$
 
 
-Окей, осталось доказать, что $2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = 0$, и все будет найс.
+Окей, осталось доказать, что $\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = 0$, и все будет найс.
 
 Так как $b_0 = \overline Y - b_1 \overline X$, а $b_1 = \dfrac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}$ имеем
 
@@ -173,12 +304,16 @@ $$
 &= \sum_{i=1}^n b_1 (x_i - \overline X) (y_i - \overline Y) - \sum_{i=1}^n b_1^2 (x_i - \overline X)^2 = \\
 &= b_1 \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) - b_1^2 \sum_{i=1}^n (x_i - \overline X) = \\
 &= \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2 \cdot \cancel{ \sum_{i=1}^n (x_i - \overline X)^2} }{\Big( \sum_{i=1}^n (x_i - \overline X)^2\Big)^\cancel{2}} = \\
-& = \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} = 0
+& = \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} = 0 \qed
 \end{split}
 $$
+:::
 
-При доказательстве соотношения мы использовали интерсепт $b_0$ --- соотношение справедливо для моделей с интерсептом. Если в модели интерсепта нет, то оно не выполняется.
+:::{.remark}
+При доказательстве утверждения мы использовали интерсепт $b_0$. В принципе, нам никто не запрещает построить линейную регрессию без интерсепта --- вида $y_i = b_1 x_i + e_i$. Однако для такого случая соотношение [-@prp-tss] выполняться не будет. Оно справедливо только для моделей с интерсептом.
 
+Работая с регрессией --- как простой, так и сложной --- мы всегда будем иметь дело с моделями, содержащими интерсепт, поэтому утверждение [-@prp-tss] всегда будет верным.
+:::
 
 
 ***
