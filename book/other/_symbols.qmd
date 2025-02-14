@@ -96,6 +96,9 @@
 
 <!--- Distributions --->
 \newcommand{\norm}{\mathcal{N}}
+\newcommand{\unif}{\mathcal{U}}
+\newcommand{\bin}{\text{Bin}}
+\newcommand{\pois}{\text{Pois}}
 
 <!--- Other --->
 \newcommand{\defin}[1]{\overset{\text{def}}{#1}}

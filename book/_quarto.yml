@@ -19,15 +19,16 @@ book:
     - index.qmd
     - common-intro.qmd
     - common-signs.qmd
-    - part: Debug
-      chapters: 
-      - debug_pretest.qmd
-      - debug_chapter.qmd
-      - debug_quiz.qmd
-      - debug_sheet.qmd
+    # - part: Debug
+    #   chapters: 
+    #   - debug_pretest.qmd
+    #   - debug_chapter.qmd
+    #   - debug_quiz.qmd
+    #   - debug_sheet.qmd
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
+      - r-basics.qmd
       - r-datatypes.qmd
       - r-datastructures.qmd
       - r-functions.qmd
