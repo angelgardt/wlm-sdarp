@@ -637,15 +637,10 @@ window.Quarto = {
   <li><a href="#r-datatypes-concept" id="toc-r-datatypes-concept" class="nav-link active" data-scroll-target="#r-datatypes-concept"><span class="header-section-number">3.1</span> Концепт «тип данных»</a></li>
   <li><a href="#r-datatypes-numbers" id="toc-r-datatypes-numbers" class="nav-link" data-scroll-target="#r-datatypes-numbers"><span class="header-section-number">3.2</span> Числа</a>
   <ul>
-  <li><a href="#r-datatypes-numeric" id="toc-r-datatypes-numeric" class="nav-link" data-scroll-target="#r-datatypes-numeric"><span class="header-section-number">3.2.1</span> <code>numeric</code></a>
-  <ul class="collapse">
-  <li><a href="#r-datatypes-numfun" id="toc-r-datatypes-numfun" class="nav-link" data-scroll-target="#r-datatypes-numfun"><span class="header-section-number">3.2.1.1</span> Что можно сделать с числом?</a></li>
-  </ul></li>
+  <li><a href="#r-datatypes-numeric" id="toc-r-datatypes-numeric" class="nav-link" data-scroll-target="#r-datatypes-numeric"><span class="header-section-number">3.2.1</span> <code>numeric</code></a></li>
   <li><a href="#r-datatypes-integer" id="toc-r-datatypes-integer" class="nav-link" data-scroll-target="#r-datatypes-integer"><span class="header-section-number">3.2.2</span> <code>integer</code></a></li>
-  <li><a href="#numeric-vs-integer-vs-double-typeof" id="toc-numeric-vs-integer-vs-double-typeof" class="nav-link" data-scroll-target="#numeric-vs-integer-vs-double-typeof"><span class="header-section-number">3.2.3</span> <code>numeric</code> vs <code>integer</code> vs <code>double</code> + <code>typeof()</code></a></li>
-  <li><a href="#r-datatypes-complex" id="toc-r-datatypes-complex" class="nav-link" data-scroll-target="#r-datatypes-complex"><span class="header-section-number">3.2.4</span> <code>complex</code></a></li>
   </ul></li>
-  <li><a href="#r-datatypes-logical" id="toc-r-datatypes-logical" class="nav-link" data-scroll-target="#r-datatypes-logical"><span class="header-section-number">3.3</span> <code>logical</code></a>
+  <li><a href="#r-datatypes-logical" id="toc-r-datatypes-logical" class="nav-link" data-scroll-target="#r-datatypes-logical"><span class="header-section-number">3.3</span> Логические значения</a>
   <ul>
   <li><a href="#r-datatypes-logic-operators" id="toc-r-datatypes-logic-operators" class="nav-link" data-scroll-target="#r-datatypes-logic-operators"><span class="header-section-number">3.3.1</span> Логические операторы</a>
   <ul class="collapse">
@@ -654,16 +649,22 @@ window.Quarto = {
   <li><a href="#r-datatypes-logic-or" id="toc-r-datatypes-logic-or" class="nav-link" data-scroll-target="#r-datatypes-logic-or"><span class="header-section-number">3.3.1.3</span> ИЛИ (<code>|</code>)</a></li>
   <li><a href="#r-datatypes-logic-not" id="toc-r-datatypes-logic-not" class="nav-link" data-scroll-target="#r-datatypes-logic-not"><span class="header-section-number">3.3.1.4</span> ИЛИ-ИЛИ (<code>xor()</code>)</a></li>
   </ul></li>
-  <li><a href="#r-datatypes-logic-in-pract" id="toc-r-datatypes-logic-in-pract" class="nav-link" data-scroll-target="#r-datatypes-logic-in-pract"><span class="header-section-number">3.3.2</span> Логические операции в практике</a></li>
+  <li><a href="#r-datatypes-logic-in-pract" id="toc-r-datatypes-logic-in-pract" class="nav-link" data-scroll-target="#r-datatypes-logic-in-pract"><span class="header-section-number">3.3.2</span> Логические операции в&nbsp;практике</a></li>
   </ul></li>
-  <li><a href="#character" id="toc-character" class="nav-link" data-scroll-target="#character"><span class="header-section-number">3.4</span> <code>character</code></a></li>
-  <li><a href="#factor" id="toc-factor" class="nav-link" data-scroll-target="#factor"><span class="header-section-number">3.5</span> <code>factor</code></a></li>
-  <li><a href="#приведение-типов" id="toc-приведение-типов" class="nav-link" data-scroll-target="#приведение-типов"><span class="header-section-number">3.6</span> Приведение типов</a></li>
-  <li><a href="#специальные-литералы" id="toc-специальные-литералы" class="nav-link" data-scroll-target="#специальные-литералы"><span class="header-section-number">3.7</span> Специальные литералы</a>
+  <li><a href="#r-datatypes-character" id="toc-r-datatypes-character" class="nav-link" data-scroll-target="#r-datatypes-character"><span class="header-section-number">3.4</span> Строки</a></li>
+  <li><a href="#r-datatypes-coercion" id="toc-r-datatypes-coercion" class="nav-link" data-scroll-target="#r-datatypes-coercion"><span class="header-section-number">3.5</span> Приведение типов</a></li>
+  <li><a href="#специальные-константы" id="toc-специальные-константы" class="nav-link" data-scroll-target="#специальные-константы"><span class="header-section-number">3.6</span> Специальные константы</a>
   <ul>
-  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na"><span class="header-section-number">3.7.1</span> <code>NA</code></a></li>
-  <li><a href="#nan" id="toc-nan" class="nav-link" data-scroll-target="#nan"><span class="header-section-number">3.7.2</span> <code>NaN</code></a></li>
-  <li><a href="#null" id="toc-null" class="nav-link" data-scroll-target="#null"><span class="header-section-number">3.7.3</span> <code>NULL</code></a></li>
+  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na"><span class="header-section-number">3.6.1</span> <code>NA</code></a></li>
+  <li><a href="#nan" id="toc-nan" class="nav-link" data-scroll-target="#nan"><span class="header-section-number">3.6.2</span> <code>NaN</code></a></li>
+  <li><a href="#null" id="toc-null" class="nav-link" data-scroll-target="#null"><span class="header-section-number">3.6.3</span> <code>NULL</code></a></li>
+  <li><a href="#inf" id="toc-inf" class="nav-link" data-scroll-target="#inf"><span class="header-section-number">3.6.4</span> <code>Inf</code></a></li>
+  </ul></li>
+  <li><a href="#r-datatypes-details" id="toc-r-datatypes-details" class="nav-link" data-scroll-target="#r-datatypes-details"><span class="header-section-number">3.7</span> Детали типов данных</a>
+  <ul>
+  <li><a href="#типы-na" id="toc-типы-na" class="nav-link" data-scroll-target="#типы-na"><span class="header-section-number">3.7.1</span> Типы <code>NA</code></a></li>
+  <li><a href="#numeric-vs-integer-vs-double-typeof" id="toc-numeric-vs-integer-vs-double-typeof" class="nav-link" data-scroll-target="#numeric-vs-integer-vs-double-typeof"><span class="header-section-number">3.7.2</span> <code>numeric</code> vs <code>integer</code> vs <code>double</code> + <code>typeof()</code></a></li>
+  <li><a href="#r-datatypes-complex" id="toc-r-datatypes-complex" class="nav-link" data-scroll-target="#r-datatypes-complex"><span class="header-section-number">3.7.3</span> <code>complex</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -693,8 +694,8 @@ window.Quarto = {
 <!--- Letters --->
 <!--- Linear Models --->
 <div class="intro">
-<p>В прошлой главе мы познакомились с самыми базовыми основами работы в R. В этой и следующей главе мы разберемся в фундаментальных сущностях языка — типах и структурах данных. Ведь в итоге бы хотим освоить R для работы с данными — давайте разберемся, что в этих данных бывает.</p>
-<p>Мы уже неизбежно столкнулись с данными — как минимум в прошлой главе у нас были числа, над которыми мы выполняли математические операции, а также нечто, имеющее значение <code>TRUE</code> и <code>FALSE</code>, получавшееся после сравнений. Что ж, займемся структурированием и расширением этого эмпирического опыта.</p>
+<p>В&nbsp;прошлой главе мы познакомились с&nbsp;самыми базовыми основами работы в&nbsp;R. В&nbsp;этой и&nbsp;следующей главах мы разберемся в&nbsp;фундаментальных сущностях языка — типах и&nbsp;структурах данных. Ведь в&nbsp;итоге мы хотим освоить R для&nbsp;работы с&nbsp;данными — давайте разберемся, что в&nbsp;этих данных бывает.</p>
+<p>Мы уже неизбежно столкнулись с&nbsp;данными — как минимум в&nbsp;прошлой главе у&nbsp;нас были числа, над&nbsp;которыми мы выполняли математические операции, а&nbsp;также нечто, имеющее значения <code>TRUE</code> и&nbsp;<code>FALSE</code>, получавшееся после сравнений. Что&nbsp;ж, займемся структурированием и&nbsp;расширением этого эмпирического опыта.</p>
 </div>
 <section id="r-datatypes-concept" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="r-datatypes-concept"><span class="header-section-number">3.1</span> Концепт «тип данных»</h2>
@@ -705,17 +706,17 @@ window.Quarto = {
 <div id="def-datatype" class="theorem definition">
 <p><span class="theorem-title"><strong>Определение 3.1</strong></span> <strong>Тип данных</strong> — это характеристика данных, которая определяет <strong>допустимые значения</strong>, которые могут принимать данные этого типа, и <strong>допустимые операции</strong> над данными этого типа <span class="citation" data-cites="iso24765-2017">(<a href="references.html#ref-iso24765-2017" role="doc-biblioref">ISO/IEC/IEEE, 2017</a>)</span>.</p>
 </div>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Это, конечно, хорошо. Но что это означает на деле? <br> — Сейчас разберемся, рассмотрев типы данных в R.</p>
 </div>
-<p>Стоит отметить, что в разных языках программирования выделяются разные типы данных, а в сущности одни и те же типы могут называться по-разному. Мы, разумеется, будем рассматривать типы данных языка R, ибо изучаем именно его, однако сопоставить их с типами данных других языков программирования на составляет труда.</p>
+<p>Стоит отметить, что в разных языках программирования выделяются разные типы данных, а в&nbsp;сущности одни и те же типы могут называться по-разному. Мы, разумеется, будем рассматривать типы данных языка R, ибо изучаем именно его, однако сопоставить их с типами данных других языков программирования на составляет труда.</p>
 </section>
 <section id="r-datatypes-numbers" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="r-datatypes-numbers"><span class="header-section-number">3.2</span> Числа</h2>
 <div class="lab-junior">
 
 </div>
-<p>Первое, с чем должно быть возможно работать, это, конечно же, числа. Для них в R предусмотрен тип <code>numeric</code>.</p>
+<p>Первое, с чем должно быть возможно работать, это, конечно&nbsp;же, числа. Для&nbsp;них в&nbsp;R предусмотрен тип <code>numeric</code>.</p>
 <section id="r-datatypes-numeric" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="r-datatypes-numeric"><span class="header-section-number">3.2.1</span> <code>numeric</code></h3>
 <div class="lab-junior">
@@ -757,8 +758,6 @@ window.Quarto = {
 <pre><code>[1] "numeric"</code></pre>
 </div>
 </div>
-<section id="r-datatypes-numfun" class="level4" data-number="3.2.1.1">
-<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="r-datatypes-numfun"><span class="header-section-number">3.2.1.1</span> Что можно сделать с числом?</h4>
 <p>С числами, как и следовало ожидать, <strong>можно выполнять все математические операции</strong> — складывать, вычитать, делить, умножать и т.&nbsp;д. — а также <strong>вызывать на них математические функции</strong> — корни, логарифмы, экспоненты, синусы и др. Собственно, этим мы занимались в предыдущей главе. Давайте вспомним.</p>
 <p>Создадим три числовые переменные <code>x</code>, <code>y</code> и <code>z</code> и поразвлекаемся.</p>
 <div class="cell">
@@ -866,7 +865,6 @@ window.Quarto = {
 </div>
 <p>В общем, арсенал вполне приличный.</p>
 </section>
-</section>
 <section id="r-datatypes-integer" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="r-datatypes-integer"><span class="header-section-number">3.2.2</span> <code>integer</code></h3>
 <div class="lab-middle">
@@ -885,7 +883,7 @@ window.Quarto = {
 <pre><code>[1] "integer"</code></pre>
 </div>
 </div>
-<p>Едва ли вам придется когда-либо вручную прописывать, что необходимы именно целочисленные значения переменной. Однако вы с ними можете столкнуться при работе с циклами — они там появляются сами, и если не знать, что это такое, можно сильно удивиться числу, например, <code>11L</code>.</p>
+<p>Едва ли вам придется когда-либо вручную прописывать, что необходимы именно целочисленные значения переменной. Однако вы с&nbsp;ними можете столкнуться, например, при работе с циклами — они там появляются сами, и если не знать, что это такое, можно сильно удивиться числу, например, <code>100L</code>.</p>
 <p>Для целых чисел выполняются те же операции, что и для чисел типа <code>numeric</code>:</p>
 <div id="lst-numfun-integer" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
@@ -969,103 +967,43 @@ window.Quarto = {
 </figure>
 </div>
 <p>Функции округления бессмысленны, так как числа изначально целые, то есть не имеют дробной части.</p>
-</section>
-<section id="numeric-vs-integer-vs-double-typeof" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="numeric-vs-integer-vs-double-typeof"><span class="header-section-number">3.2.3</span> <code>numeric</code> vs <code>integer</code> vs <code>double</code> + <code>typeof()</code></h3>
-<div class="lab-guru">
-
+<div id="exr-num-int-arithm" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 3.1</strong></span> Выясните, существует ли разница между <code>2 + 3</code> и <code>2L + 3L</code>.</p>
 </div>
-<p>Вообще говоря, термин <code>numeric</code> внутри самого R используется непоследовательно <span class="citation" data-cites="wickham-advr-2019">(см. <a href="references.html#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019, sec. 12.3.1</a>)</span>. С одной стороны, <code>numeric</code> используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу <code>double</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, который также существует, но достаётся с помощью функции <code>typeof()</code>, которая «более низкоуровневая»:</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Разница существует, хотя и довольно незначительная:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"</code></pre>
-</div>
-</div>
-<p>Две функции — <code>class</code> и <code>typeof</code> — согласны и в отношении целочисленного типа данных:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">2</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span>L <span class="sc">+</span> <span class="dv">3</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "integer"</code></pre>
 </div>
 </div>
-<p>Однако если залезть глубже и посмотреть на числа с точки зрения ООП, то можно обнаружить неожиданное:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>sloop<span class="sc">::</span><span class="fu">s3_class</span>(<span class="dv">1</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"  "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>sloop<span class="sc">::</span><span class="fu">s3_class</span>(<span class="dv">1</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer" "numeric"</code></pre>
-</div>
-</div>
-<p>И у целого числа, и у числа с плавающей точкой есть атрибут <code>numeric</code>. Получается, что <code>numeric</code> является обобщением для типов <code>integer</code> и <code>double</code>.</p>
-</section>
-<section id="r-datatypes-complex" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="r-datatypes-complex"><span class="header-section-number">3.2.4</span> <code>complex</code></h3>
-<div class="lab-senior">
-
-</div>
-<p>В R существуют и комплексные числа<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Они крайне редко встречаются в статистике и анализе данных — разве что при выводе каких-нибудь теорем в суровой математической части статистики. Соответственно, в практической работе они вам вряд ли встретятся.</p>
-<p>Однако даже если вы не понимаете, кто такие есть эти числа, вы все равно можете с ними взаимодействовать в R — ведь это просто некие числа. Да, со своими приколами и особенностями, но всё же числа. А значит с ними можно выполнять все операции, которые можно выполнять с другими числами.</p>
-<div id="lst-complex-num" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-complex-num-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;3.5: Операции с комплексными числами
-</figcaption>
-<div aria-describedby="lst-complex-num-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "complex"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8-6</span>i <span class="sc">+</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10-3i</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">8-6</span>i) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 34+12i</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">7</span><span class="fl">-1.5</span>i) <span class="sc">/</span> (<span class="fl">1.1</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.363636+6.363636i</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">12</span><span class="sc">+</span><span class="dv">0</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0+3.464102i</code></pre>
-</div>
-</div>
-</div>
-</figure>
 </div>
 </section>
 </section>
 <section id="r-datatypes-logical" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="r-datatypes-logical"><span class="header-section-number">3.3</span> <code>logical</code></h2>
+<h2 data-number="3.3" class="anchored" data-anchor-id="r-datatypes-logical"><span class="header-section-number">3.3</span> Логические значения</h2>
 <div class="lab-junior">
 
 </div>
 <p>Помимо чисел в прошлой главе мы видели два особенных значения — <code>TRUE</code> и <code>FALSE</code>.</p>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Это явно не числа. По крайне мере, не похожи на них. <br> — Всё так. Это данные итого типа.</p>
 </div>
-<p>Мы столкнулись с логическим типом данных, именуемым в R <code>logical</code><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. У этого типа данных всего два возможных значения — те самые <code>TRUE</code> и <code>FALSE</code>. Первый обозначает «истину», второй — «ложь»<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Это довольно справедливо, если учесть, что мы их получали как результат сравнения двух чисел:</p>
+<p>Мы столкнулись с логическим типом данных, именуемым в R <code>logical</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. У&nbsp;этого типа данных всего два возможных значения — те самые <code>TRUE</code> и <code>FALSE</code>. Первый обозначает «истину», второй — «ложь»<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Это довольно справедливо, если учесть, что мы их получали как результат сравнения двух чисел:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span> <span class="co"># довольно трудно спорить с тем, что это утверждение истинно</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="dv">2</span> <span class="co"># довольно трудно спорить с тем, что это утверждение истинно</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">1</span> <span class="co"># весьма непросто возразить, что это утверждение ложно</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">1</span> <span class="co"># весьма непросто возразить тому, что это утверждение ложно</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -1082,15 +1020,15 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p>Значения <code>TRUE</code> и <code>FALSE</code> — это <strong>зарезервированные константы</strong>. Это значит, что они защищены от перезаписи — их значение зафиксировано и не может измениться.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in TRUE &lt;- 2: invalid (do_set) left-hand side to assignment</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">50</span> <span class="sc">+</span> <span class="dv">13</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">50</span> <span class="sc">+</span> <span class="dv">13</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in FALSE &lt;- -50 + 13: invalid (do_set) left-hand side to assignment</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in TRUE &lt;- FALSE: invalid (do_set) left-hand side to assignment</code></pre>
 </div>
@@ -1111,28 +1049,31 @@ Case sensitivity
 </div>
 <div class="callout-body-container callout-body">
 <p>R чувствителен к регистру (case sensitive), поэтому <code>TRUE</code>, <code>true</code> и <code>True</code> — это разные сущности!</p>
+<div id="lst-case-sensitivity" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-case-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.5: Чувствительность к регистру в логических константах
+</figcaption>
+<div aria-describedby="lst-case-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>); <span class="fu">class</span>(<span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>); <span class="fu">class</span>(<span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(True); <span class="fu">class</span>(False)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(True); <span class="fu">class</span>(False)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'True' not found</code></pre>
+<pre><code>Error: object 'True' not found</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(true); <span class="fu">class</span>(false)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'False' not found</code></pre>
+<pre><code>Error: object 'true' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(true); <span class="fu">class</span>(false)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'true' not found</code></pre>
 </div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'false' not found</code></pre>
 </div>
+</figure>
 </div>
 </div>
 </div>
@@ -1142,14 +1083,14 @@ Case sensitivity
 <div class="lab-junior">
 
 </div>
-<p>Существует всего три основных оператора — НЕ (<code>!</code>), И (<code>&amp;</code>) и ИЛИ (<code>|</code>). Вообще они к нам пришли из формальной логики и не являются чем-то специфичным для программирования и тем более для R. Соответственно, и работают они так, как им предписывают законы формальной логики<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<p>Существует всего три основных оператора — НЕ (<code>!</code>), И (<code>&amp;</code>) и ИЛИ (<code>|</code>). Вообще они к нам пришли из формальной логики и не являются чем-то специфичным для программирования и тем более для R. Соответственно, и работают они так, как им предписывают законы формальной логики<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 <p>Однако даже если вы с этой отраслью знаний не знакомы, вполне можно понять, как эти операторы работают, просто посмотрев на них в деле.</p>
 <section id="r-datatypes-logic-not" class="level4" data-number="3.3.1.1">
 <h4 data-number="3.3.1.1" class="anchored" data-anchor-id="r-datatypes-logic-not"><span class="header-section-number">3.3.1.1</span> НЕ (<code>!</code>)</h4>
 <div class="lab-junior">
 
 </div>
-<p>Оператор НЕ занимается, не поверите, отрицанием. Он превращает «истину» в «ложь», а «ложь» — в «истину»:</p>
+<p>НЕ — оператор отрицания. Обозначается с помощью восклицательного знака — <code>!</code>. Он превращает «истину» в&nbsp;«ложь», а&nbsp;«ложь» — в «истину»:</p>
 <div id="lst-logical-not" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-logical-not-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1157,11 +1098,11 @@ Case sensitivity
 </figcaption>
 <div aria-describedby="lst-logical-not-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -1186,19 +1127,19 @@ Case sensitivity
 </figcaption>
 <div aria-describedby="lst-logical-and-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -1207,7 +1148,7 @@ Case sensitivity
 </figure>
 </div>
 <p>Закономерность проста: логическое И возвращает «истину» (<code>TRUE</code>) только в том случае, если по обеим сторонам от него стоит «истина». Если же хотя бы с одной из сторон «ложь», то и в результате будет «ложь».</p>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Это очевидно, потому что это конъюнкция… <br> — Всё так. Но вообще-то неискушенный в формальной логике читатель об этом знать не обязан. Попозже его с этим познакомим.</p>
 </div>
 </section>
@@ -1220,23 +1161,23 @@ Case sensitivity
 <div id="lst-logical-or" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-logical-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;3.8: Логическое И в R
+Код&nbsp;3.8: Логическое ИЛИ в R
 </figcaption>
 <div aria-describedby="lst-logical-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -1244,8 +1185,8 @@ Case sensitivity
 </div>
 </figure>
 </div>
-<p>Здесь ситуация в каком-то смысле противоположная — ИЛИ возвращает «ложь» только с том случае, если по обеим сторонам от него стоит «ложь». Если же <em>хотя бы с одной</em> стороны есть «истина», то и в результате будет «истина».</p>
-<div class="quote small">
+<p>Здесь ситуация в каком-то смысле противоположная — ИЛИ возвращает «ложь» только в том случае, если по обеим сторонам от него стоит «ложь». Если же <em>хотя бы с одной</em> стороны есть «истина», то и в результате будет «истина».</p>
+<div class="quote small pers">
 <p>— Естественно, потому что это дизъюнкция. <br> — Верно, но прекрати уже пугать читателя непонятными словами, пожалуйста…</p>
 </div>
 </section>
@@ -1254,7 +1195,7 @@ Case sensitivity
 <div class="lab-senior">
 
 </div>
-<p>Кроме трех упомянутых выше и наиболее популярных операторов, есть ещё один — ИЛИ-ИЛИ. Если вы шарите за логику или имели дело, например, с низкоуровневым программированием, то это знакомых вам XOR. Он реализован в R как функция:</p>
+<p>Кроме трех упомянутых выше и наиболее популярных операторов, есть ещё один — ИЛИ-ИЛИ. Если вы шарите за логику или имели дело, например, с низкоуровневым программированием, то&nbsp;это знакомый вам XOR. Он реализован в R как функция:</p>
 <div id="lst-logical-xor" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-logical-xor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1262,19 +1203,19 @@ Case sensitivity
 </figcaption>
 <div aria-describedby="lst-logical-xor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -1286,7 +1227,7 @@ Case sensitivity
 </section>
 </section>
 <section id="r-datatypes-logic-in-pract" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="r-datatypes-logic-in-pract"><span class="header-section-number">3.3.2</span> Логические операции в практике</h3>
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="r-datatypes-logic-in-pract"><span class="header-section-number">3.3.2</span> Логические операции в&nbsp;практике</h3>
 <div class="lab-junior">
 
 </div>
@@ -1295,7 +1236,7 @@ Case sensitivity
 <pre><code>age &gt;=18 &amp; age &lt;= 35</code></pre>
 <p>Или же у вас данные эксперимента и вам надо удалить статистические выбросы по времени реакции. Вы создали колонку <code>is_outlier</code>, в которой для каждого наблюдения указано, является ли оно выбросом (<code>TRUE</code>) или не является (<code>FALSE</code>). Тогда в условии отбора наблюдений мы напишем:</p>
 <pre><code>!is_outlier</code></pre>
-<p>Это пока что просто примеры, свидетельствующие о том, что логические операции нам нужны. В следующей главе мы познакомимся со структурами данных, и уже сможем немного попрактиковаться.</p>
+<p>Это пока что просто примеры, свидетельствующие о том, что логические операции нам нужны. В&nbsp;следующей главе мы познакомимся со структурами данных, и уже сможем немного попрактиковаться.</p>
 <p>Пока же нам надо доделать фундамент. Продолжим знакомиться с типами данных.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1309,18 +1250,18 @@ Case sensitivity
 <div class="callout-body-container callout-body">
 <p>В R есть возможность не прописывать полностью логические константы, а использовать только первые буквы от них — <code>T</code> и <code>F</code>. Это в принципе будет работать:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(T); <span class="fu">class</span>(F)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(T); <span class="fu">class</span>(F)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> F</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> F</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a>F <span class="sc">|</span> F</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>F <span class="sc">|</span> F</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -1328,13 +1269,13 @@ Case sensitivity
 <p><strong>Однако этим крайне не рекомендуется пользоваться!</strong></p>
 <p>И вот почему. В отличие от <code>TRUE</code> и <code>FALSE</code> буквы <code>T</code> и <code>F</code> не защищены от перезаписи и могут служить названием каких-либо переменных. Это может привести к неожиданным последствиям:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>T <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fl">12.5</span></span>
-<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>F <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fl">12.5</span></span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>F <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -1345,102 +1286,582 @@ Case sensitivity
 </div>
 </section>
 </section>
-<section id="character" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="character"><span class="header-section-number">3.4</span> <code>character</code></h2>
-<p>Текст тоже надо как-то хранить.</p>
+<section id="r-datatypes-character" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="r-datatypes-character"><span class="header-section-number">3.4</span> Строки</h2>
+<div class="lab-junior">
+
+</div>
+<p>Текст тоже надо как-то хранить, и для этого существует строковый тип данных <code>character</code> (<a href="#lst-char-creation" class="quarto-xref">Код&nbsp;<span>3.10</span></a>).</p>
+<div id="lst-char-creation" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-char-creation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.10: Строки в R
+</figcaption>
+<div aria-describedby="lst-char-creation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="st">'a'</span></span>
-<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="st">"это строка"</span></span>
-<span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-4"><a href="#cb163-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s1)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="st">'a'</span></span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="st">"это строка"</span></span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s1)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
-<p>Кавычки не важны, если у вас не встречаются кавычки внутри кавычек. Тогда надо использовать разные:</p>
+</div>
+</figure>
+</div>
+<p>При создании строк не важно<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, какие кавычки&nbsp;— одинарные (<code>''</code>) или&nbsp;двойные (<code>""</code>)&nbsp;— вы будете использовать. Главное, чтобы открывающиеся и&nbsp;закрывающиеся были одинаковыми. Если же у вас встречаются кавычки внутри кавычек, то&nbsp;надо использовать разные (см. примеры <a href="#lst-char-quotation1" class="quarto-xref"><span>3.11</span></a>–<a href="#lst-char-quotation4" class="quarto-xref"><span>3.14</span></a>).</p>
+<div id="lst-char-quotation1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-char-quotation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.11: Кавычки внутри кавычек. Вариант 1
+</figcaption>
+<div aria-describedby="lst-char-quotation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">'Мужчина громко зашёл в комнату и высказал решительное "здравствуйте"'</span></span>
-<span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a>s</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="st">'Мужчина громко зашёл в комнату и высказал решительное "здравствуйте"'</span></span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>s3</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Мужчина громко зашёл в комнату и высказал решительное \"здравствуйте\""</code></pre>
 </div>
 </div>
-</section>
-<section id="factor" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="factor"><span class="header-section-number">3.5</span> <code>factor</code></h2>
-<p>Бывают такие переменные, которые группируют наши данные. Например,</p>
-<ul>
-<li>город проживания (<code>Москва</code>, <code>Санкт-Петербург</code>, <code>Казань</code>, <code>Екатеринбург</code>)</li>
-<li>уровень образования (<code>бакалавриат</code>, <code>специалитет</code>, <code>магистратура</code>, <code>аспирантура</code>)</li>
-<li>экспериментальная группа (<code>group1</code>, <code>group2</code>, <code>control</code>)</li>
-<li>и др.</li>
-</ul>
-<p>Обычно они текстовые. Для них был придуман тип данных <code>factor</code>, чтобы их было дешевле хранить. Однако большинство современных пакетов сами могут решить, когда надо текст перевести в фактор.</p>
-<p><code>Ordered factor</code> (<strong>упорядоченный фактор</strong>) — тип данных, который позволяет задать порядок групп. Например,</p>
-<ul>
-<li>уровень образования: <code>bachelor</code> &lt; <code>master</code> &lt; <code>phd</code> &lt; <code>postdoc</code></li>
-<li>сложность экспериментальной задачи: <code>easy</code> &lt; <code>medium</code> &lt; <code>hard</code></li>
-<li>и др.</li>
-</ul>
-<p>Вот упорядоченный фактор нам время от времени может понадобиться — например, для создания визуалиация или в некоторых статистических моделях.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fu">factor</span>(<span class="st">"x"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(<span class="fu">factor</span>(<span class="st">"x"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</figure>
+</div>
+<div id="lst-char-quotation2" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-char-quotation2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.12: Кавычки внутри кавычек. Вариант 2
+</figcaption>
+<div aria-describedby="lst-char-quotation2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>s4 <span class="ot">&lt;-</span> <span class="st">"Мужчина громко зашёл в комнату и высказал решительное 'здравствуйте'"</span></span>
+<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>s4</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Мужчина громко зашёл в комнату и высказал решительное 'здравствуйте'"</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-char-quotation3" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-char-quotation3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.13: Кавычки внутри кавычек. Вариант 3
+</figcaption>
+<div aria-describedby="lst-char-quotation3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>s5 <span class="ot">&lt;-</span> <span class="st">"Мужчина громко зашёл в комнату и высказал решительное «здравствуйте»"</span></span>
+<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>s5</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Мужчина громко зашёл в комнату и высказал решительное «здравствуйте»"</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-char-quotation4" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-char-quotation4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.14: Кавычки внутри кавычек. Вариант 4
+</figcaption>
+<div aria-describedby="lst-char-quotation4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>s6 <span class="ot">&lt;-</span> <span class="st">"Мужчина громко зашёл в комнату и высказал решительное “здравствуйте”"</span></span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a>s6</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Мужчина громко зашёл в комнату и высказал решительное “здравствуйте”"</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Первые два варианта (<a href="#lst-char-quotation1" class="quarto-xref">Код&nbsp;<span>3.11</span></a>, <a href="#lst-char-quotation2" class="quarto-xref">Код&nbsp;<span>3.12</span></a>) работают, то есть синтаксически корректны с точки зрения R, хотя и типографически не верны. В первом варианте (<a href="#lst-char-quotation1" class="quarto-xref">Код&nbsp;<span>3.11</span></a>) из-за использования двойных кавычек внутри одинарных возникает необходимость <em>экранировать</em> внутренние кавычки с помощью обратного слеша (бэкслеша) (<code>\"</code>), чтобы обозначить, что строка не закончилась. Во втором варианте (<a href="#lst-char-quotation2" class="quarto-xref">Код&nbsp;<span>3.12</span></a>) экранирования нет.</p>
+<p>Третий вариант (<a href="#lst-char-quotation3" class="quarto-xref">Код&nbsp;<span>3.13</span></a>) с использованием кавычек-ёлочек корректен и с точки зрения типографики, и с точки зрения R. Четвёртый (<a href="#lst-char-quotation4" class="quarto-xref">Код&nbsp;<span>3.14</span></a>) с использованием кавычек-лапок допусти́м с точки зрения типографики, и корректен с точки зрения R.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Виды кавычек
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Раз уж мы заговорили о кавычках, давайте ради полноты картины обсудим, какие они вообще бывают и чем друг от друга отличаются.</p>
+<ul>
+<li>Нас как программистов в первую очередь интересуют <strong>прямые кавычки</strong>. Они могут быть двойными (<code>"текст"</code>) или одинарными (<code>'текст'</code>). Именно их мы используем при создании строк.</li>
+<li><strong>Кавычки-лапки</strong> похожи на прямые кавычки, но представляют собой отдельный символ. Они также могут быть одинарными или двойными и встречаются в разных вариантах: <code>„текст“</code>, <code>“текст”</code>, <code>‘текст’</code>. В русской типографической традиции двойные кавычки-лапки в варианте <code>„текст”</code> применяются в качестве вложенных кавычек («кавычек внутри кавычек»).
+<ul>
+<li>В&nbsp;R могут встретиться только при работе с текстами.</li>
+</ul></li>
+<li><strong>Кавычки-ёлочки</strong> (<code>«текст»</code>) в русской типографической традиции используются в качестве основных и только в двойном варианте. Вообще бывают и одинарные (<code>‹текст›</code>), которые отличаются от угловых скобок (<code>&lt;текст&gt;</code>).
+<ul>
+<li>В&nbsp;R могут встретиться только при работе с текстами.</li>
+</ul></li>
+<li><strong>Обратные кавычки (бэктики, backticks)</strong> (<code>`текст`</code>) встречаются в&nbsp;R в разных ситуациях. Мы их уже видели, когда говорили о математических операторах как функциях (<a href="r-basics.html#lst-arithm-funs" class="quarto-xref">Код&nbsp;<span>2.11</span></a>) и встретимся с ними ещё, когда будет говорить о предобработке данных.</li>
+</ul>
+<p>Существуют и <a href="https://en.wikipedia.org/wiki/Quotation_mark#Summary_table">другие варианты</a> кавычек, но они нам вряд ли когда-либо пригодятся.</p>
+</div>
+</div>
+</div>
+<p>Со строками в R можно выполнять множество различных операций. Это довольно объёмная тема, не слишком необходимая нам на первых порах, поэтому мы поговорим о работе со строками <a href="./r-strings.html">в&nbsp;отдельной главе</a>. Пока же можно отметить, что некоторые операции выполнить со строками нельзя. В частности, невозможно<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> применить арифметические операторы и функции к строкам (<a href="#lst-char-arithm" class="quarto-xref">Код&nbsp;<span>3.15</span></a>).</p>
+<div id="lst-char-arithm" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-char-arithm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.15: Арифметические операторы и функции со строками
+</figcaption>
+<div aria-describedby="lst-char-arithm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="st">"a"</span> <span class="sc">+</span> <span class="st">"b"</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in "a" + "b": non-numeric argument to binary operator</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="st">"2"</span> <span class="sc">+</span> <span class="st">"3"</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in "2" + "3": non-numeric argument to binary operator</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in sum("a", "b", "c"): invalid 'type' (character) of argument</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="st">"10"</span>, <span class="st">"20"</span>, <span class="st">"30"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in sum("10", "20", "30"): invalid 'type' (character) of argument</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="r-datatypes-coercion" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="r-datatypes-coercion"><span class="header-section-number">3.5</span> Приведение типов</h2>
+<div class="lab-junior">
+
+</div>
+<p>В предыдущей главе нам встретился следующий интересный пример (<a href="r-basics.html#lst-logic-vs-arithm" class="quarto-xref">Код&nbsp;<span>2.5</span></a>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">^</span> (<span class="dv">6</span> <span class="sc">==</span> <span class="dv">6</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+<p>Давайте посмотрим на&nbsp;него со&nbsp;всем вниманием. Согласно приоритету операций, сначала вычисляется выражение <code>6 == 6</code>, так как оно находится в скобках — результат будет <code>TRUE</code>. Затем выполняется возведение в степень. Но подождите, получается нам необходимо выполнить команду <code>6 ^ TRUE</code>, а ведь <code>TRUE</code> — это логическая константа, которую не&nbsp;совсем понятно как употребить в арифметических операциях. Однако всё же ошибки не&nbsp;возникает и&nbsp;в&nbsp;результате получается <code>6</code>. В&nbsp;чём&nbsp;же дело?</p>
+<p>Здесь в игру вступает <strong>приведение типов (coercion)</strong>. Дело в том, что одни типы данных могут быть приведены с другим. В данном случае логические тип приводится к числовому, то&nbsp;есть <code>logical</code> приводится к <code>numeric</code>. Что в результате получается, можно понять, посмотрев на результат: так как в итоге получается <code>6</code>, то&nbsp;<code>TRUE</code> было приведено к <code>1</code> — получаем <span class="math inline">\(6^1 = 6\)</span>, кто бы спорил. Мы можем проверить, действительно ли это так, используя специальную функцию, которая приводит данные к числовому типу — <code>as.numeric()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Действительно, так и работает. Давайте изучим, как <code>as.numeric()</code> обращается в разными входными значениями (<a href="#lst-as-numeric" class="quarto-xref">Код&nbsp;<span>3.16</span></a>).</p>
+<div id="lst-as-numeric" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-as-numeric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.16: Приведение к числовому типу данных
+</figcaption>
+<div aria-describedby="lst-as-numeric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">"1"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">"0"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">"-2"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">"3.5"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">"-4.68"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -4.68</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">"six"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Как можно наблюдать, функция работает весьма предсказуемо за исключением последнего случая — к нему мы вернемся чуть позже.</p>
+<p>Приводить данные можно не только к числовому типу — существуют функции <code>as.logical()</code> (<a href="#lst-as-logical" class="quarto-xref">Код&nbsp;<span>3.17</span></a>) и <code>as.character</code> (<a href="#lst-as-character" class="quarto-xref">Код&nbsp;<span>3.18</span></a>), работающие аналогично.</p>
+<div id="lst-as-logical" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-as-logical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.17: Приведение в логическому типу
+</figcaption>
+<div aria-describedby="lst-as-logical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">1</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(<span class="fu">factor</span>(<span class="st">"x"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"TRUE"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"FALSE"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
-</section>
-<section id="приведение-типов" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="приведение-типов"><span class="header-section-number">3.6</span> Приведение типов</h2>
-<p><a href="r-basics.html#lst-logic-vs-arithm" class="quarto-xref">Код&nbsp;<span>2.5</span></a></p>
-</section>
-<section id="специальные-литералы" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="специальные-литералы"><span class="header-section-number">3.7</span> Специальные литералы</h2>
-<section id="na" class="level3" data-number="3.7.1">
-<h3 data-number="3.7.1" class="anchored" data-anchor-id="na"><span class="header-section-number">3.7.1</span> <code>NA</code></h3>
-<p>Пропущенное значение (<strong>N</strong>ot <strong>A</strong>vailable). Обозначает отсутствие значения там, где оно вроде бы должно быть. Причины могут быть разные:</p>
+</div>
+</figure>
+</div>
+<div id="lst-as-character" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-as-character-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.18: Приведение к строковому типу
+</figcaption>
+<div aria-describedby="lst-as-character-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb191"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="cn">TRUE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "TRUE"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="cn">FALSE</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "FALSE"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb195"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="dv">1</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb197"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="dv">0</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "0"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb199"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="sc">-</span><span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "-2"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb201"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="fl">3.5</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "3.5"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb203"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb203-1"><a href="#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="sc">-</span><span class="fl">4.68</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "-4.68"</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Если приведение типов осуществляется в процессе вычислений или каких-либо преобразований, это <strong>неявное приведение типов</strong> — как в последнем случае примера <a href="r-basics.html#lst-logic-vs-arithm" class="quarto-xref"><span>2.5</span></a>. Если же мы собственными руками выполняем приведение типов, тогда мы имеем дело с <strong>явным приведением типов</strong> — как в примерах <a href="#lst-as-numeric" class="quarto-xref"><span>3.16</span></a>, <a href="#lst-as-logical" class="quarto-xref"><span>3.17</span></a> и <a href="#lst-as-character" class="quarto-xref"><span>3.18</span></a>.</p>
+<p>Явное приведение типов может пригодится в предобработке данных, когда мы приводим «сырые» данные к&nbsp;нужному для анализа виду. Неявное приведение типов иногда вызывает неожиданное поведение некоторых функций, поэтому стоит помнить о том, что оно существует. В следующей главе мы увидим другие ситуации, в которых оно происходит и обсудим, чем это может быть чревато.</p>
+<div id="exr-as-logical" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 3.2</strong></span> Хотя приведение данных в логическому типу выглядит весьма предсказуемо (<a href="#lst-as-logical" class="quarto-xref">Код&nbsp;<span>3.17</span></a>), оно обладает некоторыми особенностями. Ниже приведён ряд команд. Предположите, что они должны вернуть, а затем проверьте свои предположения, выполнив эти команды в R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb205"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">2</span>)</span>
+<span id="cb205-2"><a href="#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb205-3"><a href="#cb205-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="fl">5.5</span>)</span>
+<span id="cb205-4"><a href="#cb205-4" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="sc">-</span><span class="fl">5.5</span>)</span>
+<span id="cb205-5"><a href="#cb205-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"True"</span>)</span>
+<span id="cb205-6"><a href="#cb205-6" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"False"</span>)</span>
+<span id="cb205-7"><a href="#cb205-7" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"true"</span>)</span>
+<span id="cb205-8"><a href="#cb205-8" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"false"</span>)</span>
+<span id="cb205-9"><a href="#cb205-9" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"T"</span>)</span>
+<span id="cb205-10"><a href="#cb205-10" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"F"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Приведение чисел к логическим константам производится по следующему правилу:</p>
 <ul>
-<li>технические ошибки записи данных</li>
-<li>ошибки настройки платформы — забыли сделать ответы обязательными</li>
-<li>организация исследования — ограничили время на ответ</li>
-<li>«честный» пропуск — дали возможность не отвечать на вопрос</li>
-<li>предобработка данных — специально создали <code>NA</code>, чтобы далее с ними работать</li>
+<li><code>0</code> → <code>FALSE</code></li>
+<li>любое другое число → <code>TRUE</code></li>
+</ul>
+<p>Поэтому имеем следующие результаты:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb206"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb208"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="sc">-</span><span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb210"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="fl">5.5</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb212"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="sc">-</span><span class="fl">5.5</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>Выше мы отмечали, что R чувствителен к регистру, что важно при работе с логическими константами (см. <a href="#lst-case-sensitivity" class="quarto-xref">Код&nbsp;<span>3.5</span></a>). Тем не менее, при приведении текста в логическим значениям он менее привередлив: <code>"TRUE"</code>, <code>"T"</code>, <code>"True"</code>, <code>"true"</code> будут приведены к значению <code>TRUE</code>, а <code>"FALSE"</code>, <code>"F"</code>, <code>"False"</code>, <code>"false"</code> — к <code>FALSE</code>. Однако с одиночными буквами в нижнем регистре это не сработает: для <code>"t"</code> и <code>"f"</code> будет возвращены <code>NA</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb214"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"True"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb216"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"False"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb218"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"true"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb220"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"false"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb222"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"T"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb224"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"F"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb226"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"t"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb228"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="st">"f"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="специальные-константы" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="специальные-константы"><span class="header-section-number">3.6</span> Специальные константы</h2>
+<div class="lab-junior">
+
+</div>
+<p>Кроме логических <code>TRUE</code> и <code>FALSE</code> в R существует ещё несколько констант, которые используются для обозначения различных странных сущностей.</p>
+<section id="na" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="na"><span class="header-section-number">3.6.1</span> <code>NA</code></h3>
+<div class="lab-junior">
+
+</div>
+<p>Самая часто встречающаяся вещь. Она используется для обозначения <strong>пропущенных значений</strong> (<strong>N</strong>ot <strong>A</strong>vailable) и обозначает отсутствие значения там, где оно вроде бы должно быть.</p>
+<p>Причины существования пропущенных значений могут быть разные:</p>
+<ul>
+<li>технические ошибки записи данных — данные вообще-то должны быть записаться, но произошёл какой-то баг</li>
+<li>ошибки настройки платформы — при сборе опросных данных забыли сделать ответы в форме обязательными и респонденты их проигнорировали</li>
+<li>организация исследования — мы ограничили время на ответ в пробах эксперимента и по завершении пробы ничего не было записано, так как не был дан ответ</li>
+<li>«честный» пропуск — мы сознательно дали возможность не отвечать на какой-то вопрос</li>
+<li>предобработка данных — мы специально создали <code>NA</code> , чтобы далее с ними работать</li>
 <li>и др.</li>
 </ul>
-</section>
-<section id="nan" class="level3" data-number="3.7.2">
-<h3 data-number="3.7.2" class="anchored" data-anchor-id="nan"><span class="header-section-number">3.7.2</span> <code>NaN</code></h3>
-<p>Это не число (<strong>N</strong>ot <strong>a</strong> <strong>N</strong>umber).</p>
+<p>Пропущенные значения могут стать как полезной, так и довольно неприятной для исследователя ситуацией. С одной стороны, мы может их отдельно анализировать и получать новую информацию об изучаемых объектах. С другой стороны, часто они обозначают отсутствие важных для нас данных, которые мы никак не может восстановить, а кроме того, ломают ожидаемую работу некоторых функций, что мы позже увидим.</p>
+<p>Обработка пропущенных значений может стать серьезной задачей в ходе предобработки данных — в соответствующей теме мы коснёмся этого вопроса.</p>
+<div id="exr-na-datatype" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 3.3</strong></span> К какому типу данных относятся <code>NA</code>?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> <span class="sc">/</span> <span class="dv">0</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb230"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb230-1"><a href="#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="cn">NA</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+<p>Таким образом, можно сказать, что в R три логических константы — <code>TRUE</code>, <code>FALSE</code> и&nbsp;<code>NA</code>.</p>
+</div>
+</div>
+</section>
+<section id="nan" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="nan"><span class="header-section-number">3.6.2</span> <code>NaN</code></h3>
+<div class="lab-junior">
+
+</div>
+<p>Эта константа обозначает <em>не число</em> (<strong>N</strong>ot <strong>a</strong> <strong>N</strong>umber). Она может возникнуть в&nbsp;ходе выполнения вычислений и просигнализирует нам о том, что что-то пошло не так — мы ожидали в результатах вычислений какое-то численное значения, но не получили его. Например, мы случайно поделили ноль на ноль:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb232"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> <span class="sc">/</span> <span class="dv">0</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NaN</code></pre>
 </div>
 </div>
+<p>Конечно, мы вряд ли будет намеренно делить ноль на ноль, однако в ходе предобработки данных и расчётов каких-либо значений такая ситуация возникнуть может, поэтому важно помнить про <code>NaN</code> как индикатор потенциальных ошибок в вычислениях.</p>
 </section>
-<section id="null" class="level3" data-number="3.7.3">
-<h3 data-number="3.7.3" class="anchored" data-anchor-id="null"><span class="header-section-number">3.7.3</span> <code>NULL</code></h3>
-<p>Это ничто. Пустота. Используется для задания аргументов функций.</p>
+<section id="null" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="null"><span class="header-section-number">3.6.3</span> <code>NULL</code></h3>
+<div class="lab-junior">
+
+</div>
+<p>Это ничто. Пустота. Используется для задания аргументов функций, когда мы обязаны передать что-то в аргумент, чтобы функция работала, но мы по той или иной причине не хотим туда ничего передавать. Например, вот так:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb234"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb234-1"><a href="#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="inf" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="inf"><span class="header-section-number">3.6.4</span> <code>Inf</code></h3>
+<div class="lab-middle">
+
+</div>
+<p>Иногда в ходе вычислений мы можем получить бесконечность — для её обозначения используется константа <code>Inf</code>. Например, мы решили поделить какое-нибудь число на ноль:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">/</span> <span class="dv">0</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Inf</code></pre>
+</div>
+</div>
+<p>Опять же мы, скорее всего, получим что-то такое в процессе предобработки данных, а не будем собственноручно сносить данные делением на ноль. <code>Inf</code> для нас также будет сигналом о том, что нужно перепроверить произведенные вычисления.</p>
+<p>Существует и отрицательная бесконечность — <code>-Inf</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb237"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb237-1"><a href="#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">20</span> <span class="sc">/</span> <span class="dv">0</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -Inf</code></pre>
+</div>
+</div>
+<div id="exr-inf-nan" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 3.4</strong></span> Что получится, если бесконечность поделить на бесконечность?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb239"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb239-1"><a href="#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="cn">Inf</span> <span class="sc">/</span> <span class="cn">Inf</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb241"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb241-1"><a href="#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="cn">Inf</span> <span class="sc">/</span> <span class="cn">Inf</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb243"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="cn">Inf</span> <span class="sc">/</span> <span class="sc">-</span><span class="cn">Inf</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb245"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="cn">Inf</span> <span class="sc">/</span> <span class="sc">-</span><span class="cn">Inf</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="r-datatypes-details" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="r-datatypes-details"><span class="header-section-number">3.7</span> Детали типов данных</h2>
+<div class="lab-senior">
+
+</div>
+<section id="типы-na" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="типы-na"><span class="header-section-number">3.7.1</span> Типы <code>NA</code></h3>
+<div class="lab-senior">
+
+</div>
+<ul>
+<li><code>NA_character_</code></li>
+<li><code>NA_complex_</code></li>
+<li><code>NA_integer_</code></li>
+<li><code>NA_real_</code></li>
+</ul>
+</section>
+<section id="numeric-vs-integer-vs-double-typeof" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="numeric-vs-integer-vs-double-typeof"><span class="header-section-number">3.7.2</span> <code>numeric</code> vs <code>integer</code> vs <code>double</code> + <code>typeof()</code></h3>
+<div class="lab-guru">
+
+</div>
+<p>Вообще говоря, термин <code>numeric</code> внутри самого R используется непоследовательно <span class="citation" data-cites="wickham-advr-2019">(см. <a href="references.html#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019, sec. 12.3.1</a>)</span>. С одной стороны, <code>numeric</code> используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу <code>double</code><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, который также существует, но достаётся с помощью функции <code>typeof()</code>, которая «более низкоуровневая»:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb247"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb249"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+</div>
+<p>Две функции — <code>class</code> и <code>typeof</code> — согласны и в отношении целочисленного типа данных:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb251"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb253"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">2</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+</div>
+<p>Однако если залезть глубже и посмотреть на числа с точки зрения ООП, то можно обнаружить неожиданное:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a>sloop<span class="sc">::</span><span class="fu">s3_class</span>(<span class="dv">1</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"  "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb257"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a>sloop<span class="sc">::</span><span class="fu">s3_class</span>(<span class="dv">1</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer" "numeric"</code></pre>
+</div>
+</div>
+<p>И у целого числа, и у числа с плавающей точкой есть атрибут <code>numeric</code>. Получается, что <code>numeric</code> является обобщением для типов <code>integer</code> и <code>double</code>.</p>
+</section>
+<section id="r-datatypes-complex" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="r-datatypes-complex"><span class="header-section-number">3.7.3</span> <code>complex</code></h3>
+<div class="lab-senior">
+
+</div>
+<p>В R существуют и комплексные числа<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Они крайне редко встречаются в&nbsp;статистике и анализе данных — разве что при выводе каких-нибудь теорем в&nbsp;суровой математической части статистики. Соответственно, в практической работе они вам вряд ли встретятся.</p>
+<p>Однако даже если вы не понимаете, кто такие есть эти числа, вы все равно можете с ними взаимодействовать в R — ведь это просто некие числа. Да, со своими приколами и особенностями, но всё же числа. А значит с ними можно выполнять все операции, которые можно выполнять с другими числами.</p>
+<div id="lst-complex-num" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-complex-num-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;3.19: Операции с комплексными числами
+</figcaption>
+<div aria-describedby="lst-complex-num-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb259"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "complex"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb261"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8-6</span>i <span class="sc">+</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10-3i</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb263"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">8-6</span>i) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 34+12i</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb265"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">7</span><span class="fl">-1.5</span>i) <span class="sc">/</span> (<span class="fl">1.1</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.363636+6.363636i</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb267"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">12</span><span class="sc">+</span><span class="dv">0</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0+3.464102i</code></pre>
+</div>
+</div>
+</div>
+</figure>
 </div>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb269"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1465,15 +1886,15 @@ other attached packages:
  [9] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.5      jsonlite_1.8.8    compiler_4.4.0    tidyselect_1.2.1 
+ [1] gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0    tidyselect_1.2.1 
  [5] xml2_1.3.6        scales_1.3.0      sloop_1.0.1       fastmap_1.2.0    
  [9] R6_2.5.1          generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4
 [13] munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4      
 [17] utf8_1.2.4        stringi_1.8.4     xfun_0.44         timechange_0.3.0 
-[21] cli_3.6.2         withr_3.0.0       magrittr_2.0.3    digest_0.6.35    
+[21] cli_3.6.3         withr_3.0.2       magrittr_2.0.3    digest_0.6.37    
 [25] grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3         lifecycle_1.0.4  
-[29] vctrs_0.6.5       evaluate_0.23     glue_1.7.0        fansi_1.0.6      
-[33] colorspace_2.1-0  httr_1.4.7        rmarkdown_2.27    tools_4.4.0      
+[29] vctrs_0.6.5       evaluate_1.0.1    glue_1.8.0        fansi_1.0.6      
+[33] colorspace_2.1-1  httr_1.4.7        rmarkdown_2.27    tools_4.4.0      
 [37] pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
 </div>
 </div>
@@ -1494,13 +1915,15 @@ Wickham, H. (2019). <em>Advanced r, second edition (2nd ed.)</em>. Chapman; Hall
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Это связано с различиями в способе хранения целых чисел и чисел с плавающей точкой. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Это связано с&nbsp;различиями в способе хранения целых чисел и&nbsp;чисел с&nbsp;плавающей точкой. Подробнее см.&nbsp;<a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Литерал <code>L</code> обозначает, что это <code>long integer</code> <span class="citation" data-cites="wickham-advr-2019">(<a href="references.html#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019</a>)</span>. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Это наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Кто это такие, описывается в <a href="./appendix-numbers.html#appendix-numbers-c">приложении</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Другое название этого типа — <code>boolean</code>. В данному случае мы имеем дело с полными синонимами.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Вариантов, кроме «истина» и «ложь», не существует, так как мы имеем дело с <em>двузначной логикой</em>. Вообще это не единственный вариант построить логическую систему, однако других мы касаться в этой книжке не будем.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Под знакомство с этой наукой выделена <a href="./math-logic.html">соответствующая глава</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Другое название этого типа — <code>boolean</code>. В данному случае мы имеем дело с полными синонимами.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Вариантов, кроме «истина» и «ложь», не существует, так как мы имеем дело с <em>двузначной логикой</em>. Вообще это не единственный вариант построить логическую систему, однако других мы касаться в этой книжке не будем.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Под знакомство с этой наукой выделена <a href="./math-logic.html">соответствующая глава</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>R не различает в качестве отдельных типов данных «символ» и «строку», как это делают некоторые другие языки программирования, обычно используя одинарные кавычки для создания объекта типа <code>char</code> (символ) и двойные для создания объекта типа <code>string</code> (строка).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Заметьте, что в других языках программирования это не всегда так. Например, команды <code>"a" + "b"</code> и <code>"2" + "3"</code> в JavaScript отлично сработают, вернув <code>"ab"</code> и <code>"23"</code> соответственно.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Это наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Кто это такие, описывается в <a href="./appendix-numbers.html#appendix-numbers-c">приложении</a>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
