@@ -31,8 +31,8 @@ book:
       - r-basics.qmd
       - r-datatypes.qmd
       - r-datastructures.qmd
-      - r-functions.qmd
       - r-data.qmd
+      - r-functions.qmd
       - r-tidy.qmd
       - r-strings.qmd
       - r-datetime.qmd

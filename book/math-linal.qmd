@@ -1,4 +1,4 @@
-# Линал {#chapterid}
+# Линал {#math-linal}
 
 {{< include other/_symbols.qmd >}}
 
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
-
+## Векторы {#math-linal-vectors}
 
 
 ***

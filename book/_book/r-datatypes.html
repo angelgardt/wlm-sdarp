@@ -660,12 +660,6 @@ window.Quarto = {
   <li><a href="#null" id="toc-null" class="nav-link" data-scroll-target="#null"><span class="header-section-number">3.6.3</span> <code>NULL</code></a></li>
   <li><a href="#inf" id="toc-inf" class="nav-link" data-scroll-target="#inf"><span class="header-section-number">3.6.4</span> <code>Inf</code></a></li>
   </ul></li>
-  <li><a href="#r-datatypes-details" id="toc-r-datatypes-details" class="nav-link" data-scroll-target="#r-datatypes-details"><span class="header-section-number">3.7</span> Детали типов данных</a>
-  <ul>
-  <li><a href="#типы-na" id="toc-типы-na" class="nav-link" data-scroll-target="#типы-na"><span class="header-section-number">3.7.1</span> Типы <code>NA</code></a></li>
-  <li><a href="#numeric-vs-integer-vs-double-typeof" id="toc-numeric-vs-integer-vs-double-typeof" class="nav-link" data-scroll-target="#numeric-vs-integer-vs-double-typeof"><span class="header-section-number">3.7.2</span> <code>numeric</code> vs <code>integer</code> vs <code>double</code> + <code>typeof()</code></a></li>
-  <li><a href="#r-datatypes-complex" id="toc-r-datatypes-complex" class="nav-link" data-scroll-target="#r-datatypes-complex"><span class="header-section-number">3.7.3</span> <code>complex</code></a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1760,108 +1754,249 @@ Case sensitivity
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="r-datatypes-details" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="r-datatypes-details"><span class="header-section-number">3.7</span> Детали типов данных</h2>
-<div class="lab-senior">
+<!---
+## Детали типов данных {#r-datatypes-details}
 
-</div>
-<section id="типы-na" class="level3" data-number="3.7.1">
-<h3 data-number="3.7.1" class="anchored" data-anchor-id="типы-na"><span class="header-section-number">3.7.1</span> Типы <code>NA</code></h3>
-<div class="lab-senior">
+:::{.lab-senior}
+:::
 
-</div>
-<ul>
-<li><code>NA_character_</code></li>
-<li><code>NA_complex_</code></li>
-<li><code>NA_integer_</code></li>
-<li><code>NA_real_</code></li>
-</ul>
-</section>
-<section id="numeric-vs-integer-vs-double-typeof" class="level3" data-number="3.7.2">
-<h3 data-number="3.7.2" class="anchored" data-anchor-id="numeric-vs-integer-vs-double-typeof"><span class="header-section-number">3.7.2</span> <code>numeric</code> vs <code>integer</code> vs <code>double</code> + <code>typeof()</code></h3>
-<div class="lab-guru">
+### Типы `NA`
 
-</div>
-<p>Вообще говоря, термин <code>numeric</code> внутри самого R используется непоследовательно <span class="citation" data-cites="wickham-advr-2019">(см. <a href="references.html#ref-wickham-advr-2019" role="doc-biblioref">Wickham, 2019, sec. 12.3.1</a>)</span>. С одной стороны, <code>numeric</code> используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу <code>double</code><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, который также существует, но достаётся с помощью функции <code>typeof()</code>, которая «более низкоуровневая»:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb247"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "numeric"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb249"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fl">2.20</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"</code></pre>
-</div>
-</div>
-<p>Две функции — <code>class</code> и <code>typeof</code> — согласны и в отношении целочисленного типа данных:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb251"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb253"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">2</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
-</div>
-</div>
-<p>Однако если залезть глубже и посмотреть на числа с точки зрения ООП, то можно обнаружить неожиданное:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a>sloop<span class="sc">::</span><span class="fu">s3_class</span>(<span class="dv">1</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"  "numeric"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb257"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a>sloop<span class="sc">::</span><span class="fu">s3_class</span>(<span class="dv">1</span>L)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer" "numeric"</code></pre>
-</div>
-</div>
-<p>И у целого числа, и у числа с плавающей точкой есть атрибут <code>numeric</code>. Получается, что <code>numeric</code> является обобщением для типов <code>integer</code> и <code>double</code>.</p>
-</section>
-<section id="r-datatypes-complex" class="level3" data-number="3.7.3">
-<h3 data-number="3.7.3" class="anchored" data-anchor-id="r-datatypes-complex"><span class="header-section-number">3.7.3</span> <code>complex</code></h3>
-<div class="lab-senior">
+:::{.lab-senior}
+:::
 
-</div>
-<p>В R существуют и комплексные числа<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Они крайне редко встречаются в&nbsp;статистике и анализе данных — разве что при выводе каких-нибудь теорем в&nbsp;суровой математической части статистики. Соответственно, в практической работе они вам вряд ли встретятся.</p>
-<p>Однако даже если вы не понимаете, кто такие есть эти числа, вы все равно можете с ними взаимодействовать в R — ведь это просто некие числа. Да, со своими приколами и особенностями, но всё же числа. А значит с ними можно выполнять все операции, которые можно выполнять с другими числами.</p>
-<div id="lst-complex-num" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-complex-num-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;3.19: Операции с комплексными числами
-</figcaption>
-<div aria-describedby="lst-complex-num-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb259"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "complex"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb261"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8-6</span>i <span class="sc">+</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10-3i</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb263"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">8-6</span>i) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 34+12i</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb265"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">7</span><span class="fl">-1.5</span>i) <span class="sc">/</span> (<span class="fl">1.1</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.363636+6.363636i</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb267"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">12</span><span class="sc">+</span><span class="dv">0</span>i)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0+3.464102i</code></pre>
-</div>
-</div>
-</div>
-</figure>
-</div>
+* `NA_character_`
+* `NA_complex_`
+* `NA_integer_`
+* `NA_real_`
+
+
+
+### `numeric` vs `integer` vs `double` + `typeof()`
+
+:::{.lab-guru}
+:::
+
+Вообще говоря, термин `numeric` внутри самого R используется непоследовательно [см. @wickham-advr-2019, sec. 12.3.1]. С одной стороны, `numeric` используется для обозначения чисел, содержащих дробную часть. В этом смысле он оказывается синонимом к типу `double`[^double], который также существует, но достаётся с помощью функции `typeof()`, которая «более низкоуровневая»:
+
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(2.20)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "numeric"
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(2.20)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+:::
+
+
+
+
+
+[^double]: Это наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью --- и это правда. Подробнее см. [приложение](appendix-numbers-iron.qmd).
+
+Две функции --- `class` и `typeof` --- согласны и в отношении целочисленного типа данных:
+
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(2L)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(2L)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+:::
+
+
+
+
+
+Однако если залезть глубже и посмотреть на числа с точки зрения ООП, то можно обнаружить неожиданное:
+
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+sloop::s3_class(1)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"  "numeric"
+```
+
+
+:::
+
+```{.r .cell-code}
+sloop::s3_class(1L)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer" "numeric"
+```
+
+
+:::
+:::
+
+
+
+
+
+И у целого числа, и у числа с плавающей точкой есть атрибут `numeric`. Получается, что `numeric` является обобщением для типов `integer` и `double`.
+
+
+
+### `complex` {#r-datatypes-complex}
+
+:::{.lab-senior}
+:::
+
+В R существуют и комплексные числа[^complex-num]. Они крайне редко встречаются в статистике и анализе данных --- разве что при выводе каких-нибудь теорем в суровой математической части статистики. Соответственно, в практической работе они вам вряд ли встретятся.
+
+[^complex-num]: Кто это такие, описывается в [приложении](appendix-numbers.qmd#appendix-numbers-c).
+
+Однако даже если вы не понимаете, кто такие есть эти числа, вы все равно можете с ними взаимодействовать в R --- ведь это просто некие числа. Да, со своими приколами и особенностями, но всё же числа. А значит с ними можно выполнять все операции, которые можно выполнять с другими числами.
+
+:::{#lst-complex-num}
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(2+3i)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "complex"
+```
+
+
+:::
+
+```{.r .cell-code}
+8-6i + 2+3i
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 10-3i
+```
+
+
+:::
+
+```{.r .cell-code}
+(8-6i) * (2+3i)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 34+12i
+```
+
+
+:::
+
+```{.r .cell-code}
+(-7-1.5i) / (1.1i)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] -1.363636+6.363636i
+```
+
+
+:::
+
+```{.r .cell-code}
+sqrt(-12+0i)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0+3.464102i
+```
+
+
+:::
+:::
+
+
+
+
+
+Операции с комплексными числами
+:::
+
+--->
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb269"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb247"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1922,8 +2057,6 @@ Wickham, H. (2019). <em>Advanced r, second edition (2nd ed.)</em>. Chapman; Hall
 <li id="fn5"><p>Под знакомство с этой наукой выделена <a href="./math-logic.html">соответствующая глава</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>R не различает в качестве отдельных типов данных «символ» и «строку», как это делают некоторые другие языки программирования, обычно используя одинарные кавычки для создания объекта типа <code>char</code> (символ) и двойные для создания объекта типа <code>string</code> (строка).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>Заметьте, что в других языках программирования это не всегда так. Например, команды <code>"a" + "b"</code> и <code>"2" + "3"</code> в JavaScript отлично сработают, вернув <code>"ab"</code> и <code>"23"</code> соответственно.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Это наводит нас на мысль, что числа с плавающей точкой хранятся в R с двойной точностью — и это правда. Подробнее см. <a href="./appendix-numbers-iron.html">приложение</a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Кто это такие, описывается в <a href="./appendix-numbers.html#appendix-numbers-c">приложении</a>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
