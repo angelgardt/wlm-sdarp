@@ -33,8 +33,8 @@ book:
       - r-datastructures.qmd
       - r-data.qmd
       - r-functions.qmd
-      - r-tidy.qmd
       - r-strings.qmd
+      - r-tidy.qmd
       - r-datetime.qmd
       - r-visggplot.qmd
       - r-visbase.qmd
@@ -118,5 +118,6 @@ format:
       light: [style/css/light.scss, style/css/common.scss]
       dark: [style/css/dark.scss, style/css/common.scss]
     code-overflow: wrap
+    lightbox: true
 
 editor: source

@@ -11,7 +11,7 @@
 :::{.callout-warning .version appearance="simple"}
 ###### Dev-версия {.unnumbered}
 
-Эта версия книги в процессе разработки. В ней могут содержаться ошибки, баги и недоделки.
+Эта версия книги в процессе разработки. В ней могут содержаться ошибки, баги и недоделки.
 Текущий релиз находится [здесь](../cr/).
 :::
 
@@ -21,10 +21,11 @@
 
 #### Attribution {#attribution .unnumbered}
 
-* В дизайне книги использовано [изображение](https://unsplash.com/photos/a-black-and-white-photo-of-a-bunch-of-cubes-gC_aoAjQl2Q) от [Shubham Dhage](https://unsplash.com/@theshubhamdhage).
+* В дизайне книги использовано [изображение](https://unsplash.com/photos/a-black-and-white-photo-of-a-bunch-of-cubes-gC_aoAjQl2Q) от [Shubham Dhage](https://unsplash.com/@theshubhamdhage).
 * Гарнитура текста --- [Montserrat](https://fonts.google.com/specimen/Montserrat).
-* HTML-темы (темная и светлая) кастомизированы на основе [darkly](https://bootswatch.com/darkly/) и [flatly](https://bootswatch.com/flatly/).
-* Книга свёрстана на [Quarto](https://quarto.org/).
+* HTML-темы (темная и светлая) кастомизированы на основе [darkly](https://bootswatch.com/darkly/) и [flatly](https://bootswatch.com/flatly/).
+* Книга свёрстана на [Quarto](https://quarto.org/).
+* Логотипы пакетов, использованные в книге, если не указано иное, взяты из [репозитория rstudio](https://github.com/rstudio/hex-stickers/tree/main)
 
 
 

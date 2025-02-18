@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Предобработка данных – WLM SDARP</title>
+<title>8&nbsp; Предобработка данных – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r-strings.html" rel="next">
-<link href="./r-functions.html" rel="prev">
+<link href="./r-datetime.html" rel="next">
+<link href="./r-strings.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -78,6 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -142,7 +145,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,8 +157,8 @@ background-size: cover;
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
-      <h1 class="title"><span id="r-tidy" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
+      <h1 class="title"><span id="r-tidy" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></h1>
                       </div>
   </div>
     
@@ -251,14 +254,14 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -585,25 +588,36 @@ background-size: cover;
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#r-tidy-concept" id="toc-r-tidy-concept" class="nav-link active" data-scroll-target="#r-tidy-concept"><span class="header-section-number">7.1</span> Концепция Tidy Data</a></li>
-  <li><a href="#r-tidy-tidyverse" id="toc-r-tidy-tidyverse" class="nav-link" data-scroll-target="#r-tidy-tidyverse"><span class="header-section-number">7.2</span> Семейство пакетов <code>tidyverse</code></a>
+  <li><a href="#r-tidy-concept" id="toc-r-tidy-concept" class="nav-link active" data-scroll-target="#r-tidy-concept"><span class="header-section-number">8.1</span> Концепция Tidy Data</a></li>
+  <li><a href="#r-tidy-tidyverse" id="toc-r-tidy-tidyverse" class="nav-link" data-scroll-target="#r-tidy-tidyverse"><span class="header-section-number">8.2</span> Семейство пакетов <code>tidyverse</code></a></li>
+  <li><a href="#r-tidy-import" id="toc-r-tidy-import" class="nav-link" data-scroll-target="#r-tidy-import"><span class="header-section-number">8.3</span> Импорт данных</a>
   <ul>
-  <li><a href="#r-tidy-import" id="toc-r-tidy-import" class="nav-link" data-scroll-target="#r-tidy-import"><span class="header-section-number">7.2.1</span> Импорт данных</a></li>
-  <li><a href="#r-tidy-rename" id="toc-r-tidy-rename" class="nav-link" data-scroll-target="#r-tidy-rename"><span class="header-section-number">7.2.2</span> Переименование переменных</a></li>
-  <li><a href="#r-tidy-subset" id="toc-r-tidy-subset" class="nav-link" data-scroll-target="#r-tidy-subset"><span class="header-section-number">7.2.3</span> Фильтрация данных</a>
+  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><span class="header-section-number">8.3.1</span> <code>tibble</code></a></li>
+  </ul></li>
+  <li><a href="#r-tidy-pipe" id="toc-r-tidy-pipe" class="nav-link" data-scroll-target="#r-tidy-pipe"><span class="header-section-number">8.4</span> Pipe (<code>%&gt;%</code>)</a></li>
+  <li><a href="#r-tidy-rename" id="toc-r-tidy-rename" class="nav-link" data-scroll-target="#r-tidy-rename"><span class="header-section-number">8.5</span> Переименование переменных</a></li>
+  <li><a href="#r-tidy-subset" id="toc-r-tidy-subset" class="nav-link" data-scroll-target="#r-tidy-subset"><span class="header-section-number">8.6</span> Фильтрация данных</a>
+  <ul>
+  <li><a href="#r-tidy-select" id="toc-r-tidy-select" class="nav-link" data-scroll-target="#r-tidy-select"><span class="header-section-number">8.6.1</span> Выбор столбцов</a></li>
+  <li><a href="#r-tidy-filter-slice" id="toc-r-tidy-filter-slice" class="nav-link" data-scroll-target="#r-tidy-filter-slice"><span class="header-section-number">8.6.2</span> Фильтрация строк</a></li>
+  </ul></li>
+  <li><a href="#r-tidy-arrange" id="toc-r-tidy-arrange" class="nav-link" data-scroll-target="#r-tidy-arrange"><span class="header-section-number">8.7</span> Сортировка данных</a></li>
+  <li><a href="#r-tidy-mutate" id="toc-r-tidy-mutate" class="nav-link" data-scroll-target="#r-tidy-mutate"><span class="header-section-number">8.8</span> Создание и изменение переменных</a></li>
+  <li><a href="#r-tidy-summarise" id="toc-r-tidy-summarise" class="nav-link" data-scroll-target="#r-tidy-summarise"><span class="header-section-number">8.9</span> Агрегация данных</a></li>
+  <li><a href="#r-tidy-merge" id="toc-r-tidy-merge" class="nav-link" data-scroll-target="#r-tidy-merge"><span class="header-section-number">8.10</span> Объединение датасетов</a>
+  <ul>
+  <li><a href="#r-tidy-binds" id="toc-r-tidy-binds" class="nav-link" data-scroll-target="#r-tidy-binds"><span class="header-section-number">8.10.1</span> Объединение по строкам и столбцам</a></li>
+  <li><a href="#r-tidy-joins" id="toc-r-tidy-joins" class="nav-link" data-scroll-target="#r-tidy-joins"><span class="header-section-number">8.10.2</span> Объединение по ключу</a>
   <ul class="collapse">
-  <li><a href="#r-tidy-select" id="toc-r-tidy-select" class="nav-link" data-scroll-target="#r-tidy-select"><span class="header-section-number">7.2.3.1</span> Фильтрация столбцов</a></li>
-  <li><a href="#r-tidy-filter-slice" id="toc-r-tidy-filter-slice" class="nav-link" data-scroll-target="#r-tidy-filter-slice"><span class="header-section-number">7.2.3.2</span> Фильтрация строк</a></li>
-  </ul></li>
-  <li><a href="#r-tidy-arrange" id="toc-r-tidy-arrange" class="nav-link" data-scroll-target="#r-tidy-arrange"><span class="header-section-number">7.2.4</span> Сортировка данных</a></li>
-  <li><a href="#r-tidy-mutate" id="toc-r-tidy-mutate" class="nav-link" data-scroll-target="#r-tidy-mutate"><span class="header-section-number">7.2.5</span> Создание и изменение переменных</a></li>
-  <li><a href="#r-tidy-summarise" id="toc-r-tidy-summarise" class="nav-link" data-scroll-target="#r-tidy-summarise"><span class="header-section-number">7.2.6</span> Агрегация данных</a></li>
-  <li><a href="#r-tidy-merge" id="toc-r-tidy-merge" class="nav-link" data-scroll-target="#r-tidy-merge"><span class="header-section-number">7.2.7</span> Объединение датасетов</a>
-  <ul class="collapse">
-  <li><a href="#r-tidy-binds" id="toc-r-tidy-binds" class="nav-link" data-scroll-target="#r-tidy-binds"><span class="header-section-number">7.2.7.1</span> Объединение по строкам и столбцам</a></li>
-  <li><a href="#r-tidy-joins" id="toc-r-tidy-joins" class="nav-link" data-scroll-target="#r-tidy-joins"><span class="header-section-number">7.2.7.2</span> Объединение по ключу</a></li>
+  <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><span class="header-section-number">8.10.2.1</span> <code>inner_join()</code></a></li>
+  <li><a href="#left_join" id="toc-left_join" class="nav-link" data-scroll-target="#left_join"><span class="header-section-number">8.10.2.2</span> <code>left_join()</code></a></li>
+  <li><a href="#right_join" id="toc-right_join" class="nav-link" data-scroll-target="#right_join"><span class="header-section-number">8.10.2.3</span> <code>right_join()</code></a></li>
+  <li><a href="#full_join" id="toc-full_join" class="nav-link" data-scroll-target="#full_join"><span class="header-section-number">8.10.2.4</span> <code>full_join()</code></a></li>
+  <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><span class="header-section-number">8.10.2.5</span> <code>semi_join()</code></a></li>
+  <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><span class="header-section-number">8.10.2.6</span> <code>anti_join()</code></a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#r-tidy-export" id="toc-r-tidy-export" class="nav-link" data-scroll-target="#r-tidy-export"><span class="header-section-number">8.11</span> Экспорт данных</a></li>
   </ul>
 </nav>
     </div>
@@ -634,13 +648,108 @@ background-size: cover;
 <div class="intro">
 <p>Вступление</p>
 </div>
-<section id="r-tidy-concept" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="r-tidy-concept"><span class="header-section-number">7.1</span> Концепция Tidy Data</h2>
+<section id="r-tidy-concept" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="r-tidy-concept"><span class="header-section-number">8.1</span> Концепция Tidy Data</h2>
+<div class="lab-junior">
+
+</div>
+<div id="fig-tidy-rules" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tidy-rules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tidy-rules" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tidy-rules-data" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-tidy-rules-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/r-tidy/tidy-rules-data.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(a): Общий вид «опрятных данных»"><img src="img/r-tidy/tidy-rules-data.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Общий вид «опрятных данных»
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tidy-rules" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tidy-rules-cols" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-tidy-rules-cols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/r-tidy/tidy-rules-cols.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(b): По&nbsp;колонкам — переменные"><img src="img/r-tidy/tidy-rules-cols.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-cols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) По&nbsp;колонкам — переменные
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tidy-rules" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tidy-rules-rows" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-tidy-rules-rows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/r-tidy/tidy-rules-rows.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(c): По&nbsp;строкам — наблюдения"><img src="img/r-tidy/tidy-rules-rows.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-rows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) По&nbsp;строкам — наблюдения
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tidy-rules" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tidy-rules-cells" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-tidy-rules-cells-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/r-tidy/tidy-rules-cells.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(d): В&nbsp;ячейках — значения"><img src="img/r-tidy/tidy-rules-cells.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-cells-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) В&nbsp;ячейках — значения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tidy-rules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;8.1: Принципы Tidy Data
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="r-tidy-tidyverse" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="r-tidy-tidyverse"><span class="header-section-number">7.2</span> Семейство пакетов <code>tidyverse</code></h2>
+<section id="r-tidy-tidyverse" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="r-tidy-tidyverse"><span class="header-section-number">8.2</span> Семейство пакетов <code>tidyverse</code></h2>
+<div class="lab-junior">
+
+</div>
+<div class="columns" style="display: block">
+<div class="column" style="width:80%;">
+<p>прекраснейший набор пакетов, существенно упрощающий жизнь</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:15%;">
+<p><a href="img/r-tidy/logos/tidyverse.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="img/r-tidy/logos/tidyverse.svg" class="img-fluid"></a></p>
+</div>
+</div>
+<p>Устанавливается и&nbsp;подключается <code>tidyverse</code>, как&nbsp;и&nbsp;другие пакеты, с&nbsp;помощью функций <code>install.packages()</code> и&nbsp;<code>library()</code>.</p>
+<div id="lst-install-tidyverse" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-install-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.1: Установка <code>tidyverse</code>
+</figcaption>
+<div aria-describedby="lst-install-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-load-tidyverse" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.2: Загрузка (подключение) <code>tidyverse</code>
+</figcaption>
+<div aria-describedby="lst-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -654,10 +763,309 @@ background-size: cover;
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-<section id="r-tidy-import" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="r-tidy-import"><span class="header-section-number">7.2.1</span> Импорт данных</h3>
+</div>
+</figure>
+</div>
+<p>При&nbsp;подключении к&nbsp;текущей сессии <code>tidyvers</code> нам сообщает, какие именно пакеты были подключены, а&nbsp;также их версии. Например, пакеты <code>ggplot2</code> версии 3.5.1 и&nbsp;<code>stringr</code> версии 1.5.1. Кроме того, нас известили о&nbsp;возникших конфликтах — функции из&nbsp;разных пакетов могут иметь одинаковые названия, что может иногда ломать скрипт. Однако в&nbsp;случае с&nbsp;<code>tidyverse</code> конфликты несущественны, поэтому мы их проигнорируем.</p>
+<div class="columns" style="display: block">
+<div class="column" style="width:65%;">
+<p><code>tidyverse</code> объединяет в&nbsp;себе, как мы видим из&nbsp;выводимого при&nbsp;его загрузке сообщения, много разных пакетов. В&nbsp;дальнейшем мы не&nbsp;будем разбираться, из&nbsp;какого конкретно пакета приходит та или&nbsp;иная функция, но&nbsp;всё&nbsp;же стоит кратко описать, чем каждый из пакетов занимается.</p>
+<ul>
+<li><code>readr</code> содержит функции для&nbsp;чтения файлов данных различных форматов</li>
+<li><code>readxl</code> является частью расширенного <code>tidyverse</code> и&nbsp;специализируется на&nbsp;чтении табличных данных</li>
+<li><code>tibble</code> предоставляет новую структуру данных, которая называется <code>tibble</code></li>
+<li><code>tidyr</code></li>
+<li><code>dplyr</code></li>
+<li><code>ggplot2</code> позволяет рисовать невероятные графики</li>
+<li><code>stringr</code> расширяет возможности работы со&nbsp;строками</li>
+<li><code>lubridate</code> корректно обрабатывать даты и&nbsp;время</li>
+<li><code>forcats</code> содержит функции для работы с&nbsp;факторами</li>
+<li><code>purrr</code></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:15%;">
+<p><a href="img/r-tidy/logos/readr.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="img/r-tidy/logos/readr.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/readxl.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="img/r-tidy/logos/readxl.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/tibble.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="img/r-tidy/logos/tibble.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/tidyr.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="img/r-tidy/logos/tidyr.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/dplyr.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="img/r-tidy/logos/dplyr.svg" class="img-fluid"></a></p>
+</div><div class="column" style="width:15%;">
+<p><a href="img/r-tidy/logos/ggplot2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="img/r-tidy/logos/ggplot2.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/stringr.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="img/r-tidy/logos/stringr.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/lubridate.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="img/r-tidy/logos/lubridate.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/forcats.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="img/r-tidy/logos/forcats.svg" class="img-fluid"></a></p>
+<p><a href="img/r-tidy/logos/purrr.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="img/r-tidy/logos/purrr.svg" class="img-fluid"></a></p>
+</div>
+</div>
+</section>
+<section id="r-tidy-import" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="r-tidy-import"><span class="header-section-number">8.3</span> Импорт данных</h2>
+<div class="lab-junior">
+
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/r-tidy/d_csv.csv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ds_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/r-tidy/ds_csv.csv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 6 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (4): id, V1, C2, V3b
+dbl (2): V2, V3a
+lgl (1): C1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ds_csv)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [6 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ id : chr [1:6] "r1" "r2" "r3" "r4" ...
+ $ V1 : chr [1:6] "Abc" "Def" "Ghi" "Jkl" ...
+ $ V2 : num [1:6] 1 8 3 12 4 NA
+ $ C1 : logi [1:6] TRUE TRUE FALSE FALSE FALSE TRUE
+ $ C2 : chr [1:6] "No" "No" "Yes" "Yes" ...
+ $ V3a: num [1:6] 13.4 11.8 4.6 3.5 -4.03 0.78
+ $ V3b: chr [1:6] "Msk" NA NA "SPb" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   id = col_character(),
+  ..   V1 = col_character(),
+  ..   V2 = col_double(),
+  ..   C1 = col_logical(),
+  ..   C2 = col_character(),
+  ..   V3a = col_double(),
+  ..   V3b = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ds_csv2 <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"data/r-tidy/ds_csv2.csv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 6 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ";"
+chr (4): id, V1, C2, V3b
+dbl (2): V2, V3a
+lgl (1): C1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ds_csv2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [6 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ id : chr [1:6] "r1" "r2" "r3" "r4" ...
+ $ V1 : chr [1:6] "Abc" "Def" "Ghi" "Jkl" ...
+ $ V2 : num [1:6] 1 8 3 12 4 NA
+ $ C1 : logi [1:6] TRUE TRUE FALSE FALSE FALSE TRUE
+ $ C2 : chr [1:6] "No" "No" "Yes" "Yes" ...
+ $ V3a: num [1:6] 13.4 11.8 4.6 3.5 -4.03 0.78
+ $ V3b: chr [1:6] "Msk" NA NA "SPb" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   id = col_character(),
+  ..   V1 = col_character(),
+  ..   V2 = col_double(),
+  ..   C1 = col_logical(),
+  ..   C2 = col_character(),
+  ..   V3a = col_double(),
+  ..   V3b = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ds_tsv <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/r-tidy/ds_tsv.tsv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 6 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (4): id, V1, C2, V3b
+dbl (2): V2, V3a
+lgl (1): C1
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ds_tsv)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [6 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ id : chr [1:6] "r1" "r2" "r3" "r4" ...
+ $ V1 : chr [1:6] "Abc" "Def" "Ghi" "Jkl" ...
+ $ V2 : num [1:6] 1 8 3 12 4 NA
+ $ C1 : logi [1:6] TRUE TRUE FALSE FALSE FALSE TRUE
+ $ C2 : chr [1:6] "No" "No" "Yes" "Yes" ...
+ $ V3a: num [1:6] 13.4 11.8 4.6 3.5 -4.03 0.78
+ $ V3b: chr [1:6] "Msk" NA NA "SPb" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   id = col_character(),
+  ..   V1 = col_character(),
+  ..   V2 = col_double(),
+  ..   C1 = col_logical(),
+  ..   C2 = col_character(),
+  ..   V3a = col_double(),
+  ..   V3b = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ds_table <span class="ot">&lt;-</span> <span class="fu">read_table</span>(<span class="st">"data/r-tidy/ds_table.tsv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+── Column specification ────────────────────────────────────────────────────────
+cols(
+  id = col_character(),
+  V1 = col_character(),
+  V2 = col_double(),
+  C1 = col_logical(),
+  C2 = col_character(),
+  V3a = col_double(),
+  V3b = col_character()
+)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ds_table)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [6 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ id : chr [1:6] "r1" "r2" "r3" "r4" ...
+ $ V1 : chr [1:6] "Abc" "Def" "Ghi" "Jkl" ...
+ $ V2 : num [1:6] 1 8 3 12 4 NA
+ $ C1 : logi [1:6] TRUE TRUE FALSE FALSE FALSE TRUE
+ $ C2 : chr [1:6] "No" "No" "Yes" "Yes" ...
+ $ V3a: num [1:6] 13.4 11.8 4.6 3.5 -4.03 0.78
+ $ V3b: chr [1:6] "Msk" NA NA "SPb" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   id = col_character(),
+  ..   V1 = col_character(),
+  ..   V2 = col_double(),
+  ..   C1 = col_logical(),
+  ..   C2 = col_character(),
+  ..   V3a = col_double(),
+  ..   V3b = col_character()
+  .. )</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ds_delim <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"data/r-tidy/ds_delim.txt"</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">delim =</span> <span class="st">"|"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">","</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 6 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "|"
+chr (4): V1, V2, V3a, V3b
+dbl (2): id, C1
+lgl (1): C2
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ds_delim)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [6 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ id : num [1:6] 1 2 3 4 5 6
+ $ V1 : chr [1:6] "r1" "r2" "r3" "r4" ...
+ $ V2 : chr [1:6] "Abc" "Def" "Ghi" "Jkl" ...
+ $ C1 : num [1:6] 1 8 3 12 4 NA
+ $ C2 : logi [1:6] TRUE TRUE FALSE FALSE FALSE TRUE
+ $ V3a: chr [1:6] "No" "No" "Yes" "Yes" ...
+ $ V3b: chr [1:6] "13,4|\"Msk\"" "11,8|NA" "4,6|NA" "3,5|\"SPb\"" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   id = col_double(),
+  ..   V1 = col_character(),
+  ..   V2 = col_character(),
+  ..   C1 = col_double(),
+  ..   C2 = col_logical(),
+  ..   V3a = col_character(),
+  ..   V3b = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<section id="tibble" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="tibble"><span class="header-section-number">8.3.1</span> <code>tibble</code></h3>
+<div class="lab-junior">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ds_dataframe <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/r-tidy/ds_csv.csv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ds_dataframe)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ds_csv)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>ds_dataframe</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id   V1 V2    C1  C2   V3a  V3b
+1 r1  Abc  1  TRUE  No 13.40  Msk
+2 r2  Def  8  TRUE  No 11.80 &lt;NA&gt;
+3 r3  Ghi  3 FALSE Yes  4.60 &lt;NA&gt;
+4 r4  Jkl 12 FALSE Yes  3.50  SPb
+5 r5  Mno  4 FALSE  No -4.03  Ekb
+6 r6 &lt;NA&gt; NA  TRUE  No  0.78  Nsk</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ds_csv</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    V1       V2 C1    C2      V3a V3b  
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Почистим ненужное
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Если вы выполняли у&nbsp;себя в&nbsp;R команды из&nbsp;предыдущего раздела, в&nbsp;Environment у&nbsp;вас накопилось много одинаковых объектов с&nbsp;разными названиями. Чтобы не&nbsp;тащить их дальше и&nbsp;не&nbsp;загружать лишний раз оперативную память, давайте почистим глобальное окружение известным нам способом.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>() <span class="do">## что сейчас есть в окружении?</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ds_csv"       "ds_csv2"      "ds_dataframe" "ds_delim"     "ds_table"    
+[6] "ds_tsv"      </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="do">## удалить все объекты, содержащиеся в глобальном окружении</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>() <span class="do">## проверить содержимое окружения</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>character(0)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Далее мы изучим работу основных функций, которые используются в&nbsp;предобработке данных, на&nbsp;примере датасета <code>ds</code>. Чтобы не&nbsp;таскать аффиксы <code>_csv</code>, <code>_tsv</code> и&nbsp;другие, вновь прочитаем данные — теперь просто в&nbsp;объект <code>ds</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/r-tidy/ds_csv.csv"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 6 Columns: 7
 ── Column specification ────────────────────────────────────────────────────────
@@ -670,35 +1078,176 @@ lgl (1): C1
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<pre><code>read_csv2()</code></pre>
-<pre><code>read_tsv()</code></pre>
-<pre><code>read_table()</code></pre>
-<pre><code>read_delim()</code></pre>
 </section>
-<section id="r-tidy-rename" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="r-tidy-rename"><span class="header-section-number">7.2.2</span> Переименование переменных</h3>
 </section>
-<section id="r-tidy-subset" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="r-tidy-subset"><span class="header-section-number">7.2.3</span> Фильтрация данных</h3>
-<section id="r-tidy-select" class="level4" data-number="7.2.3.1">
-<h4 data-number="7.2.3.1" class="anchored" data-anchor-id="r-tidy-select"><span class="header-section-number">7.2.3.1</span> Фильтрация столбцов</h4>
+<section id="r-tidy-pipe" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="r-tidy-pipe"><span class="header-section-number">8.4</span> Pipe (<code>%&gt;%</code>)</h2>
+<div class="lab-junior">
+
+</div>
+<div class="columns" style="display: block">
+<div class="column" style="width:80%;">
+<p>Кроме множества функций, <code>tidyverse</code> также приносит с&nbsp;собой новый оператор&nbsp;— pipe (пайп) — который выглядит вот так: <code>%&gt;%</code>.</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:15%;">
+<p><a href="img/r-tidy/logos/pipe.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="img/r-tidy/logos/pipe.svg" class="img-fluid"></a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pipe: magrittr vs native
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="img/r-tidy/native-pipe.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Включение использования нативного пайпа"><img src="img/r-tidy/native-pipe.png" class="img-fluid figure-img" alt="Включение использования нативного пайпа"></a></p>
+<figcaption>Включение использования нативного пайпа</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="r-tidy-rename" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="r-tidy-rename"><span class="header-section-number">8.5</span> Переименование переменных</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">var1 =</span> V1,</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">var2 =</span> V2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    var1   var2 C1    C2      V3a V3b  
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">var1 =</span> V1,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">var2 =</span> V2,</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">var3 =</span> C1,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">var4 =</span> C2,</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">var5 =</span> V3a,</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">var6 =</span> V3b)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    var1   var2 var3  var4   var5 var6 
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(tolower)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    v1       v2 c1    c2      v3a v3b  
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(<span class="fu">str_replace</span>(<span class="at">pattern =</span> <span class="st">"V"</span>, <span class="at">replacement =</span> <span class="st">"var"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in str_replace(pattern = "V", replacement = "var"): argument "string" is missing, with no default</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(str_replace, <span class="at">pattern =</span> <span class="st">"V"</span>, <span class="at">replacement =</span> <span class="st">"var"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    var1   var2 C1    C2    var3a var3b
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(str_replace, <span class="at">pattern =</span> <span class="st">"V"</span>, <span class="at">replacement =</span> <span class="st">"C"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `rename()`:
+! Names must be unique.
+✖ These names are duplicated:
+  * "C1" at locations 2 and 4.
+  * "C2" at locations 3 and 5.</code></pre>
+</div>
+</div>
+<p>Если&nbsp;же вы точно знаете, в&nbsp;каком порядке в&nbsp;ваших данных идут колонки, и&nbsp;хотите прописать новые названия просто по порядку, можно воспользоваться функцией <code>set_names()</code>. Она в&nbsp;качестве аргумента ожидает вектор новых названий колонок:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"var1"</span>, <span class="st">"var2"</span>, <span class="st">"var3"</span>, <span class="st">"var4"</span>, <span class="st">"var5"</span>, <span class="st">"var6"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    var1   var2 var3  var4   var5 var6 
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+<p>Или&nbsp;же можно создать вектор новых названий на&nbsp;лету по&nbsp;какому-то шаблону — вновь пригодятся умения <a href="./r-strings.html">работы со&nbsp;строками</a>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"id"</span>, <span class="fu">paste0</span>(<span class="st">"var"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  id    var1   var2 var3  var4   var5 var6 
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+4 r4    Jkl      12 FALSE Yes    3.5  SPb  
+5 r5    Mno       4 FALSE No    -4.03 Ekb  
+6 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+</section>
+<section id="r-tidy-subset" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="r-tidy-subset"><span class="header-section-number">8.6</span> Фильтрация данных</h2>
+<section id="r-tidy-select" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="r-tidy-select"><span class="header-section-number">8.6.1</span> Выбор столбцов</h3>
 <div id="lst-select-basic" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.1
+Код&nbsp;8.3
 </figcaption>
 <div aria-describedby="lst-select-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, V1, V2, C1)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, V1, V2, C1)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   id    V1       V2 C1   
   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt;
-1 r1    Am        1 TRUE 
-2 r2    Dm        8 TRUE 
-3 r3    Cm        3 FALSE
-4 r4    Gm       12 FALSE
-5 r5    Bm        4 FALSE
+1 r1    Abc       1 TRUE 
+2 r2    Def       8 TRUE 
+3 r3    Ghi       3 FALSE
+4 r4    Jkl      12 FALSE
+5 r5    Mno       4 FALSE
 6 r6    &lt;NA&gt;     NA TRUE </code></pre>
 </div>
 </div>
@@ -708,20 +1257,20 @@ lgl (1): C1
 <div id="lst-select-range" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-range-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.2
+Код&nbsp;8.4
 </figcaption>
 <div aria-describedby="lst-select-range-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, V1<span class="sc">:</span>C2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, V1<span class="sc">:</span>C2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   id    V1       V2 C1    C2   
   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt;
-1 r1    Am        1 TRUE  No   
-2 r2    Dm        8 TRUE  No   
-3 r3    Cm        3 FALSE Yes  
-4 r4    Gm       12 FALSE Yes  
-5 r5    Bm        4 FALSE No   
+1 r1    Abc       1 TRUE  No   
+2 r2    Def       8 TRUE  No   
+3 r3    Ghi       3 FALSE Yes  
+4 r4    Jkl      12 FALSE Yes  
+5 r5    Mno       4 FALSE No   
 6 r6    &lt;NA&gt;     NA TRUE  No   </code></pre>
 </div>
 </div>
@@ -731,20 +1280,20 @@ lgl (1): C1
 <div id="lst-select-starts-with" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-starts-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.3
+Код&nbsp;8.5
 </figcaption>
 <div aria-describedby="lst-select-starts-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"V"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"V"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   V1       V2   V3a V3b  
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;
-1 Am        1 13.4  Msk  
-2 Dm        8 11.8  &lt;NA&gt; 
-3 Cm        3  4.6  &lt;NA&gt; 
-4 Gm       12  3.5  SPb  
-5 Bm        4 -4.03 Ekb  
+1 Abc       1 13.4  Msk  
+2 Def       8 11.8  &lt;NA&gt; 
+3 Ghi       3  4.6  &lt;NA&gt; 
+4 Jkl      12  3.5  SPb  
+5 Mno       4 -4.03 Ekb  
 6 &lt;NA&gt;     NA  0.78 Nsk  </code></pre>
 </div>
 </div>
@@ -754,11 +1303,11 @@ lgl (1): C1
 <div id="lst-select-ends-with" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-ends-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.4
+Код&nbsp;8.6
 </figcaption>
 <div aria-describedby="lst-select-ends-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">"2"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">"2"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
      V2 C2   
@@ -774,23 +1323,69 @@ lgl (1): C1
 </div>
 </figure>
 </div>
+<div id="lst-select-matches-basic" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-matches-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.7
+</figcaption>
+<div aria-describedby="lst-select-matches-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">"V3"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+    V3a V3b  
+  &lt;dbl&gt; &lt;chr&gt;
+1 13.4  Msk  
+2 11.8  &lt;NA&gt; 
+3  4.6  &lt;NA&gt; 
+4  3.5  SPb  
+5 -4.03 Ekb  
+6  0.78 Nsk  </code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-select-matches-regex" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-matches-regex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.8
+</figcaption>
+<div aria-describedby="lst-select-matches-regex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">"V2|3"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     V2   V3a V3b  
+  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;
+1     1 13.4  Msk  
+2     8 11.8  &lt;NA&gt; 
+3     3  4.6  &lt;NA&gt; 
+4    12  3.5  SPb  
+5     4 -4.03 Ekb  
+6    NA  0.78 Nsk  </code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
 </section>
-<section id="r-tidy-filter-slice" class="level4" data-number="7.2.3.2">
-<h4 data-number="7.2.3.2" class="anchored" data-anchor-id="r-tidy-filter-slice"><span class="header-section-number">7.2.3.2</span> Фильтрация строк</h4>
+<section id="r-tidy-filter-slice" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="r-tidy-filter-slice"><span class="header-section-number">8.6.2</span> Фильтрация строк</h3>
 <div id="lst-filter-onecond" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-onecond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.5
+Код&nbsp;8.9
 </figcaption>
 <div aria-describedby="lst-filter-onecond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C2 <span class="sc">==</span> <span class="st">"Yes"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C2 <span class="sc">==</span> <span class="st">"Yes"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 7
   id    V1       V2 C1    C2      V3a V3b  
   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
-1 r3    Cm        3 FALSE Yes     4.6 &lt;NA&gt; 
-2 r4    Gm       12 FALSE Yes     3.5 SPb  </code></pre>
+1 r3    Ghi       3 FALSE Yes     4.6 &lt;NA&gt; 
+2 r4    Jkl      12 FALSE Yes     3.5 SPb  </code></pre>
 </div>
 </div>
 </div>
@@ -799,17 +1394,17 @@ lgl (1): C1
 <div id="lst-filter-twoconds-and" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-twoconds-and-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.6
+Код&nbsp;8.10
 </figcaption>
 <div aria-describedby="lst-filter-twoconds-and-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C2 <span class="sc">==</span> <span class="st">"No"</span> <span class="sc">&amp;</span> V2 <span class="sc">&gt;</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C2 <span class="sc">==</span> <span class="st">"No"</span> <span class="sc">&amp;</span> V2 <span class="sc">&gt;</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 7
   id    V1       V2 C1    C2      V3a V3b  
   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
-1 r2    Dm        8 TRUE  No    11.8  &lt;NA&gt; 
-2 r5    Bm        4 FALSE No    -4.03 Ekb  </code></pre>
+1 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+2 r5    Mno       4 FALSE No    -4.03 Ekb  </code></pre>
 </div>
 </div>
 </div>
@@ -818,19 +1413,77 @@ lgl (1): C1
 <div id="lst-filter-twoconds-or" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-twoconds-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;7.7
+Код&nbsp;8.11
 </figcaption>
 <div aria-describedby="lst-filter-twoconds-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C2 <span class="sc">==</span> <span class="st">"Yes"</span> <span class="sc">|</span> V2 <span class="sc">&gt;</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C2 <span class="sc">==</span> <span class="st">"Yes"</span> <span class="sc">|</span> V2 <span class="sc">&gt;</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 7
   id    V1       V2 C1    C2      V3a V3b  
   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
-1 r2    Dm        8 TRUE  No    11.8  &lt;NA&gt; 
-2 r3    Cm        3 FALSE Yes    4.6  &lt;NA&gt; 
-3 r4    Gm       12 FALSE Yes    3.5  SPb  
-4 r5    Bm        4 FALSE No    -4.03 Ekb  </code></pre>
+1 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+2 r3    Ghi       3 FALSE Yes    4.6  &lt;NA&gt; 
+3 r4    Jkl      12 FALSE Yes    3.5  SPb  
+4 r5    Mno       4 FALSE No    -4.03 Ekb  </code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-filter-logvar" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-logvar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.12
+</figcaption>
+<div aria-describedby="lst-filter-logvar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(C1)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 7
+  id    V1       V2 C1    C2      V3a V3b  
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r2    Def       8 TRUE  No    11.8  &lt;NA&gt; 
+3 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-filter-logvar-comb" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-logvar-comb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.13
+</figcaption>
+<div aria-describedby="lst-filter-logvar-comb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>C1 <span class="sc">&amp;</span> C2 <span class="sc">==</span> <span class="st">"Yes"</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  id    V1       V2 C1    C2      V3a V3b  
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r3    Ghi       3 FALSE Yes     4.6 &lt;NA&gt; 
+2 r4    Jkl      12 FALSE Yes     3.5 SPb  </code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="lst-filter-strfuns" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-strfuns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;8.14
+</figcaption>
+<div aria-describedby="lst-filter-strfuns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(V3b, <span class="st">"sk$"</span>))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  id    V1       V2 C1    C2      V3a V3b  
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;
+1 r1    Abc       1 TRUE  No    13.4  Msk  
+2 r6    &lt;NA&gt;     NA TRUE  No     0.78 Nsk  </code></pre>
 </div>
 </div>
 </div>
@@ -838,44 +1491,49 @@ lgl (1): C1
 </div>
 </section>
 </section>
-<section id="r-tidy-arrange" class="level3" data-number="7.2.4">
-<h3 data-number="7.2.4" class="anchored" data-anchor-id="r-tidy-arrange"><span class="header-section-number">7.2.4</span> Сортировка данных</h3>
+<section id="r-tidy-arrange" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="r-tidy-arrange"><span class="header-section-number">8.7</span> Сортировка данных</h2>
 </section>
-<section id="r-tidy-mutate" class="level3" data-number="7.2.5">
-<h3 data-number="7.2.5" class="anchored" data-anchor-id="r-tidy-mutate"><span class="header-section-number">7.2.5</span> Создание и изменение переменных</h3>
+<section id="r-tidy-mutate" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="r-tidy-mutate"><span class="header-section-number">8.8</span> Создание и изменение переменных</h2>
 </section>
-<section id="r-tidy-summarise" class="level3" data-number="7.2.6">
-<h3 data-number="7.2.6" class="anchored" data-anchor-id="r-tidy-summarise"><span class="header-section-number">7.2.6</span> Агрегация данных</h3>
+<section id="r-tidy-summarise" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="r-tidy-summarise"><span class="header-section-number">8.9</span> Агрегация данных</h2>
 </section>
-<section id="r-tidy-merge" class="level3" data-number="7.2.7">
-<h3 data-number="7.2.7" class="anchored" data-anchor-id="r-tidy-merge"><span class="header-section-number">7.2.7</span> Объединение датасетов</h3>
-<section id="r-tidy-binds" class="level4" data-number="7.2.7.1">
-<h4 data-number="7.2.7.1" class="anchored" data-anchor-id="r-tidy-binds"><span class="header-section-number">7.2.7.1</span> Объединение по строкам и столбцам</h4>
+<section id="r-tidy-merge" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="r-tidy-merge"><span class="header-section-number">8.10</span> Объединение датасетов</h2>
+<section id="r-tidy-binds" class="level3" data-number="8.10.1">
+<h3 data-number="8.10.1" class="anchored" data-anchor-id="r-tidy-binds"><span class="header-section-number">8.10.1</span> Объединение по строкам и столбцам</h3>
 </section>
-<section id="r-tidy-joins" class="level4" data-number="7.2.7.2">
-<h4 data-number="7.2.7.2" class="anchored" data-anchor-id="r-tidy-joins"><span class="header-section-number">7.2.7.2</span> Объединение по ключу</h4>
-<section id="inner_join" class="level5" data-number="7.2.7.2.1">
-<h5 data-number="7.2.7.2.1" class="anchored" data-anchor-id="inner_join"><span class="header-section-number">7.2.7.2.1</span> <code>inner_join()</code></h5>
+<section id="r-tidy-joins" class="level3" data-number="8.10.2">
+<h3 data-number="8.10.2" class="anchored" data-anchor-id="r-tidy-joins"><span class="header-section-number">8.10.2</span> Объединение по ключу</h3>
+<section id="inner_join" class="level4" data-number="8.10.2.1">
+<h4 data-number="8.10.2.1" class="anchored" data-anchor-id="inner_join"><span class="header-section-number">8.10.2.1</span> <code>inner_join()</code></h4>
 </section>
-<section id="left_join" class="level5" data-number="7.2.7.2.2">
-<h5 data-number="7.2.7.2.2" class="anchored" data-anchor-id="left_join"><span class="header-section-number">7.2.7.2.2</span> <code>left_join()</code></h5>
+<section id="left_join" class="level4" data-number="8.10.2.2">
+<h4 data-number="8.10.2.2" class="anchored" data-anchor-id="left_join"><span class="header-section-number">8.10.2.2</span> <code>left_join()</code></h4>
 </section>
-<section id="right_join" class="level5" data-number="7.2.7.2.3">
-<h5 data-number="7.2.7.2.3" class="anchored" data-anchor-id="right_join"><span class="header-section-number">7.2.7.2.3</span> <code>right_join()</code></h5>
+<section id="right_join" class="level4" data-number="8.10.2.3">
+<h4 data-number="8.10.2.3" class="anchored" data-anchor-id="right_join"><span class="header-section-number">8.10.2.3</span> <code>right_join()</code></h4>
 </section>
-<section id="full_join" class="level5" data-number="7.2.7.2.4">
-<h5 data-number="7.2.7.2.4" class="anchored" data-anchor-id="full_join"><span class="header-section-number">7.2.7.2.4</span> <code>full_join()</code></h5>
+<section id="full_join" class="level4" data-number="8.10.2.4">
+<h4 data-number="8.10.2.4" class="anchored" data-anchor-id="full_join"><span class="header-section-number">8.10.2.4</span> <code>full_join()</code></h4>
 </section>
-<section id="semi_join" class="level5" data-number="7.2.7.2.5">
-<h5 data-number="7.2.7.2.5" class="anchored" data-anchor-id="semi_join"><span class="header-section-number">7.2.7.2.5</span> <code>semi_join()</code></h5>
+<section id="semi_join" class="level4" data-number="8.10.2.5">
+<h4 data-number="8.10.2.5" class="anchored" data-anchor-id="semi_join"><span class="header-section-number">8.10.2.5</span> <code>semi_join()</code></h4>
 </section>
-<section id="anti_join" class="level5" data-number="7.2.7.2.6">
-<h5 data-number="7.2.7.2.6" class="anchored" data-anchor-id="anti_join"><span class="header-section-number">7.2.7.2.6</span> <code>anti_join()</code></h5>
+<section id="anti_join" class="level4" data-number="8.10.2.6">
+<h4 data-number="8.10.2.6" class="anchored" data-anchor-id="anti_join"><span class="header-section-number">8.10.2.6</span> <code>anti_join()</code></h4>
+</section>
+</section>
+</section>
+<section id="r-tidy-export" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="r-tidy-export"><span class="header-section-number">8.11</span> Экспорт данных</h2>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -915,9 +1573,6 @@ loaded via a namespace (and not attached):
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
-</section>
-</section>
-</section>
 </section>
 </section>
 
@@ -1485,17 +2140,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r-functions.html" class="pagination-link" aria-label="Функции">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span>
+      <a href="./r-strings.html" class="pagination-link" aria-label="Строки">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-strings.html" class="pagination-link" aria-label="Строки">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-datetime.html" class="pagination-link" aria-label="Дата и время">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
