@@ -86,7 +86,7 @@ book:
     - appendix-design.qmd
     - appendix-math-other.qmd
     - appendix-math-letters.qmd
-    - appendix-history.qmd
+    - appendix-stories.qmd
     - appendix-keys.qmd
     
   favicon: img/other/favicon.png

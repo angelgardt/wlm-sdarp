@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>22&nbsp; Меры разброса – WLM SDARP</title>
+<title>Приложение L — Разные сюжеты – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,8 +50,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./desc-distshape.html" rel="next">
-<link href="./desc-centaltend.html" rel="prev">
+<link href="./appendix-keys.html" rel="next">
+<link href="./appendix-math-letters.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -130,6 +116,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -142,7 +157,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-variation.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры разброса</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-stories.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,8 +169,8 @@ background-size: cover;
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-variation.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры разброса</span></a></li></ol></nav>
-      <h1 class="title"><span id="desc-variation" class="quarto-section-identifier"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-stories.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></a></li></ol></nav>
+      <h1 class="title"><span id="appendix-stories" class="quarto-section-identifier">Приложение L — Разные сюжеты</span></h1>
                       </div>
   </div>
     
@@ -374,7 +389,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./desc-variation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
@@ -563,7 +578,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
@@ -580,8 +595,16 @@ background-size: cover;
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#appendix-history-trig-fun-names" id="toc-appendix-history-trig-fun-names" class="nav-link active" data-scroll-target="#appendix-history-trig-fun-names"><span class="header-section-number">L.1</span> Названия тригонометрических функций</a></li>
+  <li><a href="#appendix-history-trig-fun-names" id="toc-appendix-history-trig-fun-names" class="nav-link" data-scroll-target="#appendix-history-trig-fun-names"><span class="header-section-number">L.2</span> Эллипс, парабола и гипербола</a></li>
+  <li><a href="#appendix-history-cause-and-case" id="toc-appendix-history-cause-and-case" class="nav-link" data-scroll-target="#appendix-history-cause-and-case"><span class="header-section-number">L.3</span> Каузальность и казуальность</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -610,38 +633,62 @@ background-size: cover;
 <div class="intro">
 <p>Вступление</p>
 </div>
-<section id="session_info" class="level6 unnumbered">
-<h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
-Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.5
-
-Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
-
-locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-
-time zone: Europe/Moscow
-tzcode source: internal
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
- [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.3        
- [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   
- [9] knitr_1.47        jsonlite_1.8.9    xfun_0.44         digest_0.6.37    
-[13] rlang_1.1.4       evaluate_1.0.1   </code></pre>
+<section id="appendix-history-trig-fun-names" class="level2" data-number="L.1">
+<h2 data-number="L.1" class="anchored" data-anchor-id="appendix-history-trig-fun-names"><span class="header-section-number">L.1</span> Названия тригонометрических функций</h2>
+<div class="quote small">
+<p>— Вот скажи мне, автор, почему синус называется синусом? Причём тут пазухи? А тангенс? Почему он танген<strong>с</strong>, а когда пытаешься загуглить по-английски <em>tangens</em>, выясняешь, что он <em>tangent</em>? И откуда <em>ко-</em> у косинуса и котангенса? <br> — О-о-о, ты спрашиваешь очень интересный вопрос. Сейчас расскажу!</p>
 </div>
+<p>Тригонометрией великие умы человечества занимаются с древнейших времен по всему земному шару. Наиболее значительные успехи, конечно, возникали в местах древних цивилизаций. История названий тригонометрических функций берез своё начало в Древней Индии <span class="citation" data-cites="jushkevich-v1-1970">(<a href="references.html#ref-jushkevich-v1-1970" role="doc-biblioref">Юшкевич, 1970</a>)</span>.</p>
+<p>Индийские математики изучали окружность и связанные с ней углы — практически как и мы сейчас, вводя тригонометрические функции для любых углов. Их построение приблизительно выглядело так (<a href="#fig-indian-trig-circle" class="quarto-xref">Иллюстрация&nbsp;<span>L.1</span></a>).</p>
+<div id="fig-indian-trig-circle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-indian-trig-circle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/appendix-stories/indian-trig-circle.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-indian-trig-circle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;L.1: Стрела и тетива в тригонометрической окружности Древней Индии
+</figcaption>
+</figure>
+</div>
+<p>Они знали хорды, и называли их «джива», что можно перевести как «тетива». Линия перпендикуляра, опущенная на хорду из середины дуги, стягиваемой этой хордой, называлась «стрела». В целом, разумно, если присмотреться в картинке (<a href="#fig-indian-trig-circle" class="quarto-xref"><span>L.1</span></a>) — действительно построение похоже на лук. Индийским математикам была известна и линия синуса — «ардха-джива», или «полутетива». Логично, так как линия синуса — это половина такой хорды. Позднее название линии синуса упростилось и из «ардха-джива» превратилось просто в «джива», видимо, для краткости. Однако такое название всё ещё хранило в себе некоторую осмысленность.</p>
+<p>Когда индийские тексты попали в руки арабов, арабские переводчики не стали переводить «джива» арабским словом — хотя оно было и звучало примерно как «ватар» (собственно, та же «тетива»). Вместо этого они решили затранскрибировать арабскими буквами исходное «джива», в результате чего получилось «джиба». Этим термином и стали пользоваться. Однако ввиду того, что краткие гласные в арабской письменности не обозначаются<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, а долгое «и» в слове «джиба» обозначается так же, как и полугласный «й», новый термин стал произноситься как «джайб», что буквально обозначает «впадина», «пазуха».</p>
+<p>Языком науки в Европе была латынь. Соответственно, когда арабские тексты оказались в Европе, возникла необходимость их перевода. Европейские переводчики честно сделали свою работу и перевели «джайб» как «sinus», что буквально означает<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> «пазуха, изгиб». Так мы и получили современный «синус».</p>
+<div class="quote small">
+<p>— Шок… То есть если бы арабы не стали транскрибировать «дживу» синус мог бы назваться «ватар»… <br> — Всё так.</p>
+</div>
+<p>С названиями остальных функций всё гораздо прозаичнее. Хотя косинус был известен и древнеиндийским ученым — они называли его «котиджива» («синус остатка») — он получил современное название позднее как «дополнительный синус» (лат. <em>sinus <strong>co</strong>mplementi</em>) — так как <span class="math inline">\(\cos x = \sin (90^\circ - x)\)</span> — которое впоследствии сократилось до <em>cosinus</em>. Тангенс (лат. <em>tangens</em> — касающийся, от <em>tangere</em> — трогать, касаться), действительно, лежит на касательной к окружности, а секанс (лат. <em>secans</em> — секущий, от <em>secare</em> — обрезать, вырезать) является частью секущей. Названия для <strong>ко</strong>тангенса и <strong>ко</strong>секанса были образованы по аналогии с косинусом <span class="citation" data-cites="gleizer-1964">(<a href="references.html#ref-gleizer-1964" role="doc-biblioref">Глейзер, 1964</a>)</span>.</p>
+<p>Английские названия — (co)sine, (co)tangent, (co)secant — обязаны своей формой историческим фонетическим процессам. В результате фонетических изменений у слов отпали окончания, и они стали состоять только из основ. Латинская основа тоже была устроена довольно хитро и определялась из формы генетива (родительного падежа). С синусом и косинусом всё просто — они потеряли окончание <em>-us</em> (вернее, сменили его на <em>-e</em>): <em>(co)sin-us</em> → <em>(co)sin-e</em>. Основы (ко)тангенса и (ко)секанса — это <em>(co)tangent-</em> и <em>(co)secant-</em>, так как в форме генетива они выглядят как <em>(co)tangent-is</em> и <em>(co)secant-is</em>. Потеряв окончание <em>-is</em>, они стали <em>(co)tangent</em> и <em>(co)secant</em>.</p>
+<p>Вот такие лингвистические дела.</p>
+</section>
+<section id="appendix-history-trig-fun-names" class="level2" data-number="L.2">
+<h2 data-number="L.2" class="anchored" data-anchor-id="appendix-history-trig-fun-names"><span class="header-section-number">L.2</span> Эллипс, парабола и гипербола</h2>
+<div class="quote small">
+<p>— А вот скажи мне, автор, почему эллипс называется эллипсом? Или гипербола — гиперболой? Вообще-то ellipsis — это когда мы аргументы в функции пропускаем. Я книжку твою читал. А гипербола — так-то преувеличение. Это я из уроков литры смутно помню. И всякие кривые математические тут вообще никак рядом не лежали! Парабола ещё вообще неясно откуда взялась… <br> — Коллега, вы даже не представляете, насколько вы близки к истине!</p>
+</div>
+</section>
+<section id="appendix-history-cause-and-case" class="level2" data-number="L.3">
+<h2 data-number="L.3" class="anchored" data-anchor-id="appendix-history-cause-and-case"><span class="header-section-number">L.3</span> Каузальность и казуальность</h2>
+<div class="quote small">
+<p>— Дорогой автор, это совершенно невозможно. Я уже который год не могу запомнить, как по-умному называется причинно-следственный вывод — каузальный или казуальный. Нельзя было как-то поразнообразнее слова придумывать? <br> — Я сам долго путался. Сейчас расскажу, в чём тут дело.</p>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-gleizer-1964" class="csl-entry" role="listitem">
+Глейзер, Г. И. (1964). <em>История математики в школе. Пособие для учителей</em>. М.: Просвещение.
+</div>
+<div id="ref-jushkevich-v1-1970" class="csl-entry" role="listitem">
+Юшкевич, А. П. (1970). <em>История математики. Том 1. С дрейневнейших времен до начала нового времени</em>. М.: Наука.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Система огласовок, по-видимому, возникла гораздо позже.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Отсюда же происходит «синусит» (лат. <em>sinusitis</em>) — воспаление придаточных пазух носа (в чатсности, верхнечелюстных, клиновидной и лобной — <em><strong>sinus</strong> maxillares, sphenoidalis et frontalis</em>). Также в анатомии есть <strong>синусы</strong> твёрдой мозговой оболочки (например, верхний сагиттальный синус, <em><strong>sinus</strong> sagittalis superior</em>).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1208,13 +1255,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./desc-centaltend.html" class="pagination-link" aria-label="Меры центральной тенденции">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span>
+      <a href="./appendix-math-letters.html" class="pagination-link" aria-label="Математические буквы">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./desc-distshape.html" class="pagination-link" aria-label="Форма распределения">
-        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Форма распределения</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./appendix-keys.html" class="pagination-link" aria-label="Ответы на листки">
+        <span class="nav-page-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
