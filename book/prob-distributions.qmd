@@ -170,6 +170,15 @@ ds_unif %>%
 
 #### Нормальное распределение {#prob-dist-cont-norm}
 
+$$
+X \thicksim \norm(\mu, \sigma^2)
+$$
+
+$$
+f(x \mid \mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}},
+\, \mu \in \setR, \, \sigma > 0
+$$
+
 ```{r norm}
 #| label: fig-norm
 #| fig-cap: "Функция плотности стандартного нормального распределения"
@@ -189,7 +198,16 @@ tibble(x = seq(-4, 4, by = .01),
   labs(y = "p(x)")
 ```
 
+
 #### Стандартное нормальное распределение {#prob-dist-cont-stnorm}
+
+$$
+X \thicksim \norm(0, 1)
+$$
+
+$$
+f(x \mid \mu = 0, \sigma^2 = 1) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{x^2}{2}}
+$$
 
 ```{r stnorm}
 #| label: fig-stnorm
@@ -201,6 +219,8 @@ tibble(x = seq(-4, 4, by = .01),
   geom_line() +
   scale_x_continuous(breaks = -3:3)
 ```
+
+
 
 #### t-распределение {#prob-dist-cont-t}
 
