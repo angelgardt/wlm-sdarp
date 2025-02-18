@@ -1,9 +1,16 @@
-# Распределения и асимптотика {#prob-distributions}
+# Распределения и асимптотика {#prob-distributions}
 
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{r pkgs}
+library(tidyverse)
+theme_set(theme_bw())
+theme_update(legend.position = "bottom")
+library(latex2exp)
 ```
 
 :::{.intro}
@@ -11,11 +18,267 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
+## Виды распределений {#prob-dists}
+
+### Дискретные распределения {#prob-dist-disc}
+
+#### Равномерное распределение {#prob-dist-disc-unif}
+
+```{r disc-unif}
+#| label: fig-disc-unif
+#| fig-cap: "Функция вероятности равномерного распределения"
+
+tibble(x = 1:5,
+       y = 1) %>% 
+  ggplot(aes(x, y)) +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(0, 6),
+                     breaks = 1:5,
+                     labels = c("a", "", "", "", "b")) +
+  scale_y_continuous(limits = c(0, 2),
+                     breaks = 1,
+                     labels = "1/n") +
+  labs(y = "P(X = x)")
+```
+
+
+#### Распределение Бернулли {#prob-dist-disc-bern}
+
+```{r bern}
+#| label: fig-bern
+#| fig-cap: "Функция вероятности распределения Бернулли"
+
+tibble(x = c(0, 1) %>% as_factor(),
+       y = c(.3, .7)) %>% 
+  ggplot(aes(x, y)) +
+  geom_point(size = 2) +
+  scale_y_continuous(limits = c(0, 1),
+                     breaks = c(.3, .7),
+                     labels = c("1−p", "p")) +
+  labs(y = "P(X = x)")
+```
+
+#### Биномиальное распределение {#prob-dist-disc-binom}
+
+```{r binom}
+#| label: fig-binom
+#| fig-cap: "Функция вероятности биномиального распределения"
+
+tibble(x = 0:30,
+       `n = 30, p = 0.5` = dbinom(x, 30, .5),
+       `n = 10, p = 0.5` = dbinom(x, 10, .5),
+       `n = 20, p = 0.2` = dbinom(x, 20, .2),
+       `n = 20, p = 0.8` = dbinom(x, 20, .8),
+       `n = 50, p = 0.7` = dbinom(x, 50, .4)
+       ) %>% 
+  pivot_longer(cols = -x,
+               names_to = "params",
+               values_to = "y") %>% 
+  ggplot(aes(x, y, color = params)) +
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = seq(0, 30, by = 5)) +
+  labs(y = "P(X = x)")
+```
 
 
 
+#### Распределение Пуассона {#prob-dist-disc-pois}
+
+```{r pois}
+#| label: fig-pois
+#| fig-cap: "Функция вероятности распределения Пуассона"
+
+tibble(x = 0:30,
+       `λ = 1` = dpois(x, 1),
+       `λ = 2` = dpois(x, 2),
+       `λ = 5` = dpois(x, 5),
+       `λ = 10` = dpois(x, 10),
+       `λ = 30` = dpois(x, 20)
+       ) %>% 
+  pivot_longer(cols = -x,
+               names_to = "params",
+               values_to = "y") %>% 
+  ggplot(aes(x, y, color = params)) +
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = seq(0, 30, by = 5)) +
+  labs(y = "P(X = x)")
+```
 
 
+
+### Непрерывные распределения {#prob-dist-cont}
+
+#### Равномерное распределение {#prob-dist-cont-unif}
+
+```{r unif}
+#| label: fig-unif
+#| fig-cap: "Функция плотности равномерного распределения"
+
+tibble(x = c(-1, 0, 0, 1, 1, 2),
+       y = c(0, 0, 1, 1, 0, 0),
+       g_line = c("a", "a", "b", "b", "c", "c"),
+       g_point = c(NA, "a", "b", "b", "a", NA)
+       ) -> ds_unif
+ds_unif %>% 
+  ggplot(aes(x, y)) +
+  geom_line(aes(group = g_line)) +
+  geom_point(data = ds_unif %>% drop_na(),
+             aes(fill = g_point),
+             shape = 21,
+             size = 2) +
+  scale_x_continuous(breaks = 0:1,
+                     labels = TeX(c("a",
+                                    "b"))) +
+  scale_y_continuous(limits = c(0, 2),
+                     breaks = c(0, 1),
+                     labels = c(0, "1/(b−a)")) +
+  scale_fill_manual(values = c("a" = "white",
+                               "b" = "black")) +
+  guides(fill = "none") +
+  labs(y = "p(x)")
+```
+
+
+
+#### Стандартное равномерное распределение {#prob-dist-cont-stunif}
+
+```{r stunif}
+#| label: fig-stunif
+#| fig-cap: "Функция плотности стандартного равномерного распределения"
+
+tibble(x = c(-1, 0, 0, 1, 1, 2),
+       y = c(0, 0, 1, 1, 0, 0),
+       g_line = c("a", "a", "b", "b", "c", "c"),
+       g_point = c(NA, "a", "b", "b", "a", NA)
+       ) -> ds_unif
+ds_unif %>% 
+  ggplot(aes(x, y)) +
+  geom_line(aes(group = g_line)) +
+  geom_point(data = ds_unif %>% drop_na(),
+             aes(fill = g_point),
+             shape = 21,
+             size = 2) +
+  scale_x_continuous(breaks = 0:1) +
+  scale_y_continuous(limits = c(0, 2),
+                     breaks = c(0, 1)) +
+  scale_fill_manual(values = c("a" = "white",
+                               "b" = "black")) +
+  guides(fill = "none") +
+  labs(y = "p(x)")
+```
+
+
+#### Нормальное распределение {#prob-dist-cont-norm}
+
+```{r norm}
+#| label: fig-norm
+#| fig-cap: "Функция плотности стандартного нормального распределения"
+
+tibble(x = seq(-4, 4, by = .01),
+       y = dnorm(x)) %>% 
+  ggplot(aes(x, y)) +
+  geom_line() +
+  scale_x_continuous(breaks = -3:3,
+                     labels = TeX(c("\\mu − 3\\sigma",
+                                    "\\mu − 2\\sigma",
+                                    "\\mu − \\sigma",
+                                    "\\mu",
+                                    "\\mu + \\sigma",
+                                    "\\mu + 2\\sigma",
+                                    "\\mu + 3\\sigma"))) +
+  labs(y = "p(x)")
+```
+
+#### Стандартное нормальное распределение {#prob-dist-cont-stnorm}
+
+```{r stnorm}
+#| label: fig-stnorm
+#| fig-cap: "Функция плотности стандартного нормального распределения"
+
+tibble(x = seq(-4, 4, by = .01),
+       y = dnorm(x)) %>% 
+  ggplot(aes(x, y)) +
+  geom_line() +
+  scale_x_continuous(breaks = -3:3)
+```
+
+#### t-распределение {#prob-dist-cont-t}
+
+```{r t-dist}
+#| label: fig-t-dist
+#| fig-cap: "Функция плотности распределения Стьюдента"
+
+tibble(x = seq(-4, 4, by = .01),
+       `1` = dt(x, df = 1),
+       `2` = dt(x, df = 2),
+       `3` = dt(x, df = 3),
+       `4` = dt(x, df = 4),
+       `5` = dt(x, df = 5),
+       `10` = dt(x, df = 10),
+       `15` = dt(x, df = 15),
+       `20` = dt(x, df = 20),
+       `25` = dt(x, df = 25),
+       `30` = dt(x, df = 30),
+       ) %>% 
+  pivot_longer(cols = -x,
+               names_to = "df",
+               values_to = "y") %>% 
+  mutate(df = as.numeric(df) %>% as.factor()) %>% 
+  ggplot(aes(x, y, color = df)) +
+  geom_line() +
+  scale_x_continuous(breaks = -3:3) +
+  labs(x = "t", y = "p(t)")
+```
+
+#### F-распределение {#prob-dist-cont-f}
+
+```{r f-dist}
+#| label: fig-f-dist
+#| fig-cap: "Функция плотности распределения Фишера"
+
+tibble(x = seq(0, 5, by = .01),
+       `df1 = 1, df2 = 10` = df(x, df1 = 1, df2 = 10),
+       `df1 = 1, df2 = 20` = df(x, df1 = 1, df2 = 20),
+       `df1 = 2, df2 = 20` = df(x, df1 = 2, df2 = 20),
+       `df1 = 2, df2 = 30` = df(x, df1 = 2, df2 = 30),
+       `df1 = 3, df2 = 30` = df(x, df1 = 3, df2 = 30),
+       `df1 = 4, df2 = 40` = df(x, df1 = 3, df2 = 40),
+       `df1 = 5, df2 = 40` = df(x, df1 = 3, df2 = 40),
+       ) %>% 
+  pivot_longer(cols = -x,
+               names_to = "df",
+               values_to = "y") %>% 
+  ggplot(aes(x, y, color = df)) +
+  geom_line() +
+  scale_x_continuous(breaks = 0:20) +
+  scale_y_continuous(limit = c(0, 2)) +
+  labs(x = "F", y = "p(F)")
+```
+
+#### $\chi^2$-распределение {#prob-dist-cont-chisq}
+
+:::{#fig-chisq-dist}
+```{r chisq-dist}
+tibble(x = seq(0, 4, by = .01),
+       `1` = dchisq(x, df = 1),
+       `2` = dchisq(x, df = 2),
+       `3` = dchisq(x, df = 3),
+       `4` = dchisq(x, df = 4),
+       `5` = dchisq(x, df = 5),
+       ) %>% 
+  pivot_longer(cols = -x,
+               names_to = "df",
+               values_to = "y") %>% 
+  mutate(df = as.numeric(df) %>% as.factor()) %>% 
+  ggplot(aes(x, y, color = df)) +
+  geom_line() +
+  scale_x_continuous(breaks = -3:3) +
+  scale_y_continuous(limits = c(0, 1)) +
+  labs(x = TeX("$\\chi^{2}$"), y = TeX("$p(\\chi^{2})$"))
+```
+
+Функция плотности $\chi^2$-распределения
+:::
 
 ***
 

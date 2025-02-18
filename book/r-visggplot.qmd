@@ -6,12 +6,36 @@
 knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
 ```
 
+```{r pkgs}
+library(tidyverse)
+theme_set(theme_bw())
+```
+
 :::{.intro}
 Вступление
 :::
 
 
 
+```{r shapes, eval=FALSE, echo=FALSE}
+tibble(x = rep(1:13, times = 2),
+       y = rep(c(1.5, 1), each = 13),
+       shape = factor(0:25)) %>% 
+  ggplot(aes(x = x,
+             y = y,
+             shape = shape,
+             label = shape)) +
+  geom_point(size = 10) +
+  geom_text(aes(y = y-.2)) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(limits = c(.5, 1.7),
+                     breaks = NULL) +
+  scale_shape_manual(values = 0:25) +
+  labs(x = NULL, y = NULL) +
+  guides(shape = "none")
+```
+
+![Формы точек, доступные в R](img/r-visggplot/shapes.png){#fig-shapes}
 
 
 ***

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>26&nbsp; Случайные величины – WLM SDARP</title>
+<title>28&nbsp; Распределения и&nbsp;асимптотика – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./prob-condprob.html" rel="next">
-<link href="./prob-prob.html" rel="prev">
+<link href="./prob-statestim.html" rel="next">
+<link href="./prob-condprob.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -78,6 +44,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -171,7 +140,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-randvalues.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-distributions.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,8 +152,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-randvalues.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></a></li></ol></nav>
-      <h1 class="title"><span id="prob-randvalues" class="quarto-section-identifier"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-distributions.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></a></li></ol></nav>
+      <h1 class="title"><span id="prob-distributions" class="quarto-section-identifier"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></h1>
                       </div>
   </div>
     
@@ -438,7 +407,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link active">
+  <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
@@ -450,8 +419,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и асимптотика</span></span></a>
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -620,12 +589,26 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#общие-свойства-функций-распределения" id="toc-общие-свойства-функций-распределения" class="nav-link active" data-scroll-target="#общие-свойства-функций-распределения"><span class="header-section-number">26.1</span> Общие свойства функций распределения</a></li>
-  <li><a href="#дискретное-распределение" id="toc-дискретное-распределение" class="nav-link" data-scroll-target="#дискретное-распределение"><span class="header-section-number">26.2</span> Дискретное распределение</a></li>
-  <li><a href="#абсолютно-непрерывное-распределение" id="toc-абсолютно-непрерывное-распределение" class="nav-link" data-scroll-target="#абсолютно-непрерывное-распределение"><span class="header-section-number">26.3</span> Абсолютно непрерывное распределение</a></li>
-  <li><a href="#независимость-случайных-величин" id="toc-независимость-случайных-величин" class="nav-link" data-scroll-target="#независимость-случайных-величин"><span class="header-section-number">26.4</span> Независимость случайных величин</a></li>
-  <li><a href="#функции-от-случайных-величин" id="toc-функции-от-случайных-величин" class="nav-link" data-scroll-target="#функции-от-случайных-величин"><span class="header-section-number">26.5</span> Функции от случайных величин</a></li>
-  <li><a href="#моменты-случайных-величин" id="toc-моменты-случайных-величин" class="nav-link" data-scroll-target="#моменты-случайных-величин"><span class="header-section-number">26.6</span> Моменты случайных величин</a></li>
+  <li><a href="#prob-dists" id="toc-prob-dists" class="nav-link active" data-scroll-target="#prob-dists"><span class="header-section-number">28.1</span> Виды распределений</a>
+  <ul>
+  <li><a href="#prob-dist-disc" id="toc-prob-dist-disc" class="nav-link" data-scroll-target="#prob-dist-disc"><span class="header-section-number">28.1.1</span> Дискретные распределения</a>
+  <ul class="collapse">
+  <li><a href="#prob-dist-disc-unif" id="toc-prob-dist-disc-unif" class="nav-link" data-scroll-target="#prob-dist-disc-unif"><span class="header-section-number">28.1.1.1</span> Равномерное распределение</a></li>
+  <li><a href="#prob-dist-disc-bern" id="toc-prob-dist-disc-bern" class="nav-link" data-scroll-target="#prob-dist-disc-bern"><span class="header-section-number">28.1.1.2</span> Распределение Бернулли</a></li>
+  <li><a href="#prob-dist-disc-binom" id="toc-prob-dist-disc-binom" class="nav-link" data-scroll-target="#prob-dist-disc-binom"><span class="header-section-number">28.1.1.3</span> Биномиальное распределение</a></li>
+  <li><a href="#prob-dist-disc-pois" id="toc-prob-dist-disc-pois" class="nav-link" data-scroll-target="#prob-dist-disc-pois"><span class="header-section-number">28.1.1.4</span> Распределение Пуассона</a></li>
+  </ul></li>
+  <li><a href="#prob-dist-cont" id="toc-prob-dist-cont" class="nav-link" data-scroll-target="#prob-dist-cont"><span class="header-section-number">28.1.2</span> Непрерывные распределения</a>
+  <ul class="collapse">
+  <li><a href="#prob-dist-cont-unif" id="toc-prob-dist-cont-unif" class="nav-link" data-scroll-target="#prob-dist-cont-unif"><span class="header-section-number">28.1.2.1</span> Равномерное распределение</a></li>
+  <li><a href="#prob-dist-cont-stunif" id="toc-prob-dist-cont-stunif" class="nav-link" data-scroll-target="#prob-dist-cont-stunif"><span class="header-section-number">28.1.2.2</span> Стандартное равномерное распределение</a></li>
+  <li><a href="#prob-dist-cont-norm" id="toc-prob-dist-cont-norm" class="nav-link" data-scroll-target="#prob-dist-cont-norm"><span class="header-section-number">28.1.2.3</span> Нормальное распределение</a></li>
+  <li><a href="#prob-dist-cont-stnorm" id="toc-prob-dist-cont-stnorm" class="nav-link" data-scroll-target="#prob-dist-cont-stnorm"><span class="header-section-number">28.1.2.4</span> Стандартное нормальное распределение</a></li>
+  <li><a href="#prob-dist-cont-t" id="toc-prob-dist-cont-t" class="nav-link" data-scroll-target="#prob-dist-cont-t"><span class="header-section-number">28.1.2.5</span> t-распределение</a></li>
+  <li><a href="#prob-dist-cont-f" id="toc-prob-dist-cont-f" class="nav-link" data-scroll-target="#prob-dist-cont-f"><span class="header-section-number">28.1.2.6</span> F-распределение</a></li>
+  <li><a href="#prob-dist-cont-chisq" id="toc-prob-dist-cont-chisq" class="nav-link" data-scroll-target="#prob-dist-cont-chisq"><span class="header-section-number">28.1.2.7</span> <span class="math inline">\(\chi^2\)</span>-распределение</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -654,145 +637,209 @@ window.Quarto = {
 <!--- Letters --->
 <!--- Linear Models --->
 <div class="intro">
-<p>В предыдущей главе мы выстроили теоретико-множественный фундамент теории вероятности. Это была полезная с точки зрения создания последовательной и непротиворечивой теории деятельность, однако, как вы могли заметить, в работе со множествами возникает ряд проблем, приходится вводить разные дополнительные определения, что усложняем нам жизнь. Возникает естественная потребность выстроить новый объект, называемый случайной величиной.</p>
+<p>Вступление</p>
 </div>
-<p>Зачем нам нужны случайные величины? Ну, во-первых, математика, чьей частью является теория вероятности, не очень-то понимает, как работать в таким объектом, как «элементарный исход». «На игральном кубике выпало 6 очков» — довольно странный математический объект. Давайте введем такую конструкцию, которая будет сопоставлять элементарному исходу <span class="math inline">\(\omega\)</span> некоторое число <span class="math inline">\(\xi(\omega)\)</span>:</p>
-<p><span class="math display">\[
-\omega \mapsto \xi(\omega) \in \mathbb{R}
-\]</span></p>
-<p>Тогда мы сможем работать с числами, а это понятно как делать с помощью математики. В частности, событию «на игральном кубике выпало 6 очков» довольно естественно сопоставляется число <span class="math inline">\(6\)</span>, а событию «респондент при ответе на вопрос с помощью шкалы Ликерта выбрал 5» — число <span class="math inline">\(5\)</span>.</p>
-<p>Кажется, что мы занимаемся какой-то ерундой, потому что это же и так очевидно. Отчасти — да. К тому же, в психологических исследованиях сам процесс измерения обеспечивает нам сопоставление случайного события с некоторым числом, поэтому мы редко задумываемся о том, что там с точки зрения теории вероятности происходит. Однако всё довольно просто, когда мы говорим о дискретных вероятностных пространствах — игральный кубик и шкала Ликерта — а когда мы будем иметь дело с непрерывным вероятностным пространством — например, при том же измерении времени реакции — там ещё неизвестно, что будет происходить, хотя как будто бы более-менее ясен сам процесс измерения времени реакции.</p>
-<p>Ну, и кроме того, раз уж мы приблизились к серьезной математике, то необходимо новый вводимый объект формально определить, изучить его свойства — вдруг там обнаружится что-то важное с точки зрения практики? А случайные величины для практики край не важны — собственно, в приложении к практике теория вероятности представляет собой теорию случайных величин.</p>
-<p>Итак, мы решаем ввести конструкцию <span class="math inline">\(\omega \mapsto \xi(\omega) \in \mathbb{R}\)</span>. Это значит, что возникает функция <span class="math inline">\(\xi : \Omega \to \mathbb{R}\)</span>. Далее возникают вопросы, связанные с тем, что нам необходимо считать вероятность —- чему равны, например,</p>
-<ul>
-<li><span class="math inline">\(\mathbb{P}\big\{ \omega \, | \,\xi(\omega) = x \big\} \equiv \mathbb{P}\big( \xi(\omega \big) = x)\)</span>,</li>
-<li><span class="math inline">\(\mathbb{P}\big\{ \omega \, | \,x_1 &lt; \xi(\omega) &lt; x_2 \big\} \equiv \mathbb{P}\big( x_1 &lt; \xi(\omega) &lt; x_2 \big)\)</span>?</li>
-</ul>
-<p>Поскольку вероятность существует только для элементов <span class="math inline">\(\mathcal{F}\)</span>, мы должны быть уверенны, что</p>
-<ul>
-<li><span class="math inline">\(\big \{ \omega \, | \,\xi(\omega) = x \big\} \in \mathcal{F}\)</span>,</li>
-<li><span class="math inline">\(\big \{ \omega \, | \,x_1 &lt; \xi(\omega) &lt; x_2 \big\} \in \mathcal{F}\)</span>.</li>
-</ul>
-<p>Соответственно, нужно, как мы делали ранее, сформировать минимальный набор требований к множествам, из которых будут следовать все остальные.</p>
-<div id="def-rand-value" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 26.1</strong></span> <strong>Случайной величиной</strong> над вероятностным пространством <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется функция <span class="math inline">\(\xi: \Omega \to \mathbb{R}\)</span>, такая что</p>
-<p><span class="math display">\[
-\begin{gather}
-\forall x \in \mathbb{R}\, \big\{ \omega \, | \,\xi(\omega) &lt; x \big\} \in \mathcal{F}\\
-\Updownarrow \\
-\exists \, \mathbb{P}\big( \xi(\omega) &lt; x\big) \equiv \mathbb{P}\big\{ \omega \, | \,\xi(\omega) &lt; x \big\} \\
-\Updownarrow \\
-\forall x \in \mathbb{R}\exists \, F(x) = \mathbb{P}\big(\xi(\omega) &lt; x \big)
-\end{gather}
-\]</span></p>
-<p>где <span class="math inline">\(F(\cdot) : \mathbb{R}\to [0, 1]\)</span> называется <strong>функцией распределения</strong>.</p>
+<section id="prob-dists" class="level2" data-number="28.1">
+<h2 data-number="28.1" class="anchored" data-anchor-id="prob-dists"><span class="header-section-number">28.1</span> Виды распределений</h2>
+<section id="prob-dist-disc" class="level3" data-number="28.1.1">
+<h3 data-number="28.1.1" class="anchored" data-anchor-id="prob-dist-disc"><span class="header-section-number">28.1.1</span> Дискретные распределения</h3>
+<section id="prob-dist-disc-unif" class="level4" data-number="28.1.1.1">
+<h4 data-number="28.1.1.1" class="anchored" data-anchor-id="prob-dist-disc-unif"><span class="header-section-number">28.1.1.1</span> Равномерное распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-disc-unif" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-disc-unif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-disc-unif-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;28.1: Функция вероятности равномерного распределения"><img src="prob-distributions_files/figure-html/fig-disc-unif-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>С точки зрения теории меры случайная величина является <em>измеримой функцией</em>.</p>
-</div>
-<div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>Теория вероятности не изменится, если в условии на множества <span class="math inline">\(\forall x \in \mathbb{R}\, \big\{ \omega \, | \,\xi(\omega) &lt; x \big\} \in \mathcal{F}\)</span> изменить знак неравенства. Все три варианта</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\big\{ \omega \, | \,\xi(\omega) \leqslant x \big\} \in \mathcal{F}\\
-&amp;\big\{ \omega \, | \,\xi(\omega) &gt; x \big\} \in \mathcal{F}\\
-&amp;\big\{ \omega \, | \,x_1 &lt; \xi(\omega) &lt; x_2 \big\} \in \mathcal{F}
-\end{aligned}
-\]</span></p>
-<p>приводят к одной и той же теории вероятности.</p>
-</div>
-<p>Если задано вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>, то любая случайная величина <span class="math inline">\(\xi\)</span> индуцирует новое вероятностное пространство <span class="math inline">\(\big (\mathbb{R}, \mathcal B, F_\xi(\cdot) \big)\)</span>:</p>
-<p><span class="math display">\[
-(\Omega, \mathcal{F}, \mathbb{P}) \overset{\xi}{\longrightarrow} \big (\mathbb{R}, \mathcal{B}, F_\xi(\cdot) \big)
-\]</span></p>
-<p>Возникший объект <span class="math inline">\(\mathcal{B}\)</span> — это борелевская <span class="math inline">\(\sigma\)</span>-алгебра подмножеств <span class="math inline">\(\mathbb{R}\)</span>, то есть <span class="math inline">\(\sigma\)</span>-алгебра, такая что (1) <span class="math inline">\(\forall x \, (-\infty, x) \in \mathcal{B}\)</span> и (2) она минимальная из всех возможных <span class="math inline">\(\sigma\)</span>-алгебр. Эта структура чрезвычайно обширна, но всё же не совпадает со множеством всем подмножеств <span class="math inline">\(\mathbb{R}\)</span>.</p>
-<p>Таким образом, имея вероятностное пространство <span class="math inline">\(\big (\mathbb{R}, \mathcal{B}, F_\xi(\cdot) \big)\)</span> мы можем говорить и том, что</p>
-<p><span class="math display">\[
-\mathbb{P}(-\infty, x) = \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x)
-\]</span></p>
-<div id="def-rand-value-discrete" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 26.2</strong></span> Распределение случайной величины <span class="math inline">\(\xi\)</span> называется <strong>дискретным</strong>, если</p>
-<p><span class="math display">\[
-F(x) = \sum_{k \suchd x_k &lt; x} p_k,
-\]</span></p>
-<p>где <span class="math inline">\(\big\{ (x_k, p_k) \big\}_{k=1}^N, \, N \leqslant\aleph_0\)</span> — конечный или счётный набор, <span class="math inline">\(p_k &gt; 0\)</span>, <span class="math inline">\(\sum_{k=1}^N p_k = 1\)</span>.</p>
-</div>
-<p>Если <span class="math inline">\(x_k &lt; x_{k+1} \forall k\)</span>, то <span class="math inline">\(F(x) = \text{const}\)</span> при <span class="math inline">\(x \in (x_k, x_{k+1})\)</span>, <span class="math inline">\(F(x_n + 0) - F(x_n) - 0 = p_k\)</span>.</p>
-<div id="def-rand-value-continuous" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 26.3</strong></span> Случайная величина <span class="math inline">\(\xi\)</span> имеет <strong>абсолютно непрерывное</strong> распределение, если</p>
-<p><span class="math display">\[
-F(x) = \int_{-\infty}^x \mathbb{p}(z)dz, \, x \in \mathbb{R},
-\]</span> где <span class="math inline">\(\mathbb{p}(\cdot)\)</span> — некоторая функция, <span class="math inline">\(\mathbb{p}(z) &gt; 0\)</span>, <span class="math inline">\(\int_{-\infty}^\infty \mathbb{p}(z)dx = 1\)</span>.</p>
-<p>Функция <span class="math inline">\(\mathbb{p}(\cdot)\)</span> называется <strong>плотностью распределения</strong>.</p>
-</div>
-<p><span class="math inline">\(F(\cdot)\)</span> непрерывна в каждой точке <span class="math inline">\(x\)</span> (<span class="math inline">\(\forall x \in \mathbb{R}\)</span>) и <span class="math inline">\(F'(x) = \mathbb{p}(x)\)</span>.</p>
-<section id="общие-свойства-функций-распределения" class="level2" data-number="26.1">
-<h2 data-number="26.1" class="anchored" data-anchor-id="общие-свойства-функций-распределения"><span class="header-section-number">26.1</span> Общие свойства функций распределения</h2>
-<div id="prp-F-monotonous" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.1</strong></span> <span class="math inline">\(F(\cdot)\)</span> не убывает.</p>
-</div>
-<div id="prp-F-contleft" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.2</strong></span> <span class="math inline">\(F(\cdot)\)</span> непрерывна слева, то есть <span class="math inline">\(F(x - 0) = F(x)\)</span>.</p>
-</div>
-<div id="prp-F-infty" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.3</strong></span> <span class="math inline">\(F(-\infty) = 0\)</span>, <span class="math inline">\(F(+\infty) = 1\)</span></p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Необходимые и достаточные свойства для функции распределения
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-disc-unif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.1: Функция вероятности равномерного распределения
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p><strong>Наличие у функции свойств <a href="#prp-F-monotonous" class="quarto-xref"><span>26.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>26.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>26.3</span></a> эквивалентно тому, что эта функция является функцией распределения</strong>, то есть свойства <a href="#prp-F-monotonous" class="quarto-xref"><span>26.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>26.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>26.3</span></a> являются необходимыми и достаточными, чтобы некоторая функция являлась функцией распределения.</p>
-<ul>
-<li>Если некоторая функция является функцией распределения, то для неё выполнены <a href="#prp-F-monotonous" class="quarto-xref"><span>26.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>26.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>26.3</span></a>.</li>
-<li>Если некоторая функция удовлетворяет свойствам <a href="#prp-F-monotonous" class="quarto-xref"><span>26.1</span></a>, <a href="#prp-F-contleft" class="quarto-xref"><span>26.2</span></a> и <a href="#prp-F-infty" class="quarto-xref"><span>26.3</span></a>, то существует случайная величина, для которой эта функция является функцией распределения.</li>
-</ul>
-</div>
-</div>
-<div id="prp-F-contright" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.4</strong></span> <span class="math inline">\(F(x + 0) = \mathbb{P}\big( \xi(\omega) \leqslant x \big)\)</span></p>
-</div>
-<div id="prp-F-x" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.5</strong></span> <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = \mathbb{P}\big( \xi(\omega) \leqslant x \big) - \mathbb{P}\big( \xi(\omega) &lt; x \big) = F(x + 0) - F(x) = F(x+0) - F(x - 0)\)</span></p>
-</div>
-<div id="prp-F-cont" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.6</strong></span> Если <span class="math inline">\(F(\cdot)\)</span> непрерывна в точке <span class="math inline">\(x\)</span>, то <span class="math inline">\(\mathbb{P}\big( \xi(\omega) = x \big) = 0\)</span>.</p>
-</div>
-<div id="prp-F-intervals" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 26.7</strong></span> <span class="math display">\[
-\begin{aligned}
-&amp;\mathbb{P}\big( x_1 \leqslant\xi(\omega) &lt; x_2 \big) = \mathbb{P}\big( \xi(\omega) &lt; x_2 \big) - \mathbb{P}\big( \xi(\omega) \leqslant x_1 \big) = F(x_2) - F(x_1) \\
-&amp;\mathbb{P}\big( x_1 \leqslant\xi(\omega) \leqslant x_2 \big) = \mathbb{P}\big( \xi(\omega) \leqslant x_2 \big) - \mathbb{P}\big( \xi(\omega) \leqslant x_1 \big) = F(x_2 + 0) - F(x_1) \\
-&amp;\mathbb{P}\big( x_1 &lt; \xi(\omega) &lt; x_2 \big) = \mathbb{P}\big( \xi(\omega) &lt; x_2 \big) - \mathbb{P}\big( \xi(\omega) &lt; x_1 \big) = F(x_2) - F(x_1 + 0) \\
-&amp;\mathbb{P}\big( x_1 &lt; \xi(\omega) \leqslant x_2 \big) = \mathbb{P}\big( \xi(\omega) \leqslant x_2 \big) - \mathbb{P}\big( \xi(\omega) &lt; x_1 \big) = F(x_2 + 0) - F(x_1 + 0)
-\end{aligned}
-\]</span></p>
 </div>
 </section>
-<section id="дискретное-распределение" class="level2" data-number="26.2">
-<h2 data-number="26.2" class="anchored" data-anchor-id="дискретное-распределение"><span class="header-section-number">26.2</span> Дискретное распределение</h2>
+<section id="prob-dist-disc-bern" class="level4" data-number="28.1.1.2">
+<h4 data-number="28.1.1.2" class="anchored" data-anchor-id="prob-dist-disc-bern"><span class="header-section-number">28.1.1.2</span> Распределение Бернулли</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-bern" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bern-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-bern-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;28.2: Функция вероятности распределения Бернулли"><img src="prob-distributions_files/figure-html/fig-bern-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bern-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.2: Функция вероятности распределения Бернулли
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="абсолютно-непрерывное-распределение" class="level2" data-number="26.3">
-<h2 data-number="26.3" class="anchored" data-anchor-id="абсолютно-непрерывное-распределение"><span class="header-section-number">26.3</span> Абсолютно непрерывное распределение</h2>
+<section id="prob-dist-disc-binom" class="level4" data-number="28.1.1.3">
+<h4 data-number="28.1.1.3" class="anchored" data-anchor-id="prob-dist-disc-binom"><span class="header-section-number">28.1.1.3</span> Биномиальное распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-binom" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-binom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-binom-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;28.3: Функция вероятности биномиального распределения"><img src="prob-distributions_files/figure-html/fig-binom-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-binom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.3: Функция вероятности биномиального распределения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="независимость-случайных-величин" class="level2" data-number="26.4">
-<h2 data-number="26.4" class="anchored" data-anchor-id="независимость-случайных-величин"><span class="header-section-number">26.4</span> Независимость случайных величин</h2>
+<section id="prob-dist-disc-pois" class="level4" data-number="28.1.1.4">
+<h4 data-number="28.1.1.4" class="anchored" data-anchor-id="prob-dist-disc-pois"><span class="header-section-number">28.1.1.4</span> Распределение Пуассона</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-pois" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pois-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-pois-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;28.4: Функция вероятности распределения Пуассона"><img src="prob-distributions_files/figure-html/fig-pois-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pois-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.4: Функция вероятности распределения Пуассона
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="функции-от-случайных-величин" class="level2" data-number="26.5">
-<h2 data-number="26.5" class="anchored" data-anchor-id="функции-от-случайных-величин"><span class="header-section-number">26.5</span> Функции от случайных величин</h2>
 </section>
-<section id="моменты-случайных-величин" class="level2" data-number="26.6">
-<h2 data-number="26.6" class="anchored" data-anchor-id="моменты-случайных-величин"><span class="header-section-number">26.6</span> Моменты случайных величин</h2>
+<section id="prob-dist-cont" class="level3" data-number="28.1.2">
+<h3 data-number="28.1.2" class="anchored" data-anchor-id="prob-dist-cont"><span class="header-section-number">28.1.2</span> Непрерывные распределения</h3>
+<section id="prob-dist-cont-unif" class="level4" data-number="28.1.2.1">
+<h4 data-number="28.1.2.1" class="anchored" data-anchor-id="prob-dist-cont-unif"><span class="header-section-number">28.1.2.1</span> Равномерное распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-unif" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-unif-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Иллюстрация&nbsp;28.5: Функция плотности равномерного распределения"><img src="prob-distributions_files/figure-html/fig-unif-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.5: Функция плотности равномерного распределения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-dist-cont-stunif" class="level4" data-number="28.1.2.2">
+<h4 data-number="28.1.2.2" class="anchored" data-anchor-id="prob-dist-cont-stunif"><span class="header-section-number">28.1.2.2</span> Стандартное равномерное распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-stunif" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stunif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-stunif-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Иллюстрация&nbsp;28.6: Функция плотности стандартного равномерного распределения"><img src="prob-distributions_files/figure-html/fig-stunif-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stunif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.6: Функция плотности стандартного равномерного распределения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-dist-cont-norm" class="level4" data-number="28.1.2.3">
+<h4 data-number="28.1.2.3" class="anchored" data-anchor-id="prob-dist-cont-norm"><span class="header-section-number">28.1.2.3</span> Нормальное распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-norm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-norm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-norm-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Иллюстрация&nbsp;28.7: Функция плотности стандартного нормального распределения"><img src="prob-distributions_files/figure-html/fig-norm-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-norm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.7: Функция плотности стандартного нормального распределения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-dist-cont-stnorm" class="level4" data-number="28.1.2.4">
+<h4 data-number="28.1.2.4" class="anchored" data-anchor-id="prob-dist-cont-stnorm"><span class="header-section-number">28.1.2.4</span> Стандартное нормальное распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-stnorm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stnorm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-stnorm-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Иллюстрация&nbsp;28.8: Функция плотности стандартного нормального распределения"><img src="prob-distributions_files/figure-html/fig-stnorm-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stnorm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.8: Функция плотности стандартного нормального распределения
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-dist-cont-t" class="level4" data-number="28.1.2.5">
+<h4 data-number="28.1.2.5" class="anchored" data-anchor-id="prob-dist-cont-t"><span class="header-section-number">28.1.2.5</span> t-распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-t-dist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-t-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Иллюстрация&nbsp;28.9: Функция плотности распределения Стьюдента"><img src="prob-distributions_files/figure-html/fig-t-dist-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.9: Функция плотности распределения Стьюдента
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-dist-cont-f" class="level4" data-number="28.1.2.6">
+<h4 data-number="28.1.2.6" class="anchored" data-anchor-id="prob-dist-cont-f"><span class="header-section-number">28.1.2.6</span> F-распределение</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-f-dist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-f-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="prob-distributions_files/figure-html/fig-f-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Иллюстрация&nbsp;28.10: Функция плотности распределения Фишера"><img src="prob-distributions_files/figure-html/fig-f-dist-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-f-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.10: Функция плотности распределения Фишера
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-dist-cont-chisq" class="level4" data-number="28.1.2.7">
+<h4 data-number="28.1.2.7" class="anchored" data-anchor-id="prob-dist-cont-chisq"><span class="header-section-number">28.1.2.7</span> <span class="math inline">\(\chi^2\)</span>-распределение</h4>
+<div id="fig-chisq-dist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chisq-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-distributions_files/figure-html/chisq-dist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Иллюстрация&nbsp;28.11: Функция плотности \chi^2-распределения"><img src="prob-distributions_files/figure-html/chisq-dist-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chisq-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;28.11: Функция плотности <span class="math inline">\(\chi^2\)</span>-распределения
+</figcaption>
+</figure>
+</div>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -811,16 +858,29 @@ tzcode source: internal
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+ [1] latex2exp_0.9.6 lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1  
+ [5] dplyr_1.1.4     purrr_1.0.2     readr_2.1.5     tidyr_1.3.1    
+ [9] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0
+
 loaded via a namespace (and not attached):
- [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.3        
- [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   
- [9] knitr_1.47        jsonlite_1.8.9    xfun_0.44         digest_0.6.37    
-[13] rlang_1.1.4       evaluate_1.0.1   </code></pre>
+ [1] gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0    tidyselect_1.2.1 
+ [5] scales_1.3.0      yaml_2.3.8        fastmap_1.2.0     R6_2.5.1         
+ [9] labeling_0.4.3    generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4
+[13] munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4      
+[17] utf8_1.2.4        stringi_1.8.4     xfun_0.44         timechange_0.3.0 
+[21] cli_3.6.3         withr_3.0.2       magrittr_2.0.3    digest_0.6.37    
+[25] grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3         lifecycle_1.0.4  
+[29] vctrs_0.6.5       evaluate_1.0.1    glue_1.8.0        farver_2.1.2     
+[33] fansi_1.0.6       colorspace_2.1-1  rmarkdown_2.27    tools_4.4.0      
+[37] pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+</section>
+</section>
 </section>
 </section>
 
@@ -1388,17 +1448,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./prob-prob.html" class="pagination-link" aria-label="Вероятность как математическая конструкция">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span>
+      <a href="./prob-condprob.html" class="pagination-link" aria-label="Условные вероятности и условные распределения">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./prob-condprob.html" class="pagination-link" aria-label="Условные вероятности и условные распределения">
-        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prob-statestim.html" class="pagination-link" aria-label="Оценивание параметров в статистическом анализе">
+        <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
