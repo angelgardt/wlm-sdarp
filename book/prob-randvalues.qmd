@@ -1,4 +1,4 @@
-# Случайные величины {#randvalues}
+# Случайные величины {#prob-randvalues}
 
 {{< include other/_symbols.qmd >}}
 
@@ -171,6 +171,14 @@ $$
 
 
 
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>

@@ -62,7 +62,7 @@ book:
         - prob-randexpvals.qmd
         - prob-prob.qmd
         - prob-randvalues.qmd
-        - prob-cond-prob.qmd
+        - prob-condprob.qmd
         - prob-statestim.qmd
         - prob-hyptesting.qmd
         - prob-falsepositive.qmd

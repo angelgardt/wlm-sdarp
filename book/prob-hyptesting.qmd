@@ -383,6 +383,17 @@ $${#eq-alpha-to-beta}
 :::{.lab-junior}
 :::
 
+
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
 ```
