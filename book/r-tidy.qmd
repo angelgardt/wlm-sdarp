@@ -24,7 +24,7 @@ library(tidyverse)
 ```{r exmpl-data-create, echo=FALSE, eval=FALSE, message=FALSE}
 tibble(
   id = paste0("r", 1:6),
-  V1 = c("Am", "Dm", "Cm", "Gm", "Bm", NA),
+  V1 = c("Abc", "Def", "Ghi", "Jkl", "Mno", NA),
   V2 = c(1, 8, 3, 12, 4, NA),
   C1 = c(TRUE, TRUE, FALSE, FALSE, FALSE, TRUE),
   C2 = c("No", "No", "Yes", "Yes", "No", "No"),
@@ -33,30 +33,40 @@ tibble(
   ) -> d
 
 # dir.create("../data/r-tidy")
+# file.remove(dir("data/r-tidy/", full.names = TRUE))
 
-# d %>% write_csv("../data/r-tidy/d_csv.csv")
-# d %>% write_csv2("../data/r-tidy/d_csv2.csv")
-# d %>% write_tsv("../data/r-tidy/d_tsv.tsv")
+# d %>% write_csv("data/r-tidy/ds_csv.csv")
+# d %>% write_csv2("data/r-tidy/ds_csv2.csv")
+# d %>% write_tsv("data/r-tidy/ds_tsv.tsv")
+# d %>% write_delim("data/r-tidy/ds_table.tsv", delim = " ")
+# d %>% write.table("data/r-tidy/ds_delim.txt", sep = "|", dec = ",")
 ```
 
 ```{r read-csv}
-d <- read_csv("../data/r-tidy/d_csv.csv")
+ds <- read_csv("data/r-tidy/ds_csv.csv")
+str(ds)
 ```
 
-```
-read_csv2()
-```
-
-```
-read_tsv()
+```{r read-csv2}
+ds_csv2 <- read_csv2("data/r-tidy/ds_csv2.csv")
+str(ds_csv2)
 ```
 
-```
-read_table()
+```{r read-tsv}
+ds_tsv <- read_tsv("data/r-tidy/ds_tsv.tsv")
+str(ds_tsv)
 ```
 
+```{r read-table}
+ds_table <- read_table("data/r-tidy/ds_table.tsv")
+str(ds_table)
 ```
-read_delim()
+
+```{r read-delim}
+ds_delim <- read_delim("data/r-tidy/ds_delim.txt",
+                       delim = "|",
+                       locale = locale(decimal_mark = ","))
+str(ds_delim)
 ```
 
 
@@ -91,6 +101,21 @@ d %>% select(ends_with("2"))
 ```
 :::
 
+:::{#lst-select-matches-basic}
+```{r select-ends-matches-basic}
+d %>% select(matches("V3"))
+```
+:::
+
+:::{#lst-select-matches-regex}
+```{r select-ends-matches-regex}
+d %>% select(matches("V2|3"))
+```
+:::
+
+
+
+
 #### Фильтрация строк {#r-tidy-filter-slice}
 
 :::{#lst-filter-onecond}
@@ -108,6 +133,25 @@ d %>% filter(C2 == "No" & V2 > 2)
 :::{#lst-filter-twoconds-or}
 ```{r filter-twoconds-or}
 d %>% filter(C2 == "Yes" | V2 > 2)
+```
+:::
+
+:::{#lst-filter-logvar}
+```{r filter-logvar}
+d %>% filter(C1)
+```
+:::
+
+:::{#lst-filter-logvar-comb}
+```{r filter-logvar-comb}
+d %>% filter(!C1 & C2 == "Yes")
+```
+:::
+
+
+:::{#lst-filter-strfuns}
+```{r filter-strfuns}
+d %>% filter(str_detect(V3b, "sk$"))
 ```
 :::
 
@@ -137,6 +181,8 @@ d %>% filter(C2 == "Yes" | V2 > 2)
 
 ##### `anti_join()`
 
+
+## Экспорт данных {#r-tidy-export}
 
 
 

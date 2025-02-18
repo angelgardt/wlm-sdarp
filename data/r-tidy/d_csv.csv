@@ -1,7 +1,0 @@
-id,V1,V2,C1,C2,V3a,V3b
-r1,Am,1,TRUE,No,13.4,Msk
-r2,Dm,8,TRUE,No,11.8,NA
-r3,Cm,3,FALSE,Yes,4.6,NA
-r4,Gm,12,FALSE,Yes,3.5,SPb
-r5,Bm,4,FALSE,No,-4.03,Ekb
-r6,NA,NA,TRUE,No,0.78,Nsk
