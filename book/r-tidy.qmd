@@ -3,13 +3,139 @@
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=TRUE, warning=TRUE, error=FALSE)
 ```
 
 :::{.intro}
 Вступление
 :::
 
+## Концепция Tidy Data {#r-tidy-concept}
+
+## Семейство пакетов `tidyverse` {#r-tidy-tidyverse}
+
+
+```{r}
+library(tidyverse)
+```
+
+### Импорт данных {#r-tidy-import}
+
+```{r exmpl-data-create, echo=FALSE, eval=FALSE, message=FALSE}
+tibble(
+  id = paste0("r", 1:6),
+  V1 = c("Am", "Dm", "Cm", "Gm", "Bm", NA),
+  V2 = c(1, 8, 3, 12, 4, NA),
+  C1 = c(TRUE, TRUE, FALSE, FALSE, FALSE, TRUE),
+  C2 = c("No", "No", "Yes", "Yes", "No", "No"),
+  V3a = c(13.4, 11.8, 4.60, 3.50, -4.03, 0.78),
+  V3b = c("Msk", NA, NA, "SPb", "Ekb", "Nsk")
+  ) -> d
+
+# dir.create("../data/r-tidy")
+
+# d %>% write_csv("../data/r-tidy/d_csv.csv")
+# d %>% write_csv2("../data/r-tidy/d_csv2.csv")
+# d %>% write_tsv("../data/r-tidy/d_tsv.tsv")
+```
+
+```{r read-csv}
+d <- read_csv("../data/r-tidy/d_csv.csv")
+```
+
+```
+read_csv2()
+```
+
+```
+read_tsv()
+```
+
+```
+read_table()
+```
+
+```
+read_delim()
+```
+
+
+### Переименование переменных {#r-tidy-rename}
+
+
+### Фильтрация данных {#r-tidy-subset}
+
+#### Фильтрация столбцов {#r-tidy-select}
+
+:::{#lst-select-basic}
+```{r select-basic}
+d %>% select(id, V1, V2, C1)
+```
+:::
+
+:::{#lst-select-range}
+```{r select-range}
+d %>% select(id, V1:C2)
+```
+:::
+
+:::{#lst-select-starts-with}
+```{r select-starts-with}
+d %>% select(starts_with("V"))
+```
+:::
+
+:::{#lst-select-ends-with}
+```{r select-ends-with}
+d %>% select(ends_with("2"))
+```
+:::
+
+#### Фильтрация строк {#r-tidy-filter-slice}
+
+:::{#lst-filter-onecond}
+```{r filter-onecond}
+d %>% filter(C2 == "Yes")
+```
+:::
+
+:::{#lst-filter-twoconds-and}
+```{r filter-twoconds-and}
+d %>% filter(C2 == "No" & V2 > 2)
+```
+:::
+
+:::{#lst-filter-twoconds-or}
+```{r filter-twoconds-or}
+d %>% filter(C2 == "Yes" | V2 > 2)
+```
+:::
+
+
+
+### Сортировка данных {#r-tidy-arrange}
+
+### Создание и изменение переменных {#r-tidy-mutate}
+
+### Агрегация данных {#r-tidy-summarise}
+
+### Объединение датасетов {#r-tidy-merge}
+
+#### Объединение по строкам и столбцам {#r-tidy-binds}
+
+#### Объединение по ключу {#r-tidy-joins}
+
+##### `inner_join()`
+
+##### `left_join()`
+
+##### `right_join()`
+
+##### `full_join()`
+
+##### `semi_join()`
+
+##### `anti_join()`
 
 
 
