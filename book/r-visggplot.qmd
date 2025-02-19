@@ -21,6 +21,8 @@ theme_set(theme_bw())
 Чтобы уверенно понять, что происходит в этой главе, нужно базово представлять, что являют собой статистические данных и что такое описательные статистики. 
 :::
 
+
+
 ## Задачи визуализации {#r-visggplot-why}
 
 :::{.lab-junior}
@@ -176,12 +178,172 @@ datasauRus::datasaurus_dozen %>%
 :::
 
 
+
+## Виды визуализаций {#r-visggplot2-graphs}
+
+:::{.lab-junior}
+:::
+
+```{r exmpl-graphs, echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
+## bar plot
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(cut, n)) +
+  geom_col() +
+  xlab("Cut") + ylab("Count") -> exmpl_barplot
+
+## sunburts
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(cut, n, fill = color)) +
+  geom_col(position = position_dodge()) +
+  coord_polar() +
+  xlab("Cut") + ylab("Count") +
+  labs(fill = 'Color') -> exmpl_sunburts
+
+## pie chart
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(n = n(),
+            prop = (n / nrow(diamonds) * 100) %>% round(1) %>% paste0("%")) %>% 
+  ggplot(aes("", n, fill = cut)) +
+  geom_bar(stat = 'identity', width = 1) +
+  geom_text(aes(label = prop), position = position_stack(vjust = 0.5)) +
+  coord_polar('y', start = 0) + 
+  xlab(NULL) + ylab(NULL) +
+  labs(fill = 'Cut') +
+  theme(axis.text.x = element_text(size = 0)) -> exmpl_piechart
+
+## line plot
+matrix(AirPassengers, ncol = 12) %>% as_tibble() %>% mutate(year = 1949:1960) -> for_line_graph
+colnames(for_line_graph) <- c(month.abb, 'year')
+for_line_graph %>% 
+  pivot_longer(-year) %>% 
+  mutate(name = factor(name, ordered = TRUE, levels = month.abb)) %>% 
+  filter(year < 1952) %>% 
+  ggplot(aes(name, value, group = year, color = factor(year))) +
+  geom_line(linetype = 'solid') +
+  labs(x = "Month", y = 'Number of passangers',
+       color = "Year") -> exmpl_lineplot
+
+## histogram
+diamonds %>% ggplot(aes(price)) +
+  geom_histogram(binwidth = 1000) +
+  xlab('Price') + ylab('Count') -> exmpl_histogram
+
+## density plot
+diamonds %>% ggplot(aes(price, fill = cut)) +
+  geom_density(alpha=0.5) +
+  xlab('Price') + ylab('Density') -> exmpl_density
+
+## dot plot
+set.seed(480)
+diamonds %>% 
+  slice(sample(1:nrow(diamonds), 20)) %>% 
+  ggplot(aes(cut)) +
+  geom_dotplot() +
+  xlab('Price') + ylab('') +
+  theme(axis.text.y = element_text(size = 0)) -> exmpl_dotplot
+
+## box plot
+diamonds %>% slice(sample(1:nrow(diamonds), 300)) %>% 
+  ggplot(aes(color, price)) +
+  geom_boxplot() +
+  xlab('Color') + ylab("Price") -> exmpl_boxplot
+
+## violin plot
+diamonds %>% slice(sample(1:nrow(diamonds), 300)) %>% 
+  ggplot(aes(color, price)) +
+  geom_violin() +
+  stat_summary(fun.data = mean_cl_boot, geom = "pointrange") +
+  xlab('Color') + ylab("Price") -> exmpl_violin
+
+## error bar
+diamonds %>% 
+  ggplot(aes(cut, price)) +
+  stat_summary(fun = mean, geom = 'point') +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width = 0.5) +
+  xlab('Cut') + ylab("Price") -> exmpl_errorbar
+
+## scatter plot
+diamonds %>% slice(sample(1:nrow(diamonds), 50)) %>% 
+  ggplot(aes(x, y, color = color)) +
+  geom_point() +
+  labs(color = "Color") -> exmpl_scatterplot
+
+## bubble plot
+diamonds %>% slice(sample(1:nrow(diamonds), 100)) %>% 
+  ggplot(aes(x, y, color = color, size = z)) +
+  geom_point(alpha=0.5) +
+  labs(color = "Color") +
+  theme(legend.position = "bottom") -> exmpl_bubbleplot
+```
+
+```{r exmpl-graphs-figure, echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
+#| label: fig-exmpl-graphs
+#| fig-cap: "Основные виды графиков"
+#| fig-subcap:
+#|   - "Столбчатая диаграмма (Bar plot, Bar graph)"
+#|   - "Dot plot"
+#|   - "Гистограмма (Histogram)"
+#|   - "График плотности распределения (Density plot)"
+#|   - "Ящик с усами (Boxplot)"
+#|   - "Violin plot"
+#|   - "Линейная диаграмма (Line graph, Line plot)"
+#|   - "График интервальных оценок (Error bar)"
+#|   - "Диаграмма рассеяния (Scatter plot)"
+#|   - "Пузырьковая диаграмма (Bubble plot)"
+#|   - "Круговая диаграмма (Pie chart)"
+#|   - "Лучевая диаграмма (Sunburts)"
+#| layout-ncol: 2
+
+print(exmpl_barplot)
+print(exmpl_dotplot)
+
+print(exmpl_histogram)
+print(exmpl_density)
+
+print(exmpl_boxplot)
+print(exmpl_violin)
+
+print(exmpl_lineplot)
+print(exmpl_errorbar)
+
+print(exmpl_scatterplot)
+print(exmpl_bubbleplot)
+
+print(exmpl_piechart)
+print(exmpl_sunburts)
+```
+
+
+
+:::{.callout-note}
+### Histogram vs Bar plot
+
+text
+:::
+
+:::{.callout-warning}
+### Аналитик, не рисуй pie chart!
+
+text
+:::
+
+
+
+
+
+
+
 ## Пакет `ggplot2` {#r-visggplot2-pkg}
 
 :::{.lab-junior}
 :::
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 detach("package:tidyverse", unload = TRUE)
 detach("package:forcats", unload = TRUE)
 detach("package:ggplot2", unload = TRUE)
@@ -194,14 +356,21 @@ detach("package:purrr", unload = TRUE)
 detach("package:tibble", unload = TRUE)
 ```
 
+Пакет, которым мы будем постоянно использоваться для создания визуализаций, называется `ggplot2`. Он является частью `tidyverse`, поэтому подключается вместе со всеми остальными:
+
 ```{r}
 library(tidyverse)
 ```
 
+Мы уже видели это сообщение. В частности, в нём сказано, что подключён пакет `ggplot2` версии `r packageVersion("ggplot2")`. Также, если вы установили `tidyverse`, то не нужно устанавливать `ggplot2` отдельно.
+
+Если же вы по каким-либо причинам не хотите устанавливать `tidyverse`, то можно установить `ggplot2` отдельно с помощью знакомой нам команды `install.packages("tidyverse")`. Также можно и подключить только `ggplot2`, не загружая в рабочую сессию весь `tidyverse` через `library(ggplot2)`. В общем всё стандартно как и для любого другого пакета.
+
+
 :::{.callout-note appearance="minimal" collapse="true"}
 ###### Откуда `2` в названии пакета?
 
-Нет ощущения, что если пакет называется `ggplot2`, то он вторая версия некоего пакета `ggplot`? Однако пакет `ggplot` вроде как нигде не существует…
+Нет ощущения, что если пакет называется `ggplot2`, то он --- вторая версия некоего пакета `ggplot`? Однако пакет `ggplot` вроде как нигде не существует…
 
 Тем не менее, он всё же существовал, как сообщает [источник](https://info201.github.io/ggplot2.html), но был плох, и разработчики решили переписать всё с нуля, создав ныне известный `ggplot2`. Вторая попытка, как мы увидим, оказалось значительно успешнее и мощнее и обрела невероятную популярность.
 :::
@@ -274,12 +443,21 @@ diamonds %>% sapply(is.na) %>% apply(2, sum)
 * **scales** позволяет настроить отображение всего того, что мы задали на предыдущих слоях,
 * **facets** даёт возможность разбить график на подграфики, чтобы закономерности данных лучше считывались,
 * **coordinates** управляет координатной системой,
-* **theme** открывает управление практически всеми элементами графика для их тончайшей настройки, чтобы навести невероятную красоту.
+* **theme** управляет оформлением практически всех элементов графика для их тончайшей настройки, чтобы навести невероятную красоту.
 
 ![Концептуальная схема строения визуализации в подходе A Layered Grammar of Graphics [по @ggplot2-hadley]](img/r-visggplot/plot-layers.png){#fig-plot-layers}
 
-Первый три слоя --- data, mapping и layers --- являются обязательными, чтобы визуализация вообще построилась. Остальные факультативны --- используются, если нам нужно исправить поведение пакета, заданное по умолчанию.
+Первые три слоя --- data, mapping и layers --- являются обязательными, чтобы визуализация вообще построилась. Остальные факультативны --- используются, если нам нужно исправить поведение пакета, заданное по умолчанию.
 
+:::{.quote .small .pers}
+--- Чё-т эт как-т абстрактно всё слишком… Ничё не понял…
+:::
+
+Концепция, действительно, звучит в некоторой мере абстрактно --- на то она и концепция. Однако, как мы увидим далее, все элементы, обозначенные выше, представлены функциями пакета `ggplot2`.
+
+:::{.quote .small .pers}
+--- Ладно, ладно… Погнали уже рисовать!
+:::
 
 
 
@@ -308,8 +486,13 @@ ggplot(data = diamonds,
 
 ## Эстетики (aesthetics) {#r-visggplot-aes}
 
+:::{.lab-junior}
+:::
 
 ### Цвет {#r-visggplot-aes-color}
+
+:::{.lab-junior}
+:::
 
 В R встроено безумное количество цветов --- `r colors() %>% length()`. Полный список можно получить, вызвав функцию `colors()`. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.
 
@@ -327,13 +510,16 @@ ggplot(NULL, aes(1, clrs %>% factor(ordered = TRUE, levels = colors()), fill = c
   scale_x_continuous(breaks = NULL) +
   labs(x = NULL, y = NULL) +
   guides(fill = "none") +
-  scale_fill_manual(values = clrs)
+  scale_fill_manual(values = clrs) +
+  theme_bw()
 ```
 :::
 
 
-
 ### Форма {#r-visggplot-aes-shape}
+
+:::{.lab-junior}
+:::
 
 ```{r shapes, echo=FALSE, cache=TRUE}
 #| label: fig-shapes
@@ -354,14 +540,20 @@ tibble(x = rep(1:13, times = 2),
                      breaks = NULL) +
   scale_shape_manual(values = 0:25) +
   labs(x = NULL, y = NULL) +
-  guides(shape = "none")
+  guides(shape = "none") +
+  theme_bw()
 ```
 
+
 ### Тип линии {#r-visggplot-aes-linetype}
+
+:::{.lab-junior}
+:::
 
 ```{r linetypes, echo=FALSE, cache=TRUE}
 #| label: fig-linetypes
 #| fig-cap: "Типы линии, доступные в R"
+#| fig-height: 3
 
 tibble(x = rep(1:2, each = 7),
        y = rep(0:6, times = 2),
@@ -382,13 +574,44 @@ tibble(x = rep(1:2, each = 7),
                                    "longdash" = "longdash",
                                    "twodash" = "twodash")) +
   labs(x = NULL, y = NULL) +
-  guides(linetype = "none")
+  guides(linetype = "none") +
+  theme_bw()
 ```
 
 
 ## Геомы (geoms) {#r-visggplot-geoms}
 
+:::{.lab-junior}
+:::
+
+
+
+
 ## Статы (stats) {#r-visggplot-stats}
+
+:::{.lab-junior}
+:::
+
+
+
+## Фасеты (facets) {#r-visggplot-facets}
+
+:::{.lab-junior}
+:::
+
+
+
+## Шкалы (scales) {#r-visggplot-scales}
+
+:::{.lab-junior}
+:::
+
+
+
+## Тема (theme) {#r-visggplot-theme}
+
+:::{.lab-junior}
+:::
 
 
 
