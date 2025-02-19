@@ -1,4 +1,4 @@
-# Комбинаторика {#chapterid}
+# Комбинаторика {#math-combs}
 
 {{< include other/_symbols.qmd >}}
 
@@ -11,6 +11,97 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
+## Перестановки {#math-comb-permutations}
+
+:::{.lab-middle}
+:::
+
+permutations
+
+$$
+\perm{n} = n!
+$$
+
+## Размещения {#math-comb-variations}
+
+:::{.lab-middle}
+:::
+
+variations
+
+
+### Размещения без повторений {#math-comb-variations-norep}
+
+:::{.lab-middle}
+:::
+
+Число размещений без повторений обозначается[^vari-notation] $\vari{n}{k}$.
+
+[^vari-notation]: Другое часто используемое обозначение --- $\mathsf A_n^k$
+
+$$
+\vari{n}{k} = \frac{n!}{(n-k)!}
+$$
+
+
+### Размещения с повторениями {#math-comb-variations-rep}
+
+:::{.lab-senior}
+:::
+
+Число размещений c повторениями обозначается[^variR-notation] $\vari[R]{n}{k}$.
+
+[^variR-notation]: Другое часто используемое обозначение --- $\overline{\mathsf A_n^k}$
+
+$$
+\vari[R]{n}{k} = n^k
+$$
+
+## Сочетания {#math-comb-combinations}
+
+:::{.lab-middle}
+:::
+
+combinations
+
+### Сочетаний без повторений {#math-comb-combinations-norep}
+
+:::{.lab-middle}
+:::
+
+$$
+\comb{n}{k} = \frac{n!}{k!(n-k)!}
+$$
+
+
+### Биномиальные коэффициенты {#math-comb-combinations-binom}
+
+:::{.lab-senior}
+:::
+
+У числа сочетаний без повторений есть ещё один серьёзный смысл --- оно определяет коэффициенты в формуле бинома Ньютона.
+
+$$
+(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k = \binom{n}{0} a^n + \binom{n}{1}a^{n-1}b + \dots + \binom{n}{k} + \dots + \binom{n}{n}b_n
+$$
+
+Здесь $\binom{n}{k}$ --- это обозначение **биномиального коэффициента**, то есть коэффициента, который стоит при каком-либо из слагаемых в формуле бинома Ньютона. Он тождественно равен числу сочетаний из $n$ по $k$ --- $\binom{n}{k} \equiv \comb{n}{k}$ --- иначе говоря, является другим обозначением той же сущности. Только индексы в другом порядке указываются.
+
+Биномиальные коэффициенты возникают при задании функции вероятности [биномиального распределения](prob-distributions.qmd#prob-dist-disc-binom). Подробнее про бином Ньютона можно почитать [в приложении](appendix-math-other.qmd#appendix-other-math-binom).
+
+
+### Сочетания с повторениями {#math-comb-combinations-rep}
+
+:::{.lab-senior}
+:::
+
+Число сочетаний c повторениями обозначается[^combR-notation] $\comb[R]{n}{k}$.
+
+[^combR-notation]: Другое часто используемое обозначение --- $\overline{\comb{n}{k}}$
+
+$$
+\comb[R]{n}{k} = \frac{(n+k-1)!}{k!(n-k)!}
+$$
 
 
 

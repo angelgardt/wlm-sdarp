@@ -44,6 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -246,14 +249,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -271,7 +274,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -358,7 +361,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -410,26 +413,32 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -446,25 +455,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -558,7 +567,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
@@ -1480,7 +1489,7 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 <div id="fig-sin-cos-of-sum-draw-angles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-draw-angles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg" class="img-fluid figure-img">
+<a href="img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;J.1: Построение рассматриваемых углов"><img src="img/appendix-math-other/sin-cos-of-sum-draw-angles.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-draw-angles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.1: Построение рассматриваемых углов
@@ -1497,7 +1506,7 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 <div id="fig-sin-cos-of-sum-draw-triangles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-draw-triangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg" class="img-fluid figure-img">
+<a href="img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;J.2: Построение прямоугольных треугольников, содержащих рассматриваемые углы углов"><img src="img/appendix-math-other/sin-cos-of-sum-draw-triangles.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-draw-triangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.2: Построение прямоугольных треугольников, содержащих рассматриваемые углы углов
@@ -1510,7 +1519,7 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 <div id="fig-sin-cos-of-sum-first-perp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-first-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/sin-cos-of-sum-first-perp.jpg" class="img-fluid figure-img">
+<a href="img/appendix-math-other/sin-cos-of-sum-first-perp.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;J.3: Построение треугольника, содержащего угол, равный сумме рассматриваемых углов"><img src="img/appendix-math-other/sin-cos-of-sum-first-perp.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-first-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.3: Построение треугольника, содержащего угол, равный сумме рассматриваемых углов
@@ -1527,7 +1536,7 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 <div id="fig-sin-cos-of-sum-get-trigs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-get-trigs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg" class="img-fluid figure-img">
+<a href="img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;J.4: Искомые тригонометрические фукнции в построенном треугольнике"><img src="img/appendix-math-other/sin-cos-of-sum-get-trigs.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-get-trigs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.4: Искомые тригонометрические фукнции в построенном треугольнике
@@ -1547,7 +1556,7 @@ c^2 \sin^2 \alpha + c^2 \sin^2 \beta = c^2
 <div id="fig-sin-cos-of-sum-second-perp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-second-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/sin-cos-of-sum-second-perp.jpg" class="img-fluid figure-img">
+<a href="img/appendix-math-other/sin-cos-of-sum-second-perp.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Иллюстрация&nbsp;J.5: Построение дополнительного треугольника"><img src="img/appendix-math-other/sin-cos-of-sum-second-perp.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-second-perp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.5: Построение дополнительного треугольника
@@ -1588,7 +1597,7 @@ OC &amp;= DA + AE \Rightarrow DA = OC - AE
 <div id="fig-sin-cos-of-sum-full" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-cos-of-sum-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/appendix-math-other/sin-cos-of-sum-full.jpg" class="img-fluid figure-img">
+<a href="img/appendix-math-other/sin-cos-of-sum-full.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Иллюстрация&nbsp;J.6: Окончательное построение"><img src="img/appendix-math-other/sin-cos-of-sum-full.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sin-cos-of-sum-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;J.6: Окончательное построение
@@ -2695,6 +2704,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

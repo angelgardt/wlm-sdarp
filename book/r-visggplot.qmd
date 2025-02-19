@@ -3,10 +3,10 @@
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=TRUE, warning=TRUE, error=FALSE)
 ```
 
-```{r pkgs}
+```{r pkgs, echo=FALSE, message=FALSE}
 library(tidyverse)
 theme_set(theme_bw())
 ```
@@ -15,13 +15,106 @@ theme_set(theme_bw())
 Вступление
 :::
 
-```{r colors}
-colors()
+:::{.callout-warning}
+###### Нужно базовое представление о статистических данных
+
+
+:::
+
+## Задачи визуализации {#r-visggplot-why}
+
+:::{.lab-junior}
+:::
+
+### Квартет Энскомба {#r-visggplot-anscombe}
+
+:::{.lab-junior}
+:::
+
+Квартет Энскомба[^anscombe-name] (Anscombe's quartet) --- датасет, предложенный Ф. Дж. Энскомбом [@anscombe1973] для демонстрации важности использования визуализаций при изучении данных. В R он хранится в переменной `anscombe` (@lst-anscombe-dataset) из пакета `datasets`, доступного по умолчанию[^basic-pkgs].
+
+[^anscombe-name]: В другом варианте, Анскомба.
+[^basic-pkgs]: Мы [говорили](r-strings.qmd#r-strings-ext-pkgs), что базовый R состоит из нескольких пакетов, автоматически подключаемых при запуске. `datasets` является один таких пакетов.
+
+:::{#lst-anscombe-dataset}
+```{r}
+anscombe
 ```
 
+Датасет «Квартет Энскомба»
+:::
+
+
+По сути он состоит из четырёх датасетов, каждый из которых содержит две переменные --- `x` и `y`. Если внимательно на него посмотреть, то можно обнаружить, что значения переменной `x` в трёх первых датасетах одинаковые. В чётвертом же они совсем другие. Однако переменная `y` во всех четырёх датасетах содержит разные значения. Это приводит нас к следующей незамысловатой идее --- **четыре датасета содержат данные о различных закономерностях между `x` и `y`.** Ну, давайте проверим, так ли это.
+
+В том варианте, в котором он храниться в R, с ним не очень удобно работать, поэтому сделаем простую предобработку (@lst-anscombe-preproc).
+
+:::{#lst-anscombe-preproc}
+```{r}
+anscombe %>% #<1>
+  mutate(id = 1:nrow(anscombe)) %>% #<2>
+  pivot_longer(cols = -id) %>% #<3>
+  mutate(dataset = str_extract(name, "\\d$") %>% as.numeric(), #<4>
+         name = str_remove(name, "\\d$")) %>% #<5>
+  pivot_wider(names_from = name, #<6>
+              values_from = value) %>% 
+  select(-id) -> quartet #<7>
+```
+1. Берём исходный датасет
+2. Создаём техническую переменную `id` для перехода между широким и длинным форматами
+3. Переводим данные в длинный формат --- названия колонок по умолчанию переходят в переменную `name`, значения --- в переменную `value`
+4. Создаём новую переменную `dataset`, которая будет задавать, к какому из «субдатасетов» относится наблюдение --- вытаскиваем номер датасета из названия колонок
+5. Удаляем из названия колонок номер датасета --- теперь это отдельная переменная
+6. Переводим данные в широкий формат --- возвращаем на место названия колонок и значения
+7. Удаляем техническую переменную `id`, сохряняем результат предобработки в новую переменную `quartet`.
+
+Предобработка квартета Энскомба для последующей визуализации
+:::
+
+Посмотрим, что получилось (@lst-quartet-done). Теперь в колонке `dataset` содержится номер датасета, а в переменных `x` и `y` собственно значения переменных, которые мы хотим изучить.
+
+:::{#lst-quartet-done}
+```{r}
+quartet
+```
+
+Предобработанный квартет Энскомба
+:::
+
+
+```{r}
+quartet %>% 
+  summarise(n = n(),
+            mean_x = mean(x),
+            mean_y = mean(y),
+            sd_x = sd(x),
+            sd_y = sd(y),
+            cor_xy = cor(x, y),
+            .by = dataset) %>% 
+  round(2)
+```
+
+```{r}
+#| label: fig-anscombe
+#| fig-cap: "Визуализация квартета Анскомба"
+#| 
+quartet %>% 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ dataset)
+```
+
+## Эстетики {#r-visggplot-aes}
+
+### Цвет {#r-visggplot-aes-color}
+
+В R встроено безумное количество цветов --- `r colors() %>% length()`. Полный список можно получить, вызвав функцию `colors()`. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.
+
+:::{.callout-note appearance="simple" collapse="true"}
+###### Все цвета, доступные в R
+
 ```{r colors-pic, echo=FALSE, cache=TRUE}
-#| label: fig-colors
-#| fig-cap: "Цвета, доступные в R"
 #| fig-height: 100
 
 clrs <- colors()
@@ -34,6 +127,11 @@ ggplot(NULL, aes(1, clrs %>% factor(ordered = TRUE, levels = colors()), fill = c
   guides(fill = "none") +
   scale_fill_manual(values = clrs)
 ```
+:::
+
+
+
+### Форма {#r-visggplot-aes-shape}
 
 ```{r shapes, echo=FALSE, cache=TRUE}
 #| label: fig-shapes
@@ -56,6 +154,8 @@ tibble(x = rep(1:13, times = 2),
   labs(x = NULL, y = NULL) +
   guides(shape = "none")
 ```
+
+### Тип линии {#r-visggplot-aes-linetype}
 
 ```{r linetypes, echo=FALSE, cache=TRUE}
 #| label: fig-linetypes

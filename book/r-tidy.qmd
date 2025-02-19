@@ -29,6 +29,8 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=TRUE, warning=TRUE, error=FA
 Принципы Tidy Data
 :::
 
+
+
 ## Семейство пакетов `tidyverse` {#r-tidy-tidyverse}
 
 :::{.lab-junior}

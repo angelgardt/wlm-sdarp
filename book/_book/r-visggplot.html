@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -279,7 +299,7 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -589,8 +609,23 @@ background-size: cover;
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#r-visggplot-why" id="toc-r-visggplot-why" class="nav-link active" data-scroll-target="#r-visggplot-why"><span class="header-section-number">10.1</span> Задачи визуализации</a>
+  <ul>
+  <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Энскомба</a></li>
+  </ul></li>
+  <li><a href="#r-visggplot-aes" id="toc-r-visggplot-aes" class="nav-link" data-scroll-target="#r-visggplot-aes"><span class="header-section-number">10.2</span> Эстетики</a>
+  <ul>
+  <li><a href="#r-visggplot-aes-color" id="toc-r-visggplot-aes-color" class="nav-link" data-scroll-target="#r-visggplot-aes-color"><span class="header-section-number">10.2.1</span> Цвет</a></li>
+  <li><a href="#r-visggplot-aes-shape" id="toc-r-visggplot-aes-shape" class="nav-link" data-scroll-target="#r-visggplot-aes-shape"><span class="header-section-number">10.2.2</span> Форма</a></li>
+  <li><a href="#r-visggplot-aes-linetype" id="toc-r-visggplot-aes-linetype" class="nav-link" data-scroll-target="#r-visggplot-aes-linetype"><span class="header-section-number">10.2.3</span> Тип линии</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -616,257 +651,210 @@ background-size: cover;
 <!--- Stats --->
 <!--- Letters --->
 <!--- Linear Models --->
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="intro">
 <p>Вступление</p>
 </div>
+<section id="r-visggplot-why" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="r-visggplot-why"><span class="header-section-number">10.1</span> Задачи визуализации</h2>
+<div class="lab-junior">
+
+</div>
+<section id="r-visggplot-anscombe" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Энскомба</h3>
+<div class="lab-junior">
+
+</div>
+<p>Квартет Энскомба<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (Anscombe’s quartet) — датасет, предложенный Ф.&nbsp;Дж.&nbsp;Энскомбом <span class="citation" data-cites="anscombe1973">(<a href="references.html#ref-anscombe1973" role="doc-biblioref">Anscombe, 1973</a>)</span> для&nbsp;демонстрации важности использования визуализаций при&nbsp;изучении данных. В&nbsp;R он хранится в&nbsp;переменной <code>anscombe</code> (<a href="#lst-anscombe-dataset" class="quarto-xref">Код&nbsp;<span>10.1</span></a>) из&nbsp;пакета <code>datasets</code>, доступного по&nbsp;умолчанию<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<div id="lst-anscombe-dataset" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-anscombe-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.1: Датасет «Квартет Энскомба»
+</figcaption>
+<div aria-describedby="lst-anscombe-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colors</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>anscombe</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] "white"                "aliceblue"            "antiquewhite"        
-  [4] "antiquewhite1"        "antiquewhite2"        "antiquewhite3"       
-  [7] "antiquewhite4"        "aquamarine"           "aquamarine1"         
- [10] "aquamarine2"          "aquamarine3"          "aquamarine4"         
- [13] "azure"                "azure1"               "azure2"              
- [16] "azure3"               "azure4"               "beige"               
- [19] "bisque"               "bisque1"              "bisque2"             
- [22] "bisque3"              "bisque4"              "black"               
- [25] "blanchedalmond"       "blue"                 "blue1"               
- [28] "blue2"                "blue3"                "blue4"               
- [31] "blueviolet"           "brown"                "brown1"              
- [34] "brown2"               "brown3"               "brown4"              
- [37] "burlywood"            "burlywood1"           "burlywood2"          
- [40] "burlywood3"           "burlywood4"           "cadetblue"           
- [43] "cadetblue1"           "cadetblue2"           "cadetblue3"          
- [46] "cadetblue4"           "chartreuse"           "chartreuse1"         
- [49] "chartreuse2"          "chartreuse3"          "chartreuse4"         
- [52] "chocolate"            "chocolate1"           "chocolate2"          
- [55] "chocolate3"           "chocolate4"           "coral"               
- [58] "coral1"               "coral2"               "coral3"              
- [61] "coral4"               "cornflowerblue"       "cornsilk"            
- [64] "cornsilk1"            "cornsilk2"            "cornsilk3"           
- [67] "cornsilk4"            "cyan"                 "cyan1"               
- [70] "cyan2"                "cyan3"                "cyan4"               
- [73] "darkblue"             "darkcyan"             "darkgoldenrod"       
- [76] "darkgoldenrod1"       "darkgoldenrod2"       "darkgoldenrod3"      
- [79] "darkgoldenrod4"       "darkgray"             "darkgreen"           
- [82] "darkgrey"             "darkkhaki"            "darkmagenta"         
- [85] "darkolivegreen"       "darkolivegreen1"      "darkolivegreen2"     
- [88] "darkolivegreen3"      "darkolivegreen4"      "darkorange"          
- [91] "darkorange1"          "darkorange2"          "darkorange3"         
- [94] "darkorange4"          "darkorchid"           "darkorchid1"         
- [97] "darkorchid2"          "darkorchid3"          "darkorchid4"         
-[100] "darkred"              "darksalmon"           "darkseagreen"        
-[103] "darkseagreen1"        "darkseagreen2"        "darkseagreen3"       
-[106] "darkseagreen4"        "darkslateblue"        "darkslategray"       
-[109] "darkslategray1"       "darkslategray2"       "darkslategray3"      
-[112] "darkslategray4"       "darkslategrey"        "darkturquoise"       
-[115] "darkviolet"           "deeppink"             "deeppink1"           
-[118] "deeppink2"            "deeppink3"            "deeppink4"           
-[121] "deepskyblue"          "deepskyblue1"         "deepskyblue2"        
-[124] "deepskyblue3"         "deepskyblue4"         "dimgray"             
-[127] "dimgrey"              "dodgerblue"           "dodgerblue1"         
-[130] "dodgerblue2"          "dodgerblue3"          "dodgerblue4"         
-[133] "firebrick"            "firebrick1"           "firebrick2"          
-[136] "firebrick3"           "firebrick4"           "floralwhite"         
-[139] "forestgreen"          "gainsboro"            "ghostwhite"          
-[142] "gold"                 "gold1"                "gold2"               
-[145] "gold3"                "gold4"                "goldenrod"           
-[148] "goldenrod1"           "goldenrod2"           "goldenrod3"          
-[151] "goldenrod4"           "gray"                 "gray0"               
-[154] "gray1"                "gray2"                "gray3"               
-[157] "gray4"                "gray5"                "gray6"               
-[160] "gray7"                "gray8"                "gray9"               
-[163] "gray10"               "gray11"               "gray12"              
-[166] "gray13"               "gray14"               "gray15"              
-[169] "gray16"               "gray17"               "gray18"              
-[172] "gray19"               "gray20"               "gray21"              
-[175] "gray22"               "gray23"               "gray24"              
-[178] "gray25"               "gray26"               "gray27"              
-[181] "gray28"               "gray29"               "gray30"              
-[184] "gray31"               "gray32"               "gray33"              
-[187] "gray34"               "gray35"               "gray36"              
-[190] "gray37"               "gray38"               "gray39"              
-[193] "gray40"               "gray41"               "gray42"              
-[196] "gray43"               "gray44"               "gray45"              
-[199] "gray46"               "gray47"               "gray48"              
-[202] "gray49"               "gray50"               "gray51"              
-[205] "gray52"               "gray53"               "gray54"              
-[208] "gray55"               "gray56"               "gray57"              
-[211] "gray58"               "gray59"               "gray60"              
-[214] "gray61"               "gray62"               "gray63"              
-[217] "gray64"               "gray65"               "gray66"              
-[220] "gray67"               "gray68"               "gray69"              
-[223] "gray70"               "gray71"               "gray72"              
-[226] "gray73"               "gray74"               "gray75"              
-[229] "gray76"               "gray77"               "gray78"              
-[232] "gray79"               "gray80"               "gray81"              
-[235] "gray82"               "gray83"               "gray84"              
-[238] "gray85"               "gray86"               "gray87"              
-[241] "gray88"               "gray89"               "gray90"              
-[244] "gray91"               "gray92"               "gray93"              
-[247] "gray94"               "gray95"               "gray96"              
-[250] "gray97"               "gray98"               "gray99"              
-[253] "gray100"              "green"                "green1"              
-[256] "green2"               "green3"               "green4"              
-[259] "greenyellow"          "grey"                 "grey0"               
-[262] "grey1"                "grey2"                "grey3"               
-[265] "grey4"                "grey5"                "grey6"               
-[268] "grey7"                "grey8"                "grey9"               
-[271] "grey10"               "grey11"               "grey12"              
-[274] "grey13"               "grey14"               "grey15"              
-[277] "grey16"               "grey17"               "grey18"              
-[280] "grey19"               "grey20"               "grey21"              
-[283] "grey22"               "grey23"               "grey24"              
-[286] "grey25"               "grey26"               "grey27"              
-[289] "grey28"               "grey29"               "grey30"              
-[292] "grey31"               "grey32"               "grey33"              
-[295] "grey34"               "grey35"               "grey36"              
-[298] "grey37"               "grey38"               "grey39"              
-[301] "grey40"               "grey41"               "grey42"              
-[304] "grey43"               "grey44"               "grey45"              
-[307] "grey46"               "grey47"               "grey48"              
-[310] "grey49"               "grey50"               "grey51"              
-[313] "grey52"               "grey53"               "grey54"              
-[316] "grey55"               "grey56"               "grey57"              
-[319] "grey58"               "grey59"               "grey60"              
-[322] "grey61"               "grey62"               "grey63"              
-[325] "grey64"               "grey65"               "grey66"              
-[328] "grey67"               "grey68"               "grey69"              
-[331] "grey70"               "grey71"               "grey72"              
-[334] "grey73"               "grey74"               "grey75"              
-[337] "grey76"               "grey77"               "grey78"              
-[340] "grey79"               "grey80"               "grey81"              
-[343] "grey82"               "grey83"               "grey84"              
-[346] "grey85"               "grey86"               "grey87"              
-[349] "grey88"               "grey89"               "grey90"              
-[352] "grey91"               "grey92"               "grey93"              
-[355] "grey94"               "grey95"               "grey96"              
-[358] "grey97"               "grey98"               "grey99"              
-[361] "grey100"              "honeydew"             "honeydew1"           
-[364] "honeydew2"            "honeydew3"            "honeydew4"           
-[367] "hotpink"              "hotpink1"             "hotpink2"            
-[370] "hotpink3"             "hotpink4"             "indianred"           
-[373] "indianred1"           "indianred2"           "indianred3"          
-[376] "indianred4"           "ivory"                "ivory1"              
-[379] "ivory2"               "ivory3"               "ivory4"              
-[382] "khaki"                "khaki1"               "khaki2"              
-[385] "khaki3"               "khaki4"               "lavender"            
-[388] "lavenderblush"        "lavenderblush1"       "lavenderblush2"      
-[391] "lavenderblush3"       "lavenderblush4"       "lawngreen"           
-[394] "lemonchiffon"         "lemonchiffon1"        "lemonchiffon2"       
-[397] "lemonchiffon3"        "lemonchiffon4"        "lightblue"           
-[400] "lightblue1"           "lightblue2"           "lightblue3"          
-[403] "lightblue4"           "lightcoral"           "lightcyan"           
-[406] "lightcyan1"           "lightcyan2"           "lightcyan3"          
-[409] "lightcyan4"           "lightgoldenrod"       "lightgoldenrod1"     
-[412] "lightgoldenrod2"      "lightgoldenrod3"      "lightgoldenrod4"     
-[415] "lightgoldenrodyellow" "lightgray"            "lightgreen"          
-[418] "lightgrey"            "lightpink"            "lightpink1"          
-[421] "lightpink2"           "lightpink3"           "lightpink4"          
-[424] "lightsalmon"          "lightsalmon1"         "lightsalmon2"        
-[427] "lightsalmon3"         "lightsalmon4"         "lightseagreen"       
-[430] "lightskyblue"         "lightskyblue1"        "lightskyblue2"       
-[433] "lightskyblue3"        "lightskyblue4"        "lightslateblue"      
-[436] "lightslategray"       "lightslategrey"       "lightsteelblue"      
-[439] "lightsteelblue1"      "lightsteelblue2"      "lightsteelblue3"     
-[442] "lightsteelblue4"      "lightyellow"          "lightyellow1"        
-[445] "lightyellow2"         "lightyellow3"         "lightyellow4"        
-[448] "limegreen"            "linen"                "magenta"             
-[451] "magenta1"             "magenta2"             "magenta3"            
-[454] "magenta4"             "maroon"               "maroon1"             
-[457] "maroon2"              "maroon3"              "maroon4"             
-[460] "mediumaquamarine"     "mediumblue"           "mediumorchid"        
-[463] "mediumorchid1"        "mediumorchid2"        "mediumorchid3"       
-[466] "mediumorchid4"        "mediumpurple"         "mediumpurple1"       
-[469] "mediumpurple2"        "mediumpurple3"        "mediumpurple4"       
-[472] "mediumseagreen"       "mediumslateblue"      "mediumspringgreen"   
-[475] "mediumturquoise"      "mediumvioletred"      "midnightblue"        
-[478] "mintcream"            "mistyrose"            "mistyrose1"          
-[481] "mistyrose2"           "mistyrose3"           "mistyrose4"          
-[484] "moccasin"             "navajowhite"          "navajowhite1"        
-[487] "navajowhite2"         "navajowhite3"         "navajowhite4"        
-[490] "navy"                 "navyblue"             "oldlace"             
-[493] "olivedrab"            "olivedrab1"           "olivedrab2"          
-[496] "olivedrab3"           "olivedrab4"           "orange"              
-[499] "orange1"              "orange2"              "orange3"             
-[502] "orange4"              "orangered"            "orangered1"          
-[505] "orangered2"           "orangered3"           "orangered4"          
-[508] "orchid"               "orchid1"              "orchid2"             
-[511] "orchid3"              "orchid4"              "palegoldenrod"       
-[514] "palegreen"            "palegreen1"           "palegreen2"          
-[517] "palegreen3"           "palegreen4"           "paleturquoise"       
-[520] "paleturquoise1"       "paleturquoise2"       "paleturquoise3"      
-[523] "paleturquoise4"       "palevioletred"        "palevioletred1"      
-[526] "palevioletred2"       "palevioletred3"       "palevioletred4"      
-[529] "papayawhip"           "peachpuff"            "peachpuff1"          
-[532] "peachpuff2"           "peachpuff3"           "peachpuff4"          
-[535] "peru"                 "pink"                 "pink1"               
-[538] "pink2"                "pink3"                "pink4"               
-[541] "plum"                 "plum1"                "plum2"               
-[544] "plum3"                "plum4"                "powderblue"          
-[547] "purple"               "purple1"              "purple2"             
-[550] "purple3"              "purple4"              "red"                 
-[553] "red1"                 "red2"                 "red3"                
-[556] "red4"                 "rosybrown"            "rosybrown1"          
-[559] "rosybrown2"           "rosybrown3"           "rosybrown4"          
-[562] "royalblue"            "royalblue1"           "royalblue2"          
-[565] "royalblue3"           "royalblue4"           "saddlebrown"         
-[568] "salmon"               "salmon1"              "salmon2"             
-[571] "salmon3"              "salmon4"              "sandybrown"          
-[574] "seagreen"             "seagreen1"            "seagreen2"           
-[577] "seagreen3"            "seagreen4"            "seashell"            
-[580] "seashell1"            "seashell2"            "seashell3"           
-[583] "seashell4"            "sienna"               "sienna1"             
-[586] "sienna2"              "sienna3"              "sienna4"             
-[589] "skyblue"              "skyblue1"             "skyblue2"            
-[592] "skyblue3"             "skyblue4"             "slateblue"           
-[595] "slateblue1"           "slateblue2"           "slateblue3"          
-[598] "slateblue4"           "slategray"            "slategray1"          
-[601] "slategray2"           "slategray3"           "slategray4"          
-[604] "slategrey"            "snow"                 "snow1"               
-[607] "snow2"                "snow3"                "snow4"               
-[610] "springgreen"          "springgreen1"         "springgreen2"        
-[613] "springgreen3"         "springgreen4"         "steelblue"           
-[616] "steelblue1"           "steelblue2"           "steelblue3"          
-[619] "steelblue4"           "tan"                  "tan1"                
-[622] "tan2"                 "tan3"                 "tan4"                
-[625] "thistle"              "thistle1"             "thistle2"            
-[628] "thistle3"             "thistle4"             "tomato"              
-[631] "tomato1"              "tomato2"              "tomato3"             
-[634] "tomato4"              "turquoise"            "turquoise1"          
-[637] "turquoise2"           "turquoise3"           "turquoise4"          
-[640] "violet"               "violetred"            "violetred1"          
-[643] "violetred2"           "violetred3"           "violetred4"          
-[646] "wheat"                "wheat1"               "wheat2"              
-[649] "wheat3"               "wheat4"               "whitesmoke"          
-[652] "yellow"               "yellow1"              "yellow2"             
-[655] "yellow3"              "yellow4"              "yellowgreen"         </code></pre>
+<pre><code>   x1 x2 x3 x4    y1   y2    y3    y4
+1  10 10 10  8  8.04 9.14  7.46  6.58
+2   8  8  8  8  6.95 8.14  6.77  5.76
+3  13 13 13  8  7.58 8.74 12.74  7.71
+4   9  9  9  8  8.81 8.77  7.11  8.84
+5  11 11 11  8  8.33 9.26  7.81  8.47
+6  14 14 14  8  9.96 8.10  8.84  7.04
+7   6  6  6  8  7.24 6.13  6.08  5.25
+8   4  4  4 19  4.26 3.10  5.39 12.50
+9  12 12 12  8 10.84 9.13  8.15  5.56
+10  7  7  7  8  4.82 7.26  6.42  7.91
+11  5  5  5  8  5.68 4.74  5.73  6.89</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>По&nbsp;сути он состоит из&nbsp;четырёх датасетов, каждый из&nbsp;которых содержит две переменные&nbsp;— <code>x</code> и <code>y</code>. Если внимательно на&nbsp;него посмотреть, то можно обнаружить, что значения переменной <code>x</code> в&nbsp;трёх первых датасетах одинаковые. В&nbsp;чётвертом&nbsp;же они совсем другие. Однако переменная <code>y</code> во&nbsp;всех четырёх датасетах содержит разные значения. Это приводит нас к&nbsp;следующей незамысловатой идее — <strong>четыре датасета содержат данные о&nbsp;различных закономерностях между <code>x</code> и <code>y</code>.</strong> Ну,&nbsp;давайте проверим, так&nbsp;ли это.</p>
+<p>В&nbsp;том варианте, в&nbsp;котором он храниться в&nbsp;R, с&nbsp;ним не&nbsp;очень удобно работать, поэтому сделаем простую предобработку (<a href="#lst-anscombe-preproc" class="quarto-xref">Код&nbsp;<span>10.2</span></a>).</p>
+<div id="lst-anscombe-preproc" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.2: Предобработка квартета Энскомба для&nbsp;последующей визуализации
+</figcaption>
+<div aria-describedby="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>anscombe <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(anscombe)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">str_extract</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>) <span class="sc">%&gt;%</span> <span class="fu">as.numeric</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> name,</span>
+<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-8" class="code-annotation-target"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="ot">-&gt;</span> quartet</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Берём исходный датасет</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="2">Создаём техническую переменную <code>id</code> для&nbsp;перехода между широким и&nbsp;длинным форматами</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="3">Переводим данные в&nbsp;длинный формат — названия колонок по&nbsp;умолчанию переходят в&nbsp;переменную <code>name</code>, значения — в&nbsp;переменную <code>value</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="4">Создаём новую переменную <code>dataset</code>, которая будет задавать, к&nbsp;какому из&nbsp;«субдатасетов» относится наблюдение — вытаскиваем номер датасета из&nbsp;названия колонок</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="5">Удаляем из&nbsp;названия колонок номер датасета — теперь это отдельная переменная</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="6">Переводим данные в&nbsp;широкий формат — возвращаем на&nbsp;место названия колонок и&nbsp;значения</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="8" data-code-annotation="7">Удаляем техническую переменную <code>id</code>, сохряняем результат предобработки в&nbsp;новую переменную <code>quartet</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Посмотрим, что&nbsp;получилось (<a href="#lst-quartet-done" class="quarto-xref">Код&nbsp;<span>10.3</span></a>). Теперь в&nbsp;колонке <code>dataset</code> содержится номер датасета, а&nbsp;в&nbsp;переменных <code>x</code> и&nbsp;<code>y</code> собственно значения переменных, которые мы хотим изучить.</p>
+<div id="lst-quartet-done" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-quartet-done-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.3: Предобработанный квартет Энскомба
+</figcaption>
+<div aria-describedby="lst-quartet-done-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>quartet</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 3
+   dataset     x     y
+     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1       1    10  8.04
+ 2       2    10  9.14
+ 3       3    10  7.46
+ 4       4     8  6.58
+ 5       1     8  6.95
+ 6       2     8  8.14
+ 7       3     8  6.77
+ 8       4     8  5.76
+ 9       1    13  7.58
+10       2    13  8.74
+# ℹ 34 more rows</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_x =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_y =</span> <span class="fu">mean</span>(y),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_x =</span> <span class="fu">sd</span>(x),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_y =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">cor_xy =</span> <span class="fu">cor</span>(x, y),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> dataset) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 7
+  dataset     n mean_x mean_y  sd_x  sd_y cor_xy
+    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1       1    11      9    7.5  3.32  2.03   0.82
+2       2    11      9    7.5  3.32  2.03   0.82
+3       3    11      9    7.5  3.32  2.03   0.82
+4       4    11      9    7.5  3.32  2.03   0.82</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="cell-output-display">
-<div id="fig-colors" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-colors-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;10.1: Цвета, доступные в R"><img src="r-visggplot_files/figure-html/fig-colors-1.png" class="img-fluid figure-img" width="672"></a>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;10.1: Цвета, доступные в R
+<div class="cell-output-display">
+<div id="fig-anscombe" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-anscombe-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;10.1: Визуализация квартета Анскомба"><img src="r-visggplot_files/figure-html/fig-anscombe-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.1: Визуализация квартета Анскомба
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="r-visggplot-aes" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="r-visggplot-aes"><span class="header-section-number">10.2</span> Эстетики</h2>
+<section id="r-visggplot-aes-color" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.2.1</span> Цвет</h3>
+<p>В&nbsp;R встроено безумное количество цветов — 657. Полный список можно получить, вызвав функцию <code>colors()</code>. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Все цвета, доступные в&nbsp;R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/colors-pic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="r-visggplot_files/figure-html/colors-pic-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="r-visggplot-aes-shape" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="r-visggplot-aes-shape"><span class="header-section-number">10.2.2</span> Форма</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-shapes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;10.2: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;10.2: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;10.2: Формы точек, доступные в R
@@ -875,12 +863,15 @@ background-size: cover;
 </div>
 </div>
 </div>
+</section>
+<section id="r-visggplot-aes-linetype" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="r-visggplot-aes-linetype"><span class="header-section-number">10.2.3</span> Тип линии</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-linetypes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;10.3: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;10.3: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;10.3: Типы линии, доступные в R
@@ -893,7 +884,7 @@ background-size: cover;
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -918,21 +909,36 @@ other attached packages:
  [9] ggplot2_3.5.1   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0    tidyselect_1.2.1 
- [5] scales_1.3.0      yaml_2.3.8        fastmap_1.2.0     R6_2.5.1         
- [9] generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4 munsell_0.5.1    
-[13] pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4       utf8_1.2.4       
-[17] stringi_1.8.4     xfun_0.44         timechange_0.3.0  cli_3.6.3        
-[21] withr_3.0.2       magrittr_2.0.3    digest_0.6.37     grid_4.4.0       
-[25] rstudioapi_0.16.0 hms_1.1.3         lifecycle_1.0.4   vctrs_0.6.5      
-[29] evaluate_1.0.1    glue_1.8.0        farver_2.1.2      codetools_0.2-20 
-[33] fansi_1.0.6       colorspace_2.1-1  rmarkdown_2.27    tools_4.4.0      
-[37] pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+ [1] Matrix_1.7-0      gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0   
+ [5] tidyselect_1.2.1  splines_4.4.0     scales_1.3.0      yaml_2.3.8       
+ [9] fastmap_1.2.0     lattice_0.22-6    R6_2.5.1          labeling_0.4.3   
+[13] generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4 munsell_0.5.1    
+[17] pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4       utf8_1.2.4       
+[21] stringi_1.8.4     xfun_0.44         timechange_0.3.0  cli_3.6.3        
+[25] mgcv_1.9-1        withr_3.0.2       magrittr_2.0.3    digest_0.6.37    
+[29] grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3         nlme_3.1-164     
+[33] lifecycle_1.0.4   vctrs_0.6.5       evaluate_1.0.1    glue_1.8.0       
+[37] farver_2.1.2      fansi_1.0.6       colorspace_2.1-1  rmarkdown_2.27   
+[41] tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-anscombe1973" class="csl-entry" role="listitem">
+Anscombe, F. J. (1973). Graphs in statistical analysis. <em>The American Statictician</em>, <em>27</em>(1), 17–21.
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>В другом варианте, Анскомба.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Мы <a href="./r-strings.html#r-strings-ext-pkgs">говорили</a>, что&nbsp;базовый R состоит из&nbsp;нескольких пакетов, автоматически подключаемых при&nbsp;запуске. <code>datasets</code> является один таких пакетов.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1504,8 +1510,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-visbase.html" class="pagination-link" aria-label="Визуализация в базовом R">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-visbase.html" class="pagination-link" aria-label="Визуализация в&nbsp;базовом&nbsp;R">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

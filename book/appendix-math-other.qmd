@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Вступление
 :::
 
+## Бином Ньютона {#appendix-other-math-binom}
 
 
 ## Гипероператор {#appendix-other-math-hyperop}
