@@ -15,9 +15,31 @@ theme_set(theme_bw())
 Вступление
 :::
 
+```{r colors}
+colors()
+```
 
+```{r colors-pic, echo=FALSE, cache=TRUE}
+#| label: fig-colors
+#| fig-cap: "Цвета, доступные в R"
+#| fig-height: 100
 
-```{r shapes, eval=FALSE, echo=FALSE}
+clrs <- colors()
+names(clrs) <- colors()
+
+ggplot(NULL, aes(1, clrs %>% factor(ordered = TRUE, levels = colors()), fill = clrs)) +
+  geom_col() +
+  scale_x_continuous(breaks = NULL) +
+  labs(x = NULL, y = NULL) +
+  guides(fill = "none") +
+  scale_fill_manual(values = clrs)
+```
+
+```{r shapes, echo=FALSE, cache=TRUE}
+#| label: fig-shapes
+#| fig-cap: "Формы точек, доступные в R"
+#| fig-height: 3
+
 tibble(x = rep(1:13, times = 2),
        y = rep(c(1.5, 1), each = 13),
        shape = factor(0:25)) %>% 
@@ -35,7 +57,34 @@ tibble(x = rep(1:13, times = 2),
   guides(shape = "none")
 ```
 
-![Формы точек, доступные в R](img/r-visggplot/shapes.png){#fig-shapes}
+```{r linetypes, echo=FALSE, cache=TRUE}
+#| label: fig-linetypes
+#| fig-cap: "Типы линии, доступные в R"
+
+tibble(x = rep(1:2, each = 7),
+       y = rep(0:6, times = 2),
+       lty = rep(c("blank", "solid", "dashed", "dotted", "dotdash", "longdash", "twodash"), 
+                   times = 2) %>% 
+         factor(ordered = TRUE,
+                levels = c("blank", "solid", "dashed", "dotted", "dotdash", "longdash", "twodash"))) %>% 
+  ggplot(aes(x = x,
+             y = lty,
+             linetype = lty)) +
+  geom_line() +
+  scale_x_continuous(breaks = NULL) +
+  scale_linetype_manual(values = c("blank" = "blank",
+                                   "solid" = "solid",
+                                   "dashed" = "dashed",
+                                   "dotted" = "dotted",
+                                   "dotdash" = "dotdash",
+                                   "longdash" = "longdash",
+                                   "twodash" = "twodash")) +
+  labs(x = NULL, y = NULL) +
+  guides(linetype = "none")
+```
+
+
+
 
 
 ***
