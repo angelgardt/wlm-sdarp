@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Предобработка данных – WLM SDARP</title>
+<title>9&nbsp; Предобработка данных – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r-datetime.html" rel="next">
-<link href="./r-strings.html" rel="prev">
+<link href="./r-visggplot.html" rel="next">
+<link href="./r-datetime.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -145,7 +145,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -157,8 +157,8 @@ background-size: cover;
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
-      <h1 class="title"><span id="r-tidy" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-tidy.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></a></li></ol></nav>
+      <h1 class="title"><span id="r-tidy" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></h1>
                       </div>
   </div>
     
@@ -260,32 +260,38 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -302,31 +308,31 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
   </div>
 </li>
       </ul>
@@ -343,13 +349,13 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
@@ -366,25 +372,25 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -401,49 +407,49 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -460,25 +466,25 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -594,36 +600,36 @@ background-size: cover;
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#r-tidy-concept" id="toc-r-tidy-concept" class="nav-link active" data-scroll-target="#r-tidy-concept"><span class="header-section-number">8.1</span> Концепция Tidy Data</a></li>
-  <li><a href="#r-tidy-tidyverse" id="toc-r-tidy-tidyverse" class="nav-link" data-scroll-target="#r-tidy-tidyverse"><span class="header-section-number">8.2</span> Семейство пакетов <code>tidyverse</code></a></li>
-  <li><a href="#r-tidy-import" id="toc-r-tidy-import" class="nav-link" data-scroll-target="#r-tidy-import"><span class="header-section-number">8.3</span> Импорт данных</a>
+  <li><a href="#r-tidy-concept" id="toc-r-tidy-concept" class="nav-link active" data-scroll-target="#r-tidy-concept"><span class="header-section-number">9.1</span> Концепция Tidy Data</a></li>
+  <li><a href="#r-tidy-tidyverse" id="toc-r-tidy-tidyverse" class="nav-link" data-scroll-target="#r-tidy-tidyverse"><span class="header-section-number">9.2</span> Семейство пакетов <code>tidyverse</code></a></li>
+  <li><a href="#r-tidy-import" id="toc-r-tidy-import" class="nav-link" data-scroll-target="#r-tidy-import"><span class="header-section-number">9.3</span> Импорт данных</a>
   <ul>
-  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><span class="header-section-number">8.3.1</span> <code>tibble</code></a></li>
+  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><span class="header-section-number">9.3.1</span> <code>tibble</code></a></li>
   </ul></li>
-  <li><a href="#r-tidy-pipe" id="toc-r-tidy-pipe" class="nav-link" data-scroll-target="#r-tidy-pipe"><span class="header-section-number">8.4</span> Pipe (<code>%&gt;%</code>)</a></li>
-  <li><a href="#r-tidy-rename" id="toc-r-tidy-rename" class="nav-link" data-scroll-target="#r-tidy-rename"><span class="header-section-number">8.5</span> Переименование переменных</a></li>
-  <li><a href="#r-tidy-subset" id="toc-r-tidy-subset" class="nav-link" data-scroll-target="#r-tidy-subset"><span class="header-section-number">8.6</span> Фильтрация данных</a>
+  <li><a href="#r-tidy-pipe" id="toc-r-tidy-pipe" class="nav-link" data-scroll-target="#r-tidy-pipe"><span class="header-section-number">9.4</span> Pipe (<code>%&gt;%</code>)</a></li>
+  <li><a href="#r-tidy-rename" id="toc-r-tidy-rename" class="nav-link" data-scroll-target="#r-tidy-rename"><span class="header-section-number">9.5</span> Переименование переменных</a></li>
+  <li><a href="#r-tidy-subset" id="toc-r-tidy-subset" class="nav-link" data-scroll-target="#r-tidy-subset"><span class="header-section-number">9.6</span> Фильтрация данных</a>
   <ul>
-  <li><a href="#r-tidy-select" id="toc-r-tidy-select" class="nav-link" data-scroll-target="#r-tidy-select"><span class="header-section-number">8.6.1</span> Выбор столбцов</a></li>
-  <li><a href="#r-tidy-filter-slice" id="toc-r-tidy-filter-slice" class="nav-link" data-scroll-target="#r-tidy-filter-slice"><span class="header-section-number">8.6.2</span> Фильтрация строк</a></li>
+  <li><a href="#r-tidy-select" id="toc-r-tidy-select" class="nav-link" data-scroll-target="#r-tidy-select"><span class="header-section-number">9.6.1</span> Выбор столбцов</a></li>
+  <li><a href="#r-tidy-filter-slice" id="toc-r-tidy-filter-slice" class="nav-link" data-scroll-target="#r-tidy-filter-slice"><span class="header-section-number">9.6.2</span> Фильтрация строк</a></li>
   </ul></li>
-  <li><a href="#r-tidy-arrange" id="toc-r-tidy-arrange" class="nav-link" data-scroll-target="#r-tidy-arrange"><span class="header-section-number">8.7</span> Сортировка данных</a></li>
-  <li><a href="#r-tidy-mutate" id="toc-r-tidy-mutate" class="nav-link" data-scroll-target="#r-tidy-mutate"><span class="header-section-number">8.8</span> Создание и изменение переменных</a></li>
-  <li><a href="#r-tidy-summarise" id="toc-r-tidy-summarise" class="nav-link" data-scroll-target="#r-tidy-summarise"><span class="header-section-number">8.9</span> Агрегация данных</a></li>
-  <li><a href="#r-tidy-merge" id="toc-r-tidy-merge" class="nav-link" data-scroll-target="#r-tidy-merge"><span class="header-section-number">8.10</span> Объединение датасетов</a>
+  <li><a href="#r-tidy-arrange" id="toc-r-tidy-arrange" class="nav-link" data-scroll-target="#r-tidy-arrange"><span class="header-section-number">9.7</span> Сортировка данных</a></li>
+  <li><a href="#r-tidy-mutate" id="toc-r-tidy-mutate" class="nav-link" data-scroll-target="#r-tidy-mutate"><span class="header-section-number">9.8</span> Создание и изменение переменных</a></li>
+  <li><a href="#r-tidy-summarise" id="toc-r-tidy-summarise" class="nav-link" data-scroll-target="#r-tidy-summarise"><span class="header-section-number">9.9</span> Агрегация данных</a></li>
+  <li><a href="#r-tidy-merge" id="toc-r-tidy-merge" class="nav-link" data-scroll-target="#r-tidy-merge"><span class="header-section-number">9.10</span> Объединение датасетов</a>
   <ul>
-  <li><a href="#r-tidy-binds" id="toc-r-tidy-binds" class="nav-link" data-scroll-target="#r-tidy-binds"><span class="header-section-number">8.10.1</span> Объединение по строкам и столбцам</a></li>
-  <li><a href="#r-tidy-joins" id="toc-r-tidy-joins" class="nav-link" data-scroll-target="#r-tidy-joins"><span class="header-section-number">8.10.2</span> Объединение по ключу</a>
+  <li><a href="#r-tidy-binds" id="toc-r-tidy-binds" class="nav-link" data-scroll-target="#r-tidy-binds"><span class="header-section-number">9.10.1</span> Объединение по строкам и столбцам</a></li>
+  <li><a href="#r-tidy-joins" id="toc-r-tidy-joins" class="nav-link" data-scroll-target="#r-tidy-joins"><span class="header-section-number">9.10.2</span> Объединение по ключу</a>
   <ul class="collapse">
-  <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><span class="header-section-number">8.10.2.1</span> <code>inner_join()</code></a></li>
-  <li><a href="#left_join" id="toc-left_join" class="nav-link" data-scroll-target="#left_join"><span class="header-section-number">8.10.2.2</span> <code>left_join()</code></a></li>
-  <li><a href="#right_join" id="toc-right_join" class="nav-link" data-scroll-target="#right_join"><span class="header-section-number">8.10.2.3</span> <code>right_join()</code></a></li>
-  <li><a href="#full_join" id="toc-full_join" class="nav-link" data-scroll-target="#full_join"><span class="header-section-number">8.10.2.4</span> <code>full_join()</code></a></li>
-  <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><span class="header-section-number">8.10.2.5</span> <code>semi_join()</code></a></li>
-  <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><span class="header-section-number">8.10.2.6</span> <code>anti_join()</code></a></li>
+  <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><span class="header-section-number">9.10.2.1</span> <code>inner_join()</code></a></li>
+  <li><a href="#left_join" id="toc-left_join" class="nav-link" data-scroll-target="#left_join"><span class="header-section-number">9.10.2.2</span> <code>left_join()</code></a></li>
+  <li><a href="#right_join" id="toc-right_join" class="nav-link" data-scroll-target="#right_join"><span class="header-section-number">9.10.2.3</span> <code>right_join()</code></a></li>
+  <li><a href="#full_join" id="toc-full_join" class="nav-link" data-scroll-target="#full_join"><span class="header-section-number">9.10.2.4</span> <code>full_join()</code></a></li>
+  <li><a href="#semi_join" id="toc-semi_join" class="nav-link" data-scroll-target="#semi_join"><span class="header-section-number">9.10.2.5</span> <code>semi_join()</code></a></li>
+  <li><a href="#anti_join" id="toc-anti_join" class="nav-link" data-scroll-target="#anti_join"><span class="header-section-number">9.10.2.6</span> <code>anti_join()</code></a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#r-tidy-export" id="toc-r-tidy-export" class="nav-link" data-scroll-target="#r-tidy-export"><span class="header-section-number">8.11</span> Экспорт данных</a></li>
+  <li><a href="#r-tidy-export" id="toc-r-tidy-export" class="nav-link" data-scroll-target="#r-tidy-export"><span class="header-section-number">9.11</span> Экспорт данных</a></li>
   </ul>
 </nav>
     </div>
@@ -654,8 +660,8 @@ background-size: cover;
 <div class="intro">
 <p>Вступление</p>
 </div>
-<section id="r-tidy-concept" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="r-tidy-concept"><span class="header-section-number">8.1</span> Концепция Tidy Data</h2>
+<section id="r-tidy-concept" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="r-tidy-concept"><span class="header-section-number">9.1</span> Концепция Tidy Data</h2>
 <div class="lab-junior">
 
 </div>
@@ -667,7 +673,7 @@ background-size: cover;
 <div id="fig-tidy-rules-data" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-tidy-rules-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/r-tidy/tidy-rules-data.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(a): Общий вид «опрятных данных»"><img src="img/r-tidy/tidy-rules-data.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+<a href="img/r-tidy/tidy-rules-data.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;9.1&nbsp;(a): Общий вид «опрятных данных»"><img src="img/r-tidy/tidy-rules-data.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Общий вид «опрятных данных»
@@ -679,7 +685,7 @@ background-size: cover;
 <div id="fig-tidy-rules-cols" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-tidy-rules-cols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/r-tidy/tidy-rules-cols.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(b): По&nbsp;колонкам — переменные"><img src="img/r-tidy/tidy-rules-cols.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+<a href="img/r-tidy/tidy-rules-cols.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;9.1&nbsp;(b): По&nbsp;колонкам — переменные"><img src="img/r-tidy/tidy-rules-cols.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-cols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) По&nbsp;колонкам — переменные
@@ -693,7 +699,7 @@ background-size: cover;
 <div id="fig-tidy-rules-rows" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-tidy-rules-rows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/r-tidy/tidy-rules-rows.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(c): По&nbsp;строкам — наблюдения"><img src="img/r-tidy/tidy-rules-rows.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+<a href="img/r-tidy/tidy-rules-rows.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;9.1&nbsp;(c): По&nbsp;строкам — наблюдения"><img src="img/r-tidy/tidy-rules-rows.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-rows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) По&nbsp;строкам — наблюдения
@@ -705,7 +711,7 @@ background-size: cover;
 <div id="fig-tidy-rules-cells" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-tidy-rules-cells-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/r-tidy/tidy-rules-cells.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;8.1&nbsp;(d): В&nbsp;ячейках — значения"><img src="img/r-tidy/tidy-rules-cells.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
+<a href="img/r-tidy/tidy-rules-cells.png" class="lightbox" data-gallery="fig-tidy-rules" title="Иллюстрация&nbsp;9.1&nbsp;(d): В&nbsp;ячейках — значения"><img src="img/r-tidy/tidy-rules-cells.png" class="img-fluid figure-img" data-ref-parent="fig-tidy-rules"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tidy-rules-cells-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (d) В&nbsp;ячейках — значения
@@ -716,13 +722,13 @@ background-size: cover;
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tidy-rules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;8.1: Принципы Tidy Data
+Иллюстрация&nbsp;9.1: Принципы Tidy Data
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="r-tidy-tidyverse" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="r-tidy-tidyverse"><span class="header-section-number">8.2</span> Семейство пакетов <code>tidyverse</code></h2>
+<section id="r-tidy-tidyverse" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="r-tidy-tidyverse"><span class="header-section-number">9.2</span> Семейство пакетов <code>tidyverse</code></h2>
 <div class="lab-junior">
 
 </div>
@@ -739,7 +745,7 @@ background-size: cover;
 <div id="lst-install-tidyverse" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-install-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.1: Установка <code>tidyverse</code>
+Код&nbsp;9.1: Установка <code>tidyverse</code>
 </figcaption>
 <div aria-describedby="lst-install-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -751,7 +757,7 @@ background-size: cover;
 <div id="lst-load-tidyverse" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.2: Загрузка (подключение) <code>tidyverse</code>
+Код&nbsp;9.2: Загрузка (подключение) <code>tidyverse</code>
 </figcaption>
 <div aria-describedby="lst-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -805,8 +811,8 @@ background-size: cover;
 </div>
 </div>
 </section>
-<section id="r-tidy-import" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="r-tidy-import"><span class="header-section-number">8.3</span> Импорт данных</h2>
+<section id="r-tidy-import" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="r-tidy-import"><span class="header-section-number">9.3</span> Импорт данных</h2>
 <div class="lab-junior">
 
 </div>
@@ -1002,8 +1008,8 @@ lgl (1): C2
  - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
 </div>
 </div>
-<section id="tibble" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="tibble"><span class="header-section-number">8.3.1</span> <code>tibble</code></h3>
+<section id="tibble" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="tibble"><span class="header-section-number">9.3.1</span> <code>tibble</code></h3>
 <div class="lab-junior">
 
 </div>
@@ -1086,8 +1092,8 @@ lgl (1): C1
 </div>
 </section>
 </section>
-<section id="r-tidy-pipe" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="r-tidy-pipe"><span class="header-section-number">8.4</span> Pipe (<code>%&gt;%</code>)</h2>
+<section id="r-tidy-pipe" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="r-tidy-pipe"><span class="header-section-number">9.4</span> Pipe (<code>%&gt;%</code>)</h2>
 <div class="lab-junior">
 
 </div>
@@ -1122,8 +1128,8 @@ Pipe: magrittr vs native
 </div>
 </div>
 </section>
-<section id="r-tidy-rename" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="r-tidy-rename"><span class="header-section-number">8.5</span> Переименование переменных</h2>
+<section id="r-tidy-rename" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="r-tidy-rename"><span class="header-section-number">9.5</span> Переименование переменных</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">var1 =</span> V1,</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">var2 =</span> V2)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1233,14 +1239,14 @@ Pipe: magrittr vs native
 </div>
 </div>
 </section>
-<section id="r-tidy-subset" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="r-tidy-subset"><span class="header-section-number">8.6</span> Фильтрация данных</h2>
-<section id="r-tidy-select" class="level3" data-number="8.6.1">
-<h3 data-number="8.6.1" class="anchored" data-anchor-id="r-tidy-select"><span class="header-section-number">8.6.1</span> Выбор столбцов</h3>
+<section id="r-tidy-subset" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="r-tidy-subset"><span class="header-section-number">9.6</span> Фильтрация данных</h2>
+<section id="r-tidy-select" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="r-tidy-select"><span class="header-section-number">9.6.1</span> Выбор столбцов</h3>
 <div id="lst-select-basic" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.3
+Код&nbsp;9.3
 </figcaption>
 <div aria-describedby="lst-select-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1263,7 +1269,7 @@ Pipe: magrittr vs native
 <div id="lst-select-range" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-range-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.4
+Код&nbsp;9.4
 </figcaption>
 <div aria-describedby="lst-select-range-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1286,7 +1292,7 @@ Pipe: magrittr vs native
 <div id="lst-select-starts-with" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-starts-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.5
+Код&nbsp;9.5
 </figcaption>
 <div aria-describedby="lst-select-starts-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1309,7 +1315,7 @@ Pipe: magrittr vs native
 <div id="lst-select-ends-with" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-ends-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.6
+Код&nbsp;9.6
 </figcaption>
 <div aria-describedby="lst-select-ends-with-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1332,7 +1338,7 @@ Pipe: magrittr vs native
 <div id="lst-select-matches-basic" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-matches-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.7
+Код&nbsp;9.7
 </figcaption>
 <div aria-describedby="lst-select-matches-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1355,7 +1361,7 @@ Pipe: magrittr vs native
 <div id="lst-select-matches-regex" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-select-matches-regex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.8
+Код&nbsp;9.8
 </figcaption>
 <div aria-describedby="lst-select-matches-regex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1376,12 +1382,12 @@ Pipe: magrittr vs native
 </figure>
 </div>
 </section>
-<section id="r-tidy-filter-slice" class="level3" data-number="8.6.2">
-<h3 data-number="8.6.2" class="anchored" data-anchor-id="r-tidy-filter-slice"><span class="header-section-number">8.6.2</span> Фильтрация строк</h3>
+<section id="r-tidy-filter-slice" class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="r-tidy-filter-slice"><span class="header-section-number">9.6.2</span> Фильтрация строк</h3>
 <div id="lst-filter-onecond" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-onecond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.9
+Код&nbsp;9.9
 </figcaption>
 <div aria-describedby="lst-filter-onecond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1400,7 +1406,7 @@ Pipe: magrittr vs native
 <div id="lst-filter-twoconds-and" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-twoconds-and-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.10
+Код&nbsp;9.10
 </figcaption>
 <div aria-describedby="lst-filter-twoconds-and-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1419,7 +1425,7 @@ Pipe: magrittr vs native
 <div id="lst-filter-twoconds-or" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-twoconds-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.11
+Код&nbsp;9.11
 </figcaption>
 <div aria-describedby="lst-filter-twoconds-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1440,7 +1446,7 @@ Pipe: magrittr vs native
 <div id="lst-filter-logvar" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-logvar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.12
+Код&nbsp;9.12
 </figcaption>
 <div aria-describedby="lst-filter-logvar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1460,7 +1466,7 @@ Pipe: magrittr vs native
 <div id="lst-filter-logvar-comb" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-logvar-comb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.13
+Код&nbsp;9.13
 </figcaption>
 <div aria-describedby="lst-filter-logvar-comb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1479,7 +1485,7 @@ Pipe: magrittr vs native
 <div id="lst-filter-strfuns" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-filter-strfuns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;8.14
+Код&nbsp;9.14
 </figcaption>
 <div aria-describedby="lst-filter-strfuns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -1497,44 +1503,44 @@ Pipe: magrittr vs native
 </div>
 </section>
 </section>
-<section id="r-tidy-arrange" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="r-tidy-arrange"><span class="header-section-number">8.7</span> Сортировка данных</h2>
+<section id="r-tidy-arrange" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="r-tidy-arrange"><span class="header-section-number">9.7</span> Сортировка данных</h2>
 </section>
-<section id="r-tidy-mutate" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="r-tidy-mutate"><span class="header-section-number">8.8</span> Создание и изменение переменных</h2>
+<section id="r-tidy-mutate" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="r-tidy-mutate"><span class="header-section-number">9.8</span> Создание и изменение переменных</h2>
 </section>
-<section id="r-tidy-summarise" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="r-tidy-summarise"><span class="header-section-number">8.9</span> Агрегация данных</h2>
+<section id="r-tidy-summarise" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="r-tidy-summarise"><span class="header-section-number">9.9</span> Агрегация данных</h2>
 </section>
-<section id="r-tidy-merge" class="level2" data-number="8.10">
-<h2 data-number="8.10" class="anchored" data-anchor-id="r-tidy-merge"><span class="header-section-number">8.10</span> Объединение датасетов</h2>
-<section id="r-tidy-binds" class="level3" data-number="8.10.1">
-<h3 data-number="8.10.1" class="anchored" data-anchor-id="r-tidy-binds"><span class="header-section-number">8.10.1</span> Объединение по строкам и столбцам</h3>
+<section id="r-tidy-merge" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="r-tidy-merge"><span class="header-section-number">9.10</span> Объединение датасетов</h2>
+<section id="r-tidy-binds" class="level3" data-number="9.10.1">
+<h3 data-number="9.10.1" class="anchored" data-anchor-id="r-tidy-binds"><span class="header-section-number">9.10.1</span> Объединение по строкам и столбцам</h3>
 </section>
-<section id="r-tidy-joins" class="level3" data-number="8.10.2">
-<h3 data-number="8.10.2" class="anchored" data-anchor-id="r-tidy-joins"><span class="header-section-number">8.10.2</span> Объединение по ключу</h3>
-<section id="inner_join" class="level4" data-number="8.10.2.1">
-<h4 data-number="8.10.2.1" class="anchored" data-anchor-id="inner_join"><span class="header-section-number">8.10.2.1</span> <code>inner_join()</code></h4>
+<section id="r-tidy-joins" class="level3" data-number="9.10.2">
+<h3 data-number="9.10.2" class="anchored" data-anchor-id="r-tidy-joins"><span class="header-section-number">9.10.2</span> Объединение по ключу</h3>
+<section id="inner_join" class="level4" data-number="9.10.2.1">
+<h4 data-number="9.10.2.1" class="anchored" data-anchor-id="inner_join"><span class="header-section-number">9.10.2.1</span> <code>inner_join()</code></h4>
 </section>
-<section id="left_join" class="level4" data-number="8.10.2.2">
-<h4 data-number="8.10.2.2" class="anchored" data-anchor-id="left_join"><span class="header-section-number">8.10.2.2</span> <code>left_join()</code></h4>
+<section id="left_join" class="level4" data-number="9.10.2.2">
+<h4 data-number="9.10.2.2" class="anchored" data-anchor-id="left_join"><span class="header-section-number">9.10.2.2</span> <code>left_join()</code></h4>
 </section>
-<section id="right_join" class="level4" data-number="8.10.2.3">
-<h4 data-number="8.10.2.3" class="anchored" data-anchor-id="right_join"><span class="header-section-number">8.10.2.3</span> <code>right_join()</code></h4>
+<section id="right_join" class="level4" data-number="9.10.2.3">
+<h4 data-number="9.10.2.3" class="anchored" data-anchor-id="right_join"><span class="header-section-number">9.10.2.3</span> <code>right_join()</code></h4>
 </section>
-<section id="full_join" class="level4" data-number="8.10.2.4">
-<h4 data-number="8.10.2.4" class="anchored" data-anchor-id="full_join"><span class="header-section-number">8.10.2.4</span> <code>full_join()</code></h4>
+<section id="full_join" class="level4" data-number="9.10.2.4">
+<h4 data-number="9.10.2.4" class="anchored" data-anchor-id="full_join"><span class="header-section-number">9.10.2.4</span> <code>full_join()</code></h4>
 </section>
-<section id="semi_join" class="level4" data-number="8.10.2.5">
-<h4 data-number="8.10.2.5" class="anchored" data-anchor-id="semi_join"><span class="header-section-number">8.10.2.5</span> <code>semi_join()</code></h4>
+<section id="semi_join" class="level4" data-number="9.10.2.5">
+<h4 data-number="9.10.2.5" class="anchored" data-anchor-id="semi_join"><span class="header-section-number">9.10.2.5</span> <code>semi_join()</code></h4>
 </section>
-<section id="anti_join" class="level4" data-number="8.10.2.6">
-<h4 data-number="8.10.2.6" class="anchored" data-anchor-id="anti_join"><span class="header-section-number">8.10.2.6</span> <code>anti_join()</code></h4>
+<section id="anti_join" class="level4" data-number="9.10.2.6">
+<h4 data-number="9.10.2.6" class="anchored" data-anchor-id="anti_join"><span class="header-section-number">9.10.2.6</span> <code>anti_join()</code></h4>
 </section>
 </section>
 </section>
-<section id="r-tidy-export" class="level2" data-number="8.11">
-<h2 data-number="8.11" class="anchored" data-anchor-id="r-tidy-export"><span class="header-section-number">8.11</span> Экспорт данных</h2>
+<section id="r-tidy-export" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="r-tidy-export"><span class="header-section-number">9.11</span> Экспорт данных</h2>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
@@ -2146,13 +2152,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r-strings.html" class="pagination-link" aria-label="Строки">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span>
+      <a href="./r-datetime.html" class="pagination-link" aria-label="Дата и время">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-datetime.html" class="pagination-link" aria-label="Дата и время">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-visggplot.html" class="pagination-link" aria-label="Визуализация в&nbsp;`ggplot2`&nbsp;I">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

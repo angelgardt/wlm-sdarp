@@ -652,21 +652,22 @@ window.Quarto = {
   <li><a href="#r-visggplot-why" id="toc-r-visggplot-why" class="nav-link active" data-scroll-target="#r-visggplot-why"><span class="header-section-number">10.1</span> Задачи визуализации</a>
   <ul>
   <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Анскомба</a></li>
-  <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.2</span> Datasaurus</a></li>
+  <li><a href="#r-visggplot-datasaurus" id="toc-r-visggplot-datasaurus" class="nav-link" data-scroll-target="#r-visggplot-datasaurus"><span class="header-section-number">10.1.2</span> Datasaurus</a></li>
   </ul></li>
   <li><a href="#r-visggplot2-pkg" id="toc-r-visggplot2-pkg" class="nav-link" data-scroll-target="#r-visggplot2-pkg"><span class="header-section-number">10.2</span> Пакет <code>ggplot2</code></a>
   <ul>
   <li><a href="#r-visggplot2-diamonds" id="toc-r-visggplot2-diamonds" class="nav-link" data-scroll-target="#r-visggplot2-diamonds"><span class="header-section-number">10.2.1</span> Датасет <code>diamonds</code></a></li>
   </ul></li>
-  <li><a href="#r-visggplot2-grammar" id="toc-r-visggplot2-grammar" class="nav-link" data-scroll-target="#r-visggplot2-grammar"><span class="header-section-number">10.3</span> A Layered Grammar of&nbsp;Graphics</a></li>
+  <li><a href="#r-visggplot2-grammar" id="toc-r-visggplot2-grammar" class="nav-link" data-scroll-target="#r-visggplot2-grammar"><span class="header-section-number">10.3</span> Грамматика графиков</a></li>
   <li><a href="#r-visggplot2-basics" id="toc-r-visggplot2-basics" class="nav-link" data-scroll-target="#r-visggplot2-basics"><span class="header-section-number">10.4</span> Базовый алгоритм построения визуализации</a></li>
-  <li><a href="#r-visggplot-geoms" id="toc-r-visggplot-geoms" class="nav-link" data-scroll-target="#r-visggplot-geoms"><span class="header-section-number">10.5</span> Геометрия</a></li>
-  <li><a href="#r-visggplot-aes" id="toc-r-visggplot-aes" class="nav-link" data-scroll-target="#r-visggplot-aes"><span class="header-section-number">10.6</span> Эстетики</a>
+  <li><a href="#r-visggplot-aes" id="toc-r-visggplot-aes" class="nav-link" data-scroll-target="#r-visggplot-aes"><span class="header-section-number">10.5</span> Эстетики (aesthetics)</a>
   <ul>
-  <li><a href="#r-visggplot-aes-color" id="toc-r-visggplot-aes-color" class="nav-link" data-scroll-target="#r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</a></li>
-  <li><a href="#r-visggplot-aes-shape" id="toc-r-visggplot-aes-shape" class="nav-link" data-scroll-target="#r-visggplot-aes-shape"><span class="header-section-number">10.6.2</span> Форма</a></li>
-  <li><a href="#r-visggplot-aes-linetype" id="toc-r-visggplot-aes-linetype" class="nav-link" data-scroll-target="#r-visggplot-aes-linetype"><span class="header-section-number">10.6.3</span> Тип линии</a></li>
+  <li><a href="#r-visggplot-aes-color" id="toc-r-visggplot-aes-color" class="nav-link" data-scroll-target="#r-visggplot-aes-color"><span class="header-section-number">10.5.1</span> Цвет</a></li>
+  <li><a href="#r-visggplot-aes-shape" id="toc-r-visggplot-aes-shape" class="nav-link" data-scroll-target="#r-visggplot-aes-shape"><span class="header-section-number">10.5.2</span> Форма</a></li>
+  <li><a href="#r-visggplot-aes-linetype" id="toc-r-visggplot-aes-linetype" class="nav-link" data-scroll-target="#r-visggplot-aes-linetype"><span class="header-section-number">10.5.3</span> Тип линии</a></li>
   </ul></li>
+  <li><a href="#r-visggplot-geoms" id="toc-r-visggplot-geoms" class="nav-link" data-scroll-target="#r-visggplot-geoms"><span class="header-section-number">10.6</span> Геомы (geoms)</a></li>
+  <li><a href="#r-visggplot-stats" id="toc-r-visggplot-stats" class="nav-link" data-scroll-target="#r-visggplot-stats"><span class="header-section-number">10.7</span> Статы (stats)</a></li>
   </ul>
 </nav>
     </div>
@@ -756,45 +757,45 @@ window.Quarto = {
 </figcaption>
 <div aria-describedby="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>anscombe <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(anscombe)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">str_extract</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-7" class="code-annotation-target"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-8" class="code-annotation-target"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> name,</span>
-<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-10" class="code-annotation-target"><a href="#annotated-cell-6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="ot">-&gt;</span> quartet</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-12-3" class="code-annotation-target"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a>anscombe <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-12-4" class="code-annotation-target"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(anscombe)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-12-5" class="code-annotation-target"><a href="#annotated-cell-12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-12-6" class="code-annotation-target"><a href="#annotated-cell-12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">str_extract</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-12-7" class="code-annotation-target"><a href="#annotated-cell-12-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-12-8" class="code-annotation-target"><a href="#annotated-cell-12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> name,</span>
+<span id="annotated-cell-12-9"><a href="#annotated-cell-12-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-12-10" class="code-annotation-target"><a href="#annotated-cell-12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="ot">-&gt;</span> quartet</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="1">Берём исходный датасет</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="1">Берём исходный датасет</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="2">Создаём техническую переменную <code>id</code> для&nbsp;перехода между широким и&nbsp;длинным форматами</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="2">Создаём техническую переменную <code>id</code> для&nbsp;перехода между широким и&nbsp;длинным форматами</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="3">Переводим данные в&nbsp;длинный формат — названия колонок по&nbsp;умолчанию переходят в&nbsp;переменную <code>name</code>, значения — в&nbsp;переменную <code>value</code></span>
+<span data-code-cell="annotated-cell-12" data-code-lines="5" data-code-annotation="3">Переводим данные в&nbsp;длинный формат — названия колонок по&nbsp;умолчанию переходят в&nbsp;переменную <code>name</code>, значения — в&nbsp;переменную <code>value</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="4">Создаём новую переменную <code>dataset</code>, которая будет задавать, к&nbsp;какому из&nbsp;«субдатасетов» относится наблюдение — вытаскиваем номер датасета из&nbsp;названия колонок</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="6" data-code-annotation="4">Создаём новую переменную <code>dataset</code>, которая будет задавать, к&nbsp;какому из&nbsp;«субдатасетов» относится наблюдение — вытаскиваем номер датасета из&nbsp;названия колонок</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="7" data-code-annotation="5">Удаляем из&nbsp;названия колонок номер датасета — теперь это отдельная переменная</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="7" data-code-annotation="5">Удаляем из&nbsp;названия колонок номер датасета — теперь это отдельная переменная</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="6">6</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="8" data-code-annotation="6">Переводим данные в&nbsp;широкий формат — возвращаем на&nbsp;место названия колонок и&nbsp;значения</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="8" data-code-annotation="6">Переводим данные в&nbsp;широкий формат — возвращаем на&nbsp;место названия колонок и&nbsp;значения</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="7">7</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="10" data-code-annotation="7">Удаляем техническую переменную <code>id</code>, сохряняем результат предобработки в&nbsp;новую переменную <code>quartet</code>.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="10" data-code-annotation="7">Удаляем техническую переменную <code>id</code>, сохряняем результат предобработки в&nbsp;новую переменную <code>quartet</code>.</span>
 </dd>
 </dl>
 </div>
@@ -935,8 +936,8 @@ window.Quarto = {
 </div>
 <p>Как можно наблюдать, в&nbsp;четырёх датасетах у&nbsp;нас совершенно разные закономерности. Значит&nbsp;ли это, что&nbsp;описательные статистики бессмысленны? Пожалуй, нет. Однако мы явно наблюдали, что&nbsp;их может быть недостаточно, чтобы&nbsp;составить полное представление о&nbsp;том, что происходит в&nbsp;данных.</p>
 </section>
-<section id="r-visggplot-anscombe" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="r-visggplot-anscombe"><span class="header-section-number">10.1.2</span> Datasaurus</h3>
+<section id="r-visggplot-datasaurus" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="r-visggplot-datasaurus"><span class="header-section-number">10.1.2</span> Datasaurus</h3>
 <div class="lab-junior">
 
 </div>
@@ -1134,6 +1135,21 @@ window.Quarto = {
 <div class="lab-junior">
 
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1164,7 +1180,7 @@ window.Quarto = {
 </figcaption>
 <div aria-describedby="lst-diamonds-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>diamonds</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>diamonds</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 53,940 × 10
    carat cut       color clarity depth table price     x     y     z
@@ -1185,7 +1201,7 @@ window.Quarto = {
 </div>
 </figure>
 </div>
-<p>Давайте сориентируемся в&nbsp;нём, чтобы&nbsp;понимать, что&nbsp;мы будет рисовать. Датасет содержит 53940 наблюдений и 10 переменных. Ниже приведено описание переменных.</p>
+<p>Давайте сориентируемся в&nbsp;нём, чтобы&nbsp;понимать, что&nbsp;мы будет рисовать. Датасет содержит 53940 наблюдений и&nbsp;10 переменных. В&nbsp;нём содержится информация о&nbsp;цене бриллиантов и&nbsp;их характеристиках. Ниже приведено описание переменных.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1206,25 +1222,107 @@ window.Quarto = {
 <li><code>y</code> — ширина бриллианта (в&nbsp;мм)</li>
 <li><code>z</code> — глубина бриллианта (в&nbsp;мм)</li>
 <li><code>depth</code> — показатель глубины (вычисляется как <span class="math inline">\(\frac{2z}{x+y}\)</span>)</li>
-<li><code>table</code> — отношение ширины площадки<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> к&nbsp;ширине камня в&nbsp;области рундиста<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></li>
+<li><code>table</code> — отношение ширины площадки<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> к&nbsp;ширине камня в&nbsp;области рундиста<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (в&nbsp;процентах)</li>
 </ul>
 </div>
 </div>
+<p>Переменные <code>carat</code>, <code>depth</code>, <code>table</code>, <code>price</code>, <code>×</code>, <code>y</code> и&nbsp;<code>z</code>&nbsp;— числовые; <code>cut</code>, <code>color</code>, <code>clarity</code>&nbsp;— упорядоченные факторы<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>Проверим, есть&nbsp;ли в&nbsp;данных пропущенные значения:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">sapply</span>(is.na) <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, sum)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  carat     cut   color clarity   depth   table   price       x       y       z 
+      0       0       0       0       0       0       0       0       0       0 </code></pre>
+</div>
+</div>
+<p>Нет. Ну, и хорошо.</p>
 </section>
 </section>
 <section id="r-visggplot2-grammar" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="r-visggplot2-grammar"><span class="header-section-number">10.3</span> A Layered Grammar of&nbsp;Graphics</h2>
+<h2 data-number="10.3" class="anchored" data-anchor-id="r-visggplot2-grammar"><span class="header-section-number">10.3</span> Грамматика графиков</h2>
+<div class="lab-junior">
+
+</div>
+<p>Знакомство с&nbsp;<code>ggplot2</code> невозможно без&nbsp;обсуждения идеи, которая за&nbsp;ним стоит. Описать в&nbsp;коде построение картинки — задача довольно непростая, и&nbsp;для&nbsp;её решения можно придумать много вариантов. В&nbsp;<code>ggplot2</code> используется концепция «грамматики графиков», или&nbsp;<strong>The Grammar of&nbsp;Graphics</strong> <span class="citation" data-cites="grammar-of-graphs">(<a href="references.html#ref-grammar-of-graphs" role="doc-biblioref">Wilkinson, 2005</a>)</span>, которая определяет принцип работы всего пакета. Мы не&nbsp;будем погружаться в&nbsp;истоки, а&nbsp;посмотрим на&nbsp;развитие этой концепции автором пакета Хадли Викхамом, разработавшим подход <strong>A&nbsp;Layered Grammar of&nbsp;Graphics</strong> <span class="citation" data-cites="layered-grammar-hadley">(<a href="references.html#ref-layered-grammar-hadley" role="doc-biblioref">Wickham, 2010</a>)</span>, который и&nbsp;лёг в&nbsp;основу работы <code>ggplot2</code>.</p>
+<p>Согласно этой концепции <span class="citation" data-cites="ggplot2-hadley">(<a href="references.html#ref-ggplot2-hadley" role="doc-biblioref">Wickham et al., 2019</a>)</span>, график состоит из&nbsp;нескольких относительно независимых друг от&nbsp;друга <strong>слоёв</strong>, которые управляют определёнными аспектами визуализации. Всего можно выделить семь слоёв (<a href="#fig-plot-layers" class="quarto-xref">Иллюстрация&nbsp;<span>10.3</span></a>):</p>
+<ul>
+<li><strong>data</strong> задаёт, какие данные мы будем визуализировать,</li>
+<li><strong>mapping</strong> описывает, какие переменные и&nbsp;с&nbsp;помощью чего будут отображены на&nbsp;графике,</li>
+<li><strong>layers</strong> определяет, как именно будут отображены данные — здесь есть два варианта:
+<ul>
+<li><strong>geoms</strong> — описать геометрические элементы, которые будут отображать исходные данные,</li>
+<li><strong>stats</strong> — описать статистические преобразования, результаты которых будут отображены на&nbsp;графике</li>
+</ul></li>
+<li><strong>scales</strong> позволяет настроить отображение всего того, что&nbsp;мы задали на&nbsp;предыдущих слоях,</li>
+<li><strong>facets</strong> даёт возможность разбить график на&nbsp;подграфики, чтобы&nbsp;закономерности данных лучше считывались,</li>
+<li><strong>coordinates</strong> управляет координатной системой,</li>
+<li><strong>theme</strong> открывает управление практически всеми элементами графика для&nbsp;их тончайшей настройки, чтобы&nbsp;навести невероятную красоту.</li>
+</ul>
+<div id="fig-plot-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/r-visggplot/plot-layers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;10.3: Концептуальная схема строения визуализации в&nbsp;подходе A&nbsp;Layered Grammar of&nbsp;Graphics [по @ggplot2-hadley]"><img src="img/r-visggplot/plot-layers.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.3: Концептуальная схема строения визуализации в&nbsp;подходе A&nbsp;Layered Grammar of&nbsp;Graphics <span class="citation" data-cites="ggplot2-hadley">(по <a href="references.html#ref-ggplot2-hadley" role="doc-biblioref">Wickham et al., 2019</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>Первый три слоя — data, mapping и&nbsp;layers — являются обязательными, чтобы&nbsp;визуализация вообще построилась. Остальные факультативны — используются, если нам нужно исправить поведение пакета, заданное по&nbsp;умолчанию.</p>
 </section>
 <section id="r-visggplot2-basics" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="r-visggplot2-basics"><span class="header-section-number">10.4</span> Базовый алгоритм построения визуализации</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="r-visggplot_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="r-visggplot_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> price))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="r-visggplot_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="r-visggplot_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="r-visggplot-geoms" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="r-visggplot-geoms"><span class="header-section-number">10.5</span> Геометрия</h2>
-</section>
-<section id="r-visggplot-aes" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="r-visggplot-aes"><span class="header-section-number">10.6</span> Эстетики</h2>
-<section id="r-visggplot-aes-color" class="level3" data-number="10.6.1">
-<h3 data-number="10.6.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</h3>
+<section id="r-visggplot-aes" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="r-visggplot-aes"><span class="header-section-number">10.5</span> Эстетики (aesthetics)</h2>
+<section id="r-visggplot-aes-color" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.5.1</span> Цвет</h3>
 <p>В&nbsp;R встроено безумное количество цветов — 657. Полный список можно получить, вызвав функцию <code>colors()</code>. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -1242,7 +1340,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="r-visggplot_files/figure-html/colors-pic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="r-visggplot_files/figure-html/colors-pic-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="r-visggplot_files/figure-html/colors-pic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="r-visggplot_files/figure-html/colors-pic-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1251,44 +1349,51 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="r-visggplot-aes-shape" class="level3" data-number="10.6.2">
-<h3 data-number="10.6.2" class="anchored" data-anchor-id="r-visggplot-aes-shape"><span class="header-section-number">10.6.2</span> Форма</h3>
+<section id="r-visggplot-aes-shape" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="r-visggplot-aes-shape"><span class="header-section-number">10.5.2</span> Форма</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-shapes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;10.3: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Иллюстрация&nbsp;10.4: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;10.3: Формы точек, доступные в R
+Иллюстрация&nbsp;10.4: Формы точек, доступные в R
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="r-visggplot-aes-linetype" class="level3" data-number="10.6.3">
-<h3 data-number="10.6.3" class="anchored" data-anchor-id="r-visggplot-aes-linetype"><span class="header-section-number">10.6.3</span> Тип линии</h3>
+<section id="r-visggplot-aes-linetype" class="level3" data-number="10.5.3">
+<h3 data-number="10.5.3" class="anchored" data-anchor-id="r-visggplot-aes-linetype"><span class="header-section-number">10.5.3</span> Тип линии</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-linetypes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Иллюстрация&nbsp;10.4: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Иллюстрация&nbsp;10.5: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;10.4: Типы линии, доступные в R
+Иллюстрация&nbsp;10.5: Типы линии, доступные в R
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="r-visggplot-geoms" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="r-visggplot-geoms"><span class="header-section-number">10.6</span> Геомы (geoms)</h2>
+</section>
+<section id="r-visggplot-stats" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="r-visggplot-stats"><span class="header-section-number">10.7</span> Статы (stats)</h2>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1313,17 +1418,17 @@ other attached packages:
  [9] ggplot2_3.5.1   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] Matrix_1.7-0      gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0   
- [5] tidyselect_1.2.1  splines_4.4.0     scales_1.3.0      yaml_2.3.8       
- [9] fastmap_1.2.0     lattice_0.22-6    R6_2.5.1          labeling_0.4.3   
-[13] generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4 munsell_0.5.1    
-[17] pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4       utf8_1.2.4       
-[21] stringi_1.8.4     xfun_0.44         datasauRus_0.1.9  timechange_0.3.0 
-[25] cli_3.6.3         mgcv_1.9-1        withr_3.0.2       magrittr_2.0.3   
-[29] digest_0.6.37     grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3        
-[33] nlme_3.1-164      lifecycle_1.0.4   vctrs_0.6.5       evaluate_1.0.1   
-[37] glue_1.8.0        farver_2.1.2      fansi_1.0.6       colorspace_2.1-1 
-[41] rmarkdown_2.27    tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+ [1] utf8_1.2.4        generics_0.1.3    stringi_1.8.4     lattice_0.22-6   
+ [5] hms_1.1.3         digest_0.6.37     magrittr_2.0.3    evaluate_1.0.1   
+ [9] grid_4.4.0        timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.9   
+[13] Matrix_1.7-0      mgcv_1.9-1        fansi_1.0.6       scales_1.3.0     
+[17] cli_3.6.3         rlang_1.1.4       munsell_0.5.1     splines_4.4.0    
+[21] withr_3.0.2       yaml_2.3.8        tools_4.4.0       tzdb_0.4.0       
+[25] colorspace_2.1-1  vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4  
+[29] htmlwidgets_1.6.4 pkgconfig_2.0.3   pillar_1.9.0      gtable_0.3.6     
+[33] glue_1.8.0        xfun_0.44         tidyselect_1.2.1  rstudioapi_0.16.0
+[37] knitr_1.47        farver_2.1.2      htmltools_0.5.8.1 nlme_3.1-164     
+[41] datasauRus_0.1.9  rmarkdown_2.27    labeling_0.4.3    compiler_4.4.0   </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -1336,8 +1441,16 @@ Anscombe, F. J. (1973). Graphs in statistical analysis. <em>The American Statict
 <div id="ref-datasaurus" class="csl-entry" role="listitem">
 Matejka, J., &amp; Fitzmaurice, G. (2017). Same stats, different graphs: Generating datasets with varied appearance and identical statistics through simulated annealing. <em>Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems</em>, 1290–1294. <a href="https://doi.org/10.1145/3025453.3025912">https://doi.org/10.1145/3025453.3025912</a>
 </div>
+<div id="ref-layered-grammar-hadley" class="csl-entry" role="listitem">
+Wickham, H. (2010). A layered grammar of graphics. <em>Journal of Computational and Graphical Statistics</em>, <em>19</em>(1), 3–28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>
 </div>
-</section>
+<div id="ref-ggplot2-hadley" class="csl-entry" role="listitem">
+Wickham, H., Navarro, D., &amp; Pedersen, T. L. (2019). <em>ggplot2: Elegant graphics for data analysis (3e)</em>. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781351201315">https://doi.org/10.1201/9781351201315</a>
+</div>
+<div id="ref-grammar-of-graphs" class="csl-entry" role="listitem">
+Wilkinson, L. (2005). <em>The grammar of graphics</em>. Springer-Verlag New York. <a href="https://doi.org/10.1007/0-387-28695-0">https://doi.org/10.1007/0-387-28695-0</a>
+</div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -1348,6 +1461,7 @@ Matejka, J., &amp; Fitzmaurice, G. (2017). Same stats, different graphs: Generat
 <li id="fn3"><p>Мера веса драгоценных камней: 1 карат равен 0.2 грамма.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Площадка — элемент огранки бриллианта, самая большая верхняя грань.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Рундист — элемент огранки бриллианта, разделяющий его верхнюю (корона) и&nbsp;нижнюю (павильон) части; место, в&nbsp;котором камень имеет наибольшую ширину.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Если вы успели подзабыть, что&nbsp;это такое, см.&nbsp;<a href="./r-datastructures.html#r-datastructures-factor-ordered">раздел про&nbsp;упорядоченные факторы</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
