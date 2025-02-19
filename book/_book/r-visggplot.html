@@ -153,6 +153,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1102,6 +1131,9 @@ background-size: cover;
 </section>
 <section id="r-visggplot2-pkg" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="r-visggplot2-pkg"><span class="header-section-number">10.2</span> Пакет <code>ggplot2</code></h2>
+<div class="lab-junior">
+
+</div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1121,6 +1153,63 @@ background-size: cover;
 </div>
 <section id="r-visggplot2-diamonds" class="level3" data-number="10.2.1">
 <h3 data-number="10.2.1" class="anchored" data-anchor-id="r-visggplot2-diamonds"><span class="header-section-number">10.2.1</span> Датасет <code>diamonds</code></h3>
+<div class="lab-junior">
+
+</div>
+<p>Кроме функций из&nbsp;пакета <code>ggplot2</code>, мы будем в&nbsp;примерах использовать датасет <code>diamonds</code>, который тоже содержится в&nbsp;этом пакете. При&nbsp;подключенном пакете он доступен по&nbsp;собственному названию (<a href="#lst-diamonds-data" class="quarto-xref">Код&nbsp;<span>10.4</span></a>), из&nbsp;которого следует, что&nbsp;это данные про&nbsp;бриллианты.</p>
+<div id="lst-diamonds-data" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-diamonds-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.4: Датасет <code>diamonds</code>
+</figcaption>
+<div aria-describedby="lst-diamonds-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>diamonds</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 53,940 × 10
+   carat cut       color clarity depth table price     x     y     z
+   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+ 2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+ 3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+ 4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+ 5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+ 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
+ 7  0.24 Very Good I     VVS1     62.3    57   336  3.95  3.98  2.47
+ 8  0.26 Very Good H     SI1      61.9    55   337  4.07  4.11  2.53
+ 9  0.22 Fair      E     VS2      65.1    61   337  3.87  3.78  2.49
+10  0.23 Very Good H     VS1      59.4    61   338  4     4.05  2.39
+# ℹ 53,930 more rows</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Давайте сориентируемся в&nbsp;нём, чтобы&nbsp;понимать, что&nbsp;мы будет рисовать. Датасет содержит 53940 наблюдений и 10 переменных. Ниже приведено описание переменных.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Описание переменных датасета <code>diamonds</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>price</code> — цена бриллианта (в&nbsp;долларах США)</li>
+<li><code>carat</code> — вес бриллианта (в&nbsp;каратах<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>)</li>
+<li><code>cut</code> — качество огранки бриллианта (значения: <code>Fair</code>, <code>Good</code>, <code>Very Good</code>, <code>Premium</code>, <code>Ideal</code>)</li>
+<li><code>color</code> — цвет бриллианта (значения: <code>D</code> — лучший, <code>E</code>, <code>F</code>, <code>G</code>, <code>H</code>, <code>I</code>, <code>J</code> — худший)</li>
+<li><code>clarity</code> — чистота бриллианта (значения: <code>I1</code> — худшая, <code>SI2</code>, <code>SI1</code>, <code>VS2</code>, <code>VS1</code>, <code>VVS2</code>, <code>VVS1</code>, <code>IF</code> — лучшая)</li>
+<li><code>x</code> — длина бриллианта (в&nbsp;мм)</li>
+<li><code>y</code> — ширина бриллианта (в&nbsp;мм)</li>
+<li><code>z</code> — глубина бриллианта (в&nbsp;мм)</li>
+<li><code>depth</code> — показатель глубины (вычисляется как <span class="math inline">\(\frac{2z}{x+y}\)</span>)</li>
+<li><code>table</code> — отношение ширины площадки<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> к&nbsp;ширине камня в&nbsp;области рундиста<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="r-visggplot2-grammar" class="level2" data-number="10.3">
@@ -1138,7 +1227,7 @@ background-size: cover;
 <h3 data-number="10.6.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</h3>
 <p>В&nbsp;R встроено безумное количество цветов — 657. Полный список можно получить, вызвав функцию <code>colors()</code>. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1147,7 +1236,7 @@ background-size: cover;
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
@@ -1199,7 +1288,7 @@ background-size: cover;
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.0 (2024-04-24)
 Platform: x86_64-apple-darwin20
@@ -1256,6 +1345,9 @@ Matejka, J., &amp; Fitzmaurice, G. (2017). Same stats, different graphs: Generat
 <ol>
 <li id="fn1"><p>В другом варианте, Энскомба.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Мы <a href="./r-strings.html#r-strings-ext-pkgs">говорили</a>, что&nbsp;базовый R состоит из&nbsp;нескольких пакетов, автоматически подключаемых при&nbsp;запуске. <code>datasets</code> является один таких пакетов.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Мера веса драгоценных камней: 1 карат равен 0.2 грамма.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Площадка — элемент огранки бриллианта, самая большая верхняя грань.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Рундист — элемент огранки бриллианта, разделяющий его верхнюю (корона) и&nbsp;нижнюю (павильон) части; место, в&nbsp;котором камень имеет наибольшую ширину.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
