@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Знакомство с R – WLM SDARP</title>
+<title>1&nbsp; Знакомство с R – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,6 +98,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -172,7 +175,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -184,8 +187,8 @@ background-size: cover;
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></a></li></ol></nav>
-      <h1 class="title"><span id="r-intro" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></a></li></ol></nav>
+      <h1 class="title"><span id="r-intro" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></h1>
                       </div>
   </div>
     
@@ -236,8 +239,8 @@ background-size: cover;
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -245,61 +248,32 @@ background-size: cover;
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Типы данных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Типы данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datastructures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -310,38 +284,38 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,11 +330,11 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
@@ -397,11 +371,11 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория измерений</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
@@ -420,15 +394,15 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -440,7 +414,7 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -455,11 +429,11 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
@@ -480,26 +454,32 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -508,33 +488,33 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -553,13 +533,13 @@ background-size: cover;
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -628,7 +608,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
@@ -650,32 +630,32 @@ background-size: cover;
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#r-intro-history" id="toc-r-intro-history" class="nav-link active" data-scroll-target="#r-intro-history"><span class="header-section-number">2.1</span> Сверхкраткая история R</a></li>
-  <li><a href="#rintro-overview" id="toc-rintro-overview" class="nav-link" data-scroll-target="#rintro-overview"><span class="header-section-number">2.2</span> Обзор R</a>
+  <li><a href="#r-intro-history" id="toc-r-intro-history" class="nav-link active" data-scroll-target="#r-intro-history"><span class="header-section-number">1.1</span> Сверхкраткая история R</a></li>
+  <li><a href="#rintro-overview" id="toc-rintro-overview" class="nav-link" data-scroll-target="#rintro-overview"><span class="header-section-number">1.2</span> Обзор R</a>
   <ul>
-  <li><a href="#rintro-r-vs-python" id="toc-rintro-r-vs-python" class="nav-link" data-scroll-target="#rintro-r-vs-python"><span class="header-section-number">2.2.1</span> R vs Python</a></li>
+  <li><a href="#rintro-r-vs-python" id="toc-rintro-r-vs-python" class="nav-link" data-scroll-target="#rintro-r-vs-python"><span class="header-section-number">1.2.1</span> R vs Python</a></li>
   </ul></li>
-  <li><a href="#r-intro-installation" id="toc-r-intro-installation" class="nav-link" data-scroll-target="#r-intro-installation"><span class="header-section-number">2.3</span> Установка</a>
+  <li><a href="#r-intro-installation" id="toc-r-intro-installation" class="nav-link" data-scroll-target="#r-intro-installation"><span class="header-section-number">1.3</span> Установка</a>
   <ul>
-  <li><a href="#r-intro-rinstallation" id="toc-r-intro-rinstallation" class="nav-link" data-scroll-target="#r-intro-rinstallation"><span class="header-section-number">2.3.1</span> Установка R</a>
+  <li><a href="#r-intro-rinstallation" id="toc-r-intro-rinstallation" class="nav-link" data-scroll-target="#r-intro-rinstallation"><span class="header-section-number">1.3.1</span> Установка R</a>
   <ul class="collapse">
-  <li><a href="#rintro-rinstallation-win" id="toc-rintro-rinstallation-win" class="nav-link" data-scroll-target="#rintro-rinstallation-win"><span class="header-section-number">2.3.1.1</span> Win</a></li>
-  <li><a href="#rintro-rinstallation-mac" id="toc-rintro-rinstallation-mac" class="nav-link" data-scroll-target="#rintro-rinstallation-mac"><span class="header-section-number">2.3.1.2</span> macOS</a></li>
-  <li><a href="#rintro-rinstallation-linux" id="toc-rintro-rinstallation-linux" class="nav-link" data-scroll-target="#rintro-rinstallation-linux"><span class="header-section-number">2.3.1.3</span> Linux</a></li>
+  <li><a href="#rintro-rinstallation-win" id="toc-rintro-rinstallation-win" class="nav-link" data-scroll-target="#rintro-rinstallation-win"><span class="header-section-number">1.3.1.1</span> Win</a></li>
+  <li><a href="#rintro-rinstallation-mac" id="toc-rintro-rinstallation-mac" class="nav-link" data-scroll-target="#rintro-rinstallation-mac"><span class="header-section-number">1.3.1.2</span> macOS</a></li>
+  <li><a href="#rintro-rinstallation-linux" id="toc-rintro-rinstallation-linux" class="nav-link" data-scroll-target="#rintro-rinstallation-linux"><span class="header-section-number">1.3.1.3</span> Linux</a></li>
   </ul></li>
-  <li><a href="#r-intro-rstudioinstallation" id="toc-r-intro-rstudioinstallation" class="nav-link" data-scroll-target="#r-intro-rstudioinstallation"><span class="header-section-number">2.3.2</span> Установка RStudio</a>
+  <li><a href="#r-intro-rstudioinstallation" id="toc-r-intro-rstudioinstallation" class="nav-link" data-scroll-target="#r-intro-rstudioinstallation"><span class="header-section-number">1.3.2</span> Установка RStudio</a>
   <ul class="collapse">
-  <li><a href="#rintro-ide" id="toc-rintro-ide" class="nav-link" data-scroll-target="#rintro-ide"><span class="header-section-number">2.3.2.1</span> Что такое IDE?</a></li>
+  <li><a href="#rintro-ide" id="toc-rintro-ide" class="nav-link" data-scroll-target="#rintro-ide"><span class="header-section-number">1.3.2.1</span> Что такое IDE?</a></li>
   </ul></li>
-  <li><a href="#r-intro-positcloud" id="toc-r-intro-positcloud" class="nav-link" data-scroll-target="#r-intro-positcloud"><span class="header-section-number">2.3.3</span> Posit Cloud</a></li>
+  <li><a href="#r-intro-positcloud" id="toc-r-intro-positcloud" class="nav-link" data-scroll-target="#r-intro-positcloud"><span class="header-section-number">1.3.3</span> Posit Cloud</a></li>
   </ul></li>
-  <li><a href="#r-intro-rinterface" id="toc-r-intro-rinterface" class="nav-link" data-scroll-target="#r-intro-rinterface"><span class="header-section-number">2.4</span> Интерфейс R</a></li>
-  <li><a href="#r-intro-rstudiointerface" id="toc-r-intro-rstudiointerface" class="nav-link" data-scroll-target="#r-intro-rstudiointerface"><span class="header-section-number">2.5</span> Интерфейс RStudio</a>
+  <li><a href="#r-intro-rinterface" id="toc-r-intro-rinterface" class="nav-link" data-scroll-target="#r-intro-rinterface"><span class="header-section-number">1.4</span> Интерфейс R</a></li>
+  <li><a href="#r-intro-rstudiointerface" id="toc-r-intro-rstudiointerface" class="nav-link" data-scroll-target="#r-intro-rstudiointerface"><span class="header-section-number">1.5</span> Интерфейс RStudio</a>
   <ul>
-  <li><a href="#r-intro-rstudiocustomize" id="toc-r-intro-rstudiocustomize" class="nav-link" data-scroll-target="#r-intro-rstudiocustomize"><span class="header-section-number">2.5.1</span> Кастомизация RStudio</a>
+  <li><a href="#r-intro-rstudiocustomize" id="toc-r-intro-rstudiocustomize" class="nav-link" data-scroll-target="#r-intro-rstudiocustomize"><span class="header-section-number">1.5.1</span> Кастомизация RStudio</a>
   <ul class="collapse">
-  <li><a href="#r-intro-appearance" id="toc-r-intro-appearance" class="nav-link" data-scroll-target="#r-intro-appearance"><span class="header-section-number">2.5.1.1</span> Тема</a></li>
-  <li><a href="#r-intro-panelayout" id="toc-r-intro-panelayout" class="nav-link" data-scroll-target="#r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение окон и их содержимое</a></li>
+  <li><a href="#r-intro-appearance" id="toc-r-intro-appearance" class="nav-link" data-scroll-target="#r-intro-appearance"><span class="header-section-number">1.5.1.1</span> Тема</a></li>
+  <li><a href="#r-intro-panelayout" id="toc-r-intro-panelayout" class="nav-link" data-scroll-target="#r-intro-panelayout"><span class="header-section-number">1.5.1.2</span> Расположение окон и их содержимое</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -708,31 +688,31 @@ background-size: cover;
 <div class="intro">
 <p>В этой главе мы познакомимся с R. Начнем прям от Адама — с установки и интерфейса. Если у вас уже установлены R и RStudio и вы хотите сразу стартовать с работы в среде, прыгайте <a href="./r-basics.html">в следующую главу</a>.</p>
 </div>
-<section id="r-intro-history" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="r-intro-history"><span class="header-section-number">2.1</span> Сверхкраткая история R</h2>
+<section id="r-intro-history" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="r-intro-history"><span class="header-section-number">1.1</span> Сверхкраткая история R</h2>
 <div class="lab-junior">
 
 </div>
-<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="prob-falsepositive.html#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>28.5</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
+<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>1.1</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
 <div class="cell">
 <div id="fig-rbirthplace" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-7fdd7968fd1f40a4f3db" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-7fdd7968fd1f40a4f3db">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-0ac5277cc8fd38d11ef8" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-0ac5277cc8fd38d11ef8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.1: Тут родился R
+Иллюстрация&nbsp;1.1: Тут родился R
 </figcaption>
 </figure>
 </div>
 </div>
 <p>Через пару лет разработчики перестали справляться с [электронными] письмами о багах и предлагаемых улучшениях, и в 1997 году R становится частью <a href="https://www.gnu.org/gnu/gnu.html">GNU Project</a> <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d., p. 17</a>)</span>. В этом же году K. Hornik и F. Leisch создают на базе Венского технического университета (Technische Universität Wien) репозиторий <a href="https://cran.rstudio.com/">CRAN</a> (The Comprehensive R Archive Network) для совместной работы «ядерной» группы разработчиков (core team). В феврале 2000 года выходит первая стабильная версия языка.</p>
 <p>Сегодня R развивается международной командой исследователей вычислительной статистики (<a href="https://www.r-project.org/">R Project</a>) и поддерживается некоммерческой организацией <a href="https://www.r-project.org/foundation/">R Foundation</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Почему R так называется?
@@ -743,8 +723,8 @@ background-size: cover;
 </div>
 </div>
 </section>
-<section id="rintro-overview" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="rintro-overview"><span class="header-section-number">2.2</span> Обзор R</h2>
+<section id="rintro-overview" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="rintro-overview"><span class="header-section-number">1.2</span> Обзор R</h2>
 <div class="lab-junior">
 
 </div>
@@ -756,16 +736,16 @@ background-size: cover;
 <li>писать статьи, книги, сайты и приложения</li>
 <li>…</li>
 </ul>
-<p>Для R написано бесчисленное множество пакетов (<a href="#fig-n-pkgs" class="quarto-xref">Иллюстрация&nbsp;<span>2.2</span></a>), которые позволяют работать с самыми разными данными (поведенческими, опросниковыми, биологическими, лингвистическими, географическими и др.) и самыми разными статистическими методами (от t-теста до структурного моделирования). Количество доступных на CRAN пакетов экспоненциально растет с каждым годом.</p>
+<p>Для R написано бесчисленное множество пакетов (<a href="#fig-n-pkgs" class="quarto-xref">Иллюстрация&nbsp;<span>1.2</span></a>), которые позволяют работать с самыми разными данными (поведенческими, опросниковыми, биологическими, лингвистическими, географическими и др.) и самыми разными статистическими методами (от t-теста до структурного моделирования). Количество доступных на CRAN пакетов экспоненциально растет с каждым годом.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-n-pkgs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-n-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="r-intro_files/figure-html/fig-n-pkgs-1.png" class="img-fluid figure-img" width="672">
+<a href="r-intro_files/figure-html/fig-n-pkgs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;1.2: Количество пакетов, доступное на CRAN. Столбцы отображаются пакеты, опубликованные в конкретном году, линия — суммарное количество пакетов, опубликованное к данному году. Визуализация автора по данным CRAN"><img src="r-intro_files/figure-html/fig-n-pkgs-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-n-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.2: Количество пакетов, доступное на CRAN. Столбцы отображаются пакеты, опубликованные в конкретном году, линия — суммарное количество пакетов, опубликованное к данному году. Визуализация автора по <a href="https://cran.r-project.org/web/packages/available_packages_by_date.html">данным CRAN</a>
+Иллюстрация&nbsp;1.2: Количество пакетов, доступное на CRAN. Столбцы отображаются пакеты, опубликованные в конкретном году, линия — суммарное количество пакетов, опубликованное к данному году. Визуализация автора по <a href="https://cran.r-project.org/web/packages/available_packages_by_date.html">данным CRAN</a>
 </figcaption>
 </figure>
 </div>
@@ -775,14 +755,14 @@ background-size: cover;
 <p>R широко используется в академической среде исследователями социальных и гуманитарных наук, и, пожалуй, его можно назвать стандартом анализа данных де-факто в этих областях. Конечно, если его сравнивать со статистическими программами, предоставляющими графический интерфейс (Statistica, SPSS, JASP, Jamovi и др.), то порог вхождения тут будет выше, однако R позволяет организовать работу с данными так, чтобы она была <strong>воспроизводима</strong>, чем, увы, не могут похвалиться большинство программ с графическими интерфейсами.</p>
 <p>Кроме того, реализация статистических методов в R часто требует копнуть в суть самих методов чуть глубже, чтобы корректно провести анализ, что, с одной стороны, может создать некоторые трудности, но, с другой стороны, <strong>мотивирует лучше разобраться в методах анализа данных</strong>, а значит, <strong>более осознанно их использовать</strong>.</p>
 <p>В общем, R — это стильно, модно и полезно.</p>
-<section id="rintro-r-vs-python" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="rintro-r-vs-python"><span class="header-section-number">2.2.1</span> R vs Python</h3>
+<section id="rintro-r-vs-python" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="rintro-r-vs-python"><span class="header-section-number">1.2.1</span> R vs Python</h3>
 <div class="lab-junior">
 
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/r-intro/r-vs-py.jpg" class="img-fluid figure-img"></p>
+<p><a href="img/r-intro/r-vs-py.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Великое противостояние. Источник фона"><img src="img/r-intro/r-vs-py.jpg" class="img-fluid figure-img" alt="Великое противостояние. Источник фона"></a></p>
 <figcaption>Великое противостояние. <a href="https://www.freepik.com/author/jcomp">Источник фона</a></figcaption>
 </figure>
 </div>
@@ -798,8 +778,8 @@ background-size: cover;
 <p>Впрочем, если вы открыли эту книгу, предполагаю, что вы заинтересованы именно в R, поэтому позволю себе свернуть обсуждение великого противостояния, и перейти к сути.</p>
 </section>
 </section>
-<section id="r-intro-installation" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="r-intro-installation"><span class="header-section-number">2.3</span> Установка</h2>
+<section id="r-intro-installation" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="r-intro-installation"><span class="header-section-number">1.3</span> Установка</h2>
 <div class="lab-junior">
 
 </div>
@@ -817,8 +797,8 @@ background-size: cover;
 <p>Нам необходимо будет установить две вещи — R и RStudio. Во избежании возможных ошибок необходимо их ставить именно в этом порядке: <strong>сначала — R, затем — RStudio</strong>. Иначе RStudio может не найти R на компе и будет ругаться.</p>
 </div>
 </div>
-<section id="r-intro-rinstallation" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="r-intro-rinstallation"><span class="header-section-number">2.3.1</span> Установка R</h3>
+<section id="r-intro-rinstallation" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="r-intro-rinstallation"><span class="header-section-number">1.3.1</span> Установка R</h3>
 <div class="lab-junior">
 
 </div>
@@ -829,16 +809,16 @@ background-size: cover;
 <li>для <a href="https://cran.rstudio.com/bin/linux/">Linux</a></li>
 </ul>
 <p>В целом, установщики операционных систем обычно хорошо справляются со своей задачей, и в 90% случаев всё встаёт без багов. Однако ниже я оставлю некоторые комментарии о проблемах, с которыми сталкивался сам или о которых говорили знакомые и коллеги.</p>
-<section id="rintro-rinstallation-win" class="level4" data-number="2.3.1.1">
-<h4 data-number="2.3.1.1" class="anchored" data-anchor-id="rintro-rinstallation-win"><span class="header-section-number">2.3.1.1</span> Win</h4>
+<section id="rintro-rinstallation-win" class="level4" data-number="1.3.1.1">
+<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="rintro-rinstallation-win"><span class="header-section-number">1.3.1.1</span> Win</h4>
 <div class="lab-junior">
 
 </div>
-<p>Ниже есть пример установки R на Win (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>2.3</span></a>), если вдруг у вас возникли какие-то проблемы при установке. Скорее всего всё прошло достаточно ровно.</p>
+<p>Ниже есть пример установки R на Win (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>1.3</span></a>), если вдруг у вас возникли какие-то проблемы при установке. Скорее всего всё прошло достаточно ровно.</p>
 <p>Самая частая проблема — имя пользователя на кириллице. Компьютер вообще достаточно плохо переваривает кириллические символы. Особенную же проблему составляют такие символы в путях к файлам. Поскольку на Win папка пользователя называется именем пользователя, то в случае кириллического имени, естественно, её имя будет на кириллице. Это можно пережить, перезадав некоторое дефолтные пути в настройках, однако если есть возможность переименовать пользователя и папку, я бы рекомендовал это сделать. Ну, так, чтобы не было неожиданных внезапностей.</p>
 </section>
-<section id="rintro-rinstallation-mac" class="level4" data-number="2.3.1.2">
-<h4 data-number="2.3.1.2" class="anchored" data-anchor-id="rintro-rinstallation-mac"><span class="header-section-number">2.3.1.2</span> macOS</h4>
+<section id="rintro-rinstallation-mac" class="level4" data-number="1.3.1.2">
+<h4 data-number="1.3.1.2" class="anchored" data-anchor-id="rintro-rinstallation-mac"><span class="header-section-number">1.3.1.2</span> macOS</h4>
 <div class="lab-junior">
 
 </div>
@@ -855,11 +835,11 @@ Apple silicon vs Intel Macs
 <p>Обратите внимание на <a href="https://cran.r-project.org/bin/macosx/">разные версии</a> для Apple silicon (M1) и Intel Macs.</p>
 </div>
 </div>
-<p>Ниже есть пример установки R на Mac (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>2.4</span></a>), если вдруг у вас возникли какие-то проблемы при установке.</p>
+<p>Ниже есть пример установки R на Mac (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>1.4</span></a>), если вдруг у вас возникли какие-то проблемы при установке.</p>
 <p>Тут в 99.9% случаев всё ровно. Бывает, что уже в процессе работы некоторые пакеты жалуются на недоустановленное что-то или на какие-либо несовместимости, но это случается невероятно редко и обычно достаточно легко лечится.</p>
 </section>
-<section id="rintro-rinstallation-linux" class="level4" data-number="2.3.1.3">
-<h4 data-number="2.3.1.3" class="anchored" data-anchor-id="rintro-rinstallation-linux"><span class="header-section-number">2.3.1.3</span> Linux</h4>
+<section id="rintro-rinstallation-linux" class="level4" data-number="1.3.1.3">
+<h4 data-number="1.3.1.3" class="anchored" data-anchor-id="rintro-rinstallation-linux"><span class="header-section-number">1.3.1.3</span> Linux</h4>
 <div class="lab-middle">
 
 </div>
@@ -891,16 +871,16 @@ Apple silicon vs Intel Macs
 <p>Сначала мы будем знакомиться с базовым R и работать только в нём, но имейте в виду, что тут есть некая команда, которая может пригодиться.</p>
 </section>
 </section>
-<section id="r-intro-rstudioinstallation" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="r-intro-rstudioinstallation"><span class="header-section-number">2.3.2</span> Установка RStudio</h3>
+<section id="r-intro-rstudioinstallation" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="r-intro-rstudioinstallation"><span class="header-section-number">1.3.2</span> Установка RStudio</h3>
 <div class="lab-junior">
 
 </div>
-<p>Казалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — <a href="#r-intro-rinterface">можно работать и просто в R</a>. Однако для упрощения и увеличения приятности работы стоит установить RStudio<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Установочные файлы лежат <a href="https://posit.co/download/rstudio-desktop/">тут</a>. Ниже есть примеры установки RStudio на Windows (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>2.3</span></a>) и macOS (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>2.4</span></a>).</p>
+<p>Казалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — <a href="#r-intro-rinterface">можно работать и просто в R</a>. Однако для упрощения и увеличения приятности работы стоит установить RStudio<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Установочные файлы лежат <a href="https://posit.co/download/rstudio-desktop/">тут</a>. Ниже есть примеры установки RStudio на Windows (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>1.3</span></a>) и macOS (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>1.4</span></a>).</p>
 <p>RStudio — это интегрированная среда разработки (IDE) (подробнее см. <a href="#rintro-ide">тут</a>). Она расширяет возможности R, предоставляет более юзабельный интерфейс для взаимодействия с языком и в целом делает работу с R радостной и приятной.</p>
 <p>RStudio это не единственная среда для работы с R, но определенно самая удобная и популярная, поэтому мы будем пользоваться именно ею. RStudio является IDE, разработанной специально для работы в R, однако это вовсе не значит, что в ней нельзя использовать другие языки программирования. Например, книжка, которую вы сейчас читаете, написана с использованием <a href="https://www.r-project.org/about.html">R</a>, <!--[Python](https://www.python.org/), --><a href="http://htmlbook.ru/html">HTML</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://learn.javascript.ru/">JavaScript</a>, <a href="https://yaml.org/">YAML</a> и других языков — при этом вся работа велась в RStudio. Вот такая мощная вещь.</p>
-<section id="rintro-ide" class="level4" data-number="2.3.2.1">
-<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="rintro-ide"><span class="header-section-number">2.3.2.1</span> Что такое IDE?</h4>
+<section id="rintro-ide" class="level4" data-number="1.3.2.1">
+<h4 data-number="1.3.2.1" class="anchored" data-anchor-id="rintro-ide"><span class="header-section-number">1.3.2.1</span> Что такое IDE?</h4>
 <div class="lab-junior">
 
 </div>
@@ -918,8 +898,8 @@ Apple silicon vs Intel Macs
 </blockquote>
 </section>
 </section>
-<section id="r-intro-positcloud" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="r-intro-positcloud"><span class="header-section-number">2.3.3</span> Posit Cloud</h3>
+<section id="r-intro-positcloud" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="r-intro-positcloud"><span class="header-section-number">1.3.3</span> Posit Cloud</h3>
 <div class="lab-junior">
 
 </div>
@@ -931,7 +911,7 @@ Apple silicon vs Intel Macs
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/34klooQ2Adw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-win-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.3: Установка R и RStudio на Windows (на примере Windows 10 Pro)
+Иллюстрация&nbsp;1.3: Установка R и RStudio на Windows (на примере Windows 10 Pro)
 </figcaption>
 </figure>
 </div>
@@ -941,63 +921,63 @@ Apple silicon vs Intel Macs
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/aQKfTrkRy2I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-mac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.4: Установка R на macOS (на примере macOS Sonoma 14.1.1)
+Иллюстрация&nbsp;1.4: Установка R на macOS (на примере macOS Sonoma 14.1.1)
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="r-intro-rinterface" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="r-intro-rinterface"><span class="header-section-number">2.4</span> Интерфейс R</h2>
+<section id="r-intro-rinterface" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="r-intro-rinterface"><span class="header-section-number">1.4</span> Интерфейс R</h2>
 <div class="lab-junior">
 
 </div>
 <div id="fig-r-logo" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/r-logo.png" class="img-fluid figure-img">
+<a href="img/r-intro/r-logo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;1.5: Логотип R. Источник"><img src="img/r-intro/r-logo.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.5: Логотип R. <a href="https://www.r-project.org/logo/">Источник</a>
+Иллюстрация&nbsp;1.5: Логотип R. <a href="https://www.r-project.org/logo/">Источник</a>
 </figcaption>
 </figure>
 </div>
-<p>На самом деле, RStudio можно было и не ставить, так как R предоставляет собственный графический интерфейс для работы. Его можно открыть, кликнув на иконку R в списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.5</span></a>). Однако как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.6</span></a>).</p>
+<p>На самом деле, RStudio можно было и не ставить, так как R предоставляет собственный графический интерфейс для работы. Его можно открыть, кликнув на иконку R в списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>1.5</span></a>). Однако как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.6</span></a>).</p>
 <div id="fig-r-interface" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/r-interface.png" class="img-fluid figure-img">
+<a href="img/r-intro/r-interface.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;1.6: Интерфейс R"><img src="img/r-intro/r-interface.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.6: Интерфейс R
+Иллюстрация&nbsp;1.6: Интерфейс R
 </figcaption>
 </figure>
 </div>
 <p>Здесь есть всего два окна: справа — консоль, слева — скрипт. В скрипте пишется код, в консоли он выполняется. Иногда еще открываются окна с графиками. Стильно, модно, минималистично — весьма по-программистски. Однако в RStudio работу можно обустроить гораздо удобнее и нагляднее, поэтому не будем останавливаться здесь долго и сразу же перейдем к изучению установленной IDE.</p>
 </section>
-<section id="r-intro-rstudiointerface" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="r-intro-rstudiointerface"><span class="header-section-number">2.5</span> Интерфейс RStudio</h2>
+<section id="r-intro-rstudiointerface" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="r-intro-rstudiointerface"><span class="header-section-number">1.5</span> Интерфейс RStudio</h2>
 <div class="lab-junior">
 
 </div>
 <div id="fig-rstudio-logo" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/rstudio-logo.png" class="img-fluid figure-img">
+<a href="img/r-intro/rstudio-logo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Иллюстрация&nbsp;1.7: Логотип RStudio. Источник"><img src="img/r-intro/rstudio-logo.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.7: Логотип RStudio. <a href="https://www.rstudio.com/about/logos/">Источник</a>
+Иллюстрация&nbsp;1.7: Логотип RStudio. <a href="https://www.rstudio.com/about/logos/">Источник</a>
 </figcaption>
 </figure>
 </div>
-<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>2.7</span></a>) в списке программ на вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>).</p>
+<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>1.7</span></a>) в списке программ на вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>).</p>
 <div id="fig-rstudio-interface" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/rstudio-interface.png" class="img-fluid figure-img">
+<a href="img/r-intro/rstudio-interface.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Иллюстрация&nbsp;1.8: Интерфейс RStudio"><img src="img/r-intro/rstudio-interface.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.8: Интерфейс RStudio
+Иллюстрация&nbsp;1.8: Интерфейс RStudio
 </figcaption>
 </figure>
 </div>
@@ -1011,10 +991,10 @@ Apple silicon vs Intel Macs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>При самом первом открытии RStudio у вас может отображаться не четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>), а только три — второе, третье и четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>⌘</code>+<code>Shift</code>+<code>N</code> на Mac) или воспользуйте кнопкой в левом верхнем углу и выберите <code>R Script</code>.</p>
+<p>При самом первом открытии RStudio у вас может отображаться не четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>), а только три — второе, третье и четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>⌘</code>+<code>Shift</code>+<code>N</code> на Mac) или воспользуйте кнопкой в левом верхнем углу и выберите <code>R Script</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/r-intro/new-rscript.png" class="img-fluid figure-img"></p>
+<p><a href="img/r-intro/new-rscript.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Создание нового скрипта"><img src="img/r-intro/new-rscript.png" class="img-fluid figure-img" alt="Создание нового скрипта"></a></p>
 <figcaption>Создание нового скрипта</figcaption>
 </figure>
 </div>
@@ -1064,43 +1044,43 @@ Apple silicon vs Intel Macs
 <li><code>Viewer</code> и <code>Presentation</code> — редко используемые вкладки, по крайнем мере, в первое время работы. Они необходимы, когда вы создаете какие-либо материалы в R (презентации, сайты, отчеты, книжки и др.)</li>
 </ul></li>
 </ol>
-<section id="r-intro-rstudiocustomize" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="r-intro-rstudiocustomize"><span class="header-section-number">2.5.1</span> Кастомизация RStudio</h3>
+<section id="r-intro-rstudiocustomize" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="r-intro-rstudiocustomize"><span class="header-section-number">1.5.1</span> Кастомизация RStudio</h3>
 <div class="lab-junior">
 
 </div>
 <p>После некоторого времени работы в RStudio, вы можете обнаружить, что предлагаемые по умолчанию конфигурация и оформление вам не очень удобны. Скажем, вы как истинный программист работаете по ночам, и дефолтная светлая тема оформления вам крайне больно бьет по глазам, и вы хотите расположить консоль рядом со скриптом, чтобы видеть результаты выполнения команд примерно на том же уровне, что и строки кода. Всё это выполнимо.</p>
 <p>Здесь мы рассмотрим две, пожалуй, ключевых вещи, которые можно настроить — <a href="#r-intro-panelayout">окна</a> и <a href="#r-intro-appearance">тему</a>. В остальных возможностях, я уверен, вы сможете разобраться самостоятельно, понажимав на всякие кнопки или изучив <a href="https://docs.posit.co/ide/user/"><strong>RStudio User Guide</strong></a>.</p>
-<section id="r-intro-appearance" class="level4" data-number="2.5.1.1">
-<h4 data-number="2.5.1.1" class="anchored" data-anchor-id="r-intro-appearance"><span class="header-section-number">2.5.1.1</span> Тема</h4>
+<section id="r-intro-appearance" class="level4" data-number="1.5.1.1">
+<h4 data-number="1.5.1.1" class="anchored" data-anchor-id="r-intro-appearance"><span class="header-section-number">1.5.1.1</span> Тема</h4>
 <div class="lab-junior">
 
 </div>
-<p>Чтобы настроить тему RStudio, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Appearance</code>. Откроется следующее окно (<a href="#fig-rstudio-appearance" class="quarto-xref">Иллюстрация&nbsp;<span>2.9</span></a>). В нем можно выбрать шрифт, его размер, тему самого RStudio и тему редактора кода. Через кнопку <code>Add...</code> можно даже добавить собственные темы, если вам не нравится ни одна из предложенных.</p>
+<p>Чтобы настроить тему RStudio, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Appearance</code>. Откроется следующее окно (<a href="#fig-rstudio-appearance" class="quarto-xref">Иллюстрация&nbsp;<span>1.9</span></a>). В нем можно выбрать шрифт, его размер, тему самого RStudio и тему редактора кода. Через кнопку <code>Add...</code> можно даже добавить собственные темы, если вам не нравится ни одна из предложенных.</p>
 <div id="fig-rstudio-appearance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/rstudio-appearance.png" class="img-fluid figure-img">
+<a href="img/r-intro/rstudio-appearance.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Иллюстрация&nbsp;1.9: Настройки темы RStudio"><img src="img/r-intro/rstudio-appearance.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.9: Настройки темы RStudio
+Иллюстрация&nbsp;1.9: Настройки темы RStudio
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="r-intro-panelayout" class="level4" data-number="2.5.1.2">
-<h4 data-number="2.5.1.2" class="anchored" data-anchor-id="r-intro-panelayout"><span class="header-section-number">2.5.1.2</span> Расположение окон и их содержимое</h4>
+<section id="r-intro-panelayout" class="level4" data-number="1.5.1.2">
+<h4 data-number="1.5.1.2" class="anchored" data-anchor-id="r-intro-panelayout"><span class="header-section-number">1.5.1.2</span> Расположение окон и их содержимое</h4>
 <div class="lab-junior">
 
 </div>
-<p>Чтобы настроить расположение и содержимое окон, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Pane Layout</code>. Откроется следующее окно (<a href="#fig-rstudio-panelayout" class="quarto-xref">Иллюстрация&nbsp;<span>2.10</span></a>). Логика проста: здесь тоже четыре области, соответствующих окнам интерфейса RStudio, и в каждом можно выбрать, что должно отображаться. Через <code>Add Column</code> можно добавить ещё одну колонку, если вы, скажем, работаете на большом мониторе в двух скриптах параллельно.</p>
+<p>Чтобы настроить расположение и содержимое окон, необходимо проследовать по пути <code>Tools</code> → <code>Global Options</code> → <code>Pane Layout</code>. Откроется следующее окно (<a href="#fig-rstudio-panelayout" class="quarto-xref">Иллюстрация&nbsp;<span>1.10</span></a>). Логика проста: здесь тоже четыре области, соответствующих окнам интерфейса RStudio, и в каждом можно выбрать, что должно отображаться. Через <code>Add Column</code> можно добавить ещё одну колонку, если вы, скажем, работаете на большом мониторе в двух скриптах параллельно.</p>
 <div id="fig-rstudio-panelayout" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-panelayout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/rstudio-panelayout.png" class="img-fluid figure-img">
+<a href="img/r-intro/rstudio-panelayout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Иллюстрация&nbsp;1.10: Настройки расположения окон и их содержимого"><img src="img/r-intro/rstudio-panelayout.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-panelayout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;2.10: Настройки расположения окон и их содержимого
+Иллюстрация&nbsp;1.10: Настройки расположения окон и их содержимого
 </figcaption>
 </figure>
 </div>
@@ -1744,11 +1724,43 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./r-basics.html" class="pagination-link" aria-label="Основы R">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Основы R</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

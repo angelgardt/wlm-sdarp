@@ -34,9 +34,10 @@ book:
       - r-data.qmd
       - r-functions.qmd
       - r-strings.qmd
-      - r-tidy.qmd
       - r-datetime.qmd
+      - r-tidy.qmd
       - r-visggplot.qmd
+      - r-advggplot.qmd
       - r-visbase.qmd
       - r-oop.qmd
     - part: part-math.qmd

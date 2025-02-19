@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Визуализация в&nbsp;ggplot2 – WLM SDARP</title>
+<title>10&nbsp; Визуализация в&nbsp;ggplot2&nbsp;I – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r-visbase.html" rel="next">
-<link href="./r-datetime.html" rel="prev">
+<link href="./r-advggplot.html" rel="next">
+<link href="./r-tidy.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -165,7 +165,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,8 +177,8 @@ background-size: cover;
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code></span></a></li></ol></nav>
-      <h1 class="title"><span id="r-visggplot" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code></span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></a></li></ol></nav>
+      <h1 class="title"><span id="r-visggplot" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></h1>
                       </div>
   </div>
     
@@ -280,32 +280,38 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -322,31 +328,31 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
   </div>
 </li>
       </ul>
@@ -363,13 +369,13 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
@@ -386,25 +392,25 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,49 +427,49 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -480,25 +486,25 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -616,13 +622,21 @@ background-size: cover;
   <ul>
   <li><a href="#r-visggplot-why" id="toc-r-visggplot-why" class="nav-link active" data-scroll-target="#r-visggplot-why"><span class="header-section-number">10.1</span> Задачи визуализации</a>
   <ul>
-  <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Энскомба</a></li>
+  <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Анскомба</a></li>
+  <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.2</span> Datasaurus</a></li>
   </ul></li>
-  <li><a href="#r-visggplot-aes" id="toc-r-visggplot-aes" class="nav-link" data-scroll-target="#r-visggplot-aes"><span class="header-section-number">10.2</span> Эстетики</a>
+  <li><a href="#r-visggplot2-pkg" id="toc-r-visggplot2-pkg" class="nav-link" data-scroll-target="#r-visggplot2-pkg"><span class="header-section-number">10.2</span> Пакет <code>ggplot2</code></a>
   <ul>
-  <li><a href="#r-visggplot-aes-color" id="toc-r-visggplot-aes-color" class="nav-link" data-scroll-target="#r-visggplot-aes-color"><span class="header-section-number">10.2.1</span> Цвет</a></li>
-  <li><a href="#r-visggplot-aes-shape" id="toc-r-visggplot-aes-shape" class="nav-link" data-scroll-target="#r-visggplot-aes-shape"><span class="header-section-number">10.2.2</span> Форма</a></li>
-  <li><a href="#r-visggplot-aes-linetype" id="toc-r-visggplot-aes-linetype" class="nav-link" data-scroll-target="#r-visggplot-aes-linetype"><span class="header-section-number">10.2.3</span> Тип линии</a></li>
+  <li><a href="#r-visggplot2-diamonds" id="toc-r-visggplot2-diamonds" class="nav-link" data-scroll-target="#r-visggplot2-diamonds"><span class="header-section-number">10.2.1</span> Датасет <code>diamonds</code></a></li>
+  </ul></li>
+  <li><a href="#r-visggplot2-grammar" id="toc-r-visggplot2-grammar" class="nav-link" data-scroll-target="#r-visggplot2-grammar"><span class="header-section-number">10.3</span> A Layered Grammar of&nbsp;Graphics</a></li>
+  <li><a href="#r-visggplot2-basics" id="toc-r-visggplot2-basics" class="nav-link" data-scroll-target="#r-visggplot2-basics"><span class="header-section-number">10.4</span> Базовый алгоритм построения визуализации</a></li>
+  <li><a href="#r-visggplot-geoms" id="toc-r-visggplot-geoms" class="nav-link" data-scroll-target="#r-visggplot-geoms"><span class="header-section-number">10.5</span> Геометрия</a></li>
+  <li><a href="#r-visggplot-aes" id="toc-r-visggplot-aes" class="nav-link" data-scroll-target="#r-visggplot-aes"><span class="header-section-number">10.6</span> Эстетики</a>
+  <ul>
+  <li><a href="#r-visggplot-aes-color" id="toc-r-visggplot-aes-color" class="nav-link" data-scroll-target="#r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</a></li>
+  <li><a href="#r-visggplot-aes-shape" id="toc-r-visggplot-aes-shape" class="nav-link" data-scroll-target="#r-visggplot-aes-shape"><span class="header-section-number">10.6.2</span> Форма</a></li>
+  <li><a href="#r-visggplot-aes-linetype" id="toc-r-visggplot-aes-linetype" class="nav-link" data-scroll-target="#r-visggplot-aes-linetype"><span class="header-section-number">10.6.3</span> Тип линии</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -660,11 +674,11 @@ background-size: cover;
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Нужно базовое представление о&nbsp;статистических данных
+Потребуется базовое представление о&nbsp;статистических данных
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>Чтобы&nbsp;уверенно понять, что&nbsp;происходит в&nbsp;этой главе, нужно базово представлять, что&nbsp;являют собой статистические данных и что такое описательные статистики.</p>
 </div>
 </div>
 <section id="r-visggplot-why" class="level2" data-number="10.1">
@@ -673,15 +687,15 @@ background-size: cover;
 
 </div>
 <section id="r-visggplot-anscombe" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Энскомба</h3>
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Анскомба</h3>
 <div class="lab-junior">
 
 </div>
-<p>Квартет Энскомба<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (Anscombe’s quartet) — датасет, предложенный Ф.&nbsp;Дж.&nbsp;Энскомбом <span class="citation" data-cites="anscombe1973">(<a href="references.html#ref-anscombe1973" role="doc-biblioref">Anscombe, 1973</a>)</span> для&nbsp;демонстрации важности использования визуализаций при&nbsp;изучении данных. В&nbsp;R он хранится в&nbsp;переменной <code>anscombe</code> (<a href="#lst-anscombe-dataset" class="quarto-xref">Код&nbsp;<span>10.1</span></a>) из&nbsp;пакета <code>datasets</code>, доступного по&nbsp;умолчанию<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Квартет Анскомба<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (Anscombe’s quartet) — это датасет, предложенный Ф.&nbsp;Дж.&nbsp;Анскомбом <span class="citation" data-cites="anscombe1973">(<a href="references.html#ref-anscombe1973" role="doc-biblioref">Anscombe, 1973</a>)</span> для&nbsp;демонстрации важности использования визуализаций при&nbsp;изучении данных. В&nbsp;R он хранится в&nbsp;переменной <code>anscombe</code> (<a href="#lst-anscombe-dataset" class="quarto-xref">Код&nbsp;<span>10.1</span></a>) из&nbsp;пакета <code>datasets</code>, доступного по&nbsp;умолчанию<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <div id="lst-anscombe-dataset" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-anscombe-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;10.1: Датасет «Квартет Энскомба»
+Код&nbsp;10.1: Датасет «Квартет Анскомба»
 </figcaption>
 <div aria-describedby="lst-anscombe-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -709,47 +723,49 @@ background-size: cover;
 <div id="lst-anscombe-preproc" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;10.2: Предобработка квартета Энскомба для&nbsp;последующей визуализации
+Код&nbsp;10.2: Предобработка квартета Анскомба для&nbsp;последующей визуализации
 </figcaption>
 <div aria-describedby="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>anscombe <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(anscombe)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">str_extract</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>) <span class="sc">%&gt;%</span> <span class="fu">as.numeric</span>(),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>)) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> name,</span>
-<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-8" class="code-annotation-target"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="ot">-&gt;</span> quartet</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>anscombe <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(anscombe)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">str_extract</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-7" class="code-annotation-target"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-8" class="code-annotation-target"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> name,</span>
+<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-10" class="code-annotation-target"><a href="#annotated-cell-6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="ot">-&gt;</span> quartet</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Берём исходный датасет</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="1">Берём исходный датасет</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="2">Создаём техническую переменную <code>id</code> для&nbsp;перехода между широким и&nbsp;длинным форматами</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="2">Создаём техническую переменную <code>id</code> для&nbsp;перехода между широким и&nbsp;длинным форматами</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="3">Переводим данные в&nbsp;длинный формат — названия колонок по&nbsp;умолчанию переходят в&nbsp;переменную <code>name</code>, значения — в&nbsp;переменную <code>value</code></span>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="3">Переводим данные в&nbsp;длинный формат — названия колонок по&nbsp;умолчанию переходят в&nbsp;переменную <code>name</code>, значения — в&nbsp;переменную <code>value</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="4">Создаём новую переменную <code>dataset</code>, которая будет задавать, к&nbsp;какому из&nbsp;«субдатасетов» относится наблюдение — вытаскиваем номер датасета из&nbsp;названия колонок</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="4">Создаём новую переменную <code>dataset</code>, которая будет задавать, к&nbsp;какому из&nbsp;«субдатасетов» относится наблюдение — вытаскиваем номер датасета из&nbsp;названия колонок</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="5">Удаляем из&nbsp;названия колонок номер датасета — теперь это отдельная переменная</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="7" data-code-annotation="5">Удаляем из&nbsp;названия колонок номер датасета — теперь это отдельная переменная</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="6">Переводим данные в&nbsp;широкий формат — возвращаем на&nbsp;место названия колонок и&nbsp;значения</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="8" data-code-annotation="6">Переводим данные в&nbsp;широкий формат — возвращаем на&nbsp;место названия колонок и&nbsp;значения</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="8" data-code-annotation="7">Удаляем техническую переменную <code>id</code>, сохряняем результат предобработки в&nbsp;новую переменную <code>quartet</code>.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="10" data-code-annotation="7">Удаляем техническую переменную <code>id</code>, сохряняем результат предобработки в&nbsp;новую переменную <code>quartet</code>.</span>
 </dd>
 </dl>
 </div>
@@ -761,7 +777,7 @@ background-size: cover;
 <div id="lst-quartet-done" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-quartet-done-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Код&nbsp;10.3: Предобработанный квартет Энскомба
+Код&nbsp;10.3: Предобработанный квартет Анскомба
 </figcaption>
 <div aria-describedby="lst-quartet-done-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
@@ -769,52 +785,112 @@ background-size: cover;
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 44 × 3
    dataset     x     y
-     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1       1    10  8.04
- 2       2    10  9.14
- 3       3    10  7.46
- 4       4     8  6.58
- 5       1     8  6.95
- 6       2     8  8.14
- 7       3     8  6.77
- 8       4     8  5.76
- 9       1    13  7.58
-10       2    13  8.74
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1 1          10  8.04
+ 2 2          10  9.14
+ 3 3          10  7.46
+ 4 4           8  6.58
+ 5 1           8  6.95
+ 6 2           8  8.14
+ 7 3           8  6.77
+ 8 4           8  5.76
+ 9 1          13  7.58
+10 2          13  8.74
 # ℹ 34 more rows</code></pre>
 </div>
 </div>
 </div>
 </figure>
 </div>
-<div class="cell">
+<p>Посчитаем базовые описательные статистики — среднее и&nbsp;стандартное отклонение — по&nbsp;обеим переменным и&nbsp;корреляцию между ними в&nbsp;каждом из&nbsp;датасетов. Вот что получается (<a href="#tbl-quartet-desc" class="quarto-xref">Таблица&nbsp;<span>10.1</span></a>).</p>
+<details class="code-fold">
+<summary>Код</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_x =</span> <span class="fu">mean</span>(x),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_y =</span> <span class="fu">mean</span>(y),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_x =</span> <span class="fu">sd</span>(x),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_y =</span> <span class="fu">sd</span>(y),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">cor_xy =</span> <span class="fu">cor</span>(x, y),</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> dataset) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 7
-  dataset     n mean_x mean_y  sd_x  sd_y cor_xy
-    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
-1       1    11      9    7.5  3.32  2.03   0.82
-2       2    11      9    7.5  3.32  2.03   0.82
-3       3    11      9    7.5  3.32  2.03   0.82
-4       4    11      9    7.5  3.32  2.03   0.82</code></pre>
-</div>
-</div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_x =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_y =</span> <span class="fu">mean</span>(y),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_x =</span> <span class="fu">sd</span>(x),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_y =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor_xy =</span> <span class="fu">cor</span>(x, y),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> dataset</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-quartet-desc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-quartet-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;10.1: Описательные статистики квартета Анскомба
+</figcaption>
+<div aria-describedby="tbl-quartet-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">dataset</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">mean_x</th>
+<th style="text-align: right;">mean_y</th>
+<th style="text-align: right;">sd_x</th>
+<th style="text-align: right;">sd_y</th>
+<th style="text-align: right;">cor_xy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+</div>
+</figure>
+</div>
+<p>Так, подождите… Мы видели, что&nbsp;значения, по&nbsp;крайней мере, переменной <code>y</code> были разными во&nbsp;всех четырёх датасетах. Теперь&nbsp;же мы видим, что&nbsp;ситуация во&nbsp;всех датасетах одинаковая — так нам говорят описательные статистики и&nbsp;корреляции. Тогда может быть различия не&nbsp;столь существенны, и&nbsp;данные разных датасетов описывают одни и&nbsp;те&nbsp;же закономерности? Возможно, и&nbsp;так — всё&nbsp;же изучать данные, просто смотря на&nbsp;числа в&nbsp;датасете, не&nbsp;самая лучшая идея. Давайте визуализируем данные (<a href="#fig-anscombe" class="quarto-xref">Иллюстрация&nbsp;<span>10.1</span></a>), чтобы&nbsp;точно увидеть, что&nbsp;в них происходит.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div id="fig-anscombe" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -828,15 +904,241 @@ background-size: cover;
 </div>
 </div>
 </div>
+<p>Как можно наблюдать, в&nbsp;четырёх датасетах у&nbsp;нас совершенно разные закономерности. Значит&nbsp;ли это, что&nbsp;описательные статистики бессмысленны? Пожалуй, нет. Однако мы явно наблюдали, что&nbsp;их может быть недостаточно, чтобы&nbsp;составить полное представление о&nbsp;том, что происходит в&nbsp;данных.</p>
+</section>
+<section id="r-visggplot-anscombe" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="r-visggplot-anscombe"><span class="header-section-number">10.1.2</span> Datasaurus</h3>
+<div class="lab-junior">
+
+</div>
+<p>Кроме квартета Анскомба, есть ещё один пример недостаточности описательных статистик — даже более яркий, чем&nbsp;рассмотренный квартет. Это&nbsp;датасет <code>datasaurus_dozen</code> из&nbsp;пакета <code>datasauRus</code> <span class="citation" data-cites="datasaurus">(<a href="references.html#ref-datasaurus" role="doc-biblioref">Matejka &amp; Fitzmaurice, 2017</a>)</span>. Не&nbsp;будет подробно останавливаться на&nbsp;коде — его можно найти, раскрыв соответствующие блоки — посмотрим на&nbsp;суть. Датасет состоит из&nbsp;тринадцати «субдатасетов», в&nbsp;каждом из&nbsp;которых есть переменные <code>x</code> и&nbsp;<code>y</code> . Посчитаем вновь среднее и&nbsp;стандартное отклонение по&nbsp;обеим переменным, а&nbsp;также корреляцию между ними (<a href="#tbl-datasaurus-desc" class="quarto-xref">Таблица&nbsp;<span>10.2</span></a>). Вновь видим, что описательные статистики и&nbsp;корреляции практически равны — различия в&nbsp;сотых.</p>
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>datasauRus<span class="sc">::</span>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_x =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_x =</span> <span class="fu">sd</span>(x),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_y =</span> <span class="fu">mean</span>(y),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_y =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor_xy =</span> <span class="fu">cor</span>(x, y),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> dataset</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-datasaurus-desc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datasaurus-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;10.2: Описательные статики по&nbsp;<code>datasaurus</code>
+</figcaption>
+<div aria-describedby="tbl-datasaurus-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">dataset</th>
+<th style="text-align: right;">mean_x</th>
+<th style="text-align: right;">sd_x</th>
+<th style="text-align: right;">mean_y</th>
+<th style="text-align: right;">sd_y</th>
+<th style="text-align: right;">cor_xy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dino</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">away</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h_lines</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">v_lines</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x_shape</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">star</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">high_lines</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dots</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">circle</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.76</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bullseye</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">slant_up</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">slant_down</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wide_lines</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Логично было&nbsp;бы ожидать после этого очень схожих паттернов взаимосвязей между переменными, однако если мы нарисуем то, что&nbsp;представленно в&nbsp;датасетах, мы довольно сильно удивимся (<a href="#fig-datasaurus" class="quarto-xref">Иллюстрация&nbsp;<span>10.2</span></a>). Закономерности не&nbsp;просто разные, а <em>абсолютно</em> разные.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>datasauRus<span class="sc">::</span>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-datasaurus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-datasaurus-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;10.2: Визуализация datasaurus"><img src="r-visggplot_files/figure-html/fig-datasaurus-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.2: Визуализация <code>datasaurus</code>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Чиселки — это хорошо, но картинки нагляднее
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Всё это нас приводит к&nbsp;следующей важной мысли:</p>
+<ul>
+<li>описательные статистики, безусловно, важны, так как предоставляют базовую информацию о&nbsp;данных</li>
+<li>однако они недостаточны, так как одни и&nbsp;те&nbsp;же значения могут получаться в&nbsp;разных ситуациях</li>
+<li>помимо описательных статистики при&nbsp;изучении данных <em>критически</em> необходима их&nbsp;визуализация</li>
+<li>в&nbsp;противном случае мы рискуем упустить существенную часть информацию о&nbsp;них, составить некорректное представление об&nbsp;изучаемых закономерностях и&nbsp;некорректно спланировать и&nbsp;провести статистический анализ</li>
+<li>графически, к&nbsp;тому&nbsp;же, информацию часто воспринять проще, чем копаться в&nbsp;больших таблицах чисел</li>
+</ul>
+</div>
+</div>
 </section>
 </section>
-<section id="r-visggplot-aes" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="r-visggplot-aes"><span class="header-section-number">10.2</span> Эстетики</h2>
-<section id="r-visggplot-aes-color" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.2.1</span> Цвет</h3>
+<section id="r-visggplot2-pkg" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="r-visggplot2-pkg"><span class="header-section-number">10.2</span> Пакет <code>ggplot2</code></h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Откуда&nbsp;<code>2</code> в названии пакета?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Нет ощущения, что&nbsp;если пакет называется <code>ggplot2</code>, то&nbsp;он вторая версия некоего пакета <code>ggplot</code>? Однако пакет <code>ggplot</code> вроде как нигде не&nbsp;существует…</p>
+<p>Тем не менее, он всё&nbsp;же существовал, как сообщает <a href="https://info201.github.io/ggplot2.html">источник</a>, но&nbsp;был плох, и&nbsp;разработчики решили переписать всё с&nbsp;нуля, создав ныне известный <code>ggplot2</code>. Вторая попытка, как мы увидим, оказалось значительно успешнее и&nbsp;мощнее и&nbsp;обрела невероятную популярность.</p>
+</div>
+</div>
+</div>
+<section id="r-visggplot2-diamonds" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="r-visggplot2-diamonds"><span class="header-section-number">10.2.1</span> Датасет <code>diamonds</code></h3>
+</section>
+</section>
+<section id="r-visggplot2-grammar" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="r-visggplot2-grammar"><span class="header-section-number">10.3</span> A Layered Grammar of&nbsp;Graphics</h2>
+</section>
+<section id="r-visggplot2-basics" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="r-visggplot2-basics"><span class="header-section-number">10.4</span> Базовый алгоритм построения визуализации</h2>
+</section>
+<section id="r-visggplot-geoms" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="r-visggplot-geoms"><span class="header-section-number">10.5</span> Геометрия</h2>
+</section>
+<section id="r-visggplot-aes" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="r-visggplot-aes"><span class="header-section-number">10.6</span> Эстетики</h2>
+<section id="r-visggplot-aes-color" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</h3>
 <p>В&nbsp;R встроено безумное количество цветов — 657. Полный список можно получить, вызвав функцию <code>colors()</code>. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -845,13 +1147,13 @@ background-size: cover;
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="r-visggplot_files/figure-html/colors-pic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="r-visggplot_files/figure-html/colors-pic-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="r-visggplot_files/figure-html/colors-pic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="r-visggplot_files/figure-html/colors-pic-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -860,34 +1162,34 @@ background-size: cover;
 </div>
 </div>
 </section>
-<section id="r-visggplot-aes-shape" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="r-visggplot-aes-shape"><span class="header-section-number">10.2.2</span> Форма</h3>
+<section id="r-visggplot-aes-shape" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="r-visggplot-aes-shape"><span class="header-section-number">10.6.2</span> Форма</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-shapes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;10.2: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;10.3: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;10.2: Формы точек, доступные в R
+Иллюстрация&nbsp;10.3: Формы точек, доступные в R
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="r-visggplot-aes-linetype" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="r-visggplot-aes-linetype"><span class="header-section-number">10.2.3</span> Тип линии</h3>
+<section id="r-visggplot-aes-linetype" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="r-visggplot-aes-linetype"><span class="header-section-number">10.6.3</span> Тип линии</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-linetypes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;10.3: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
+<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Иллюстрация&nbsp;10.4: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;10.3: Типы линии, доступные в R
+Иллюстрация&nbsp;10.4: Типы линии, доступные в R
 </figcaption>
 </figure>
 </div>
@@ -927,12 +1229,12 @@ loaded via a namespace (and not attached):
  [9] fastmap_1.2.0     lattice_0.22-6    R6_2.5.1          labeling_0.4.3   
 [13] generics_0.1.3    knitr_1.47        htmlwidgets_1.6.4 munsell_0.5.1    
 [17] pillar_1.9.0      tzdb_0.4.0        rlang_1.1.4       utf8_1.2.4       
-[21] stringi_1.8.4     xfun_0.44         timechange_0.3.0  cli_3.6.3        
-[25] mgcv_1.9-1        withr_3.0.2       magrittr_2.0.3    digest_0.6.37    
-[29] grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3         nlme_3.1-164     
-[33] lifecycle_1.0.4   vctrs_0.6.5       evaluate_1.0.1    glue_1.8.0       
-[37] farver_2.1.2      fansi_1.0.6       colorspace_2.1-1  rmarkdown_2.27   
-[41] tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+[21] stringi_1.8.4     xfun_0.44         datasauRus_0.1.9  timechange_0.3.0 
+[25] cli_3.6.3         mgcv_1.9-1        withr_3.0.2       magrittr_2.0.3   
+[29] digest_0.6.37     grid_4.4.0        rstudioapi_0.16.0 hms_1.1.3        
+[33] nlme_3.1-164      lifecycle_1.0.4   vctrs_0.6.5       evaluate_1.0.1   
+[37] glue_1.8.0        farver_2.1.2      fansi_1.0.6       colorspace_2.1-1 
+[41] rmarkdown_2.27    tools_4.4.0       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -942,6 +1244,9 @@ loaded via a namespace (and not attached):
 <div id="ref-anscombe1973" class="csl-entry" role="listitem">
 Anscombe, F. J. (1973). Graphs in statistical analysis. <em>The American Statictician</em>, <em>27</em>(1), 17–21.
 </div>
+<div id="ref-datasaurus" class="csl-entry" role="listitem">
+Matejka, J., &amp; Fitzmaurice, G. (2017). Same stats, different graphs: Generating datasets with varied appearance and identical statistics through simulated annealing. <em>Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems</em>, 1290–1294. <a href="https://doi.org/10.1145/3025453.3025912">https://doi.org/10.1145/3025453.3025912</a>
+</div>
 </div>
 </section>
 </section>
@@ -949,7 +1254,7 @@ Anscombe, F. J. (1973). Graphs in statistical analysis. <em>The American Statict
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>В другом варианте, Анскомба.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>В другом варианте, Энскомба.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Мы <a href="./r-strings.html#r-strings-ext-pkgs">говорили</a>, что&nbsp;базовый R состоит из&nbsp;нескольких пакетов, автоматически подключаемых при&nbsp;запуске. <code>datasets</code> является один таких пакетов.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
@@ -1518,13 +1823,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r-datetime.html" class="pagination-link" aria-label="Дата и время">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span>
+      <a href="./r-tidy.html" class="pagination-link" aria-label="Предобработка данных">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-visbase.html" class="pagination-link" aria-label="Визуализация в&nbsp;базовом&nbsp;R">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-advggplot.html" class="pagination-link" aria-label="Визуализация в&nbsp;`ggplot2`&nbsp;II">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

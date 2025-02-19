@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, warning = FALSE, message = FALSE
 library(tidyverse)
 theme_set(theme_bw())
 library(rvest)
+library(leaflet)
 ```
 
 :::{.intro}
@@ -31,7 +32,6 @@ R придумали Росс Ихака ([Ross Ihaka](https://en.wikipedia.org/
 #| label: fig-rbirthplace
 #| fig-cap: "Тут родился R"
 
-library(leaflet)
 leaflet() %>%
   addTiles() %>% 
   # addProviderTiles(providers$Stadia.AlidadeSmooth) %>% 
@@ -42,7 +42,7 @@ leaflet() %>%
 
 Сегодня R развивается международной командой исследователей вычислительной статистики ([R Project](https://www.r-project.org/)) и поддерживается некоммерческой организацией [R Foundation](https://www.r-project.org/foundation/).
 
-:::{.callout-note}
+:::{.callout-note appearance="minimal"}
 ###### Почему R так называется?
 
 Это шутка авторов. «R» обозначает первую букву их имён (**R**obert и **R**oss) [@ross2022, p.12].
@@ -80,7 +80,7 @@ read_html("https://cran.r-project.org/web/packages/available_packages_by_date.ht
   summarise(n = n(),
             .by = year) %>% 
   arrange(year) %>% 
-  mutate(cum_n = n + lag(n)) %>% 
+  mutate(cum_n = cumsum(n)) %>% 
   filter(year != "2008") %>% 
   ggplot(aes(x = year)) +
   geom_col(aes(y = n), fill = "royalblue") +
