@@ -318,6 +318,7 @@ print(exmpl_piechart)
 print(exmpl_sunburts)
 ```
 
+Больше примеров визуализаций можно найти в [The R Graph Gallery](https://r-graph-gallery.com/).
 
 
 :::{.callout-note}
