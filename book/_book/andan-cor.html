@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>31&nbsp; Корреляционный анализ – WLM SDARP</title>
+<title>33&nbsp; Корреляционный анализ – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,6 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -173,7 +176,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-cor.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-cor.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -185,8 +188,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-cor.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></a></li></ol></nav>
-      <h1 class="title"><span id="andan-cor" class="quarto-section-identifier"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-cor.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></a></li></ol></nav>
+      <h1 class="title"><span id="andan-cor" class="quarto-section-identifier"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></h1>
                       </div>
   </div>
     
@@ -237,8 +240,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -246,43 +249,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -299,50 +273,56 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -351,39 +331,39 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
   </div>
 </li>
       </ul>
@@ -392,21 +372,21 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория измерений</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
@@ -415,33 +395,33 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -450,51 +430,57 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -503,33 +489,33 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -548,13 +534,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -623,7 +609,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
@@ -645,49 +631,49 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#andan-cor-covariance" id="toc-andan-cor-covariance" class="nav-link active" data-scroll-target="#andan-cor-covariance"><span class="header-section-number">31.1</span> Совместная изменчивость признаков</a></li>
-  <li><a href="#andan-cor-cov" id="toc-andan-cor-cov" class="nav-link" data-scroll-target="#andan-cor-cov"><span class="header-section-number">31.2</span> Ковариация</a>
+  <li><a href="#andan-cor-covariance" id="toc-andan-cor-covariance" class="nav-link active" data-scroll-target="#andan-cor-covariance"><span class="header-section-number">33.1</span> Совместная изменчивость признаков</a></li>
+  <li><a href="#andan-cor-cov" id="toc-andan-cor-cov" class="nav-link" data-scroll-target="#andan-cor-cov"><span class="header-section-number">33.2</span> Ковариация</a>
   <ul>
-  <li><a href="#andan-cor-cov-interpret" id="toc-andan-cor-cov-interpret" class="nav-link" data-scroll-target="#andan-cor-cov-interpret"><span class="header-section-number">31.2.1</span> Интерпретация значения ковариации</a></li>
+  <li><a href="#andan-cor-cov-interpret" id="toc-andan-cor-cov-interpret" class="nav-link" data-scroll-target="#andan-cor-cov-interpret"><span class="header-section-number">33.2.1</span> Интерпретация значения ковариации</a></li>
   </ul></li>
-  <li><a href="#andan-cor-correlation" id="toc-andan-cor-correlation" class="nav-link" data-scroll-target="#andan-cor-correlation"><span class="header-section-number">31.3</span> Корреляция</a>
+  <li><a href="#andan-cor-correlation" id="toc-andan-cor-correlation" class="nav-link" data-scroll-target="#andan-cor-correlation"><span class="header-section-number">33.3</span> Корреляция</a>
   <ul>
-  <li><a href="#andan-cor-cor-interpret" id="toc-andan-cor-cor-interpret" class="nav-link" data-scroll-target="#andan-cor-cor-interpret"><span class="header-section-number">31.3.1</span> Интерпретация значения коэффициента корреляции</a>
+  <li><a href="#andan-cor-cor-interpret" id="toc-andan-cor-cor-interpret" class="nav-link" data-scroll-target="#andan-cor-cor-interpret"><span class="header-section-number">33.3.1</span> Интерпретация значения коэффициента корреляции</a>
   <ul class="collapse">
-  <li><a href="#andan-cor-cor-interpret-force-direction" id="toc-andan-cor-cor-interpret-force-direction" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-force-direction"><span class="header-section-number">31.3.1.1</span> Сила и направление взаимосвязи</a></li>
-  <li><a href="#andan-cor-cor-interpret-slope" id="toc-andan-cor-cor-interpret-slope" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-slope"><span class="header-section-number">31.3.1.2</span> Наклон линии тренда</a></li>
-  <li><a href="#andan-cor-cor-interpret-linearity" id="toc-andan-cor-cor-interpret-linearity" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-linearity"><span class="header-section-number">31.3.1.3</span> Линейность взаимосвязи</a></li>
-  <li><a href="#andan-cor-cor-interpret-independence" id="toc-andan-cor-cor-interpret-independence" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-independence"><span class="header-section-number">31.3.1.4</span> Некоррелированность и независимость</a></li>
+  <li><a href="#andan-cor-cor-interpret-force-direction" id="toc-andan-cor-cor-interpret-force-direction" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-force-direction"><span class="header-section-number">33.3.1.1</span> Сила и направление взаимосвязи</a></li>
+  <li><a href="#andan-cor-cor-interpret-slope" id="toc-andan-cor-cor-interpret-slope" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-slope"><span class="header-section-number">33.3.1.2</span> Наклон линии тренда</a></li>
+  <li><a href="#andan-cor-cor-interpret-linearity" id="toc-andan-cor-cor-interpret-linearity" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-linearity"><span class="header-section-number">33.3.1.3</span> Линейность взаимосвязи</a></li>
+  <li><a href="#andan-cor-cor-interpret-independence" id="toc-andan-cor-cor-interpret-independence" class="nav-link" data-scroll-target="#andan-cor-cor-interpret-independence"><span class="header-section-number">33.3.1.4</span> Некоррелированность и независимость</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#andan-cor-pearson" id="toc-andan-cor-pearson" class="nav-link" data-scroll-target="#andan-cor-pearson"><span class="header-section-number">31.4</span> Коэффициент корреляции Пирсона</a>
+  <li><a href="#andan-cor-pearson" id="toc-andan-cor-pearson" class="nav-link" data-scroll-target="#andan-cor-pearson"><span class="header-section-number">33.4</span> Коэффициент корреляции Пирсона</a>
   <ul>
-  <li><a href="#andan-cor-pearson-sig" id="toc-andan-cor-pearson-sig" class="nav-link" data-scroll-target="#andan-cor-pearson-sig"><span class="header-section-number">31.4.1</span> Тестирование статистической значимости коэффициента корреляции</a></li>
-  <li><a href="#andan-cor-pearson-ci" id="toc-andan-cor-pearson-ci" class="nav-link" data-scroll-target="#andan-cor-pearson-ci"><span class="header-section-number">31.4.2</span> Доверительный интервал для коэффициента корреляции</a></li>
-  <li><a href="#точность-оценки-коэффициента-корреляции" id="toc-точность-оценки-коэффициента-корреляции" class="nav-link" data-scroll-target="#точность-оценки-коэффициента-корреляции"><span class="header-section-number">31.4.3</span> Точность оценки коэффициента корреляции</a></li>
-  <li><a href="#andan-cor-effectsize" id="toc-andan-cor-effectsize" class="nav-link" data-scroll-target="#andan-cor-effectsize"><span class="header-section-number">31.4.4</span> Размер эффекта для коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-pearson-sig" id="toc-andan-cor-pearson-sig" class="nav-link" data-scroll-target="#andan-cor-pearson-sig"><span class="header-section-number">33.4.1</span> Тестирование статистической значимости коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-pearson-ci" id="toc-andan-cor-pearson-ci" class="nav-link" data-scroll-target="#andan-cor-pearson-ci"><span class="header-section-number">33.4.2</span> Доверительный интервал для коэффициента корреляции</a></li>
+  <li><a href="#точность-оценки-коэффициента-корреляции" id="toc-точность-оценки-коэффициента-корреляции" class="nav-link" data-scroll-target="#точность-оценки-коэффициента-корреляции"><span class="header-section-number">33.4.3</span> Точность оценки коэффициента корреляции</a></li>
+  <li><a href="#andan-cor-effectsize" id="toc-andan-cor-effectsize" class="nav-link" data-scroll-target="#andan-cor-effectsize"><span class="header-section-number">33.4.4</span> Размер эффекта для коэффициента корреляции</a></li>
   </ul></li>
-  <li><a href="#andan-cor-pearson-in-r" id="toc-andan-cor-pearson-in-r" class="nav-link" data-scroll-target="#andan-cor-pearson-in-r"><span class="header-section-number">31.5</span> Корреляция Пирсона в R</a></li>
-  <li><a href="#andan-cor-scales" id="toc-andan-cor-scales" class="nav-link" data-scroll-target="#andan-cor-scales"><span class="header-section-number">31.6</span> Коэффициенты корреляции для разных шкал</a>
+  <li><a href="#andan-cor-pearson-in-r" id="toc-andan-cor-pearson-in-r" class="nav-link" data-scroll-target="#andan-cor-pearson-in-r"><span class="header-section-number">33.5</span> Корреляция Пирсона в R</a></li>
+  <li><a href="#andan-cor-scales" id="toc-andan-cor-scales" class="nav-link" data-scroll-target="#andan-cor-scales"><span class="header-section-number">33.6</span> Коэффициенты корреляции для разных шкал</a>
   <ul>
-  <li><a href="#andan-cor-rank" id="toc-andan-cor-rank" class="nav-link" data-scroll-target="#andan-cor-rank"><span class="header-section-number">31.6.1</span> Ранговые коэффициенты корреляции</a></li>
-  <li><a href="#andan-cor-spearman" id="toc-andan-cor-spearman" class="nav-link" data-scroll-target="#andan-cor-spearman"><span class="header-section-number">31.6.2</span> Коэффициент корреляции Спирмена</a></li>
-  <li><a href="#andan-cor-kendall" id="toc-andan-cor-kendall" class="nav-link" data-scroll-target="#andan-cor-kendall"><span class="header-section-number">31.6.3</span> Коэффициент корреляции Кенделла</a></li>
-  <li><a href="#andan-cor-pointbiserial" id="toc-andan-cor-pointbiserial" class="nav-link" data-scroll-target="#andan-cor-pointbiserial"><span class="header-section-number">31.6.4</span> Точечно-бисериальная корреляция</a></li>
-  <li><a href="#andan-cor-rankbiserial" id="toc-andan-cor-rankbiserial" class="nav-link" data-scroll-target="#andan-cor-rankbiserial"><span class="header-section-number">31.6.5</span> Рангово-бисериальная корреляция</a></li>
-  <li><a href="#andan-cor-phi" id="toc-andan-cor-phi" class="nav-link" data-scroll-target="#andan-cor-phi"><span class="header-section-number">31.6.6</span> <span class="math inline">\(\varphi\)</span>-коэффициент</a></li>
-  <li><a href="#andan-cor-kramer" id="toc-andan-cor-kramer" class="nav-link" data-scroll-target="#andan-cor-kramer"><span class="header-section-number">31.6.7</span> Коэффициент Крамера</a></li>
+  <li><a href="#andan-cor-rank" id="toc-andan-cor-rank" class="nav-link" data-scroll-target="#andan-cor-rank"><span class="header-section-number">33.6.1</span> Ранговые коэффициенты корреляции</a></li>
+  <li><a href="#andan-cor-spearman" id="toc-andan-cor-spearman" class="nav-link" data-scroll-target="#andan-cor-spearman"><span class="header-section-number">33.6.2</span> Коэффициент корреляции Спирмена</a></li>
+  <li><a href="#andan-cor-kendall" id="toc-andan-cor-kendall" class="nav-link" data-scroll-target="#andan-cor-kendall"><span class="header-section-number">33.6.3</span> Коэффициент корреляции Кенделла</a></li>
+  <li><a href="#andan-cor-pointbiserial" id="toc-andan-cor-pointbiserial" class="nav-link" data-scroll-target="#andan-cor-pointbiserial"><span class="header-section-number">33.6.4</span> Точечно-бисериальная корреляция</a></li>
+  <li><a href="#andan-cor-rankbiserial" id="toc-andan-cor-rankbiserial" class="nav-link" data-scroll-target="#andan-cor-rankbiserial"><span class="header-section-number">33.6.5</span> Рангово-бисериальная корреляция</a></li>
+  <li><a href="#andan-cor-phi" id="toc-andan-cor-phi" class="nav-link" data-scroll-target="#andan-cor-phi"><span class="header-section-number">33.6.6</span> <span class="math inline">\(\varphi\)</span>-коэффициент</a></li>
+  <li><a href="#andan-cor-kramer" id="toc-andan-cor-kramer" class="nav-link" data-scroll-target="#andan-cor-kramer"><span class="header-section-number">33.6.7</span> Коэффициент Крамера</a></li>
   </ul></li>
-  <li><a href="#andan-cor-scales-in-r" id="toc-andan-cor-scales-in-r" class="nav-link" data-scroll-target="#andan-cor-scales-in-r"><span class="header-section-number">31.7</span> Коэффициенты корреляции для разных шкал в R</a></li>
-  <li><a href="#andan-cor-angle-cos" id="toc-andan-cor-angle-cos" class="nav-link" data-scroll-target="#andan-cor-angle-cos"><span class="header-section-number">31.8</span> Угол между векторами</a></li>
-  <li><a href="#andan-cor-ci-details" id="toc-andan-cor-ci-details" class="nav-link" data-scroll-target="#andan-cor-ci-details"><span class="header-section-number">31.9</span> Детали доверительного интервала</a>
+  <li><a href="#andan-cor-scales-in-r" id="toc-andan-cor-scales-in-r" class="nav-link" data-scroll-target="#andan-cor-scales-in-r"><span class="header-section-number">33.7</span> Коэффициенты корреляции для разных шкал в R</a></li>
+  <li><a href="#andan-cor-angle-cos" id="toc-andan-cor-angle-cos" class="nav-link" data-scroll-target="#andan-cor-angle-cos"><span class="header-section-number">33.8</span> Угол между векторами</a></li>
+  <li><a href="#andan-cor-ci-details" id="toc-andan-cor-ci-details" class="nav-link" data-scroll-target="#andan-cor-ci-details"><span class="header-section-number">33.9</span> Детали доверительного интервала</a>
   <ul>
-  <li><a href="#andan-cor-fisher-transform" id="toc-andan-cor-fisher-transform" class="nav-link" data-scroll-target="#andan-cor-fisher-transform"><span class="header-section-number">31.9.1</span> Преобразование Фишера</a></li>
+  <li><a href="#andan-cor-fisher-transform" id="toc-andan-cor-fisher-transform" class="nav-link" data-scroll-target="#andan-cor-fisher-transform"><span class="header-section-number">33.9.1</span> Преобразование Фишера</a></li>
   </ul></li>
-  <li><a href="#andan-cor-pearsonequiv" id="toc-andan-cor-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-pearsonequiv"><span class="header-section-number">31.10</span> Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона</a>
+  <li><a href="#andan-cor-pearsonequiv" id="toc-andan-cor-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-pearsonequiv"><span class="header-section-number">33.10</span> Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона</a>
   <ul>
-  <li><a href="#andan-cor-spearman-pearsonequiv" id="toc-andan-cor-spearman-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-spearman-pearsonequiv"><span class="header-section-number">31.10.1</span> Корреляция Спирмена и корреляция Пирсона</a></li>
-  <li><a href="#andan-cor-pointbiser-pearsonequiv" id="toc-andan-cor-pointbiser-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-pointbiser-pearsonequiv"><span class="header-section-number">31.10.2</span> Точечно-бисериальная корреляция и корреляция Пирсона</a></li>
+  <li><a href="#andan-cor-spearman-pearsonequiv" id="toc-andan-cor-spearman-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-spearman-pearsonequiv"><span class="header-section-number">33.10.1</span> Корреляция Спирмена и корреляция Пирсона</a></li>
+  <li><a href="#andan-cor-pointbiser-pearsonequiv" id="toc-andan-cor-pointbiser-pearsonequiv" class="nav-link" data-scroll-target="#andan-cor-pointbiser-pearsonequiv"><span class="header-section-number">33.10.2</span> Точечно-бисериальная корреляция и корреляция Пирсона</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -720,45 +706,45 @@ window.Quarto = {
 <p>При изучении <a href="./part-desc.html">описательной статистики</a> мы рассматривали отдельные переменные и описывали их поведение на нашей выборке. Однако в ситуации реального исследования нас интересуют взаимосвязи между различными переменными — это то, ради чего мы затеваем наше исследование. Мы хотим узнать, как различные переменные связаны друг с другом, и ровно это мы и закладываем в наши гипотезы. Что ж, давайте начнём знакомиться с инструментами, которые позволят получить ответы на подобные вопросы.</p>
 <p>Не будет преувеличением сказать, что корреляция есть база и основа всех методов анализа данных. Именно поэтому мы начинаем с неё. Итак, в путь!</p>
 </div>
-<section id="andan-cor-covariance" class="level2" data-number="31.1">
-<h2 data-number="31.1" class="anchored" data-anchor-id="andan-cor-covariance"><span class="header-section-number">31.1</span> Совместная изменчивость признаков</h2>
+<section id="andan-cor-covariance" class="level2" data-number="33.1">
+<h2 data-number="33.1" class="anchored" data-anchor-id="andan-cor-covariance"><span class="header-section-number">33.1</span> Совместная изменчивость признаков</h2>
 <div class="lab-junior">
 
 </div>
-<p>Пусть у нас есть две непрерывные переменные (случайные величины) <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>. Мы можем визуализировать их взаимосвязь, расположив имеющиеся у нас наблюдения в осях <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>. Иначе говоря, мы можем построить следующую визуализацию (<a href="#fig-cor-scheme-pos-start" class="quarto-xref">Иллюстрация&nbsp;<span>31.1</span></a>).</p>
+<p>Пусть у нас есть две непрерывные переменные (случайные величины) <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>. Мы можем визуализировать их взаимосвязь, расположив имеющиеся у нас наблюдения в осях <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>. Иначе говоря, мы можем построить следующую визуализацию (<a href="#fig-cor-scheme-pos-start" class="quarto-xref">Иллюстрация&nbsp;<span>33.1</span></a>).</p>
 <div id="fig-cor-scheme-pos-start" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-pos-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-pos-start.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-pos-start.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;33.1: Схема визуализации взаимосвязи между двумя непрерывными переменными"><img src="img/andan-cor/cor-scheme-pos-start.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-pos-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.1: Схема визуализации взаимосвязи между двумя непрерывными переменными
+Иллюстрация&nbsp;33.1: Схема визуализации взаимосвязи между двумя непрерывными переменными
 </figcaption>
 </figure>
 </div>
-<p>Связь между переменными отчетливо опознается — с ростом значений одной переменной растут значения другой переменной. Мы даже можем примерно провести некоторую прямую, описывающую такую взаимосвязь (<a href="#fig-cor-scheme-pos-trend" class="quarto-xref">Иллюстрация&nbsp;<span>31.2</span></a>).</p>
+<p>Связь между переменными отчетливо опознается — с ростом значений одной переменной растут значения другой переменной. Мы даже можем примерно провести некоторую прямую, описывающую такую взаимосвязь (<a href="#fig-cor-scheme-pos-trend" class="quarto-xref">Иллюстрация&nbsp;<span>33.2</span></a>).</p>
 <div id="fig-cor-scheme-pos-trend" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-pos-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-pos-trend.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-pos-trend.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;33.2: Связь легко схватывается визуально"><img src="img/andan-cor/cor-scheme-pos-trend.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-pos-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.2: Связь легко схватывается визуально
+Иллюстрация&nbsp;33.2: Связь легко схватывается визуально
 </figcaption>
 </figure>
 </div>
-<p>Но пока оставим прямую в покое. Как бы нам описать имеющуюся ситуацию математически? Ну, пожалуй, не будет большим открытием, если я скажу, что мы можем посчитать средние [арифметические] по обеим переменным. Действительно, среднее — это одна из описательных статистик, и имея ряд наблюдений мы запросто сможем его посчитать. Добавим на нашу визуализацию средние по обеим переменным (<a href="#fig-cor-scheme-pos-means" class="quarto-xref">Иллюстрация&nbsp;<span>31.3</span></a>).</p>
+<p>Но пока оставим прямую в покое. Как бы нам описать имеющуюся ситуацию математически? Ну, пожалуй, не будет большим открытием, если я скажу, что мы можем посчитать средние [арифметические] по обеим переменным. Действительно, среднее — это одна из описательных статистик, и имея ряд наблюдений мы запросто сможем его посчитать. Добавим на нашу визуализацию средние по обеим переменным (<a href="#fig-cor-scheme-pos-means" class="quarto-xref">Иллюстрация&nbsp;<span>33.3</span></a>).</p>
 <div id="fig-cor-scheme-pos-means" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-pos-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-pos-means.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-pos-means.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;33.3: Средние по обеим переменным на визуализации"><img src="img/andan-cor/cor-scheme-pos-means.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-pos-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.3: Средние по обеим переменным на визуализации
+Иллюстрация&nbsp;33.3: Средние по обеим переменным на визуализации
 </figcaption>
 </figure>
 </div>
-<p>Чем нам это поможет? Средние разбили наши наблюдения на четыре части. То, в какой из частей будет находится конкретное наблюдение, описывается его отклонением по обеим переменным (<a href="#fig-cor-scheme-pos-deviations" class="quarto-xref">Иллюстрация&nbsp;<span>31.4</span></a>). Заметим, что у нас получается:</p>
+<p>Чем нам это поможет? Средние разбили наши наблюдения на четыре части. То, в какой из частей будет находится конкретное наблюдение, описывается его отклонением по обеим переменным (<a href="#fig-cor-scheme-pos-deviations" class="quarto-xref">Иллюстрация&nbsp;<span>33.4</span></a>). Заметим, что у нас получается:</p>
 <ul>
 <li>много <em>сонаправленных отклонений</em> — таких наблюдений, для которых <span class="math inline">\((x - \overline X) &gt; 0 \wedge (y - \overline Y) &gt; 0\)</span> или <span class="math inline">\((x - \overline X) &lt; 0 \wedge (y - \overline Y) &lt; 0\)</span>;.</li>
 <li>мало <em>разнонаправленных отклонений</em> — таких наблюдений, для которых <span class="math inline">\((x - \overline X) &lt; 0 \wedge (y - \overline Y) &gt; 0\)</span> или <span class="math inline">\((x - \overline X) &lt; 0 \wedge (y - \overline Y) &gt; 0\)</span>.</li>
@@ -766,14 +752,14 @@ window.Quarto = {
 <div id="fig-cor-scheme-pos-deviations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-pos-deviations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-pos-deviations.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-pos-deviations.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;33.4: Отклонения от средних по обеим переменным"><img src="img/andan-cor/cor-scheme-pos-deviations.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-pos-deviations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.4: Отклонения от средних по обеим переменным
+Иллюстрация&nbsp;33.4: Отклонения от средних по обеим переменным
 </figcaption>
 </figure>
 </div>
-<p>Как это можно использовать для описания закономерности? Давайте обратим внимание на знак произведения отклонений в каждой из частей наблюдений (<a href="#fig-cor-scheme-pos-signs" class="quarto-xref">Иллюстрация&nbsp;<span>31.5</span></a>):</p>
+<p>Как это можно использовать для описания закономерности? Давайте обратим внимание на знак произведения отклонений в каждой из частей наблюдений (<a href="#fig-cor-scheme-pos-signs" class="quarto-xref">Иллюстрация&nbsp;<span>33.5</span></a>):</p>
 <ul>
 <li>если отклонения <em>сонаправлены</em>, то их произведение <em>положительно</em>:</li>
 </ul>
@@ -782,7 +768,7 @@ window.Quarto = {
 \overset{\enclose{circle}{+}}{(x - \overline X)} \overset{\enclose{circle}{+}}{(y - \overline Y)} &amp;&gt; 0 \\
 \overset{\enclose{circle}{-}}{(x - \overline X)} \overset{\enclose{circle}{-}}{(y - \overline Y)} &amp;&gt; 0
 \end{split}
-\tag{31.1}\]</span></span></p>
+\tag{33.1}\]</span></span></p>
 <ul>
 <li>если отклонения <em>разнонаправлены</em>, то их произведение <em>отрицательно</em>:</li>
 </ul>
@@ -791,57 +777,57 @@ window.Quarto = {
 \overset{\enclose{circle}{+}}{(x - \overline X)} \overset{\enclose{circle}{-}}{(y - \overline Y)} &amp;&lt; 0 \\
 \overset{\enclose{circle}{-}}{(x - \overline X)} \overset{\enclose{circle}{+}}{(y - \overline Y)} &amp;&lt; 0
 \end{split}
-\tag{31.2}\]</span></span></p>
+\tag{33.2}\]</span></span></p>
 <div id="fig-cor-scheme-pos-signs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-pos-signs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-pos-signs.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-pos-signs.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Иллюстрация&nbsp;33.5: Знаки произведений отклонений по обеим переменным"><img src="img/andan-cor/cor-scheme-pos-signs.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-pos-signs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.5: Знаки произведений отклонений по обеим переменным
+Иллюстрация&nbsp;33.5: Знаки произведений отклонений по обеим переменным
 </figcaption>
 </figure>
 </div>
 <p>Отлично! Но нас мало интересуют отклонения для конкретных наблюдений — нам хочется узнать, как дело обстоит в целом, то есть какова (со)направленность отклонений <em>в среднем</em>. Со средним мы знакомы, давайте его посчитаем:</p>
 <p><span id="eq-mean-codeviation-gzero"><span class="math display">\[
 \frac{1}{n} \sum_{i=1}^n (x - \overline X)(y - \overline Y) &gt; 0,
-\tag{31.3}\]</span></span></p>
+\tag{33.3}\]</span></span></p>
 <p>где <span class="math inline">\(n\)</span> — количество наблюдений (для обеих переменных оно одинаково).</p>
-<p>По сути <a href="#eq-mean-codeviation-gzero" class="quarto-xref">Уравнение&nbsp;<span>31.3</span></a> описывает среднее отклонение наблюдений по двум переменным. Так как сонаправленных отклонений у нас больше, то среднее будет положительно.</p>
-<p>Хорошо. А будет ли это работать для случая, когда связь между переменными будет <em>обратной</em>? Попробуем изобразить такой случай (<a href="#fig-cor-scheme-neg-start" class="quarto-xref">Иллюстрация&nbsp;<span>31.6</span></a>).</p>
+<p>По сути <a href="#eq-mean-codeviation-gzero" class="quarto-xref">Уравнение&nbsp;<span>33.3</span></a> описывает среднее отклонение наблюдений по двум переменным. Так как сонаправленных отклонений у нас больше, то среднее будет положительно.</p>
+<p>Хорошо. А будет ли это работать для случая, когда связь между переменными будет <em>обратной</em>? Попробуем изобразить такой случай (<a href="#fig-cor-scheme-neg-start" class="quarto-xref">Иллюстрация&nbsp;<span>33.6</span></a>).</p>
 <div id="fig-cor-scheme-neg-start" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-neg-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-neg-start.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-neg-start.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Иллюстрация&nbsp;33.6: Схема визуализации обратной взаимосвязи между двумя непрерывными переменными"><img src="img/andan-cor/cor-scheme-neg-start.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-neg-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.6: Схема визуализации обратной взаимосвязи между двумя непрерывными переменными
+Иллюстрация&nbsp;33.6: Схема визуализации обратной взаимосвязи между двумя непрерывными переменными
 </figcaption>
 </figure>
 </div>
-<p>Вновь связь между переменными отчетливо опознается — с ростом значений одной переменной значения другой переменной уменьшаются. И мы вновь можем примерно провести некоторую прямую, описывающую такую взаимосвязь (<a href="#fig-cor-scheme-neg-trend" class="quarto-xref">Иллюстрация&nbsp;<span>31.7</span></a>).</p>
+<p>Вновь связь между переменными отчетливо опознается — с ростом значений одной переменной значения другой переменной уменьшаются. И мы вновь можем примерно провести некоторую прямую, описывающую такую взаимосвязь (<a href="#fig-cor-scheme-neg-trend" class="quarto-xref">Иллюстрация&nbsp;<span>33.7</span></a>).</p>
 <div id="fig-cor-scheme-neg-trend" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-neg-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-neg-trend.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-neg-trend.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Иллюстрация&nbsp;33.7: Обратная связь также легко схватывается визуально"><img src="img/andan-cor/cor-scheme-neg-trend.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-neg-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.7: Обратная связь также легко схватывается визуально
+Иллюстрация&nbsp;33.7: Обратная связь также легко схватывается визуально
 </figcaption>
 </figure>
 </div>
-<p>Опять же, оставим пока прямую, и добавим средние по нашим переменным на визуализацию (<a href="#fig-cor-scheme-neg-means" class="quarto-xref">Иллюстрация&nbsp;<span>31.8</span></a>). Они, безусловно, как и в предыдущем случае разбьют наши наблюдения на четыре части.</p>
+<p>Опять же, оставим пока прямую, и добавим средние по нашим переменным на визуализацию (<a href="#fig-cor-scheme-neg-means" class="quarto-xref">Иллюстрация&nbsp;<span>33.8</span></a>). Они, безусловно, как и в предыдущем случае разбьют наши наблюдения на четыре части.</p>
 <div id="fig-cor-scheme-neg-means" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-neg-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-neg-means.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-neg-means.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Иллюстрация&nbsp;33.8: Средние по обеим переменным на визуализации обратной связи"><img src="img/andan-cor/cor-scheme-neg-means.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-neg-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.8: Средние по обеим переменным на визуализации обратной связи
+Иллюстрация&nbsp;33.8: Средние по обеим переменным на визуализации обратной связи
 </figcaption>
 </figure>
 </div>
-<p>Однако в этом случае у нас получится, что (<a href="#fig-cor-scheme-neg-deviations" class="quarto-xref">Иллюстрация&nbsp;<span>31.9</span></a>):</p>
+<p>Однако в этом случае у нас получится, что (<a href="#fig-cor-scheme-neg-deviations" class="quarto-xref">Иллюстрация&nbsp;<span>33.9</span></a>):</p>
 <ul>
 <li>много <em>разнонаправленных отклонений</em> — таких наблюдений, для которых <span class="math inline">\((x - \overline X) &lt; 0 \wedge (y - \overline Y) &gt; 0\)</span> или <span class="math inline">\((x - \overline X) &lt; 0 \wedge (y - \overline Y) &gt; 0\)</span>.</li>
 <li>мало <em>сонаправленных отклонений</em> — таких наблюдений, для которых <span class="math inline">\((x - \overline X) &gt; 0 \wedge (y - \overline Y) &gt; 0\)</span> или <span class="math inline">\((x - \overline X) &lt; 0 \wedge (y - \overline Y) &lt; 0\)</span>;.</li>
@@ -849,24 +835,24 @@ window.Quarto = {
 <div id="fig-cor-scheme-neg-deviations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-neg-deviations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-neg-deviations.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-neg-deviations.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Иллюстрация&nbsp;33.9: Отклонения от средних по обеим переменным при обратной связи"><img src="img/andan-cor/cor-scheme-neg-deviations.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-neg-deviations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.9: Отклонения от средних по обеим переменным при обратной связи
+Иллюстрация&nbsp;33.9: Отклонения от средних по обеим переменным при обратной связи
 </figcaption>
 </figure>
 </div>
-<p>Имея в виду знаки произведений отклонений (<a href="#eq-deviation-same-direct" class="quarto-xref"><span>31.1</span></a> и <a href="#eq-deviation-diff-direct" class="quarto-xref"><span>31.2</span></a>, <a href="#fig-cor-scheme-neg-signs" class="quarto-xref">Иллюстрация&nbsp;<span>31.10</span></a>), можем заметить, что в этом случае среднее отклонение наблюдений по двум переменным будет отрицательным:</p>
+<p>Имея в виду знаки произведений отклонений (<a href="#eq-deviation-same-direct" class="quarto-xref"><span>33.1</span></a> и <a href="#eq-deviation-diff-direct" class="quarto-xref"><span>33.2</span></a>, <a href="#fig-cor-scheme-neg-signs" class="quarto-xref">Иллюстрация&nbsp;<span>33.10</span></a>), можем заметить, что в этом случае среднее отклонение наблюдений по двум переменным будет отрицательным:</p>
 <p><span id="eq-mean-codeviation-lzero"><span class="math display">\[
 \frac{1}{n} \sum_{i=1}^n (x - \overline X)(y - \overline Y) &lt; 0,
-\tag{31.4}\]</span></span></p>
+\tag{33.4}\]</span></span></p>
 <div id="fig-cor-scheme-neg-signs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-scheme-neg-signs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/andan-cor/cor-scheme-neg-signs.jpg" class="img-fluid figure-img">
+<a href="img/andan-cor/cor-scheme-neg-signs.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Иллюстрация&nbsp;33.10: Знаки произведений отклонений по обеим переменным при обратной связи"><img src="img/andan-cor/cor-scheme-neg-signs.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-scheme-neg-signs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.10: Знаки произведений отклонений по обеим переменным при обратной связи
+Иллюстрация&nbsp;33.10: Знаки произведений отклонений по обеим переменным при обратной связи
 </figcaption>
 </figure>
 </div>
@@ -876,12 +862,12 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Мы получили некое выражение (<a href="#eq-mean-codeviation-gzero" class="quarto-xref"><span>31.3</span></a> и <a href="#eq-mean-codeviation-lzero" class="quarto-xref"><span>31.4</span></a>), по знаку которого мы можем судить о направлении связи между переменными — прямая (<a href="#fig-cor-scheme-pos-start" class="quarto-xref"><span>31.1</span></a>) или обратная (<a href="#fig-cor-scheme-neg-start" class="quarto-xref"><span>31.6</span></a>).</p>
+<p>Мы получили некое выражение (<a href="#eq-mean-codeviation-gzero" class="quarto-xref"><span>33.3</span></a> и <a href="#eq-mean-codeviation-lzero" class="quarto-xref"><span>33.4</span></a>), по знаку которого мы можем судить о направлении связи между переменными — прямая (<a href="#fig-cor-scheme-pos-start" class="quarto-xref"><span>33.1</span></a>) или обратная (<a href="#fig-cor-scheme-neg-start" class="quarto-xref"><span>33.6</span></a>).</p>
 </div>
 </div>
 </div>
 <div id="exr-cov-0" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.1</strong></span> Мы рассмотрели выше случаи, когда связь между переменными (случайными величинами) есть. Однако вполне возможна ситуация, когда связь между переменными отсутствует.</p>
+<p><span class="theorem-title"><strong>Задание 33.1</strong></span> Мы рассмотрели выше случаи, когда связь между переменными (случайными величинами) есть. Однако вполне возможна ситуация, когда связь между переменными отсутствует.</p>
 <p>Постройте схематичную визуализацию для такого случая и на основе неё выясните, что нам скажет найденное нами выражение.</p>
 </div>
 <div class="proof solution">
@@ -890,14 +876,14 @@ window.Quarto = {
 <p>Ситуацию отсутствия взаимосвязи между двумя переменными можно представить так:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/andan-cor/cor-scheme-zero-start.jpg" class="img-fluid figure-img"></p>
+<p><a href="img/andan-cor/cor-scheme-zero-start.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Схема визуализации отсутствия взаимосвязи между двумя непрерывными переменными"><img src="img/andan-cor/cor-scheme-zero-start.jpg" class="img-fluid figure-img" alt="Схема визуализации отсутствия взаимосвязи между двумя непрерывными переменными"></a></p>
 <figcaption>Схема визуализации отсутствия взаимосвязи между двумя непрерывными переменными</figcaption>
 </figure>
 </div>
 <p>Добавив знаки отклонений от средних значений, увидим, что сонаправленных и разнонаправленных отклонений оказывается примерно поровну.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/andan-cor/cor-scheme-zero-signs.jpg" class="img-fluid figure-img"></p>
+<p><a href="img/andan-cor/cor-scheme-zero-signs.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Знаки произведений отклонений по обеим переменным при отсутствии связи"><img src="img/andan-cor/cor-scheme-zero-signs.jpg" class="img-fluid figure-img" alt="Знаки произведений отклонений по обеим переменным при отсутствии связи"></a></p>
 <figcaption>Знаки произведений отклонений по обеим переменным при отсутствии связи</figcaption>
 </figure>
 </div>
@@ -908,23 +894,23 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="andan-cor-cov" class="level2" data-number="31.2">
-<h2 data-number="31.2" class="anchored" data-anchor-id="andan-cor-cov"><span class="header-section-number">31.2</span> Ковариация</h2>
+<section id="andan-cor-cov" class="level2" data-number="33.2">
+<h2 data-number="33.2" class="anchored" data-anchor-id="andan-cor-cov"><span class="header-section-number">33.2</span> Ковариация</h2>
 <div class="lab-junior">
 
 </div>
 <p>По сути, в предыдущем разделе мы изучали <em>ковариацию</em>.</p>
 <div id="def-cov" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 31.1</strong></span> <strong>Ковариация</strong> — мера совместной изменчивости двух переменных (случайных величин).</p>
+<p><span class="theorem-title"><strong>Определение 33.1</strong></span> <strong>Ковариация</strong> — мера совместной изменчивости двух переменных (случайных величин).</p>
 </div>
 <p>Само название <strong>ковариация (covariance)</strong> обозначает <strong>совместную</strong> (<strong>ко-</strong>) <strong>изменчивость</strong> (<strong>-вариацию</strong>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Более того, мы практически получили формулу расчета ковариации двух переменных — <a href="#eq-mean-codeviation-gzero" class="quarto-xref">Уравнение&nbsp;<span>31.3</span></a> (и <a href="#eq-mean-codeviation-lzero" class="quarto-xref"><span>31.4</span></a>). Однако полученные нами формулы будут давать смещённую оценку ковариации. Причина абсолютно аналогична той, что была в дисперсии — мы используем выборочные средние, чтобы рассчитать отклонения. Для того, чтобы получить несмещенную оценку ковариации, необходимо скорректировать формулу — делить не на <span class="math inline">\(n\)</span> (количество наблюдений), а на <span class="math inline">\(n-1\)</span>. Тогда получим, что ковариацию двух переменных можно вычислить по имеющимся наблюдениям по формуле:</p>
+<p>Более того, мы практически получили формулу расчета ковариации двух переменных — <a href="#eq-mean-codeviation-gzero" class="quarto-xref">Уравнение&nbsp;<span>33.3</span></a> (и <a href="#eq-mean-codeviation-lzero" class="quarto-xref"><span>33.4</span></a>). Однако полученные нами формулы будут давать смещённую оценку ковариации. Причина абсолютно аналогична той, что была в дисперсии — мы используем выборочные средние, чтобы рассчитать отклонения. Для того, чтобы получить несмещенную оценку ковариации, необходимо скорректировать формулу — делить не на <span class="math inline">\(n\)</span> (количество наблюдений), а на <span class="math inline">\(n-1\)</span>. Тогда получим, что ковариацию двух переменных можно вычислить по имеющимся наблюдениям по формуле:</p>
 <p><span id="eq-cov-sample"><span class="math display">\[
 \text{cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y),
-\tag{31.5}\]</span></span></p>
+\tag{33.5}\]</span></span></p>
 <p>где <span class="math inline">\(\text{cov}(X, Y)\)</span> — ковариация переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>, <span class="math inline">\(n\)</span> — количество наблюдений, <span class="math inline">\(\overline X\)</span> и <span class="math inline">\(\overline Y\)</span> — выборочные средние.</p>
 <div id="exr-cov-xx" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.2</strong></span> Чему будет равна ковариация переменной с самой собой, то есть <span class="math inline">\(\text{cov}(X, X)\)</span>?</p>
+<p><span class="theorem-title"><strong>Задание 33.2</strong></span> Чему будет равна ковариация переменной с самой собой, то есть <span class="math inline">\(\text{cov}(X, X)\)</span>?</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
@@ -937,12 +923,12 @@ window.Quarto = {
 \]</span></p>
 </div>
 </div>
-<section id="andan-cor-cov-interpret" class="level3" data-number="31.2.1">
-<h3 data-number="31.2.1" class="anchored" data-anchor-id="andan-cor-cov-interpret"><span class="header-section-number">31.2.1</span> Интерпретация значения ковариации</h3>
+<section id="andan-cor-cov-interpret" class="level3" data-number="33.2.1">
+<h3 data-number="33.2.1" class="anchored" data-anchor-id="andan-cor-cov-interpret"><span class="header-section-number">33.2.1</span> Интерпретация значения ковариации</h3>
 <div class="lab-junior">
 
 </div>
-<p>Наша поправка в формуле <a href="#eq-cov-sample" class="quarto-xref"><span>31.5</span></a> не повлияет на наблюдения, произведенные выше. Мы отметили, что</p>
+<p>Наша поправка в формуле <a href="#eq-cov-sample" class="quarto-xref"><span>33.5</span></a> не повлияет на наблюдения, произведенные выше. Мы отметили, что</p>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -952,13 +938,13 @@ window.Quarto = {
 <ul>
 <li>в случае <strong>прямой взаимосвязи</strong> между переменными <strong>ковариация положительна</strong>,</li>
 <li>в случае <strong>обратной взаимосвязи</strong> между переменными <strong>ковариация отрицательна</strong>,</li>
-<li>в случае <strong>отсутствия взаимосвязи</strong> между переменными <strong>ковариация равна нулю</strong> (см. <a href="#exr-cov-0" class="quarto-xref">Задание&nbsp;<span>31.1</span></a>).</li>
+<li>в случае <strong>отсутствия взаимосвязи</strong> между переменными <strong>ковариация равна нулю</strong> (см. <a href="#exr-cov-0" class="quarto-xref">Задание&nbsp;<span>33.1</span></a>).</li>
 </ul>
 </div>
 </div>
 </div>
 <p>Таким образом, теперь на основе ковариации мы можем определять <strong>направление</strong> связи.</p>
-<p>Можно ли что-либо сказать о <em>силе связи</em> на основе ковариации? Тут хорошо бы сначала определиться с тем, что вообще такое сила связи. Не совсем понятно, как это определить строго, но давайте посмотрим на следующие картинки (<a href="#fig-cov-var" class="quarto-xref">Иллюстрация&nbsp;<span>31.11</span></a>).</p>
+<p>Можно ли что-либо сказать о <em>силе связи</em> на основе ковариации? Тут хорошо бы сначала определиться с тем, что вообще такое сила связи. Не совсем понятно, как это определить строго, но давайте посмотрим на следующие картинки (<a href="#fig-cov-var" class="quarto-xref">Иллюстрация&nbsp;<span>33.11</span></a>).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Код создания симуляции</summary>
@@ -1017,7 +1003,7 @@ window.Quarto = {
 <div id="fig-cov-var-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cov-var-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cov-var-1.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
+<a href="andan-cor_files/figure-html/fig-cov-var-1.png" class="lightbox" data-gallery="fig-cov-var" title="Иллюстрация&nbsp;33.11&nbsp;(a): X_1 \thicksim \mathcal{N}(0, 1), \,Y_1 \thicksim \mathcal{N}(2, 0.95), \text{cov}(X_1, Y_1) = 0.23"><img src="andan-cor_files/figure-html/fig-cov-var-1.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) <span class="math inline">\(X_1 \thicksim \mathcal{N}(0, 1)\)</span>, <span class="math inline">\(\,Y_1 \thicksim \mathcal{N}(2, 0.95)\)</span>, <span class="math inline">\(\text{cov}(X_1, Y_1) = 0.23\)</span>
@@ -1029,7 +1015,7 @@ window.Quarto = {
 <div id="fig-cov-var-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cov-var-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cov-var-2.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
+<a href="andan-cor_files/figure-html/fig-cov-var-2.png" class="lightbox" data-gallery="fig-cov-var" title="Иллюстрация&nbsp;33.11&nbsp;(b): X_2 \thicksim \mathcal{N}(0, 4), \,Y_2 \thicksim \mathcal{N}(2, 3.30), \text{cov}(X_2, Y_2) = 1.02"><img src="andan-cor_files/figure-html/fig-cov-var-2.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) <span class="math inline">\(X_2 \thicksim \mathcal{N}(0, 4)\)</span>, <span class="math inline">\(\,Y_2 \thicksim \mathcal{N}(2, 3.30)\)</span>, <span class="math inline">\(\text{cov}(X_2, Y_2) = 1.02\)</span>
@@ -1043,7 +1029,7 @@ window.Quarto = {
 <div id="fig-cov-var-3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cov-var-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cov-var-3.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
+<a href="andan-cor_files/figure-html/fig-cov-var-3.png" class="lightbox" data-gallery="fig-cov-var" title="Иллюстрация&nbsp;33.11&nbsp;(c): X_3 \thicksim \mathcal{N}(0, 1), \,Y_3 \thicksim \mathcal{N}(2, 0.80), \text{cov}(X_3, Y_3) = -0.81"><img src="andan-cor_files/figure-html/fig-cov-var-3.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) <span class="math inline">\(X_3 \thicksim \mathcal{N}(0, 1)\)</span>, <span class="math inline">\(\,Y_3 \thicksim \mathcal{N}(2, 0.80)\)</span>, <span class="math inline">\(\text{cov}(X_3, Y_3) = -0.81\)</span>
@@ -1055,7 +1041,7 @@ window.Quarto = {
 <div id="fig-cov-var-4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cov-var-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cov-var-4.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672">
+<a href="andan-cor_files/figure-html/fig-cov-var-4.png" class="lightbox" data-gallery="fig-cov-var" title="Иллюстрация&nbsp;33.11&nbsp;(d): X_4 \thicksim \mathcal{N}(0, 16), \,Y_4 \thicksim \mathcal{N}(4, 10.20), \text{cov}(X_4, Y_4) = -10.71"><img src="andan-cor_files/figure-html/fig-cov-var-4.png" class="img-fluid figure-img" data-ref-parent="fig-cov-var" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cov-var-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (d) <span class="math inline">\(X_4 \thicksim \mathcal{N}(0, 16)\)</span>, <span class="math inline">\(\,Y_4 \thicksim \mathcal{N}(4, 10.20)\)</span>, <span class="math inline">\(\text{cov}(X_4, Y_4) = -10.71\)</span>
@@ -1066,11 +1052,11 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cov-var-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.11: Визуализация симуляций при разных параметрах распределений случайных величин <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> (<span class="math inline">\(n = 100\)</span>)
+Иллюстрация&nbsp;33.11: Визуализация симуляций при разных параметрах распределений случайных величин <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> (<span class="math inline">\(n = 100\)</span>)
 </figcaption>
 </figure>
 </div>
-<p>Видно, что связи между <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> на первых двух визуализациях (<a href="#fig-cov-var-1" class="quarto-xref"><span>31.11 (a)</span></a> и <a href="#fig-cov-var-2" class="quarto-xref"><span>31.11 (b)</span></a>) прямые, а на двух вторых (<a href="#fig-cov-var-3" class="quarto-xref"><span>31.11 (c)</span></a> и <a href="#fig-cov-var-4" class="quarto-xref"><span>31.11 (d)</span></a>) — обратные. При этом также визуально мы можем сказать, что обратные связи <em>сильнее</em>, чем прямые — наблюдения активнее группируются вокруг прямой, описывающей закономерность. Однако если сравнивать между собой обе прямые или обе обратные связи, то по силе они приблизительно равны.</p>
+<p>Видно, что связи между <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> на первых двух визуализациях (<a href="#fig-cov-var-1" class="quarto-xref"><span>33.11 (a)</span></a> и <a href="#fig-cov-var-2" class="quarto-xref"><span>33.11 (b)</span></a>) прямые, а на двух вторых (<a href="#fig-cov-var-3" class="quarto-xref"><span>33.11 (c)</span></a> и <a href="#fig-cov-var-4" class="quarto-xref"><span>33.11 (d)</span></a>) — обратные. При этом также визуально мы можем сказать, что обратные связи <em>сильнее</em>, чем прямые — наблюдения активнее группируются вокруг прямой, описывающей закономерность. Однако если сравнивать между собой обе прямые или обе обратные связи, то по силе они приблизительно равны.</p>
 <p>Попробуем посчитать ковариацию между переменными в четырех имеющихся ситуациях:</p>
 <div class="cell">
 <details class="code-fold">
@@ -1088,7 +1074,7 @@ window.Quarto = {
 <div id="tbl-cov-var-values" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cov-var-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;31.1: Значения ковариаций в симуляции
+Таблица&nbsp;33.1: Значения ковариаций в симуляции
 </figcaption>
 <div aria-describedby="tbl-cov-var-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1117,8 +1103,8 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<p>Наблюдаем нечто интересное: визуально связи между <span class="math inline">\(X_1\)</span> и <span class="math inline">\(Y_1\)</span> (<a href="#fig-cov-var-1" class="quarto-xref"><span>31.11 (a)</span></a>) и между <span class="math inline">\(X_2\)</span> и <span class="math inline">\(Y_2\)</span> (<a href="#fig-cov-var-2" class="quarto-xref"><span>31.11 (b)</span></a>) примерно равны по силе, однако значения ковариаций различаются: <span class="math inline">\(\text{cov}(X_1, Y_1) =\)</span> 0.23, <span class="math inline">\(\text{cov}(X_2, Y_2) =\)</span> 1.02. Конечно, значения различаются не сильно — может быть это не так существенно? Посмотрим на обратные связи. Визуально связи между <span class="math inline">\(X_3\)</span> и <span class="math inline">\(Y_3\)</span> (<a href="#fig-cov-var-3" class="quarto-xref"><span>31.11 (c)</span></a>) и между <span class="math inline">\(X_4\)</span> и <span class="math inline">\(Y_4\)</span> (<a href="#fig-cov-var-4" class="quarto-xref"><span>31.11 (d)</span></a>) также примерно равны по силе, однако значения ковариаций существенно различаются — на целый порядок: <span class="math inline">\(\text{cov}(X_3, Y_3) =\)</span> −0.81, <span class="math inline">\(\text{cov}(X_4, Y_4) =\)</span> −10.71.</p>
-<p>Почему же ковариация так сильно различается? Всё дело в дисперсии. Давайте рассчитаем дисперсию переменных и сопоставим её с ковариацией (<a href="#tbl-cov-var-vars" class="quarto-xref">Таблица&nbsp;<span>31.2</span></a>). Мы видим, что в случаях, где дисперсия переменных выше, ковариация оказывается также выше.</p>
+<p>Наблюдаем нечто интересное: визуально связи между <span class="math inline">\(X_1\)</span> и <span class="math inline">\(Y_1\)</span> (<a href="#fig-cov-var-1" class="quarto-xref"><span>33.11 (a)</span></a>) и между <span class="math inline">\(X_2\)</span> и <span class="math inline">\(Y_2\)</span> (<a href="#fig-cov-var-2" class="quarto-xref"><span>33.11 (b)</span></a>) примерно равны по силе, однако значения ковариаций различаются: <span class="math inline">\(\text{cov}(X_1, Y_1) =\)</span> 0.23, <span class="math inline">\(\text{cov}(X_2, Y_2) =\)</span> 1.02. Конечно, значения различаются не сильно — может быть это не так существенно? Посмотрим на обратные связи. Визуально связи между <span class="math inline">\(X_3\)</span> и <span class="math inline">\(Y_3\)</span> (<a href="#fig-cov-var-3" class="quarto-xref"><span>33.11 (c)</span></a>) и между <span class="math inline">\(X_4\)</span> и <span class="math inline">\(Y_4\)</span> (<a href="#fig-cov-var-4" class="quarto-xref"><span>33.11 (d)</span></a>) также примерно равны по силе, однако значения ковариаций существенно различаются — на целый порядок: <span class="math inline">\(\text{cov}(X_3, Y_3) =\)</span> −0.81, <span class="math inline">\(\text{cov}(X_4, Y_4) =\)</span> −10.71.</p>
+<p>Почему же ковариация так сильно различается? Всё дело в дисперсии. Давайте рассчитаем дисперсию переменных и сопоставим её с ковариацией (<a href="#tbl-cov-var-vars" class="quarto-xref">Таблица&nbsp;<span>33.2</span></a>). Мы видим, что в случаях, где дисперсия переменных выше, ковариация оказывается также выше.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Код расчета вариаций</summary>
@@ -1156,7 +1142,7 @@ window.Quarto = {
 <div id="tbl-cov-var-vars" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cov-var-vars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;31.2: Значения выборочных вариаций (дисперсий) и ковариаций в симуляции
+Таблица&nbsp;33.2: Значения выборочных вариаций (дисперсий) и ковариаций в симуляции
 </figcaption>
 <div aria-describedby="tbl-cov-var-vars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1217,8 +1203,8 @@ window.Quarto = {
 <p>И всё же сила связи нам в исследованиях была бы очень интересна — нам необходима какая-то новая статистика, лишенная этого недостатка ковариации.</p>
 </section>
 </section>
-<section id="andan-cor-correlation" class="level2" data-number="31.3">
-<h2 data-number="31.3" class="anchored" data-anchor-id="andan-cor-correlation"><span class="header-section-number">31.3</span> Корреляция</h2>
+<section id="andan-cor-correlation" class="level2" data-number="33.3">
+<h2 data-number="33.3" class="anchored" data-anchor-id="andan-cor-correlation"><span class="header-section-number">33.3</span> Корреляция</h2>
 <div class="lab-junior">
 
 </div>
@@ -1236,9 +1222,9 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 \text{cov}(X^\star, Y^\star) &amp;= \frac{1}{n-1} \sum_{i=1}^n (x^\star_i - \overline X^\star)(y^\star_i - \overline Y^\star) =\\
 &amp;= \frac{1}{n-1} \sum_{i=1}^n x^\star_i y^\star_i \overset{\text{def}}{=} \text{cor}(X, Y)
 \end{split}
-\tag{31.6}\]</span></span></p>
+\tag{33.6}\]</span></span></p>
 <div id="def-cor-stand-vars" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 31.2</strong></span> <strong>Коэффициентом корреляции</strong> называется ковариация стандартизированных случайных величин.</p>
+<p><span class="theorem-title"><strong>Определение 33.2</strong></span> <strong>Коэффициентом корреляции</strong> называется ковариация стандартизированных случайных величин.</p>
 </div>
 <p>Мы можем не стандартизировать переменные изначально, а выполнить преобразования по ходу расчета корреляции. Тогда получим, что</p>
 <p><span id="eq-cor-stand-cov"><span class="math display">\[
@@ -1249,9 +1235,9 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 &amp;= \frac{1}{\text{sd}_X \, \text{sd}_Y} \left(\frac{1}{n-1} \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \right)= \\
 &amp;= \frac{\text{cov}(X,Y)}{\text{sd}_X \, \text{sd}_Y}
 \end{split}
-\tag{31.7}\]</span></span></p>
+\tag{33.7}\]</span></span></p>
 <div id="def-cor-stand-cov" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 31.3</strong></span> <strong>Коэффициентом корреляции</strong> называется стандартизированное значение ковариации.</p>
+<p><span class="theorem-title"><strong>Определение 33.3</strong></span> <strong>Коэффициентом корреляции</strong> называется стандартизированное значение ковариации.</p>
 </div>
 <p>Стандартизация случайных величин — или же стандартизация значения ковариации — приводит к следующим свойствам коэффициента корреляции:</p>
 <div class="callout callout-style-simple callout-important no-icon">
@@ -1280,19 +1266,19 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 </div>
 </div>
 </div>
-<section id="andan-cor-cor-interpret" class="level3" data-number="31.3.1">
-<h3 data-number="31.3.1" class="anchored" data-anchor-id="andan-cor-cor-interpret"><span class="header-section-number">31.3.1</span> Интерпретация значения коэффициента корреляции</h3>
+<section id="andan-cor-cor-interpret" class="level3" data-number="33.3.1">
+<h3 data-number="33.3.1" class="anchored" data-anchor-id="andan-cor-cor-interpret"><span class="header-section-number">33.3.1</span> Интерпретация значения коэффициента корреляции</h3>
 <div class="lab-junior">
 
 </div>
 <p>Итак, мы выяснили, как вычисляется коэффициент корреляции. Что мы можем сказать по его значению?</p>
 <p>Прежде всего, давайте отметим следующее:</p>
 <div id="def-correlation" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 31.4</strong></span> <strong>Корреляция</strong> — мера <em>линейной</em> взаимосвязи двух переменных (случайных величин).</p>
+<p><span class="theorem-title"><strong>Определение 33.4</strong></span> <strong>Корреляция</strong> — мера <em>линейной</em> взаимосвязи двух переменных (случайных величин).</p>
 </div>
 <p>Теперь разберемся с этим подробнее.</p>
-<section id="andan-cor-cor-interpret-force-direction" class="level4" data-number="31.3.1.1">
-<h4 data-number="31.3.1.1" class="anchored" data-anchor-id="andan-cor-cor-interpret-force-direction"><span class="header-section-number">31.3.1.1</span> Сила и направление взаимосвязи</h4>
+<section id="andan-cor-cor-interpret-force-direction" class="level4" data-number="33.3.1.1">
+<h4 data-number="33.3.1.1" class="anchored" data-anchor-id="andan-cor-cor-interpret-force-direction"><span class="header-section-number">33.3.1.1</span> Сила и направление взаимосвязи</h4>
 <div class="lab-junior">
 
 </div>
@@ -1330,11 +1316,11 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 </div>
 </div>
 </div>
-<p>С другими значениями возникают сложности. Базово, конечно, можно разделить диапазон на какие-либо равные части и сопоставить им некоторую интерпретацию. Один из вариантов представлен в таблице <a href="#tbl-cor-interpret-basic" class="quarto-xref"><span>31.3</span></a>.</p>
+<p>С другими значениями возникают сложности. Базово, конечно, можно разделить диапазон на какие-либо равные части и сопоставить им некоторую интерпретацию. Один из вариантов представлен в таблице <a href="#tbl-cor-interpret-basic" class="quarto-xref"><span>33.3</span></a>.</p>
 <div id="tbl-cor-interpret-basic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cor-interpret-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;31.3: Один из базовых вариантов интерпретации значения коэффициента корреляции как меры силы взаимосвязи между переменными
+Таблица&nbsp;33.3: Один из базовых вариантов интерпретации значения коэффициента корреляции как меры силы взаимосвязи между переменными
 </figcaption>
 <div aria-describedby="tbl-cor-interpret-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1421,16 +1407,16 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div id="fig-cor-force" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-force-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-force-1.png" class="img-fluid figure-img" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-force-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Иллюстрация&nbsp;33.12: Визуализация силы взаимосвязи переменных X и Y и соответствующих значений коэффициента корреляции (n = 500)"><img src="andan-cor_files/figure-html/fig-cor-force-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-force-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.12: Визуализация силы взаимосвязи переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> и соответствующих значений коэффициента корреляции (<span class="math inline">\(n = 500\)</span>)
+Иллюстрация&nbsp;33.12: Визуализация силы взаимосвязи переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> и соответствующих значений коэффициента корреляции (<span class="math inline">\(n = 500\)</span>)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Такой подход имеет право на существование, и вполне интуитивен, если присмотреться к визуализации различных значений корреляции (<a href="#fig-cor-force" class="quarto-xref">Иллюстрация&nbsp;<span>31.12</span></a>). Однако необходимо помнить две важные вещи:</p>
+<p>Такой подход имеет право на существование, и вполне интуитивен, если присмотреться к визуализации различных значений корреляции (<a href="#fig-cor-force" class="quarto-xref">Иллюстрация&nbsp;<span>33.12</span></a>). Однако необходимо помнить две важные вещи:</p>
 <ul>
 <li>разные области науки — как и разные области психологии — используют <strong>разные измерительные инструменты</strong>
 <ul>
@@ -1444,16 +1430,16 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <p>ПРИМЕР</p>
 <p>В силу такого положения дел для разных областей науки существуют свои гайдлайны относительно пороговых значений для интерпретации коэффициента корреляции.</p>
 </section>
-<section id="andan-cor-cor-interpret-slope" class="level4" data-number="31.3.1.2">
-<h4 data-number="31.3.1.2" class="anchored" data-anchor-id="andan-cor-cor-interpret-slope"><span class="header-section-number">31.3.1.2</span> Наклон линии тренда</h4>
+<section id="andan-cor-cor-interpret-slope" class="level4" data-number="33.3.1.2">
+<h4 data-number="33.3.1.2" class="anchored" data-anchor-id="andan-cor-cor-interpret-slope"><span class="header-section-number">33.3.1.2</span> Наклон линии тренда</h4>
 <div class="lab-junior">
 
 </div>
-<p>Рассматривая визуализацию <a href="#fig-cor-force" class="quarto-xref"><span>31.12</span></a> хочется заключить, что корреляция определяет угол наклона линии тренда. Такое желание интуитивно оправдано, однако <strong>подобное заключение будет неверным</strong>.</p>
+<p>Рассматривая визуализацию <a href="#fig-cor-force" class="quarto-xref"><span>33.12</span></a> хочется заключить, что корреляция определяет угол наклона линии тренда. Такое желание интуитивно оправдано, однако <strong>подобное заключение будет неверным</strong>.</p>
 <p>Действительно, коэффициент корреляции <a href="./andan-simplelinear.html#andan-simplelinear-solve-cor">связан</a> с углом наклона линии тренда, однако <strong>не определяет его напрямую</strong>. Как именно устроена эта связь, мы узнаем чуть позже, пока же приведем два контрпримера:</p>
 <ul>
-<li>при одинаковом значении корреляции линия тренда может быть расположена по-разному (<a href="#fig-cor-slope-1" class="quarto-xref">Иллюстрация&nbsp;<span>31.13 (a)</span></a>)</li>
-<li>при одинаковом положении линии тренда значения корреляции могут быть различны (<a href="#fig-cor-slope-2" class="quarto-xref">Иллюстрация&nbsp;<span>31.13 (b)</span></a>)</li>
+<li>при одинаковом значении корреляции линия тренда может быть расположена по-разному (<a href="#fig-cor-slope-1" class="quarto-xref">Иллюстрация&nbsp;<span>33.13 (a)</span></a>)</li>
+<li>при одинаковом положении линии тренда значения корреляции могут быть различны (<a href="#fig-cor-slope-2" class="quarto-xref">Иллюстрация&nbsp;<span>33.13 (b)</span></a>)</li>
 </ul>
 <div class="cell">
 <details class="code-fold">
@@ -1565,7 +1551,7 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div id="fig-cor-slope-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cor-slope-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-slope-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-slope" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-slope-1.png" class="lightbox" data-gallery="fig-cor-slope" title="Иллюстрация&nbsp;33.13&nbsp;(a): Одинаковая корреляции при разном наклоне линии тренда"><img src="andan-cor_files/figure-html/fig-cor-slope-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-slope" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-slope-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Одинаковая корреляции при разном наклоне линии тренда
@@ -1577,7 +1563,7 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div id="fig-cor-slope-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cor-slope-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-slope-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-slope" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-slope-2.png" class="lightbox" data-gallery="fig-cor-slope" title="Иллюстрация&nbsp;33.13&nbsp;(b): Разная корреляция при одинаковом наклоне линии тренда"><img src="andan-cor_files/figure-html/fig-cor-slope-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-slope" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-slope-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Разная корреляция при одинаковом наклоне линии тренда
@@ -1587,14 +1573,14 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-slope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.13: Корреляция и наклон линии тренда (<span class="math inline">\(n = 500\)</span>)
+Иллюстрация&nbsp;33.13: Корреляция и наклон линии тренда (<span class="math inline">\(n = 500\)</span>)
 </figcaption>
 </figure>
 </div>
 </div>
 <div id="exr-cor-nan" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.3</strong></span> В самом центре визуализации <a href="#fig-cor-slope-1" class="quarto-xref"><span>31.13 (a)</span></a> расположена диаграмма рассеяния, для&nbsp;которой значение коэффициента корреляции обозначено как&nbsp;<code>NA</code> (Not Available). Иначе говоря, в&nbsp;этом случае значение коэффициента корреляции не&nbsp;определено. Однако если&nbsp;посмотреть на&nbsp;картинку <a href="#fig-cor-force" class="quarto-xref"><span>31.12</span></a>, то&nbsp;там на&nbsp;таком&nbsp;же месте визуализируется корреляция, равная нулю.</p>
-<p>Для удобства оба графика представлены ниже. Почему в случае <a href="#fig-cor-nan-plot-2" class="quarto-xref"><span>31.14 (b)</span></a> корреляция не&nbsp;определена, хотя положение линии тренда такое&nbsp;же, как&nbsp;и&nbsp;в&nbsp;случае <a href="#fig-cor-nan-plot-1" class="quarto-xref"><span>31.14 (a)</span></a>?</p>
+<p><span class="theorem-title"><strong>Задание 33.3</strong></span> В самом центре визуализации <a href="#fig-cor-slope-1" class="quarto-xref"><span>33.13 (a)</span></a> расположена диаграмма рассеяния, для&nbsp;которой значение коэффициента корреляции обозначено как&nbsp;<code>NA</code> (Not Available). Иначе говоря, в&nbsp;этом случае значение коэффициента корреляции не&nbsp;определено. Однако если&nbsp;посмотреть на&nbsp;картинку <a href="#fig-cor-force" class="quarto-xref"><span>33.12</span></a>, то&nbsp;там на&nbsp;таком&nbsp;же месте визуализируется корреляция, равная нулю.</p>
+<p>Для удобства оба графика представлены ниже. Почему в случае <a href="#fig-cor-nan-plot-2" class="quarto-xref"><span>33.14 (b)</span></a> корреляция не&nbsp;определена, хотя положение линии тренда такое&nbsp;же, как&nbsp;и&nbsp;в&nbsp;случае <a href="#fig-cor-nan-plot-1" class="quarto-xref"><span>33.14 (a)</span></a>?</p>
 <div id="fig-cor-nan-plot" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cor-nan-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1603,7 +1589,7 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div id="fig-cor-nan-plot-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cor-nan-plot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-nan-plot-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-nan-plot" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-nan-plot-1.png" class="lightbox" data-gallery="fig-cor-nan-plot" title="Иллюстрация&nbsp;33.14&nbsp;(a): Коэффициент корреляции равен нулю"><img src="andan-cor_files/figure-html/fig-cor-nan-plot-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-nan-plot" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-nan-plot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Коэффициент корреляции равен нулю
@@ -1615,7 +1601,7 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div id="fig-cor-nan-plot-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cor-nan-plot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-nan-plot-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-nan-plot" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-nan-plot-2.png" class="lightbox" data-gallery="fig-cor-nan-plot" title="Иллюстрация&nbsp;33.14&nbsp;(b): Коэффициент корреляции не&nbsp;определён"><img src="andan-cor_files/figure-html/fig-cor-nan-plot-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-nan-plot" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-nan-plot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Коэффициент корреляции не&nbsp;определён
@@ -1626,7 +1612,7 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-nan-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.14: Два похожих, но различных случая (<span class="math inline">\(n = 500\)</span>)
+Иллюстрация&nbsp;33.14: Два похожих, но различных случая (<span class="math inline">\(n = 500\)</span>)
 </figcaption>
 </figure>
 </div>
@@ -1634,16 +1620,16 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
 <div class="cell">
-<p>Как отмечалось выше, коэффициент корреляции не&nbsp;определяет напрямую положение линии тренда. Осмыслим обе ситуации, используя формулу для&nbsp;расчета корреляции <a href="#eq-cor-stand-cov" class="quarto-xref"><span>31.7</span></a>:</p>
+<p>Как отмечалось выше, коэффициент корреляции не&nbsp;определяет напрямую положение линии тренда. Осмыслим обе ситуации, используя формулу для&nbsp;расчета корреляции <a href="#eq-cor-stand-cov" class="quarto-xref"><span>33.7</span></a>:</p>
 <p><span class="math display">\[
 \text{cor}(X, Y) = \frac{\text{cov}(X, Y)}{\text{sd}_X \, \text{sd}_Y}
 \]</span></p>
-<p>В&nbsp;случае <a href="#fig-cor-nan-plot-1" class="quarto-xref"><span>31.14 (a)</span></a> <span class="math inline">\(\text{cov}(X, Y) = 0\)</span> (см. <a href="#exr-cov-0" class="quarto-xref">Задание&nbsp;<span>31.1</span></a>). Тогда</p>
+<p>В&nbsp;случае <a href="#fig-cor-nan-plot-1" class="quarto-xref"><span>33.14 (a)</span></a> <span class="math inline">\(\text{cov}(X, Y) = 0\)</span> (см. <a href="#exr-cov-0" class="quarto-xref">Задание&nbsp;<span>33.1</span></a>). Тогда</p>
 <p><span class="math display">\[
 \text{cor}(X, Y) = \frac{\text{cov}(X, Y)}{\text{sd}_X  \, \text{sd}_Y} = \frac{0}{\text{sd}_X \, \text{sd}_Y} = 0,
 \]</span></p>
 <p>что мы и&nbsp;наблюдаем.</p>
-<p>В&nbsp;случае <a href="#fig-cor-nan-plot-2" class="quarto-xref"><span>31.14 (b)</span></a> <span class="math inline">\(\text{cov}(X, Y) = 0\)</span>, как и в&nbsp;предыдущем, но&nbsp;также <span class="math inline">\(Y = \text{const}\)</span>. Значит <span class="math inline">\(\text{var}\,Y = 0\)</span>, из&nbsp;чего следует, что <span class="math inline">\(\text{sd}_Y = 0\)</span>. Получаем, что</p>
+<p>В&nbsp;случае <a href="#fig-cor-nan-plot-2" class="quarto-xref"><span>33.14 (b)</span></a> <span class="math inline">\(\text{cov}(X, Y) = 0\)</span>, как и в&nbsp;предыдущем, но&nbsp;также <span class="math inline">\(Y = \text{const}\)</span>. Значит <span class="math inline">\(\text{var}\,Y = 0\)</span>, из&nbsp;чего следует, что <span class="math inline">\(\text{sd}_Y = 0\)</span>. Получаем, что</p>
 <p><span class="math display">\[
 \text{cor}(X, Y) = \frac{\text{cov}(X, Y)}{\text{sd}_X  \, \text{sd}_Y} = \frac{0}{0},
 \]</span></p>
@@ -1669,32 +1655,32 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 </div>
 </div>
 </section>
-<section id="andan-cor-cor-interpret-linearity" class="level4" data-number="31.3.1.3">
-<h4 data-number="31.3.1.3" class="anchored" data-anchor-id="andan-cor-cor-interpret-linearity"><span class="header-section-number">31.3.1.3</span> Линейность взаимосвязи</h4>
+<section id="andan-cor-cor-interpret-linearity" class="level4" data-number="33.3.1.3">
+<h4 data-number="33.3.1.3" class="anchored" data-anchor-id="andan-cor-cor-interpret-linearity"><span class="header-section-number">33.3.1.3</span> Линейность взаимосвязи</h4>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="andan-cor-cor-interpret-independence" class="level4" data-number="31.3.1.4">
-<h4 data-number="31.3.1.4" class="anchored" data-anchor-id="andan-cor-cor-interpret-independence"><span class="header-section-number">31.3.1.4</span> Некоррелированность и независимость</h4>
+<section id="andan-cor-cor-interpret-independence" class="level4" data-number="33.3.1.4">
+<h4 data-number="33.3.1.4" class="anchored" data-anchor-id="andan-cor-cor-interpret-independence"><span class="header-section-number">33.3.1.4</span> Некоррелированность и независимость</h4>
 <div class="lab-junior">
 
 </div>
 </section>
 </section>
 </section>
-<section id="andan-cor-pearson" class="level2" data-number="31.4">
-<h2 data-number="31.4" class="anchored" data-anchor-id="andan-cor-pearson"><span class="header-section-number">31.4</span> Коэффициент корреляции Пирсона</h2>
+<section id="andan-cor-pearson" class="level2" data-number="33.4">
+<h2 data-number="33.4" class="anchored" data-anchor-id="andan-cor-pearson"><span class="header-section-number">33.4</span> Коэффициент корреляции Пирсона</h2>
 <div class="lab-junior">
 
 </div>
 <p>Мера корреляции, которую мы обсуждали выше, называется <strong>корреляцией Пирсона (Pearson correlation coefficient (PCC), Pearson’s <span class="math inline">\(r\)</span>, Pearson product-moment correlation coefficient (PPMCC), bivariate correlation)</strong>.</p>
-<p>Преобразовав <a href="#eq-cor-stand-cov" class="quarto-xref"><span>31.7</span></a> мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:</p>
+<p>Преобразовав <a href="#eq-cor-stand-cov" class="quarto-xref"><span>33.7</span></a> мы можем получить следующее выражение для вычисления коэффициента корреляции Пирсона:</p>
 <p><span id="eq-cor-pearson-formula"><span class="math display">\[
 \text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} = r_{X, Y}
-\tag{31.8}\]</span></span></p>
+\tag{33.8}\]</span></span></p>
 <div id="exr-cor-pearson-formula" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.4</strong></span> Получите из формулы <a href="#eq-cor-stand-cov" class="quarto-xref"><span>31.7</span></a> формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>31.8</span></a>.</p>
+<p><span class="theorem-title"><strong>Задание 33.4</strong></span> Получите из формулы <a href="#eq-cor-stand-cov" class="quarto-xref"><span>33.7</span></a> формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>33.8</span></a>.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
@@ -1709,9 +1695,9 @@ Y^\star &amp;= \frac{Y - \overline Y}{\text{sd}_Y}
 \]</span></p>
 </div>
 </div>
-<p>За формулой <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>31.8</span></a> скрывается некоторый интересный смысл, но к нему мы <a href="#andan-cor-angle-cos">обратимся позже</a>, когда будем копаться в математических деталях. Сейчас займемся более насущными вопросами.</p>
-<section id="andan-cor-pearson-sig" class="level3" data-number="31.4.1">
-<h3 data-number="31.4.1" class="anchored" data-anchor-id="andan-cor-pearson-sig"><span class="header-section-number">31.4.1</span> Тестирование статистической значимости коэффициента корреляции</h3>
+<p>За формулой <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>33.8</span></a> скрывается некоторый интересный смысл, но к нему мы <a href="#andan-cor-angle-cos">обратимся позже</a>, когда будем копаться в математических деталях. Сейчас займемся более насущными вопросами.</p>
+<section id="andan-cor-pearson-sig" class="level3" data-number="33.4.1">
+<h3 data-number="33.4.1" class="anchored" data-anchor-id="andan-cor-pearson-sig"><span class="header-section-number">33.4.1</span> Тестирование статистической значимости коэффициента корреляции</h3>
 <div class="lab-junior">
 
 </div>
@@ -1725,8 +1711,8 @@ H_1 &amp;: \rho \neq 0
 t = \frac{r_{X,Y}}{\sqrt{\frac{1 - r_{X, Y}^2}{n-2}}} \overset{H_0}{\thicksim} t(n\!-\!2)
 \]</span></p>
 </section>
-<section id="andan-cor-pearson-ci" class="level3" data-number="31.4.2">
-<h3 data-number="31.4.2" class="anchored" data-anchor-id="andan-cor-pearson-ci"><span class="header-section-number">31.4.2</span> Доверительный интервал для коэффициента корреляции</h3>
+<section id="andan-cor-pearson-ci" class="level3" data-number="33.4.2">
+<h3 data-number="33.4.2" class="anchored" data-anchor-id="andan-cor-pearson-ci"><span class="header-section-number">33.4.2</span> Доверительный интервал для коэффициента корреляции</h3>
 <div class="lab-junior">
 
 </div>
@@ -1749,8 +1735,8 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 95\% \text{CI} \, [z^{-1}(z_{X,Y} - 1.96 \text{se}), \, z^{-1}(z_{X,Y} + 1.96 \text{se})]
 \]</span></p>
 </section>
-<section id="точность-оценки-коэффициента-корреляции" class="level3" data-number="31.4.3">
-<h3 data-number="31.4.3" class="anchored" data-anchor-id="точность-оценки-коэффициента-корреляции"><span class="header-section-number">31.4.3</span> Точность оценки коэффициента корреляции</h3>
+<section id="точность-оценки-коэффициента-корреляции" class="level3" data-number="33.4.3">
+<h3 data-number="33.4.3" class="anchored" data-anchor-id="точность-оценки-коэффициента-корреляции"><span class="header-section-number">33.4.3</span> Точность оценки коэффициента корреляции</h3>
 <div class="lab-middle">
 
 </div>
@@ -1845,7 +1831,7 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 <div id="fig-cor-se-ci-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cor-se-ci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-se-ci-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-se-ci" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-se-ci-1.png" class="lightbox" data-gallery="fig-cor-se-ci" title="Иллюстрация&nbsp;33.15&nbsp;(a): Способ вычисления «non-lazy»"><img src="andan-cor_files/figure-html/fig-cor-se-ci-1.png" class="img-fluid figure-img" data-ref-parent="fig-cor-se-ci" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-se-ci-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Способ вычисления «non-lazy»
@@ -1859,7 +1845,7 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 <div id="fig-cor-se-ci-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-cor-se-ci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="andan-cor_files/figure-html/fig-cor-se-ci-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-se-ci" width="672">
+<a href="andan-cor_files/figure-html/fig-cor-se-ci-2.png" class="lightbox" data-gallery="fig-cor-se-ci" title="Иллюстрация&nbsp;33.15&nbsp;(b): Способ вычисления «lazy»"><img src="andan-cor_files/figure-html/fig-cor-se-ci-2.png" class="img-fluid figure-img" data-ref-parent="fig-cor-se-ci" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cor-se-ci-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Способ вычисления «lazy»
@@ -1870,33 +1856,33 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cor-se-ci-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;31.15: Точность оценки корреляции (ширина доверительного интервала) в зависимости от значения коэффициента корреляции и объема выборки
+Иллюстрация&nbsp;33.15: Точность оценки корреляции (ширина доверительного интервала) в зависимости от значения коэффициента корреляции и объема выборки
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="andan-cor-effectsize" class="level3" data-number="31.4.4">
-<h3 data-number="31.4.4" class="anchored" data-anchor-id="andan-cor-effectsize"><span class="header-section-number">31.4.4</span> Размер эффекта для коэффициента корреляции</h3>
+<section id="andan-cor-effectsize" class="level3" data-number="33.4.4">
+<h3 data-number="33.4.4" class="anchored" data-anchor-id="andan-cor-effectsize"><span class="header-section-number">33.4.4</span> Размер эффекта для коэффициента корреляции</h3>
 <div class="lab-junior">
 
 </div>
 </section>
 </section>
-<section id="andan-cor-pearson-in-r" class="level2" data-number="31.5">
-<h2 data-number="31.5" class="anchored" data-anchor-id="andan-cor-pearson-in-r"><span class="header-section-number">31.5</span> Корреляция Пирсона в R</h2>
+<section id="andan-cor-pearson-in-r" class="level2" data-number="33.5">
+<h2 data-number="33.5" class="anchored" data-anchor-id="andan-cor-pearson-in-r"><span class="header-section-number">33.5</span> Корреляция Пирсона в R</h2>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="andan-cor-scales" class="level2" data-number="31.6">
-<h2 data-number="31.6" class="anchored" data-anchor-id="andan-cor-scales"><span class="header-section-number">31.6</span> Коэффициенты корреляции для разных шкал</h2>
+<section id="andan-cor-scales" class="level2" data-number="33.6">
+<h2 data-number="33.6" class="anchored" data-anchor-id="andan-cor-scales"><span class="header-section-number">33.6</span> Коэффициенты корреляции для разных шкал</h2>
 <div class="lab-junior">
 
 </div>
 <div id="tbl-cors-scales" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cors-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;31.4: Меры корреляции для переменных, измеренных в различных шкалах
+Таблица&nbsp;33.4: Меры корреляции для переменных, измеренных в различных шкалах
 </figcaption>
 <div aria-describedby="tbl-cors-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1948,16 +1934,16 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 </div>
 </figure>
 </div>
-<section id="andan-cor-rank" class="level3" data-number="31.6.1">
-<h3 data-number="31.6.1" class="anchored" data-anchor-id="andan-cor-rank"><span class="header-section-number">31.6.1</span> Ранговые коэффициенты корреляции</h3>
+<section id="andan-cor-rank" class="level3" data-number="33.6.1">
+<h3 data-number="33.6.1" class="anchored" data-anchor-id="andan-cor-rank"><span class="header-section-number">33.6.1</span> Ранговые коэффициенты корреляции</h3>
 <div class="lab-middle">
 
 </div>
 <p>Коррелировать можно не только сами значения переменных, но и их <em>ранги</em>.</p>
 <p>Ранговые коэффициенты корреляции инвариантны относительно любого монотонного преобразования переменной.</p>
 </section>
-<section id="andan-cor-spearman" class="level3" data-number="31.6.2">
-<h3 data-number="31.6.2" class="anchored" data-anchor-id="andan-cor-spearman"><span class="header-section-number">31.6.2</span> Коэффициент корреляции Спирмена</h3>
+<section id="andan-cor-spearman" class="level3" data-number="33.6.2">
+<h3 data-number="33.6.2" class="anchored" data-anchor-id="andan-cor-spearman"><span class="header-section-number">33.6.2</span> Коэффициент корреляции Спирмена</h3>
 <div class="lab-middle">
 
 </div>
@@ -1971,8 +1957,8 @@ z_{X, Y} \thicksim \mathcal{N}(z_{X, Y}, \tfrac{1}{n-3})
 <li><span class="math inline">\(R_{y_i}\)</span> — ранг наблюдения <span class="math inline">\(y_i\)</span> в ряду <span class="math inline">\(Y\)</span>.</li>
 </ul>
 </section>
-<section id="andan-cor-kendall" class="level3" data-number="31.6.3">
-<h3 data-number="31.6.3" class="anchored" data-anchor-id="andan-cor-kendall"><span class="header-section-number">31.6.3</span> Коэффициент корреляции Кенделла</h3>
+<section id="andan-cor-kendall" class="level3" data-number="33.6.3">
+<h3 data-number="33.6.3" class="anchored" data-anchor-id="andan-cor-kendall"><span class="header-section-number">33.6.3</span> Коэффициент корреляции Кенделла</h3>
 <div class="lab-middle">
 
 </div>
@@ -1983,15 +1969,15 @@ R &amp;= \sum_{i=1}^{n-1} \sum_{j=i+1}^n \Big[ [x_i &lt; x_j] \neq [y_i &lt; y_j
 \end{split}
 \]</span></p>
 </section>
-<section id="andan-cor-pointbiserial" class="level3" data-number="31.6.4">
-<h3 data-number="31.6.4" class="anchored" data-anchor-id="andan-cor-pointbiserial"><span class="header-section-number">31.6.4</span> Точечно-бисериальная корреляция</h3>
+<section id="andan-cor-pointbiserial" class="level3" data-number="33.6.4">
+<h3 data-number="33.6.4" class="anchored" data-anchor-id="andan-cor-pointbiserial"><span class="header-section-number">33.6.4</span> Точечно-бисериальная корреляция</h3>
 <div class="lab-middle">
 
 </div>
 <p>Точечно-бисериальный коэффициент корреляции (point-biserial correlation)</p>
 <p><span id="eq-rpb-s"><span class="math display">\[
 r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{s_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n(n-1)}},
-\tag{31.9}\]</span></span></p>
+\tag{33.9}\]</span></span></p>
 <p>где</p>
 <ul>
 <li><span class="math inline">\(\overline Y_\text{A}\)</span> — среднее по переменной <span class="math inline">\(Y\)</span> в группе <span class="math inline">\(\text{A}\)</span>,</li>
@@ -2004,7 +1990,7 @@ r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{s_Y} \sqrt{
 <p>Другая формула использует смещённую оценку дисперсии, однако результат получится тот же:</p>
 <p><span id="eq-rpb-sigma"><span class="math display">\[
 r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{\sigma_Y} \sqrt{\frac{n_\text{A} n_\text{B}}{n^2}},
-\tag{31.10}\]</span></span></p>
+\tag{33.10}\]</span></span></p>
 <p>где</p>
 <ul>
 <li><span class="math inline">\(\overline Y_\text{A}\)</span> — среднее по переменной <span class="math inline">\(Y\)</span> в группе <span class="math inline">\(\text{A}\)</span>,</li>
@@ -2015,7 +2001,7 @@ r_{\text{pb}} = \frac{\overline Y_\text{A} - \overline Y_{\text{B}}}{\sigma_Y} \
 <li><span class="math inline">\(\sigma_Y\)</span> — выборочное стандартное отклонение по переменной <span class="math inline">\(Y\)</span> (по всей выборке)</li>
 </ul>
 <div id="exr-rpb-equiv" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.5</strong></span> Покажите, что <a href="#eq-rpb-s" class="quarto-xref">Уравнение&nbsp;<span>31.9</span></a> и <a href="#eq-rpb-sigma" class="quarto-xref">Уравнение&nbsp;<span>31.10</span></a> эквивалентны.</p>
+<p><span class="theorem-title"><strong>Задание 33.5</strong></span> Покажите, что <a href="#eq-rpb-s" class="quarto-xref">Уравнение&nbsp;<span>33.9</span></a> и <a href="#eq-rpb-sigma" class="quarto-xref">Уравнение&nbsp;<span>33.10</span></a> эквивалентны.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
@@ -2109,8 +2095,8 @@ r_{\text{pb}} &amp;=
 </div>
 </div>
 </section>
-<section id="andan-cor-rankbiserial" class="level3" data-number="31.6.5">
-<h3 data-number="31.6.5" class="anchored" data-anchor-id="andan-cor-rankbiserial"><span class="header-section-number">31.6.5</span> Рангово-бисериальная корреляция</h3>
+<section id="andan-cor-rankbiserial" class="level3" data-number="33.6.5">
+<h3 data-number="33.6.5" class="anchored" data-anchor-id="andan-cor-rankbiserial"><span class="header-section-number">33.6.5</span> Рангово-бисериальная корреляция</h3>
 <div class="lab-middle">
 
 </div>
@@ -2124,15 +2110,15 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 <li><span class="math inline">\(n\)</span> — объём выборки (общее количество наблюдений)</li>
 </ul>
 </section>
-<section id="andan-cor-phi" class="level3" data-number="31.6.6">
-<h3 data-number="31.6.6" class="anchored" data-anchor-id="andan-cor-phi"><span class="header-section-number">31.6.6</span> <span class="math inline">\(\varphi\)</span>-коэффициент</h3>
+<section id="andan-cor-phi" class="level3" data-number="33.6.6">
+<h3 data-number="33.6.6" class="anchored" data-anchor-id="andan-cor-phi"><span class="header-section-number">33.6.6</span> <span class="math inline">\(\varphi\)</span>-коэффициент</h3>
 <div class="lab-senior">
 
 </div>
 <div id="tbl-crosstab-phi" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-crosstab-phi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;31.5: Таблица сопряжённости для двух дихотомических переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>
+Таблица&nbsp;33.5: Таблица сопряжённости для двух дихотомических переменных <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>
 </figcaption>
 <div aria-describedby="tbl-crosstab-phi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -2189,21 +2175,21 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 \varphi= \sqrt{\frac{\chi^2}{n}}
 \]</span></p>
 </section>
-<section id="andan-cor-kramer" class="level3" data-number="31.6.7">
-<h3 data-number="31.6.7" class="anchored" data-anchor-id="andan-cor-kramer"><span class="header-section-number">31.6.7</span> Коэффициент Крамера</h3>
+<section id="andan-cor-kramer" class="level3" data-number="33.6.7">
+<h3 data-number="33.6.7" class="anchored" data-anchor-id="andan-cor-kramer"><span class="header-section-number">33.6.7</span> Коэффициент Крамера</h3>
 <div class="lab-senior">
 
 </div>
 </section>
 </section>
-<section id="andan-cor-scales-in-r" class="level2" data-number="31.7">
-<h2 data-number="31.7" class="anchored" data-anchor-id="andan-cor-scales-in-r"><span class="header-section-number">31.7</span> Коэффициенты корреляции для разных шкал в R</h2>
+<section id="andan-cor-scales-in-r" class="level2" data-number="33.7">
+<h2 data-number="33.7" class="anchored" data-anchor-id="andan-cor-scales-in-r"><span class="header-section-number">33.7</span> Коэффициенты корреляции для разных шкал в R</h2>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="andan-cor-angle-cos" class="level2" data-number="31.8">
-<h2 data-number="31.8" class="anchored" data-anchor-id="andan-cor-angle-cos"><span class="header-section-number">31.8</span> Угол между векторами</h2>
+<section id="andan-cor-angle-cos" class="level2" data-number="33.8">
+<h2 data-number="33.8" class="anchored" data-anchor-id="andan-cor-angle-cos"><span class="header-section-number">33.8</span> Угол между векторами</h2>
 <div class="lab-senior">
 
 </div>
@@ -2214,7 +2200,7 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 \mathbf{y} &amp;= \pmatrix{y_1 &amp; y_2 &amp; y_3 &amp; \ldots &amp; y_n}
 \end{split}
 \]</span></p>
-<p>Присмотримся поближе к формуле <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>31.8</span></a>:</p>
+<p>Присмотримся поближе к формуле <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>33.8</span></a>:</p>
 <p><span class="math display">\[
 \text{cor}(X, Y) = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
 \]</span></p>
@@ -2235,7 +2221,7 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 \tilde {\mathbf{y}} &amp;= \mathbf{y} - \overline Y
 \end{split}
 \]</span></p>
-<p>Тогда формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>31.8</span></a> можно записать в следующем виде:</p>
+<p>Тогда формулу <a href="#eq-cor-pearson-formula" class="quarto-xref"><span>33.8</span></a> можно записать в следующем виде:</p>
 <p><span class="math display">\[
 \text{cor}(X, Y) = \frac{\sum_{i=1}^n \tilde x_i \tilde y_i}{\sqrt{\sum_{i=1}^n \tilde x_i^2} \sqrt{\sum_{i=1}^n \tilde y_i^2}}
 \]</span></p>
@@ -2250,7 +2236,7 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 <p>Тогда</p>
 <p><span id="eq-cor-angle-cos"><span class="math display">\[
 \text{cor}(X,Y) = \frac{ \tilde{\mathbf{x}} \cdot \tilde{\mathbf{y}} }{ \| \tilde{\mathbf{x}} \| \cdot \| \tilde{\mathbf{y}} \| } \overset{\text{def}}{=} \cos \theta,
-\tag{31.11}\]</span></span></p>
+\tag{33.11}\]</span></span></p>
 <p>где <span class="math inline">\(\theta\)</span> — угол между векторами <span class="math inline">\(\tilde{\mathbf{x}}\)</span> и <span class="math inline">\(\tilde{\mathbf{y}}\)</span>.</p>
 <p>После такого поворота событий сразу можно обнаружить несколько соответствий:</p>
 <div class="callout callout-style-simple callout-tip no-icon">
@@ -2274,13 +2260,13 @@ r_{\text{rb}} = \frac{2(\overline Y_\text{A} - \overline Y_\text{B})}{n},
 </div>
 </div>
 </section>
-<section id="andan-cor-ci-details" class="level2" data-number="31.9">
-<h2 data-number="31.9" class="anchored" data-anchor-id="andan-cor-ci-details"><span class="header-section-number">31.9</span> Детали доверительного интервала</h2>
+<section id="andan-cor-ci-details" class="level2" data-number="33.9">
+<h2 data-number="33.9" class="anchored" data-anchor-id="andan-cor-ci-details"><span class="header-section-number">33.9</span> Детали доверительного интервала</h2>
 <div class="lab-senior">
 
 </div>
-<section id="andan-cor-fisher-transform" class="level3" data-number="31.9.1">
-<h3 data-number="31.9.1" class="anchored" data-anchor-id="andan-cor-fisher-transform"><span class="header-section-number">31.9.1</span> Преобразование Фишера</h3>
+<section id="andan-cor-fisher-transform" class="level3" data-number="33.9.1">
+<h3 data-number="33.9.1" class="anchored" data-anchor-id="andan-cor-fisher-transform"><span class="header-section-number">33.9.1</span> Преобразование Фишера</h3>
 <div class="lab-senior">
 
 </div>
@@ -2292,13 +2278,13 @@ r_\text{P} = \frac{e^{2z_\text{P}} - 1}{e^{2z_\text{P}} + 1} = \tanh z_\text{P}
 \]</span></p>
 </section>
 </section>
-<section id="andan-cor-pearsonequiv" class="level2" data-number="31.10">
-<h2 data-number="31.10" class="anchored" data-anchor-id="andan-cor-pearsonequiv"><span class="header-section-number">31.10</span> Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона</h2>
+<section id="andan-cor-pearsonequiv" class="level2" data-number="33.10">
+<h2 data-number="33.10" class="anchored" data-anchor-id="andan-cor-pearsonequiv"><span class="header-section-number">33.10</span> Эквивалентность различных коэффициентов корреляции и коэффициента корреляции Пирсона</h2>
 <div class="lab-senior">
 
 </div>
-<section id="andan-cor-spearman-pearsonequiv" class="level3" data-number="31.10.1">
-<h3 data-number="31.10.1" class="anchored" data-anchor-id="andan-cor-spearman-pearsonequiv"><span class="header-section-number">31.10.1</span> Корреляция Спирмена и корреляция Пирсона</h3>
+<section id="andan-cor-spearman-pearsonequiv" class="level3" data-number="33.10.1">
+<h3 data-number="33.10.1" class="anchored" data-anchor-id="andan-cor-spearman-pearsonequiv"><span class="header-section-number">33.10.1</span> Корреляция Спирмена и корреляция Пирсона</h3>
 <div class="lab-senior">
 
 </div>
@@ -2307,8 +2293,8 @@ r_\text{P} = \frac{e^{2z_\text{P}} - 1}{e^{2z_\text{P}} + 1} = \tanh z_\text{P}
 r = 2 \sin \frac{\pi}{6} \rho
 \]</span></p>
 </section>
-<section id="andan-cor-pointbiser-pearsonequiv" class="level3" data-number="31.10.2">
-<h3 data-number="31.10.2" class="anchored" data-anchor-id="andan-cor-pointbiser-pearsonequiv"><span class="header-section-number">31.10.2</span> Точечно-бисериальная корреляция и корреляция Пирсона</h3>
+<section id="andan-cor-pointbiser-pearsonequiv" class="level3" data-number="33.10.2">
+<h3 data-number="33.10.2" class="anchored" data-anchor-id="andan-cor-pointbiser-pearsonequiv"><span class="header-section-number">33.10.2</span> Точечно-бисериальная корреляция и корреляция Пирсона</h3>
 <div class="lab-senior">
 
 </div>
@@ -2351,13 +2337,13 @@ r = 2 \sin \frac{\pi}{6} \rho
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
+<pre><code>R version 4.5.0 (2025-04-11)
 Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.5
+Running under: macOS Sequoia 15.4.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -2369,24 +2355,23 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
- [5] purrr_1.0.2     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   
- [9] ggplot2_3.5.1   tidyverse_2.0.0
+ [1] lubridate_1.9.4 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [5] purrr_1.0.4     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   
+ [9] ggplot2_3.5.2   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] utf8_1.2.4        generics_0.1.3    xml2_1.3.6        stringi_1.8.4    
- [5] lattice_0.22-6    hms_1.1.3         digest_0.6.37     magrittr_2.0.3   
- [9] evaluate_1.0.1    grid_4.4.0        timechange_0.3.0  fastmap_1.2.0    
-[13] jsonlite_1.8.9    Matrix_1.7-0      mgcv_1.9-1        fansi_1.0.6      
-[17] viridisLite_0.4.2 scales_1.3.0      cli_3.6.3         rlang_1.1.4      
-[21] munsell_0.5.1     splines_4.4.0     withr_3.0.2       yaml_2.3.8       
-[25] tools_4.4.0       tzdb_0.4.0        colorspace_2.1-1  kableExtra_1.4.0 
-[29] vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   htmlwidgets_1.6.4
-[33] pkgconfig_2.0.3   pillar_1.9.0      gtable_0.3.6      glue_1.8.0       
-[37] systemfonts_1.1.0 xfun_0.44         tidyselect_1.2.1  highr_0.11       
-[41] rstudioapi_0.16.0 knitr_1.47        farver_2.1.2      htmltools_0.5.8.1
-[45] nlme_3.1-164      svglite_2.1.3     rmarkdown_2.27    labeling_0.4.3   
-[49] compiler_4.4.0   </code></pre>
+ [1] generics_0.1.4     xml2_1.3.8         stringi_1.8.7      lattice_0.22-6    
+ [5] hms_1.1.3          digest_0.6.37      magrittr_2.0.3     evaluate_1.0.3    
+ [9] grid_4.5.0         timechange_0.3.0   RColorBrewer_1.1-3 fastmap_1.2.0     
+[13] jsonlite_2.0.0     Matrix_1.7-3       mgcv_1.9-1         viridisLite_0.4.2 
+[17] scales_1.4.0       codetools_0.2-20   textshaping_1.0.1  cli_3.6.5         
+[21] rlang_1.1.6        splines_4.5.0      withr_3.0.2        yaml_2.3.10       
+[25] tools_4.5.0        tzdb_0.5.0         kableExtra_1.4.0   vctrs_0.6.5       
+[29] R6_2.6.1           lifecycle_1.0.4    htmlwidgets_1.6.4  pkgconfig_2.0.3   
+[33] pillar_1.10.2      gtable_0.3.6       glue_1.8.0         systemfonts_1.2.3 
+[37] xfun_0.52          tidyselect_1.2.1   rstudioapi_0.17.1  knitr_1.50        
+[41] farver_2.1.2       htmltools_0.5.8.1  nlme_3.1-168       rmarkdown_2.29    
+[45] svglite_2.2.1      labeling_0.4.3     compiler_4.5.0    </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -2972,11 +2957,43 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./andan-simplelinear.html" class="pagination-link" aria-label="Простая линейная регрессия">
-        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
