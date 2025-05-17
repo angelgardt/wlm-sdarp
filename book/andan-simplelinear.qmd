@@ -69,7 +69,7 @@ $$
 
 $$
 F = \frac{\MS_\text{e}}{\MS_\text{r}} = \frac{\hat \sigma^2_\text{e}}{\hat \sigma^2_\text{r}}
-\overset{H_0}{\thicksim} F(\df_1, \df_2)
+\disted{H_0} F(\df_1, \df_2)
 $$
 
 
@@ -83,7 +83,17 @@ H_1 &: \beta_1 \neq 0
 \end{split}
 $$
 
+$$
+t = \frac{b_1 - \beta_1}{\se_{b_1}} \overset{H_0}{=} \frac{b_1}{\se_{b_1}} \disted{H_0} t(n-2)
+$$
 
+$$
+\se_{b_1} = \frac{\sqrt{\frac{1}{n-2} \sum_{i=1}^n (y_i - \hat y_i)^2}}{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2}}
+$$
+
+$$
+t = \frac{r \sqrt{n-2}}{\sqrt{1 - r^2}}
+$$
 
 
 

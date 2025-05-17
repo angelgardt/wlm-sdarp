@@ -70,6 +70,7 @@ book:
         - prob-falsepositive.qmd
     - part: part-andan.qmd
       chapters:
+        - andan-means.qmd
         - andan-cor.qmd
         - andan-simplelinear.qmd
         - andan-moderation.qmd

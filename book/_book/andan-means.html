@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>35&nbsp; Простая линейная регрессия – WLM SDARP</title>
+<title>33&nbsp;  – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./andan-moderation.html" rel="next">
-<link href="./andan-cor.html" rel="prev">
+<link href="./andan-cor.html" rel="next">
+<link href="./part-andan.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -171,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-simplelinear.html"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-means.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,8 +183,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-simplelinear.html"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></a></li></ol></nav>
-      <h1 class="title"><span id="andan-simplelinear" class="quarto-section-identifier"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-andan.html">Методы анализа данных</a></li><li class="breadcrumb-item"><a href="./andan-means.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></a></li></ol></nav>
+      <h1 class="title"><span id="chapterid" class="quarto-section-identifier"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></h1>
                       </div>
   </div>
     
@@ -491,7 +491,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
   </div>
 </li>
@@ -503,7 +503,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link active">
+  <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
@@ -632,21 +632,13 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#andan-simplelinear-idea" id="toc-andan-simplelinear-idea" class="nav-link active" data-scroll-target="#andan-simplelinear-idea"><span class="header-section-number">35.1</span> Идея линейной регрессии</a></li>
-  <li><a href="#andan-simplelinear-model" id="toc-andan-simplelinear-model" class="nav-link" data-scroll-target="#andan-simplelinear-model"><span class="header-section-number">35.2</span> Математическая модель</a></li>
-  <li><a href="#andan-simplelinear-test" id="toc-andan-simplelinear-test" class="nav-link" data-scroll-target="#andan-simplelinear-test"><span class="header-section-number">35.3</span> Тестирование качества модели</a>
+  <li><a href="#одновыборочный-t-тест" id="toc-одновыборочный-t-тест" class="nav-link active" data-scroll-target="#одновыборочный-t-тест"><span class="header-section-number">33.1</span> Одновыборочный t-тест</a></li>
+  <li><a href="#двухвыборочный-t-тест" id="toc-двухвыборочный-t-тест" class="nav-link" data-scroll-target="#двухвыборочный-t-тест"><span class="header-section-number">33.2</span> Двухвыборочный t-тест</a>
   <ul>
-  <li><a href="#andan-simplelinear-test-datavar" id="toc-andan-simplelinear-test-datavar" class="nav-link" data-scroll-target="#andan-simplelinear-test-datavar"><span class="header-section-number">35.3.1</span> Структура изменчивости данных с точки зрения регрессионной модели</a></li>
-  <li><a href="#andan-simplelinear-test-fisher" id="toc-andan-simplelinear-test-fisher" class="nav-link" data-scroll-target="#andan-simplelinear-test-fisher"><span class="header-section-number">35.3.2</span> F-критерий</a></li>
-  </ul></li>
-  <li><a href="#andan-simplelinear-test-student" id="toc-andan-simplelinear-test-student" class="nav-link" data-scroll-target="#andan-simplelinear-test-student"><span class="header-section-number">35.4</span> Тестирование значимости коэффициентов</a></li>
-  <li><a href="#andan-simplelinear-math" id="toc-andan-simplelinear-math" class="nav-link" data-scroll-target="#andan-simplelinear-math"><span class="header-section-number">35.5</span> Математика простой линейной регрессии</a>
-  <ul>
-  <li><a href="#andan-simplelinear-solve-deriv" id="toc-andan-simplelinear-solve-deriv" class="nav-link" data-scroll-target="#andan-simplelinear-solve-deriv"><span class="header-section-number">35.5.1</span> Аналитическое вычисление коэффициентов</a></li>
-  <li><a href="#andan-simplelinear-model-matrix" id="toc-andan-simplelinear-model-matrix" class="nav-link" data-scroll-target="#andan-simplelinear-model-matrix"><span class="header-section-number">35.5.2</span> Матричное представление модели</a></li>
-  <li><a href="#andan-simplelinear-solve-matrix" id="toc-andan-simplelinear-solve-matrix" class="nav-link" data-scroll-target="#andan-simplelinear-solve-matrix"><span class="header-section-number">35.5.3</span> Матричное вычисление коэффициентов</a></li>
-  <li><a href="#andan-simplelinear-solve-cor" id="toc-andan-simplelinear-solve-cor" class="nav-link" data-scroll-target="#andan-simplelinear-solve-cor"><span class="header-section-number">35.5.4</span> Угловой коэффициент и коэффициент корреляции</a></li>
-  <li><a href="#tss-ess-rss" id="toc-tss-ess-rss" class="nav-link" data-scroll-target="#tss-ess-rss"><span class="header-section-number">35.5.5</span> TSS = ESS + RSS?</a></li>
+  <li><a href="#равные-выборки-и-дисперсии" id="toc-равные-выборки-и-дисперсии" class="nav-link" data-scroll-target="#равные-выборки-и-дисперсии"><span class="header-section-number">33.2.1</span> Равные выборки и дисперсии</a></li>
+  <li><a href="#равные-или-неравные-выборки-равные-дисперсии" id="toc-равные-или-неравные-выборки-равные-дисперсии" class="nav-link" data-scroll-target="#равные-или-неравные-выборки-равные-дисперсии"><span class="header-section-number">33.2.2</span> Равные или неравные выборки, равные дисперсии</a></li>
+  <li><a href="#равные-или-неравные-выборки-неравные-дисперсии" id="toc-равные-или-неравные-выборки-неравные-дисперсии" class="nav-link" data-scroll-target="#равные-или-неравные-выборки-неравные-дисперсии"><span class="header-section-number">33.2.3</span> Равные или неравные выборки, неравные дисперсии</a></li>
+  <li><a href="#связанные-выборки" id="toc-связанные-выборки" class="nav-link" data-scroll-target="#связанные-выборки"><span class="header-section-number">33.2.4</span> Связанные выборки</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -678,274 +670,59 @@ window.Quarto = {
 <div class="intro">
 <p>Вступление</p>
 </div>
-<section id="andan-simplelinear-idea" class="level2" data-number="35.1">
-<h2 data-number="35.1" class="anchored" data-anchor-id="andan-simplelinear-idea"><span class="header-section-number">35.1</span> Идея линейной регрессии</h2>
-</section>
-<section id="andan-simplelinear-model" class="level2" data-number="35.2">
-<h2 data-number="35.2" class="anchored" data-anchor-id="andan-simplelinear-model"><span class="header-section-number">35.2</span> Математическая модель</h2>
+<section id="одновыборочный-t-тест" class="level2" data-number="33.1">
+<h2 data-number="33.1" class="anchored" data-anchor-id="одновыборочный-t-тест"><span class="header-section-number">33.1</span> Одновыборочный t-тест</h2>
 <p><span class="math display">\[
-y_i = \beta_0 + \beta_1 x_i + \varepsilon_i
-\]</span></p>
-<p><span class="math display">\[
-y_i = \hat \beta_0 + \hat \beta_1 x_i + \hat \varepsilon_i = b_0 + b_1 x_i + e_i
-\]</span></p>
-<p><span class="math display">\[
-\hat y_i = b_0 + b_1 x_i
+t = \frac{\overline{X} - \mu}{s / \sqrt{n}} \overset{H_0}{\thicksim} t(n-1)
 \]</span></p>
 </section>
-<section id="andan-simplelinear-test" class="level2" data-number="35.3">
-<h2 data-number="35.3" class="anchored" data-anchor-id="andan-simplelinear-test"><span class="header-section-number">35.3</span> Тестирование качества модели</h2>
-<section id="andan-simplelinear-test-datavar" class="level3" data-number="35.3.1">
-<h3 data-number="35.3.1" class="anchored" data-anchor-id="andan-simplelinear-test-datavar"><span class="header-section-number">35.3.1</span> Структура изменчивости данных с точки зрения регрессионной модели</h3>
+<section id="двухвыборочный-t-тест" class="level2" data-number="33.2">
+<h2 data-number="33.2" class="anchored" data-anchor-id="двухвыборочный-t-тест"><span class="header-section-number">33.2</span> Двухвыборочный t-тест</h2>
+<section id="равные-выборки-и-дисперсии" class="level3" data-number="33.2.1">
+<h3 data-number="33.2.1" class="anchored" data-anchor-id="равные-выборки-и-дисперсии"><span class="header-section-number">33.2.1</span> Равные выборки и дисперсии</h3>
 <p><span class="math display">\[
-\text{TSS}= \sum_{i=1}^n (y_i - \overline Y)^2
+t = \frac{\overline X_1 - \overline X_2}{s_p \sqrt{\frac{2}{n}}} \overset{t}{\thicksim}(2n-2)
 \]</span></p>
 <p><span class="math display">\[
-\text{ESS}= \sum_{i=1}^n (\hat y_i - \overline Y)^2
-\]</span></p>
-<p><span class="math display">\[
-\text{RSS}= \sum_{i=1}^n (y_i - \hat y_i)^2
-\]</span></p>
-<p><span class="math display">\[
-\text{MS}_\text{t} = \frac{\text{TSS}}{n-1} = \frac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1} = \hat \sigma^2_Y = s^2_Y
-\]</span></p>
-<p><span class="math display">\[
-\text{MS}_\text{e} = \hat \sigma^2_\text{e}
-\]</span></p>
-<p><span class="math display">\[
-\text{MS}_\text{r} = \hat \sigma^2_\text{r}
+s_p = \sqrt{\frac{s^2_{X_1} + s^2_{X_2}}{2}}
 \]</span></p>
 </section>
-<section id="andan-simplelinear-test-fisher" class="level3" data-number="35.3.2">
-<h3 data-number="35.3.2" class="anchored" data-anchor-id="andan-simplelinear-test-fisher"><span class="header-section-number">35.3.2</span> F-критерий</h3>
+<section id="равные-или-неравные-выборки-равные-дисперсии" class="level3" data-number="33.2.2">
+<h3 data-number="33.2.2" class="anchored" data-anchor-id="равные-или-неравные-выборки-равные-дисперсии"><span class="header-section-number">33.2.2</span> Равные или неравные выборки, равные дисперсии</h3>
+<p>Равные дисперсии определяются как <span class="math inline">\(\frac{1}{2} &lt; \frac{s_1}{s_2} &lt; 2\)</span></p>
 <p><span class="math display">\[
-\begin{split}
-H_0 &amp;: \sigma_\text{e} \leqslant\sigma_\text{r} \\
-H_1 &amp;: \sigma_\text{e} &gt; \sigma_\text{r}
-\end{split}
+t = \frac{\overline X_1 - \overline X_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \overset{H_0}{\thicksim} t(n_1 + n_2 - 2)
 \]</span></p>
 <p><span class="math display">\[
-F = \frac{\text{MS}_\text{e}}{\text{MS}_\text{r}} = \frac{\hat \sigma^2_\text{e}}{\hat \sigma^2_\text{r}}
-\overset{H_0}{\thicksim} F(\text{df}_1, \text{df}_2)
+s_p = \sqrt{\frac{(n_1 - 1)s^2_{X_1} + (n_2 - 1)s^2_{X_2}}{n_1 + n_2 - 2}}
 \]</span></p>
 </section>
-</section>
-<section id="andan-simplelinear-test-student" class="level2" data-number="35.4">
-<h2 data-number="35.4" class="anchored" data-anchor-id="andan-simplelinear-test-student"><span class="header-section-number">35.4</span> Тестирование значимости коэффициентов</h2>
+<section id="равные-или-неравные-выборки-неравные-дисперсии" class="level3" data-number="33.2.3">
+<h3 data-number="33.2.3" class="anchored" data-anchor-id="равные-или-неравные-выборки-неравные-дисперсии"><span class="header-section-number">33.2.3</span> Равные или неравные выборки, неравные дисперсии</h3>
+<p>t-тест Уэлча, неравные дисперсии определяются как <span class="math inline">\(s_{X_1} &gt; 2 s_{X_2}\)</span> или <span class="math inline">\(s_{X_2} &gt; 2 s_{X_1}\)</span></p>
 <p><span class="math display">\[
-\begin{split}
-H_0 &amp;: \beta_1 = 0 \\
-H_1 &amp;: \beta_1 \neq 0
-\end{split}
+t = \frac{\overline X_1 - \overline X_2}{s_{\bar \Delta}} \overset{H_0}{\thicksim} t(\text{df}_p)
 \]</span></p>
 <p><span class="math display">\[
-t = \frac{b_1 - \beta_1}{\text{se}_{b_1}} \overset{H_0}{=} \frac{b_1}{\text{se}_{b_1}} \overset{H_0}{\thicksim} t(n-2)
+s_{\bar \Delta} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
 \]</span></p>
+<p>Welch–Satterthwaite equation</p>
 <p><span class="math display">\[
-\text{se}_{b_1} = \frac{\sqrt{\frac{1}{n-2} \sum_{i=1}^n (y_i - \hat y_i)^2}}{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2}}
-\]</span></p>
-<p><span class="math display">\[
-t = \frac{r \sqrt{n-2}}{\sqrt{1 - r^2}}
-\]</span></p>
-</section>
-<section id="andan-simplelinear-math" class="level2" data-number="35.5">
-<h2 data-number="35.5" class="anchored" data-anchor-id="andan-simplelinear-math"><span class="header-section-number">35.5</span> Математика простой линейной регрессии</h2>
-<section id="andan-simplelinear-solve-deriv" class="level3" data-number="35.5.1">
-<h3 data-number="35.5.1" class="anchored" data-anchor-id="andan-simplelinear-solve-deriv"><span class="header-section-number">35.5.1</span> Аналитическое вычисление коэффициентов</h3>
-<p><span class="math display">\[
-f(b_0, b_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-f(b_0, b_1) &amp;= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
-f(b_0, b_1) &amp;= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
-f(b_0, b_1) &amp;= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-\frac{f(b_0, b_1)}{\partial b_0} &amp;=
-\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) =
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
-\frac{f(b_0, b_1)}{\partial b_1} &amp;=
-\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) =
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-&amp;\cases {
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&amp;\cases{
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&amp;\cases{
-\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = 0 \\
-\sum_{i=1}^n y_i x_i - \sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x^2_i = 0
-} \\
-&amp;\cases{
-\sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = \sum_{i=1}^n y_i \\
-\sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x_i^2 = \sum_{i=1}^n y_i x_i
-} \\
-&amp;\cases{
-n b_0 + b_1 \sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\
-b_0 \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
+\text{df}_p = \frac{
+\Big( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \Big)^2
 }
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-b_0 &amp;= \frac{\sum_{i=1}^n y_i}{n} - b_1 \frac{\sum_{i=1}^n x_i}{n} \\
-b_0 &amp;= \overline Y - b_1 \overline X
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-\underline{b_1 \sum_{i=1}^n x_i^2} +
-\overline Y \sum_{i=1}^n x_i -
-\underline{b_1 \overline X \sum_{i=1}^n x_i} =
-\sum_{i=1}^n x_i y_i \\
-b_1 \Big( \sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i \Big) =
-\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-b_1 &amp;=
-\frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}
-{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i} =
-\frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n}}
-{ \dfrac{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i}{n}} \\
-b_1 &amp;= \frac{\overline{XY} - \overline X \cdot \overline Y}
-{\overline{X^2} - \overline X^2} =
-\frac{\overline{XY} - \overline X \cdot \overline Y}
-{\sigma_X^2}
-\end{split}
+{
+\frac{(s_1^2 / n_1)^2 }{ n_1 - 1 }
++
+\frac{ (s_2^2 / n_2)^2 }{ n_2-1 }
+}
 \]</span></p>
 </section>
-<section id="andan-simplelinear-model-matrix" class="level3" data-number="35.5.2">
-<h3 data-number="35.5.2" class="anchored" data-anchor-id="andan-simplelinear-model-matrix"><span class="header-section-number">35.5.2</span> Матричное представление модели</h3>
+<section id="связанные-выборки" class="level3" data-number="33.2.4">
+<h3 data-number="33.2.4" class="anchored" data-anchor-id="связанные-выборки"><span class="header-section-number">33.2.4</span> Связанные выборки</h3>
 <p><span class="math display">\[
-y_i = b_0 + b_1 x_i + e_i
+t = \frac{\overline X_D - \mu_0}{s_D / \sqrt{n}} \overset{H_0}{\thicksim} t(n-1)
 \]</span></p>
-<p><span class="math display">\[
-\begin{cases}
-y_1 = b_0 + b_1 x_1 + e_1 \\
-y_2 = b_0 + b_1 x_2 + e_2 \\
-y_3 = b_0 + b_1 x_3 + e_3 \\
-\vdots \\
-y_n = b_0 + b_1 x_n + e_n
-\end{cases}
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{y} = \mathbf{b} \mathbf{X} + \mathbf{e}
-\]</span></p>
-</section>
-<section id="andan-simplelinear-solve-matrix" class="level3" data-number="35.5.3">
-<h3 data-number="35.5.3" class="anchored" data-anchor-id="andan-simplelinear-solve-matrix"><span class="header-section-number">35.5.3</span> Матричное вычисление коэффициентов</h3>
-<p><span class="math display">\[
-\mathbf{b} = ({\mathbf{X}}\!^{\mathsf{T}} \mathbf{X})^{-1} {\mathbf{X}}\!^{\mathsf{T}} \mathbf{y}
-\]</span></p>
-</section>
-<section id="andan-simplelinear-solve-cor" class="level3" data-number="35.5.4">
-<h3 data-number="35.5.4" class="anchored" data-anchor-id="andan-simplelinear-solve-cor"><span class="header-section-number">35.5.4</span> Угловой коэффициент и коэффициент корреляции</h3>
-<p><span class="math display">\[
-b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X}
-\]</span></p>
-<p>Коэффициент корреляции Пирсона, как мы помним (<a href="andan-cor.html#eq-cor-pearson-formula" class="quarto-xref"><span>33.8</span></a>), вычисляется как</p>
-<p><span class="math display">\[
-r_{X,Y} = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
-\]</span></p>
-<p>Тогда справедливо, что</p>
-<p><span class="math display">\[
-\begin{split}
-b_1 &amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
-\cdot \frac{s_Y}{s_X} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
-\cdot
-\frac{\sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}}
-{\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}}} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-\cdot
-\frac{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \enclose{box}{ \sum_{i=1}^n (y_i - \overline Y) }} }{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
-&amp;= \frac{\overline {XY} - \overline X \cdot \overline Y}{\sigma_X}
-\end{split}
-\]</span></p>
-</section>
-<section id="tss-ess-rss" class="level3" data-number="35.5.5">
-<h3 data-number="35.5.5" class="anchored" data-anchor-id="tss-ess-rss"><span class="header-section-number">35.5.5</span> TSS = ESS + RSS?</h3>
-<div class="lab-guru">
-
-</div>
-<div class="quote small pers">
-<p>— Назрел вопросик. Ты выше сказал, что общая сумма квадратов — это объяснённая сумма квадратов плюс остаточная сумма квадратов. Но на картинке отображены не квадраты, а разницы между реальными значениями, модельными значениями и средним. Для них равенство очевидно. А вот будет ли так работать с суммами квадратов — совершенно не факт! Что-то ты, автор, не договариваешь…<br> — Ты прав. Давай разбираться.</p>
-</div>
-<p><span class="math display">\[
-\begin{split}
-d_\text{t} &amp;= y_i - \overline Y \\
-d_\text{e} &amp;= \hat y_i - \overline Y \\
-d_\text{t} &amp;= y_i - \hat y_i
-\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}
-d_\text{t} &amp;= y_i - \overline Y = \\
-&amp;= y_i - \overline Y + \hat y_i - \hat y_i = \\
-&amp;= (\hat y_i - \overline Y) + (y_i - \hat y_i) = \\
-&amp;= d_\text{e} + d_\text{r}
-\end{split}
-\]</span></p>
-<p>Однако я утверждаю (<a href="#prp-tss" class="quarto-xref"><span>35.1</span></a>), что</p>
-<div id="prp-tss" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 35.1</strong></span> <span class="math display">\[
-\text{TSS}= \text{ESS}+ \text{RSS}
-\]</span></p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
-\begin{split}
-\text{TSS}&amp;= \sum_{i=1}^n (y_i - \overline Y)^2 = \\
-&amp;= \sum_{i=1}^n (y_i - \hat y + \hat y - \overline Y)^2 = \\
-&amp;= \sum_{i=1}^n \big( (y_i - \hat y_i) + (\hat y_i - \overline Y) \big)^2 = \\
-&amp;= \sum_{i=1}^n (y_i - \hat y_i)^2 + \sum_{i=1}^n (\hat y_i - \overline Y)^2 + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = \\
-&amp;= \text{RSS}+ \text{ESS}+ 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \bar y)
-\end{split}
-\]</span></p>
-<p>Окей, осталось доказать, что <span class="math inline">\(\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = 0\)</span>, и все будет найс.</p>
-<p>Так как <span class="math inline">\(b_0 = \overline Y - b_1 \overline X\)</span>, а <span class="math inline">\(b_1 = \dfrac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}\)</span> имеем</p>
-<p><span class="math display">\[
-\begin{split}
-\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y)
-&amp;= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \overline Y) = \\
-&amp;= \sum_{i=1}^n (y_i - \overline Y + b_1 \overline X - b_1x_i) (\overline Y - b_1 \overline X + b_1 x_i - \overline Y) = \\
-&amp;= \sum_{i=1}^n \big( (y_i - \overline Y) - b_1 (x_i - \overline X) \big) \cdot b_1 (x_i - \overline X) = \\
-&amp;= \sum_{i=1}^n \big( b_1 (x_i - \overline X) (y_i - \overline Y) - b_1^2 (x_i - \overline X)^2 \big) = \\
-&amp;= \sum_{i=1}^n b_1 (x_i - \overline X) (y_i - \overline Y) - \sum_{i=1}^n b_1^2 (x_i - \overline X)^2 = \\
-&amp;= b_1 \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) - b_1^2 \sum_{i=1}^n (x_i - \overline X) = \\
-&amp;= \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2 \cdot \cancel{ \sum_{i=1}^n (x_i - \overline X)^2} }{\Big( \sum_{i=1}^n (x_i - \overline X)^2\Big)^\cancel{2}} = \\
-&amp; = \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} = 0 \quad \blacksquare
-\end{split}
-\]</span></p>
-</div>
-<div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>При доказательстве утверждения мы использовали интерсепт <span class="math inline">\(b_0\)</span>. В принципе, нам никто не запрещает построить линейную регрессию без интерсепта — вида <span class="math inline">\(y_i = b_1 x_i + e_i\)</span>. Однако для такого случая соотношение <a href="#prp-tss" class="quarto-xref"><span>35.1</span></a> выполняться не будет. Оно справедливо только для моделей с интерсептом.</p>
-<p>Работая с регрессией — как простой, так и сложной — мы всегда будем иметь дело с моделями, содержащими интерсепт, поэтому утверждение <a href="#prp-tss" class="quarto-xref"><span>35.1</span></a> всегда будет верным.</p>
-</div>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
@@ -1547,13 +1324,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./andan-cor.html" class="pagination-link" aria-label="Корреляционный анализ">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span>
+      <a href="./part-andan.html" class="pagination-link" aria-label="Методы анализа данных">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Методы анализа данных</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./andan-moderation.html" class="pagination-link" aria-label="Модерация">
-        <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Модерация</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./andan-cor.html" class="pagination-link" aria-label="Корреляционный анализ">
+        <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
