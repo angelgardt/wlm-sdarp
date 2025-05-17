@@ -665,14 +665,19 @@ window.Quarto = {
   <li><a href="#prob-hyptesting-typeIIerror" id="toc-prob-hyptesting-typeIIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIIerror"><span class="header-section-number">31.4.2</span> Ошибка II рода и статистическая мощность</a></li>
   <li><a href="#prob-errorconnetion" id="toc-prob-errorconnetion" class="nav-link" data-scroll-target="#prob-errorconnetion"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</a></li>
   </ul></li>
-  <li><a href="#алгоритм-тестирования-статистических-гипотез" id="toc-алгоритм-тестирования-статистических-гипотез" class="nav-link" data-scroll-target="#алгоритм-тестирования-статистических-гипотез"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</a>
+  <li><a href="#prob-hyptesting-algorithm" id="toc-prob-hyptesting-algorithm" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</a>
   <ul>
-  <li><a href="#путь-первый" id="toc-путь-первый" class="nav-link" data-scroll-target="#путь-первый"><span class="header-section-number">31.5.1</span> Путь первый</a></li>
-  <li><a href="#путь-второй" id="toc-путь-второй" class="nav-link" data-scroll-target="#путь-второй"><span class="header-section-number">31.5.2</span> Путь второй</a></li>
-  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="header-section-number">31.5.3</span> p-value</a></li>
-  <li><a href="#асимметрия-статистического-вывода" id="toc-асимметрия-статистического-вывода" class="nav-link" data-scroll-target="#асимметрия-статистического-вывода"><span class="header-section-number">31.5.4</span> Асимметрия статистического вывода</a></li>
+  <li><a href="#prob-hyptesting-algorithm-opt1" id="toc-prob-hyptesting-algorithm-opt1" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt1"><span class="header-section-number">31.5.1</span> Путь первый</a></li>
+  <li><a href="#prob-hyptesting-algorithm-opt2" id="toc-prob-hyptesting-algorithm-opt2" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt2"><span class="header-section-number">31.5.2</span> Путь второй</a>
+  <ul class="collapse">
+  <li><a href="#prob-hyptesting-algorithm-opt2-pval" id="toc-prob-hyptesting-algorithm-opt2-pval" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt2-pval"><span class="header-section-number">31.5.2.1</span> p-value</a></li>
   </ul></li>
-  <li><a href="#алгоритм-тестирования-статистических-гипотез-в-r" id="toc-алгоритм-тестирования-статистических-гипотез-в-r" class="nav-link" data-scroll-target="#алгоритм-тестирования-статистических-гипотез-в-r"><span class="header-section-number">31.6</span> Алгоритм тестирования статистических гипотез в R</a></li>
+  <li><a href="#prob-hyptesting-inf-asymm" id="toc-prob-hyptesting-inf-asymm" class="nav-link" data-scroll-target="#prob-hyptesting-inf-asymm"><span class="header-section-number">31.5.3</span> Асимметрия статистического вывода</a></li>
+  </ul></li>
+  <li><a href="#prob-hyptesting-algorithm-R" id="toc-prob-hyptesting-algorithm-R" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-R"><span class="header-section-number">31.6</span> Алгоритм тестирования статистических гипотез в R</a>
+  <ul>
+  <li><a href="#prob-hyptesting-algorithm-pval-math" id="toc-prob-hyptesting-algorithm-pval-math" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-pval-math"><span class="header-section-number">31.6.1</span> Математика вычисления p-value</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1170,25 +1175,120 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>Для порядка отметим, что закономерности, обозначенные в <a href="#imp-alpha-beta-1" class="quarto-xref"><span>31.3</span></a>, <a href="#imp-alpha-beta-2" class="quarto-xref"><span>31.4</span></a>, <a href="#imp-alpha-beta-3" class="quarto-xref"><span>31.5</span></a> справедливы для ситуации небольшого размера эффекта, то есть когда параметры генеральных совокупностей не слишком сильно отличаются.</p>
-<p>Если же мы имеем дело в большим размером эффекта, то жизнь становится значительно проще, вероятности ошибок практически перестают зависеть друг от друга. Далее мы визуализируем, как это работает.</p>
+<p>Если же мы имеем дело в большим размером эффекта, то жизнь становится значительно проще, так как вероятности ошибок практически перестают зависеть друг от друга. Далее мы визуализируем, как это работает.</p>
 <p>Надо ли было тогда страдать над формулами? Да, эти соотношения имеет смысл себе представлять, так как на практике мы чаще всего имеем дело со средними и малыми эффектами — особенно в нашей с вами исследовательской области.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="алгоритм-тестирования-статистических-гипотез" class="level2" data-number="31.5">
-<h2 data-number="31.5" class="anchored" data-anchor-id="алгоритм-тестирования-статистических-гипотез"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</h2>
+<section id="prob-hyptesting-algorithm" class="level2" data-number="31.5">
+<h2 data-number="31.5" class="anchored" data-anchor-id="prob-hyptesting-algorithm"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</h2>
 <div class="lab-junior">
 
 </div>
-<section id="путь-первый" class="level3" data-number="31.5.1">
-<h3 data-number="31.5.1" class="anchored" data-anchor-id="путь-первый"><span class="header-section-number">31.5.1</span> Путь первый</h3>
+<section id="prob-hyptesting-algorithm-opt1" class="level3" data-number="31.5.1">
+<h3 data-number="31.5.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt1"><span class="header-section-number">31.5.1</span> Путь первый</h3>
+<div class="lab-junior">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Алгоритм тестирования статистических гипотез [Вариант 1]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Формулировка гипотезы</li>
+<li>Выбор статистического критерия</li>
+<li>Выбор уровня значимости <span class="math inline">\(α\)</span></li>
+<li>Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна</li>
+<li>Определение границ критической области
+<ul>
+<li>Для <em>односторонней</em> альтернативы одно критическое значение <span class="math inline">\(t_{cr}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы два критических значения <span class="math inline">\(t_{cr1}\)</span> и <span class="math inline">\(t_{cr2}\)</span>, такие&nbsp;что <span class="math inline">\(t_{cr1} &lt; t_{cr2}\)</span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
+</ul></li>
+<li>Расчёт выборочной статистики <span class="math inline">\(t_o\)</span></li>
+<li>Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область</li>
+<li>Статистический вывод</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Статистический вывод [Вариант 1]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Если значение выборочной статистики <em>попадает</em> в границы критической области, то мы <em>имеем основания отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.
+<ul>
+<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{cr}\)</span></li>
+<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{cr}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{cr1} \vee t_o &gt; t_{cr2}\)</span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+</ul></li>
+<li>Если значение выборочной статистики <strong>не</strong> <em>попадает</em> в границы критической области, то мы <strong>не</strong> <em>имеем оснований отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.
+<ul>
+<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{cr}\)</span></li>
+<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{cr}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{cr1} \wedge t_o &lt; t_{cr2}\)</span><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="путь-второй" class="level3" data-number="31.5.2">
-<h3 data-number="31.5.2" class="anchored" data-anchor-id="путь-второй"><span class="header-section-number">31.5.2</span> Путь второй</h3>
-</section>
-<section id="p-value" class="level3" data-number="31.5.3">
-<h3 data-number="31.5.3" class="anchored" data-anchor-id="p-value"><span class="header-section-number">31.5.3</span> p-value</h3>
+<section id="prob-hyptesting-algorithm-opt2" class="level3" data-number="31.5.2">
+<h3 data-number="31.5.2" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt2"><span class="header-section-number">31.5.2</span> Путь второй</h3>
+<div class="lab-junior">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Алгоритм тестирования статистических гипотез [Вариант 2]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Формулировка гипотезы</li>
+<li>Выбор статистического критерия</li>
+<li>Выбор уровня значимости <span class="math inline">\(α\)</span></li>
+<li>Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна</li>
+<li>Расчёт выборочной статистики</li>
+<li>Расчёт p-значения (p-value)</li>
+<li>Сопоставление уровня значимости <span class="math inline">\(α\)</span> и p-значения (p-value)</li>
+<li>Статистический вывод</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Статистический вывод [Вариант 2]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Если p-значение <em>меньше</em> уровня значимости (<span class="math inline">\(\mathsf{p}&lt; \alpha\)</span>), то мы <em>имеем основания отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.</li>
+<li>Если p-значение <em>больше</em> уровня значимости (<span class="math inline">\(\mathsf{p}&gt; \alpha\)</span>), то мы <strong>не</strong> <em>имеем оснований отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.</li>
+</ul>
+</div>
+</div>
+<section id="prob-hyptesting-algorithm-opt2-pval" class="level4" data-number="31.5.2.1">
+<h4 data-number="31.5.2.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt2-pval"><span class="header-section-number">31.5.2.1</span> p-value</h4>
 <p><span class="math display">\[
 \begin{align}
 H_1&amp;: \theta_1 &gt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \geqslant t_o \mid H_0) \\
@@ -1196,6 +1296,26 @@ H_1&amp;: \theta_1 &lt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \leqslant t_o \m
 H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \geqslant t_o \mid H_0), \mathbb{P}(t \leqslant t_o \mid H_0)  \big)
 \end{align}
 \]</span></p>
+<hr>
+</section>
+</section>
+<section id="prob-hyptesting-inf-asymm" class="level3" data-number="31.5.3">
+<h3 data-number="31.5.3" class="anchored" data-anchor-id="prob-hyptesting-inf-asymm"><span class="header-section-number">31.5.3</span> Асимметрия статистического вывода</h3>
+<div class="lab-junior">
+
+</div>
+</section>
+</section>
+<section id="prob-hyptesting-algorithm-R" class="level2" data-number="31.6">
+<h2 data-number="31.6" class="anchored" data-anchor-id="prob-hyptesting-algorithm-R"><span class="header-section-number">31.6</span> Алгоритм тестирования статистических гипотез в R</h2>
+<div class="lab-senior">
+
+</div>
+<section id="prob-hyptesting-algorithm-pval-math" class="level3" data-number="31.6.1">
+<h3 data-number="31.6.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-pval-math"><span class="header-section-number">31.6.1</span> Математика вычисления p-value</h3>
+<div class="lab-senior">
+
+</div>
 <p><span class="math display">\[
 \begin{align}
 H_1&amp;: \theta_1 &gt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \geqslant t_o \mid H_0) = \int_{t_o}^{+\infty} \mathbb{p}(t) dt \\
@@ -1203,19 +1323,7 @@ H_1&amp;: \theta_1 &lt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \leqslant t_o \m
 H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \geqslant t_o \mid H_0), \mathbb{P}(t \leqslant t_o \mid H_0)  \big) = 2 \min \Bigg( \int_{t_o}^{+\infty} \mathbb{p}(t) dt, \int_{-\infty}^{t_o} \mathbb{p}(t) dt \Bigg)
 \end{align}
 \]</span></p>
-</section>
-<section id="асимметрия-статистического-вывода" class="level3" data-number="31.5.4">
-<h3 data-number="31.5.4" class="anchored" data-anchor-id="асимметрия-статистического-вывода"><span class="header-section-number">31.5.4</span> Асимметрия статистического вывода</h3>
-<div class="lab-junior">
-
-</div>
-</section>
-</section>
-<section id="алгоритм-тестирования-статистических-гипотез-в-r" class="level2" data-number="31.6">
-<h2 data-number="31.6" class="anchored" data-anchor-id="алгоритм-тестирования-статистических-гипотез-в-r"><span class="header-section-number">31.6</span> Алгоритм тестирования статистических гипотез в R</h2>
-<div class="lab-senior">
-
-</div>
+<hr>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">404</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>smpl1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">15</span>)</span>
@@ -1336,6 +1444,7 @@ Ruiter, J. de. (2019). Redefine or justify? Comments on the alpha debate. <em>Ps
 </div>
 </section>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -1344,6 +1453,9 @@ Ruiter, J. de. (2019). Redefine or justify? Comments on the alpha debate. <em>Ps
 <li id="fn3"><p>Это верно, так как события, описываемые ситуациями 2 и 4 (<a href="#tbl-stattest-situations" class="quarto-xref">Таблица&nbsp;<span>31.2</span></a>), составляют полную группу событий.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Так как <span class="math inline">\(\mathbb{P}(\hat H_0 | H_0) + \mathbb{P}(\hat H_1 | H_0) = \mathbb{P}(\hat H_0 | H_0) + \alpha = 1\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Внимательный читатель, конечно, возразит, что в этом случае <span class="math inline">\(\beta\)</span> будет стремится не к единице, а к отношению <span class="math inline">\(\dfrac{\mathbb{P}(H_1)}{\mathbb{P}(H_0)}\)</span>. Это справедливо, однако для небольшого размера эффекта это отношение близко к единице. О роли размера эффекта см. далее.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично — что&nbsp;встречается довольно часто — можно рассматривать модуль критического значения <span class="math inline">\(|t_{cr}|\)</span>, так&nbsp;как оба критических значения будут равны по&nbsp;модулю, но&nbsp;противоположны по знаку: <span class="math inline">\(t_{cr1} = -t_{cr2}\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &gt; |t_{cr}|\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &lt; |t_{cr}|\)</span>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
