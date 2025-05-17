@@ -224,6 +224,12 @@ tibble(x = seq(-4, 4, by = .01),
 
 #### t-распределение {#prob-dist-cont-t}
 
+$$
+p(t) = \frac{\Gamma (\frac{\nu + 1}{2})}
+{\sqrt{\pi \nu} \, \Gamma (\frac{\nu}{2})}
+\Big( 1 + \frac{t^2}{\nu} \Big)^{-\frac{\nu + 1}{2}}
+$$
+
 ```{r t-dist}
 #| label: fig-t-dist
 #| fig-cap: "Функция плотности распределения Стьюдента"

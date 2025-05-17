@@ -121,6 +121,7 @@
 \DeclareMathOperator{\arcsch}{arcsch}
 
 <!--- Stats --->
+\newcommand{\pval}{\mathsf{p}}
 \newcommand{\mode}{\text{mode}}
 \newcommand{\median}{\text{median}}
 \newcommand{\mean}{\mathbb{mean}}

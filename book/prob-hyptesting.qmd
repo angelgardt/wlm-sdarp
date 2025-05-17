@@ -128,7 +128,7 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::{.lab-junior}
 :::
 
-Изучая в исследовании какую-либо закономерность, мы достоверно не знаем, существует ли она в реальном мире. *В реальном мире* в данном контексте означает *на уровне генеральных совокупностей*. Почему мы не знаем --- и не можем знать --- об этом достоверно? Причина такого положения дел нам хорошо известна: генеральная совокупность недоступна для наблюдения в полном объеме. Тем не менее, в мире ~~идей~~ генеральных совокупностей закономерность **может существовать**, а **может и не существовать**.
+Изучая в исследовании какую-либо закономерность, мы достоверно не знаем, существует ли она в реальном мире. «*В реальном мире*» в данном контексте означает «*на уровне генеральных совокупностей*». Почему мы не знаем --- и не можем знать --- об этом достоверно? Причина такого положения дел нам хорошо известна: генеральная совокупность недоступна для наблюдения в полном объеме. Тем не менее, в мире ~~идей~~ генеральных совокупностей закономерность **может существовать**, а **может и не существовать**.
 
 :::{.quote .small .pers}
 --- Ну, тоже мне, великое умозаключение! Это же предельно очевидно!<br>
@@ -384,18 +384,18 @@ $${#eq-alpha-to-beta}
 
 $$
 \begin{align}
-\theta_1 > \theta_2 : p &= \prob(t \geq t_o \mid H_0) \\
-\theta_1 < \theta_2 : p &= \prob(t \leq t_o \mid H_0) \\
-\theta_1 \neq \theta_2 : p &= 2 \min \big( \prob(t \geq t_o \mid H_0), \prob(t \leq t_o \mid H_0)  \big)
+H_1&: \theta_1 > \theta_2 \quad \pval = \prob(t \geq t_o \mid H_0) \\
+H_1&: \theta_1 < \theta_2 \quad \pval = \prob(t \leq t_o \mid H_0) \\
+H_1&: \theta_1 \neq \theta_2 \quad \pval = 2 \min \big( \prob(t \geq t_o \mid H_0), \prob(t \leq t_o \mid H_0)  \big)
 \end{align}
 $$
 
 
 $$
 \begin{align}
-\theta_1 > \theta_2 : p &= \prob(t \geq t_o \mid H_0) = \int_{t_o}^{+\infty} f(t) dt \\
-\theta_1 < \theta_2 : p &= \prob(t \leq t_o \mid H_0) = \int_{-\infty}^{t_o} f(t) dt \\
-\theta_1 \neq \theta_2 : p &= 2 \min \big( \prob(t \geq t_o \mid H_0), \prob(t \leq t_o \mid H_0)  \big) = 2 \min \Bigg( \int_{-\infty}^{t_o} f(t) dt, \int_{t_o}^{+\infty} f(t) dt \Bigg)
+H_1&: \theta_1 > \theta_2 \quad \pval = \prob(t \geq t_o \mid H_0) = \int_{t_o}^{+\infty} \dens(t) dt \\
+H_1&: \theta_1 < \theta_2 \quad \pval = \prob(t \leq t_o \mid H_0) = \int_{-\infty}^{t_o} \dens(t) dt \\
+H_1&: \theta_1 \neq \theta_2 \quad \pval = 2 \min \big( \prob(t \geq t_o \mid H_0), \prob(t \leq t_o \mid H_0)  \big) = 2 \min \Bigg( \int_{t_o}^{+\infty} \dens(t) dt, \int_{-\infty}^{t_o} \dens(t) dt \Bigg)
 \end{align}
 $$
 
@@ -408,6 +408,48 @@ $$
 :::
 
 
+## Алгоритм тестирования статистических гипотез в R
+
+:::{.lab-senior}
+:::
+
+```{r}
+set.seed(404)
+smpl1 <- rnorm(60, 100, 15)
+smpl2 <- rnorm(60, 105, 15)
+mu <- 100
+s <- 15
+BSDA::z.test(smpl1, sigma.x = s, mu = mu)
+BSDA::z.test(smpl2, sigma.x = s, mu = mu)
+
+z1 <- (mean(smpl1) - mu) / (s / sqrt(length(smpl1)))
+z1
+p1 <- 2 * min(
+  integrate(f = dnorm,
+          mean = 0, sd = 1,
+          lower = -Inf,
+          upper = z1)$value,
+  integrate(f = dnorm,
+          mean = 0, sd = 1,
+          lower = z1,
+          upper = Inf)$value
+)
+p1
+
+z2 <- (mean(smpl2) - mu) / (s / sqrt(length(smpl2)))
+z2
+p2 <- 2 * min(
+  integrate(f = dnorm,
+            mean = 0, sd = 1,
+            lower = -Inf,
+            upper = z2)$value,
+  integrate(f = dnorm,
+            mean = 0, sd = 1,
+            lower = z2,
+            upper = Inf)$value
+)
+p2
+```
 
 
 ***
