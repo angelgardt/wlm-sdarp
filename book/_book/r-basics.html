@@ -98,6 +98,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -288,50 +291,56 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -348,31 +357,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
   </div>
 </li>
       </ul>
@@ -389,13 +398,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
@@ -412,25 +421,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -447,43 +456,49 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -499,26 +514,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -612,7 +633,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
@@ -720,7 +741,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-console-waiting" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-waiting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/console-waiting.gif" class="img-fluid figure-img">
+<a href="img/r-intro/console-waiting.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;2.1: Ожидание команды"><img src="img/r-intro/console-waiting.gif" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-waiting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.1: Ожидание команды
@@ -731,7 +752,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-console-print" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/console-print.gif" class="img-fluid figure-img">
+<a href="img/r-intro/console-print.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;2.2: Выполнение команды. После написания команды нажата клавиша Enter"><img src="img/r-intro/console-print.gif" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.2: Выполнение команды. После написания команды нажата клавиша <code>Enter</code>
@@ -742,7 +763,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-console-plus" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-plus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/console-plus.gif" class="img-fluid figure-img">
+<a href="img/r-intro/console-plus.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Иллюстрация&nbsp;2.3: Ожидание окончания команды. После дописывания скобки нажата клавиша Enter"><img src="img/r-intro/console-plus.gif" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-plus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.3: Ожидание окончания команды. После дописывания скобки нажата клавиша <code>Enter</code>
@@ -753,7 +774,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-console-plus-esc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-console-plus-esc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/console-plus-esc.gif" class="img-fluid figure-img">
+<a href="img/r-intro/console-plus-esc.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Иллюстрация&nbsp;2.4: Прерывание команды. После перехода в ожидание окончания команды нажата клавиша Esc"><img src="img/r-intro/console-plus-esc.gif" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-console-plus-esc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.4: Прерывание команды. После перехода в ожидание окончания команды нажата клавиша <code>Esc</code>
@@ -902,7 +923,7 @@ Type 'q()' to quit R.</code></pre>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/r-intro/orly-changing-stuff-and-seeing.png" class="img-fluid figure-img"></p>
+<p><a href="img/r-intro/orly-changing-stuff-and-seeing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Как изучать программирование? Источник"><img src="img/r-intro/orly-changing-stuff-and-seeing.png" class="img-fluid figure-img" alt="Как изучать программирование? Источник"></a></p>
 <figcaption>Как изучать программирование? <a href="https://www.orlybooks.com/books/changing-stuff-and-seeing">Источник</a></figcaption>
 </figure>
 </div>
@@ -1110,7 +1131,7 @@ Type 'q()' to quit R.</code></pre>
 <p>В принципе, если вы случайно опечатаетесь, катастрофических последствий это, скорее всего, не вызовет — код упадет в ошибкой (<a href="#lst-equal-comparison" class="quarto-xref">Код&nbsp;<span>2.6</span></a>). Хотя могло бы…<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/r-intro/robots-kill-humans.png" class="img-fluid figure-img"></p>
+<p><a href="img/r-intro/robots-kill-humans.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Code review — это полезно. Источник"><img src="img/r-intro/robots-kill-humans.png" class="img-fluid figure-img" alt="Code review — это полезно. Источник"></a></p>
 <figcaption>Code review — это полезно. <a href="https://www.reddit.com/r/ProgrammerHumor/comments/4x26u3/this_is_why_code_reviews_are_a_good_thing/">Источник</a></figcaption>
 </figure>
 </div>
@@ -1178,7 +1199,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-rhistory" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rhistory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/rhistory.gif" class="img-fluid figure-img">
+<a href="img/r-intro/rhistory.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Иллюстрация&nbsp;2.5: История команд. Предыдущие команды можно вызвать в консоль с помощью клавиш ↑ и ↓."><img src="img/r-intro/rhistory.gif" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rhistory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.5: История команд. Предыдущие команды можно вызвать в консоль с помощью клавиш <code>↑</code> и <code>↓</code>.
@@ -1197,7 +1218,7 @@ Type 'q()' to quit R.</code></pre>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Историю команд можно найти на вкладке <code>History</code> третьего окна (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>). Также существует файл <code>.Rhistory</code>, в котором также хранится история команд — его можно найти в папке пользователя или рабочей директории. Скорее всего, он не будет отображаться в Проводнике/Finder, так как является скрытым. Чтобы его увидеть, нужно включить отображение скрытых файлов на компьютере. Или же посмотреть во вкладку <code>Files</code> четвертого окна (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>) — там отображаются даже скрытые файлы.</p>
+<p>Историю команд можно найти на вкладке <code>History</code> третьего окна (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>). Также существует файл <code>.Rhistory</code>, в котором также хранится история команд — его можно найти в папке пользователя или рабочей директории. Скорее всего, он не будет отображаться в Проводнике/Finder, так как является скрытым. Чтобы его увидеть, нужно включить отображение скрытых файлов на компьютере. Или же посмотреть во вкладку <code>Files</code> четвертого окна (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>) — там отображаются даже скрытые файлы.</p>
 </div>
 </div>
 </div>
@@ -1208,7 +1229,7 @@ Type 'q()' to quit R.</code></pre>
 <div class="lab-junior">
 
 </div>
-<p>Хотя у нас и есть возможность вернуться к предыдущим командам, в реальной жизни это нас слабо спасает. Удобнее фиксировать последовательность команд в некотором файле, создавая <em>скрипт</em>, а из него уже отправлять команды на выполнение в консоль. Это ровно то, зачем нам нужно окно <code>Code Editor</code> (первое в интерфейсе — <a href="r-intro.html#fig-rstudio-interface" class="quarto-xref"><span>2.8</span></a>), в котором и живёт скрипт.</p>
+<p>Хотя у нас и есть возможность вернуться к предыдущим командам, в реальной жизни это нас слабо спасает. Удобнее фиксировать последовательность команд в некотором файле, создавая <em>скрипт</em>, а из него уже отправлять команды на выполнение в консоль. Это ровно то, зачем нам нужно окно <code>Code Editor</code> (первое в интерфейсе — <a href="r-intro.html#fig-rstudio-interface" class="quarto-xref"><span>1.8</span></a>), в котором и живёт скрипт.</p>
 <p>В скрипте можно выполнить всё то же самое, что мы делали в консоли. Есть только одно отличие:</p>
 <ul>
 <li>в консоли мы выполняли команду, нажимая <code>Enter</code>;</li>
@@ -1229,7 +1250,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-run-line" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-run-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/run-line.gif" class="img-fluid figure-img" data-ref-parent="fig-run-from-script">
+<a href="img/r-intro/run-line.gif" class="lightbox" data-gallery="fig-run-from-script" title="Иллюстрация&nbsp;2.6&nbsp;(a): Выполнение строки. Первый раз нажат Enter, второй раз — Ctrl + Enter"><img src="img/r-intro/run-line.gif" class="img-fluid figure-img" data-ref-parent="fig-run-from-script"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-run-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Выполнение строки. Первый раз нажат <code>Enter</code>, второй раз — <code>Ctrl</code> + <code>Enter</code>
@@ -1243,7 +1264,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-run-part-of-line" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-run-part-of-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/run-part-of-line.gif" class="img-fluid figure-img" data-ref-parent="fig-run-from-script">
+<a href="img/r-intro/run-part-of-line.gif" class="lightbox" data-gallery="fig-run-from-script" title="Иллюстрация&nbsp;2.6&nbsp;(b): Выполнение части строки. Первый раз исполняется вся строка, второй — только выделенна часть"><img src="img/r-intro/run-part-of-line.gif" class="img-fluid figure-img" data-ref-parent="fig-run-from-script"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-run-part-of-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Выполнение части строки. Первый раз исполняется вся строка, второй — только выделенна часть
@@ -1257,7 +1278,7 @@ Type 'q()' to quit R.</code></pre>
 <div id="fig-run-two-lines" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-run-two-lines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/run-two-lines.gif" class="img-fluid figure-img" data-ref-parent="fig-run-from-script">
+<a href="img/r-intro/run-two-lines.gif" class="lightbox" data-gallery="fig-run-from-script" title="Иллюстрация&nbsp;2.6&nbsp;(c): Выполнение нескольких строк. Последовательно выполненые обе выделенные строки"><img src="img/r-intro/run-two-lines.gif" class="img-fluid figure-img" data-ref-parent="fig-run-from-script"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-run-two-lines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) Выполнение нескольких строк. Последовательно выполненые обе выделенные строки
@@ -1354,11 +1375,11 @@ f(x),
 <p>Мы желали вычислить <span class="math inline">\(\log_4 13\)</span>. Согласно математике, это <span class="math inline">\(1.85\)</span> с копейками. Для вычисления логарифма, конечно же, существует функция <code>log()</code>, однако у «математического» логарифма два аргумента: собственно аргумент — в нашем случае <span class="math inline">\(13\)</span> — и основание логарифма — в нашем случае <span class="math inline">\(4\)</span>. Общий синтаксис (<a href="#lst-intro-fun" class="quarto-xref">Код&nbsp;<span>2.7</span></a>) нам подсказывает, что функция может принимать несколько аргументов, но будет ли разница между <code>log(13, 4)</code> и <code>log(4, 13)</code>? В математике мы сначала пишем основание логарифма, затем число, от которого его нужно вычислить — сохраняется ли этот порядок при использовании функции в R?</p>
 <section id="r-intro-help" class="level4" data-number="2.2.1.1">
 <h4 data-number="2.2.1.1" class="anchored" data-anchor-id="r-intro-help"><span class="header-section-number">2.2.1.1</span> Help</h4>
-<p>Чтобы ответить на эти вопросы, нам необходимо ненадолго отвлечься на важную вкладку чётвертого окна интерфейса RStudio (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>) — <strong>Help</strong>. Оно, как мы отмечали выше, содержит документацию по R (<a href="#fig-r-intro-help" class="quarto-xref">Иллюстрация&nbsp;<span>2.7</span></a>).</p>
+<p>Чтобы ответить на эти вопросы, нам необходимо ненадолго отвлечься на важную вкладку чётвертого окна интерфейса RStudio (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>) — <strong>Help</strong>. Оно, как мы отмечали выше, содержит документацию по R (<a href="#fig-r-intro-help" class="quarto-xref">Иллюстрация&nbsp;<span>2.7</span></a>).</p>
 <div id="fig-r-intro-help" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-intro-help-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/r-help.png" class="img-fluid figure-img">
+<a href="img/r-intro/r-help.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Иллюстрация&nbsp;2.7: Вкладка Help"><img src="img/r-intro/r-help.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-intro-help-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.7: Вкладка Help
@@ -1381,7 +1402,7 @@ f(x),
 <div id="fig-r-intro-help-log" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-intro-help-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/r-help-log.png" class="img-fluid figure-img">
+<a href="img/r-intro/r-help-log.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Иллюстрация&nbsp;2.8: Help по функции log()"><img src="img/r-intro/r-help-log.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-intro-help-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.8: Help по функции <code>log()</code>
@@ -1553,7 +1574,7 @@ f(x),
 <div class="cell">
 <div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">base =</span> <span class="dv">4</span>) <span class="do">## что случилось?</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: argument "x" is missing, with no default</code></pre>
+<pre><code>Error in log(base = 4): argument "x" is missing, with no default</code></pre>
 </div>
 </div>
 </div>
@@ -1576,7 +1597,7 @@ f(x),
 <div class="cell">
 <div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">base =</span> <span class="dv">6</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: argument "x" is missing, with no default</code></pre>
+<pre><code>Error in log(base = 6): argument "x" is missing, with no default</code></pre>
 </div>
 </div>
 <p>Если же мы попытаемся вызвать эту функцию без указания основания логарифма, то она прекрасно отработает, взяв за значение аргумента <code>base</code> нечто, получаемое в результате работы функции <code>exp(1)</code>:</p>
@@ -1674,7 +1695,7 @@ f(x),
 <ul>
 <li>первое помещено в переменную напрямую, второе создано вычислением <code>4 * 8</code></li>
 </ul></li>
-<li>созданные объекты отображаются во вкладке <strong>Environment</strong> третьего окна RStudio (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>2.8</span></a>)</li>
+<li>созданные объекты отображаются во вкладке <strong>Environment</strong> третьего окна RStudio (<a href="r-intro.html#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>)</li>
 </ul>
 <p><strong>Объектом</strong> в R может быть абсолютно всё, что угодно — число, строка, вектор, матрица, таблица, список, функция и другие более сложные и специфические штуки. Мы не будем погружаться в&nbsp;глубокие программистские детали и аровское закулисье, поэтому всё, что валяется в Environment для нас есть объект.</p>
 <p>С созданными объектами можно далее успешно работать. Например, созданные переменные <code>x</code> и <code>y</code> использоваться во всяких вычислениях:</p>
@@ -1802,7 +1823,7 @@ f(x),
 <pre><code>Error in x &lt;- y = 10: could not find function "&lt;-&lt;-"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>x; y <span class="do">## две короткие команды можно выполнить в одной строке, разделив их точкой в запятой</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>x; y <span class="do">## две короткие команды можно выполнить в одной строке, разделив их точкой c запятой</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
@@ -1852,9 +1873,9 @@ f(x),
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -1873,7 +1894,7 @@ f(x),
 <div class="cell">
 <div class="sourceCode cell-code" id="cb197"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>This is lavaan 0.6-18
+<pre><code>This is lavaan 0.6-19
 lavaan is FREE software! Please report any bugs.</code></pre>
 </div>
 </div>
@@ -1924,7 +1945,7 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="r-basics_files/figure-html/console-warning-ggplot-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="r-basics_files/figure-html/console-warning-ggplot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Код&nbsp;2.19: У линии нет размера, но есть ширина."><img src="r-basics_files/figure-html/console-warning-ggplot-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -2039,7 +2060,7 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div id="fig-commenting-importance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-commenting-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/r-intro/commenting-importance.png" class="img-fluid figure-img">
+<a href="img/r-basics/commenting-importance.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Иллюстрация&nbsp;2.9: Жизненная ситуация. Источник"><img src="img/r-basics/commenting-importance.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-commenting-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;2.9: Жизненная ситуация. <a href="https://twitter.com/Loly_girl/status/1009726649263325184/photo/1">Источник</a>
@@ -2059,7 +2080,7 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>To cite R in publications use:
 
-  R Core Team (2024). _R: A Language and Environment for Statistical
+  R Core Team (2025). _R: A Language and Environment for Statistical
   Computing_. R Foundation for Statistical Computing, Vienna, Austria.
   &lt;https://www.R-project.org/&gt;.
 
@@ -2070,7 +2091,7 @@ A BibTeX entry for LaTeX users is
     author = {{R Core Team}},
     organization = {R Foundation for Statistical Computing},
     address = {Vienna, Austria},
-    year = {2024},
+    year = {2025},
     url = {https://www.R-project.org/},
   }
 
@@ -2120,10 +2141,13 @@ $release_name
 
 </div>
 <p>R продолжает постоянно разбатываться и улучшаться, и чтобы быть в тренде стоит периодически обновляться. Большие обновления случаются достаточно редко (например, релиз <code>R 3.0.0</code> случился в апреле 2013, а <code>R 4.0.0</code> — в апреле 2022), однако более мелкие обновления <a href="https://cran.r-project.org/bin/windows/base/old/">выходят в среднем раз в три-четыре месяца</a>.</p>
-<p>Итого, можно вывести такую эвристику:</p>
-<blockquote class="blockquote">
-<p>обновляй R раз в квартал!</p>
-</blockquote>
+<p>Итого, можно вывести следующую нехитрую эвристику:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="img/r-basics/update-r.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Изображение by ChatGPT-4. Шрифт Stengazeta by rakapatakunta"><img src="img/r-basics/update-r.png" class="img-fluid figure-img" alt="Изображение by ChatGPT-4. Шрифт Stengazeta by rakapatakunta"></a></p>
+<figcaption>Изображение by ChatGPT-4. Шрифт <a href="https://fonts-online.ru/fonts/stengazeta">Stengazeta</a> by rakapatakunta</figcaption>
+</figure>
+</div>
 <p>Узнать текущую версию R можно с помощью команды <code>R.version</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb216"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a>R.version</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2135,14 +2159,14 @@ os             darwin20
 system         x86_64, darwin20            
 status                                     
 major          4                           
-minor          4.0                         
-year           2024                        
+minor          5.0                         
+year           2025                        
 month          04                          
-day            24                          
-svn rev        86474                       
+day            11                          
+svn rev        88135                       
 language       R                           
-version.string R version 4.4.0 (2024-04-24)
-nickname       Puppy Cup                   </code></pre>
+version.string R version 4.5.0 (2025-04-11)
+nickname       How About a Twenty-Six      </code></pre>
 </div>
 </div>
 </section>
@@ -2174,7 +2198,7 @@ nickname       Puppy Cup                   </code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Честно говоря, не знаю… Однако при деплое этой книжки, который выполняет bash-скриптом, используется скрипт на R, причесывающий Google-таблицу с ответами на квизы в JSON, из которого ответы подтягиваются в JS-скрипт, выполняющий проверку квизов.</p>
+<p>Честно говоря, не&nbsp;знаю… Однако при&nbsp;деплое этой книжки, который выполняется bash-скриптом, используется скрипт на&nbsp;R, причесывающий Google-таблицу с&nbsp;ответами на&nbsp;квизы в&nbsp;JSON, из&nbsp;которого ответы подтягиваются в&nbsp;JS-скрипт, выполняющий проверку квизов.</p>
 <p>Более я такого нигде никогда не использовал.</p>
 </div>
 </div>
@@ -2229,8 +2253,8 @@ nickname       Puppy Cup                   </code></pre>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/r-intro/orly-exiting-vim.png" class="img-fluid figure-img"></p>
-<figcaption>Как отсюда, блин, выйти… Святой рандом, за что… <a href="https://www.orlybooks.com/books/exiting-vim">Источник</a></figcaption>
+<p><a href="img/r-intro/orly-exiting-vim.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Выход там же, где вход. Но это не точно. Источник"><img src="img/r-intro/orly-exiting-vim.png" class="img-fluid figure-img" alt="Выход там же, где вход. Но это не точно. Источник"></a></p>
+<figcaption>Выход там же, где вход. Но это не точно. <a href="https://www.orlybooks.com/books/exiting-vim">Источник</a></figcaption>
 </figure>
 </div>
 <hr>
@@ -2239,13 +2263,13 @@ nickname       Puppy Cup                   </code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb219"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
+<pre><code>R version 4.5.0 (2025-04-11)
 Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.5
+Running under: macOS Sequoia 15.4.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -2257,22 +2281,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] lavaan_0.6-18   lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1  
- [5] dplyr_1.1.4     purrr_1.0.2     readr_2.1.5     tidyr_1.3.1    
- [9] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0
+ [1] lavaan_0.6-19   lubridate_1.9.4 forcats_1.0.0   stringr_1.5.1  
+ [5] dplyr_1.1.4     purrr_1.0.4     readr_2.1.5     tidyr_1.3.1    
+ [9] tibble_3.2.1    ggplot2_3.5.2   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.6      jsonlite_1.8.9    compiler_4.4.0    tidyselect_1.2.1 
- [5] scales_1.3.0      yaml_2.3.8        fastmap_1.2.0     pbivnorm_0.6.0   
- [9] R6_2.5.1          labeling_0.4.3    generics_0.1.3    knitr_1.47       
-[13] htmlwidgets_1.6.4 munsell_0.5.1     pillar_1.9.0      tzdb_0.4.0       
-[17] rlang_1.1.4       utf8_1.2.4        stringi_1.8.4     xfun_0.44        
-[21] quadprog_1.5-8    timechange_0.3.0  cli_3.6.3         withr_3.0.2      
-[25] magrittr_2.0.3    digest_0.6.37     grid_4.4.0        rstudioapi_0.16.0
-[29] hms_1.1.3         lifecycle_1.0.4   vctrs_0.6.5       mnormt_2.1.1     
-[33] evaluate_1.0.1    glue_1.8.0        farver_2.1.2      stats4_4.4.0     
-[37] fansi_1.0.6       colorspace_2.1-1  rmarkdown_2.27    tools_4.4.0      
-[41] pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+ [1] gtable_0.3.6       jsonlite_2.0.0     compiler_4.5.0     tidyselect_1.2.1  
+ [5] scales_1.4.0       yaml_2.3.10        fastmap_1.2.0      pbivnorm_0.6.0    
+ [9] R6_2.6.1           labeling_0.4.3     generics_0.1.4     knitr_1.50        
+[13] htmlwidgets_1.6.4  pillar_1.10.2      RColorBrewer_1.1-3 tzdb_0.5.0        
+[17] rlang_1.1.6        stringi_1.8.7      xfun_0.52          quadprog_1.5-8    
+[21] timechange_0.3.0   cli_3.6.5          withr_3.0.2        magrittr_2.0.3    
+[25] digest_0.6.37      grid_4.5.0         rstudioapi_0.17.1  hms_1.1.3         
+[29] lifecycle_1.0.4    vctrs_0.6.5        mnormt_2.1.1       evaluate_1.0.3    
+[33] glue_1.8.0         farver_2.1.2       stats4_4.5.0       rmarkdown_2.29    
+[37] tools_4.5.0        pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -2883,6 +2906,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
