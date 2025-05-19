@@ -1,3 +1,4 @@
+library(tidyverse)
 set.seed(123)
 
 tibble(n = seq(1, 5000, by = 5),

@@ -6,13 +6,197 @@
 knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
 ```
 
+```{r pkgs, echo=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+theme_update(legend.position = "bottom")
+library(latex2exp)
+```
+
 :::{.intro}
 Вступление
 :::
 
+## Поведение p-value {#prob-falsepositive-pval}
+
+### p-value, $H_0$ и $H_1$ {#prob-falsepositive-pval-h0-h1}
+
+```{r pval-h0}
+#| label: fig-pval-h0
+#| fig-cap: "Распределение p-value в 10 000 независимых экспериментов ($n = 300$) при справедливости $H_0$"
+
+n_samples <- 10000
+sample_size <- 300
+alpha <- 0.05
+
+set.seed(404)
+m0 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+
+results <- tibble(pval = numeric(n_samples),
+                  is_lower = logical(n_samples))
+
+for (i in 1:n_samples) {
+  results$pval[i] <- t.test(m0[,i], m1[,i])$p.value
+}
+
+results %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  ylim(0, n_samples/4) +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
+```
+
+
+```{r pval-h1}
+#| label: fig-pval-h1
+#| fig-cap: "Распределение p-value в 10 000 независимых экспериментов ($n = 300$) при справедливости $H_1$"
+
+n_samples <- 10000
+sample_size <- 300
+alpha <- 0.05
+
+set.seed(404)
+m0 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_size * n_samples, mean = 3, sd = 10), ncol = n_samples)
+
+results <- tibble(pval = numeric(n_samples),
+                  is_lower = logical(n_samples))
+
+for (i in 1:n_samples) {
+  results$pval[i] <- t.test(m0[,i], m1[,i])$p.value
+}
+
+results %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  ylim(0, n_samples/4) +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
+```
 
 
 
+### p-value и размер эффекта {#prob-falsepositive-pval-effect-size}
+
+```{r pval-effect-size}
+#| label: fig-pval-effect-size
+#| fig-cap: "Название графика"
+
+n_samples <- 10000
+sample_size <- 300
+alpha <- 0.05
+
+set.seed(404)
+m0 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m2 <- matrix(rnorm(sample_size * n_samples, mean = 1.5, sd = 10), ncol = n_samples)
+m3 <- matrix(rnorm(sample_size * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m4 <- matrix(rnorm(sample_size * n_samples, mean = 2.5, sd = 10), ncol = n_samples)
+m5 <- matrix(rnorm(sample_size * n_samples, mean = 3, sd = 10), ncol = n_samples)
+m6 <- matrix(rnorm(sample_size * n_samples, mean = 3.5, sd = 10), ncol = n_samples)
+
+results <- tibble(
+  pval1 = numeric(n_samples),
+  pval2 = numeric(n_samples),
+  pval3 = numeric(n_samples),
+  pval4 = numeric(n_samples),
+  pval5 = numeric(n_samples),
+  pval6 = numeric(n_samples)
+  )
+
+for (i in 1:n_samples) {
+  results$pval1[i] <- t.test(m0[,i], m1[,i])$p.value %>% round(3)
+  results$pval2[i] <- t.test(m0[,i], m2[,i])$p.value %>% round(3)
+  results$pval3[i] <- t.test(m0[,i], m3[,i])$p.value %>% round(3)
+  results$pval4[i] <- t.test(m0[,i], m4[,i])$p.value %>% round(3)
+  results$pval5[i] <- t.test(m0[,i], m5[,i])$p.value %>% round(3)
+  results$pval6[i] <- t.test(m0[,i], m6[,i])$p.value %>% round(3)
+}
+
+results %>% 
+  pivot_longer(cols = everything(),
+               names_to = "group",
+               values_to = "pval") %>% 
+  mutate(group = str_remove(group, "pval")) %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  #ylim(0, n_samples/4) +
+  facet_wrap(~ group, scales = "free_y") +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
+```
+
+
+
+
+### p-value и объём выборки {#prob-falsepositive-pval-sample-size}
+
+```{r pval-sample-size}
+#| label: fig-pval-sample-size
+#| fig-cap: "Название графика"
+
+n_samples <- 10000
+sample_sizes <- c(10, 50, 100, 150, 200, 300)
+alpha <- 0.05
+
+set.seed(404)
+m01 <- matrix(rnorm(sample_sizes[1] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m02 <- matrix(rnorm(sample_sizes[2] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m03 <- matrix(rnorm(sample_sizes[3] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m04 <- matrix(rnorm(sample_sizes[4] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m05 <- matrix(rnorm(sample_sizes[5] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m06 <- matrix(rnorm(sample_sizes[6] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_sizes[1] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m2 <- matrix(rnorm(sample_sizes[2] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m3 <- matrix(rnorm(sample_sizes[3] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m4 <- matrix(rnorm(sample_sizes[4] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m5 <- matrix(rnorm(sample_sizes[5] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m6 <- matrix(rnorm(sample_sizes[6] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+
+results <- tibble(
+  pval1 = numeric(n_samples),
+  pval2 = numeric(n_samples),
+  pval3 = numeric(n_samples),
+  pval4 = numeric(n_samples),
+  pval5 = numeric(n_samples),
+  pval6 = numeric(n_samples)
+  )
+
+for (i in 1:n_samples) {
+  results$pval1[i] <- t.test(m01[,i], m1[,i])$p.value %>% round(3)
+  results$pval2[i] <- t.test(m02[,i], m2[,i])$p.value %>% round(3)
+  results$pval3[i] <- t.test(m03[,i], m3[,i])$p.value %>% round(3)
+  results$pval4[i] <- t.test(m04[,i], m4[,i])$p.value %>% round(3)
+  results$pval5[i] <- t.test(m05[,i], m5[,i])$p.value %>% round(3)
+  results$pval6[i] <- t.test(m06[,i], m6[,i])$p.value %>% round(3)
+}
+
+results %>% 
+  pivot_longer(cols = everything(),
+               names_to = "group",
+               values_to = "pval") %>% 
+  mutate(group = str_remove(group, "pval")) %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  #ylim(0, n_samples/4) +
+  facet_wrap(~ group, scales = "free_y") +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
+```
 
 
 
