@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.36">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Знакомство с R – WLM SDARP</title>
+<title>1&nbsp; Знакомство с&nbsp;R – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,17 +88,20 @@ div.csl-indent {
 <link href="./r-basics.html" rel="next">
 <link href="./part-r.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-6be77e4cef73b3d50f1c1da6b27d3573.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-a9f6e1d2fb7ac98f9b75bceb046b45e0.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-554ea854cf0619dcc30cc54aeb8f7717.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0a3fec96f6216a1e66f5303df7f2f407.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3177a44da7e7a39a6ce1f5a8432dadb9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -166,7 +170,169 @@ background-size: cover;
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -175,7 +341,7 @@ background-size: cover;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -187,8 +353,8 @@ background-size: cover;
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></a></li></ol></nav>
-      <h1 class="title"><span id="r-intro" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></a></li></ol></nav>
+      <h1 class="title"><span id="r-intro" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></h1>
                       </div>
   </div>
     
@@ -249,7 +415,7 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -639,7 +805,7 @@ background-size: cover;
   <li><a href="#r-intro-history" id="toc-r-intro-history" class="nav-link active" data-scroll-target="#r-intro-history"><span class="header-section-number">1.1</span> Сверхкраткая история R</a></li>
   <li><a href="#rintro-overview" id="toc-rintro-overview" class="nav-link" data-scroll-target="#rintro-overview"><span class="header-section-number">1.2</span> Обзор R</a>
   <ul>
-  <li><a href="#rintro-r-vs-python" id="toc-rintro-r-vs-python" class="nav-link" data-scroll-target="#rintro-r-vs-python"><span class="header-section-number">1.2.1</span> R vs Python</a></li>
+  <li><a href="#rintro-r-vs-python" id="toc-rintro-r-vs-python" class="nav-link" data-scroll-target="#rintro-r-vs-python"><span class="header-section-number">1.2.1</span> R&nbsp;vs&nbsp;Python</a></li>
   </ul></li>
   <li><a href="#r-intro-installation" id="toc-r-intro-installation" class="nav-link" data-scroll-target="#r-intro-installation"><span class="header-section-number">1.3</span> Установка</a>
   <ul>
@@ -674,6 +840,7 @@ background-size: cover;
 
 
 
+
 <!--- {{< include other/_symbols.qmd >}} --->
 <!--- Decorations --->
 <!--- Common --->
@@ -692,20 +859,20 @@ background-size: cover;
 <!--- Letters --->
 <!--- Linear Models --->
 <div class="intro">
-<p>В этой главе мы познакомимся с R. Начнем прям от Адама — с установки и интерфейса. Если у вас уже установлены R и RStudio и вы хотите сразу стартовать с работы в среде, прыгайте <a href="./r-basics.html">в следующую главу</a>.</p>
+<p>В&nbsp;этой главе мы познакомимся с&nbsp;R. Начнем прям от&nbsp;Адама — с&nbsp;установки и&nbsp;интерфейса. Если&nbsp;у&nbsp;вас уже установлены R и&nbsp;RStudio и&nbsp;вы хотите сразу стартовать с&nbsp;работы в&nbsp;среде, прыгайте <a href="./r-basics.html">в&nbsp;следующую главу</a>.</p>
 </div>
 <section id="r-intro-history" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="r-intro-history"><span class="header-section-number">1.1</span> Сверхкраткая история R</h2>
 <div class="lab-junior">
 
 </div>
-<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в 1992 году в Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of Statistics at Auckland</a>, <a href="#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>1.1</span></a>). Изначальная цель — разработать язык, чтобы преподавать вводный курс статистики. За основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и в 1994 году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
+<p>R придумали Росс Ихака (<a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Ross Ihaka</a>) и&nbsp;Роберт Джентльмен (<a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Robert Gentleman</a>) в&nbsp;1992 году в&nbsp;Департаменте статистики Университета Окленда (<a href="https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-statistics.html">Department of&nbsp;Statistics at&nbsp;Auckland</a>, <a href="#fig-rbirthplace" class="quarto-xref">Иллюстрация&nbsp;<span>1.1</span></a>). Изначальная цель — разработать язык, чтобы&nbsp;преподавать вводный курс статистики. За&nbsp;основу был взят язык S, разработанный <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Laboratories</a>, и&nbsp;в&nbsp;1994&nbsp;году была завершена первая версия <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d.</a>)</span>.</p>
 <div class="cell">
 <div id="fig-rbirthplace" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-6dc9c7eefbd1a11b5eee" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6dc9c7eefbd1a11b5eee">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-ab7de56c9a01b939cd87" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ab7de56c9a01b939cd87">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rbirthplace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Иллюстрация&nbsp;1.1: Тут родился R
@@ -713,8 +880,8 @@ background-size: cover;
 </figure>
 </div>
 </div>
-<p>Через пару лет разработчики перестали справляться с [электронными] письмами о багах и предлагаемых улучшениях, и в 1997 году R становится частью <a href="https://www.gnu.org/gnu/gnu.html">GNU Project</a> <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d., p. 17</a>)</span>. В этом же году K. Hornik и F. Leisch создают на базе Венского технического университета (Technische Universität Wien) репозиторий <a href="https://cran.rstudio.com/">CRAN</a> (The Comprehensive R Archive Network) для совместной работы «ядерной» группы разработчиков (core team). В феврале 2000 года выходит первая стабильная версия языка.</p>
-<p>Сегодня R развивается международной командой исследователей вычислительной статистики (<a href="https://www.r-project.org/">R Project</a>) и поддерживается некоммерческой организацией <a href="https://www.r-project.org/foundation/">R Foundation</a>.</p>
+<p>Через пару лет разработчики перестали справляться с&nbsp;[электронными] письмами о&nbsp;багах и&nbsp;предлагаемых улучшениях, и&nbsp;в&nbsp;1997 году R становится частью <a href="https://www.gnu.org/gnu/gnu.html">GNU&nbsp;Project</a> <span class="citation" data-cites="ross2022">(<a href="references.html#ref-ross2022" role="doc-biblioref">Ross, n.d., p. 17</a>)</span>. В&nbsp;этом&nbsp;же году K.&nbsp;Hornik и&nbsp;F.&nbsp;Leisch создают на&nbsp;базе Венского технического университета (Technische Universität Wien) репозиторий <a href="https://cran.rstudio.com/">CRAN</a> (The&nbsp;Comprehensive R Archive Network) для&nbsp;совместной работы «ядерной» группы разработчиков (core team). В&nbsp;феврале 2000 года выходит первая стабильная версия языка.</p>
+<p>Сегодня R развивается международной командой исследователей вычислительной статистики (<a href="https://www.r-project.org/">R Project</a>) и&nbsp;поддерживается некоммерческой организацией <a href="https://www.r-project.org/foundation/">R Foundation</a>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -734,15 +901,15 @@ background-size: cover;
 <div class="lab-junior">
 
 </div>
-<p>R является свободным программным обеспечением, распространяемым по лицензии <a href="https://www.r-project.org/COPYING">GNU General Public License</a>. Создававшийся изначально как язык для статистических вычислений, он впоследствии существенно расширил свои возможности, и теперь его можно считать полноценным языком программирования<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Хотя R и не является языком программирования общего назначения<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (general-purpose programming language), на нём можно:</p>
+<p>R является свободным программным обеспечением, распространяемым по&nbsp;лицензии <a href="https://www.r-project.org/COPYING">GNU General Public License</a>. Создававшийся изначально как язык для статистических вычислений, он впоследствии существенно расширил свои возможности, и&nbsp;теперь его можно считать полноценным языком программирования<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Хотя R и&nbsp;не&nbsp;является языком программирования общего назначения<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (general-purpose programming language), на&nbsp;нём можно:</p>
 <ul>
-<li>предобрабатывать и анализировать данные</li>
-<li>строить стильные и интерактивные визуализации</li>
-<li>создавать динамические отчеты, презентации и дашборды</li>
-<li>писать статьи, книги, сайты и приложения</li>
+<li>предобрабатывать и&nbsp;анализировать данные</li>
+<li>строить стильные и&nbsp;интерактивные визуализации</li>
+<li>создавать динамические отчеты, презентации и&nbsp;дашборды</li>
+<li>писать статьи, книги, сайты и&nbsp;приложения</li>
 <li>…</li>
 </ul>
-<p>Для R написано бесчисленное множество пакетов (<a href="#fig-n-pkgs" class="quarto-xref">Иллюстрация&nbsp;<span>1.2</span></a>), которые позволяют работать с самыми разными данными (поведенческими, опросниковыми, биологическими, лингвистическими, географическими и др.) и самыми разными статистическими методами (от t-теста до структурного моделирования). Количество доступных на CRAN пакетов экспоненциально растет с каждым годом.</p>
+<p>Для&nbsp;R написано бесчисленное множество пакетов (<a href="#fig-n-pkgs" class="quarto-xref">Иллюстрация&nbsp;<span>1.2</span></a>), которые позволяют работать с&nbsp;самыми разными данными (поведенческими, опросниковыми, биологическими, лингвистическими, географическими и&nbsp;др.) и&nbsp;самыми разными статистическими методами (от&nbsp;t-теста до&nbsp;структурного моделирования). Количество доступных на CRAN пакетов экспоненциально растет с каждым годом.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-n-pkgs" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -757,12 +924,12 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>R является <strong>высокоуровневым</strong>, <strong>интерпретируемым</strong>, <strong>мультипарадигмальным</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> языком программирования с <strong>динамической типизацией</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. У него очень простой, практически интуитивный, синтаксис, в результате чего — низкий порог вхождения по сравнению с другими языками программирования.</p>
-<p>R широко используется в академической среде исследователями социальных и гуманитарных наук, и, пожалуй, его можно назвать стандартом анализа данных де-факто в этих областях. Конечно, если его сравнивать со статистическими программами, предоставляющими графический интерфейс (Statistica, SPSS, JASP, Jamovi и др.), то порог вхождения тут будет выше, однако R позволяет организовать работу с данными так, чтобы она была <strong>воспроизводима</strong>, чем, увы, не могут похвалиться большинство программ с графическими интерфейсами.</p>
-<p>Кроме того, реализация статистических методов в R часто требует копнуть в суть самих методов чуть глубже, чтобы корректно провести анализ, что, с одной стороны, может создать некоторые трудности, но, с другой стороны, <strong>мотивирует лучше разобраться в методах анализа данных</strong>, а значит, <strong>более осознанно их использовать</strong>.</p>
-<p>В общем, R — это стильно, модно и полезно.</p>
+<p>R является <strong>высокоуровневым</strong>, <strong>интерпретируемым</strong>, <strong>мультипарадигмальным</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> языком программирования с&nbsp;<strong>динамической типизацией</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. У&nbsp;него очень простой, практически интуитивный, синтаксис, в&nbsp;результате чего — низкий порог вхождения по&nbsp;сравнению с&nbsp;другими языками программирования.</p>
+<p>R широко используется в&nbsp;академической среде исследователями социальных и&nbsp;гуманитарных наук, и,&nbsp;пожалуй, его можно назвать стандартом анализа данных де-факто в&nbsp;этих областях. Конечно, если&nbsp;его сравнивать со&nbsp;статистическими программами, предоставляющими графический интерфейс (Statistica, SPSS, JASP, Jamovi и др.), то&nbsp;порог вхождения тут будет выше, однако R позволяет организовать работу с&nbsp;данными так, чтобы&nbsp;она была <strong>воспроизводима</strong>, чем, увы, не могут похвалиться большинство программ с&nbsp;графическими интерфейсами.</p>
+<p>Кроме&nbsp;того, реализация статистических методов в&nbsp;R часто требует копнуть в&nbsp;суть самих методов чуть глубже, чтобы&nbsp;корректно провести анализ, что, с&nbsp;одной стороны, может создать некоторые трудности, но,&nbsp;с&nbsp;другой стороны, <strong>мотивирует лучше разобраться в&nbsp;методах анализа данных</strong>, а&nbsp;значит, <strong>более осознанно их использовать</strong>.</p>
+<p>В&nbsp;общем, R — это стильно, модно и&nbsp;полезно.</p>
 <section id="rintro-r-vs-python" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="rintro-r-vs-python"><span class="header-section-number">1.2.1</span> R vs Python</h3>
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="rintro-r-vs-python"><span class="header-section-number">1.2.1</span> R&nbsp;vs&nbsp;Python</h3>
 <div class="lab-junior">
 
 </div>
@@ -772,16 +939,16 @@ background-size: cover;
 <figcaption>Великое противостояние. <a href="https://www.freepik.com/author/jcomp">Источник фона</a></figcaption>
 </figure>
 </div>
-<p>В мире дата-аналитики существует великое противостояние двух языков — R и Python. На мой взгляд, довольно бессмысленное.</p>
+<p>В&nbsp;мире дата-аналитики существует великое противостояние двух языков — R и&nbsp;Python. На&nbsp;мой взгляд, довольно бессмысленное.</p>
 <div class="quote">
-<p>— Я не могу решить, делать мне на R или на Python… <br> — Какая к черту разница! Главное — делай! <br></p>
+<p>— Я не&nbsp;могу решить, делать мне на&nbsp;R или&nbsp;на&nbsp;Python… <br> — Какая к&nbsp;черту разница! Главное — делай! <br></p>
 <div class="quote-sign">
-<p>Курилка на Армянском переулке около Департамента психологии НИУ ВШЭ <br> Вторая половина 2010-х гг.</p>
+<p>Курилка на&nbsp;Армянском переулке около Департамента психологии НИУ ВШЭ <br> Вторая половина 2010-х&nbsp;гг.</p>
 </div>
 </div>
-<p>Хотя этот диалог случился, можно считать, довольно давно, он, как мне кажется, не утратил своей актуальности. Python — язык программирования общего назначения, R — больше специализирован на анализе данных. Первый имеет более широкие возможности, второй — удобнее для аналитики. Для тех, у кого нет опыта программирования и кому сложно даются технические области, думаю, R будет проще. На мой взгляд, в Python от аналитики отвлекает ярко выраженное ООП (объектно-ориентированное программирование), которое в R спрятано глубоко под капот. Аналитика же по своей сути — это диалог с данными, и в R его выстроить гораздо проще. Исходя из этого мой критерий следующий: для аналитики — R, для всего остального — Python.</p>
-<p>Безусловно, это крайне субъективный критерий, и далеко не всем он покажется уместным и работающим. Есть другой — в R гораздо более интуитивно реализована работа с данными (<code>tidyverse</code> очень сильно выигрывает в интуитивности у <code>pandas</code>), как и пакеты для сложных методов анализа (психометрический анализ, SEM, смешанные линейные модели и др.).</p>
-<p>Впрочем, если вы открыли эту книгу, предполагаю, что вы заинтересованы именно в R, поэтому позволю себе свернуть обсуждение великого противостояния, и перейти к сути.</p>
+<p>Хотя этот диалог случился, можно считать, довольно давно, он, как&nbsp;мне кажется, не&nbsp;утратил своей актуальности. Python&nbsp;— язык программирования общего назначения, R&nbsp;— больше специализирован на&nbsp;анализе данных. Первый имеет более широкие возможности, второй&nbsp;— удобнее для&nbsp;аналитики. Для&nbsp;тех, у&nbsp;кого нет опыта программирования и&nbsp;кому сложно даются технические области, думаю, R будет проще. На&nbsp;мой взгляд, в&nbsp;Python от&nbsp;аналитики отвлекает ярко выраженное ООП (объектно-ориентированное программирование), которое в&nbsp;R спрятано глубоко под&nbsp;капот. Аналитика&nbsp;же по&nbsp;своей сути&nbsp;— это&nbsp;диалог с&nbsp;данными, и&nbsp;в&nbsp;R его выстроить гораздо проще. Исходя из&nbsp;этого мой критерий следующий: для&nbsp;аналитики&nbsp;— R, для&nbsp;всего остального&nbsp;— Python.</p>
+<p>Безусловно, это крайне субъективный критерий, и&nbsp;далеко не&nbsp;всем он покажется уместным и&nbsp;работающим. Есть другой — в&nbsp;R гораздо более интуитивно реализована работа с&nbsp;данными (<code>tidyverse</code> очень сильно выигрывает в интуитивности у <code>pandas</code>), как&nbsp;и&nbsp;пакеты для&nbsp;сложных методов анализа (психометрический анализ, SEM, смешанные линейные модели и&nbsp;др.).</p>
+<p>Впрочем, если&nbsp;вы открыли эту книгу, предполагаю, что&nbsp;вы заинтересованы именно в&nbsp;R, поэтому позволю себе свернуть обсуждение великого противостояния, и&nbsp;перейти к&nbsp;сути.</p>
 </section>
 </section>
 <section id="r-intro-installation" class="level2" data-number="1.3">
@@ -808,20 +975,20 @@ background-size: cover;
 <div class="lab-junior">
 
 </div>
-<p>Установить R можно с основного репозитория <a href="https://cran.r-project.org/">CRAN (The Comprehensive R Archive Network)</a>. Существуют версии R для всех трёх наиболее распространенных десктопных операционных систем:</p>
+<p>Установить R можно с&nbsp;основного репозитория <a href="https://cran.r-project.org/">CRAN (The&nbsp;Comprehensive R Archive Network)</a>. Существуют версии R для&nbsp;всех трёх наиболее распространенных десктопных операционных систем:</p>
 <ul>
 <li>для <a href="https://cran.r-project.org/bin/windows/base/">Win</a></li>
 <li>для <a href="https://cran.r-project.org/bin/macosx/">macOS</a></li>
 <li>для <a href="https://cran.rstudio.com/bin/linux/">Linux</a></li>
 </ul>
-<p>В целом, установщики операционных систем обычно хорошо справляются со своей задачей, и в 90% случаев всё встаёт без багов. Однако ниже я оставлю некоторые комментарии о проблемах, с которыми сталкивался сам или о которых говорили знакомые и коллеги.</p>
+<p>В&nbsp;целом, установщики операционных систем обычно хорошо справляются со&nbsp;своей задачей, и&nbsp;в&nbsp;90% случаев всё встаёт без&nbsp;багов. Однако ниже я оставлю некоторые комментарии о&nbsp;проблемах, с&nbsp;которыми сталкивался сам или&nbsp;о&nbsp;которых говорили знакомые и&nbsp;коллеги.</p>
 <section id="rintro-rinstallation-win" class="level4" data-number="1.3.1.1">
 <h4 data-number="1.3.1.1" class="anchored" data-anchor-id="rintro-rinstallation-win"><span class="header-section-number">1.3.1.1</span> Win</h4>
 <div class="lab-junior">
 
 </div>
-<p>Ниже есть пример установки R на Win (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>1.3</span></a>), если вдруг у вас возникли какие-то проблемы при установке. Скорее всего всё прошло достаточно ровно.</p>
-<p>Самая частая проблема — имя пользователя на кириллице. Компьютер вообще достаточно плохо переваривает кириллические символы. Особенную же проблему составляют такие символы в путях к файлам. Поскольку на Win папка пользователя называется именем пользователя, то в случае кириллического имени, естественно, её имя будет на кириллице. Это можно пережить, перезадав некоторое дефолтные пути в настройках, однако если есть возможность переименовать пользователя и папку, я бы рекомендовал это сделать. Ну, так, чтобы не было неожиданных внезапностей.</p>
+<p>Ниже есть пример установки R на&nbsp;Win (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>1.3</span></a>), если вдруг у&nbsp;вас возникли какие-то проблемы при&nbsp;установке. Скорее всего, всё прошло достаточно ровно.</p>
+<p>Самая частая проблема&nbsp;— имя пользователя на&nbsp;кириллице. Компьютер вообще достаточно плохо переваривает кириллические символы. Особенную&nbsp;же проблему составляют такие символы в&nbsp;путях к&nbsp;файлам. Поскольку на&nbsp;Win папка пользователя называется именем пользователя, то&nbsp;в&nbsp;случае кириллического имени, естественно, её имя будет на&nbsp;кириллице. Это можно пережить, перезадав некоторое дефолтные пути в&nbsp;настройках, однако если&nbsp;есть возможность переименовать пользователя и&nbsp;папку, я&nbsp;бы рекомендовал это сделать. Ну, так, чтобы&nbsp;не&nbsp;было неожиданных внезапностей.</p>
 </section>
 <section id="rintro-rinstallation-mac" class="level4" data-number="1.3.1.2">
 <h4 data-number="1.3.1.2" class="anchored" data-anchor-id="rintro-rinstallation-mac"><span class="header-section-number">1.3.1.2</span> macOS</h4>
@@ -838,11 +1005,11 @@ Apple silicon vs Intel Macs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Обратите внимание на <a href="https://cran.r-project.org/bin/macosx/">разные версии</a> для Apple silicon (M1) и Intel Macs.</p>
+<p>Обратите внимание на <a href="https://cran.r-project.org/bin/macosx/">разные версии</a> для&nbsp;Apple silicon (M1) и&nbsp;Intel Macs.</p>
 </div>
 </div>
-<p>Ниже есть пример установки R на Mac (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>1.4</span></a>), если вдруг у вас возникли какие-то проблемы при установке.</p>
-<p>Тут в 99.9% случаев всё ровно. Бывает, что уже в процессе работы некоторые пакеты жалуются на недоустановленное что-то или на какие-либо несовместимости, но это случается невероятно редко и обычно достаточно легко лечится.</p>
+<p>Ниже есть пример установки R на&nbsp;Mac (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>1.4</span></a>), если&nbsp;вдруг у&nbsp;вас возникли какие-то проблемы при&nbsp;установке.</p>
+<p>Тут в&nbsp;99.9% случаев всё ровно. Бывает, что&nbsp;уже в&nbsp;процессе работы некоторые пакеты жалуются на&nbsp;недоустановленное что-то или&nbsp;на&nbsp;какие-либо несовместимости, но&nbsp;это случается невероятно редко и&nbsp;обычно достаточно легко лечится.</p>
 </section>
 <section id="rintro-rinstallation-linux" class="level4" data-number="1.3.1.3">
 <h4 data-number="1.3.1.3" class="anchored" data-anchor-id="rintro-rinstallation-linux"><span class="header-section-number">1.3.1.3</span> Linux</h4>
@@ -859,7 +1026,7 @@ Apple silicon vs Intel Macs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Конечно, если вы работете на Linux, то прекрасно знаете о дистрибутивах и их особеностях. Однако отмечу, что на разные дистрибутивы Linux устанавливаются <a href="https://cran.rstudio.com/bin/linux/">разные версии</a> R.</p>
+<p>Конечно, если&nbsp;вы работаете на&nbsp;Linux, то&nbsp;прекрасно знаете о&nbsp;дистрибутивах и&nbsp;их&nbsp;особенностях. Однако отмечу, что&nbsp;на&nbsp;разные дистрибутивы Linux устанавливаются <a href="https://cran.rstudio.com/bin/linux/">разные версии</a> R.</p>
 </div>
 </div>
 <!---
@@ -870,11 +1037,11 @@ Apple silicon vs Intel Macs
 :::
 --->
 <!---Ниже есть пример установки R на Linux (Ubuntu) (@fig-rinstallation-linux), если вы только начинаете знакомство с Linux и у вас возникли какие-то проблемы при установке.--->
-<p>Если вы пользователь Linux, значит вы, вероятно, ставите R через Terminal. Например, с помощью такой команды:</p>
+<p>Раз вы пользователь Linux, значит вы, вероятно, ставите R через Terminal. Например, с&nbsp;помощью такой команды:</p>
 <pre><code>sudo apt install r-base-dev</code></pre>
-<p>Скорее всего, всё пройдет хорошо, и базовый R будет работать. Проблемки могут случиться чуть дальше, когда мы будем ставить дополнительные пакеты, в которых будет идти основная наша работа — R может не найти некоторые системные пакеты. Такая проблема возникла у меня (на Ubuntu 22.04) — помогла команда ниже:</p>
+<p>Скорее всего, всё пройдет хорошо, и&nbsp;базовый R будет работать. Проблемки могут случиться чуть дальше, когда мы будем ставить дополнительные пакеты, в&nbsp;которых будет идти основная наша работа — R может не&nbsp;найти некоторые системные пакеты. Такая проблема возникла у&nbsp;меня (на Ubuntu 22.04) — помогла команда ниже:</p>
 <pre><code>sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev linfreetype6-dev libpng-dev libtiff5-dev libjpeg-deva</code></pre>
-<p>Сначала мы будем знакомиться с базовым R и работать только в нём, но имейте в виду, что тут есть некая команда, которая может пригодиться.</p>
+<p>Сначала мы будем знакомиться с&nbsp;базовым R и&nbsp;работать только в&nbsp;нём, но&nbsp;имейте в&nbsp;виду, что&nbsp;тут есть некая команда, которая&nbsp;может пригодиться.</p>
 </section>
 </section>
 <section id="r-intro-rstudioinstallation" class="level3" data-number="1.3.2">
@@ -882,23 +1049,23 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
-<p>Казалось бы, мы поставили R, и можно было бы на этом закончить. И это, в общем-то, правда — <a href="#r-intro-rinterface">можно работать и просто в R</a>. Однако для упрощения и увеличения приятности работы стоит установить RStudio<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Установочные файлы лежат <a href="https://posit.co/download/rstudio-desktop/">тут</a>. Ниже есть примеры установки RStudio на Windows (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>1.3</span></a>) и macOS (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>1.4</span></a>).</p>
-<p>RStudio — это интегрированная среда разработки (IDE) (подробнее см. <a href="#rintro-ide">тут</a>). Она расширяет возможности R, предоставляет более юзабельный интерфейс для взаимодействия с языком и в целом делает работу с R радостной и приятной.</p>
-<p>RStudio это не единственная среда для работы с R, но определенно самая удобная и популярная, поэтому мы будем пользоваться именно ею. RStudio является IDE, разработанной специально для работы в R, однако это вовсе не значит, что в ней нельзя использовать другие языки программирования. Например, книжка, которую вы сейчас читаете, написана с использованием <a href="https://www.r-project.org/about.html">R</a>, <!--[Python](https://www.python.org/), --><a href="http://htmlbook.ru/html">HTML</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://learn.javascript.ru/">JavaScript</a>, <a href="https://yaml.org/">YAML</a> и других языков — при этом вся работа велась в RStudio. Вот такая мощная вещь.</p>
+<p>Казалось&nbsp;бы, мы поставили R, и&nbsp;можно было&nbsp;бы на&nbsp;этом закончить. И&nbsp;это, в&nbsp;общем-то, правда — <a href="#r-intro-rinterface">можно работать и&nbsp;просто в&nbsp;R</a>. Однако для&nbsp;упрощения работы и&nbsp;увеличения её приятности стоит установить RStudio<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Установочные файлы лежат <a href="https://posit.co/download/rstudio-desktop/">тут</a>. Ниже есть примеры установки RStudio на&nbsp;Windows (<a href="#fig-rinstallation-win" class="quarto-xref">Иллюстрация&nbsp;<span>1.3</span></a>) и&nbsp;macOS (<a href="#fig-rinstallation-mac" class="quarto-xref">Иллюстрация&nbsp;<span>1.4</span></a>).</p>
+<p>RStudio&nbsp;— это интегрированная среда разработки (IDE) (подробнее см.&nbsp;<a href="#rintro-ide">тут</a>). Она расширяет возможности R, предоставляет более юзабельный интерфейс для&nbsp;взаимодействия с&nbsp;языком и&nbsp;в&nbsp;целом делает работу с&nbsp;R радостной и&nbsp;приятной.</p>
+<p>RStudio не&nbsp;единственная среда для&nbsp;работы с&nbsp;R, но&nbsp;определенно самая удобная и&nbsp;популярная, поэтому мы будем пользоваться именно ею. RStudio является IDE, разработанной специально для&nbsp;работы в&nbsp;R, однако это вовсе не&nbsp;значит, что в&nbsp;ней нельзя использовать другие языки программирования. Например, книжка, которую вы сейчас читаете, написана с&nbsp;использованием <a href="https://www.r-project.org/about.html">R</a>, <!--[Python](https://www.python.org/), --><a href="http://htmlbook.ru/html">HTML</a>, <a href="https://sass-lang.com/">SASS</a>, <a href="https://learn.javascript.ru/">JavaScript</a>, <a href="https://yaml.org/">YAML</a> и&nbsp;других языков — при этом вся работа велась в&nbsp;RStudio. Вот такая мощная вещь.</p>
 <section id="rintro-ide" class="level4" data-number="1.3.2.1">
 <h4 data-number="1.3.2.1" class="anchored" data-anchor-id="rintro-ide"><span class="header-section-number">1.3.2.1</span> Что такое IDE?</h4>
 <div class="lab-junior">
 
 </div>
-<p>Интегрированная среда разработки (IDE, integrated development environment) — это специальная программа, которое предоставляет широкий спектр возможностей для разработки программного обеспечения. Возможно, вы слышали такие слова, как <a href="https://www.jetbrains.com/ru-ru/pycharm/">PyCharm</a> или <a href="https://code.visualstudio.com/">Visual Studio Code</a> — это всё варианты IDE.</p>
+<p>Интегрированная среда разработки (IDE, integrated development environment) — это специальная программа, которое предоставляет широкий спектр возможностей для&nbsp;разработки программного обеспечения. Возможно, вы слышали такие слова, как&nbsp;<a href="https://www.jetbrains.com/ru-ru/pycharm/">PyCharm</a> или&nbsp;<a href="https://code.visualstudio.com/">Visual Studio Code</a> — это всё варианты IDE.</p>
 <p>Обычно IDE содержит несколько ключевых компонентов:</p>
 <ul>
-<li>текстовый редактор для написания скриптов</li>
+<li>текстовый редактор для&nbsp;написания скриптов</li>
 <li><a href="./appendix-proglang.html#proglang-translator">транслятор</a> языка</li>
 <li>отладчик (debugger)</li>
 <li>средства автоматизации сборки (build automation tools)</li>
 </ul>
-<p>Обычно IDE позволяют работать с несколькими языками программирования, но бывают и специализированные.</p>
+<p>Обычно IDE позволяют работать с несколькими языками программирования, но&nbsp;бывают и&nbsp;специализированные.</p>
 <blockquote class="blockquote">
 <p>И хотя всё ещё присутствует холивар относительного того, является ли R языком программирования, который отмечался в сносках, RStudio однозначно можно назвать полноценной IDE, так как разработка в ней вполне может вестить. Пример продукта разработки прямо перед вами — книжка, которую вы сейчас читаете.</p>
 </blockquote>
@@ -909,8 +1076,8 @@ Apple silicon vs Intel Macs
 <div class="lab-junior">
 
 </div>
-<p>В подавляющем большинстве случаев работа в R происходит на десктопной версии. Однако это не единственный вариант. Например, если вам нужно резко, быстро и несложно обработать небольшие данные, а вы в отпуске без своего любимого персонального компа, можно поработать в облачной версии RStudio — <a href="https://posit.cloud/">Posit Cloud</a>.</p>
-<p>В Posit Cloud используются RStudio Projects<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, интерфейс полностью совпадает с десктопной версией RStudio, можно использовать дополнительные пакеты. Однако объем доступной оперативной памяти существенно ограничен, что, безусловно, может создать ряд сложностей. Тем не менее, такой вариант работы вполне можно рассмотреть в каких-то ограниченных условиях.</p>
+<p>В&nbsp;подавляющем большинстве случаев работа в&nbsp;R происходит на&nbsp;десктопной версии. Однако это не&nbsp;единственный вариант. Например, если вам нужно резко, быстро и&nbsp;несложно обработать небольшие данные, а&nbsp;вы в&nbsp;отпуске без&nbsp;своего любимого персонального компа, можно поработать в&nbsp;облачной версии RStudio&nbsp;— <a href="https://posit.cloud/">Posit Cloud</a>.</p>
+<p>В&nbsp;Posit Cloud используются RStudio Projects<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, интерфейс полностью совпадает с&nbsp;десктопной версией RStudio, можно использовать дополнительные пакеты. Однако объем доступной оперативной памяти существенно ограничен, что, безусловно, может создать ряд сложностей. Тем&nbsp;не&nbsp;менее, такой вариант работы вполне можно рассмотреть в&nbsp;каких-то ограниченных условиях.</p>
 <hr>
 <div id="fig-rinstallation-win" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -918,7 +1085,7 @@ Apple silicon vs Intel Macs
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/34klooQ2Adw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-win-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;1.3: Установка R и RStudio на Windows (на примере Windows 10 Pro)
+Иллюстрация&nbsp;1.3: Установка R и&nbsp;RStudio на&nbsp;Windows (на&nbsp;примере Windows 10 Pro)
 </figcaption>
 </figure>
 </div>
@@ -928,7 +1095,7 @@ Apple silicon vs Intel Macs
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/aQKfTrkRy2I" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rinstallation-mac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;1.4: Установка R на macOS (на примере macOS Sonoma 14.1.1)
+Иллюстрация&nbsp;1.4: Установка R на&nbsp;macOS (на&nbsp;примере macOS Sonoma 14.1.1)
 </figcaption>
 </figure>
 </div>
@@ -949,7 +1116,7 @@ Apple silicon vs Intel Macs
 </figcaption>
 </figure>
 </div>
-<p>На самом деле, RStudio можно было и не ставить, так как R предоставляет собственный графический интерфейс для работы. Его можно открыть, кликнув на иконку R в списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>1.5</span></a>). Однако как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.6</span></a>).</p>
+<p>На&nbsp;самом деле, RStudio можно было и&nbsp;не&nbsp;ставить, так как R предоставляет собственный графический интерфейс для&nbsp;работы. Его можно открыть, кликнув на&nbsp;иконку R в&nbsp;списке программ вашего компа (<a href="#fig-r-logo" class="quarto-xref">Иллюстрация&nbsp;<span>1.5</span></a>). Однако, как вы можете видеть, он довольно скудный (<a href="#fig-r-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.6</span></a>).</p>
 <div id="fig-r-interface" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -960,7 +1127,7 @@ Apple silicon vs Intel Macs
 </figcaption>
 </figure>
 </div>
-<p>Здесь есть всего два окна: справа — консоль, слева — скрипт. В скрипте пишется код, в консоли он выполняется. Иногда еще открываются окна с графиками. Стильно, модно, минималистично — весьма по-программистски. Однако в RStudio работу можно обустроить гораздо удобнее и нагляднее, поэтому не будем останавливаться здесь долго и сразу же перейдем к изучению установленной IDE.</p>
+<p>Здесь есть всего два окна: справа — консоль, слева — скрипт. В&nbsp;скрипте пишется код, в&nbsp;консоли он выполняется. Иногда еще открываются окна с&nbsp;графиками. Стильно, модно, минималистично — весьма по-программистски. Однако в&nbsp;RStudio работу можно обустроить гораздо удобнее и&nbsp;нагляднее, поэтому не&nbsp;будем останавливаться здесь долго и&nbsp;сразу&nbsp;же перейдем к&nbsp;изучению установленной IDE.</p>
 </section>
 <section id="r-intro-rstudiointerface" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="r-intro-rstudiointerface"><span class="header-section-number">1.5</span> Интерфейс RStudio</h2>
@@ -977,7 +1144,7 @@ Apple silicon vs Intel Macs
 </figcaption>
 </figure>
 </div>
-<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>1.7</span></a>) в списке программ на вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>).</p>
+<p>Чтобы открыть RStudio, надо найти её иконку (<a href="#fig-rstudio-logo" class="quarto-xref">Иллюстрация&nbsp;<span>1.7</span></a>) в&nbsp;списке программ на&nbsp;вашем компе. Открыв программу, вы увидите что-то такое (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>).</p>
 <div id="fig-rstudio-interface" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -998,7 +1165,7 @@ Apple silicon vs Intel Macs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>При самом первом открытии RStudio у вас может отображаться не четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>), а только три — второе, третье и четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>⌘</code>+<code>Shift</code>+<code>N</code> на Mac) или воспользуйте кнопкой в левом верхнем углу и выберите <code>R Script</code>.</p>
+<p>При самом первом открытии RStudio у&nbsp;вас может отображаться не&nbsp;четыре окна, как на скриншоте выше (<a href="#fig-rstudio-interface" class="quarto-xref">Иллюстрация&nbsp;<span>1.8</span></a>), а&nbsp;только три — второе, третье и&nbsp;четвертое. Чтобы первое окно появилось, нажмите сочетание клавиш <code>Ctrl</code>+<code>Shift</code>+<code>N</code> (<code>⌘</code>+<code>Shift</code>+<code>N</code> на&nbsp;Mac) или&nbsp;воспользуйте кнопкой в&nbsp;левом верхнем углу и&nbsp;выберите <code>R Script</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="img/r-intro/new-rscript.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Создание нового скрипта"><img src="img/r-intro/new-rscript.png" class="img-fluid figure-img" alt="Создание нового скрипта"></a></p>
@@ -1019,7 +1186,7 @@ Apple silicon vs Intel Macs
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Не беда. RStudio можно кастомизировать под себя, в том числе задать разные темы и стили оформления кода. Об этом будет <a href="#r-intro-rstudiocustomize">ниже</a>.</p>
+<p>Не&nbsp;беда. RStudio можно кастомизировать под себя, в&nbsp;том числе задать разные темы и&nbsp;стили оформления кода. Об&nbsp;этом будет <a href="#r-intro-rstudiocustomize">ниже</a>.</p>
 </div>
 </div>
 </div>
@@ -1097,13 +1264,13 @@ Apple silicon vs Intel Macs
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
+<pre><code>R version 4.5.0 (2025-04-11)
 Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.5
+Running under: macOS Sequoia 15.4.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -1115,22 +1282,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] leaflet_2.2.2   rvest_1.0.4     lubridate_1.9.3 forcats_1.0.0  
- [5] stringr_1.5.1   dplyr_1.1.4     purrr_1.0.2     readr_2.1.5    
- [9] tidyr_1.3.1     tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0
+ [1] leaflet_2.2.2   rvest_1.0.4     lubridate_1.9.4 forcats_1.0.0  
+ [5] stringr_1.5.1   dplyr_1.1.4     purrr_1.0.4     readr_2.1.5    
+ [9] tidyr_1.3.1     tibble_3.2.1    ggplot2_3.5.2   tidyverse_2.0.0
 
 loaded via a namespace (and not attached):
- [1] utf8_1.2.4        generics_0.1.3    xml2_1.3.6        stringi_1.8.4    
- [5] hms_1.1.3         digest_0.6.37     magrittr_2.0.3    evaluate_1.0.1   
- [9] grid_4.4.0        timechange_0.3.0  fastmap_1.2.0     jsonlite_1.8.9   
-[13] httr_1.4.7        fansi_1.0.6       crosstalk_1.2.1   scales_1.3.0     
-[17] codetools_0.2-20  jquerylib_0.1.4   cli_3.6.3         rlang_1.1.4      
-[21] munsell_0.5.1     withr_3.0.2       yaml_2.3.8        tools_4.4.0      
-[25] tzdb_0.4.0        colorspace_2.1-1  curl_6.0.0        vctrs_0.6.5      
-[29] R6_2.5.1          lifecycle_1.0.4   htmlwidgets_1.6.4 pkgconfig_2.0.3  
-[33] pillar_1.9.0      gtable_0.3.6      glue_1.8.0        xfun_0.44        
-[37] tidyselect_1.2.1  rstudioapi_0.16.0 knitr_1.47        farver_2.1.2     
-[41] htmltools_0.5.8.1 rmarkdown_2.27    labeling_0.4.3    compiler_4.4.0   </code></pre>
+ [1] gtable_0.3.6       jsonlite_2.0.0     compiler_4.5.0     tidyselect_1.2.1  
+ [5] xml2_1.3.8         jquerylib_0.1.4    scales_1.4.0       yaml_2.3.10       
+ [9] fastmap_1.2.0      R6_2.6.1           generics_0.1.4     knitr_1.50        
+[13] htmlwidgets_1.6.4  pillar_1.10.2      RColorBrewer_1.1-3 tzdb_0.5.0        
+[17] rlang_1.1.6        stringi_1.8.7      xfun_0.52          timechange_0.3.0  
+[21] cli_3.6.5          withr_3.0.2        magrittr_2.0.3     crosstalk_1.2.1   
+[25] digest_0.6.37      grid_4.5.0         rstudioapi_0.17.1  hms_1.1.3         
+[29] lifecycle_1.0.4    vctrs_0.6.5        evaluate_1.0.3     glue_1.8.0        
+[33] farver_2.1.2       httr_1.4.7         rmarkdown_2.29     tools_4.5.0       
+[37] pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -1148,13 +1314,13 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Хотя относительного этого утверждения есть и другие мнения (см. <a href="https://www.reddit.com/r/learnprogramming/comments/75240o/why_is_the_r_programming_language_looked_at_with/">тред</a>, <a href="https://forum.posit.co/t/r-programming-not-a-real-language-pfffft/31453">пост</a> и <a href="https://www.epatters.org/post/r-lang/">пост</a>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Подробнее см. <a href="./appendix-proglang.html#proglang-classification-tasks">приложение</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Но глубоко внутри — объектно-ориентированным.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Подробнее в том же <a href="./appendix-proglang.html#proglang-classification-tasks">приложении</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Хотя относительного этого утверждения есть и&nbsp;другие мнения (см. <a href="https://www.reddit.com/r/learnprogramming/comments/75240o/why_is_the_r_programming_language_looked_at_with/">тред</a>, <a href="https://forum.posit.co/t/r-programming-not-a-real-language-pfffft/31453">пост</a> и&nbsp;<a href="https://www.epatters.org/post/r-lang/">пост</a>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Подробнее см.&nbsp;<a href="./appendix-proglang.html#proglang-classification-tasks">приложение</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Но&nbsp;глубоко внутри — объектно-ориентированным.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Подробнее в&nbsp;том&nbsp;же <a href="./appendix-proglang.html#proglang-classification-tasks">приложении</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>На случай, если новое поколение утратило связь с культурным кодом прошлого, а старое поколение желает, чтобы ему подсвело олдскулы — <a href="https://memepedia.ru/sashko-fokin/">источник</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>По пути надо ещё не перепутать её с <a href="https://www.r-studio.com/ru/">R-Studio</a>, которая восстанавливает данные с диска. Критическое сходство названий двух программ обязывает к повышенной внимательности при написании работ/статей/отчётов/заявок на гранты, в которых вы упоминаете RStudio — иногда рецензенты весьма недоумевают, как исследователи анализировали данные с помощью ПО для восстановления данных. Хотя это может звучать несколько странно, такой случай имел место быть в реальности…<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Их мы будем обсуждать в <a href="./r-data.html#r-data-rstudio-projects">разделе о работе с данными</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>По&nbsp;пути надо ещё не&nbsp;перепутать её с&nbsp;<a href="https://www.r-studio.com/ru/">R-Studio</a>, которая восстанавливает данные с&nbsp;диска. Критическое сходство названий двух программ обязывает к&nbsp;повышенной внимательности при&nbsp;написании работ/статей/отчётов/заявок на&nbsp;гранты, в&nbsp;которых вы упоминаете RStudio&nbsp;— иногда рецензенты весьма недоумевают, как исследователи анализировали данные с&nbsp;помощью ПО для&nbsp;восстановления данных. Хотя это может звучать несколько странно, такой случай имел место в&nbsp;реальности…<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Их мы будем обсуждать в&nbsp;<a href="./r-data.html#r-data-rstudio-projects">разделе о&nbsp;работе с&nbsp;данными</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>Есть еще вкладки <code>Terminal</code> и <code>Background Jobs</code>. Пока что их проигнорируем, ибо и так других миллион. К этим двум обратимся, когда дойдем до соответствующих тем.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>Это не совсем правда, так как есть файл <code>.Rhistory</code>, о нем поговорим чуть дальше.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>Хотя мы сделаем упор на работе с пакетами через скрипт — это поможет повысить воспроизводимость кода.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -1163,380 +1329,255 @@ Ross, I. (n.d.). <em>The r project: A brief history and thoughts about the futur
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Скопировано!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Скопировано!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1544,185 +1585,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./part-r.html" class="pagination-link" aria-label="R">
