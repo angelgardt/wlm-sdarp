@@ -9,3 +9,5 @@ drafts/img
 drafts/literature
 vids
 references
+book/*_files
+book/*_cache

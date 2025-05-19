@@ -3,7 +3,14 @@
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{r pkgs, echo=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+theme_update(legend.position = "bottom")
+library(latex2exp)
 ```
 
 :::{.intro}
@@ -417,6 +424,17 @@ $${#eq-alpha-to-beta}
 
 [^stat-inf-sym-dist-3]: В случае, если распределение статистики критерия симметрично, можно упростить данное условие до $|t_o| < |t_{cr}|$.
 
+
+:::{#exm-hyptesting-opt1-h0}
+
+:::
+
+:::{#exm-hyptesting-opt1-h1}
+
+:::
+
+
+
 ### Путь второй {#prob-hyptesting-algorithm-opt2}
 
 :::{.lab-junior}
@@ -455,7 +473,60 @@ $$
 ***
 
 
-### Асимметрия статистического вывода {#prob-hyptesting-inf-asymm}
+### Визуализация связи ошибок I и II рода {#prob-hyptesting-errorconnetion-graph}
+
+:::{.lab-junior}
+:::
+
+```{r error-connection-graph}
+sig.level <- 0.05
+alternative <- list(mean = 1, sd = 1)
+lims <- list(left = -3, right = 3)
+crit_area <- list(left = qnorm(p = 1 - sig.level), right = lims$right)
+beta_area <- list(left = lims$left, right = crit_area$left)
+ggplot(NULL) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
+                geom = "area", xlim = c(crit_area$left, crit_area$right),
+                alpha = .5, fill = "red") +
+  stat_function(fun = dnorm, args = list(mean = alternative$mean, sd = alternative$sd),
+                geom = "area", xlim = c(beta_area$left, beta_area$right),
+                alpha = .5, fill = "blue") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
+  stat_function(fun = dnorm, args = list(mean = alternative$mean, sd = alternative$sd),
+                linetype = "dashed") +
+  geom_vline(xintercept = crit_area$left, linetype = "dotted") +
+  xlim(lims$left, lims$right)
+```
+
+
+```{r error-connection-graph-2}
+sig.level <- 0.05
+alternative <- list(mean = 1, sd = 1)
+lims <- list(left = -3, right = 3)
+crit_area <- list(left1 = lims$left, right1 = qnorm(sig.level/2),
+                  left2 = qnorm(p = 1 - sig.level/2), right2 = lims$right)
+beta_area <- list(left = crit_area$right1, right = crit_area$left2)
+ggplot(NULL) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
+                geom = "area", xlim = c(crit_area$left1, crit_area$right1),
+                alpha = .5, fill = "red") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
+                geom = "area", xlim = c(crit_area$left2, crit_area$right2),
+                alpha = .5, fill = "red") +
+  stat_function(fun = dnorm, args = list(mean = alternative$mean, sd = alternative$sd),
+                geom = "area", xlim = c(beta_area$left, beta_area$right),
+                alpha = .5, fill = "blue") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
+  stat_function(fun = dnorm, args = list(mean = alternative$mean, sd = alternative$sd),
+                linetype = "dashed") +
+  geom_vline(xintercept = c(crit_area$right1, crit_area$left2),
+             linetype = "dotted") +
+  xlim(lims$left, lims$right)
+```
+
+
+
+## Асимметрия статистического вывода {#prob-hyptesting-inf-asymm}
 
 :::{.lab-junior}
 :::

@@ -3,7 +3,7 @@
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE, cache = TRUE)
 ```
 
 ```{r pkgs, echo=FALSE}
@@ -16,6 +16,10 @@ library(latex2exp)
 :::{.intro}
 Вступление
 :::
+
+## False Positive vs False Negative {#prob-falsepositive-fp-vs-fn}
+
+<!---![Всё так. Почти.](img/prob-falsepositive/false-negative-not-problem.png)--->
 
 ## Поведение p-value {#prob-falsepositive-pval}
 

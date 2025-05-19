@@ -801,11 +801,12 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#prob-falsepositive-pval" id="toc-prob-falsepositive-pval" class="nav-link active" data-scroll-target="#prob-falsepositive-pval"><span class="header-section-number">32.1</span> Поведение p-value</a>
+  <li><a href="#prob-falsepositive-fp-vs-fn" id="toc-prob-falsepositive-fp-vs-fn" class="nav-link active" data-scroll-target="#prob-falsepositive-fp-vs-fn"><span class="header-section-number">32.1</span> False Positive vs False Negative</a></li>
+  <li><a href="#prob-falsepositive-pval" id="toc-prob-falsepositive-pval" class="nav-link" data-scroll-target="#prob-falsepositive-pval"><span class="header-section-number">32.2</span> Поведение p-value</a>
   <ul>
-  <li><a href="#prob-falsepositive-pval-h0-h1" id="toc-prob-falsepositive-pval-h0-h1" class="nav-link" data-scroll-target="#prob-falsepositive-pval-h0-h1"><span class="header-section-number">32.1.1</span> p-value, <span class="math inline">\(H_0\)</span> и&nbsp;<span class="math inline">\(H_1\)</span></a></li>
-  <li><a href="#prob-falsepositive-pval-effect-size" id="toc-prob-falsepositive-pval-effect-size" class="nav-link" data-scroll-target="#prob-falsepositive-pval-effect-size"><span class="header-section-number">32.1.2</span> p-value и&nbsp;размер эффекта</a></li>
-  <li><a href="#prob-falsepositive-pval-sample-size" id="toc-prob-falsepositive-pval-sample-size" class="nav-link" data-scroll-target="#prob-falsepositive-pval-sample-size"><span class="header-section-number">32.1.3</span> p-value и&nbsp;объём выборки</a></li>
+  <li><a href="#prob-falsepositive-pval-h0-h1" id="toc-prob-falsepositive-pval-h0-h1" class="nav-link" data-scroll-target="#prob-falsepositive-pval-h0-h1"><span class="header-section-number">32.2.1</span> p-value, <span class="math inline">\(H_0\)</span> и&nbsp;<span class="math inline">\(H_1\)</span></a></li>
+  <li><a href="#prob-falsepositive-pval-effect-size" id="toc-prob-falsepositive-pval-effect-size" class="nav-link" data-scroll-target="#prob-falsepositive-pval-effect-size"><span class="header-section-number">32.2.2</span> p-value и&nbsp;размер эффекта</a></li>
+  <li><a href="#prob-falsepositive-pval-sample-size" id="toc-prob-falsepositive-pval-sample-size" class="nav-link" data-scroll-target="#prob-falsepositive-pval-sample-size"><span class="header-section-number">32.2.3</span> p-value и&nbsp;объём выборки</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -838,10 +839,14 @@ window.Quarto = {
 <div class="intro">
 <p>Вступление</p>
 </div>
-<section id="prob-falsepositive-pval" class="level2" data-number="32.1">
-<h2 data-number="32.1" class="anchored" data-anchor-id="prob-falsepositive-pval"><span class="header-section-number">32.1</span> Поведение p-value</h2>
-<section id="prob-falsepositive-pval-h0-h1" class="level3" data-number="32.1.1">
-<h3 data-number="32.1.1" class="anchored" data-anchor-id="prob-falsepositive-pval-h0-h1"><span class="header-section-number">32.1.1</span> p-value, <span class="math inline">\(H_0\)</span> и&nbsp;<span class="math inline">\(H_1\)</span></h3>
+<section id="prob-falsepositive-fp-vs-fn" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="prob-falsepositive-fp-vs-fn"><span class="header-section-number">32.1</span> False Positive vs False Negative</h2>
+<!---![Всё так. Почти.](img/prob-falsepositive/false-negative-not-problem.png)--->
+</section>
+<section id="prob-falsepositive-pval" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="prob-falsepositive-pval"><span class="header-section-number">32.2</span> Поведение p-value</h2>
+<section id="prob-falsepositive-pval-h0-h1" class="level3" data-number="32.2.1">
+<h3 data-number="32.2.1" class="anchored" data-anchor-id="prob-falsepositive-pval-h0-h1"><span class="header-section-number">32.2.1</span> p-value, <span class="math inline">\(H_0\)</span> и&nbsp;<span class="math inline">\(H_1\)</span></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n_samples <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">300</span></span>
@@ -919,8 +924,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="prob-falsepositive-pval-effect-size" class="level3" data-number="32.1.2">
-<h3 data-number="32.1.2" class="anchored" data-anchor-id="prob-falsepositive-pval-effect-size"><span class="header-section-number">32.1.2</span> p-value и&nbsp;размер эффекта</h3>
+<section id="prob-falsepositive-pval-effect-size" class="level3" data-number="32.2.2">
+<h3 data-number="32.2.2" class="anchored" data-anchor-id="prob-falsepositive-pval-effect-size"><span class="header-section-number">32.2.2</span> p-value и&nbsp;размер эффекта</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n_samples <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">300</span></span>
@@ -981,8 +986,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="prob-falsepositive-pval-sample-size" class="level3" data-number="32.1.3">
-<h3 data-number="32.1.3" class="anchored" data-anchor-id="prob-falsepositive-pval-sample-size"><span class="header-section-number">32.1.3</span> p-value и&nbsp;объём выборки</h3>
+<section id="prob-falsepositive-pval-sample-size" class="level3" data-number="32.2.3">
+<h3 data-number="32.2.3" class="anchored" data-anchor-id="prob-falsepositive-pval-sample-size"><span class="header-section-number">32.2.3</span> p-value и&nbsp;объём выборки</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_samples <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">300</span>)</span>
@@ -1083,8 +1088,8 @@ loaded via a namespace (and not attached):
 [17] stringi_1.8.7      xfun_0.52          timechange_0.3.0   cli_3.6.5         
 [21] withr_3.0.2        magrittr_2.0.3     digest_0.6.37      grid_4.5.0        
 [25] rstudioapi_0.17.1  hms_1.1.3          lifecycle_1.0.4    vctrs_0.6.5       
-[29] evaluate_1.0.3     glue_1.8.0         farver_2.1.2       rmarkdown_2.29    
-[33] tools_4.5.0        pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
+[29] evaluate_1.0.3     glue_1.8.0         farver_2.1.2       codetools_0.2-20  
+[33] rmarkdown_2.29     tools_4.5.0        pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
