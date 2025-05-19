@@ -944,11 +944,12 @@ window.Quarto = {
 <ul>
 <li>Однако нам могут быть интересны <em>направленные</em> альтернативные гипотезы.
 <ul>
-<li>Пусть для нас в рамках исследования закономерностью является то, что значение параметра будет <em>больше</em> некоторого заранее заданного значения. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta = \theta_0\)</span> альтернативная гипотеза будет формулирована как <span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span>,</li>
-<li>Или же с теоретических позиций мы решаем, что закономерность присутствует в случае, когда параметр первой генеральной совокупности <em>меньше</em> параметра второй генеральной совокупности. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta_1 = \theta_2\)</span> альтернативная будет выглядеть так: <span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span>.</li>
+<li>Пусть для нас в рамках исследования закономерностью является то, что значение параметра будет <em>больше</em> некоторого заранее заданного значения. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta \leqslant\theta_0\)</span> альтернативная гипотеза будет формулирована как <span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span>,</li>
+<li>Или же с теоретических позиций мы решаем, что закономерность присутствует в случае, когда параметр первой генеральной совокупности <em>меньше</em> параметра второй генеральной совокупности. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta_1 \geqslant\theta_2\)</span> альтернативная будет выглядеть так: <span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span>.</li>
 </ul></li>
 </ul>
-<p>Мы можем «направить» альтернативные гипотезы и в обратную сторону, если это согласуется с теоретическими основаниями — <span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span> и <span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span> соответственно.</p>
+<p>Заметим, что в&nbsp;случае направленных альтернативных гипотез соответствующие им нулевые перестают быть простыми — и&nbsp;нулевая, и&nbsp;альтернативная в&nbsp;этом случае будут сложными.</p>
+<p>Мы можем «направить» альтернативные гипотезы и&nbsp;в&nbsp;обратную сторону, если&nbsp;это согласуется с&nbsp;теоретическими основаниями — <span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span> и <span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span> соответственно.</p>
 <div class="save-font-size callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -982,37 +983,37 @@ window.Quarto = {
 <div id="tbl-alt-hyp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-alt-hyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;31.1: Альтернативные гипотезы: односторонние и двусторонние альтернативы.
+Таблица&nbsp;31.1: Нулевые и альтернативные гипотезы: односторонние и двусторонние альтернативы.
 </figcaption>
 <div aria-describedby="tbl-alt-hyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 42%">
-<col style="width: 28%">
-<col style="width: 29%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th><span class="math inline">\(H_0 : \theta = \theta_0\)</span></th>
-<th><span class="math inline">\(H_0 : \theta_1 = \theta_2\)</span></th>
+<th>Гипотеза о&nbsp;равенстве параметра заданному значению</th>
+<th>Гипотеза о&nbsp;равенстве значений двух параметров</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Двусторонняя альтернатива</td>
-<td><span class="math inline">\(H_1 : \theta \neq \theta_0\)</span></td>
-<td><span class="math inline">\(H_1 : \theta_1 \neq \theta_2\)</span></td>
+<td><span class="math inline">\(H_0 : \theta = \theta_0\)</span> <br> <span class="math inline">\(H_1 : \theta \neq \theta_0\)</span></td>
+<td><span class="math inline">\(H_0 : \theta_1 = \theta_2\)</span> <br> <span class="math inline">\(H_1 : \theta_1 \neq \theta_2\)</span></td>
 </tr>
 <tr class="even">
 <td>Односторонняя альтернатива (левосторонняя)</td>
-<td><span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span></td>
-<td><span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span></td>
+<td><span class="math inline">\(H_0 : \theta \geqslant\theta_0\)</span> <br> <span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span></td>
+<td><span class="math inline">\(H_0 : \theta_1 \geqslant\theta_2\)</span> <br> <span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span></td>
 </tr>
 <tr class="odd">
 <td>Односторонняя альтернатива (правосторонняя)</td>
-<td><span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span></td>
-<td><span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span></td>
+<td><span class="math inline">\(H_0 : \theta \leqslant\theta_0\)</span> <br> <span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span></td>
+<td><span class="math inline">\(H_0 : \theta_1 \leqslant\theta_2\)</span> <br> <span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1551,24 +1552,6 @@ z_o = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} = \frac{106.19 - 100}{15 / \
 <p>Так как <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>нехарактерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>есть основания</em> отклонить нулевую гипотезу и&nbsp;<em>принять альтернативную</em>, что выборочное среднее больше 100.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 97.77143</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    One-sample z-Test
-
-data:  iq3
-z = -0.87896, p-value = 0.1897
-alternative hypothesis: true mean is less than 100
-95 percent confidence interval:
-       NA 101.9419
-sample estimates:
-mean of x 
- 97.77143 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
 <pre><code>[1] 94.17391</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -1585,17 +1568,97 @@ mean of x
  94.17391 </code></pre>
 </div>
 </div>
-<div id="exr-hyptesting-opt1-h0-lower" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.1</strong></span> &nbsp;</p>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>Решение</em>. </span></p>
-</div>
 <div id="exr-hyptesting-opt1-h1-lower" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 31.2</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Задание 31.1</strong></span> Вместе с&nbsp;коллегами студенты третьей академической группы первого курса факультета психологии уже известного нам вуза принимали участие в&nbsp;тестировании на&nbsp;интеллект с&nbsp;помощью теста IQ. Было протестировано 23 человека, их средний балл составил 94.17. Администрация страшно паникует, смотря на&nbsp;такие результаты, ибо&nbsp;считает, что&nbsp;интеллект группы ниже среднего. Есть&nbsp;ли повод для&nbsp;паники?</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Алгоритм остаётся таким&nbsp;же, поэтому тезисно:</p>
+<ol type="1">
+<li><em>Гипотезы</em>:
+<ul>
+<li><em>Теоретическая</em>: интеллект студентов ниже по&nbsp;сравнению со&nbsp;средним для&nbsp;их возраста</li>
+<li><em>Эмпирическая</em>: средний балл IQ студентов ниже среднего значения по&nbsp;данной шкале</li>
+<li><em>Статистические</em>:
+<ul>
+<li><span class="math inline">\(H_0: \mu \geqslant 100\)</span></li>
+<li><span class="math inline">\(H_1: \mu &lt; 100\)</span></li>
+</ul></li>
+</ul></li>
+<li><em>Статистический критерий</em>: <span class="math inline">\(\displaystyle z = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}}\)</span></li>
+<li><em>Уровень значимости</em>: <span class="math inline">\(\alpha = 0.05\)</span></li>
+<li><em>Распределение при&nbsp;справедливости нулевой гипотезы</em>: <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span></li>
+<li><em>Критическое значение</em>: <span class="math inline">\(z_{\text{cr}} = -1.645\)</span></li>
+<li><em>Расчёт выборочной статистики</em>: <span class="math inline">\(\displaystyle z_o = \frac{94.17 - 100}{15 / \sqrt{23}} \approx -1.86\)</span></li>
+<li><em>Сравнение с&nbsp;критическим значением</em>: <span class="math inline">\(z_o &lt; z_{\text{cr}}\)</span></li>
+<li><em>Статистический вывод</em>: так как <span class="math inline">\(z_o &lt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>нехарактерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>есть основания</em> отклонить нулевую гипотезу и&nbsp;<em>принять альтернативную</em>, что выборочное среднее меньше 100.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 97.77143</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq3
+z = -0.87896, p-value = 0.1897
+alternative hypothesis: true mean is less than 100
+95 percent confidence interval:
+       NA 101.9419
+sample estimates:
+mean of x 
+ 97.77143 </code></pre>
+</div>
+</div>
+<div id="exr-hyptesting-opt1-h0-lower" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 31.2</strong></span> Четвёртой академической группе первого курса факультета психологии всё того&nbsp;же вуза тоже пришлось участвовать в&nbsp;тестировании на&nbsp;интеллект с&nbsp;помощью теста IQ. Участие в&nbsp;этом мероприятии приняло 35 человек, а средний балл студентов оказался равен 97.77. Администрация и&nbsp;по этому поводу паникует, так&nbsp;как предполагает, что&nbsp;у&nbsp;группы интеллект ниже среднего. Так ли это?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Алгоритм остаётся таким&nbsp;же, поэтому тезисно:</p>
+<ol type="1">
+<li><em>Гипотезы</em>:
+<ul>
+<li><em>Теоретическая</em>: интеллект студентов ниже по&nbsp;сравнению со&nbsp;средним для&nbsp;их возраста</li>
+<li><em>Эмпирическая</em>: средний балл IQ студентов ниже среднего значения по&nbsp;данной шкале</li>
+<li><em>Статистические</em>:
+<ul>
+<li><span class="math inline">\(H_0: \mu \geqslant 100\)</span></li>
+<li><span class="math inline">\(H_1: \mu &lt; 100\)</span></li>
+</ul></li>
+</ul></li>
+<li><em>Статистический критерий</em>: <span class="math inline">\(\displaystyle z = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}}\)</span></li>
+<li><em>Уровень значимости</em>: <span class="math inline">\(\alpha = 0.05\)</span></li>
+<li><em>Распределение при&nbsp;справедливости нулевой гипотезы</em>: <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span></li>
+<li><em>Критическое значение</em>: <span class="math inline">\(z_{\text{cr}} = -1.645\)</span></li>
+<li><em>Расчёт выборочной статистики</em>: <span class="math inline">\(\displaystyle z_o = \frac{97.77 - 100}{15 / \sqrt{35}} \approx -0.88\)</span></li>
+<li><em>Сравнение с&nbsp;критическим значением</em>: <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span></li>
+<li><em>Статистический вывод</em>: так как <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>характерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>нет оснований</em> отклонить нулевую гипотезу о&nbsp;равенстве выборочного среднего значению 100..</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -1686,9 +1749,9 @@ mean of x
 <h4 data-number="31.5.2.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt2-pval"><span class="header-section-number">31.5.2.1</span> p-value</h4>
 <p><span class="math display">\[
 \begin{align}
-H_1&amp;: \theta_1 &gt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \geqslant t_o \mid H_0) \\
-H_1&amp;: \theta_1 &lt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \leqslant t_o \mid H_0) \\
-H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \geqslant t_o \mid H_0), \mathbb{P}(t \leqslant t_o \mid H_0)  \big)
+H_1&amp;: \theta_1 &gt; \theta_2 \quad \mathsf{p}\overset{\text{def}}{=} \mathbb{P}(t \geqslant t_o \mid H_0) \\
+H_1&amp;: \theta_1 &lt; \theta_2 \quad \mathsf{p}\overset{\text{def}}{=} \mathbb{P}(t \leqslant t_o \mid H_0) \\
+H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}\overset{\text{def}}{=} 2 \min \big( \mathbb{P}(t \geqslant t_o \mid H_0), \mathbb{P}(t \leqslant t_o \mid H_0)  \big)
 \end{align}
 \]</span></p>
 <hr>
@@ -1728,6 +1791,33 @@ mean of x
  106.1875 </code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Эквивалентность первого и второго путей
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Заметим, что:</p>
+<ul>
+<li>если <span class="math inline">\(\mathsf{p}&lt; \alpha\)</span>, то
+<ul>
+<li><span class="math inline">\(t_{o} &lt; t_{\text{cr}}\)</span> для левосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &gt; t_{\text{cr}}\)</span> для правосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &lt; t_{\text{cr}1} \vee t_{o} &gt; t_{\text{cr}2}\)</span> для двусторонней альтернативы</li>
+</ul></li>
+<li>если <span class="math inline">\(\mathsf{p}&gt; \alpha\)</span>, то
+<ul>
+<li><span class="math inline">\(t_{o} &gt; t_{\text{cr}}\)</span> для левосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &lt; t_{\text{cr}}\)</span> для правосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &gt; t_{\text{cr}1} \wedge t_{o} &lt; t_{\text{cr}2}\)</span> для двусторонней альтернативы</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="prob-hyptesting-errorconnection-graph" class="level3" data-number="31.5.3">
@@ -1739,7 +1829,7 @@ mean of x
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1748,7 +1838,7 @@ mean of x
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
