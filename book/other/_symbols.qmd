@@ -128,6 +128,7 @@
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
 \newcommand{\df}{\text{df}}
+\newcommand{\cr}{\text{cr}}
 
 
 <!--- Letters --->

@@ -797,7 +797,7 @@ window.Quarto = {
   <ul>
   <li><a href="#prob-hyptesting-typeIerror" id="toc-prob-hyptesting-typeIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIerror"><span class="header-section-number">31.4.1</span> Ошибка I рода и уровень значимости</a></li>
   <li><a href="#prob-hyptesting-typeIIerror" id="toc-prob-hyptesting-typeIIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIIerror"><span class="header-section-number">31.4.2</span> Ошибка II рода и статистическая мощность</a></li>
-  <li><a href="#prob-errorconnetion" id="toc-prob-errorconnetion" class="nav-link" data-scroll-target="#prob-errorconnetion"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</a></li>
+  <li><a href="#prob-errorconnection" id="toc-prob-errorconnection" class="nav-link" data-scroll-target="#prob-errorconnection"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</a></li>
   </ul></li>
   <li><a href="#prob-hyptesting-algorithm" id="toc-prob-hyptesting-algorithm" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</a>
   <ul>
@@ -806,7 +806,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#prob-hyptesting-algorithm-opt2-pval" id="toc-prob-hyptesting-algorithm-opt2-pval" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt2-pval"><span class="header-section-number">31.5.2.1</span> p-value</a></li>
   </ul></li>
-  <li><a href="#prob-hyptesting-errorconnetion-graph" id="toc-prob-hyptesting-errorconnetion-graph" class="nav-link" data-scroll-target="#prob-hyptesting-errorconnetion-graph"><span class="header-section-number">31.5.3</span> Визуализация связи ошибок I и II рода</a></li>
+  <li><a href="#prob-hyptesting-errorconnection-graph" id="toc-prob-hyptesting-errorconnection-graph" class="nav-link" data-scroll-target="#prob-hyptesting-errorconnection-graph"><span class="header-section-number">31.5.3</span> Визуализация связи ошибок I и II рода</a></li>
   </ul></li>
   <li><a href="#prob-hyptesting-inf-asymm" id="toc-prob-hyptesting-inf-asymm" class="nav-link" data-scroll-target="#prob-hyptesting-inf-asymm"><span class="header-section-number">31.6</span> Асимметрия статистического вывода</a></li>
   <li><a href="#prob-hyptesting-algorithm-R" id="toc-prob-hyptesting-algorithm-R" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-R"><span class="header-section-number">31.7</span> Алгоритм тестирования статистических гипотез в R</a>
@@ -842,7 +842,19 @@ window.Quarto = {
 <!--- Letters --->
 <!--- Linear Models --->
 <div class="intro">
-<p>Вступление</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Данная глава — только основы основ!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Сразу&nbsp;же необходимо заявить, что в&nbsp;этой главе мы познакомимся только с&nbsp;базой тестирования статистических гипотез. Не&nbsp;менее важная часть изложена в&nbsp;<a href="./prob-falsepositive.html">следующей главе</a>, которая является неотъемлемым продолжением данной. Там мы дополним картину взаимоотношений между сущностями, с которыми будем знакомиться здесь.</p>
+</div>
+</div>
 </div>
 <section id="prob-hyptesting-hypotheses-differences" class="level2" data-number="31.1">
 <h2 data-number="31.1" class="anchored" data-anchor-id="prob-hyptesting-hypotheses-differences"><span class="header-section-number">31.1</span> Взаимосвязи и различия</h2>
@@ -1163,8 +1175,8 @@ window.Quarto = {
 
 </div>
 </section>
-<section id="prob-errorconnetion" class="level3" data-number="31.4.3">
-<h3 data-number="31.4.3" class="anchored" data-anchor-id="prob-errorconnetion"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</h3>
+<section id="prob-errorconnection" class="level3" data-number="31.4.3">
+<h3 data-number="31.4.3" class="anchored" data-anchor-id="prob-errorconnection"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</h3>
 <div class="lab-middle">
 
 </div>
@@ -1338,14 +1350,14 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Формулировка гипотезы</li>
+<li>Формулировка гипотез</li>
 <li>Выбор статистического критерия</li>
 <li>Выбор уровня значимости <span class="math inline">\(α\)</span></li>
 <li>Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна</li>
 <li>Определение границ критической области
 <ul>
-<li>Для <em>односторонней</em> альтернативы одно критическое значение <span class="math inline">\(t_{cr}\)</span></li>
-<li>Для <em>двусторонней</em> альтернативы два критических значения <span class="math inline">\(t_{cr1}\)</span> и <span class="math inline">\(t_{cr2}\)</span>, такие&nbsp;что <span class="math inline">\(t_{cr1} &lt; t_{cr2}\)</span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
+<li>Для <em>односторонней</em> альтернативы одно критическое значение <span class="math inline">\(t_{\text{cr}}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы два критических значения <span class="math inline">\(t_{\text{cr}1}\)</span> и <span class="math inline">\(t_{\text{cr}2}\)</span>, такие&nbsp;что <span class="math inline">\(t_{\text{cr}1} &lt; t_{\text{cr}2}\)</span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
 </ul></li>
 <li>Расчёт выборочной статистики <span class="math inline">\(t_o\)</span></li>
 <li>Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область</li>
@@ -1366,24 +1378,265 @@ window.Quarto = {
 <ul>
 <li>Если значение выборочной статистики <em>попадает</em> в границы критической области, то мы <em>имеем основания отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.
 <ul>
-<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{cr}\)</span></li>
-<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{cr}\)</span></li>
-<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{cr1} \vee t_o &gt; t_{cr2}\)</span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{\text{cr}}\)</span></li>
+<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{\text{cr}}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{\text{cr}1} \vee t_o &gt; t_{\text{cr}2}\)</span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
 </ul></li>
 <li>Если значение выборочной статистики <strong>не</strong> <em>попадает</em> в границы критической области, то мы <strong>не</strong> <em>имеем оснований отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.
 <ul>
-<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{cr}\)</span></li>
-<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{cr}\)</span></li>
-<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{cr1} \wedge t_o &lt; t_{cr2}\)</span><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
+<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{\text{cr}}\)</span></li>
+<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{\text{cr}}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{\text{cr}1} \wedge t_o &lt; t_{\text{cr}2}\)</span><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="exm-hyptesting-opt1-h0" class="theorem example">
-<p><span class="theorem-title"><strong>Пример 31.1</strong></span> &nbsp;</p>
+<div id="exm-hyptesting-opt1-h0-greater" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 31.1</strong></span> Студенты одной из&nbsp;академических групп первого курса факультета психологии некоторого вуза прошли тестирование на&nbsp;интеллект с&nbsp;помощью теста IQ. В тестировании принято участие 35 человек. Средний балл студентов оказался равен 102.77. Проверьте гипотезу о&nbsp;том, что&nbsp;уровень интеллекта в&nbsp;этой группе выше среднего.</p>
 </div>
-<div id="exm-hyptesting-opt1-h1" class="theorem example">
-<p><span class="theorem-title"><strong>Пример 31.2</strong></span> &nbsp;</p>
+<p><strong>Шаг 1. Формулировка гипотез.</strong> В&nbsp;данном случае можно сформулировать следующие гипотезы:</p>
+<ul>
+<li><em>Теоретическая гипотеза</em>: интеллект студентов выше по сравнению со средним для их возраста</li>
+<li><em>Эмпирическая гипотеза</em>: средний балл IQ студентов больше среднего значения по данной шкале</li>
+<li><em>Статистические гипотезы</em>:
+<ul>
+<li><span class="math inline">\(H_0 : \mu \leqslant 100\)</span></li>
+<li><span class="math inline">\(H_1 : \mu &gt; 100\)</span></li>
+</ul></li>
+</ul>
+<p><strong>Шаг 2. Выбор статистического критерия.</strong> Для&nbsp;тестирования такой статистической гипотезы в&nbsp;данном случае подойдёт z-тест (z-критерий Фишера), позволяющий сравнить выборочное среднее с&nbsp;заданным значением, так как дисперсия распределения известна. Он вычисляется по&nbsp;следующей формуле:</p>
+<p><span class="math display">\[
+z = \frac{\overline X - \mu_0}{\text{se}},
+\]</span></p>
+<p>где <span class="math inline">\(\overline X\)</span>&nbsp;— выборочное среднее, <span class="math inline">\(\mu_0\)</span>&nbsp;— заданное значение параметра, <span class="math inline">\(\text{se}\)</span>&nbsp;— стандартная ошибка, вычисляемая как <span class="math inline">\(\displaystyle \text{se}= \frac{\sigma}{\sqrt{n}}\)</span>, <span class="math inline">\(\sigma\)</span>&nbsp;— стандартное отклонение.</p>
+<p><strong>Шаг 3. Выбор уровня значимости.</strong> Возьмем дефолтное значение <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p><strong>Шаг 4. Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна.</strong> z-статистика подчиняется стандартному нормальному распределению <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 5. Определение границ критической области.</strong></p>
+<p><span class="math display">\[
+z_{\text{cr}} = 1.645
+\]</span></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Таблица критических значений z-статистики для&nbsp;односторонней альтернативной гипотезы
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(z_{\text{cr}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.050</td>
+<td style="text-align: left;">±1.645</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.010</td>
+<td style="text-align: left;">±2.326</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.001</td>
+<td style="text-align: left;">±3.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 6. Расчёт выборочной статистики <span class="math inline">\(z_o\)</span>.</strong></p>
+<p><span class="math display">\[
+z_o = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} = \frac{102.77 - 100}{15 / \sqrt{35}} \approx 1.09
+\]</span></p>
+<p><strong>Шаг 7. Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область.</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 8. Статистический вывод.</strong></p>
+<p>Так как <span class="math inline">\(z_o &lt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>характерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас нет оснований отклонять нулевую гипотезу о&nbsp;равенстве выборочного среднего значению 100.</p>
+<div id="exm-hyptesting-opt1-h1-greater" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 31.2</strong></span> Студенты другой академической группы первого курса факультета психологии того&nbsp;же вуза также прошли тестирование на&nbsp;интеллект с&nbsp;помощью теста IQ. В тестировании принято участие 32 человека. Средний балл студентов оказался равен 106.19. Проверьте гипотезу о&nbsp;том, что&nbsp;уровень интеллекта в&nbsp;этой группе выше среднего.</p>
+</div>
+<p><strong>Шаг 1. Формулировка гипотез.</strong> Так как суть задачи не&nbsp;изменилась&nbsp;— иными стали только данные&nbsp;— то гипотезы останутся теми&nbsp;же:</p>
+<ul>
+<li><em>Теоретическая гипотеза</em>: интеллект студентов выше по сравнению со средним для их возраста</li>
+<li><em>Эмпирическая гипотеза</em>: средний балл IQ студентов больше среднего значения по данной шкале</li>
+<li><em>Статистические гипотезы</em>:
+<ul>
+<li><span class="math inline">\(H_0 : \mu \leqslant 100\)</span></li>
+<li><span class="math inline">\(H_1 : \mu &gt; 100\)</span></li>
+</ul></li>
+</ul>
+<p><strong>Шаг 2. Выбор статистического критерия.</strong> Поскольку гипотезы остались прежними, мы вновь сможем воспользоваться z-тестом (z-критерий Фишера):</p>
+<p><span class="math display">\[
+z = \frac{\overline X - \mu_0}{\text{se}},
+\]</span></p>
+<p>где <span class="math inline">\(\overline X\)</span>&nbsp;— выборочное среднее, <span class="math inline">\(\mu_0\)</span>&nbsp;— заданное значение параметра, <span class="math inline">\(\text{se}\)</span>&nbsp;— стандартная ошибка, вычисляемая как <span class="math inline">\(\displaystyle \text{se}= \frac{\sigma}{\sqrt{n}}\)</span>, <span class="math inline">\(\sigma\)</span>&nbsp;— стандартное отклонение.</p>
+<p><strong>Шаг 3. Выбор уровня значимости.</strong> Также оставим дефолтное значение <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p><strong>Шаг 4. Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна.</strong> z-статистика всё ещё подчиняется стандартному нормальному распределению <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 5. Определение границ критической области.</strong></p>
+<p>Не&nbsp;изменилось и&nbsp;критическое значение, так как оно определяется уровнем значимости, а он остался прежним.</p>
+<p><span class="math display">\[
+z_{\text{cr}} = 1.645
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 6. Расчёт выборочной статистики <span class="math inline">\(z_o\)</span>.</strong> А&nbsp;вот здесь начинаются изменения. Так как у&nbsp;нас появились новые данные, изменится и значение z-статистики:</p>
+<p><span class="math display">\[
+z_o = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} = \frac{106.19 - 100}{15 / \sqrt{32}} \approx 2.33
+\]</span></p>
+<p><strong>Шаг 7. Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область.</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 8. Статистический вывод.</strong></p>
+<p>Так как <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>нехарактерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>есть основания</em> отклонить нулевую гипотезу и&nbsp;<em>принять альтернативную</em>, что выборочное среднее больше 100.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 97.77143</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq3
+z = -0.87896, p-value = 0.1897
+alternative hypothesis: true mean is less than 100
+95 percent confidence interval:
+       NA 101.9419
+sample estimates:
+mean of x 
+ 97.77143 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 94.17391</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq4
+z = -1.8627, p-value = 0.03125
+alternative hypothesis: true mean is less than 100
+95 percent confidence interval:
+       NA 99.31855
+sample estimates:
+mean of x 
+ 94.17391 </code></pre>
+</div>
+</div>
+<div id="exr-hyptesting-opt1-h0-lower" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 31.1</strong></span> &nbsp;</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+</div>
+<div id="exr-hyptesting-opt1-h1-lower" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 31.2</strong></span> &nbsp;</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Таблица критических значений z-статистики для&nbsp;двусторонней альтернативной гипотезы
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(z_{\text{cr}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.050</td>
+<td style="text-align: left;">±1.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.010</td>
+<td style="text-align: left;">±2.576</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.001</td>
+<td style="text-align: left;">±3.291</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="prob-hyptesting-algorithm-opt2" class="level3" data-number="31.5.2">
@@ -1402,7 +1655,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Формулировка гипотезы</li>
+<li>Формулировка гипотез</li>
 <li>Выбор статистического критерия</li>
 <li>Выбор уровня значимости <span class="math inline">\(α\)</span></li>
 <li>Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна</li>
@@ -1439,10 +1692,46 @@ H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \ge
 \end{align}
 \]</span></p>
 <hr>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 102.7714</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq1
+z = 1.0931, p-value = 0.1372
+alternative hypothesis: true mean is greater than 100
+95 percent confidence interval:
+ 98.60096       NA
+sample estimates:
+mean of x 
+ 102.7714 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 106.1875</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq2
+z = 2.3335, p-value = 0.009812
+alternative hypothesis: true mean is greater than 100
+95 percent confidence interval:
+ 101.8259       NA
+sample estimates:
+mean of x 
+ 106.1875 </code></pre>
+</div>
+</div>
 </section>
 </section>
-<section id="prob-hyptesting-errorconnetion-graph" class="level3" data-number="31.5.3">
-<h3 data-number="31.5.3" class="anchored" data-anchor-id="prob-hyptesting-errorconnetion-graph"><span class="header-section-number">31.5.3</span> Визуализация связи ошибок I и II рода</h3>
+<section id="prob-hyptesting-errorconnection-graph" class="level3" data-number="31.5.3">
+<h3 data-number="31.5.3" class="anchored" data-anchor-id="prob-hyptesting-errorconnection-graph"><span class="header-section-number">31.5.3</span> Визуализация связи ошибок I и II рода</h3>
 <div class="lab-junior">
 
 </div>
@@ -1450,7 +1739,7 @@ H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \ge
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1459,7 +1748,7 @@ H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \ge
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1595,9 +1884,9 @@ Ruiter, J. de. (2019). Redefine or justify? Comments on the alpha debate. <em>Ps
 <li id="fn3"><p>Это верно, так как события, описываемые ситуациями 2 и 4 (<a href="#tbl-stattest-situations" class="quarto-xref">Таблица&nbsp;<span>31.2</span></a>), составляют полную группу событий.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Так как <span class="math inline">\(\mathbb{P}(\hat H_0 | H_0) + \mathbb{P}(\hat H_1 | H_0) = \mathbb{P}(\hat H_0 | H_0) + \alpha = 1\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Внимательный читатель, конечно, возразит, что в этом случае <span class="math inline">\(\beta\)</span> будет стремится не к единице, а к отношению <span class="math inline">\(\dfrac{\mathbb{P}(H_1)}{\mathbb{P}(H_0)}\)</span>. Это справедливо, однако для небольшого размера эффекта это отношение близко к единице. О роли размера эффекта см. далее.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично — что&nbsp;встречается довольно часто — можно рассматривать модуль критического значения <span class="math inline">\(|t_{cr}|\)</span>, так&nbsp;как оба критических значения будут равны по&nbsp;модулю, но&nbsp;противоположны по знаку: <span class="math inline">\(t_{cr1} = -t_{cr2}\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &gt; |t_{cr}|\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &lt; |t_{cr}|\)</span>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично — что&nbsp;встречается довольно часто — можно рассматривать модуль критического значения <span class="math inline">\(|t_{\text{cr}}|\)</span>, так&nbsp;как оба критических значения будут равны по&nbsp;модулю, но&nbsp;противоположны по знаку: <span class="math inline">\(t_{\text{cr}1} = -t_{\text{cr}2}\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &gt; |t_{\text{cr}}|\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &lt; |t_{\text{cr}}|\)</span>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
