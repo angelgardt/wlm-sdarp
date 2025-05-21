@@ -161,8 +161,28 @@ server <- function(input, output) {
   
   ## Computations
   
-  z_h1 <- reactive(input$effect.size * sqrt(input$sample.size))
-  z_cr <- reactive(qnorm(1 - input$sig.level/2))
+  z_h1 <- reactive({
+    if (input$solve.for != "effect.size" & input$solve.for != "sample.size") {
+      input$effect.size * sqrt(input$sample.size)
+    } else {
+      ## TODO
+      2
+    }
+  })
+  
+  z_cr <- reactive({
+  if (input$solve.for != "sig.level") {
+    if (input$alternative == "less") {
+      qnorm(input$sig.level)
+    } else if (input$alternative == "greater") {
+      qnorm(1 - input$sig.level)
+    } else {
+      qnorm(1 - input$sig.level/2)
+    }
+  } else {
+    2
+  }
+  })
   
   
   ## Boxes
@@ -212,11 +232,11 @@ server <- function(input, output) {
         stat_function(
           fun = dnorm,
           geom = "area",
-          xlim = c(qnorm(1 - input$sig.level), 4),
+          xlim = c(z_cr(), 4),
           fill = "red",
           alpha = .5
         ) +
-        geom_vline(xintercept = qnorm(1 - input$sig.level),
+        geom_vline(xintercept = z_cr(),
                    linetype = "dotted") +
         xlim(-4, 4)
     } else if (input$alternative == "less") {
@@ -224,11 +244,11 @@ server <- function(input, output) {
         stat_function(
           fun = dnorm,
           geom = "area",
-          xlim = c(-4, qnorm(input$sig.level)),
+          xlim = c(-4, z_cr()),
           fill = "red",
           alpha = .5
         ) +
-        geom_vline(xintercept = qnorm(input$sig.level),
+        geom_vline(xintercept = z_cr(),
                    linetype = "dotted") +
         xlim(-4, 4)
     } else {
@@ -237,7 +257,7 @@ server <- function(input, output) {
           fun = dnorm,
           args = list(mean = z_h1),
           geom = "area",
-          xlim = c(qnorm(input$sig.level / 2), qnorm(1 - input$sig.level / 2)),
+          xlim = c(-z_cr(), z_cr()),
           fill = "blue",
           alpha = .5
         ) +
@@ -245,25 +265,25 @@ server <- function(input, output) {
           fun = dnorm,
           args = list(mean = z_h1),
           geom = "area",
-          xlim = c(qnorm(1 - input$sig.level / 2), 4),
+          xlim = c(z_cr(), 4),
           fill = "cyan",
           alpha = .5
         ) +
         stat_function(
           fun = dnorm,
           geom = "area",
-          xlim = c(-4, qnorm(input$sig.level / 2)),
+          xlim = c(-4, -z_cr()),
           fill = "red",
           alpha = .5
         ) +
         stat_function(
           fun = dnorm,
           geom = "area",
-          xlim = c(qnorm(1 - input$sig.level / 2), 4),
+          xlim = c(z_cr(), 4),
           fill = "red",
           alpha = .5
         ) +
-        geom_vline(xintercept = c(qnorm(input$sig.level / 2), qnorm(1 - input$sig.level / 2)),
+        geom_vline(xintercept = c(-z_cr(), z_cr()),
                    linetype = "dotted") +
         xlim(-4, 4)
     }
