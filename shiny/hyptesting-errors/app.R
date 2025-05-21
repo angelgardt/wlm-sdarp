@@ -8,8 +8,9 @@
 #
 
 library(shiny)
+library(shinyvalidate)
 library(bslib)
-library(ggplot2)
+library(tidyverse)
 theme_set(theme_bw())
 
 # Define UI for application
@@ -22,6 +23,7 @@ ui <- fluidPage(
   # Input area
   sidebarLayout(
     sidebarPanel(
+      ## Solve for
       selectInput(
         inputId = "solve.for",
         label = "Вычислить",
@@ -33,36 +35,47 @@ ui <- fluidPage(
         ),
         selected = "power"
       ),
+      ## Params
       uiOutput("param_sig.level"),
       uiOutput("param_power"),
       uiOutput("param_effect.size"),
       uiOutput("param_sample.size"),
       radioButtons(
         inputId = "alternative",
-        label = "Альтернативная гипотеза (H_1)",
+        label = "Альтернативная гипотеза",
         choices = c(
-          "Greater" = "greater",
-          "Less" = "less",
-          "Two-sided" = "two.sided"
+          "Левосторонняя" = "less",
+          "Правосторонняя" = "greater",
+          "Двусторонняя" = "two.sided"
         ),
         selected = "two.sided"
-      )
+      ),
+      ## Settings
+      actionButton("settings_btn", label = "Показать настройки", icon = icon("gear")),
+      uiOutput("settings_sig.level")
     ),
     
-    # Show a plot and table
-    mainPanel(
-      plotOutput("mainPlot"),
-      value_box(title = "Type I Error", value = uiOutput("box_sig.level")),
-      value_box(title = "Type II Error", value = uiOutput("box_beta")),
-      value_box(title = "Power", value = uiOutput("box_power")),
-      value_box(title = "Effect Size", value = uiOutput("box_effect.size")),
-      value_box(title = "Sample Size", value = uiOutput("box_sample.size"))
+    # Show a plot and values
+    card(
+      navset_card_tab(
+        nav_panel(title = "z", plotOutput("mainPlot")),
+        #nav_panel(title = "d", "PLOT")
+        ),
+    layout_column_wrap(
+      value_box(title = "Ошибка I рода", value = uiOutput("box_sig.level")),
+      value_box(title = "Ошибка II рода", value = uiOutput("box_beta")),
+      value_box(title = "Статистическая мощность", value = uiOutput("box_power")),
+      value_box(title = "Размер эффекта", value = uiOutput("box_effect.size")),
+      value_box(title = "Объём выборки", value = uiOutput("box_sample.size"))
       )
+    )
   )
 )
 
 # Define server logic
 server <- function(input, output) {
+  
+  ## Params
   output$param_sig.level <- renderUI({
     if (input$solve.for != "sig.level") {
       sliderInput(
@@ -101,31 +114,93 @@ server <- function(input, output) {
       sliderInput(
         inputId = "sample.size",
         label = "Объём выборки (n)",
-        min = 0,
+        min = 2,
         max = 300,
-        value = 30
+        value = 30,
+        step = 1
       )
     }
   })
   
-  output$box_sig.level <- renderText({
-    input$sig.level
+  ## Settings
+  observeEvent(input$settings_btn, {
+    if (input$settings_btn %% 2 == 1) {
+      updateActionButton(inputId = "settings_btn", label = "Скрыть настройки")
+    } else {
+      updateActionButton(inputId = "settings_btn", label = "Показать настройки")
+    }
   })
-  output$box_beta <- renderText({
-    "beta"
+  output$settings_sig.level <- renderUI({
+    if (input$settings_btn %% 2 == 1) {
+      card(markdown("#### Уровень значимости"),
+           layout_columns(
+             numericInput(inputId = "sig.level_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+             numericInput(inputId = "sig.level_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+             numericInput(inputId = "sig.level_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+      )
+    }
   })
-  output$box_power <- renderText({
-    "power"
+  observeEvent(input$sig.level_min, {
+    updateSliderInput(inputId = "sig.level", min = input$sig.level_min)
   })
-  output$box_effect.size <- renderText({
-    "effect size"
+  observeEvent(input$sig.level_max, {
+    updateSliderInput(inputId = "sig.level", max = input$sig.level_max)
   })
-  output$box_sample.size <- renderText({
-    "sample size"
+  observeEvent(input$sig.level_step, {
+    updateSliderInput(inputId = "sig.level", step = input$sig.level_step)
   })
   
+  
+  ## Validation
+  iv <- InputValidator$new()
+  iv$add_rule("sig.level_min", sv_gte(0, message_fmt = "Значение должно быть не меньше нуля"))
+  iv$add_rule("sig.level_max", sv_lte(1, message_fmt = "Значение должно быть не больше единицы"))
+  iv$add_rule("sig.level_step", sv_gt(0, message_fmt = "Значение должно быть больше нуля"))
+  iv$enable()
+  
+  ## Computations
+  
+  z_h1 <- reactive(input$effect.size * sqrt(input$sample.size))
+  z_cr <- reactive(qnorm(1 - input$sig.level/2))
+  
+  
+  ## Boxes
+  output$box_sig.level <- renderText({
+    if (input$solve.for != "sig.level") {
+      paste0(input$sig.level * 100, "%")
+    } else {
+      "should solve"
+    }
+  })
+  output$box_beta <- renderText({
+    pnorm(q = z_cr(), mean = z_h1()) %>% round(2)
+  })
+  output$box_power <- renderText({
+    if (input$solve.for != "power") {
+      input$power
+    } else {
+      "should solve"
+    }
+  })
+  output$box_effect.size <- renderText({
+    if (input$solve.for != "effect.size") {
+      input$effect.size
+    } else {
+      "should solve"
+    }
+  })
+  output$box_sample.size <- renderText({
+    if (input$solve.for != "sample.size") {
+      input$sample.size
+    } else {
+      "should solve"
+    }
+  })
+  
+  ## Plot
   output$mainPlot <- renderPlot({
-    z_h1 <- input$effect.size * sqrt(input$sample.size)
+    z_h1 <- 2
     
     graph <- ggplot(NULL) +
       stat_function(fun = dnorm) +
