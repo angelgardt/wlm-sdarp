@@ -247,7 +247,7 @@ server <- function(input, output) {
   z_h1 <- reactive({
     if (input$solve.for != "effect.size" & input$solve.for != "sample.size") {
       input$effect.size * sqrt(input$sample.size)
-    } else {
+    } else if (input$solve.for == "effect.size") {
       ## TODO
       2
     }
@@ -326,13 +326,13 @@ server <- function(input, output) {
     paste0(values$sig.level() %>% round(2) %>% `*`(100), "%")
   })
   output$box_beta <- renderText({
-    paste0(values$beta() * 100, "%")
+    paste0(values$beta() %>% round(2) %>% `*`(100), "%")
   })
   output$box_power <- renderText({
-    paste0(values$power() * 100, "%")
+    paste0(values$power() %>% round(2) %>% `*`(100), "%")
   })
   output$box_effect.size <- renderText({
-    paste0(values$effect.size())
+    paste0(values$effect.size() %>% round(2))
   })
   output$box_sample.size <- renderText({
     paste0(values$sample.size())
