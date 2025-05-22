@@ -263,7 +263,17 @@ server <- function(input, output) {
       qnorm(1 - input$sig.level/2)
     }
   } else {
-    2
+    if (input$alternative == "less") {
+      qnorm(input$power, mean = z_h1())
+    } else if (input$alternative == "greater") {
+      qnorm(input$power, mean = z_h1(), lower.tail = FALSE)
+    } else {
+      if (input$effect.size < 0) {
+        qnorm(input$power, mean = z_h1())
+      } else {
+        qnorm(input$power, mean = z_h1(), lower.tail = FALSE)
+      }
+    }
   }
   })
   
@@ -277,22 +287,24 @@ server <- function(input, output) {
     if (input$solve.for != "sig.level") {
       input$sig.level
     } else {
-      NA
-    }
-  })
-  values$beta <- reactive({
-    if (input$solve.for == "power") {
-      pnorm(q = z_cr(), mean = z_h1()) %>% round(2)
-    } else {
-      NA
+      if (input$alternative == "less") {
+        pnorm(z_cr())
+      } else if (input$alternative == "greater") {
+        pnorm(z_cr(), lower.tail = FALSE)
+      } else {
+          pnorm(-z_cr()) * 2
+      }
     }
   })
   values$power <- reactive({
-    if (input$solve.for == "power") {
-      pnorm(q = z_cr(), mean = z_h1(), lower.tail = FALSE) %>% round(2)
+    if (input$solve.for != "power") {
+      input$power
     } else {
-      NA
+      pnorm(q = z_cr(), mean = z_h1(), lower.tail = FALSE) %>% round(2)
     }
+  })
+  values$beta <- reactive({
+    1 - values$power()
   })
   values$effect.size <- reactive({
     if (input$solve.for != "effect.size") {
@@ -311,7 +323,7 @@ server <- function(input, output) {
   
   ## Boxes
   output$box_sig.level <- renderText({
-    paste0(values$sig.level() * 100, "%")
+    paste0(values$sig.level() %>% round(2) %>% `*`(100), "%")
   })
   output$box_beta <- renderText({
     paste0(values$beta() * 100, "%")
