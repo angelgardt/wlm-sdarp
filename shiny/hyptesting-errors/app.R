@@ -69,7 +69,9 @@ ui <- fluidPage(
       value_box(title = "Ошибка II рода", value = uiOutput("box_beta")),
       value_box(title = "Статистическая мощность", value = uiOutput("box_power")),
       value_box(title = "Размер эффекта", value = uiOutput("box_effect.size")),
-      value_box(title = "Объём выборки", value = uiOutput("box_sample.size"))
+      value_box(title = "Объём выборки", value = uiOutput("box_sample.size")),
+      value_box(title = "Критическое значение", value = uiOutput("box_z.cr")),
+      value_box(title = "Наблюдаемое значение", value = uiOutput("box_z.h1"))
       )
     )
   )
@@ -323,6 +325,12 @@ server <- function(input, output) {
   output$box_sample.size <- renderText({
     paste0(values$sample.size())
   })
+  output$box_z.cr <- renderText({
+    z_cr() %>% round(2)
+  })
+  output$box_z.h1 <- renderText({
+    z_h1() %>% round(2)
+  })
   
   ## Plot
   output$mainPlot <- renderPlot({
@@ -330,10 +338,27 @@ server <- function(input, output) {
     graph <- ggplot(NULL) +
       stat_function(fun = dnorm) +
       stat_function(fun = dnorm, args = list(mean = z_h1())) +
+      geom_vline(xintercept = z_h1(), linetype = "dashed") +
       labs(x = "z", y = "Density")
     
     if (input$alternative == "greater") {
       graph +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(-4, z_cr()),
+          fill = "blue",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "cyan",
+          alpha = .5
+        ) +
         stat_function(
           fun = dnorm,
           geom = "area",
@@ -346,6 +371,22 @@ server <- function(input, output) {
         xlim(-4, 4)
     } else if (input$alternative == "less") {
       graph +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "blue",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(-4, z_cr()),
+          fill = "cyan",
+          alpha = .5
+        ) +
         stat_function(
           fun = dnorm,
           geom = "area",
