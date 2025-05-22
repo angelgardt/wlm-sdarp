@@ -52,7 +52,10 @@ ui <- fluidPage(
       ),
       ## Settings
       actionButton("settings_btn", label = "Показать настройки", icon = icon("gear")),
-      uiOutput("settings_sig.level")
+      uiOutput("settings_sig.level"),
+      uiOutput("settings_power"),
+      uiOutput("settings_effect.size"),
+      uiOutput("settings_sample.size")
     ),
     
     # Show a plot and values
@@ -100,13 +103,23 @@ server <- function(input, output) {
   })
   output$param_effect.size <- renderUI({
     if (input$solve.for != "effect.size") {
-      sliderInput(
-        inputId = "effect.size",
-        label = "Размер эффекта (d)",
-        min = 0,
-        max = 1,
-        value = .3
-      )
+      if (input$alternative != "less") {
+        sliderInput(
+          inputId = "effect.size",
+          label = "Размер эффекта (d)",
+          min = 0,
+          max = 1,
+          value = .3
+        )
+      } else {
+        sliderInput(
+          inputId = "effect.size",
+          label = "Размер эффекта (d)",
+          min = -1,
+          max = 0,
+          value = -.3
+        )
+      }
     }
   })
   output$param_sample.size <- renderUI({
@@ -130,15 +143,18 @@ server <- function(input, output) {
       updateActionButton(inputId = "settings_btn", label = "Показать настройки")
     }
   })
+  
   output$settings_sig.level <- renderUI({
-    if (input$settings_btn %% 2 == 1) {
-      card(markdown("#### Уровень значимости"),
-           layout_columns(
-             numericInput(inputId = "sig.level_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
-             numericInput(inputId = "sig.level_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
-             numericInput(inputId = "sig.level_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
-             )
-      )
+    if (input$solve.for != "sig.level") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Уровень значимости"),
+             layout_columns(
+               numericInput(inputId = "sig.level_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+               numericInput(inputId = "sig.level_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+               numericInput(inputId = "sig.level_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+               )
+        )
+      }
     }
   })
   observeEvent(input$sig.level_min, {
@@ -149,6 +165,71 @@ server <- function(input, output) {
   })
   observeEvent(input$sig.level_step, {
     updateSliderInput(inputId = "sig.level", step = input$sig.level_step)
+  })
+  
+  output$settings_power <- renderUI({
+    if (input$solve.for != "power") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Статистическая мощность"),
+             layout_columns(
+               numericInput(inputId = "power_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+               numericInput(inputId = "power_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+               numericInput(inputId = "power_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$power_min, {
+    updateSliderInput(inputId = "power", min = input$power_min)
+  })
+  observeEvent(input$power_max, {
+    updateSliderInput(inputId = "power", max = input$power_max)
+  })
+  observeEvent(input$power_step, {
+    updateSliderInput(inputId = "power", step = input$power_step)
+  })
+  
+  output$settings_effect.size <- renderUI({
+    if (input$solve.for != "effect.size") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Размер эффекта"),
+             layout_columns(
+               numericInput(inputId = "effect.size_min", label = "Минимум", value = 0, min = -2, max = 2, step = .01),
+               numericInput(inputId = "effect.size_max", label = "Максимум", value = 1, min = -2, max = 2, step = .01),
+               numericInput(inputId = "effect.size_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$effect.size_min, {
+    updateSliderInput(inputId = "effect.size", min = input$effect.size_min)
+  })
+  observeEvent(input$effect.size_max, {
+    updateSliderInput(inputId = "effect.size", max = input$effect.size_max)
+  })
+  observeEvent(input$effect.size_step, {
+    updateSliderInput(inputId = "effect.size", step = input$effect.size_step)
+  })
+  
+  output$settings_sample.size <- renderUI({
+    if (input$solve.for != "sample.size") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Объём выборки"),
+             layout_columns(
+               numericInput(inputId = "sample.size_min", label = "Минимум", value = 2, min = 2, max = 10000, step = 1),
+               numericInput(inputId = "sample.size_max", label = "Максимум", value = 300, min = 2, max = 10000, step = 1)
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$sample.size_min, {
+    updateSliderInput(inputId = "sample.size", min = input$sample.size_min)
+  })
+  observeEvent(input$sample.size_max, {
+    updateSliderInput(inputId = "sample.size", max = input$sample.size_max)
   })
   
   
@@ -184,47 +265,71 @@ server <- function(input, output) {
   }
   })
   
+  values <- list(sig.level = numeric(1),
+                 beta = numeric(1),
+                 power = numeric(1),
+                 effect.size = numeric(1),
+                 sample.size = numeric(1))
   
-  ## Boxes
-  output$box_sig.level <- renderText({
+  values$sig.level <- reactive({
     if (input$solve.for != "sig.level") {
-      paste0(input$sig.level * 100, "%")
+      input$sig.level
     } else {
-      "should solve"
+      NA
     }
   })
-  output$box_beta <- renderText({
-    pnorm(q = z_cr(), mean = z_h1()) %>% round(2)
-  })
-  output$box_power <- renderText({
-    if (input$solve.for != "power") {
-      input$power
+  values$beta <- reactive({
+    if (input$solve.for == "power") {
+      pnorm(q = z_cr(), mean = z_h1()) %>% round(2)
     } else {
-      "should solve"
+      NA
     }
   })
-  output$box_effect.size <- renderText({
+  values$power <- reactive({
+    if (input$solve.for == "power") {
+      pnorm(q = z_cr(), mean = z_h1(), lower.tail = FALSE) %>% round(2)
+    } else {
+      NA
+    }
+  })
+  values$effect.size <- reactive({
     if (input$solve.for != "effect.size") {
       input$effect.size
     } else {
-      "should solve"
+      NA
     }
   })
-  output$box_sample.size <- renderText({
+  values$sample.size <- reactive({
     if (input$solve.for != "sample.size") {
       input$sample.size
     } else {
-      "should solve"
+      NA
     }
+  })
+  
+  ## Boxes
+  output$box_sig.level <- renderText({
+    paste0(values$sig.level() * 100, "%")
+  })
+  output$box_beta <- renderText({
+    paste0(values$beta() * 100, "%")
+  })
+  output$box_power <- renderText({
+    paste0(values$power() * 100, "%")
+  })
+  output$box_effect.size <- renderText({
+    paste0(values$effect.size())
+  })
+  output$box_sample.size <- renderText({
+    paste0(values$sample.size())
   })
   
   ## Plot
   output$mainPlot <- renderPlot({
-    z_h1 <- 2
     
     graph <- ggplot(NULL) +
       stat_function(fun = dnorm) +
-      stat_function(fun = dnorm, args = list(mean = z_h1)) +
+      stat_function(fun = dnorm, args = list(mean = z_h1())) +
       labs(x = "z", y = "Density")
     
     if (input$alternative == "greater") {
@@ -255,7 +360,7 @@ server <- function(input, output) {
       graph +
         stat_function(
           fun = dnorm,
-          args = list(mean = z_h1),
+          args = list(mean = z_h1()),
           geom = "area",
           xlim = c(-z_cr(), z_cr()),
           fill = "blue",
@@ -263,7 +368,7 @@ server <- function(input, output) {
         ) +
         stat_function(
           fun = dnorm,
-          args = list(mean = z_h1),
+          args = list(mean = z_h1()),
           geom = "area",
           xlim = c(z_cr(), 4),
           fill = "cyan",
