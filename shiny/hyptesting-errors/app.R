@@ -35,6 +35,9 @@ ui <- fluidPage(
         ),
         selected = "power"
       ),
+      card(
+        textOutput("question"), 
+      ),
       ## Params
       uiOutput("param_effect.size.sign"),
       uiOutput("param_sig.level"),
@@ -142,6 +145,17 @@ server <- function(input, output) {
         value = 30,
         step = 1
       )
+    }
+  })
+  output$question <- renderText({
+    if (input$solve.for == "sig.level") {
+      "Какова будет вероятность ложноположительного вывода при заданных статистической значимости, объёме выборки и размере эффекта?"
+    } else if (input$solve.for == "power") {
+      "Какова будет статистическая мощность при заданных уровне значимости, размере эффекта и объёме выборки?"
+    } else if (input$solve.for == "effect.size") {
+      "Какой размер эффекта будет можно обнаружить на выборке данного объема при заданных уровне значимости и статистической мощности?"
+    } else if (input$solve.for == "sample.size") {
+      "Какой объём выборки потребуется для данного размера эффекта при заданных уровне значимости и статистической мощности?"
     }
   })
   
