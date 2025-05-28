@@ -36,6 +36,7 @@ ui <- fluidPage(
         selected = "power"
       ),
       ## Params
+      uiOutput("param_effect.size.sign"),
       uiOutput("param_sig.level"),
       uiOutput("param_power"),
       uiOutput("param_effect.size"),
@@ -122,6 +123,13 @@ server <- function(input, output) {
           value = -.3
         )
       }
+    }
+  })
+  output$param_effect.size.sign <- renderUI({
+    if (input$solve.for == "effect.size" & input$alternative == "two.sided") {
+      checkboxInput(inputId = "effect.size.sign",
+                    label = "Отрицательный эффект",
+                    value = FALSE)
     }
   })
   output$param_sample.size <- renderUI({
@@ -249,7 +257,11 @@ server <- function(input, output) {
       input$effect.size * sqrt(input$sample.size)
     } else if (input$solve.for == "effect.size") {
       ## TODO
-      2
+      if (input$alternative == "less") {
+        z_cr() - qnorm(input$power)
+      } else {
+        z_cr() - qnorm(input$power, lower.tail = FALSE)
+      }
     }
   })
   
@@ -310,7 +322,7 @@ server <- function(input, output) {
     if (input$solve.for != "effect.size") {
       input$effect.size
     } else {
-      NA
+      z_h1() / sqrt(input$sample.size)
     }
   })
   values$sample.size <- reactive({
