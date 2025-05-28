@@ -1,0 +1,50 @@
+---
+title: "Вычисления"
+format: html
+---
+
+# \newenvironment{compound}{\left[\begin{gathered}}{\end{gathered}\right.}
+
+## Общие формулы
+
+$$
+z = \frac{\overline X - \mu}{\text{se}}, \quad \text{se} = \frac{\sigma}{\sqrt{n}}
+$$
+
+$$
+d = \frac{\overline X - \mu}{\sigma} = \frac{z}{\sqrt{n}}
+$$
+
+$$
+\begin{split}
+z &\overset{H_0}{\thicksim} \mathcal{N}(0, 1) \\
+z &\overset{H_1}{\thicksim} \mathcal{N}(z_1, 1)
+\end{split}
+$$
+
+## Кейсы
+
+### Решение для уровня значимости
+
+### Решение для статистической мощности
+
+$$
+z_1 = d \sqrt{n}
+$$
+
+Для односторонней альтернативы
+
+$$
+z_\text{cr} =\pm \Phi^{-1}(\alpha)
+$$
+
+$$
+1 - \beta = \int_{z_\text{cr}}^{+\infty} \varphi_1(x)dx
+$$
+
+Для двусторонней альтернативы
+
+
+### Решение для размера эффекта
+
+### Решение для объёма выборки
