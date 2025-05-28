@@ -256,7 +256,15 @@ server <- function(input, output) {
     if (input$solve.for != "effect.size" & input$solve.for != "sample.size") {
       input$effect.size * sqrt(input$sample.size)
     } else if (input$solve.for == "effect.size") {
-      ## TODO
+      if (input$alternative == "less") {
+        z_cr() - qnorm(input$power)
+      } else {
+        if (input$effect.size.sign) {
+          -z_cr() - qnorm(input$power, lower.tail = FALSE)
+        }
+        z_cr() - qnorm(input$power, lower.tail = FALSE)
+      }
+    } else if (input$solve.for == "sample.size") {
       if (input$alternative == "less") {
         z_cr() - qnorm(input$power)
       } else {
@@ -329,7 +337,7 @@ server <- function(input, output) {
     if (input$solve.for != "sample.size") {
       input$sample.size
     } else {
-      NA
+      (z_h1() / input$effect.size)^2
     }
   })
   
@@ -347,7 +355,7 @@ server <- function(input, output) {
     paste0(values$effect.size() %>% round(2))
   })
   output$box_sample.size <- renderText({
-    paste0(values$sample.size())
+    values$sample.size() %>% round()
   })
   output$box_z.cr <- renderText({
     z_cr() %>% round(2)
