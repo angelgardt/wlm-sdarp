@@ -12,6 +12,8 @@ library(shinyvalidate)
 library(bslib)
 library(tidyverse)
 theme_set(theme_bw())
+library(ggmosaic)
+library(latex2exp)
 
 # Define UI for application
 ui <- fluidPage(
@@ -23,7 +25,65 @@ ui <- fluidPage(
   # Input area
   sidebarLayout(
     sidebarPanel(
-      ## Solve for
+      ## Params
+      uiOutput("param_solve.for"),
+      uiOutput("param_h1"),
+      uiOutput("param_effect.size.sign"),
+      uiOutput("param_sig.level"),
+      uiOutput("param_power"),
+      uiOutput("param_effect.size"),
+      uiOutput("param_sample.size"),
+      uiOutput("param_alternative"),
+      
+      ## Settings
+      actionButton("settings_btn", label = "Показать настройки", icon = icon("gear")),
+      uiOutput("settings_sig.level"),
+      uiOutput("settings_power"),
+      uiOutput("settings_effect.size"),
+      uiOutput("settings_sample.size")
+    ),
+    
+    # Show a plot and values
+    mainPanel(
+      tabsetPanel(
+        id = "tabset",
+        tabPanel(title = "Масштаб оси x: z",
+                 card(
+                   textOutput("question"), 
+                 ),
+                 layout_column_wrap(
+                   value_box(title = "Ошибка I рода", value = uiOutput("box_sig.level")),
+                   value_box(title = "Ошибка II рода", value = uiOutput("box_beta")),
+                   value_box(title = "Статистическая мощность", value = uiOutput("box_power")),
+                   value_box(title = "Размер эффекта", value = uiOutput("box_effect.size")),
+                   value_box(title = "Объём выборки", value = uiOutput("box_sample.size"))
+                 ),
+                 layout_column_wrap(
+                   value_box(title = "Критическое значение", value = uiOutput("box_z.cr")),
+                   value_box(title = "Наблюдаемое значение", value = uiOutput("box_z.h1"))
+                 ),
+                 plotOutput("zPlot")),
+        tabPanel(title = "Масштаб оси x: d", plotOutput("dPlot")),
+        tabPanel(title = "Вероятность результата",
+                 layout_column_wrap(
+                   value_box(title = "TN", value = uiOutput("box_tn")),
+                   value_box(title = "FP", value = uiOutput("box_fp")),
+                   value_box(title = "FN", value = uiOutput("box_fn")),
+                   value_box(title = "TP", value = uiOutput("box_tp"))
+                 ),
+                 plotOutput("tablePlot")
+                 )
+        )
+    )
+  )
+)
+
+# Define server logic
+server <- function(input, output) {
+  
+  ## Params
+  output$param_solve.for <- renderUI({
+    if (input$tabset != "Вероятность результата") {
       selectInput(
         inputId = "solve.for",
         label = "Вычислить",
@@ -34,59 +94,22 @@ ui <- fluidPage(
           "Объём выборки (n)" = "sample.size"
         ),
         selected = "power"
-      ),
-      card(
-        textOutput("question"), 
-      ),
-      ## Params
-      uiOutput("param_effect.size.sign"),
-      uiOutput("param_sig.level"),
-      uiOutput("param_power"),
-      uiOutput("param_effect.size"),
-      uiOutput("param_sample.size"),
-      radioButtons(
-        inputId = "alternative",
-        label = "Альтернативная гипотеза",
-        choices = c(
-          "Левосторонняя" = "less",
-          "Правосторонняя" = "greater",
-          "Двусторонняя" = "two.sided"
-        ),
-        selected = "two.sided"
-      ),
-      ## Settings
-      actionButton("settings_btn", label = "Показать настройки", icon = icon("gear")),
-      uiOutput("settings_sig.level"),
-      uiOutput("settings_power"),
-      uiOutput("settings_effect.size"),
-      uiOutput("settings_sample.size")
-    ),
-    
-    # Show a plot and values
-    card(
-      navset_card_tab(
-        nav_panel(title = "z", plotOutput("mainPlot")),
-        #nav_panel(title = "d", "PLOT")
-        ),
-    layout_column_wrap(
-      value_box(title = "Ошибка I рода", value = uiOutput("box_sig.level")),
-      value_box(title = "Ошибка II рода", value = uiOutput("box_beta")),
-      value_box(title = "Статистическая мощность", value = uiOutput("box_power")),
-      value_box(title = "Размер эффекта", value = uiOutput("box_effect.size")),
-      value_box(title = "Объём выборки", value = uiOutput("box_sample.size")),
-      value_box(title = "Критическое значение", value = uiOutput("box_z.cr")),
-      value_box(title = "Наблюдаемое значение", value = uiOutput("box_z.h1"))
       )
-    )
-  )
-)
-
-# Define server logic
-server <- function(input, output) {
-  
-  ## Params
+    }
+  })
+  output$param_h1 <- renderUI({
+    if (input$tabset == "Вероятность результата") {
+      sliderInput(
+        inputId = "h1",
+        label = "Вероятность справедливости альтернативной гипотезы (H1)",
+        min = 0,
+        max = 1,
+        value = .5
+      )
+    }
+  })
   output$param_sig.level <- renderUI({
-    if (input$solve.for != "sig.level") {
+    if (input$tabset == "Вероятность результата" | input$solve.for != "sig.level") {
       sliderInput(
         inputId = "sig.level",
         label = "Уровень значимости (α)",
@@ -97,7 +120,7 @@ server <- function(input, output) {
     }
   })
   output$param_power <- renderUI({
-    if (input$solve.for != "power") {
+    if (input$tabset == "Вероятность результата" | input$solve.for != "power") {
       sliderInput(
         inputId = "power",
         label = "Статистическая мощность (1-β)",
@@ -108,7 +131,7 @@ server <- function(input, output) {
     }
   })
   output$param_effect.size <- renderUI({
-    if (input$solve.for != "effect.size") {
+    if (input$tabset != "Вероятность результата" & input$solve.for != "effect.size") {
       if (input$alternative != "less") {
         sliderInput(
           inputId = "effect.size",
@@ -129,14 +152,14 @@ server <- function(input, output) {
     }
   })
   output$param_effect.size.sign <- renderUI({
-    if (input$solve.for == "effect.size" & input$alternative == "two.sided") {
+    if (input$tabset != "Вероятность результата" & input$solve.for == "effect.size" & input$alternative == "two.sided") {
       checkboxInput(inputId = "effect.size.sign",
                     label = "Отрицательный эффект",
                     value = FALSE)
     }
   })
   output$param_sample.size <- renderUI({
-    if (input$solve.for != "sample.size") {
+    if (input$tabset != "Вероятность результата" & input$solve.for != "sample.size") {
       sliderInput(
         inputId = "sample.size",
         label = "Объём выборки (n)",
@@ -144,6 +167,20 @@ server <- function(input, output) {
         max = 300,
         value = 30,
         step = 1
+      )
+    }
+  })
+  output$param_alternative <- renderUI({
+    if (input$tabset != "Вероятность результата") {
+      radioButtons(
+        inputId = "alternative",
+        label = "Альтернативная гипотеза",
+        choices = c(
+          "Левосторонняя" = "less",
+          "Правосторонняя" = "greater",
+          "Двусторонняя" = "two.sided"
+        ),
+        selected = "two.sided"
       )
     }
   })
@@ -265,7 +302,6 @@ server <- function(input, output) {
   iv$enable()
   
   ## Computations
-  
   z_h1 <- reactive({
     if (input$solve.for != "effect.size" & input$solve.for != "sample.size") {
       input$effect.size * sqrt(input$sample.size)
@@ -286,7 +322,6 @@ server <- function(input, output) {
       }
     }
   })
-  
   z_cr <- reactive({
   if (input$solve.for != "sig.level") {
     if (input$alternative == "less") {
@@ -315,7 +350,11 @@ server <- function(input, output) {
                  beta = numeric(1),
                  power = numeric(1),
                  effect.size = numeric(1),
-                 sample.size = numeric(1))
+                 sample.size = numeric(1),
+                 tn = numeric(1),
+                 fp = numeric(1),
+                 fn = numeric(1),
+                 tp = numeric(1))
   
   values$sig.level <- reactive({
     if (input$solve.for != "sig.level") {
@@ -354,6 +393,10 @@ server <- function(input, output) {
       (z_h1() / input$effect.size)^2
     }
   })
+  values$tn <- reactive({ (1 - input$sig.level) * (1 - input$h1) })
+  values$fp <- reactive({ input$sig.level * (1 - input$h1) })
+  values$fn <- reactive({ (1 - input$power) * input$h1 })
+  values$tp <- reactive({ input$power * input$h1 })
   
   ## Boxes
   output$box_sig.level <- renderText({
@@ -377,9 +420,21 @@ server <- function(input, output) {
   output$box_z.h1 <- renderText({
     z_h1() %>% round(2)
   })
+  output$box_tn <- renderText({
+    paste0(values$tn() %>% round(3) %>% `*`(100), "%")
+  })
+  output$box_fp <- renderText({
+    paste0(values$fp() %>% round(3) %>% `*`(100), "%")
+  })
+  output$box_fn <- renderText({
+    paste0(values$fn() %>% round(3) %>% `*`(100), "%")
+  })
+  output$box_tp <- renderText({
+    paste0(values$tp() %>% round(3) %>% `*`(100), "%")
+  })
   
   ## Plot
-  output$mainPlot <- renderPlot({
+  output$zPlot <- renderPlot({
     
     graph <- ggplot(NULL) +
       stat_function(fun = dnorm) +
@@ -479,6 +534,34 @@ server <- function(input, output) {
                    linetype = "dotted") +
         xlim(-4, 4)
     }
+  })
+  output$dPlot <- renderPlot({
+    ## TODO
+    plot(rnorm(30))
+  })
+  output$tablePlot <- renderPlot({
+    tibble(
+      pplt = c("H0", "H0", "H1", "H1") %>% factor(levels = c("H0", "H1"), ordered = TRUE),
+      smpl = c("H0^", "H1^", "H0^", "H1^") %>% factor(levels = c("H1^", "H0^"), ordered = TRUE),
+      prob = c(values$tn(), values$fp(), values$fn(), values$tp())
+    ) %>%
+      ggplot() +
+      geom_mosaic(aes(
+        x = product(pplt),
+        fill = smpl,
+        weight = prob),
+        show.legend = FALSE
+      ) +
+      theme_mosaic() +
+      scale_x_productlist(position = "top", 
+                          labels = TeX(c(r"($H_0$)", r"($H_1$)"))) +
+      scale_y_productlist(labels = TeX(c(r"($\hat{H}_1$)", r"($\hat{H}_0$)"))) +
+      scale_fill_manual(values = c("salmon", "royalblue")) +
+      # labs(x = "Генеральная совокупность",
+      #      y = "Выборка") +
+      theme(axis.text.x = element_text(size = 20),
+            axis.text.y = element_text(size = 20),
+            axis.title = element_text(size = 0))
   })
 }
 
