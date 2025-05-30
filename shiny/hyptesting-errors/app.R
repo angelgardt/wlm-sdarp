@@ -71,7 +71,12 @@ ui <- fluidPage(
                    value_box(title = "FN", value = uiOutput("box_fn")),
                    value_box(title = "TP", value = uiOutput("box_tp"))
                  ),
-                 plotOutput("tablePlot")
+                 fluidRow(
+                   column(6, plotOutput("tablePlot")
+                          ),
+                   column(6, plotOutput("erratePlot")
+                          )
+                 )
                  )
         )
     )
@@ -562,6 +567,40 @@ server <- function(input, output) {
       theme(axis.text.x = element_text(size = 20),
             axis.text.y = element_text(size = 20),
             axis.title = element_text(size = 0))
+  })
+  output$erratePlot <- renderPlot({
+    
+    tibble(
+      h1 = seq(from = 0, to = 1, by = .01),
+      h0 = 1 - h1,
+      sig.level = .05,
+      # sig.level = seq(from = 0, to = 1, by = .01),
+      not.sig.level = 1 - sig.level,
+      # power = seq(from = 0, to = 1, by= .01),
+      power = .8,
+      beta = 1 - power,
+      tn = not.sig.level * h0,
+      fp = sig.level * h0,
+      fn = beta * h1,
+      tp = power * h1
+    ) %>% 
+      pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>% 
+      ggplot() +
+      geom_line(aes(h1, prob, color = res)) +
+      geom_vline(xintercept = input$h1,
+                 linetype = "dashed") +
+      labs(x = TeX(r"($P(H_1)$)"),
+           y = "Вероятность результата",
+           color = "Результат") +
+      scale_color_manual(values = c(fn = "red",
+                                    fp = "blue",
+                                    tn = "green",
+                                    tp = "orange"),
+                         labels = c(fn = "False Negative",
+                                    fp = "False Positive",
+                                    tn = "True Negative",
+                                    tp = "True Positive")) +
+      theme(legend.position = "top")
   })
 }
 
