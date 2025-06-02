@@ -37,10 +37,12 @@ ui <- fluidPage(
       
       ## Settings
       actionButton("settings_btn", label = "Показать настройки", icon = icon("gear")),
+      uiOutput("settings_h1"),
       uiOutput("settings_sig.level"),
       uiOutput("settings_power"),
       uiOutput("settings_effect.size"),
-      uiOutput("settings_sample.size")
+      uiOutput("settings_sample.size"),
+      uiOutput("settings_errateplot")
     ),
     
     # Show a plot and values
@@ -71,12 +73,8 @@ ui <- fluidPage(
                    value_box(title = "FN", value = uiOutput("box_fn")),
                    value_box(title = "TP", value = uiOutput("box_tp"))
                  ),
-                 fluidRow(
-                   column(6, plotOutput("tablePlot")
-                          ),
-                   column(6, plotOutput("erratePlot")
-                          )
-                 )
+                   plotOutput("tablePlot"),
+                   plotOutput("erratePlot")
                  )
         )
     )
@@ -211,7 +209,7 @@ server <- function(input, output) {
   })
   
   output$settings_sig.level <- renderUI({
-    if (input$solve.for != "sig.level") {
+    if (input$solve.for != "sig.level" | input$tabset == "Вероятность результата") {
       if (input$settings_btn %% 2 == 1) {
         card(markdown("#### Уровень значимости"),
              layout_columns(
@@ -234,7 +232,7 @@ server <- function(input, output) {
   })
   
   output$settings_power <- renderUI({
-    if (input$solve.for != "power") {
+    if (input$solve.for != "power" | input$tabset == "Вероятность результата") {
       if (input$settings_btn %% 2 == 1) {
         card(markdown("#### Статистическая мощность"),
              layout_columns(
@@ -257,7 +255,7 @@ server <- function(input, output) {
   })
   
   output$settings_effect.size <- renderUI({
-    if (input$solve.for != "effect.size") {
+    if (input$solve.for != "effect.size" & input$tabset != "Вероятность результата") {
       if (input$settings_btn %% 2 == 1) {
         card(markdown("#### Размер эффекта"),
              layout_columns(
@@ -280,7 +278,7 @@ server <- function(input, output) {
   })
   
   output$settings_sample.size <- renderUI({
-    if (input$solve.for != "sample.size") {
+    if (input$solve.for != "sample.size" & input$tabset != "Вероятность результата") {
       if (input$settings_btn %% 2 == 1) {
         card(markdown("#### Объём выборки"),
              layout_columns(
@@ -298,6 +296,42 @@ server <- function(input, output) {
     updateSliderInput(inputId = "sample.size", max = input$sample.size_max)
   })
   
+  output$settings_h1 <- renderUI({
+    if (input$tabset == "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Вероятность справедливости альтернативной гипотезы"),
+             layout_columns(
+               numericInput(inputId = "h1_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+               numericInput(inputId = "h1_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+               numericInput(inputId = "h1_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$power_min, {
+    updateSliderInput(inputId = "h1", min = input$h1_min)
+  })
+  observeEvent(input$power_max, {
+    updateSliderInput(inputId = "h1", max = input$h1_max)
+  })
+  observeEvent(input$power_step, {
+    updateSliderInput(inputId = "h1", step = input$h1_step)
+  })
+  
+  output$settings_errateplot <- renderUI({
+    if (input$tabset == "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        radioButtons(inputId = "errate_x",
+                     label = "Ось X",
+                     choices = c(
+                       "Вероятность справедливости альтернативной гипотезы" = "h1",
+                       "Уровень значимости" = "sig.level",
+                       "Статистическая мощность" = "power"),
+                     selected = "h1")
+      }
+    }
+  })
   
   ## Validation
   iv <- InputValidator$new()
@@ -570,37 +604,78 @@ server <- function(input, output) {
   })
   output$erratePlot <- renderPlot({
     
-    tibble(
-      h1 = seq(from = 0, to = 1, by = .01),
-      h0 = 1 - h1,
-      sig.level = .05,
-      # sig.level = seq(from = 0, to = 1, by = .01),
-      not.sig.level = 1 - sig.level,
-      # power = seq(from = 0, to = 1, by= .01),
-      power = .8,
-      beta = 1 - power,
-      tn = not.sig.level * h0,
-      fp = sig.level * h0,
-      fn = beta * h1,
-      tp = power * h1
-    ) %>% 
-      pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>% 
-      ggplot() +
-      geom_line(aes(h1, prob, color = res)) +
-      geom_vline(xintercept = input$h1,
-                 linetype = "dashed") +
-      labs(x = TeX(r"($P(H_1)$)"),
-           y = "Вероятность результата",
+    errate_x <- reactive({
+      if (is.null(input$errate_x)) {
+        "h1"
+      } else {
+        input$errate_x
+      }
+    })
+    
+    if (errate_x() == "sig.level") {
+      errate_ds <- tibble(
+        h1 = input$h1,
+        sig.level = seq(from = 0, to = 1, by = .01),
+        power = input$power)
+      } else if (errate_x() == "power") {
+        errate_ds <- tibble(
+          h1 = input$h1,
+          sig.level = input$sig.level,
+          power = seq(from = 0, to = 1, by = .01))
+      } else {
+        errate_ds <- tibble(
+          h1 = seq(from = 0, to = 1, by = .01),
+          sig.level = input$sig.level,
+          power = input$power)
+      }
+    
+    errate_ds %>% 
+      mutate(
+        h0 = 1 - h1,
+        not.sig.level = 1 - sig.level,
+        beta = 1 - power,
+        tn = not.sig.level * h0,
+        fp = sig.level * h0,
+        fn = beta * h1,
+        tp = power * h1
+        ) %>% 
+      pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") -> errate_ds
+    
+    if (errate_x() == "sig.level") {
+      errate_ds %>% 
+        ggplot() +
+        geom_line(aes(sig.level, prob, color = res), linewidth = 2) +
+        geom_vline(xintercept = input$sig.level,
+                   linetype = "dashed") +
+        xlab(TeX(r"($\alpha$)")) -> errate_plot
+    } else if (errate_x() == "power") {
+      errate_ds %>% 
+        ggplot() +
+        geom_line(aes(power, prob, color = res), linewidth = 2) +
+        geom_vline(xintercept = input$power,
+                   linetype = "dashed") +
+        xlab(TeX(r"($1 - \beta$)")) -> errate_plot
+    } else {
+      errate_ds %>% 
+        ggplot() +
+        geom_line(aes(h1, prob, color = res), linewidth = 2) +
+        geom_vline(xintercept = input$h1,
+                   linetype = "dashed") +
+        xlab(TeX(r"($P(H_1)$)")) -> errate_plot
+    }
+    errate_plot +
+      labs(y = "Вероятность результата",
            color = "Результат") +
-      scale_color_manual(values = c(fn = "red",
-                                    fp = "blue",
-                                    tn = "green",
-                                    tp = "orange"),
-                         labels = c(fn = "False Negative",
-                                    fp = "False Positive",
-                                    tn = "True Negative",
-                                    tp = "True Positive")) +
-      theme(legend.position = "top")
+      scale_color_discrete(
+        labels = c(fn = "False Negative",
+                   fp = "False Positive",
+                   tn = "True Negative",
+                   tp = "True Positive")) +
+      theme(legend.position = "top",
+            axis.title = element_text(size = 20),
+            axis.text = element_text(size = 14),
+            legend.title = element_text(size = 20),
+            legend.text = element_text(size = 14))
   })
 }
 
