@@ -8,26 +8,51 @@
 #
 
 library(shiny)
+library(tidyverse)
+theme_set(theme_bw())
+library(bslib)
 
-# Define UI for application that draws a histogram
+# Define UI
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Стандартизация"),
 
-    # Sidebar with a slider input for number of bins 
+    # Sidebar
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
+          selectInput(inputId = "distform",
+                      label = "Форма распределения",
+                      choices = c(
+                        "Нормальное" = "norm",
+                        "Левосторонняя асимметрия" = "leftskew",
+                        "Правосторонняя асимметрия" = "rightskew",
+                        "Бимодальное" = "bimod"), 
+                      selected = "norm"),
+          card(markdown("#### Параметры распределения"),
+               layout_column_wrap(
+                 numericInput(inputId = "mean", label = "Среднее", value = 2),
+                 numericInput(inputId = "sd", label = "Стандартное отклонение", value = 2)
+               )
+          ),
+          card(markdown("#### Операции стандартизации"),
+               layout_column_wrap(
+                 checkboxInput(inputId = "centring", label = "Центрирование", value = FALSE),
+                 checkboxInput(inputId = "norming", label = "Нормирование", value = FALSE)
+                 )
+               )
         ),
 
-        # Show a plot of the generated distribution
+        # Show a plot
         mainPanel(
-           plotOutput("distPlot")
+          tabsetPanel(id = "tabset",
+            tabPanel(title = "Распределение",
+                     plotOutput("distPlot")
+                     ),
+            tabPanel(title = "Симуляция",
+                     plotOutput("simPlot")
+                     )
+          )
         )
     )
 )
@@ -36,14 +61,69 @@ ui <- fluidPage(
 server <- function(input, output) {
 
     output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white',
-             xlab = 'Waiting time to next eruption (in mins)',
-             main = 'Histogram of waiting times')
+      if (input$centring & input$norming) {
+        ggplot(NULL) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          stat_function(fun = dnorm, args = list(mean = 0, sd = 1),
+                        color = "blue") +
+          stat_function(fun = dnorm, args = list(mean = input$mean, sd = input$sd),
+                        color = "blue", linetype = "dashed") +
+          xlim(-5, 5)
+      } else if (input$centring) {
+        ggplot(NULL) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          stat_function(fun = dnorm, args = list(mean = input$mean, sd = input$sd),
+                        color = "blue", linetype = "dashed") +
+          stat_function(fun = dnorm, args = list(mean = 0, sd = input$sd),
+                        color = "blue") +
+          xlim(-5, 5)
+      } else if (input$norming) {
+        ggplot(NULL) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          stat_function(fun = dnorm, args = list(mean = input$mean, sd = input$sd),
+                        color = "blue", linetype = "dashed") +
+          stat_function(fun = dnorm, args = list(mean = input$mean, sd = 1),
+                        color = "blue") +
+          xlim(-5, 5)
+      } else {
+        ggplot(NULL) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          stat_function(fun = dnorm, args = list(mean = input$mean, sd = input$sd),
+                        color = "blue") +
+          xlim(-5, 5)
+        
+      }
+    })
+    
+    output$simPlot <- renderPlot({
+      tibble(x = rnorm(1000, mean = input$mean, sd = input$sd),
+             x_cent = scale(x, center = TRUE, scale = FALSE),
+             x_norm = scale(x, center = FALSE, scale = TRUE),
+             x_stand = scale(x, center = TRUE, scale = TRUE)) -> ds
+      if (input$centring & input$norming) {
+        ggplot(ds) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          geom_density(aes(x), color = "blue", linetype = "dashed") +
+          geom_histogram(aes(x_stand, y = ..density..), alpha = .5) +
+          geom_density(aes(x_stand), color = "blue")
+      } else if (input$centring) {
+        ggplot(ds) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          geom_density(aes(x), color = "blue", linetype = "dashed") +
+          geom_histogram(aes(x_cent, y = ..density..), alpha = .5) +
+          geom_density(aes(x_cent), color = "blue")
+      } else if (input$norming) {
+        ggplot(ds) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          geom_density(aes(x), color = "blue", linetype = "dashed") +
+          geom_histogram(aes(x_norm, y = ..density..), alpha = .5) +
+          geom_density(aes(x_norm), color = "blue")
+      } else {
+        ggplot(ds) +
+          stat_function(fun = dnorm, linetype = "dashed") +
+          geom_histogram(aes(x, y = ..density..), alpha = .5) +
+          geom_density(aes(x), color = "blue")
+      }
     })
 }
 
