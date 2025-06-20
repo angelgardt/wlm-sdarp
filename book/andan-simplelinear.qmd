@@ -102,23 +102,24 @@ $$
 ### Аналитическое вычисление коэффициентов {#andan-simplelinear-solve-deriv}
 
 $$
-f(b_0, b_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
+L(b_0, b_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
 $$
 
 $$
 \begin{split}
-f(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
-f(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
-f(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
+L(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
+L(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
+L(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
 \end{split}
 $$
 
 $$
 \begin{split}
-\frac{f(b_0, b_1)}{\partial b_0} &= 
+\frac{\partial L(b_0, b_1)}{\partial b_0} &= 
 \sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) = 
 -2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
-\frac{f(b_0, b_1)}{\partial b_1} &= 
+
+\frac{\partial L(b_0, b_1)}{\partial b_1} &= 
 \sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = 
 -2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
 \end{split}
@@ -200,10 +201,30 @@ $$
 
 
 $$
-\vm y = \vm b \vm X + \vm e
+\vm y = \vm X \vm b + \vm e
 $$
 
 ### Матричное вычисление коэффициентов {#andan-simplelinear-solve-matrix}
+
+$$
+L(\vm b) = \|\vm y - \vm X \vm b \| ^2 = \tp{(\vm y - \vm X \vm b)} (\vm y - \vm X \vm b) \to \min_{\vm b}
+$$
+
+$$
+L(\vm b) = \tp{\vm y} \vm y - 2 \tp{\vm y} \vm X \vm b + \tp{\vm b} \tp{\vm X} \vm X \vm b
+$$
+$$
+\frac{\partial L(\vm b)}{\partial \vm b} = \frac{\partial (\tp{\vm y} \vm y - 2 \tp{\vm y} \vm X \vm b + \tp{\vm b} \tp{\vm X} \vm X \vm b)}{\partial \vm b} = -2 \tp{\vm X} \vm y + 2 \tp{\vm X} \vm X \vm b
+$$
+
+$$
+\begin{split}
+-2 \tp{\vm X} \vm y + 2 \tp{\vm X} \vm X \vm b = 0 \\
+-2 (\tp{\vm X} \vm y - \tp{\vm X} \vm X \vm b) = 0 \\
+\tp{\vm X} \vm y - \tp{\vm X} \vm X \vm b = 0 \\
+\tp{\vm X} \vm X \vm b = \tp{\vm X} \vm y
+\end{split}
+$$
 
 $$
 \vm b = (\tp{\vm X} \vm X)^{-1} \tp{\vm X} \vm y
