@@ -4213,5 +4213,16 @@
       "Приложения",
       "<span class='chapter-number'>H</span>  <span class='chapter-title'>Дизайн исследований</span>"
     ]
+  },
+  {
+    "objectID": "appendix-survey-methods.html",
+    "href": "appendix-survey-methods.html",
+    "title": "Приложение I — Основы опросных методов",
+    "section": "",
+    "text": "Вступление\n\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.5.0 (2025-04-11)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sequoia 15.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.5.0    fastmap_1.2.0     cli_3.6.5        \n [5] tools_4.5.0       htmltools_0.5.8.1 rstudioapi_0.17.1 rmarkdown_2.29   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.52         digest_0.6.37    \n[13] rlang_1.1.6       evaluate_1.0.3",
+    "crumbs": [
+      "Приложения",
+      "<span class='chapter-number'>I</span>  <span class='chapter-title'>Основы опросных методов</span>"
+    ]
   }
 ]
