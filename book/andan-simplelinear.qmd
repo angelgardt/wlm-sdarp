@@ -118,7 +118,6 @@ $$
 \frac{\partial L(b_0, b_1)}{\partial b_0} &= 
 \sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) = 
 -2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
-
 \frac{\partial L(b_0, b_1)}{\partial b_1} &= 
 \sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = 
 -2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
@@ -175,13 +174,26 @@ b_1 &=
 {\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i} = 
 \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n}}
 { \dfrac{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i}{n}} \\
-b_1 &= \frac{\overline{XY} - \overline X \cdot \overline Y}
+b_1 &= 
+\frac{\overline{XY} - \overline X \cdot \overline Y}
 {\overline{X^2} - \overline X^2} = 
 \frac{\overline{XY} - \overline X \cdot \overline Y}
 {\sigma_X^2}
 \end{split}
 $$
 
+Итак, зафиксируем результаты --- коэффициенты линейной регрессии вычисляются по следующим формулам:
+
+$$
+b_0 = \overline Y - b_1 \overline X
+$${#eq-b0-calc}
+
+$$
+b_1 = \frac{\overline{XY} - \overline X \cdot \overline Y}
+{\overline{X^2} - \overline X^2} = 
+\frac{\overline{XY} - \overline X \cdot \overline Y}
+{\sigma_X^2}
+$${#eq-b1-calc}
 
 ### Матричное представление модели {#andan-simplelinear-model-matrix}
 
@@ -233,45 +245,79 @@ $$
 
 ### Угловой коэффициент и коэффициент корреляции {#andan-simplelinear-solve-cor}
 
+Ранее мы отмечали, что коэффициент корреляции [связан с наклоном линии тренда](andan-cor.qmd#andan-cor-cor-interpret-slope), который, как мы теперь знаем, определяется угловым коэффициентом регрессии. Тогда, несомненно, мы можем утверждать, что коэффициент корреляции связан с угловым коэффициентов регрессии. Более того, мы можем сформулировать математически, как организована данная связь (@prp-cor-slope).
+
+:::{#prp-cor-slope}
+Коэффициент корреляции Пирсона связан с угловым коэффициентом простой линейной регрессии следующим соотношением:
+
 $$
-b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X}
+b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X},
 $$
 
-Коэффициент корреляции Пирсона, как мы помним ([-@eq-cor-pearson-formula]), вычисляется как
+где $r_{XY}$ --- коэффициент корреляции Пирсона между переменными $X$ и $Y$,
+$s_X$ --- выборочное стандартное отклонение переменной $X$,
+$s_Y$ --- выборочное стандартное отклонение переменной $Y$,
+$b_1$ --- угловой коэффициент регрессионной модели, задаваемой уравнением $\hat y_i = b_0 + b_1 x_i$ ($x_i$ и $y_i$ --- наблюдения по переменным $X$ и $Y$ соответственно).
+
+:::
+
+:::{.proof}
+Как мы выяснили выше, угловой коэффициент регрессии вычисляется так (@eq-b1-calc):
 
 $$
-r_{X,Y} = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+b_1 = \frac{\overline{XY} - \overline X \cdot \overline Y}
+{\sigma_X^2}.
 $$
 
-Тогда справедливо, что
+Тогда 
 
 $$
 \begin{split}
-b_1 &= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
-\cdot \frac{s_Y}{s_X} = \\
+b_1 &= \frac{ \dfrac{\sum_{i=1}^n x_i y_i}{n} - \dfrac{\overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
+&= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
+&= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \boxed{\sum_{i=1}^n (y_i - \overline Y)}}}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{ \sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2} } \cdot \overset{=1}{ \boxed{ \frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} } } = \\
 &= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
 {\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
+&= r_{XY}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
+&= r_{XY}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} \cdot \sqrt{\dfrac{1}{n-1}}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\dfrac{1}{n-1}}} = \\
+&= r_{XY}
 \cdot
 \frac{\sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}}
 {\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}}} = \\
-&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-\cdot
-\frac{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
-&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \boxed{ \sum_{i=1}^n (y_i - \overline Y) }} }{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
-&= \frac{\overline {XY} - \overline X \cdot \overline Y}{\sigma_X}
+&= r_{XY} \cdot \frac{s_Y}{s_X} \qed
 \end{split}
 $$
 
+:::
+
+:::{#cor-equals-slope}
+Если регрессионная модель построена на стандартизированных или нормированных переменных, то угловой коэффициент модели равен коэффициенту корреляции между переменными.
+:::
+
+:::{.proof}
+Если переменные $X$ и $Y$ были стандартизированы или нормированы, то их выборочные стандартные отклонения $s_X$ и $s_Y$ равны единице. Следовательно,
+
+$$
+b_1 = r_{XY} \cdot \frac{s_X}{s_Y} = r_{XY} \cdot \frac{1}{1} = r_{XY}
+$$
+
+:::
 
 
 ### TSS = ESS + RSS?

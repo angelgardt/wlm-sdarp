@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./andan-moderation.html" rel="next">
+<link href="./andan-hierreg.html" rel="next">
 <link href="./andan-cor.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -675,14 +675,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./andan-hierreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -758,32 +764,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-survey-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Основы опросных методов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -929,17 +941,16 @@ L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x
 L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
 \end{split}
 \]</span></p>
-$$
-<span class="math display">\[\begin{split}
+<p><span class="math display">\[
+\begin{split}
 \frac{\partial L(b_0, b_1)}{\partial b_0} &amp;=
 \sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) =
 -2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
-
 \frac{\partial L(b_0, b_1)}{\partial b_1} &amp;=
 \sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) =
 -2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
-\end{split}\]</span>
-<p>$$</p>
+\end{split}
+\]</span></p>
 <p><span class="math display">\[
 \begin{split}
 &amp;\cases {
@@ -987,12 +998,23 @@ b_1 &amp;=
 {\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i} =
 \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n}}
 { \dfrac{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i}{n}} \\
-b_1 &amp;= \frac{\overline{XY} - \overline X \cdot \overline Y}
+b_1 &amp;=
+\frac{\overline{XY} - \overline X \cdot \overline Y}
 {\overline{X^2} - \overline X^2} =
 \frac{\overline{XY} - \overline X \cdot \overline Y}
 {\sigma_X^2}
 \end{split}
 \]</span></p>
+<p>Итак, зафиксируем результаты&nbsp;— коэффициенты линейной регрессии вычисляются по следующим формулам:</p>
+<p><span id="eq-b0-calc"><span class="math display">\[
+b_0 = \overline Y - b_1 \overline X
+\tag{35.1}\]</span></span></p>
+<p><span id="eq-b1-calc"><span class="math display">\[
+b_1 = \frac{\overline{XY} - \overline X \cdot \overline Y}
+{\overline{X^2} - \overline X^2} =
+\frac{\overline{XY} - \overline X \cdot \overline Y}
+{\sigma_X^2}
+\tag{35.2}\]</span></span></p>
 </section>
 <section id="andan-simplelinear-model-matrix" class="level3" data-number="35.5.2">
 <h3 data-number="35.5.2" class="anchored" data-anchor-id="andan-simplelinear-model-matrix"><span class="header-section-number">35.5.2</span> Матричное представление модели</h3>
@@ -1036,40 +1058,63 @@ L(\mathbf{b}) = {\mathbf{y}}\!^{\mathsf{T}} \mathbf{y} - 2 {\mathbf{y}}\!^{\math
 </section>
 <section id="andan-simplelinear-solve-cor" class="level3" data-number="35.5.4">
 <h3 data-number="35.5.4" class="anchored" data-anchor-id="andan-simplelinear-solve-cor"><span class="header-section-number">35.5.4</span> Угловой коэффициент и коэффициент корреляции</h3>
+<p>Ранее мы отмечали, что&nbsp;коэффициент корреляции <a href="./andan-cor.html#andan-cor-cor-interpret-slope">связан с&nbsp;наклоном линии тренда</a>, который, как мы теперь знаем, определяется угловым коэффициентом регрессии. Тогда, несомненно, мы можем утверждать, что коэффициент корреляции связан с&nbsp;угловым коэффициентов регрессии. Более того, мы можем сформулировать математически, как организована данная связь (<a href="#prp-cor-slope" class="quarto-xref">Утверждение&nbsp;<span>35.1</span></a>).</p>
+<div id="prp-cor-slope" class="theorem proposition">
+<p><span class="theorem-title"><strong>Утверждение 35.1</strong></span> Коэффициент корреляции Пирсона связан с угловым коэффициентом простой линейной регрессии следующим соотношением:</p>
 <p><span class="math display">\[
-b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X}
+b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X},
 \]</span></p>
-<p>Коэффициент корреляции Пирсона, как мы помним (<a href="andan-cor.html#eq-cor-pearson-formula" class="quarto-xref"><span>33.8</span></a>), вычисляется как</p>
+<p>где <span class="math inline">\(r_{XY}\)</span> — коэффициент корреляции Пирсона между переменными <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>, <span class="math inline">\(s_X\)</span> — выборочное стандартное отклонение переменной <span class="math inline">\(X\)</span>, <span class="math inline">\(s_Y\)</span> — выборочное стандартное отклонение переменной <span class="math inline">\(Y\)</span>, <span class="math inline">\(b_1\)</span> — угловой коэффициент регрессионной модели, задаваемой уравнением <span class="math inline">\(\hat y_i = b_0 + b_1 x_i\)</span> (<span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> — наблюдения по переменным <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> соответственно).</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Как мы выяснили выше, угловой коэффициент регрессии вычисляется так (<a href="#eq-b1-calc" class="quarto-xref">Уравнение&nbsp;<span>35.2</span></a>):</p>
 <p><span class="math display">\[
-r_{X,Y} = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+b_1 = \frac{\overline{XY} - \overline X \cdot \overline Y}
+{\sigma_X^2}.
 \]</span></p>
-<p>Тогда справедливо, что</p>
+<p>Тогда</p>
 <p><span class="math display">\[
 \begin{split}
-b_1 &amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
-\cdot \frac{s_Y}{s_X} = \\
+b_1 &amp;= \frac{ \dfrac{\sum_{i=1}^n x_i y_i}{n} - \dfrac{\overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
+&amp;= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
+&amp;= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \enclose{box}{\sum_{i=1}^n (y_i - \overline Y)}}}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
+&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{ \sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2} } \cdot \overset{=1}{ \enclose{box}{ \frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}} } } = \\
 &amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
 {\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
+&amp;= r_{XY}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
+&amp;= r_{XY}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} \cdot \sqrt{\dfrac{1}{n-1}}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\dfrac{1}{n-1}}} = \\
+&amp;= r_{XY}
 \cdot
 \frac{\sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}}
 {\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}}} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-\cdot
-\frac{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \enclose{box}{ \sum_{i=1}^n (y_i - \overline Y) }} }{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&amp;= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
-&amp;= \frac{\overline {XY} - \overline X \cdot \overline Y}{\sigma_X}
+&amp;= r_{XY} \cdot \frac{s_Y}{s_X} \quad \blacksquare
 \end{split}
 \]</span></p>
+</div>
+<div id="cor-equals-slope" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 35.1</strong></span> Если&nbsp;регрессионная модель построена на&nbsp;стандартизированных или нормированных переменных, то&nbsp;угловой коэффициент модели равен коэффициенту корреляции между переменными.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Доказательство</em>. </span>Если&nbsp;переменные <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span> были стандартизированы или&nbsp;нормированы, то&nbsp;их выборочные стандартные отклонения <span class="math inline">\(s_X\)</span> и <span class="math inline">\(s_Y\)</span> равны единице. Следовательно,</p>
+<p><span class="math display">\[
+b_1 = r_{XY} \cdot \frac{s_X}{s_Y} = r_{XY} \cdot \frac{1}{1} = r_{XY}
+\]</span></p>
+</div>
 </section>
 <section id="tss-ess-rss" class="level3" data-number="35.5.5">
 <h3 data-number="35.5.5" class="anchored" data-anchor-id="tss-ess-rss"><span class="header-section-number">35.5.5</span> TSS = ESS + RSS?</h3>
@@ -1094,9 +1139,9 @@ d_\text{t} &amp;= y_i - \overline Y = \\
 &amp;= d_\text{e} + d_\text{r}
 \end{split}
 \]</span></p>
-<p>Однако я утверждаю (<a href="#prp-tss" class="quarto-xref"><span>35.1</span></a>), что</p>
+<p>Однако я утверждаю (<a href="#prp-tss" class="quarto-xref"><span>35.2</span></a>), что</p>
 <div id="prp-tss" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 35.1</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Утверждение 35.2</strong></span> <span class="math display">\[
 \text{TSS}= \text{ESS}+ \text{RSS}
 \]</span></p>
 </div>
@@ -1127,8 +1172,8 @@ d_\text{t} &amp;= y_i - \overline Y = \\
 \]</span></p>
 </div>
 <div class="proof remark">
-<p><span class="proof-title"><em>Замечание</em>. </span>При доказательстве утверждения мы использовали интерсепт <span class="math inline">\(b_0\)</span>. В принципе, нам никто не запрещает построить линейную регрессию без интерсепта — вида <span class="math inline">\(y_i = b_1 x_i + e_i\)</span>. Однако для такого случая соотношение <a href="#prp-tss" class="quarto-xref"><span>35.1</span></a> выполняться не будет. Оно справедливо только для моделей с интерсептом.</p>
-<p>Работая с регрессией — как простой, так и сложной — мы всегда будем иметь дело с моделями, содержащими интерсепт, поэтому утверждение <a href="#prp-tss" class="quarto-xref"><span>35.1</span></a> всегда будет верным.</p>
+<p><span class="proof-title"><em>Замечание</em>. </span>При доказательстве утверждения мы использовали интерсепт <span class="math inline">\(b_0\)</span>. В принципе, нам никто не запрещает построить линейную регрессию без интерсепта — вида <span class="math inline">\(y_i = b_1 x_i + e_i\)</span>. Однако для такого случая соотношение <a href="#prp-tss" class="quarto-xref"><span>35.2</span></a> выполняться не будет. Оно справедливо только для моделей с интерсептом.</p>
+<p>Работая с регрессией — как простой, так и сложной — мы всегда будем иметь дело с моделями, содержащими интерсепт, поэтому утверждение <a href="#prp-tss" class="quarto-xref"><span>35.2</span></a> всегда будет верным.</p>
 </div>
 <hr>
 <section id="session_info" class="level6 unnumbered">
@@ -1587,8 +1632,8 @@ loaded via a namespace (and not attached):
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./andan-moderation.html" class="pagination-link" aria-label="Модерация">
-        <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Модерация</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./andan-hierreg.html" class="pagination-link" aria-label="Иерархическая регрессия">
+        <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
