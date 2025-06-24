@@ -1,0 +1,127 @@
+# Однофакторный дисперсионный анализ {#andan-oneway-anova}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+## Структура изменчивости данных {#oneway-anova-var-struct}
+
+* $n$ ---общее количество наблюдений
+* $p$ --- количество групп, $
+* $n_j$ --- количество наблюдений в $j$-ой группе
+* $y_{ij}$ --- $i$-е наблюдение в $j$-ой группе
+* $i = 1, 2, \ldots, n_j$, $j = 1, 2, \ldots, p$
+
+$$
+n = \sum_{j=1}^p n_j
+$$
+
+$$
+\overline Y_{j} = \frac{\sum_{i=1}^{n_j} y_{ij}}{n_j}
+$$
+
+$$
+\overline Y = 
+\frac{\sum_{j=1}^p \sum_{i=1}^{n_j} y_{ij}}{\sum_{j=1}^p n_j} = 
+\frac{\sum_{j=1}^p \sum_{i=1}^{n_j} y_{ij}}{n}
+$$
+
+
+Общая изменчивость
+
+$$
+\TSS = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2
+$$
+
+$$
+\dft = n - 1
+$$
+
+$$
+\MSt = \frac{\TSS}{\dft} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2}{n-1}
+$$
+
+Объяснённая изменчивость
+
+$$
+\ESS = \sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2
+$$
+
+$$
+\dfe = p - 1
+$$
+
+$$
+\MSe = \frac{\ESS}{\dfe} = \frac{\sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2}{p-1}
+$$
+
+Остаточная изменчивость
+
+$$
+\RSS = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2
+$$
+
+$$
+\dfr = n - p
+$$
+
+$$
+\MSr = \frac{\RSS}{\dfr} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2}{n-p}
+$$
+
+$$
+F = \frac{\MSe}{\MSr} \disted{H_0} F(\dfe, \dfr)
+$$
+
+$$
+\eta^2 = \frac{\ESS}{\TSS}
+$$
+
+
+### $\eta^2$ vs $F$
+
+Почему бы не использовать $F$-статистику в качестве размера эффекта, ведь она, как и $\eta^2$ показывает отношение дисперсий?
+
+$F$-статистика зависит от размера выборки и размера эффекта.
+
+$$
+F = \frac{\MSe}{\MSr} = \frac{\frac{\ESS}{p-1}}{\frac{\RSS}{n-p}} = \frac{\ESS}{\RSS} \cdot \frac{n-p}{n-1} = \frac{\eta^2}{1 - \eta^2} \cdot \frac{n-p}{p-1}
+$$
+
+$$
+\frac{\ESS}{\RSS} = \frac{\ESS \cdot \TSS}{\RSS \cdot \TSS}  = \frac{\ESS}{\TSS} \cdot \frac{\TSS}{\TSS - \ESS} = \eta^2 \cdot \frac{\frac{\TSS}{\TSS}}{\frac{\TSS - \ESS}{\TSS}} = \eta^2 \cdot \frac{1}{1 - \frac{\ESS}{\TSS}} = \frac{\eta^2}{1 - \eta^2}
+$$
+
+## Другие размеры эффекта
+
+[@tabachnik2013, p. 55]
+
+$$
+\omega^2 = \frac{\ESS - \dfe \MSr}{\TSS + \MSr}
+$$
+
+[@steiger-beyondF]
+
+$$
+f^2 = \frac{\eta^2}{1 - \eta^2}
+$$
+
+## Контрасты {#oneway-anova-contrasts}
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

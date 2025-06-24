@@ -74,6 +74,7 @@ book:
         - andan-cor.qmd
         - andan-simplelinear.qmd
         - andan-hierreg.qmd
+        - andan-oneway-anova.qmd
         - andan-moderation.qmd
         - andan-mediation.qmd
     - common-outro.qmd
