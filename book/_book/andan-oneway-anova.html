@@ -924,6 +924,18 @@ n = \sum_{j=1}^p n_j
 \text{MS}_\text{r}= \frac{\text{RSS}}{\text{df}_\text{r}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2}{n-p}
 \]</span></p>
 <p><span class="math display">\[
+\begin{split}
+&amp;H_0: \text{MS}_\text{e}\leqslant\text{MS}_\text{r}\\
+&amp;H_1: \text{MS}_\text{e}&gt; \text{MS}_\text{r}
+\end{split}
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+&amp;H_0: \mu_1 = \mu_2 = \dots = \mu_p \\
+&amp;H_1: \exists j_1, j_2 : \mu_{j_1} \neq \mu_{j_2}
+\end{split}
+\]</span></p>
+<p><span class="math display">\[
 F = \frac{\text{MS}_\text{e}}{\text{MS}_\text{r}} \overset{H_0}{\thicksim} F(\text{df}_\text{e}, \text{df}_\text{r})
 \]</span></p>
 <p><span class="math display">\[

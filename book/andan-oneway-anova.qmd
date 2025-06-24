@@ -76,6 +76,20 @@ $$
 $$
 
 $$
+\begin{split}
+&H_0: \MSe \leq \MSr \\
+&H_1: \MSe > \MSr
+\end{split}
+$$
+
+$$
+\begin{split}
+&H_0: \mu_1 = \mu_2 = \dots = \mu_p \\
+&H_1: \exists j_1, j_2 : \mu_{j_1} \neq \mu_{j_2}
+\end{split}
+$$
+
+$$
 F = \frac{\MSe}{\MSr} \disted{H_0} F(\dfe, \dfr)
 $$
 
