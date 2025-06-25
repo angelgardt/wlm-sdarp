@@ -102,6 +102,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -153,6 +156,9 @@ background-image: url(img/other/title-block-banner.jpg);
 background-size: cover;
       }
 </style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -836,12 +842,14 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#oneway-anova-var-struct" id="toc-oneway-anova-var-struct" class="nav-link active" data-scroll-target="#oneway-anova-var-struct"><span class="header-section-number">37.1</span> Структура изменчивости данных</a>
+  <li><a href="#oneway-anova-var-struct-between" id="toc-oneway-anova-var-struct-between" class="nav-link active" data-scroll-target="#oneway-anova-var-struct-between"><span class="header-section-number">37.1</span> Структура изменчивости данных при&nbsp;межгрупповом дизайне</a>
   <ul>
   <li><a href="#eta2-vs-f" id="toc-eta2-vs-f" class="nav-link" data-scroll-target="#eta2-vs-f"><span class="header-section-number">37.1.1</span> <span class="math inline">\(\eta^2\)</span> vs <span class="math inline">\(F\)</span></a></li>
+  <li><a href="#другие-размеры-эффекта" id="toc-другие-размеры-эффекта" class="nav-link" data-scroll-target="#другие-размеры-эффекта"><span class="header-section-number">37.1.2</span> Другие размеры эффекта</a></li>
   </ul></li>
-  <li><a href="#другие-размеры-эффекта" id="toc-другие-размеры-эффекта" class="nav-link" data-scroll-target="#другие-размеры-эффекта"><span class="header-section-number">37.2</span> Другие размеры эффекта</a></li>
+  <li><a href="#oneway-anova-bs" id="toc-oneway-anova-bs" class="nav-link" data-scroll-target="#oneway-anova-bs"><span class="header-section-number">37.2</span> One-Way Between-Subject ANOVA in R</a></li>
   <li><a href="#oneway-anova-contrasts" id="toc-oneway-anova-contrasts" class="nav-link" data-scroll-target="#oneway-anova-contrasts"><span class="header-section-number">37.3</span> Контрасты</a></li>
+  <li><a href="#oneway-anova-var-struct-within" id="toc-oneway-anova-var-struct-within" class="nav-link" data-scroll-target="#oneway-anova-var-struct-within"><span class="header-section-number">37.4</span> Структура изменчивости данных при&nbsp;внутригрупповом дизайне</a></li>
   </ul>
 </nav>
     </div>
@@ -871,20 +879,83 @@ window.Quarto = {
 <!--- Letters --->
 <!--- Linear Models --->
 <div class="intro">
-<p>Вступление</p>
+<p>Мы вдоволь покопались в&nbsp;регрессии и&nbsp;её разновидностях и&nbsp;выяснили, что&nbsp;она может решать довольно большой спектр аналитических задач. Тем не&nbsp;менее, в&nbsp;практике анализа экспериментальных данных особой популярностью пользуется другой метод — <strong>дисперсионный анализ (analysis of variance, ANOVA)</strong>. В&nbsp;этой главе мы изучим, почему он столь популярен у&nbsp;психологов-экспериментаторов, где, кроме эксперимента, его можно применять и&nbsp;какие отношения у&nbsp;него с&nbsp;регрессией.</p>
+<p>Мы не&nbsp;обсуждали отдельно дизайн исследований, поскольку я предполагаю, что&nbsp;вы изучали это на&nbsp;соответствующих курсах в&nbsp;универе. Однако если вы подзабыли сей материал, то&nbsp;можете обратить к&nbsp;<a href="./appendix-research-design.html">этому приложению</a>, чтобы&nbsp;освежить в&nbsp;памяти, как могут быть организованы исследования, ибо&nbsp;дизайн исследования будет напрямую влиять на&nbsp;выбор статистической модели.</p>
+<p><a href="img/andan-oneway-anova/anova-yoda.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/andan-oneway-anova/anova-yoda.png" class="img-fluid"></a></p>
 </div>
-<section id="oneway-anova-var-struct" class="level2" data-number="37.1">
-<h2 data-number="37.1" class="anchored" data-anchor-id="oneway-anova-var-struct"><span class="header-section-number">37.1</span> Структура изменчивости данных</h2>
+<section id="oneway-anova-var-struct-between" class="level2" data-number="37.1">
+<h2 data-number="37.1" class="anchored" data-anchor-id="oneway-anova-var-struct-between"><span class="header-section-number">37.1</span> Структура изменчивости данных при&nbsp;межгрупповом дизайне</h2>
+<div class="lab-junior">
+
+</div>
+<p>Рассмотрим два примера исследований.</p>
+<div id="exm-bg-interface" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 37.1</strong></span> интерфейс — цвета и шрифты</p>
+</div>
+<div id="exm-bg-interface" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 37.2</strong></span> академическое выгорание аспирантов</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+«Межгрупповой» с&nbsp;точки зрения ANOVA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Как мы видим из&nbsp;примеров выше, термин «межгрупповой дизайн» в&nbsp;контексте ANOVA понимается шире, чем «межгрупповой экспериментальный план». Любой дизайн, в&nbsp;котором предусмотрены <em>не&nbsp;связанные друг с&nbsp;другом</em> группы испытуемых или&nbsp;респондентов — и,&nbsp;как следствие, наблюдений — будет считаться межгрупповым.</p>
+</div>
+</div>
+<p>Структура изменчивости данных в&nbsp;обоих рассматриваемых случаях будет предельно проста:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-var-struct-between" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-var-struct-between-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-var-struct-between">flowchart TD
+  SSt("Общая (total) изменчивость")
+  SSbg("Межгрупповая (объяснённая, between-group, explained) изменчивость")
+  SSwg("Внутригрупповая (остаточная, within-group, residual) изменчивость")
+  
+  SSt --&gt; SSbg
+  SSt --&gt; SSwg
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-var-struct-between-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;37.1: Структура изменчивости данных при межгрупповом дизайне
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Введём следующие обозначения:</p>
 <ul>
-<li><span class="math inline">\(n\)</span> —общее количество наблюдений</li>
-<li><span class="math inline">\(p\)</span> — количество групп, $</li>
-<li><span class="math inline">\(n_j\)</span> — количество наблюдений в <span class="math inline">\(j\)</span>-ой группе</li>
-<li><span class="math inline">\(y_{ij}\)</span> — <span class="math inline">\(i\)</span>-е наблюдение в <span class="math inline">\(j\)</span>-ой группе</li>
-<li><span class="math inline">\(i = 1, 2, \ldots, n_j\)</span>, <span class="math inline">\(j = 1, 2, \ldots, p\)</span></li>
+<li><span class="math inline">\(n\)</span> — общее количество наблюдений в&nbsp;выборке</li>
+<li><span class="math inline">\(p\)</span> — количество групп в&nbsp;исследовании</li>
+<li><span class="math inline">\(n_j\)</span> — количество наблюдений в <span class="math inline">\(j\)</span>-ой группе, <span class="math inline">\(j = 1, 2, \ldots, p\)</span></li>
+<li><span class="math inline">\(y_{ij}\)</span> — <span class="math inline">\(i\)</span>-е наблюдение в <span class="math inline">\(j\)</span>-ой группе, <span class="math inline">\(i = 1, 2, \ldots, n_j\)</span></li>
 </ul>
+<p>Очевидно, что количество наблюдений в&nbsp;выборке есть сумма количеств наблюдений в&nbsp;группах:</p>
 <p><span class="math display">\[
 n = \sum_{j=1}^p n_j
 \]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+«Наблюдение» в эксперименте, опросе и дисперсионном анализе
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>анова проводится на агрегированных данных</p>
+</div>
+</div>
 <p><span class="math display">\[
 \overline Y_{j} = \frac{\sum_{i=1}^{n_j} y_{ij}}{n_j}
 \]</span></p>
@@ -895,38 +966,38 @@ n = \sum_{j=1}^p n_j
 \]</span></p>
 <p>Общая изменчивость</p>
 <p><span class="math display">\[
-\text{TSS}= \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2
+\text{SS}_\text{tot} = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2
 \]</span></p>
 <p><span class="math display">\[
-\text{df}_\text{t}= n - 1
+\text{df}_\text{tot} = n - 1
 \]</span></p>
 <p><span class="math display">\[
-\text{MS}_\text{t}= \frac{\text{TSS}}{\text{df}_\text{t}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2}{n-1}
+\text{MS}_\text{tot} = \frac{\text{SS}_\text{tot}}{\text{df}_\text{tot}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2}{n-1}
 \]</span></p>
 <p>Объяснённая изменчивость</p>
 <p><span class="math display">\[
-\text{ESS}= \sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2
+\text{SS}_\text{bg} = \sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2
 \]</span></p>
 <p><span class="math display">\[
-\text{df}_\text{e}= p - 1
+\text{df}_\text{bg} = p - 1
 \]</span></p>
 <p><span class="math display">\[
-\text{MS}_\text{e}= \frac{\text{ESS}}{\text{df}_\text{e}} = \frac{\sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2}{p-1}
+\text{MS}_\text{bg} = \frac{\text{SS}_\text{bg}}{\text{df}_\text{bg}} = \frac{\sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2}{p-1}
 \]</span></p>
 <p>Остаточная изменчивость</p>
 <p><span class="math display">\[
-\text{RSS}= \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2
+\text{SS}_\text{wg} = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2
 \]</span></p>
 <p><span class="math display">\[
-\text{df}_\text{r}= n - p
+\text{df}_\text{wg} = n - p
 \]</span></p>
 <p><span class="math display">\[
-\text{MS}_\text{r}= \frac{\text{RSS}}{\text{df}_\text{r}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2}{n-p}
+\text{MS}_\text{wg} = \frac{\text{SS}_\text{wg}}{\text{df}_\text{wg}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2}{n-p}
 \]</span></p>
 <p><span class="math display">\[
 \begin{split}
-&amp;H_0: \text{MS}_\text{e}\leqslant\text{MS}_\text{r}\\
-&amp;H_1: \text{MS}_\text{e}&gt; \text{MS}_\text{r}
+&amp;H_0: \text{MS}_\text{bg} \leqslant\text{MS}_\text{wg} \\
+&amp;H_1: \text{MS}_\text{bg} &gt; \text{MS}_\text{wg}
 \end{split}
 \]</span></p>
 <p><span class="math display">\[
@@ -936,36 +1007,53 @@ n = \sum_{j=1}^p n_j
 \end{split}
 \]</span></p>
 <p><span class="math display">\[
-F = \frac{\text{MS}_\text{e}}{\text{MS}_\text{r}} \overset{H_0}{\thicksim} F(\text{df}_\text{e}, \text{df}_\text{r})
+F = \frac{\text{MS}_\text{bg}}{\text{MS}_\text{wg}} \overset{H_0}{\thicksim} F(\text{df}_\text{bg}, \text{df}_\text{wg})
 \]</span></p>
 <p><span class="math display">\[
-\eta^2 = \frac{\text{ESS}}{\text{TSS}}
+\eta^2 = \frac{\text{SS}_\text{bg}}{\text{SS}_\text{tot}}
 \]</span></p>
 <section id="eta2-vs-f" class="level3" data-number="37.1.1">
 <h3 data-number="37.1.1" class="anchored" data-anchor-id="eta2-vs-f"><span class="header-section-number">37.1.1</span> <span class="math inline">\(\eta^2\)</span> vs <span class="math inline">\(F\)</span></h3>
 <p>Почему бы не использовать <span class="math inline">\(F\)</span>-статистику в качестве размера эффекта, ведь она, как и <span class="math inline">\(\eta^2\)</span> показывает отношение дисперсий?</p>
 <p><span class="math inline">\(F\)</span>-статистика зависит от размера выборки и размера эффекта.</p>
 <p><span class="math display">\[
-F = \frac{\text{MS}_\text{e}}{\text{MS}_\text{r}} = \frac{\frac{\text{ESS}}{p-1}}{\frac{\text{RSS}}{n-p}} = \frac{\text{ESS}}{\text{RSS}} \cdot \frac{n-p}{n-1} = \frac{\eta^2}{1 - \eta^2} \cdot \frac{n-p}{p-1}
+F = \frac{\text{MS}_\text{bg}}{\text{MS}_\text{wg}} = \frac{\frac{\text{SS}_\text{bg}}{p-1}}{\frac{\text{SS}_\text{wg}}{n-p}} = \frac{\text{SS}_\text{bg}}{\text{SS}_\text{wg}} \cdot \frac{n-p}{n-1} = \frac{\eta^2}{1 - \eta^2} \cdot \frac{n-p}{p-1}
 \]</span></p>
+<div class="quote small pers">
+<p>— Чёт я не понял, как мы осуществили переход в&nbsp;последнем равенстве. Ну-ка, поясни!</p>
+</div>
+<p>Последнее равенство, а именно факт равенства первых множителей обеих правой и левой частей <span class="math inline">\(\displaystyle \frac{\text{SS}_\text{bg}}{\text{SS}_\text{wg}} = \frac{\eta^2}{1 - \eta^2}\)</span> получается следующим образом:</p>
 <p><span class="math display">\[
-\frac{\text{ESS}}{\text{RSS}} = \frac{\text{ESS}\cdot \text{TSS}}{\text{RSS}\cdot \text{TSS}}  = \frac{\text{ESS}}{\text{TSS}} \cdot \frac{\text{TSS}}{\text{TSS}- \text{ESS}} = \eta^2 \cdot \frac{\frac{\text{TSS}}{\text{TSS}}}{\frac{\text{TSS}- \text{ESS}}{\text{TSS}}} = \eta^2 \cdot \frac{1}{1 - \frac{\text{ESS}}{\text{TSS}}} = \frac{\eta^2}{1 - \eta^2}
+\frac{\text{SS}_\text{bg}}{\text{SS}_\text{wg}} =
+\frac{\text{SS}_\text{bg} \cdot \text{SS}_\text{tot}}{\text{SS}_\text{wg} \cdot \text{SS}_\text{tot}}  =
+\frac{\text{SS}_\text{bg}}{\text{SS}_\text{tot}} \cdot \frac{\text{SS}_\text{tot}}{\text{SS}_\text{tot} - \text{SS}_\text{bg}} =
+\eta^2 \cdot \frac{\dfrac{\text{SS}_\text{tot}}{\text{SS}_\text{tot}}}{\dfrac{\text{SS}_\text{tot} - \text{SS}_\text{bg}}{\text{SS}_\text{tot}}} =
+\eta^2 \cdot \frac{1}{1 - \dfrac{\text{SS}_\text{bg}}{\text{SS}_\text{tot}}} = \frac{\eta^2}{1 - \eta^2}
 \]</span></p>
 </section>
-</section>
-<section id="другие-размеры-эффекта" class="level2" data-number="37.2">
-<h2 data-number="37.2" class="anchored" data-anchor-id="другие-размеры-эффекта"><span class="header-section-number">37.2</span> Другие размеры эффекта</h2>
+<section id="другие-размеры-эффекта" class="level3" data-number="37.1.2">
+<h3 data-number="37.1.2" class="anchored" data-anchor-id="другие-размеры-эффекта"><span class="header-section-number">37.1.2</span> Другие размеры эффекта</h3>
 <p><span class="citation" data-cites="tabachnik2013">(<a href="references.html#ref-tabachnik2013" role="doc-biblioref">Tabachnick &amp; Fidell, 2013, p. 55</a>)</span></p>
 <p><span class="math display">\[
-\omega^2 = \frac{\text{ESS}- \text{df}_\text{e}\text{MS}_\text{r}}{\text{TSS}+ \text{MS}_\text{r}}
+\omega^2 = \frac{\text{SS}_\text{bg} - \text{df}_\text{bg} \cdot \text{MS}_\text{wg}}{\text{SS}_\text{tot} + \text{MS}_\text{wg}}
 \]</span></p>
 <p><span class="citation" data-cites="steiger-beyondF">(<a href="references.html#ref-steiger-beyondF" role="doc-biblioref">Steiger, 2004</a>)</span></p>
 <p><span class="math display">\[
 f^2 = \frac{\eta^2}{1 - \eta^2}
 \]</span></p>
 </section>
+</section>
+<section id="oneway-anova-bs" class="level2" data-number="37.2">
+<h2 data-number="37.2" class="anchored" data-anchor-id="oneway-anova-bs"><span class="header-section-number">37.2</span> One-Way Between-Subject ANOVA in R</h2>
+</section>
 <section id="oneway-anova-contrasts" class="level2" data-number="37.3">
 <h2 data-number="37.3" class="anchored" data-anchor-id="oneway-anova-contrasts"><span class="header-section-number">37.3</span> Контрасты</h2>
+</section>
+<section id="oneway-anova-var-struct-within" class="level2" data-number="37.4">
+<h2 data-number="37.4" class="anchored" data-anchor-id="oneway-anova-var-struct-within"><span class="header-section-number">37.4</span> Структура изменчивости данных при&nbsp;внутригрупповом дизайне</h2>
+<div class="lab-junior">
+
+</div>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
@@ -991,9 +1079,9 @@ attached base packages:
 
 loaded via a namespace (and not attached):
  [1] htmlwidgets_1.6.4 compiler_4.5.0    fastmap_1.2.0     cli_3.6.5        
- [5] tools_4.5.0       htmltools_0.5.8.1 rstudioapi_0.17.1 rmarkdown_2.29   
- [9] knitr_1.50        jsonlite_2.0.0    xfun_0.52         digest_0.6.37    
-[13] rlang_1.1.6       evaluate_1.0.3   </code></pre>
+ [5] tools_4.5.0       htmltools_0.5.8.1 rstudioapi_0.17.1 yaml_2.3.10      
+ [9] rmarkdown_2.29    knitr_1.50        jsonlite_2.0.0    xfun_0.52        
+[13] digest_0.6.37     rlang_1.1.6       evaluate_1.0.3   </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
@@ -1436,6 +1524,38 @@ Tabachnick, B. G., &amp; Fidell, L. S. (2013). <em>Using multivariate statistics
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -7,20 +7,69 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 ```
 
 :::{.intro}
-Вступление
+Мы вдоволь покопались в регрессии и её разновидностях и выяснили, что она может решать довольно большой спектр аналитических задач. Тем не менее, в практике анализа экспериментальных данных особой популярностью пользуется другой метод --- **дисперсионный анализ (analysis of variance, ANOVA)**. В этой главе мы изучим, почему он столь популярен у психологов-экспериментаторов, где, кроме эксперимента, его можно применять и какие отношения у него с регрессией.
+
+Мы не обсуждали отдельно дизайн исследований, поскольку я предполагаю, что вы изучали это на соответствующих курсах в универе. Однако если вы подзабыли сей материал, то можете обратить к [этому приложению](appendix-research-design.qmd), чтобы освежить в памяти, как могут быть организованы исследования, ибо дизайн исследования будет напрямую влиять на выбор статистической модели.
+
+![](img/andan-oneway-anova/anova-yoda.png)
 :::
 
-## Структура изменчивости данных {#oneway-anova-var-struct}
 
-* $n$ ---общее количество наблюдений
-* $p$ --- количество групп, $
-* $n_j$ --- количество наблюдений в $j$-ой группе
-* $y_{ij}$ --- $i$-е наблюдение в $j$-ой группе
-* $i = 1, 2, \ldots, n_j$, $j = 1, 2, \ldots, p$
+## Структура изменчивости данных при межгрупповом дизайне {#oneway-anova-var-struct-between}
+
+:::{.lab-junior}
+:::
+
+Рассмотрим два примера исследований.
+
+:::{#exm-bg-interface}
+интерфейс --- цвета и шрифты
+:::
+
+:::{#exm-bg-interface}
+академическое выгорание аспирантов
+:::
+
+:::{.callout-tip}
+###### «Межгрупповой» с точки зрения ANOVA
+
+Как мы видим из примеров выше, термин «межгрупповой дизайн» в контексте ANOVA понимается шире, чем «межгрупповой экспериментальный план». Любой дизайн, в котором предусмотрены _не связанные друг с другом_ группы испытуемых или респондентов --- и, как следствие, наблюдений --- будет считаться межгрупповым.
+::::
+
+Структура изменчивости данных в обоих рассматриваемых случаях будет предельно проста:
+
+```{mermaid}
+%%| label: fig-var-struct-between
+%%| fig-cap: Структура изменчивости данных при межгрупповом дизайне
+%%| fig-align: center
+
+flowchart TD
+  SSt("Общая (total) изменчивость")
+  SSbg("Межгрупповая (объяснённая, between-group, explained) изменчивость")
+  SSwg("Внутригрупповая (остаточная, within-group, residual) изменчивость")
+  
+  SSt --> SSbg
+  SSt --> SSwg
+```
+
+Введём следующие обозначения:
+
+* $n$ --- общее количество наблюдений в выборке
+* $p$ --- количество групп в исследовании
+* $n_j$ --- количество наблюдений в $j$-ой группе, $j = 1, 2, \ldots, p$
+* $y_{ij}$ --- $i$-е наблюдение в $j$-ой группе, $i = 1, 2, \ldots, n_j$
+
+Очевидно, что количество наблюдений в выборке есть сумма количеств наблюдений в группах:
 
 $$
 n = \sum_{j=1}^p n_j
 $$
+
+:::{.callout-warning}
+###### «Наблюдение» в эксперименте, опросе и дисперсионном анализе
+
+анова проводится на агрегированных данных
+:::
 
 $$
 \overline Y_{j} = \frac{\sum_{i=1}^{n_j} y_{ij}}{n_j}
@@ -36,49 +85,49 @@ $$
 Общая изменчивость
 
 $$
-\TSS = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2
+\SS_\text{tot} = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2
 $$
 
 $$
-\dft = n - 1
+\df_\text{tot} = n - 1
 $$
 
 $$
-\MSt = \frac{\TSS}{\dft} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2}{n-1}
+\MS_\text{tot} = \frac{\SS_\text{tot}}{\df_\text{tot}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y)^2}{n-1}
 $$
 
 Объяснённая изменчивость
 
 $$
-\ESS = \sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2
+\SS_\text{bg} = \sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2
 $$
 
 $$
-\dfe = p - 1
+\df_\text{bg} = p - 1
 $$
 
 $$
-\MSe = \frac{\ESS}{\dfe} = \frac{\sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2}{p-1}
+\MS_\text{bg} = \frac{\SS_\text{bg}}{\df_\text{bg}} = \frac{\sum_{j=1}^p n_j (\overline Y_j - \overline Y)^2}{p-1}
 $$
 
 Остаточная изменчивость
 
 $$
-\RSS = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2
+\SS_\text{wg} = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2
 $$
 
 $$
-\dfr = n - p
+\df_\text{wg} = n - p
 $$
 
 $$
-\MSr = \frac{\RSS}{\dfr} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2}{n-p}
+\MS_\text{wg} = \frac{\SS_\text{wg}}{\df_\text{wg}} = \frac{\sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \overline Y_j)^2}{n-p}
 $$
 
 $$
 \begin{split}
-&H_0: \MSe \leq \MSr \\
-&H_1: \MSe > \MSr
+&H_0: \MS_\text{bg} \leq \MS_\text{wg} \\
+&H_1: \MS_\text{bg} > \MS_\text{wg}
 \end{split}
 $$
 
@@ -90,11 +139,11 @@ $$
 $$
 
 $$
-F = \frac{\MSe}{\MSr} \disted{H_0} F(\dfe, \dfr)
+F = \frac{\MS_\text{bg}}{\MS_\text{wg}} \disted{H_0} F(\df_\text{bg}, \df_\text{wg})
 $$
 
 $$
-\eta^2 = \frac{\ESS}{\TSS}
+\eta^2 = \frac{\SS_\text{bg}}{\SS_\text{tot}}
 $$
 
 
@@ -105,19 +154,29 @@ $$
 $F$-статистика зависит от размера выборки и размера эффекта.
 
 $$
-F = \frac{\MSe}{\MSr} = \frac{\frac{\ESS}{p-1}}{\frac{\RSS}{n-p}} = \frac{\ESS}{\RSS} \cdot \frac{n-p}{n-1} = \frac{\eta^2}{1 - \eta^2} \cdot \frac{n-p}{p-1}
+F = \frac{\MS_\text{bg}}{\MS_\text{wg}} = \frac{\frac{\SS_\text{bg}}{p-1}}{\frac{\SS_\text{wg}}{n-p}} = \frac{\SS_\text{bg}}{\SS_\text{wg}} \cdot \frac{n-p}{n-1} = \frac{\eta^2}{1 - \eta^2} \cdot \frac{n-p}{p-1}
 $$
 
+:::{.quote .small .pers}
+--- Чёт я не понял, как мы осуществили переход в последнем равенстве. Ну-ка, поясни!
+:::
+
+Последнее равенство, а именно факт равенства первых множителей обеих правой и левой частей $\displaystyle \frac{\SS_\text{bg}}{\SS_\text{wg}} = \frac{\eta^2}{1 - \eta^2}$ получается следующим образом:
+
 $$
-\frac{\ESS}{\RSS} = \frac{\ESS \cdot \TSS}{\RSS \cdot \TSS}  = \frac{\ESS}{\TSS} \cdot \frac{\TSS}{\TSS - \ESS} = \eta^2 \cdot \frac{\frac{\TSS}{\TSS}}{\frac{\TSS - \ESS}{\TSS}} = \eta^2 \cdot \frac{1}{1 - \frac{\ESS}{\TSS}} = \frac{\eta^2}{1 - \eta^2}
+\frac{\SS_\text{bg}}{\SS_\text{wg}} = 
+\frac{\SS_\text{bg} \cdot \SS_\text{tot}}{\SS_\text{wg} \cdot \SS_\text{tot}}  =
+\frac{\SS_\text{bg}}{\SS_\text{tot}} \cdot \frac{\SS_\text{tot}}{\SS_\text{tot} - \SS_\text{bg}} = 
+\eta^2 \cdot \frac{\dfrac{\SS_\text{tot}}{\SS_\text{tot}}}{\dfrac{\SS_\text{tot} - \SS_\text{bg}}{\SS_\text{tot}}} = 
+\eta^2 \cdot \frac{1}{1 - \dfrac{\SS_\text{bg}}{\SS_\text{tot}}} = \frac{\eta^2}{1 - \eta^2}
 $$
 
-## Другие размеры эффекта
+### Другие размеры эффекта
 
 [@tabachnik2013, p. 55]
 
 $$
-\omega^2 = \frac{\ESS - \dfe \MSr}{\TSS + \MSr}
+\omega^2 = \frac{\SS_\text{bg} - \df_\text{bg} \cdot \MS_\text{wg}}{\SS_\text{tot} + \MS_\text{wg}}
 $$
 
 [@steiger-beyondF]
@@ -126,7 +185,19 @@ $$
 f^2 = \frac{\eta^2}{1 - \eta^2}
 $$
 
+## One-Way Between-Subject ANOVA in R {#oneway-anova-bs}
+
 ## Контрасты {#oneway-anova-contrasts}
+
+
+
+
+
+## Структура изменчивости данных при внутригрупповом дизайне {#oneway-anova-var-struct-within}
+
+:::{.lab-junior}
+:::
+
 
 ***
 
