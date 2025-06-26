@@ -820,7 +820,7 @@ window.Quarto = {
   <li><a href="#andan-simplelinear-model" id="toc-andan-simplelinear-model" class="nav-link" data-scroll-target="#andan-simplelinear-model"><span class="header-section-number">35.2</span> Математическая модель</a></li>
   <li><a href="#andan-simplelinear-test" id="toc-andan-simplelinear-test" class="nav-link" data-scroll-target="#andan-simplelinear-test"><span class="header-section-number">35.3</span> Тестирование качества модели</a>
   <ul>
-  <li><a href="#andan-simplelinear-test-datavar" id="toc-andan-simplelinear-test-datavar" class="nav-link" data-scroll-target="#andan-simplelinear-test-datavar"><span class="header-section-number">35.3.1</span> Структура изменчивости данных с точки зрения регрессионной модели</a></li>
+  <li><a href="#andan-simplelinear-test-datavar" id="toc-andan-simplelinear-test-datavar" class="nav-link" data-scroll-target="#andan-simplelinear-test-datavar"><span class="header-section-number">35.3.1</span> Структура изменчивости данных с&nbsp;точки зрения регрессионной модели</a></li>
   <li><a href="#andan-simplelinear-test-fisher" id="toc-andan-simplelinear-test-fisher" class="nav-link" data-scroll-target="#andan-simplelinear-test-fisher"><span class="header-section-number">35.3.2</span> F-критерий</a></li>
   </ul></li>
   <li><a href="#andan-simplelinear-test-student" id="toc-andan-simplelinear-test-student" class="nav-link" data-scroll-target="#andan-simplelinear-test-student"><span class="header-section-number">35.4</span> Тестирование значимости коэффициентов</a></li>
@@ -866,9 +866,16 @@ window.Quarto = {
 </div>
 <section id="andan-simplelinear-idea" class="level2" data-number="35.1">
 <h2 data-number="35.1" class="anchored" data-anchor-id="andan-simplelinear-idea"><span class="header-section-number">35.1</span> Идея линейной регрессии</h2>
+<div class="lab-junior">
+
+</div>
 </section>
 <section id="andan-simplelinear-model" class="level2" data-number="35.2">
 <h2 data-number="35.2" class="anchored" data-anchor-id="andan-simplelinear-model"><span class="header-section-number">35.2</span> Математическая модель</h2>
+<div class="lab-junior">
+
+</div>
+<p>Известно, что&nbsp;любая прямая задаётся уравнением вида <span class="math inline">\(y = kx + b\)</span>, где&nbsp;<span class="math inline">\(x\)</span> и&nbsp;<span class="math inline">\(y\)</span> —&nbsp;переменные, а&nbsp;<span class="math inline">\(k\)</span> и&nbsp;<span class="math inline">\(b\)</span> — коэффициенты.</p>
 <p><span class="math display">\[
 y_i = \beta_0 + \beta_1 x_i + \varepsilon_i
 \]</span></p>
@@ -878,11 +885,18 @@ y_i = \hat \beta_0 + \hat \beta_1 x_i + \hat \varepsilon_i = b_0 + b_1 x_i + e_i
 <p><span class="math display">\[
 \hat y_i = b_0 + b_1 x_i
 \]</span></p>
+<p>Коэффициенты линейной регрессии вычисляются по&nbsp;следующим формулам:</p>
+<p><span id="eq-b0-calc"><span class="math display">\[
+b_0 = \overline y - b_1 \overline x
+\tag{35.1}\]</span></span></p>
+<p><span id="eq-b1-calc"><span class="math display">\[
+b_1 = \frac{\overline{xy} - \overline x \cdot \overline y}{\sigma_X^2}
+\tag{35.2}\]</span></span></p>
 </section>
 <section id="andan-simplelinear-test" class="level2" data-number="35.3">
 <h2 data-number="35.3" class="anchored" data-anchor-id="andan-simplelinear-test"><span class="header-section-number">35.3</span> Тестирование качества модели</h2>
 <section id="andan-simplelinear-test-datavar" class="level3" data-number="35.3.1">
-<h3 data-number="35.3.1" class="anchored" data-anchor-id="andan-simplelinear-test-datavar"><span class="header-section-number">35.3.1</span> Структура изменчивости данных с точки зрения регрессионной модели</h3>
+<h3 data-number="35.3.1" class="anchored" data-anchor-id="andan-simplelinear-test-datavar"><span class="header-section-number">35.3.1</span> Структура изменчивости данных с&nbsp;точки зрения регрессионной модели</h3>
 <p><span class="math display">\[
 \text{TSS}= \sum_{i=1}^n (y_i - \overline y)^2
 \]</span></p>
@@ -939,89 +953,135 @@ t = \frac{r \sqrt{n-2}}{\sqrt{1 - r^2}}
 <section id="andan-simplelinear-solve-deriv" class="level3" data-number="35.5.1">
 <h3 data-number="35.5.1" class="anchored" data-anchor-id="andan-simplelinear-solve-deriv"><span class="header-section-number">35.5.1</span> Аналитическое вычисление коэффициентов</h3>
 <p><span class="math display">\[
-L(b_0, b_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
+L(b_0, b_1) = \sum_{i=1}^n e_i^2 \rightarrow \min_{b_0, b_1}
 \]</span></p>
+<p>Так как <span class="math inline">\(e_i = y_i - \hat y_i\)</span>, имеем</p>
 <p><span class="math display">\[
 \begin{split}
-L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
-L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
-L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
+L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i - \hat y_i)^2 = \\
+&amp;= \sum_{i=1}^n \big( y_i - (b_0 + b_1x_i) \big)^2 = \\
+&amp;= \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
 \end{split}
 \]</span></p>
+<p>Ну, поехали решать. Раскроем скобки под знаком суммы:</p>
+<p><span class="math display">\[
+\begin{split}
+L(b_0, b_1) &amp;= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (y_i - b_0 - b_1 x_i) \\
+L(b_0, b_1) &amp;= \sum_{i=1}^n (
+y_i^2 - y_i b_0 - y_i b_1 x_i
+- b_0 y_i + b_0^2 + b_0 b_1 x_i
+- b_1 x_i y_i + b_1 x_i b_0 + b_1^2 x_i^2
+)
+\end{split}
+\]</span></p>
+<p>Приведём подобные слагаемые и&nbsp;запишем их в&nbsp;более единообразном формате:</p>
+<p><span class="math display">\[
+\begin{split}
+L(b_0, b_1) &amp;= \sum_{i=1}^n (
+y_i^2
+- \underline{y_i b_0}
+- \underline{\underline{y_i b_1 x_i}}
+- \underline{b_0 y_i} + b_0^2 + \underline{\underline{\underline{b_0 b_1 x_i}}}
+- \underline{\underline{b_1 x_i y_i}}
++ \underline{\underline{\underline{b_1 x_i b_0}}}
++ b_1^2 x_i^2
+) \\
+L(b_0, b_1) &amp;= \sum_{i=1}^n (
+y_i^2 + b_0^2 + x_i^2 b_1^2 - 2 y_i b_0 - 2  x_i y_i b_1 + 2 x_i b_1 b_0
+)
+\end{split}
+\]</span></p>
+<p>Чтобы&nbsp;найти минимум получившейся функции, необходимо взять частные производные по&nbsp;каждой из&nbsp;перменных — <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span>:</p>
 <p><span class="math display">\[
 \begin{split}
 \frac{\partial L(b_0, b_1)}{\partial b_0} &amp;=
-\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) =
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
+\sum_{i=1}^n (2b_0 - 2y_i + 2x_ib_1) = \\
+&amp;= -2 \sum_{i=1}^n (-b_0 + y_i - x_i b_1) = \\
+&amp;= -2 \sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) \\
 \frac{\partial L(b_0, b_1)}{\partial b_1} &amp;=
-\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) =
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
+\sum_{i=1}^n (2 x_i^2 b_1 - 2 x_i y_i + 2 x_i b_0) = \\
+&amp;= -2 \sum_{i=1}^n (-x_i^2 b_1 + x_i y_i - x_i b_0) = \\
+&amp;= -2 \sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1)
 \end{split}
 \]</span></p>
+<p>Мы сразу преобразовали выражения, чтобы&nbsp;привести их к&nbsp;некоторому похожему виду. Теперь, так как мы ищем минимум функции, приравниваем обе производные <em>одновременно</em> к&nbsp;нулю — то есть составляем следующую систему:</p>
 <p><span class="math display">\[
-\begin{split}
-&amp;\cases {
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&amp;\cases{
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&amp;\cases{
-\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = 0 \\
-\sum_{i=1}^n y_i x_i - \sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x^2_i = 0
-} \\
-&amp;\cases{
-\sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = \sum_{i=1}^n y_i \\
-\sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x_i^2 = \sum_{i=1}^n y_i x_i
-} \\
-&amp;\cases{
+\cases {
+-2 \sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) = 0 \\
+-2 \sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1) = 0
+}
+\]</span></p>
+<p>Разделим оба уравнения на <span class="math inline">\(-2\)</span>:</p>
+<p><span class="math display">\[
+\cases{
+\sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) = 0 \\
+\sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1 ) = 0
+}
+\]</span></p>
+<p>Раскроем суммы:</p>
+<p><span class="math display">\[
+\cases{
+\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 - \sum_{i=1}^n x_i b_1 = 0 \\
+\sum_{i=1}^n y_i x_i - \sum_{i=1}^n x_i b_0 - \sum_{i=1}^n x_i^2 b_1 = 0
+}
+\]</span></p>
+<p>Оставим в&nbsp;левых частях только те слагаемые, которые содержат неизвестные <span class="math inline">\(b_0\)</span> и&nbsp;<span class="math inline">\(b_1\)</span>:</p>
+<p><span class="math display">\[
+\cases{
+\sum_{i=1}^n b_0 + \sum_{i=1}^n x_i b_1 = \sum_{i=1}^n y_i \\
+\sum_{i=1}^n x_i b_0 + \sum_{i=1}^n x_i^2 b_1 = \sum_{i=1}^n y_i x_i
+}
+\]</span></p>
+<p>Упростим, там где можно:</p>
+<p><span class="math display">\[
+\cases{
 n b_0 + b_1 \sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\
 b_0 \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
 }
-\end{split}
 \]</span></p>
+<p>Из&nbsp;первого уравнения получаем решение для&nbsp;<span class="math inline">\(b_0\)</span>:</p>
 <p><span class="math display">\[
 \begin{split}
 b_0 &amp;= \frac{\sum_{i=1}^n y_i}{n} - b_1 \frac{\sum_{i=1}^n x_i}{n} \\
 b_0 &amp;= \overline y - b_1 \overline x
 \end{split}
 \]</span></p>
+<p>Мы получили формулу <a href="#eq-b0-calc" class="quarto-xref"><span>35.1</span></a>.</p>
+<p>Осталось найти решение для&nbsp;<span class="math inline">\(b_1\)</span> — его получим из&nbsp;второго уравнения, подставив выражение для&nbsp;<span class="math inline">\(b_0\)</span>:</p>
+<p><span class="math display">\[
+(\overline y - b_1 \overline x) \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
+\]</span></p>
+<p>Далее следуют алгебраические преобразования:</p>
 <p><span class="math display">\[
 \begin{split}
-\underline{b_1 \sum_{i=1}^n x_i^2} +
 \overline y \sum_{i=1}^n x_i -
-\underline{b_1 \overline x \sum_{i=1}^n x_i} =
+b_1 \overline x \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x_i^2 =
 \sum_{i=1}^n x_i y_i \\
+b_1 \sum_{i=1}^n x_i^2 - b_1 \overline x \sum_{i=1}^n x_i
+= \sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i \\
 b_1 \Big( \sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i \Big) =
 \sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i
 \end{split}
 \]</span></p>
+<p>Выразим <span class="math inline">\(b_1\)</span> и&nbsp;разделим обе части получившейся дроби на <span class="math inline">\(n\)</span> и&nbsp;преобразуем, чтобы&nbsp;упростить формулу:</p>
 <p><span class="math display">\[
 \begin{split}
 b_1 &amp;=
 \frac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}
-{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i} =
-\frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}{n}}
-{ \dfrac{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i}{n}} \\
-b_1 &amp;=
+{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i} = \\
+&amp;= \frac{
+    \dfrac{\sum_{i=1}^n x_i y_i}{n} - \dfrac{\overline y \sum_{i=1}^n x_i}{n}
+    }{
+    \dfrac{\sum_{i=1}^n x_i^2}{n} - \dfrac{\overline x \sum_{i=1}^n x_i}{n}
+    } = \\
+&amp;=
 \frac{\overline{xy} - \overline x \cdot \overline y}
 {\overline{x^2} - \overline x^2} =
 \frac{\overline{xy} - \overline x \cdot \overline y}
 {\sigma_X^2}
 \end{split}
 \]</span></p>
-<p>Итак, зафиксируем результаты&nbsp;— коэффициенты линейной регрессии вычисляются по&nbsp;следующим формулам:</p>
-<p><span id="eq-b0-calc"><span class="math display">\[
-b_0 = \overline y - b_1 \overline x
-\tag{35.1}\]</span></span></p>
-<p><span id="eq-b1-calc"><span class="math display">\[
-b_1 = \frac{\overline{xy} - \overline x \cdot \overline y}
-{\overline{x^2} - \overline x^2} =
-\frac{\overline{xy} - \overline x \cdot \overline y}
-{\sigma_X^2}
-\tag{35.2}\]</span></span></p>
+<p>Мы получили формулу <a href="#eq-b1-calc" class="quarto-xref"><span>35.2</span></a>.</p>
 </section>
 <section id="andan-simplelinear-model-matrix" class="level3" data-number="35.5.2">
 <h3 data-number="35.5.2" class="anchored" data-anchor-id="andan-simplelinear-model-matrix"><span class="header-section-number">35.5.2</span> Матричное представление модели</h3>

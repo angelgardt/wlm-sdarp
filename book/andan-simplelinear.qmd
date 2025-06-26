@@ -13,7 +13,15 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 ## Идея линейной регрессии {#andan-simplelinear-idea}
 
+:::{.lab-junior}
+:::
+
 ## Математическая модель {#andan-simplelinear-model}
+
+:::{.lab-junior}
+:::
+
+Известно, что любая прямая задаётся уравнением вида $y = kx + b$, где $x$ и $y$ --- переменные, а $k$ и $b$ --- коэффициенты.
 
 $$
 y_i = \beta_0 + \beta_1 x_i + \vepsilon_i
@@ -27,9 +35,20 @@ $$
 \hat y_i = b_0 + b_1 x_i
 $$
 
+Коэффициенты линейной регрессии вычисляются по следующим формулам:
+
+$$
+b_0 = \overline y - b_1 \overline x
+$${#eq-b0-calc}
+
+$$
+b_1 = \frac{\overline{xy} - \overline x \cdot \overline y}{\sigma_X^2}
+$${#eq-b1-calc}
+
+
 ## Тестирование качества модели {#andan-simplelinear-test}
 
-### Структура изменчивости данных с точки зрения регрессионной модели {#andan-simplelinear-test-datavar}
+### Структура изменчивости данных с точки зрения регрессионной модели {#andan-simplelinear-test-datavar}
 
 $$
 \TSS = \sum_{i=1}^n (y_i - \overline y)^2
@@ -102,52 +121,112 @@ $$
 ### Аналитическое вычисление коэффициентов {#andan-simplelinear-solve-deriv}
 
 $$
-L(b_0, b_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
+L(b_0, b_1) = \sum_{i=1}^n e_i^2 \rightarrow \min_{b_0, b_1}
 $$
+
+Так как $e_i = y_i - \hat y_i$, имеем
 
 $$
 \begin{split}
-L(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
-L(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
-L(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
+L(b_0, b_1) &= \sum_{i=1}^n (y_i - \hat y_i)^2 = \\
+&= \sum_{i=1}^n \big( y_i - (b_0 + b_1x_i) \big)^2 = \\
+&= \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
 \end{split}
 $$
+
+Ну, поехали решать. Раскроем скобки под знаком суммы:
+
+$$
+\begin{split}
+L(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (y_i - b_0 - b_1 x_i) \\
+L(b_0, b_1) &= \sum_{i=1}^n (
+y_i^2 - y_i b_0 - y_i b_1 x_i 
+- b_0 y_i + b_0^2 + b_0 b_1 x_i
+- b_1 x_i y_i + b_1 x_i b_0 + b_1^2 x_i^2
+)
+\end{split}
+$$
+
+Приведём подобные слагаемые и запишем их в более единообразном формате:
+
+$$
+\begin{split}
+L(b_0, b_1) &= \sum_{i=1}^n (
+y_i^2 
+- \underline{y_i b_0}
+- \underline{\underline{y_i b_1 x_i}}
+- \underline{b_0 y_i} + b_0^2 + \underline{\underline{\underline{b_0 b_1 x_i}}}
+- \underline{\underline{b_1 x_i y_i}} 
++ \underline{\underline{\underline{b_1 x_i b_0}}} 
++ b_1^2 x_i^2
+) \\
+L(b_0, b_1) &= \sum_{i=1}^n (
+y_i^2 + b_0^2 + x_i^2 b_1^2 - 2 y_i b_0 - 2  x_i y_i b_1 + 2 x_i b_1 b_0
+)
+\end{split}
+$$
+
+Чтобы найти минимум получившейся функции, необходимо взять частные производные по каждой из перменных --- $b_0$ и $b_1$:
 
 $$
 \begin{split}
 \frac{\partial L(b_0, b_1)}{\partial b_0} &= 
-\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) = 
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
+\sum_{i=1}^n (2b_0 - 2y_i + 2x_ib_1) = \\
+&= -2 \sum_{i=1}^n (-b_0 + y_i - x_i b_1) = \\
+&= -2 \sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) \\
 \frac{\partial L(b_0, b_1)}{\partial b_1} &= 
-\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = 
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
+\sum_{i=1}^n (2 x_i^2 b_1 - 2 x_i y_i + 2 x_i b_0) = \\
+&= -2 \sum_{i=1}^n (-x_i^2 b_1 + x_i y_i - x_i b_0) = \\
+&= -2 \sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1)
 \end{split}
 $$
 
+Мы сразу преобразовали выражения, чтобы привести их к некоторому похожему виду. Теперь, так как мы ищем минимум функции, приравниваем обе производные *одновременно* к нулю --- то есть составляем следующую систему:
+
 $$
-\begin{split}
-&\cases {
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&\cases{
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&\cases{
-\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = 0 \\
-\sum_{i=1}^n y_i x_i - \sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x^2_i = 0
-} \\
-&\cases{
-\sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = \sum_{i=1}^n y_i \\
-\sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x_i^2 = \sum_{i=1}^n y_i x_i
-} \\
-&\cases{
+\cases {
+-2 \sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) = 0 \\
+-2 \sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1) = 0
+}
+$$
+
+Разделим оба уравнения на $-2$:
+
+$$
+\cases{
+\sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) = 0 \\
+\sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1 ) = 0
+}
+$$
+
+Раскроем суммы:
+
+$$
+\cases{
+\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 - \sum_{i=1}^n x_i b_1 = 0 \\
+\sum_{i=1}^n y_i x_i - \sum_{i=1}^n x_i b_0 - \sum_{i=1}^n x_i^2 b_1 = 0
+}
+$$
+
+Оставим в левых частях только те слагаемые, которые содержат неизвестные $b_0$ и $b_1$:
+
+$$
+\cases{
+\sum_{i=1}^n b_0 + \sum_{i=1}^n x_i b_1 = \sum_{i=1}^n y_i \\
+\sum_{i=1}^n x_i b_0 + \sum_{i=1}^n x_i^2 b_1 = \sum_{i=1}^n y_i x_i
+}
+$$
+
+Упростим, там где можно:
+
+$$
+\cases{
 n b_0 + b_1 \sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\
 b_0 \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
 }
-\end{split}
 $$
+
+Из первого уравнения получаем решение для $b_0$:
 
 $$
 \begin{split}
@@ -156,25 +235,41 @@ b_0 &= \overline y - b_1 \overline x
 \end{split}
 $$
 
+Мы получили формулу [-@eq-b0-calc].
+
+Осталось найти решение для $b_1$ --- его получим из второго уравнения, подставив выражение для $b_0$:
+
+$$
+(\overline y - b_1 \overline x) \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
+$$
+
+Далее следуют алгебраические преобразования:
+
 $$
 \begin{split}
-\underline{b_1 \sum_{i=1}^n x_i^2} + 
 \overline y \sum_{i=1}^n x_i - 
-\underline{b_1 \overline x \sum_{i=1}^n x_i} = 
+b_1 \overline x \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x_i^2 = 
 \sum_{i=1}^n x_i y_i \\
+b_1 \sum_{i=1}^n x_i^2 - b_1 \overline x \sum_{i=1}^n x_i
+= \sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i \\
 b_1 \Big( \sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i \Big) = 
 \sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i
 \end{split}
 $$
 
+Выразим $b_1$ и разделим обе части получившейся дроби на $n$ и преобразуем, чтобы упростить формулу:
+
 $$
 \begin{split}
 b_1 &= 
 \frac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}
-{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i} = 
-\frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}{n}}
-{ \dfrac{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i}{n}} \\
-b_1 &= 
+{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i} = \\
+&= \frac{
+    \dfrac{\sum_{i=1}^n x_i y_i}{n} - \dfrac{\overline y \sum_{i=1}^n x_i}{n}
+    }{
+    \dfrac{\sum_{i=1}^n x_i^2}{n} - \dfrac{\overline x \sum_{i=1}^n x_i}{n}
+    } = \\
+&= 
 \frac{\overline{xy} - \overline x \cdot \overline y}
 {\overline{x^2} - \overline x^2} = 
 \frac{\overline{xy} - \overline x \cdot \overline y}
@@ -182,18 +277,7 @@ b_1 &=
 \end{split}
 $$
 
-Итак, зафиксируем результаты --- коэффициенты линейной регрессии вычисляются по следующим формулам:
-
-$$
-b_0 = \overline y - b_1 \overline x
-$${#eq-b0-calc}
-
-$$
-b_1 = \frac{\overline{xy} - \overline x \cdot \overline y}
-{\overline{x^2} - \overline x^2} = 
-\frac{\overline{xy} - \overline x \cdot \overline y}
-{\sigma_X^2}
-$${#eq-b1-calc}
+Мы получили формулу [-@eq-b1-calc].
 
 
 
