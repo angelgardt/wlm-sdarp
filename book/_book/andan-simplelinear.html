@@ -875,15 +875,67 @@ window.Quarto = {
 <div class="lab-junior">
 
 </div>
-<p>Известно, что&nbsp;любая прямая задаётся уравнением вида <span class="math inline">\(y = kx + b\)</span>, где&nbsp;<span class="math inline">\(x\)</span> и&nbsp;<span class="math inline">\(y\)</span> —&nbsp;переменные, а&nbsp;<span class="math inline">\(k\)</span> и&nbsp;<span class="math inline">\(b\)</span> — коэффициенты.</p>
+<p>Известно, что&nbsp;любая прямая задаётся уравнением вида <span class="math inline">\(y = kx + b\)</span>, где&nbsp;<span class="math inline">\(x\)</span> и&nbsp;<span class="math inline">\(y\)</span>&nbsp;— переменные, а&nbsp;<span class="math inline">\(k\)</span> и&nbsp;<span class="math inline">\(b\)</span>&nbsp;— коэффициенты, причём <span class="math inline">\(k\)</span> называется <strong>угловым коэффициентом (slope)</strong> и&nbsp;задаёт наклон прямой, а&nbsp;<span class="math inline">\(b\)</span> — <strong>свободным членом, или&nbsp;интерсептом (intercept)</strong> и&nbsp;определяет точку пересечения прямой с&nbsp;вертикальной координатной осью.</p>
+<p>Действительно, уравнение регрессионной прямой будет задаваться следующим образом:</p>
+<p><span class="math display">\[
+y = b_0 + b_1 x
+\]</span></p>
+<p>Традиционно используются немного другие обозначения, но&nbsp;соответствие очевидно: <span class="math inline">\(b_0\)</span>&nbsp;— интерсепт, <span class="math inline">\(b_1\)</span>&nbsp;— угловой коэффициент. Переменные <span class="math inline">\(y\)</span> и&nbsp;<span class="math inline">\(x\)</span>&nbsp;— это столбцы наших данных, то&nbsp;есть те самые переменные, связь между которыми мы хотим смоделировать. Они носят различные имена:</p>
+<ul>
+<li><span class="math inline">\(x\)</span> именуют <em>независимой переменной</em>, <em>предиктором</em> или&nbsp;<em>регрессором</em>,</li>
+<li><span class="math inline">\(y\)</span> называют <em>зависимой переменной</em>, <em>целевой переменной</em> или&nbsp;<em>регрессантом</em>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+О&nbsp;терминах «независимая переменная» и&nbsp;«зависимая переменная» в&nbsp;регрессии
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Оговоримся, что термины «зависимая» и&nbsp;«независимая» в&nbsp;отношении переменных, включенных в&nbsp;регрессионную модель, носят условный характер. Как и&nbsp;любой статистический метод, регрессионный анализ <strong>не позволяет сделать причинно-следственного вывода</strong>.</p>
+<p>Математике абсолютно всё равно, что&nbsp;рассматривать в&nbsp;качестве «зависимой», а&nbsp;что в&nbsp;качестве «независимой»&nbsp;переменной. В&nbsp;этом смысле рассматриваемая в&nbsp;этой главе простая линейная регрессия тестирует те&nbsp;же гипотезы, что и корреляция&nbsp;— о&nbsp;<strong>взаимо</strong>связях между двумя переменными.</p>
+</div>
+</div>
+<div id="exr-inverse-reg" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 35.1</strong></span> <span class="math inline">\(x\)</span> через <span class="math inline">\(y\)</span> используя уравнение <span class="math inline">\(y = b_0 + b_1 x\)</span>. покажите, что эта связь также будет линейной.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p><span class="math display">\[
+\begin{split}
+y &amp;= b_0 + b_1 x\\
+b_1 x &amp;= y - b_0 \\
+x &amp;= \frac{1}{b_1} y - \frac{b_0}{b_1}
+\end{split}
+\]</span></p>
+<p>Заметим, что&nbsp;<span class="math inline">\(\frac{1}{b_1}\)</span> и <span class="math inline">\(\frac{b_0}{b_1}\)</span>&nbsp;— это просто некоторые числа, поэтому мы их можем обозначить, скажем, так:</p>
+<p><span class="math display">\[
+\begin{split}
+c_1 &amp;= \frac{1}{b_1} \\
+c_0 &amp;= -\frac{b_0}{b_1}
+\end{split}
+\]</span></p>
+<p>Тогда полученное уравнение может переписать в&nbsp;виде</p>
+<p><span class="math display">\[
+x = c_0 + c_1 y,
+\]</span></p>
+<p>что&nbsp;полностью соответствует уравнению прямой.</p>
+</div>
+</div>
+<p>Окей, к&nbsp;тестированию гипотез, интерпретации результатов и&nbsp;отношениям между регрессией и&nbsp;корреляцией обратимся позже — пока что мы ещё не&nbsp;до&nbsp;конца осознали саму регрессионную модель. Если&nbsp;бы мы занимались только математикой, то&nbsp;сказанного выше было&nbsp;бы достаточно для&nbsp;описания связи между двумя переменным. Мы&nbsp;же находимся в&nbsp;поле статистики.</p>
+<p>[[[связь в генеральной совокупности]]]</p>
+<p><span class="math display">\[
+\hat y_i = b_0 + b_1 x_i
+\]</span></p>
 <p><span class="math display">\[
 y_i = \beta_0 + \beta_1 x_i + \varepsilon_i
 \]</span></p>
 <p><span class="math display">\[
 y_i = \hat \beta_0 + \hat \beta_1 x_i + \hat \varepsilon_i = b_0 + b_1 x_i + e_i
-\]</span></p>
-<p><span class="math display">\[
-\hat y_i = b_0 + b_1 x_i
 \]</span></p>
 <p>Коэффициенты линейной регрессии вычисляются по&nbsp;следующим формулам:</p>
 <p><span id="eq-b0-calc"><span class="math display">\[
@@ -1186,7 +1238,7 @@ b_1 = r_{XY} \cdot \frac{s_X}{s_Y} = r_{XY} \cdot \frac{1}{1} = r_{XY}
 \]</span></p>
 </div>
 <div id="exr-b1-formula2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Задание 35.1</strong></span> Заметим, что&nbsp;в&nbsp;процессе доказательства утверждения <a href="#prp-cor-slope" class="quarto-xref"><span>35.1</span></a> мы получили ещё одну формулу для&nbsp;коэффициента <span class="math inline">\(b_1\)</span>:</p>
+<p><span class="theorem-title"><strong>Задание 35.2</strong></span> Заметим, что&nbsp;в&nbsp;процессе доказательства утверждения <a href="#prp-cor-slope" class="quarto-xref"><span>35.1</span></a> мы получили ещё одну формулу для&nbsp;коэффициента <span class="math inline">\(b_1\)</span>:</p>
 <p><span class="math display">\[
 b_1 = \frac{\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2}
 \]</span></p>
