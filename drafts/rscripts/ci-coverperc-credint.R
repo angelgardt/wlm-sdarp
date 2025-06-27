@@ -50,3 +50,34 @@ ci_capture %>%
                    filter(sim == 0) %>%
                    pivot_longer(cols = c(ymin, ymax)),
                aes(yintercept = value))
+
+
+
+set.seed(123)
+sample <- rnorm(n = 100, mean = 0, sd = 1)
+bins <- 50
+ci <- mean_cl_normal(sample)
+tibble(
+    hat_thetas = c(
+        seq(from = ci$ymin - (ci$y - ci$ymin),
+            to = ci$ymin,
+            length.out = bins),
+        seq(from = ci$ymin,
+            to = ci$y,
+            length.out = bins),
+        seq(from = ci$y,
+            to = ci$ymax,
+            length.out = bins),
+        seq(from = ci$y,
+            to = ci$ymax + (ci$ymax - ci$y),
+            length.out = bins)
+        ),
+    pvals = map(hat_thetas,
+                function(x) {t.test(x = sample, mu = x)$p.value}) %>%
+        unlist()
+) %>%
+    ggplot(aes(hat_thetas, pvals)) +
+    geom_line() +
+    geom_vline(xintercept = c(ci$ymin, ci$ymax), linetype = "dashed") +
+    geom_hline(yintercept = .05, linetype = "dotted")
+
