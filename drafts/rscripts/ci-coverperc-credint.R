@@ -79,5 +79,5 @@ tibble(
     ggplot(aes(hat_thetas, pvals)) +
     geom_line() +
     geom_vline(xintercept = c(ci$ymin, ci$ymax), linetype = "dashed") +
-    geom_hline(yintercept = .05, linetype = "dotted")
-
+    geom_hline(yintercept = .05, linetype = "dotted") +
+    geom_pointrange(aes(y = 0, x = ci$y, xmin = ci$ymin, xmax = ci$ymax))
