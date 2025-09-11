@@ -193,7 +193,6 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
-
 #### Дизъюнкция {#math-logic-propositions-operations-or}
 
 :::{#def-disjunction}
@@ -422,6 +421,24 @@ $$
 :::
 ::::
 
+
+## Свойства логических операций {#math-logic-props}
+
+### Свойства конъюнкции {#math-logic-props-and}
+
+:::{#prp-and-commutative}
+$$
+p \and q \equi q \and p
+$$
+:::
+
+### Свойства дизъюнкции {#math-logic-props-or}
+
+:::{#prp-or-commutative}
+$$
+p \and q \equi q \and p
+$$
+:::
 
 ## Умозаключения {#math-logic-consequence}
 
