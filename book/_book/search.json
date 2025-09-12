@@ -1360,12 +1360,12 @@
   {
     "objectID": "math-combs.html",
     "href": "math-combs.html",
-    "title": "15  Комбинаторика",
+    "title": "16  Комбинаторика",
     "section": "",
-    "text": "15.1 Перестановки\npermutations\n\\[\n\\mathsf{P}_{n} = n!\n\\]",
+    "text": "16.1 Перестановки\npermutations\n\\[\n\\mathsf{P}_{n} = n!\n\\tag{16.1}\\]",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Комбинаторика</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Комбинаторика</span>"
     ]
   },
   {
@@ -3832,34 +3832,34 @@
   {
     "objectID": "math-combs.html#math-comb-variations",
     "href": "math-combs.html#math-comb-variations",
-    "title": "15  Комбинаторика",
-    "section": "15.2 Размещения",
-    "text": "15.2 Размещения\n\n\n\nvariations\n\n15.2.1 Размещения без повторений\n\n\n\nЧисло размещений без повторений обозначается1 \\({}^\\mathsf{{}}\\mathsf{V}_{n}^{k}\\).\n\\[\n{}^\\mathsf{{}}\\mathsf{V}_{n}^{k} = \\frac{n!}{(n-k)!}\n\\]\n\n\n15.2.2 Размещения с повторениями\n\n\n\nЧисло размещений c повторениями обозначается2 \\({}^\\mathsf{{R}}\\mathsf{V}_{n}^{k}\\).\n\\[\n{}^\\mathsf{{R}}\\mathsf{V}_{n}^{k} = n^k\n\\]",
+    "title": "16  Комбинаторика",
+    "section": "16.2 Размещения",
+    "text": "16.2 Размещения\n\n\n\nvariations\n\n16.2.1 Размещения без повторений\n\n\n\nЧисло размещений без повторений обозначается1 \\({}^\\mathsf{{}}\\mathsf{V}_{n}^{k}\\).\n\\[\n{}^\\mathsf{{}}\\mathsf{V}_{n}^{k} = \\frac{n!}{(n-k)!}\n\\tag{16.2}\\]\n\n\n16.2.2 Размещения с повторениями\n\n\n\nЧисло размещений c повторениями обозначается2 \\({}^\\mathsf{{R}}\\mathsf{V}_{n}^{k}\\).\n\\[\n{}^\\mathsf{{R}}\\mathsf{V}_{n}^{k} = n^k\n\\tag{16.3}\\]",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Комбинаторика</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Комбинаторика</span>"
     ]
   },
   {
     "objectID": "math-combs.html#math-comb-combinations",
     "href": "math-combs.html#math-comb-combinations",
-    "title": "15  Комбинаторика",
-    "section": "15.3 Сочетания",
-    "text": "15.3 Сочетания\n\n\n\ncombinations\n\n15.3.1 Сочетаний без повторений\n\n\n\n\\[\n{}^\\mathsf{{}}\\mathsf{C}_{n}^{k} = \\frac{n!}{k!(n-k)!}\n\\]\n\n\n15.3.2 Биномиальные коэффициенты\n\n\n\nУ числа сочетаний без повторений есть ещё один серьёзный смысл — оно определяет коэффициенты в формуле бинома Ньютона.\n\\[\n(a + b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^k = \\binom{n}{0} a^n + \\binom{n}{1}a^{n-1}b + \\dots + \\binom{n}{k} + \\dots + \\binom{n}{n}b_n\n\\]\nЗдесь \\(\\binom{n}{k}\\) — это обозначение биномиального коэффициента, то есть коэффициента, который стоит при каком-либо из слагаемых в формуле бинома Ньютона. Он тождественно равен числу сочетаний из \\(n\\) по \\(k\\) — \\(\\binom{n}{k} \\equiv {}^\\mathsf{{}}\\mathsf{C}_{n}^{k}\\) — иначе говоря, является другим обозначением той же сущности. Только индексы в другом порядке указываются.\nБиномиальные коэффициенты возникают при задании функции вероятности биномиального распределения. Подробнее про бином Ньютона можно почитать в приложении.\n\n\n15.3.3 Сочетания с повторениями\n\n\n\nЧисло сочетаний c повторениями обозначается3 \\({}^\\mathsf{{R}}\\mathsf{C}_{n}^{k}\\).\n\\[\n{}^\\mathsf{{R}}\\mathsf{C}_{n}^{k} = \\frac{(n+k-1)!}{k!(n-k)!}\n\\]\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.4.0 (2024-04-24)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.3        \n [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   \n [9] knitr_1.47        jsonlite_1.8.9    xfun_0.44         digest_0.6.37    \n[13] rlang_1.1.4       evaluate_1.0.1",
+    "title": "16  Комбинаторика",
+    "section": "16.3 Сочетания",
+    "text": "16.3 Сочетания\n\n\n\ncombinations\n\n16.3.1 Сочетаний без повторений\n\n\n\n\\[\n{}^\\mathsf{{}}\\mathsf{C}_{n}^{k} = \\frac{n!}{k!(n-k)!}\n\\tag{16.4}\\]\n\n\n16.3.2 Биномиальные коэффициенты\n\n\n\nУ числа сочетаний без повторений есть ещё один серьёзный смысл — оно определяет коэффициенты в формуле бинома Ньютона. Однако сначала мы постараемся понять, откуда взялся сам бином.\nВ школе упоминались формулы сокращённого умножения, а конкретно квадрат суммы и куб суммы. Выглядят они так:\n\\[\n\\begin{split}\n(a + b)^2 &= a^2 + 2ab + b^2 \\\\\n(a + b)^3 &= a^3 + 3a^2b + 3 ab^2 + b^3\n\\end{split}\n\\]\nПонятно, что их можно вывести непосредственно через раскрытия скобок, однако их симметричных внешний вид позволяет задуматься о том, что они «создаются» по некоторому более общему алгоритму.\n\nЗадание 16.1 Выведите формулы сокращенного умножения для квадрата и куба суммы методом раскрытия скобок.\n\n\nРешение. \n\n\\[\n(a+b)^2 = (a+b)(a+b) = aa + ab + ba + bb = a^2 + 2ab + b^2\n\\]\n\\[\n\\begin{split}\n(a+b)^3 &= (a+b)(a+b)(a+b) = \\\\\n&= aaa + aab + aba + abb + baa + bab + bba + bbb = \\\\\n&= a^3 + 3a^2b + 3ab^2 = b^3\n\\end{split}\n\\]\n\n\nPROCEEDING\n\\[\n(a + b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^k = \\binom{n}{0} a^n + \\binom{n}{1}a^{n-1}b + \\dots + \\binom{n}{k} a^{n-k}b^k + \\dots + \\binom{n}{n}b_n\n\\tag{16.5}\\]\nЗдесь \\(\\displaystyle \\binom{n}{k}\\) — это обозначение биномиального коэффициента, то есть коэффициента, который стоит при каком-либо из слагаемых в формуле бинома Ньютона. Он тождественно равен числу сочетаний из \\(n\\) по \\(k\\) — \\(\\displaystyle \\binom{n}{k} \\equiv {}^\\mathsf{{}}\\mathsf{C}_{n}^{k}\\) — иначе говоря, является другим обозначением той же сущности. Только индексы в другом порядке указываются.\nБиномиальные коэффициенты возникают при задании функции вероятности биномиального распределения. Подробнее про бином Ньютона можно почитать в приложении.\n\nЗадание 16.2 Докажите, что \\(\\displaystyle \\sum_{k=0}^n {}^\\mathsf{{}}\\mathsf{C}_{n}^{k} = 2^n\\).\n\n\nРешение. \n\nРассмотрим случай бинома Ньютона, когда \\(a = b = 1\\), то есть выражение \\((1 + 1)^n\\). С одной стороны, очевидно, что \\((1 + 1)^n = 2^n\\).\nС другой стороны, по формуле 16.5 имеем следующее:\n\\[\n(1 + 1)^n = \\sum_{k=0}^n \\binom{n}{k} \\cdot 1^{n-k} \\cdot 1^{k} = \\sum_{k=0}^n {}^\\mathsf{{}}\\mathsf{C}_{n}^{k}\n\\]\nПолучаем, что \\(\\displaystyle \\sum_{k=0}^n {}^\\mathsf{{}}\\mathsf{C}_{n}^{k} = 2^n\\). \\(\\quad \\blacksquare\\)\n\n\n\n\n16.3.3 Сочетания с повторениями\n\n\n\nЧисло сочетаний c повторениями обозначается3 \\({}^\\mathsf{{R}}\\mathsf{C}_{n}^{k}\\).\n\\[\n{}^\\mathsf{{R}}\\mathsf{C}_{n}^{k} = \\frac{(n+k-1)!}{k!(n-k)!}\n\\tag{16.6}\\]\n\n\nSession Info\n\nsessionInfo()\n\nR version 4.5.0 (2025-04-11)\nPlatform: x86_64-apple-darwin20\nRunning under: macOS Sequoia 15.4.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Europe/Moscow\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.5.0    fastmap_1.2.0     cli_3.6.5        \n [5] tools_4.5.0       htmltools_0.5.8.1 rstudioapi_0.17.1 rmarkdown_2.29   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.52         digest_0.6.37    \n[13] rlang_1.1.6       evaluate_1.0.3",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Комбинаторика</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Комбинаторика</span>"
     ]
   },
   {
     "objectID": "math-combs.html#footnotes",
     "href": "math-combs.html#footnotes",
-    "title": "15  Комбинаторика",
+    "title": "16  Комбинаторика",
     "section": "",
     "text": "Другое часто используемое обозначение — \\(\\mathsf A_n^k\\)↩︎\nДругое часто используемое обозначение — \\(\\overline{\\mathsf A_n^k}\\)↩︎\nДругое часто используемое обозначение — \\(\\overline{{}^\\mathsf{{}}\\mathsf{C}_{n}^{k}}\\)↩︎",
     "crumbs": [
       "Математика для анализа данных",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Комбинаторика</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Комбинаторика</span>"
     ]
   },
   {
