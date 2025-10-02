@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 11&nbsp; Визуализация в ggplot2</title>
+<title>10&nbsp; Визуализация в&nbsp;ggplot2&nbsp;I – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -54,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,20 +85,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r-oop.html" rel="next">
-<link href="./r-visbase.html" rel="prev">
+<link href="./r-advggplot.html" rel="next">
+<link href="./r-tidy.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-554ea854cf0619dcc30cc54aeb8f7717.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -130,32 +157,223 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="r-visggplot" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-r.html">R</a></li><li class="breadcrumb-item"><a href="./r-visggplot.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></a></li></ol></nav>
+      <h1 class="title"><span id="r-visggplot" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></h1>
                       </div>
   </div>
     
@@ -206,52 +424,23 @@ background-size: cover;
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -268,50 +457,56 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -320,78 +515,97 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория измерений</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+  <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория измерений</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -400,51 +614,57 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -453,21 +673,51 @@ background-size: cover;
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-hierreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-oneway-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Однофакторный дисперсионный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -486,13 +736,13 @@ background-size: cover;
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -543,32 +793,38 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-survey-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Основы опросных методов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -579,10 +835,39 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#r-visggplot-why" id="toc-r-visggplot-why" class="nav-link active" data-scroll-target="#r-visggplot-why"><span class="header-section-number">10.1</span> Задачи визуализации</a>
+  <ul>
+  <li><a href="#r-visggplot-anscombe" id="toc-r-visggplot-anscombe" class="nav-link" data-scroll-target="#r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Анскомба</a></li>
+  <li><a href="#r-visggplot-datasaurus" id="toc-r-visggplot-datasaurus" class="nav-link" data-scroll-target="#r-visggplot-datasaurus"><span class="header-section-number">10.1.2</span> Datasaurus</a></li>
+  </ul></li>
+  <li><a href="#r-visggplot2-graphs" id="toc-r-visggplot2-graphs" class="nav-link" data-scroll-target="#r-visggplot2-graphs"><span class="header-section-number">10.2</span> Виды визуализаций</a></li>
+  <li><a href="#r-visggplot2-pkg" id="toc-r-visggplot2-pkg" class="nav-link" data-scroll-target="#r-visggplot2-pkg"><span class="header-section-number">10.3</span> Пакет <code>ggplot2</code></a>
+  <ul>
+  <li><a href="#r-visggplot2-diamonds" id="toc-r-visggplot2-diamonds" class="nav-link" data-scroll-target="#r-visggplot2-diamonds"><span class="header-section-number">10.3.1</span> Датасет <code>diamonds</code></a></li>
+  </ul></li>
+  <li><a href="#r-visggplot2-grammar" id="toc-r-visggplot2-grammar" class="nav-link" data-scroll-target="#r-visggplot2-grammar"><span class="header-section-number">10.4</span> Грамматика графиков</a></li>
+  <li><a href="#r-visggplot2-basics" id="toc-r-visggplot2-basics" class="nav-link" data-scroll-target="#r-visggplot2-basics"><span class="header-section-number">10.5</span> Базовый алгоритм построения визуализации</a></li>
+  <li><a href="#r-visggplot-aes" id="toc-r-visggplot-aes" class="nav-link" data-scroll-target="#r-visggplot-aes"><span class="header-section-number">10.6</span> Эстетики (aesthetics)</a>
+  <ul>
+  <li><a href="#r-visggplot-aes-color" id="toc-r-visggplot-aes-color" class="nav-link" data-scroll-target="#r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</a></li>
+  <li><a href="#r-visggplot-aes-shape" id="toc-r-visggplot-aes-shape" class="nav-link" data-scroll-target="#r-visggplot-aes-shape"><span class="header-section-number">10.6.2</span> Форма</a></li>
+  <li><a href="#r-visggplot-aes-linetype" id="toc-r-visggplot-aes-linetype" class="nav-link" data-scroll-target="#r-visggplot-aes-linetype"><span class="header-section-number">10.6.3</span> Тип линии</a></li>
+  </ul></li>
+  <li><a href="#r-visggplot-geoms" id="toc-r-visggplot-geoms" class="nav-link" data-scroll-target="#r-visggplot-geoms"><span class="header-section-number">10.7</span> Геомы (geoms)</a></li>
+  <li><a href="#r-visggplot-stats" id="toc-r-visggplot-stats" class="nav-link" data-scroll-target="#r-visggplot-stats"><span class="header-section-number">10.8</span> Статы (stats)</a></li>
+  <li><a href="#r-visggplot-facets" id="toc-r-visggplot-facets" class="nav-link" data-scroll-target="#r-visggplot-facets"><span class="header-section-number">10.9</span> Фасеты (facets)</a></li>
+  <li><a href="#r-visggplot-scales" id="toc-r-visggplot-scales" class="nav-link" data-scroll-target="#r-visggplot-scales"><span class="header-section-number">10.10</span> Шкалы (scales)</a></li>
+  <li><a href="#r-visggplot-theme" id="toc-r-visggplot-theme" class="nav-link" data-scroll-target="#r-visggplot-theme"><span class="header-section-number">10.11</span> Тема (theme)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -608,19 +893,954 @@ background-size: cover;
 <div class="intro">
 <p>Вступление</p>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Потребуется базовое представление о&nbsp;статистических данных
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Чтобы&nbsp;уверенно понять, что&nbsp;происходит в&nbsp;этой главе, нужно базово представлять, что&nbsp;являют собой статистические данных и что такое описательные статистики.</p>
+</div>
+</div>
+<section id="r-visggplot-why" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="r-visggplot-why"><span class="header-section-number">10.1</span> Задачи визуализации</h2>
+<div class="lab-junior">
+
+</div>
+<section id="r-visggplot-anscombe" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="r-visggplot-anscombe"><span class="header-section-number">10.1.1</span> Квартет Анскомба</h3>
+<div class="lab-junior">
+
+</div>
+<p>Квартет Анскомба<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (Anscombe’s quartet) — это датасет, предложенный Ф.&nbsp;Дж.&nbsp;Анскомбом <span class="citation" data-cites="anscombe1973">(<a href="references.html#ref-anscombe1973" role="doc-biblioref">Anscombe, 1973</a>)</span> для&nbsp;демонстрации важности использования визуализаций при&nbsp;изучении данных. В&nbsp;R он хранится в&nbsp;переменной <code>anscombe</code> (<a href="#lst-anscombe-dataset" class="quarto-xref">Код&nbsp;<span>10.1</span></a>) из&nbsp;пакета <code>datasets</code>, доступного по&nbsp;умолчанию<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<div id="lst-anscombe-dataset" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-anscombe-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.1: Датасет «Квартет Анскомба»
+</figcaption>
+<div aria-describedby="lst-anscombe-dataset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>anscombe</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   x1 x2 x3 x4    y1   y2    y3    y4
+1  10 10 10  8  8.04 9.14  7.46  6.58
+2   8  8  8  8  6.95 8.14  6.77  5.76
+3  13 13 13  8  7.58 8.74 12.74  7.71
+4   9  9  9  8  8.81 8.77  7.11  8.84
+5  11 11 11  8  8.33 9.26  7.81  8.47
+6  14 14 14  8  9.96 8.10  8.84  7.04
+7   6  6  6  8  7.24 6.13  6.08  5.25
+8   4  4  4 19  4.26 3.10  5.39 12.50
+9  12 12 12  8 10.84 9.13  8.15  5.56
+10  7  7  7  8  4.82 7.26  6.42  7.91
+11  5  5  5  8  5.68 4.74  5.73  6.89</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>По&nbsp;сути он состоит из&nbsp;четырёх датасетов, каждый из&nbsp;которых содержит две переменные&nbsp;— <code>x</code> и <code>y</code>. Если внимательно на&nbsp;него посмотреть, то можно обнаружить, что значения переменной <code>x</code> в&nbsp;трёх первых датасетах одинаковые. В&nbsp;чётвертом&nbsp;же они совсем другие. Однако переменная <code>y</code> во&nbsp;всех четырёх датасетах содержит разные значения. Это приводит нас к&nbsp;следующей незамысловатой идее — <strong>четыре датасета содержат данные о&nbsp;различных закономерностях между <code>x</code> и <code>y</code>.</strong> Ну,&nbsp;давайте проверим, так&nbsp;ли это.</p>
+<p>В&nbsp;том варианте, в&nbsp;котором он храниться в&nbsp;R, с&nbsp;ним не&nbsp;очень удобно работать, поэтому сделаем простую предобработку (<a href="#lst-anscombe-preproc" class="quarto-xref">Код&nbsp;<span>10.2</span></a>).</p>
+<div id="lst-anscombe-preproc" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.2: Предобработка квартета Анскомба для&nbsp;последующей визуализации
+</figcaption>
+<div aria-describedby="lst-anscombe-preproc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-12-3" class="code-annotation-target"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a>anscombe <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-12-4" class="code-annotation-target"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(anscombe)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-12-5" class="code-annotation-target"><a href="#annotated-cell-12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-12-6" class="code-annotation-target"><a href="#annotated-cell-12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dataset =</span> <span class="fu">str_extract</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-12-7" class="code-annotation-target"><a href="#annotated-cell-12-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">str_remove</span>(name, <span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>)) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-12-8" class="code-annotation-target"><a href="#annotated-cell-12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> name,</span>
+<span id="annotated-cell-12-9"><a href="#annotated-cell-12-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-12-10" class="code-annotation-target"><a href="#annotated-cell-12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="ot">-&gt;</span> quartet</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="1">Берём исходный датасет</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="2">Создаём техническую переменную <code>id</code> для&nbsp;перехода между широким и&nbsp;длинным форматами</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="5" data-code-annotation="3">Переводим данные в&nbsp;длинный формат — названия колонок по&nbsp;умолчанию переходят в&nbsp;переменную <code>name</code>, значения — в&nbsp;переменную <code>value</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="6" data-code-annotation="4">Создаём новую переменную <code>dataset</code>, которая будет задавать, к&nbsp;какому из&nbsp;«субдатасетов» относится наблюдение — вытаскиваем номер датасета из&nbsp;названия колонок</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="7" data-code-annotation="5">Удаляем из&nbsp;названия колонок номер датасета — теперь это отдельная переменная</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="8" data-code-annotation="6">Переводим данные в&nbsp;широкий формат — возвращаем на&nbsp;место названия колонок и&nbsp;значения</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="10" data-code-annotation="7">Удаляем техническую переменную <code>id</code>, сохряняем результат предобработки в&nbsp;новую переменную <code>quartet</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Посмотрим, что&nbsp;получилось (<a href="#lst-quartet-done" class="quarto-xref">Код&nbsp;<span>10.3</span></a>). Теперь в&nbsp;колонке <code>dataset</code> содержится номер датасета, а&nbsp;в&nbsp;переменных <code>x</code> и&nbsp;<code>y</code> собственно значения переменных, которые мы хотим изучить.</p>
+<div id="lst-quartet-done" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-quartet-done-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.3: Предобработанный квартет Анскомба
+</figcaption>
+<div aria-describedby="lst-quartet-done-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>quartet</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 3
+   dataset     x     y
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1 1          10  8.04
+ 2 2          10  9.14
+ 3 3          10  7.46
+ 4 4           8  6.58
+ 5 1           8  6.95
+ 6 2           8  8.14
+ 7 3           8  6.77
+ 8 4           8  5.76
+ 9 1          13  7.58
+10 2          13  8.74
+# ℹ 34 more rows</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Посчитаем базовые описательные статистики — среднее и&nbsp;стандартное отклонение — по&nbsp;обеим переменным и&nbsp;корреляцию между ними в&nbsp;каждом из&nbsp;датасетов. Вот что получается (<a href="#tbl-quartet-desc" class="quarto-xref">Таблица&nbsp;<span>10.1</span></a>).</p>
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_x =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_y =</span> <span class="fu">mean</span>(y),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_x =</span> <span class="fu">sd</span>(x),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_y =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor_xy =</span> <span class="fu">cor</span>(x, y),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> dataset</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-quartet-desc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-quartet-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;10.1: Описательные статистики квартета Анскомба
+</figcaption>
+<div aria-describedby="tbl-quartet-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">dataset</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">mean_x</th>
+<th style="text-align: right;">mean_y</th>
+<th style="text-align: right;">sd_x</th>
+<th style="text-align: right;">sd_y</th>
+<th style="text-align: right;">cor_xy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.82</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Так, подождите… Мы видели, что&nbsp;значения, по&nbsp;крайней мере, переменной <code>y</code> были разными во&nbsp;всех четырёх датасетах. Теперь&nbsp;же мы видим, что&nbsp;ситуация во&nbsp;всех датасетах одинаковая — так нам говорят описательные статистики и&nbsp;корреляции. Тогда может быть различия не&nbsp;столь существенны, и&nbsp;данные разных датасетов описывают одни и&nbsp;те&nbsp;же закономерности? Возможно, и&nbsp;так — всё&nbsp;же изучать данные, просто смотря на&nbsp;числа в&nbsp;датасете, не&nbsp;самая лучшая идея. Давайте визуализируем данные (<a href="#fig-anscombe" class="quarto-xref">Иллюстрация&nbsp;<span>10.1</span></a>), чтобы&nbsp;точно увидеть, что&nbsp;в них происходит.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-anscombe" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-anscombe-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;10.1: Визуализация квартета Анскомба"><img src="r-visggplot_files/figure-html/fig-anscombe-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.1: Визуализация квартета Анскомба
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Как можно наблюдать, в&nbsp;четырёх датасетах у&nbsp;нас совершенно разные закономерности. Значит&nbsp;ли это, что&nbsp;описательные статистики бессмысленны? Пожалуй, нет. Однако мы явно наблюдали, что&nbsp;их может быть недостаточно, чтобы&nbsp;составить полное представление о&nbsp;том, что происходит в&nbsp;данных.</p>
+</section>
+<section id="r-visggplot-datasaurus" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="r-visggplot-datasaurus"><span class="header-section-number">10.1.2</span> Datasaurus</h3>
+<div class="lab-junior">
+
+</div>
+<p>Кроме квартета Анскомба, есть ещё один пример недостаточности описательных статистик — даже более яркий, чем&nbsp;рассмотренный квартет. Это&nbsp;датасет <code>datasaurus_dozen</code> из&nbsp;пакета <code>datasauRus</code> <span class="citation" data-cites="datasaurus">(<a href="references.html#ref-datasaurus" role="doc-biblioref">Matejka &amp; Fitzmaurice, 2017</a>)</span>. Не&nbsp;будет подробно останавливаться на&nbsp;коде — его можно найти, раскрыв соответствующие блоки — посмотрим на&nbsp;суть. Датасет состоит из&nbsp;тринадцати «субдатасетов», в&nbsp;каждом из&nbsp;которых есть переменные <code>x</code> и&nbsp;<code>y</code> . Посчитаем вновь среднее и&nbsp;стандартное отклонение по&nbsp;обеим переменным, а&nbsp;также корреляцию между ними (<a href="#tbl-datasaurus-desc" class="quarto-xref">Таблица&nbsp;<span>10.2</span></a>). Вновь видим, что описательные статистики и&nbsp;корреляции практически равны — различия в&nbsp;сотых.</p>
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>datasauRus<span class="sc">::</span>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_x =</span> <span class="fu">mean</span>(x),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_x =</span> <span class="fu">sd</span>(x),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_y =</span> <span class="fu">mean</span>(y),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_y =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor_xy =</span> <span class="fu">cor</span>(x, y),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> dataset</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-datasaurus-desc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datasaurus-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;10.2: Описательные статики по&nbsp;<code>datasaurus</code>
+</figcaption>
+<div aria-describedby="tbl-datasaurus-desc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">dataset</th>
+<th style="text-align: right;">mean_x</th>
+<th style="text-align: right;">sd_x</th>
+<th style="text-align: right;">mean_y</th>
+<th style="text-align: right;">sd_y</th>
+<th style="text-align: right;">cor_xy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dino</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">away</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h_lines</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">v_lines</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">x_shape</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">star</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">high_lines</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dots</td>
+<td style="text-align: right;">54.26</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">circle</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.76</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.93</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bullseye</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">slant_up</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">slant_down</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.84</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wide_lines</td>
+<td style="text-align: right;">54.27</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">47.83</td>
+<td style="text-align: right;">26.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Логично было&nbsp;бы ожидать после этого очень схожих паттернов взаимосвязей между переменными, однако если мы нарисуем то, что&nbsp;представленно в&nbsp;датасетах, мы довольно сильно удивимся (<a href="#fig-datasaurus" class="quarto-xref">Иллюстрация&nbsp;<span>10.2</span></a>). Закономерности не&nbsp;просто разные, а <em>абсолютно</em> разные.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Код</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>datasauRus<span class="sc">::</span>datasaurus_dozen <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-datasaurus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-datasaurus-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Иллюстрация&nbsp;10.2: Визуализация datasaurus"><img src="r-visggplot_files/figure-html/fig-datasaurus-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datasaurus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.2: Визуализация <code>datasaurus</code>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Чиселки — это хорошо, но картинки нагляднее
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Всё это нас приводит к&nbsp;следующей важной мысли:</p>
+<ul>
+<li>описательные статистики, безусловно, важны, так как предоставляют базовую информацию о&nbsp;данных</li>
+<li>однако они недостаточны, так как одни и&nbsp;те&nbsp;же значения могут получаться в&nbsp;разных ситуациях</li>
+<li>помимо описательных статистики при&nbsp;изучении данных <em>критически</em> необходима их&nbsp;визуализация</li>
+<li>в&nbsp;противном случае мы рискуем упустить существенную часть информацию о&nbsp;них, составить некорректное представление об&nbsp;изучаемых закономерностях и&nbsp;некорректно спланировать и&nbsp;провести статистический анализ</li>
+<li>графически, к&nbsp;тому&nbsp;же, информацию часто воспринять проще, чем копаться в&nbsp;больших таблицах чисел</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="r-visggplot2-graphs" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="r-visggplot2-graphs"><span class="header-section-number">10.2</span> Виды визуализаций</h2>
+<div class="lab-junior">
+
+</div>
+<div id="fig-exmpl-graphs" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exmpl-graphs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-1.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(a): Столбчатая диаграмма (Bar plot, Bar graph)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-1.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Столбчатая диаграмма (Bar plot, Bar graph)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-2.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(b): Dot plot"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-2.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Dot plot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-3.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(c): Гистограмма (Histogram)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-3.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Гистограмма (Histogram)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-4.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(d): График плотности распределения (Density plot)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-4.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) График плотности распределения (Density plot)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-5.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(e): Ящик с усами (Boxplot)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-5.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(e) Ящик с усами (Boxplot)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-6.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(f): Violin plot"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-6.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(f) Violin plot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-7.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(g): Линейная диаграмма (Line graph, Line plot)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-7.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(g) Линейная диаграмма (Line graph, Line plot)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-8.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(h): График интервальных оценок (Error bar)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-8.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(h) График интервальных оценок (Error bar)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-9.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(i): Диаграмма рассеяния (Scatter plot)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-9.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(i) Диаграмма рассеяния (Scatter plot)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-10.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(j): Пузырьковая диаграмма (Bubble plot)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-10.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(j) Пузырьковая диаграмма (Bubble plot)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-11.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(k): Круговая диаграмма (Pie chart)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-11.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(k) Круговая диаграмма (Pie chart)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-exmpl-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-exmpl-graphs-12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-exmpl-graphs-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-exmpl-graphs-12.png" class="lightbox" data-gallery="fig-exmpl-graphs" title="Иллюстрация&nbsp;10.3&nbsp;(l): Лучевая диаграмма (Sunburts)"><img src="r-visggplot_files/figure-html/fig-exmpl-graphs-12.png" class="img-fluid figure-img" data-ref-parent="fig-exmpl-graphs" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-exmpl-graphs-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(l) Лучевая диаграмма (Sunburts)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exmpl-graphs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.3: Основные виды графиков
+</figcaption>
+</figure>
+</div>
+<p>Больше примеров визуализаций можно найти в&nbsp;<a href="https://r-graph-gallery.com/">The&nbsp;R Graph Gallery</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Histogram vs Bar plot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>text</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Аналитик, не рисуй pie chart!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>text</p>
+</div>
+</div>
+</section>
+<section id="r-visggplot2-pkg" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="r-visggplot2-pkg"><span class="header-section-number">10.3</span> Пакет <code>ggplot2</code></h2>
+<div class="lab-junior">
+
+</div>
+<p>Пакет, которым мы будем постоянно использоваться для&nbsp;создания визуализаций, называется <code>ggplot2</code>. Он является частью <code>tidyverse</code>, поэтому подключается вместе со&nbsp;всеми остальными:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>Мы уже видели это сообщение. В&nbsp;частности, в&nbsp;нём сказано, что подключён пакет <code>ggplot2</code> версии 3.5.2. Также, если вы установили <code>tidyverse</code>, то&nbsp;не&nbsp;нужно устанавливать <code>ggplot2</code> отдельно.</p>
+<p>Если&nbsp;же вы по каким-либо причинам не&nbsp;хотите устанавливать <code>tidyverse</code>, то&nbsp;можно установить <code>ggplot2</code> отдельно с&nbsp;помощью знакомой нам команды <code>install.packages("tidyverse")</code>. Также можно и&nbsp;подключить только <code>ggplot2</code>, не&nbsp;загружая в&nbsp;рабочую сессию весь <code>tidyverse</code> через <code>library(ggplot2)</code>. В&nbsp;общем всё стандартно как&nbsp;и&nbsp;для&nbsp;любого другого пакета.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Откуда&nbsp;<code>2</code> в названии пакета?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Нет ощущения, что&nbsp;если пакет называется <code>ggplot2</code>, то&nbsp;он — вторая версия некоего пакета <code>ggplot</code>? Однако пакет <code>ggplot</code> вроде как нигде не&nbsp;существует…</p>
+<p>Тем не менее, он всё&nbsp;же существовал, как сообщает <a href="https://info201.github.io/ggplot2.html">источник</a>, но&nbsp;был плох, и&nbsp;разработчики решили переписать всё с&nbsp;нуля, создав ныне известный <code>ggplot2</code>. Вторая попытка, как мы увидим, оказалось значительно успешнее и&nbsp;мощнее и&nbsp;обрела невероятную популярность.</p>
+</div>
+</div>
+</div>
+<section id="r-visggplot2-diamonds" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="r-visggplot2-diamonds"><span class="header-section-number">10.3.1</span> Датасет <code>diamonds</code></h3>
+<div class="lab-junior">
+
+</div>
+<p>Кроме функций из&nbsp;пакета <code>ggplot2</code>, мы будем в&nbsp;примерах использовать датасет <code>diamonds</code>, который тоже содержится в&nbsp;этом пакете. При&nbsp;подключенном пакете он доступен по&nbsp;собственному названию (<a href="#lst-diamonds-data" class="quarto-xref">Код&nbsp;<span>10.4</span></a>), из&nbsp;которого следует, что&nbsp;это данные про&nbsp;бриллианты.</p>
+<div id="lst-diamonds-data" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-diamonds-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Код&nbsp;10.4: Датасет <code>diamonds</code>
+</figcaption>
+<div aria-describedby="lst-diamonds-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>diamonds</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 53,940 × 10
+   carat cut       color clarity depth table price     x     y     z
+   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+ 2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+ 3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+ 4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+ 5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+ 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
+ 7  0.24 Very Good I     VVS1     62.3    57   336  3.95  3.98  2.47
+ 8  0.26 Very Good H     SI1      61.9    55   337  4.07  4.11  2.53
+ 9  0.22 Fair      E     VS2      65.1    61   337  3.87  3.78  2.49
+10  0.23 Very Good H     VS1      59.4    61   338  4     4.05  2.39
+# ℹ 53,930 more rows</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Давайте сориентируемся в&nbsp;нём, чтобы&nbsp;понимать, что&nbsp;мы будет рисовать. Датасет содержит 53940 наблюдений и&nbsp;10 переменных. В&nbsp;нём содержится информация о&nbsp;цене бриллиантов и&nbsp;их характеристиках. Ниже приведено описание переменных.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Описание переменных датасета <code>diamonds</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>price</code> — цена бриллианта (в&nbsp;долларах США)</li>
+<li><code>carat</code> — вес бриллианта (в&nbsp;каратах<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>)</li>
+<li><code>cut</code> — качество огранки бриллианта (значения: <code>Fair</code>, <code>Good</code>, <code>Very Good</code>, <code>Premium</code>, <code>Ideal</code>)</li>
+<li><code>color</code> — цвет бриллианта (значения: <code>D</code> — лучший, <code>E</code>, <code>F</code>, <code>G</code>, <code>H</code>, <code>I</code>, <code>J</code> — худший)</li>
+<li><code>clarity</code> — чистота бриллианта (значения: <code>I1</code> — худшая, <code>SI2</code>, <code>SI1</code>, <code>VS2</code>, <code>VS1</code>, <code>VVS2</code>, <code>VVS1</code>, <code>IF</code> — лучшая)</li>
+<li><code>x</code> — длина бриллианта (в&nbsp;мм)</li>
+<li><code>y</code> — ширина бриллианта (в&nbsp;мм)</li>
+<li><code>z</code> — глубина бриллианта (в&nbsp;мм)</li>
+<li><code>depth</code> — показатель глубины (вычисляется как <span class="math inline">\(\frac{2z}{x+y}\)</span>)</li>
+<li><code>table</code> — отношение ширины площадки<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> к&nbsp;ширине камня в&nbsp;области рундиста<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (в&nbsp;процентах)</li>
+</ul>
+</div>
+</div>
+<p>Переменные <code>carat</code>, <code>depth</code>, <code>table</code>, <code>price</code>, <code>×</code>, <code>y</code> и&nbsp;<code>z</code>&nbsp;— числовые; <code>cut</code>, <code>color</code>, <code>clarity</code>&nbsp;— упорядоченные факторы<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>Проверим, есть&nbsp;ли в&nbsp;данных пропущенные значения:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">sapply</span>(is.na) <span class="sc">%&gt;%</span> <span class="fu">apply</span>(<span class="dv">2</span>, sum)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  carat     cut   color clarity   depth   table   price       x       y       z 
+      0       0       0       0       0       0       0       0       0       0 </code></pre>
+</div>
+</div>
+<p>Нет. Ну, и хорошо.</p>
+</section>
+</section>
+<section id="r-visggplot2-grammar" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="r-visggplot2-grammar"><span class="header-section-number">10.4</span> Грамматика графиков</h2>
+<div class="lab-junior">
+
+</div>
+<p>Знакомство с&nbsp;<code>ggplot2</code> невозможно без&nbsp;обсуждения идеи, которая за&nbsp;ним стоит. Описать в&nbsp;коде построение картинки — задача довольно непростая, и&nbsp;для&nbsp;её решения можно придумать много вариантов. В&nbsp;<code>ggplot2</code> используется концепция «грамматики графиков», или&nbsp;<strong>The Grammar of&nbsp;Graphics</strong> <span class="citation" data-cites="grammar-of-graphs">(<a href="references.html#ref-grammar-of-graphs" role="doc-biblioref">Wilkinson, 2005</a>)</span>, которая определяет принцип работы всего пакета. Мы не&nbsp;будем погружаться в&nbsp;истоки, а&nbsp;посмотрим на&nbsp;развитие этой концепции автором пакета Хадли Викхамом, разработавшим подход <strong>A&nbsp;Layered Grammar of&nbsp;Graphics</strong> <span class="citation" data-cites="layered-grammar-hadley">(<a href="references.html#ref-layered-grammar-hadley" role="doc-biblioref">Wickham, 2010</a>)</span>, который и&nbsp;лёг в&nbsp;основу работы <code>ggplot2</code>.</p>
+<p>Согласно этой концепции <span class="citation" data-cites="ggplot2-hadley">(<a href="references.html#ref-ggplot2-hadley" role="doc-biblioref">Wickham et al., 2019</a>)</span>, график состоит из&nbsp;нескольких относительно независимых друг от&nbsp;друга <strong>слоёв</strong>, которые управляют определёнными аспектами визуализации. Всего можно выделить семь слоёв (<a href="#fig-plot-layers" class="quarto-xref">Иллюстрация&nbsp;<span>10.4</span></a>):</p>
+<ul>
+<li><strong>data</strong> задаёт, какие данные мы будем визуализировать,</li>
+<li><strong>mapping</strong> описывает, какие переменные и&nbsp;с&nbsp;помощью чего будут отображены на&nbsp;графике,</li>
+<li><strong>layers</strong> определяет, как именно будут отображены данные — здесь есть два варианта:
+<ul>
+<li><strong>geoms</strong> — описать геометрические элементы, которые будут отображать исходные данные,</li>
+<li><strong>stats</strong> — описать статистические преобразования, результаты которых будут отображены на&nbsp;графике</li>
+</ul></li>
+<li><strong>scales</strong> позволяет настроить отображение всего того, что&nbsp;мы задали на&nbsp;предыдущих слоях,</li>
+<li><strong>facets</strong> даёт возможность разбить график на&nbsp;подграфики, чтобы&nbsp;закономерности данных лучше считывались,</li>
+<li><strong>coordinates</strong> управляет координатной системой,</li>
+<li><strong>theme</strong> управляет оформлением практически всех элементов графика для&nbsp;их тончайшей настройки, чтобы&nbsp;навести невероятную красоту.</li>
+</ul>
+<div id="fig-plot-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/r-visggplot/plot-layers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Иллюстрация&nbsp;10.4: Концептуальная схема строения визуализации в&nbsp;подходе A&nbsp;Layered Grammar of&nbsp;Graphics [по @ggplot2-hadley]"><img src="img/r-visggplot/plot-layers.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.4: Концептуальная схема строения визуализации в&nbsp;подходе A&nbsp;Layered Grammar of&nbsp;Graphics <span class="citation" data-cites="ggplot2-hadley">(по <a href="references.html#ref-ggplot2-hadley" role="doc-biblioref">Wickham et al., 2019</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>Первые три слоя — data, mapping и&nbsp;layers — являются обязательными, чтобы&nbsp;визуализация вообще построилась. Остальные факультативны — используются, если нам нужно исправить поведение пакета, заданное по&nbsp;умолчанию.</p>
+<div class="quote small pers">
+<p>— Чё-т эт как-т абстрактно всё слишком… Ничё не понял…</p>
+</div>
+<p>Концепция, действительно, звучит в&nbsp;некоторой мере абстрактно — на&nbsp;то она и&nbsp;концепция. Однако, как мы увидим далее, все элементы, обозначенные выше, представлены функциями пакета <code>ggplot2</code>.</p>
+<div class="quote small pers">
+<p>— Ладно, ладно… Погнали уже рисовать!</p>
+</div>
+</section>
+<section id="r-visggplot2-basics" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="r-visggplot2-basics"><span class="header-section-number">10.5</span> Базовый алгоритм построения визуализации</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="r-visggplot_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="r-visggplot_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> price))</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-12-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="r-visggplot_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="r-visggplot_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="r-visggplot-aes" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="r-visggplot-aes"><span class="header-section-number">10.6</span> Эстетики (aesthetics)</h2>
+<div class="lab-junior">
+
+</div>
+<section id="r-visggplot-aes-color" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="r-visggplot-aes-color"><span class="header-section-number">10.6.1</span> Цвет</h3>
+<div class="lab-junior">
+
+</div>
+<p>В&nbsp;R встроено безумное количество цветов — 657. Полный список можно получить, вызвав функцию <code>colors()</code>. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Все цвета, доступные в&nbsp;R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="r-visggplot_files/figure-html/colors-pic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="r-visggplot_files/figure-html/colors-pic-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="r-visggplot-aes-shape" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="r-visggplot-aes-shape"><span class="header-section-number">10.6.2</span> Форма</h3>
+<div class="lab-junior">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-shapes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-shapes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Иллюстрация&nbsp;10.5: Формы точек, доступные в R"><img src="r-visggplot_files/figure-html/fig-shapes-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.5: Формы точек, доступные в R
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="r-visggplot-aes-linetype" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="r-visggplot-aes-linetype"><span class="header-section-number">10.6.3</span> Тип линии</h3>
+<div class="lab-junior">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-linetypes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="r-visggplot_files/figure-html/fig-linetypes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Иллюстрация&nbsp;10.6: Типы линии, доступные в R"><img src="r-visggplot_files/figure-html/fig-linetypes-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linetypes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Иллюстрация&nbsp;10.6: Типы линии, доступные в R
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="r-visggplot-geoms" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="r-visggplot-geoms"><span class="header-section-number">10.7</span> Геомы (geoms)</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="r-visggplot-stats" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="r-visggplot-stats"><span class="header-section-number">10.8</span> Статы (stats)</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="r-visggplot-facets" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="r-visggplot-facets"><span class="header-section-number">10.9</span> Фасеты (facets)</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="r-visggplot-scales" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="r-visggplot-scales"><span class="header-section-number">10.10</span> Шкалы (scales)</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="r-visggplot-theme" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="r-visggplot-theme"><span class="header-section-number">10.11</span> Тема (theme)</h2>
+<div class="lab-junior">
+
+</div>
 <hr>
 <section id="session_info" class="level6 unnumbered">
 <h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
+<pre><code>R version 4.5.1 (2025-06-13)
 Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.5
+Running under: macOS Sequoia 15.4.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -631,386 +1851,314 @@ tzcode source: internal
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+ [1] lubridate_1.9.4 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [5] purrr_1.0.4     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   
+ [9] ggplot2_3.5.2   tidyverse_2.0.0
+
 loaded via a namespace (and not attached):
- [1] htmlwidgets_1.6.4 compiler_4.4.0    fastmap_1.2.0     cli_3.6.2        
- [5] tools_4.4.0       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.27   
- [9] knitr_1.47        jsonlite_1.8.8    xfun_0.44         digest_0.6.35    
-[13] rlang_1.1.4       evaluate_0.23    </code></pre>
+ [1] utf8_1.2.5         generics_0.1.4     stringi_1.8.7      lattice_0.22-7    
+ [5] hms_1.1.3          digest_0.6.37      magrittr_2.0.3     evaluate_1.0.3    
+ [9] grid_4.5.1         timechange_0.3.0   RColorBrewer_1.1-3 fastmap_1.2.0     
+[13] jsonlite_2.0.0     Matrix_1.7-3       backports_1.5.0    nnet_7.3-20       
+[17] Formula_1.2-5      gridExtra_2.3      mgcv_1.9-3         viridisLite_0.4.2 
+[21] scales_1.4.0       codetools_0.2-20   cli_3.6.5          rlang_1.1.6       
+[25] splines_4.5.1      Hmisc_5.2-3        base64enc_0.1-3    withr_3.0.2       
+[29] yaml_2.3.10        tools_4.5.1        tzdb_0.5.0         checkmate_2.3.2   
+[33] htmlTable_2.4.3    colorspace_2.1-1   rpart_4.1.24       vctrs_0.6.5       
+[37] R6_2.6.1           lifecycle_1.0.4    htmlwidgets_1.6.4  foreign_0.8-90    
+[41] cluster_2.1.8.1    pkgconfig_2.0.3    pillar_1.10.2      gtable_0.3.6      
+[45] data.table_1.17.2  glue_1.8.0         xfun_0.52          tidyselect_1.2.1  
+[49] rstudioapi_0.17.1  knitr_1.50         farver_2.1.2       htmltools_0.5.8.1 
+[53] nlme_3.1-168       datasauRus_0.1.9   rmarkdown_2.29     labeling_0.4.3    
+[57] compiler_4.5.1    </code></pre>
 </div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-anscombe1973" class="csl-entry" role="listitem">
+Anscombe, F. J. (1973). Graphs in statistical analysis. <em>The American Statictician</em>, <em>27</em>(1), 17–21.
+</div>
+<div id="ref-datasaurus" class="csl-entry" role="listitem">
+Matejka, J., &amp; Fitzmaurice, G. (2017). Same stats, different graphs: Generating datasets with varied appearance and identical statistics through simulated annealing. <em>Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems</em>, 1290–1294. <a href="https://doi.org/10.1145/3025453.3025912">https://doi.org/10.1145/3025453.3025912</a>
+</div>
+<div id="ref-layered-grammar-hadley" class="csl-entry" role="listitem">
+Wickham, H. (2010). A layered grammar of graphics. <em>Journal of Computational and Graphical Statistics</em>, <em>19</em>(1), 3–28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>
+</div>
+<div id="ref-ggplot2-hadley" class="csl-entry" role="listitem">
+Wickham, H., Navarro, D., &amp; Pedersen, T. L. (2019). <em>ggplot2: Elegant graphics for data analysis (3e)</em>. Chapman; Hall/CRC. <a href="https://ggplot2-book.org/">https://ggplot2-book.org/</a>
+</div>
+<div id="ref-grammar-of-graphs" class="csl-entry" role="listitem">
+Wilkinson, L. (2005). <em>The grammar of graphics</em>. Springer-Verlag New York. <a href="https://doi.org/10.1007/0-387-28695-0">https://doi.org/10.1007/0-387-28695-0</a>
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>В другом варианте, Энскомба.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Мы <a href="./r-strings.html#r-strings-ext-pkgs">говорили</a>, что&nbsp;базовый R состоит из&nbsp;нескольких пакетов, автоматически подключаемых при&nbsp;запуске. <code>datasets</code> является один таких пакетов.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Мера веса драгоценных камней: 1 карат равен 0.2 грамма.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Площадка — элемент огранки бриллианта, самая большая верхняя грань.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Рундист — элемент огранки бриллианта, разделяющий его верхнюю (корона) и&nbsp;нижнюю (павильон) части; место, в&nbsp;котором камень имеет наибольшую ширину.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Если вы успели подзабыть, что&nbsp;это такое, см.&nbsp;<a href="./r-datastructures.html#r-datastructures-factor-ordered">раздел про&nbsp;упорядоченные факторы</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Скопировано!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Скопировано!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1018,198 +2166,206 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r-visbase.html" class="pagination-link" aria-label="Визуализация в базовом R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span>
+      <a href="./r-tidy.html" class="pagination-link" aria-label="Предобработка данных">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-oop.html" class="pagination-link" aria-label="ООП в R">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-advggplot.html" class="pagination-link" aria-label="Визуализация в&nbsp;`ggplot2`&nbsp;II">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

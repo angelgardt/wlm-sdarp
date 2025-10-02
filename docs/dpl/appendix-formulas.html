@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - Приложение F — Формулы</title>
+<title>Приложение F — Формулы – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,17 +33,23 @@ ul.task-list li input[type="checkbox"] {
 <link href="./appendix-git.html" rel="next">
 <link href="./appendix-proglang.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-554ea854cf0619dcc30cc54aeb8f7717.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,7 +102,7 @@ background-size: cover;
       }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -128,28 +134,190 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-formulas.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Формулы</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-formulas.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Формулы</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-numbers.html">Приложения</a></li><li class="breadcrumb-item"><a href="./appendix-formulas.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Формулы</span></a></li></ol></nav>
       <h1 class="title"><span id="appendix-formulas" class="quarto-section-identifier">Приложение F — Формулы</span></h1>
                       </div>
   </div>
@@ -201,52 +369,23 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -263,50 +402,56 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,78 +460,97 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория измерений</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+  <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория измерений</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -395,51 +559,57 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -448,21 +618,51 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-hierreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-oneway-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Однофакторный дисперсионный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -481,13 +681,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -538,32 +738,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-survey-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Основы опросных методов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -622,11 +828,13 @@ window.Quarto = {
   <li><a href="#appendix-formulas-trig-prod-to-sum" id="toc-appendix-formulas-trig-prod-to-sum" class="nav-link" data-scroll-target="#appendix-formulas-trig-prod-to-sum"><span class="header-section-number">F.5.11</span> Преобразование произведения в сумму</a></li>
   <li><a href="#appendix-formulas-trig-sum-to-prod" id="toc-appendix-formulas-trig-sum-to-prod" class="nav-link" data-scroll-target="#appendix-formulas-trig-sum-to-prod"><span class="header-section-number">F.5.12</span> Преобразование суммы в произведение</a></li>
   </ul></li>
+  <li><a href="#appendix-formulas-hyperbolic" id="toc-appendix-formulas-hyperbolic" class="nav-link" data-scroll-target="#appendix-formulas-hyperbolic"><span class="header-section-number">F.6</span> Гиперболические функции</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -819,43 +1027,67 @@ c' = 0, \, c = \text{const}
 <p><span id="eq-frmapp-deriv-cot"><span class="math display">\[
 (\cot x)' = -\frac{1}{\sin^2 x}
 \tag{F.50}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-sec"><span class="math display">\[
+(\sec x)' = \frac{\sin x}{\cos^2 x}
+\tag{F.51}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-sec"><span class="math display">\[
+(\csc x)' = -\frac{\cos x}{\sin^2 x}
+\tag{F.52}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arcsin"><span class="math display">\[
 (\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}
-\tag{F.51}\]</span></span></p>
+\tag{F.53}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arccos"><span class="math display">\[
 (\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
-\tag{F.52}\]</span></span></p>
+\tag{F.54}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arctan"><span class="math display">\[
 (\arctan x)' = \frac{1}{1 + x^2}
-\tag{F.53}\]</span></span></p>
+\tag{F.55}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arccot"><span class="math display">\[
 (\mathop{\mathrm{arccot}}x)' = -\frac{1}{1 + x^2}
-\tag{F.54}\]</span></span></p>
+\tag{F.56}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arcsec"><span class="math display">\[
+(\mathop{\mathrm{arcsec}}x)' = \frac{1}{|x|\sqrt{x^2 - 1}}
+\tag{F.57}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arccsc"><span class="math display">\[
+(\mathop{\mathrm{arccsc}}x)' = -\frac{1}{|x|\sqrt{x^2 - 1}}
+\tag{F.58}\]</span></span></p>
 </div><div class="column">
 <p><span id="eq-frmapp-deriv-sinh"><span class="math display">\[
 (\sinh x)' = \cosh x
-\tag{F.55}\]</span></span></p>
+\tag{F.59}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-cosh"><span class="math display">\[
 (\cosh x)' = \sinh x
-\tag{F.56}\]</span></span></p>
+\tag{F.60}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-tanh"><span class="math display">\[
 (\tanh x)' = \frac{1}{\cosh^2 x}
-\tag{F.57}\]</span></span></p>
+\tag{F.61}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-coth"><span class="math display">\[
 (\coth x)' = -\frac{1}{\sinh^2 x}
-\tag{F.58}\]</span></span></p>
+\tag{F.62}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-sech"><span class="math display">\[
+(\mathop{\mathrm{sech}}x)' = -\frac{\sinh x}{\cosh^2 x}
+\tag{F.63}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-csch"><span class="math display">\[
+(\mathop{\mathrm{csch}}x)' = -\frac{\cosh x}{\sinh^2 x}
+\tag{F.64}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arsinh"><span class="math display">\[
 (\mathop{\mathrm{arsinh}})' = \frac{1}{\sqrt{x^2 + 1}}
-\tag{F.59}\]</span></span></p>
+\tag{F.65}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arcosh"><span class="math display">\[
 (\mathop{\mathrm{arcoth}})' = \frac{1}{\sqrt{x^2 - 1}}
-\tag{F.60}\]</span></span></p>
+\tag{F.66}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-artanh"><span class="math display">\[
 (\mathop{\mathrm{artanh}})' = \frac{1}{1 - x^2}
-\tag{F.61}\]</span></span></p>
+\tag{F.67}\]</span></span></p>
 <p><span id="eq-frmapp-deriv-arcoth"><span class="math display">\[
 (\mathop{\mathrm{arcoth}})' = \frac{1}{1 - x^2}
-\tag{F.62}\]</span></span></p>
+\tag{F.68}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arsech"><span class="math display">\[
+(\mathop{\mathrm{arsech}})' = -\frac{1}{x(x+1)\sqrt{\dfrac{1 - x}{1 + x}}}
+\tag{F.69}\]</span></span></p>
+<p><span id="eq-frmapp-deriv-arcsch"><span class="math display">\[
+(\mathop{\mathrm{arcsch}})' = -\frac{1}{x^2\sqrt{1 + \dfrac{1}{x^2}}}
+\tag{F.70}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -866,7 +1098,7 @@ c' = 0, \, c = \text{const}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="appendix-formulas_files/figure-html/trig_circle-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="appendix-formulas_files/figure-html/trig_circle-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="appendix-formulas_files/figure-html/trig_circle-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -877,29 +1109,29 @@ c' = 0, \, c = \text{const}
 <div class="column">
 <p><span id="eq-frmapp-trig-basic-sec"><span class="math display">\[
 \sec \alpha = \frac{1}{\cos \alpha}
-\tag{F.63}\]</span></span></p>
+\tag{F.71}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-csc"><span class="math display">\[
 \csc \alpha = \frac{1}{\sin \alpha}
-\tag{F.64}\]</span></span></p>
+\tag{F.72}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-tan"><span class="math display">\[
 \tan \alpha = \frac{\sin \alpha}{\cos \alpha} = \frac{1}{\cot \alpha}
-\tag{F.65}\]</span></span></p>
+\tag{F.73}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-cot"><span class="math display">\[
 \cot \alpha = \frac{\cos \alpha}{\sin \alpha} = \frac{1}{\tan \alpha}
-\tag{F.66}\]</span></span></p>
+\tag{F.74}\]</span></span></p>
 </div><div class="column">
 <p><span id="eq-frmapp-trig-basic-seccsc-to-tan"><span class="math display">\[
 \frac{\sec \alpha}{\csc \alpha} = \tan \alpha
-\tag{F.67}\]</span></span></p>
+\tag{F.75}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-cscsec-to-cot"><span class="math display">\[
 \frac{\csc \alpha}{\sec \alpha} = \cot \alpha
-\tag{F.68}\]</span></span></p>
+\tag{F.76}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-tancot-frac1"><span class="math display">\[
 \frac{\tan \alpha}{\cot \alpha} = 1
-\tag{F.69}\]</span></span></p>
+\tag{F.77}\]</span></span></p>
 <p><span id="eq-frmapp-trig-basic-tancot-prod1"><span class="math display">\[
 \tan \alpha \cot \alpha = 1
-\tag{F.70}\]</span></span></p>
+\tag{F.78}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -907,22 +1139,22 @@ c' = 0, \, c = \text{const}
 <h3 data-number="F.5.2" class="anchored" data-anchor-id="appendix-formulas-trig-pythagorean-identities"><span class="header-section-number">F.5.2</span> Основное тригонометрическое тождество</h3>
 <p><span id="eq-frmapp-trigmain"><span class="math display">\[
 \sin^2 \alpha + \cos^2 \alpha = 1
-\tag{F.71}\]</span></span></p>
+\tag{F.79}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-sin"><span class="math display">\[
 \sin \alpha = \pm \sqrt{1 - \cos^2 \alpha}
-\tag{F.72}\]</span></span></p>
+\tag{F.80}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-cos"><span class="math display">\[
 \cos \alpha = \pm \sqrt{1 - \sin^2 \alpha}
-\tag{F.73}\]</span></span></p>
+\tag{F.81}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-cot"><span class="math display">\[
 1 + \cot^2 \alpha = \csc^2 \alpha
-\tag{F.74}\]</span></span></p>
+\tag{F.82}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-tan"><span class="math display">\[
 \tan^2 \alpha + 1 = \sec ^2 \alpha
-\tag{F.75}\]</span></span></p>
+\tag{F.83}\]</span></span></p>
 <p><span id="eq-frmapp-trigmain-sec"><span class="math display">\[
 \sec^2 \alpha + \csc^2 \alpha = \sec^2 \alpha \cdot \csc^2 \alpha
-\tag{F.76}\]</span></span></p>
+\tag{F.84}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-reflections" class="level3" data-number="F.5.3">
 <h3 data-number="F.5.3" class="anchored" data-anchor-id="appendix-formulas-trig-reflections"><span class="header-section-number">F.5.3</span> Отражения</h3>
@@ -930,7 +1162,7 @@ c' = 0, \, c = \text{const}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="appendix-formulas_files/figure-html/trig_reflections_circle-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="appendix-formulas_files/figure-html/trig_reflections_circle-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="appendix-formulas_files/figure-html/trig_reflections_circle-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -940,9 +1172,9 @@ c' = 0, \, c = \text{const}
 <p>Выражает свойство чётности функции<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-0-sin"><span class="math display">\[\sin (-\alpha) = -\sin \alpha \tag{F.77}\]</span></span> <span id="eq-frmapp-mirr-0-tan"><span class="math display">\[\tan (-\alpha) = -\tan \alpha \tag{F.78}\]</span></span> <span id="eq-frmapp-mirr-0-sec"><span class="math display">\[\sec (-\alpha) = \sec \alpha \tag{F.79}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-0-sin"><span class="math display">\[\sin (-\alpha) = -\sin \alpha \tag{F.85}\]</span></span> <span id="eq-frmapp-mirr-0-tan"><span class="math display">\[\tan (-\alpha) = -\tan \alpha \tag{F.86}\]</span></span> <span id="eq-frmapp-mirr-0-sec"><span class="math display">\[\sec (-\alpha) = \sec \alpha \tag{F.87}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-0-cos"><span class="math display">\[\cos (-\alpha) = \cos \alpha \tag{F.80}\]</span></span> <span id="eq-frmapp-mirr-0-cot"><span class="math display">\[\cot (-\alpha) = -\cot \alpha \tag{F.81}\]</span></span> <span id="eq-frmapp-mirr-0-csc"><span class="math display">\[\csc (-\alpha) = -\csc \alpha \tag{F.82}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-0-cos"><span class="math display">\[\cos (-\alpha) = \cos \alpha \tag{F.88}\]</span></span> <span id="eq-frmapp-mirr-0-cot"><span class="math display">\[\cot (-\alpha) = -\cot \alpha \tag{F.89}\]</span></span> <span id="eq-frmapp-mirr-0-csc"><span class="math display">\[\csc (-\alpha) = -\csc \alpha \tag{F.90}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -950,9 +1182,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.3.2" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi4"><span class="header-section-number">F.5.3.2</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{4}\)</span></h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-pi4-sin"><span class="math display">\[\sin (\frac{\pi}{2}-\alpha) = \cos \alpha \tag{F.83}\]</span></span> <span id="eq-frmapp-mirr-pi4-tan"><span class="math display">\[\tan \Big(\frac{\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.84}\]</span></span> <span id="eq-frmapp-mirr-pi4-sec"><span class="math display">\[\sec \Big(\frac{\pi}{2}-\alpha\Big) = \csc \alpha \tag{F.85}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi4-sin"><span class="math display">\[\sin (\frac{\pi}{2}-\alpha) = \cos \alpha \tag{F.91}\]</span></span> <span id="eq-frmapp-mirr-pi4-tan"><span class="math display">\[\tan \Big(\frac{\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.92}\]</span></span> <span id="eq-frmapp-mirr-pi4-sec"><span class="math display">\[\sec \Big(\frac{\pi}{2}-\alpha\Big) = \csc \alpha \tag{F.93}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-pi4-cos"><span class="math display">\[\cos \Big(\frac{\pi}{2}-\alpha\Big) = \sin \alpha \tag{F.86}\]</span></span> <span id="eq-frmapp-mirr-pi4-cot"><span class="math display">\[\cot \Big(\frac{\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.87}\]</span></span> <span id="eq-frmapp-mirr-pi4-csc"><span class="math display">\[\csc \Big(\frac{\pi}{2}-\alpha\Big) = \sec \alpha \tag{F.88}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi4-cos"><span class="math display">\[\cos \Big(\frac{\pi}{2}-\alpha\Big) = \sin \alpha \tag{F.94}\]</span></span> <span id="eq-frmapp-mirr-pi4-cot"><span class="math display">\[\cot \Big(\frac{\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.95}\]</span></span> <span id="eq-frmapp-mirr-pi4-csc"><span class="math display">\[\csc \Big(\frac{\pi}{2}-\alpha\Big) = \sec \alpha \tag{F.96}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -960,9 +1192,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.3.3" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi2"><span class="header-section-number">F.5.3.3</span> Относительно <span class="math inline">\(\varphi = \frac{\pi}{2}\)</span></h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-pi2-sin"><span class="math display">\[\sin (\pi-\alpha) = \sin \alpha \tag{F.89}\]</span></span> <span id="eq-frmapp-mirr-pi2-tan"><span class="math display">\[\tan (\pi-\alpha) = -\tan \alpha \tag{F.90}\]</span></span> <span id="eq-frmapp-mirr-pi2-sec"><span class="math display">\[\sec (\pi-\alpha) = -\sec \alpha \tag{F.91}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi2-sin"><span class="math display">\[\sin (\pi-\alpha) = \sin \alpha \tag{F.97}\]</span></span> <span id="eq-frmapp-mirr-pi2-tan"><span class="math display">\[\tan (\pi-\alpha) = -\tan \alpha \tag{F.98}\]</span></span> <span id="eq-frmapp-mirr-pi2-sec"><span class="math display">\[\sec (\pi-\alpha) = -\sec \alpha \tag{F.99}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-pi2-cos"><span class="math display">\[\cos (\pi-\alpha) = -\cos \alpha \tag{F.92}\]</span></span> <span id="eq-frmapp-mirr-pi2-cot"><span class="math display">\[\cot (\pi-\alpha) = -\cot \alpha \tag{F.93}\]</span></span> <span id="eq-frmapp-mirr-pi2-csc"><span class="math display">\[\csc (\pi-\alpha) = \csc \alpha \tag{F.94}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi2-cos"><span class="math display">\[\cos (\pi-\alpha) = -\cos \alpha \tag{F.100}\]</span></span> <span id="eq-frmapp-mirr-pi2-cot"><span class="math display">\[\cot (\pi-\alpha) = -\cot \alpha \tag{F.101}\]</span></span> <span id="eq-frmapp-mirr-pi2-csc"><span class="math display">\[\csc (\pi-\alpha) = \csc \alpha \tag{F.102}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -970,15 +1202,15 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.3.4" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-3pi2"><span class="header-section-number">F.5.3.4</span> Относительно <span class="math inline">\(\varphi = \frac{3\pi}{4}\)</span></h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-mirr-3pi2-sin"><span class="math display">\[\sin \Big(\frac{3\pi}{2}-\alpha\Big) = -\cos \alpha \tag{F.95}\]</span></span> <span id="eq-frmapp-mirr-3pi2-tan"><span class="math display">\[\tan \Big(\frac{3\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.96}\]</span></span> <span id="eq-frmapp-mirr-3pi2-sec"><span class="math display">\[\sec \Big(\frac{3\pi}{2}-\alpha\Big) = -\csc \alpha \tag{F.97}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-3pi2-sin"><span class="math display">\[\sin \Big(\frac{3\pi}{2}-\alpha\Big) = -\cos \alpha \tag{F.103}\]</span></span> <span id="eq-frmapp-mirr-3pi2-tan"><span class="math display">\[\tan \Big(\frac{3\pi}{2}-\alpha\Big) = \cot \alpha \tag{F.104}\]</span></span> <span id="eq-frmapp-mirr-3pi2-sec"><span class="math display">\[\sec \Big(\frac{3\pi}{2}-\alpha\Big) = -\csc \alpha \tag{F.105}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-mirr-3pi2-cos"><span class="math display">\[\cos \Big(\frac{3\pi}{2}-\alpha\Big) = -\sin \alpha \tag{F.98}\]</span></span> <span id="eq-frmapp-mirr-3pi2-cot"><span class="math display">\[\cot \Big(\frac{3\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.99}\]</span></span> <span id="eq-frmapp-mirr-3pi2-csc"><span class="math display">\[\csc \Big(\frac{3\pi}{2}-\alpha\Big) = -\sec \alpha \tag{F.100}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-3pi2-cos"><span class="math display">\[\cos \Big(\frac{3\pi}{2}-\alpha\Big) = -\sin \alpha \tag{F.106}\]</span></span> <span id="eq-frmapp-mirr-3pi2-cot"><span class="math display">\[\cot \Big(\frac{3\pi}{2}-\alpha\Big) = \tan \alpha \tag{F.107}\]</span></span> <span id="eq-frmapp-mirr-3pi2-csc"><span class="math display">\[\csc \Big(\frac{3\pi}{2}-\alpha\Big) = -\sec \alpha \tag{F.108}\]</span></span></p>
 </div>
 </div>
 </section>
 <section id="appendix-formulas-trig-reflections-pi" class="level4" data-number="F.5.3.5">
 <h4 data-number="F.5.3.5" class="anchored" data-anchor-id="appendix-formulas-trig-reflections-pi"><span class="header-section-number">F.5.3.5</span> Относительно <span class="math inline">\(\varphi = \pi\)</span></h4>
-<p><span id="eq-frmapp-mirr-pi-sin"><span class="math display">\[\sin (2\pi - \alpha) = -\sin \alpha = \sin (-\alpha) \tag{F.101}\]</span></span> <span id="eq-frmapp-mirr-pi-tan"><span class="math display">\[\tan (2\pi - \alpha) = -\tan \alpha = \tan (-\alpha) \tag{F.102}\]</span></span> <span id="eq-frmapp-mirr-pi-sec"><span class="math display">\[\sec (2\pi - \alpha) = \sec \alpha = \sec (-\alpha) \tag{F.103}\]</span></span> <span id="eq-frmapp-mirr-pi-cos"><span class="math display">\[\cos (2\pi - \alpha) = \cos \alpha = \cos (-\alpha) \tag{F.104}\]</span></span> <span id="eq-frmapp-mirr-pi-cot"><span class="math display">\[\cot (2\pi - \alpha) = -\cot \alpha = \cot (-\alpha) \tag{F.105}\]</span></span> <span id="eq-frmapp-mirr-pi-csc"><span class="math display">\[\csc (2\pi - \alpha) = -\csc \alpha = \csc (-\alpha) \tag{F.106}\]</span></span></p>
+<p><span id="eq-frmapp-mirr-pi-sin"><span class="math display">\[\sin (2\pi - \alpha) = -\sin \alpha = \sin (-\alpha) \tag{F.109}\]</span></span> <span id="eq-frmapp-mirr-pi-tan"><span class="math display">\[\tan (2\pi - \alpha) = -\tan \alpha = \tan (-\alpha) \tag{F.110}\]</span></span> <span id="eq-frmapp-mirr-pi-sec"><span class="math display">\[\sec (2\pi - \alpha) = \sec \alpha = \sec (-\alpha) \tag{F.111}\]</span></span> <span id="eq-frmapp-mirr-pi-cos"><span class="math display">\[\cos (2\pi - \alpha) = \cos \alpha = \cos (-\alpha) \tag{F.112}\]</span></span> <span id="eq-frmapp-mirr-pi-cot"><span class="math display">\[\cot (2\pi - \alpha) = -\cot \alpha = \cot (-\alpha) \tag{F.113}\]</span></span> <span id="eq-frmapp-mirr-pi-csc"><span class="math display">\[\csc (2\pi - \alpha) = -\csc \alpha = \csc (-\alpha) \tag{F.114}\]</span></span></p>
 </section>
 </section>
 <section id="appendix-formulas-trig-shift" class="level3" data-number="F.5.4">
@@ -987,7 +1219,7 @@ c' = 0, \, c = \text{const}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="appendix-formulas_files/figure-html/trig_shift_circle-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="appendix-formulas_files/figure-html/trig_shift_circle-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="appendix-formulas_files/figure-html/trig_shift_circle-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -996,7 +1228,7 @@ c' = 0, \, c = \text{const}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="appendix-formulas_files/figure-html/trig_shift_graphs-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="appendix-formulas_files/figure-html/trig_shift_graphs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="appendix-formulas_files/figure-html/trig_shift_graphs-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1006,9 +1238,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.4.1" class="anchored" data-anchor-id="appendix-formulas-trig-shift-by-one-quarter"><span class="header-section-number">F.5.4.1</span> На четверть периода</h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-shift-quart-sin"><span class="math display">\[\sin \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm\cos \alpha \tag{F.107}\]</span></span> <span id="eq-frmapp-shift-quart-tan"><span class="math display">\[\tan \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\tan \alpha \pm 1}{1 \mp \tan \alpha} \tag{F.108}\]</span></span> <span id="eq-frmapp-shift-quart-sec"><span class="math display">\[\sec \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \csc \alpha \tag{F.109}\]</span></span></p>
+<p><span id="eq-frmapp-shift-quart-sin"><span class="math display">\[\sin \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm\cos \alpha \tag{F.115}\]</span></span> <span id="eq-frmapp-shift-quart-tan"><span class="math display">\[\tan \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\tan \alpha \pm 1}{1 \mp \tan \alpha} \tag{F.116}\]</span></span> <span id="eq-frmapp-shift-quart-sec"><span class="math display">\[\sec \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \csc \alpha \tag{F.117}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-shift-quart-cos"><span class="math display">\[\cos \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \sin \alpha \tag{F.110}\]</span></span> <span id="eq-frmapp-shift-quart-cot"><span class="math display">\[\cot \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\cot \alpha \mp 1}{1 \pm \cot \alpha} \tag{F.111}\]</span></span> <span id="eq-frmapp-shift-quart-csc"><span class="math display">\[\csc \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm \sec \alpha \tag{F.112}\]</span></span></p>
+<p><span id="eq-frmapp-shift-quart-cos"><span class="math display">\[\cos \Big(\alpha \pm \frac{\pi}{2}\Big) = \mp \sin \alpha \tag{F.118}\]</span></span> <span id="eq-frmapp-shift-quart-cot"><span class="math display">\[\cot \Big(\alpha \pm \frac{\pi}{4}\Big) = \frac{\cot \alpha \mp 1}{1 \pm \cot \alpha} \tag{F.119}\]</span></span> <span id="eq-frmapp-shift-quart-csc"><span class="math display">\[\csc \Big(\alpha \pm \frac{\pi}{2}\Big) = \pm \sec \alpha \tag{F.120}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1016,9 +1248,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.4.2" class="anchored" data-anchor-id="appendix-formulas-trig-shift-by-half"><span class="header-section-number">F.5.4.2</span> На половину периода</h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-shift-half-sin"><span class="math display">\[\sin (\alpha + \pi) = -\sin \alpha \tag{F.113}\]</span></span> <span id="eq-frmapp-shift-half-tan"><span class="math display">\[\tan \Big(\alpha + \frac{\pi}{2}\Big) = -\cot \alpha \tag{F.114}\]</span></span> <span id="eq-frmapp-shift-half-sec"><span class="math display">\[\sec (\alpha + \pi) = -\sec \alpha \tag{F.115}\]</span></span></p>
+<p><span id="eq-frmapp-shift-half-sin"><span class="math display">\[\sin (\alpha + \pi) = -\sin \alpha \tag{F.121}\]</span></span> <span id="eq-frmapp-shift-half-tan"><span class="math display">\[\tan \Big(\alpha + \frac{\pi}{2}\Big) = -\cot \alpha \tag{F.122}\]</span></span> <span id="eq-frmapp-shift-half-sec"><span class="math display">\[\sec (\alpha + \pi) = -\sec \alpha \tag{F.123}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-shift-half-cos"><span class="math display">\[\cos (\alpha + \pi) = -\cos \alpha \tag{F.116}\]</span></span> <span id="eq-frmapp-shift-half-cot"><span class="math display">\[\cot \Big(\alpha + \frac{\pi}{2}\Big) = -\tan \alpha \tag{F.117}\]</span></span> <span id="eq-frmapp-shift-half-csc"><span class="math display">\[\csc (\alpha + \pi) = -\csc \alpha \tag{F.118}\]</span></span></p>
+<p><span id="eq-frmapp-shift-half-cos"><span class="math display">\[\cos (\alpha + \pi) = -\cos \alpha \tag{F.124}\]</span></span> <span id="eq-frmapp-shift-half-cot"><span class="math display">\[\cot \Big(\alpha + \frac{\pi}{2}\Big) = -\tan \alpha \tag{F.125}\]</span></span> <span id="eq-frmapp-shift-half-csc"><span class="math display">\[\csc (\alpha + \pi) = -\csc \alpha \tag{F.126}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1026,9 +1258,9 @@ c' = 0, \, c = \text{const}
 <h4 data-number="F.5.4.3" class="anchored" data-anchor-id="appendix-formulas-trig-shift-by-full"><span class="header-section-number">F.5.4.3</span> На полный период</h4>
 <div class="columns">
 <div class="column">
-<p><span id="eq-frmapp-shift-full-sin"><span class="math display">\[\sin (\alpha + 2\pi) = \sin \alpha \tag{F.119}\]</span></span> <span id="eq-frmapp-shift-full-tan"><span class="math display">\[\tan (\alpha + \pi) = \tan \alpha \tag{F.120}\]</span></span> <span id="eq-frmapp-shift-full-sec"><span class="math display">\[\sec (\alpha + 2\pi) = \sec \alpha \tag{F.121}\]</span></span></p>
+<p><span id="eq-frmapp-shift-full-sin"><span class="math display">\[\sin (\alpha + 2\pi) = \sin \alpha \tag{F.127}\]</span></span> <span id="eq-frmapp-shift-full-tan"><span class="math display">\[\tan (\alpha + \pi) = \tan \alpha \tag{F.128}\]</span></span> <span id="eq-frmapp-shift-full-sec"><span class="math display">\[\sec (\alpha + 2\pi) = \sec \alpha \tag{F.129}\]</span></span></p>
 </div><div class="column">
-<p><span id="eq-frmapp-shift-full-cos"><span class="math display">\[\cos (\alpha + 2\pi) = \cos \alpha \tag{F.122}\]</span></span> <span id="eq-frmapp-shift-full-cot"><span class="math display">\[\cot (\alpha + \pi) = \cot \alpha \tag{F.123}\]</span></span> <span id="eq-frmapp-shift-full-csc"><span class="math display">\[\csc (\alpha + 2\pi) = \csc \alpha \tag{F.124}\]</span></span></p>
+<p><span id="eq-frmapp-shift-full-cos"><span class="math display">\[\cos (\alpha + 2\pi) = \cos \alpha \tag{F.130}\]</span></span> <span id="eq-frmapp-shift-full-cot"><span class="math display">\[\cot (\alpha + \pi) = \cot \alpha \tag{F.131}\]</span></span> <span id="eq-frmapp-shift-full-csc"><span class="math display">\[\csc (\alpha + 2\pi) = \csc \alpha \tag{F.132}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1042,100 +1274,100 @@ c' = 0, \, c = \text{const}
 0, \, x = 0 \\
 -1, \, x &lt; 0
 }
-\tag{F.125}\]</span></span></p>
+\tag{F.133}\]</span></span></p>
 <p><span id="eq-frmapp-sgn-sincsc"><span class="math display">\[
 \mathop{\mathrm{sgn}}\sin \alpha = \mathop{\mathrm{sgn}}\csc \alpha
-\tag{F.126}\]</span></span></p>
+\tag{F.134}\]</span></span></p>
 <p><span id="eq-frmapp-sgn-cotsec"><span class="math display">\[
 \mathop{\mathrm{sgn}}\cos \alpha = \mathop{\mathrm{sgn}}\sec \alpha
-\tag{F.127}\]</span></span></p>
+\tag{F.135}\]</span></span></p>
 <p><span id="eq-frmapp-sgn-tancot"><span class="math display">\[
 \mathop{\mathrm{sgn}}\tan \alpha = \mathop{\mathrm{sgn}}\cot \alpha
-\tag{F.128}\]</span></span></p>
+\tag{F.136}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-angle-sum" class="level3" data-number="F.5.6">
 <h3 data-number="F.5.6" class="anchored" data-anchor-id="appendix-formulas-trig-angle-sum"><span class="header-section-number">F.5.6</span> Функции суммы и разности аргументов</h3>
 <p><span id="eq-frmapp-sin-of-sum"><span class="math display">\[
 \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta
-\tag{F.129}\]</span></span></p>
+\tag{F.137}\]</span></span></p>
 <p><span id="eq-frmapp-cos-of-sum"><span class="math display">\[
 \cos (\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
-\tag{F.130}\]</span></span></p>
+\tag{F.138}\]</span></span></p>
 <p><span id="eq-frmapp-tan-of-sum"><span class="math display">\[
 \tan (\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1 \mp \tan \alpha \tan \beta}
-\tag{F.131}\]</span></span></p>
+\tag{F.139}\]</span></span></p>
 <p><span id="eq-frmapp-cot-of-sum"><span class="math display">\[
 \cot (\alpha \pm \beta) = \frac{\cot \alpha \cot \beta \mp 1}{\cot \beta \pm \cot \alpha}
-\tag{F.132}\]</span></span></p>
+\tag{F.140}\]</span></span></p>
 <p><span id="eq-frmapp-sec-of-sum"><span class="math display">\[
 \sec (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\csc \alpha \csc \beta \mp \sec \alpha \sec \beta}
-\tag{F.133}\]</span></span></p>
+\tag{F.141}\]</span></span></p>
 <p><span id="eq-frmapp-csc-of-sum"><span class="math display">\[
 \csc (\alpha \pm \beta) = \frac{\sec \alpha \sec \beta \csc \alpha \csc \beta}{\sec \alpha \csc \beta \pm \sec \alpha \sec \beta}
-\tag{F.134}\]</span></span></p>
+\tag{F.142}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-double-arg" class="level3" data-number="F.5.7">
 <h3 data-number="F.5.7" class="anchored" data-anchor-id="appendix-formulas-trig-double-arg"><span class="header-section-number">F.5.7</span> Формулы двойного аргумента</h3>
 <p><span id="eq-frmapp-sin-2a"><span class="math display">\[
 \sin 2\alpha = 2\sin \alpha \cos \alpha = (\sin \alpha + \cos \alpha)^2 -1 = \frac{2\tan \alpha}{1 + \tan^2 \alpha}
-\tag{F.135}\]</span></span></p>
+\tag{F.143}\]</span></span></p>
 <p><span id="eq-frmapp-cos-2a"><span class="math display">\[
 \cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha = 2\cos^2 \alpha - 1 = 1 - 2\sin^2 \alpha = \frac{1 - \tan^2 \alpha}{1 + \tan^2 \alpha}
-\tag{F.136}\]</span></span></p>
+\tag{F.144}\]</span></span></p>
 <p><span id="eq-frmapp-tan-2a"><span class="math display">\[
 \tan 2\alpha = \frac{2\tan \alpha}{1 - \tan^2 \alpha}
-\tag{F.137}\]</span></span></p>
+\tag{F.145}\]</span></span></p>
 <p><span id="eq-frmapp-cot-2a"><span class="math display">\[
 \cot 2\alpha = \frac{\cot^2 \alpha - 1}{2 \cot \alpha} = \frac{1 - \tan^2 \alpha}{2 \tan \alpha}
-\tag{F.138}\]</span></span></p>
+\tag{F.146}\]</span></span></p>
 <p><span id="eq-frmapp-sec-2a"><span class="math display">\[
 \sec 2\alpha = \frac{\sec^2 \alpha}{2 - \sec^2 \alpha} = \frac{1 + \tan^2 \alpha}{1 - \tan^2 \alpha}
-\tag{F.139}\]</span></span></p>
+\tag{F.147}\]</span></span></p>
 <p><span id="eq-frmapp-csc-2a"><span class="math display">\[
 \csc 2\alpha = \frac{\sec \alpha \csc \alpha}{2} = \frac{1 + \tan^2 \alpha}{2 \tan \alpha}
-\tag{F.140}\]</span></span></p>
+\tag{F.148}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-triple-arg" class="level3" data-number="F.5.8">
 <h3 data-number="F.5.8" class="anchored" data-anchor-id="appendix-formulas-trig-triple-arg"><span class="header-section-number">F.5.8</span> Формулы тройного аргумента</h3>
 <p><span id="eq-frmapp-sin-3a"><span class="math display">\[
 \sin 3\alpha = 3\sin \alpha - 4 \sin^3 \alpha = 4\sin \alpha \sin \Big( \frac{\pi}{3} - \alpha\Big) \sin \Big( \frac{\pi}{3} + \alpha \Big)
-\tag{F.141}\]</span></span></p>
+\tag{F.149}\]</span></span></p>
 <p><span id="eq-frmapp-cos-3a"><span class="math display">\[
 \cos 3\alpha = 4\cos^3 \alpha - 3 \cos \alpha = 4\cos \alpha \cos \Big(\frac{\pi}{3} - \alpha\Big) \cos \Big(\frac{\pi}{3} + \alpha\Big)
-\tag{F.142}\]</span></span></p>
+\tag{F.150}\]</span></span></p>
 <p><span id="eq-frmapp-tan-3a"><span class="math display">\[
 \tan 3\alpha = \frac{3\tan \alpha - \tan^3 \alpha}{1 - 3\tan^2 \alpha} = \tan \alpha \tan \Big( \frac{\pi}{3} - \alpha \Big) \tan \Big(\frac{\pi}{3} + \alpha \Big)
-\tag{F.143}\]</span></span></p>
+\tag{F.151}\]</span></span></p>
 <p><span id="eq-frmapp-cot-3a"><span class="math display">\[
 \cot 3\alpha = \frac{3 \cot \alpha - \cot^3 \alpha}{1 - 3\cot^2 \alpha}
-\tag{F.144}\]</span></span></p>
+\tag{F.152}\]</span></span></p>
 <p><span id="eq-frmapp-sec-3a"><span class="math display">\[
 \sec 3\alpha = \frac{\sec^3 \alpha}{4 - 3\sec^2 \alpha}
-\tag{F.145}\]</span></span></p>
+\tag{F.153}\]</span></span></p>
 <p><span id="eq-frmapp-csc-3a"><span class="math display">\[
 \csc 3\alpha = \frac{\csc^3 \alpha}{3\csc^2 \alpha -4}
-\tag{F.146}\]</span></span></p>
+\tag{F.154}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-half-arg" class="level3" data-number="F.5.9">
 <h3 data-number="F.5.9" class="anchored" data-anchor-id="appendix-formulas-trig-half-arg"><span class="header-section-number">F.5.9</span> Формулы половинного аргумента</h3>
 <p><span id="eq-frmapp-sin-halfa"><span class="math display">\[
 \sin \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big(\sin \frac{\alpha}{2} \Big) \sqrt{\frac{1 - \cos \alpha}{2}}
-\tag{F.147}\]</span></span></p>
+\tag{F.155}\]</span></span></p>
 <p><span id="eq-frmapp-cos-halfa"><span class="math display">\[
 \cos \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{1 + \cos \alpha}{2}}
-\tag{F.148}\]</span></span></p>
+\tag{F.156}\]</span></span></p>
 <p><span id="eq-frmapp-tan-halfa"><span class="math display">\[
 \tan \frac{\alpha}{2} = \frac{1 - \cos\alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \csc \alpha - \cot \alpha = \frac{\tan \alpha}{1 + \sec \alpha} = \mathop{\mathrm{sgn}}(\sin \alpha) \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}
-\tag{F.149}\]</span></span></p>
+\tag{F.157}\]</span></span></p>
 <p><span id="eq-frmapp-cot-halfa"><span class="math display">\[
 \cot \frac{\alpha}{2} = \frac{1 + \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 - \cos \alpha} = \csc \alpha + \cot \alpha = \mathop{\mathrm{sgn}}(\sin \alpha) \sqrt{\frac{1 + \cos \alpha}{1 - \cos{\alpha}}}
-\tag{F.150}\]</span></span></p>
+\tag{F.158}\]</span></span></p>
 <p><span id="eq-frmapp-sec-halfa"><span class="math display">\[
 \sec \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \cos \frac{\alpha}{2} \Big) \sqrt{\frac{2}{1 + \cos \alpha}}
-\tag{F.151}\]</span></span></p>
+\tag{F.159}\]</span></span></p>
 <p><span id="eq-frmapp-csc-halfa"><span class="math display">\[
 \csc \frac{\alpha}{2} = \mathop{\mathrm{sgn}}\Big( \sin \frac{\alpha}{2}  \Big) \sqrt{\frac{2}{1 - \cos \alpha}}
-\tag{F.152}\]</span></span></p>
+\tag{F.160}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-power-reduction" class="level3" data-number="F.5.10">
 <h3 data-number="F.5.10" class="anchored" data-anchor-id="appendix-formulas-trig-power-reduction"><span class="header-section-number">F.5.10</span> Формулы понижения степени</h3>
@@ -1143,19 +1375,19 @@ c' = 0, \, c = \text{const}
 <div class="column">
 <p><span id="eq-frmapp-sin-sqa"><span class="math display">\[
 \sin^2 \alpha = \frac{1 - \cos 2\alpha}{2}
-\tag{F.153}\]</span></span> <span id="eq-frmapp-tan-sqa"><span class="math display">\[
+\tag{F.161}\]</span></span> <span id="eq-frmapp-tan-sqa"><span class="math display">\[
 \tan^2 \alpha = \frac{1 - \cos 2\alpha}{1 + \cos 2\alpha}
-\tag{F.154}\]</span></span> <span id="eq-frmapp-sec-sqa"><span class="math display">\[
+\tag{F.162}\]</span></span> <span id="eq-frmapp-sec-sqa"><span class="math display">\[
 \sec^2 \alpha = \frac{2}{1 + \cos 2\alpha}
-\tag{F.155}\]</span></span></p>
+\tag{F.163}\]</span></span></p>
 </div><div class="column">
 <p><span id="eq-frmapp-cos-sqa"><span class="math display">\[
 \cos^2 \alpha = \frac{1 + \cos 2\alpha}{2}
-\tag{F.156}\]</span></span> <span id="eq-frmapp-cot-sqa"><span class="math display">\[
+\tag{F.164}\]</span></span> <span id="eq-frmapp-cot-sqa"><span class="math display">\[
 \cot^2 \alpha = \frac{1 + \cos 2\alpha}{1 - \cos 2\alpha}
-\tag{F.157}\]</span></span> <span id="eq-frmapp-csc-sqa"><span class="math display">\[
+\tag{F.165}\]</span></span> <span id="eq-frmapp-csc-sqa"><span class="math display">\[
 \csc^2 \alpha = \frac{2}{1 - \cos 2\alpha}
-\tag{F.158}\]</span></span></p>
+\tag{F.166}\]</span></span></p>
 </div>
 </div>
 </section>
@@ -1163,52 +1395,91 @@ c' = 0, \, c = \text{const}
 <h3 data-number="F.5.11" class="anchored" data-anchor-id="appendix-formulas-trig-prod-to-sum"><span class="header-section-number">F.5.11</span> Преобразование произведения в сумму</h3>
 <p><span id="eq-frmapp-pts-coscos"><span class="math display">\[
 \cos \alpha \cos \beta = \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{2}
-\tag{F.159}\]</span></span></p>
+\tag{F.167}\]</span></span></p>
 <p><span id="eq-frmapp-pts-sinsin"><span class="math display">\[
 \sin \alpha \sin \beta = \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{2}
-\tag{F.160}\]</span></span></p>
+\tag{F.168}\]</span></span></p>
 <p><span id="eq-frmapp-pts-sincos"><span class="math display">\[
 \sin \alpha \cos \beta = \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{2}
-\tag{F.161}\]</span></span></p>
+\tag{F.169}\]</span></span></p>
 <p><span id="eq-frmapp-pts-cossin"><span class="math display">\[
 \cos \alpha \sin \beta = \frac{\sin (\alpha + \beta) - \sin (\alpha - \beta)}{2}
-\tag{F.162}\]</span></span></p>
+\tag{F.170}\]</span></span></p>
 <p><span id="eq-frmapp-pts-tantan"><span class="math display">\[
 \tan \alpha \tan \beta =
 \frac{\cos (\alpha - \beta) - \cos (\alpha + \beta)}{\cos (\alpha - \beta) + \cos (\alpha + \beta)} =
 \frac{\tan \alpha + \tan \beta}{\cot \alpha + \cot \beta} =
 - \frac{\tan \alpha - \tan \beta}{\cot \alpha - \cot \beta}
-\tag{F.163}\]</span></span></p>
+\tag{F.171}\]</span></span></p>
 <p><span id="eq-frmapp-pts-cotcot"><span class="math display">\[
 \cot \alpha \cot \beta =
 \frac{\cos (\alpha - \beta) + \cos (\alpha + \beta)}{\cos (\alpha - \beta) - \cos (\alpha + \beta)} =
 \frac{\cot \alpha + \cot \beta}{\tan \alpha + \tan \beta} =
 - \frac{\cot \alpha - \cot \beta}{\tan \alpha - \tan \beta}
-\tag{F.164}\]</span></span></p>
+\tag{F.172}\]</span></span></p>
 <p><span id="eq-frmapp-pts-tancot"><span class="math display">\[
 \tan \alpha \cot \beta =
 \frac{\sin (\alpha + \beta) + \sin (\alpha - \beta)}{\sin (\alpha + \beta) - \sin (\alpha - \beta)} =
 \frac{\tan \alpha + \cot \beta}{\cot \alpha + \tan \beta} =
 - \frac{\tan \alpha - \cot \beta}{\cot \alpha - \tan \beta}
-\tag{F.165}\]</span></span></p>
+\tag{F.173}\]</span></span></p>
 </section>
 <section id="appendix-formulas-trig-sum-to-prod" class="level3" data-number="F.5.12">
 <h3 data-number="F.5.12" class="anchored" data-anchor-id="appendix-formulas-trig-sum-to-prod"><span class="header-section-number">F.5.12</span> Преобразование суммы в произведение</h3>
 <p><span id="eq-frmapp-stp-sin"><span class="math display">\[
 \sin \alpha \pm \sin \beta = 2 \sin \Big(\frac{\alpha \pm \beta}{2}\Big) \cos \Big(\frac{\alpha \mp \beta}{2}\Big)
-\tag{F.166}\]</span></span></p>
+\tag{F.174}\]</span></span></p>
 <p><span id="eq-frmapp-stp-cos-plus"><span class="math display">\[
 \cos \alpha + \cos \beta = 2 \cos \Big(\frac{\alpha + \beta}{2}\Big) \cos \Big(\frac{\alpha - \beta}{2}\Big)
-\tag{F.167}\]</span></span></p>
+\tag{F.175}\]</span></span></p>
 <p><span id="eq-frmapp-stp-cos-minus"><span class="math display">\[
 \cos \alpha - \cos \beta = -2 \sin \Big(\frac{\alpha + \beta}{2}\Big) \sin \Big(\frac{\alpha - \beta}{2}\Big)
-\tag{F.168}\]</span></span></p>
+\tag{F.176}\]</span></span></p>
 <p><span id="eq-frmapp-stp-tan"><span class="math display">\[
 \tan \alpha \pm \tan \beta = \frac{\sin(\alpha + \beta)}{\cos \alpha \cos \beta}
-\tag{F.169}\]</span></span></p>
-
-
+\tag{F.177}\]</span></span></p>
 </section>
+</section>
+<section id="appendix-formulas-hyperbolic" class="level2" data-number="F.6">
+<h2 data-number="F.6" class="anchored" data-anchor-id="appendix-formulas-hyperbolic"><span class="header-section-number">F.6</span> Гиперболические функции</h2>
+<p><span id="eq-frmapp-def-sinh"><span class="math display">\[
+\sinh x = \frac{e^x - e^{-x}}{2}
+\tag{F.178}\]</span></span></p>
+<p><span id="eq-frmapp-def-cosh"><span class="math display">\[
+\cosh x = \frac{e^x + e^{-x}}{2}
+\tag{F.179}\]</span></span></p>
+<p><span id="eq-frmapp-def-tanh"><span class="math display">\[
+\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1}
+\tag{F.180}\]</span></span></p>
+<p><span id="eq-frmapp-def-sinh"><span class="math display">\[
+\coth x = \frac{\cosh x}{\sinh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}} = \frac{e^{2x} + 1}{e^{2x} - 1}
+\tag{F.181}\]</span></span></p>
+<p><span id="eq-frmapp-def-sech"><span class="math display">\[
+\mathop{\mathrm{sech}}x = \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}}
+\tag{F.182}\]</span></span></p>
+<p><span id="eq-frmapp-def-csch"><span class="math display">\[
+\mathop{\mathrm{csch}}x = \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}}
+\tag{F.183}\]</span></span></p>
+<p><span id="eq-frmapp-def-arsinh"><span class="math display">\[
+\mathop{\mathrm{arsinh}}x = \ln (x + \sqrt{x^2 + 1})
+\tag{F.184}\]</span></span></p>
+<p><span id="eq-frmapp-def-arcosh"><span class="math display">\[
+\mathop{\mathrm{arcosh}}x = \ln (x + \sqrt{x^2 - 1}), \, x \geqslant 1
+\tag{F.185}\]</span></span></p>
+<p><span id="eq-frmapp-def-artanh"><span class="math display">\[
+\mathop{\mathrm{artanh}}x = \ln \frac{\sqrt{1 - x^2}}{1 - x} = \frac{1}{2} \ln \frac{1 + x}{1 - x}, \, |x| &lt; 1
+\tag{F.186}\]</span></span></p>
+<p><span id="eq-frmapp-def-arcoth"><span class="math display">\[
+\mathop{\mathrm{arcoth}}x = \ln \frac{\sqrt{x^2 - 1}}{x - 1} = \frac{1}{2} \ln \frac{x + 1}{x - 1}, \, |x| &gt; 1
+\tag{F.187}\]</span></span></p>
+<p><span id="eq-frmapp-def-arsech"><span class="math display">\[
+\mathop{\mathrm{arsech}}x = \ln \frac{1 + \sqrt{1 - x^2}}{x}, \, 0 &lt; x \leqslant 1
+\tag{F.188}\]</span></span></p>
+<p><span id="eq-frmapp-def-arcsch"><span class="math display">\[
+\mathop{\mathrm{arcsch}}x = \ln \frac{1 + \mathop{\mathrm{sgn}}x \sqrt{1 + x^2}}{x}, \, x \neq 0
+\tag{F.189}\]</span></span></p>
+
+
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -1219,372 +1490,255 @@ c' = 0, \, c = \text{const}
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Скопировано!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Скопировано!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1592,185 +1746,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./appendix-proglang.html" class="pagination-link" aria-label="Языки программирования">
@@ -1784,6 +1914,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 27&nbsp; Тестирование статистических гипотез</title>
+<title>31&nbsp; Тестирование статистических гипотез – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -53,17 +53,23 @@ div.csl-indent {
 <link href="./prob-falsepositive.html" rel="next">
 <link href="./prob-statestim.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-554ea854cf0619dcc30cc54aeb8f7717.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -116,7 +122,7 @@ background-size: cover;
       }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -148,29 +154,191 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-hyptesting.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-hyptesting.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-hyptesting.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="prob-hyptesting" class="quarto-section-identifier"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-hyptesting.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></a></li></ol></nav>
+      <h1 class="title"><span id="prob-hyptesting" class="quarto-section-identifier"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></h1>
                       </div>
   </div>
     
@@ -221,52 +389,23 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -283,50 +422,56 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -335,78 +480,97 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория измерений</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+  <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория измерений</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -415,51 +579,57 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -468,21 +638,51 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-hierreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-oneway-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Однофакторный дисперсионный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -501,13 +701,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -558,32 +758,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-survey-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Основы опросных методов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -598,28 +804,39 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#prob-hyptesting-hypotheses-differences" id="toc-prob-hyptesting-hypotheses-differences" class="nav-link active" data-scroll-target="#prob-hyptesting-hypotheses-differences"><span class="header-section-number">27.1</span> Закономерности и различия</a></li>
-  <li><a href="#prob-hyptesting-hypotheses-data" id="toc-prob-hyptesting-hypotheses-data" class="nav-link" data-scroll-target="#prob-hyptesting-hypotheses-data"><span class="header-section-number">27.2</span> Гипотезы и данные</a></li>
-  <li><a href="#prob-hyptesting-hypotheses" id="toc-prob-hyptesting-hypotheses" class="nav-link" data-scroll-target="#prob-hyptesting-hypotheses"><span class="header-section-number">27.3</span> Виды гипотез</a>
+  <li><a href="#prob-hyptesting-hypotheses-differences" id="toc-prob-hyptesting-hypotheses-differences" class="nav-link active" data-scroll-target="#prob-hyptesting-hypotheses-differences"><span class="header-section-number">31.1</span> Взаимосвязи и различия</a></li>
+  <li><a href="#prob-hyptesting-hypotheses-data" id="toc-prob-hyptesting-hypotheses-data" class="nav-link" data-scroll-target="#prob-hyptesting-hypotheses-data"><span class="header-section-number">31.2</span> Гипотезы и данные</a></li>
+  <li><a href="#prob-hyptesting-hypotheses" id="toc-prob-hyptesting-hypotheses" class="nav-link" data-scroll-target="#prob-hyptesting-hypotheses"><span class="header-section-number">31.3</span> Виды гипотез</a>
   <ul>
-  <li><a href="#prob-hyptesting-null-hypothesis" id="toc-prob-hyptesting-null-hypothesis" class="nav-link" data-scroll-target="#prob-hyptesting-null-hypothesis"><span class="header-section-number">27.3.1</span> Нулевая гипотеза</a></li>
-  <li><a href="#prob-hyptesting-alt-hypothesis" id="toc-prob-hyptesting-alt-hypothesis" class="nav-link" data-scroll-target="#prob-hyptesting-alt-hypothesis"><span class="header-section-number">27.3.2</span> Альтернативная гипотеза</a></li>
+  <li><a href="#prob-hyptesting-null-hypothesis" id="toc-prob-hyptesting-null-hypothesis" class="nav-link" data-scroll-target="#prob-hyptesting-null-hypothesis"><span class="header-section-number">31.3.1</span> Нулевая гипотеза</a></li>
+  <li><a href="#prob-hyptesting-alt-hypothesis" id="toc-prob-hyptesting-alt-hypothesis" class="nav-link" data-scroll-target="#prob-hyptesting-alt-hypothesis"><span class="header-section-number">31.3.2</span> Альтернативная гипотеза</a></li>
   </ul></li>
-  <li><a href="#prob-hyptesting-results" id="toc-prob-hyptesting-results" class="nav-link" data-scroll-target="#prob-hyptesting-results"><span class="header-section-number">27.4</span> Возможные результаты проверки гипотез</a>
+  <li><a href="#prob-hyptesting-results" id="toc-prob-hyptesting-results" class="nav-link" data-scroll-target="#prob-hyptesting-results"><span class="header-section-number">31.4</span> Возможные результаты проверки гипотез</a>
   <ul>
-  <li><a href="#prob-hyptesting-typeIerror" id="toc-prob-hyptesting-typeIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIerror"><span class="header-section-number">27.4.1</span> Ошибка I рода и уровень значимости</a></li>
-  <li><a href="#prob-hyptesting-typeIIerror" id="toc-prob-hyptesting-typeIIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIIerror"><span class="header-section-number">27.4.2</span> Ошибка II рода и статистическая мощность</a></li>
-  <li><a href="#prob-errorconnetion" id="toc-prob-errorconnetion" class="nav-link" data-scroll-target="#prob-errorconnetion"><span class="header-section-number">27.4.3</span> Связь ошибок I и II рода</a></li>
+  <li><a href="#prob-hyptesting-typeIerror" id="toc-prob-hyptesting-typeIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIerror"><span class="header-section-number">31.4.1</span> Ошибка I рода и уровень значимости</a></li>
+  <li><a href="#prob-hyptesting-typeIIerror" id="toc-prob-hyptesting-typeIIerror" class="nav-link" data-scroll-target="#prob-hyptesting-typeIIerror"><span class="header-section-number">31.4.2</span> Ошибка II рода и статистическая мощность</a></li>
+  <li><a href="#prob-errorconnection" id="toc-prob-errorconnection" class="nav-link" data-scroll-target="#prob-errorconnection"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</a></li>
   </ul></li>
-  <li><a href="#алгоритм-тестирования-статистических-гипотез" id="toc-алгоритм-тестирования-статистических-гипотез" class="nav-link" data-scroll-target="#алгоритм-тестирования-статистических-гипотез"><span class="header-section-number">27.5</span> Алгоритм тестирования статистических гипотез</a>
+  <li><a href="#prob-hyptesting-algorithm" id="toc-prob-hyptesting-algorithm" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</a>
   <ul>
-  <li><a href="#асимметрия-статистического-вывода" id="toc-асимметрия-статистического-вывода" class="nav-link" data-scroll-target="#асимметрия-статистического-вывода"><span class="header-section-number">27.5.1</span> Асимметрия статистического вывода</a></li>
+  <li><a href="#prob-hyptesting-algorithm-opt1" id="toc-prob-hyptesting-algorithm-opt1" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt1"><span class="header-section-number">31.5.1</span> Путь первый</a></li>
+  <li><a href="#prob-hyptesting-algorithm-opt2" id="toc-prob-hyptesting-algorithm-opt2" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt2"><span class="header-section-number">31.5.2</span> Путь второй</a>
+  <ul class="collapse">
+  <li><a href="#prob-hyptesting-algorithm-opt2-pval" id="toc-prob-hyptesting-algorithm-opt2-pval" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-opt2-pval"><span class="header-section-number">31.5.2.1</span> p-value</a></li>
+  </ul></li>
+  <li><a href="#prob-hyptesting-errorconnection-graph" id="toc-prob-hyptesting-errorconnection-graph" class="nav-link" data-scroll-target="#prob-hyptesting-errorconnection-graph"><span class="header-section-number">31.5.3</span> Визуализация связи ошибок I и II рода</a></li>
+  </ul></li>
+  <li><a href="#prob-hyptesting-inf-asymm" id="toc-prob-hyptesting-inf-asymm" class="nav-link" data-scroll-target="#prob-hyptesting-inf-asymm"><span class="header-section-number">31.6</span> Асимметрия статистического вывода</a></li>
+  <li><a href="#prob-hyptesting-algorithm-R" id="toc-prob-hyptesting-algorithm-R" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-R"><span class="header-section-number">31.7</span> Алгоритм тестирования статистических гипотез в R</a>
+  <ul>
+  <li><a href="#prob-hyptesting-algorithm-pval-math" id="toc-prob-hyptesting-algorithm-pval-math" class="nav-link" data-scroll-target="#prob-hyptesting-algorithm-pval-math"><span class="header-section-number">31.7.1</span> Математика вычисления p-value</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -643,22 +860,34 @@ window.Quarto = {
 <!--- Letters --->
 <!--- Linear Models --->
 <div class="intro">
-<p>Вступление</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<section id="prob-hyptesting-hypotheses-differences" class="level2" data-number="27.1">
-<h2 data-number="27.1" class="anchored" data-anchor-id="prob-hyptesting-hypotheses-differences"><span class="header-section-number">27.1</span> Закономерности и различия</h2>
+<div class="callout-title-container flex-fill">
+Данная глава — только основы основ!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Сразу&nbsp;же необходимо заявить, что в&nbsp;этой главе мы познакомимся только с&nbsp;базой тестирования статистических гипотез. Не&nbsp;менее важная часть изложена в&nbsp;<a href="./prob-falsepositive.html">следующей главе</a>, которая является неотъемлемым продолжением данной. Там мы дополним картину взаимоотношений между сущностями, с которыми будем знакомиться здесь.</p>
+</div>
+</div>
+</div>
+<section id="prob-hyptesting-hypotheses-differences" class="level2" data-number="31.1">
+<h2 data-number="31.1" class="anchored" data-anchor-id="prob-hyptesting-hypotheses-differences"><span class="header-section-number">31.1</span> Взаимосвязи и различия</h2>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="prob-hyptesting-hypotheses-data" class="level2" data-number="27.2">
-<h2 data-number="27.2" class="anchored" data-anchor-id="prob-hyptesting-hypotheses-data"><span class="header-section-number">27.2</span> Гипотезы и данные</h2>
+<section id="prob-hyptesting-hypotheses-data" class="level2" data-number="31.2">
+<h2 data-number="31.2" class="anchored" data-anchor-id="prob-hyptesting-hypotheses-data"><span class="header-section-number">31.2</span> Гипотезы и данные</h2>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="prob-hyptesting-hypotheses" class="level2" data-number="27.3">
-<h2 data-number="27.3" class="anchored" data-anchor-id="prob-hyptesting-hypotheses"><span class="header-section-number">27.3</span> Виды гипотез</h2>
+<section id="prob-hyptesting-hypotheses" class="level2" data-number="31.3">
+<h2 data-number="31.3" class="anchored" data-anchor-id="prob-hyptesting-hypotheses"><span class="header-section-number">31.3</span> Виды гипотез</h2>
 <div class="lab-junior">
 
 </div>
@@ -679,8 +908,8 @@ window.Quarto = {
 <li><strong>Нулевая гипотеза</strong> (<span class="math inline">\(H_0\)</span>) — это гипотеза, которую мы и будем проверять в ходе тестирования. Чтобы упростить процесс тестирования гипотезы, стараются максимально упростить и саму гипотезу — практически всегда нулевая гипотеза формулируется как <em>простая гипотеза</em>.</li>
 <li><strong>Альтернативная гипотеза</strong> (<span class="math inline">\(H_1\)</span>) — это гипотеза, выдвигаемая в противовес нулевой. Так как нулевая гипотеза чаще всего является простой гипотезой, а значит предполагает конкретное значение параметра, то альтернативная неизбежно получается <em>сложной гипотезой</em>.</li>
 </ul>
-<section id="prob-hyptesting-null-hypothesis" class="level3" data-number="27.3.1">
-<h3 data-number="27.3.1" class="anchored" data-anchor-id="prob-hyptesting-null-hypothesis"><span class="header-section-number">27.3.1</span> Нулевая гипотеза</h3>
+<section id="prob-hyptesting-null-hypothesis" class="level3" data-number="31.3.1">
+<h3 data-number="31.3.1" class="anchored" data-anchor-id="prob-hyptesting-null-hypothesis"><span class="header-section-number">31.3.1</span> Нулевая гипотеза</h3>
 <div class="lab-junior">
 
 </div>
@@ -705,12 +934,12 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="prob-hyptesting-alt-hypothesis" class="level3" data-number="27.3.2">
-<h3 data-number="27.3.2" class="anchored" data-anchor-id="prob-hyptesting-alt-hypothesis"><span class="header-section-number">27.3.2</span> Альтернативная гипотеза</h3>
+<section id="prob-hyptesting-alt-hypothesis" class="level3" data-number="31.3.2">
+<h3 data-number="31.3.2" class="anchored" data-anchor-id="prob-hyptesting-alt-hypothesis"><span class="header-section-number">31.3.2</span> Альтернативная гипотеза</h3>
 <div class="lab-junior">
 
 </div>
-<p>С альтернативной гипотезой дела обстоят интереснее. Факт того, что альтернативная гипотеза является сложной, позволяет выдвинуть <em>три</em> варианта альтернативной гипотезы к нулевой гипотезе (<a href="#tbl-alt-hyp" class="quarto-xref">Таблица&nbsp;<span>27.1</span></a>).</p>
+<p>С альтернативной гипотезой дела обстоят интереснее. Факт того, что альтернативная гипотеза является сложной, позволяет выдвинуть <em>три</em> варианта альтернативной гипотезы к нулевой гипотезе (<a href="#tbl-alt-hyp" class="quarto-xref">Таблица&nbsp;<span>31.1</span></a>).</p>
 <ul>
 <li>Нас может интересовать полностью противоположная нулевой гипотезе ситуация. Тогда
 <ul>
@@ -733,11 +962,12 @@ window.Quarto = {
 <ul>
 <li>Однако нам могут быть интересны <em>направленные</em> альтернативные гипотезы.
 <ul>
-<li>Пусть для нас в рамках исследования закономерностью является то, что значение параметра будет <em>больше</em> некоторого заранее заданного значения. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta = \theta_0\)</span> альтернативная гипотеза будет формулирована как <span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span>,</li>
-<li>Или же с теоретических позиций мы решаем, что закономерность присутствует в случае, когда параметр первой генеральной совокупности <em>меньше</em> параметра второй генеральной совокупности. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta_1 = \theta_2\)</span> альтернативная будет выглядеть так: <span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span>.</li>
+<li>Пусть для нас в рамках исследования закономерностью является то, что значение параметра будет <em>больше</em> некоторого заранее заданного значения. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta \leqslant\theta_0\)</span> альтернативная гипотеза будет формулирована как <span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span>,</li>
+<li>Или же с теоретических позиций мы решаем, что закономерность присутствует в случае, когда параметр первой генеральной совокупности <em>меньше</em> параметра второй генеральной совокупности. Тогда для нулевой гипотезы <span class="math inline">\(H_0 : \theta_1 \geqslant\theta_2\)</span> альтернативная будет выглядеть так: <span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span>.</li>
 </ul></li>
 </ul>
-<p>Мы можем «направить» альтернативные гипотезы и в обратную сторону, если это согласуется с теоретическими основаниями — <span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span> и <span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span> соответственно.</p>
+<p>Заметим, что в&nbsp;случае направленных альтернативных гипотез соответствующие им нулевые перестают быть простыми — и&nbsp;нулевая, и&nbsp;альтернативная в&nbsp;этом случае будут сложными.</p>
+<p>Мы можем «направить» альтернативные гипотезы и&nbsp;в&nbsp;обратную сторону, если&nbsp;это согласуется с&nbsp;теоретическими основаниями — <span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span> и <span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span> соответственно.</p>
 <div class="save-font-size callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -768,40 +998,40 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="tbl-alt-hyp" class="quarto-float anchored">
+<div id="tbl-alt-hyp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-alt-hyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;27.1: Альтернативные гипотезы: односторонние и двусторонние альтернативы.
+Таблица&nbsp;31.1: Нулевые и альтернативные гипотезы: односторонние и двусторонние альтернативы.
 </figcaption>
 <div aria-describedby="tbl-alt-hyp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 42%">
-<col style="width: 28%">
-<col style="width: 29%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th><span class="math inline">\(H_0 : \theta = \theta_0\)</span></th>
-<th><span class="math inline">\(H_0 : \theta_1 = \theta_2\)</span></th>
+<th>Гипотеза о&nbsp;равенстве параметра заданному значению</th>
+<th>Гипотеза о&nbsp;равенстве значений двух параметров</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Двусторонняя альтернатива</td>
-<td><span class="math inline">\(H_1 : \theta \neq \theta_0\)</span></td>
-<td><span class="math inline">\(H_1 : \theta_1 \neq \theta_2\)</span></td>
+<td><span class="math inline">\(H_0 : \theta = \theta_0\)</span> <br> <span class="math inline">\(H_1 : \theta \neq \theta_0\)</span></td>
+<td><span class="math inline">\(H_0 : \theta_1 = \theta_2\)</span> <br> <span class="math inline">\(H_1 : \theta_1 \neq \theta_2\)</span></td>
 </tr>
 <tr class="even">
 <td>Односторонняя альтернатива (левосторонняя)</td>
-<td><span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span></td>
-<td><span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span></td>
+<td><span class="math inline">\(H_0 : \theta \geqslant\theta_0\)</span> <br> <span class="math inline">\(H_1 : \theta &lt; \theta_0\)</span></td>
+<td><span class="math inline">\(H_0 : \theta_1 \geqslant\theta_2\)</span> <br> <span class="math inline">\(H_1 : \theta_1 &lt; \theta_2\)</span></td>
 </tr>
 <tr class="odd">
 <td>Односторонняя альтернатива (правосторонняя)</td>
-<td><span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span></td>
-<td><span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span></td>
+<td><span class="math inline">\(H_0 : \theta \leqslant\theta_0\)</span> <br> <span class="math inline">\(H_1 : \theta &gt; \theta_0\)</span></td>
+<td><span class="math inline">\(H_0 : \theta_1 \leqslant\theta_2\)</span> <br> <span class="math inline">\(H_1 : \theta_1 &gt; \theta_2\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -811,30 +1041,30 @@ window.Quarto = {
 <p>На что будет влиять «сторонность» гипотезы? И как выбрать, какая нам нужна в конкретном исследовании? Мы обязательно ответим на эти вопросы, но чуть позже — пока что нам не хватает знаний, чтобы пронаблюдать возможные последствия.</p>
 </section>
 </section>
-<section id="prob-hyptesting-results" class="level2" data-number="27.4">
-<h2 data-number="27.4" class="anchored" data-anchor-id="prob-hyptesting-results"><span class="header-section-number">27.4</span> Возможные результаты проверки гипотез</h2>
+<section id="prob-hyptesting-results" class="level2" data-number="31.4">
+<h2 data-number="31.4" class="anchored" data-anchor-id="prob-hyptesting-results"><span class="header-section-number">31.4</span> Возможные результаты проверки гипотез</h2>
 <div class="lab-junior">
 
 </div>
-<p>Изучая в исследовании какую-либо закономерность, мы достоверно не знаем, существует ли она в реальном мире. <em>В реальном мире</em> в данном контексте означает <em>на уровне генеральных совокупностей</em>. Почему мы не знаем — и не можем знать — об этом достоверно? Причина такого положения дел нам хорошо известна: генеральная совокупность недоступна для наблюдения в полном объеме. Тем не менее, в мире <del>идей</del> генеральных совокупностей закономерность <strong>может существовать</strong>, а <strong>может и не существовать</strong>.</p>
-<div class="quote small">
+<p>Изучая в исследовании какую-либо закономерность, мы достоверно не знаем, существует ли она в реальном мире. «<em>В реальном мире</em>» в данном контексте означает «<em>на уровне генеральных совокупностей</em>». Почему мы не знаем — и не можем знать — об этом достоверно? Причина такого положения дел нам хорошо известна: генеральная совокупность недоступна для наблюдения в полном объеме. Тем не менее, в мире <del>идей</del> генеральных совокупностей закономерность <strong>может существовать</strong>, а <strong>может и не существовать</strong>.</p>
+<div class="quote small pers">
 <p>— Ну, тоже мне, великое умозаключение! Это же предельно очевидно!<br> — Да, но давайте посмотрим, что получается дальше.</p>
 </div>
 <p>Имея дело с выборкой, мы вспоминаем о двух ключевых характеристиках статистических данных — их <strong>неопределенности</strong> и <strong>вариативности</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. В силу этих характеристик мы можем на отдельной выборке <strong>либо обнаружить</strong> интересующую нас закономерность, <strong>либо не обнаружить</strong>.</p>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Ну, ясно же! Если закономерность есть, то мы её обнаружим, если нет — то не обнаружим!<br> — Ах, если бы это было так…</p>
 </div>
 <p>Поскольку ни одно исследование не является идеальным, мы можем обнаружить или не обнаружить исследуемую закономерность как в ситуации наличия её в генеральной совокупности, так и в ситуации отсутствия таковой.</p>
 <p>В качестве нулевой гипотезы мы выдвигаем предположение о том, что изучаемая закономерность отсутствует — так мы упрощаем нашу нулевую гипотезу. Пусть <span class="math inline">\(H_0\)</span> обозначает, что предположение об отсутствии закономерности справедливо, а <span class="math inline">\(H_1\)</span> — что это предположение не справедливо. Иначе говоря, <span class="math inline">\(H_0\)</span> обозначает ситуацию, что <strong>закономерности в генеральной совокупности нет</strong>, а <span class="math inline">\(H_1\)</span> — что <strong>закономерность в генеральной совокупности есть</strong>.</p>
 <p>На основании данных, собранных на отдельной выборке, мы можем либо не отклонить наше предположение (нулевую гипотезу), то есть <strong>не обнаружить закономерность</strong>, либо отклонить исходное предположение (нулевую гипотезу), то есть <strong>обнаружить закономерность</strong>. Обозначим ситуацию, когда мы <em>не обнаружили</em> закономерность как <span class="math inline">\(\hat H_0\)</span>, а ситуацию, когда мы <em>обнаружили закономерность</em>, как <span class="math inline">\(\hat H_1\)</span>. Поскольку сейчас мы работаем с выборкой, то ашки у нас в шляпках.</p>
-<p>Тогда при тестировании статистических гипотез возможны следующие ситуации (<a href="#tbl-stattest-situations" class="quarto-xref">Таблица&nbsp;<span>27.2</span></a>):</p>
-<div id="tbl-stattest-situations" class="quarto-float anchored">
+<p>Тогда при тестировании статистических гипотез возможны следующие ситуации (<a href="#tbl-stattest-situations" class="quarto-xref">Таблица&nbsp;<span>31.2</span></a>):</p>
+<div id="tbl-stattest-situations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stattest-situations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;27.2: Ситуации, возникающие при тестировании статистических гипотез
+Таблица&nbsp;31.2: Ситуации, возникающие при тестировании статистических гипотез
 </figcaption>
 <div aria-describedby="tbl-stattest-situations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -873,14 +1103,14 @@ window.Quarto = {
 <li>Ситуация 2: в генеральной совокупности <em>закономерности нет</em>, однако в силу случайных причин мы её <em>обнаружили</em> на нашей выборке — это <strong>ошибка I рода (type I error)</strong>.</li>
 <li>Ситуация 3: в генеральной совокупности <em>закономерность есть</em>, однако в силу каких-то причин мы её <em>не обнаружили</em> на нашей выборке — это <strong>ошибка II рода (type II error)</strong>.</li>
 </ul>
-<p>Ошибки приводят нас к некорректным выводам по результатам исследований — соответственно, необходимо найти способ их контролировать. Для этого нам хорошо было бы каким-то образом описать сложившееся положение дел. Сделаем мы это с помощью <a href="./prob-cond-prob.html">условной вероятности</a> — получится весьма удобная картина (<a href="#tbl-stattest-probs" class="quarto-xref">Таблица&nbsp;<span>27.3</span></a>):</p>
-<div id="tbl-stattest-probs" class="quarto-float anchored">
+<p>Ошибки приводят нас к некорректным выводам по результатам исследований — соответственно, необходимо найти способ их контролировать. Для этого нам хорошо было бы каким-то образом описать сложившееся положение дел. Сделаем мы это с помощью <a href="prob-cond-prob.qmd">условной вероятности</a> — получится весьма удобная картина (<a href="#tbl-stattest-probs" class="quarto-xref">Таблица&nbsp;<span>31.3</span></a>):</p>
+<div id="tbl-stattest-probs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stattest-probs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;27.3: Вероятности ошибок в ситуации тестирования статистических гипотез
+Таблица&nbsp;31.3: Вероятности ошибок в ситуации тестирования статистических гипотез
 </figcaption>
 <div aria-describedby="tbl-stattest-probs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -911,12 +1141,12 @@ window.Quarto = {
 </div>
 <p>Почему удобно использовать именно условные вероятности? Потому что мы, разумеется, не знаем, с какой вероятностью мы находимся в ситуации <span class="math inline">\(H_0\)</span> или <span class="math inline">\(H_1\)</span>, то есть мы не знаем, есть или нет в генеральной совокупности изучаемая закономерность. Однако при использовании условной вероятности мы можем рассматривать две эти ситуации отдельно: что мы можем сказать относительно результатов тестирования, (1) если закономерность в генеральной совокупности есть и (2) если закономерности в генеральной совокупности нет.</p>
 <p>Кроме того, пользуясь свойствами условной вероятности мы получили <span class="math inline">\(\mathbb{P}(\hat H_1 | H_1) = 1 - \beta\)</span>, так как <span class="math inline">\(\mathbb{P}(\hat H_0 | H_1) + \mathbb{P}(\hat H_1 | H_1) = 1\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
-<div class="quote small">
+<div class="quote small pers">
 <p>— А на кой чёрт нам эта вероятность нужна? У нас вон <span class="math inline">\(\beta\)</span> и так есть.<br> — Секундочку, доберемся обязательно к этом вопросу через несколько абзацев.</p>
 </div>
 <p>Итак, введя интересующие нас вероятности, мы можем более пристально посмотреть на ошибки.</p>
-<section id="prob-hyptesting-typeIerror" class="level3" data-number="27.4.1">
-<h3 data-number="27.4.1" class="anchored" data-anchor-id="prob-hyptesting-typeIerror"><span class="header-section-number">27.4.1</span> Ошибка I рода и уровень значимости</h3>
+<section id="prob-hyptesting-typeIerror" class="level3" data-number="31.4.1">
+<h3 data-number="31.4.1" class="anchored" data-anchor-id="prob-hyptesting-typeIerror"><span class="header-section-number">31.4.1</span> Ошибка I рода и уровень значимости</h3>
 <div class="lab-junior">
 
 </div>
@@ -924,11 +1154,11 @@ window.Quarto = {
 <p>Теперь у нас есть способ контроля ошибки I рода — давайте <em>выберем некоторый порог вероятности ошибки</em>. Мы с вами, разумеется, понимаем, что полностью избежать ошибки у нас не получится — опять же вспоминаем, что работаем со статистическими данными, которые неопределенны и вариативны. Однако выбрав в качестве порога достаточно малое значение, мы можем быть вполне уверенны, что не ошиблись.</p>
 <p>На деле именно так и поступают — выбирается <strong>уровень значимости</strong> <span class="math inline">\(\alpha\)</span>, который и определяет вероятность ошибки I рода (<span class="math inline">\(\mathbb{P}(\hat H_1 | H_0)\)</span>) — вероятность отклонить нулевую гипотезу при условии, что она верна.</p>
 <p>Сразу отметим, что <em>уровень значимости — это число</em>, некоторая константа, которую мы выбираем до начала проведения статистических тестов.</p>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Ещё одно великое утверждение… И так ясно, что это число, что это ещё может быть…<br> — Отлично, что ясно. Однако мы ещё вернемся к этом замечанию, чтобы избежать распространенной путаницы.</p>
 </div>
 <p>Если вы уже соприкасались с научными (да и не только) исследованиями, то наверняка вам знакомо магическое значение <span class="math inline">\(0.05\)</span>. И да, действительно, в социальных науках конвенционально принятым уровнем значимости является <span class="math inline">\(\alpha = 0.05\)</span>, то есть мы допускаем, что в 5% случаев мы можем ошибиться.</p>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Чёт как-то пока не слишком понятно. Абстрактными словами бросаешься, а как оно на деле работает — неясно. <br> — Понимаю, это вполне возможно. К сожалению, нам надо потратить время, чтобы ввести необходимы нам концепты и как-то их описать. Давайте сначала дойдем до статистического вывода, выстроим все нужные конструкции, а затем подробно поглядим на примеры и порисуем картинки.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -958,14 +1188,14 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="prob-hyptesting-typeIIerror" class="level3" data-number="27.4.2">
-<h3 data-number="27.4.2" class="anchored" data-anchor-id="prob-hyptesting-typeIIerror"><span class="header-section-number">27.4.2</span> Ошибка II рода и статистическая мощность</h3>
+<section id="prob-hyptesting-typeIIerror" class="level3" data-number="31.4.2">
+<h3 data-number="31.4.2" class="anchored" data-anchor-id="prob-hyptesting-typeIIerror"><span class="header-section-number">31.4.2</span> Ошибка II рода и статистическая мощность</h3>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="prob-errorconnetion" class="level3" data-number="27.4.3">
-<h3 data-number="27.4.3" class="anchored" data-anchor-id="prob-errorconnetion"><span class="header-section-number">27.4.3</span> Связь ошибок I и II рода</h3>
+<section id="prob-errorconnection" class="level3" data-number="31.4.3">
+<h3 data-number="31.4.3" class="anchored" data-anchor-id="prob-errorconnection"><span class="header-section-number">31.4.3</span> Связь ошибок I и II рода</h3>
 <div class="lab-middle">
 
 </div>
@@ -981,8 +1211,8 @@ window.Quarto = {
 <p>Но ведь <span class="math inline">\(\mathbb{P}(\hat H_1 | H_0) = \alpha\)</span>. Следовательно,</p>
 <p><span id="eq-alpha-prob-h1"><span class="math display">\[
 \mathbb{P}(\hat H_1) = \alpha \cdot \mathbb{P}(H_0)
-\tag{27.1}\]</span></span></p>
-<p>Да, мы не можем знать, чему на деле равна <span class="math inline">\(\mathbb{P}(H_0)\)</span>, но нам это и не важно — из формулы <a href="#eq-alpha-prob-h1" class="quarto-xref"><span>27.1</span></a> следует, что чем меньше <span class="math inline">\(\alpha\)</span>, тем меньше вероятность отклонения нулевой гипотезы:</p>
+\tag{31.1}\]</span></span></p>
+<p>Да, мы не можем знать, чему на деле равна <span class="math inline">\(\mathbb{P}(H_0)\)</span>, но нам это и не важно — из формулы <a href="#eq-alpha-prob-h1" class="quarto-xref"><span>31.1</span></a> следует, что чем меньше <span class="math inline">\(\alpha\)</span>, тем меньше вероятность отклонения нулевой гипотезы:</p>
 <p><span class="math display">\[
 \alpha \to 0 \Rightarrow \mathbb{P}(\hat H_1) \to 0
 \]</span></p>
@@ -992,25 +1222,25 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important&nbsp;27.1
+Важность&nbsp;31.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Иначе говоря, если мы выберем в качестве уровня значимости <span class="math inline">\(0\)</span>, то мы <strong>никогда не сможем отклонить нулевую гипотезу</strong>, а значит <strong>никогда не сможем обнаружить какие-либо различия</strong>.</p>
 </div>
 </div>
-<div class="quote small">
-<p>— Так, ну хорошо. А с ошибкой II рода что? — Да всё так же плохо…</p>
+<div class="quote small pers">
+<p>— Так, ну хорошо. А с ошибкой II рода что? <br> — Да всё так же плохо…</p>
 </div>
-<p>Давайте теперь попробуем посчитать вероятность <em>не отклонить</em> нулевую гипотезу в рамках статистического теста — то есть вычислим <span class="math inline">\(\mathbb{P}(\hat H_0)\)</span>. Как нам это сделать? У нас есть условная вероятность <span class="math inline">\(\mathbb{P}(\hat H_0 | H_1)\)</span>, через которую мы можем выразить интересующую нас вероятность:</p>
+<p>Давайте теперь попробуем посчитать вероятность <em>не отклонить</em> нулевую гипотезу в&nbsp;рамках статистического теста — то&nbsp;есть вычислим <span class="math inline">\(\mathbb{P}(\hat H_0)\)</span>. Как нам это сделать? У&nbsp;нас есть условная вероятность <span class="math inline">\(\mathbb{P}(\hat H_0 | H_1)\)</span>, через которую мы можем выразить интересующую нас вероятность:</p>
 <p><span class="math display">\[
 \mathbb{P}(\hat H_0) = \mathbb{P}(\hat H_0 | H_1) \cdot \mathbb{P}(H_1)
 \]</span></p>
-<p>Но ведь <span class="math inline">\(\mathbb{P}(\hat H_0 | H_1) = \beta\)</span>. Следовательно,</p>
+<p>Но&nbsp;ведь <span class="math inline">\(\mathbb{P}(\hat H_0 | H_1) = \beta\)</span>. Следовательно,</p>
 <p><span id="eq-beta-prob-h0"><span class="math display">\[
 \mathbb{P}(\hat H_0) = \beta \cdot \mathbb{P}(H_1)
-\tag{27.2}\]</span></span></p>
-<p>Да, мы вновь не можем знать, чему на деле равна <span class="math inline">\(\mathbb{P}(H_1)\)</span>, но нам это и здесь не важно — из формулы <a href="#eq-beta-prob-h0" class="quarto-xref"><span>27.2</span></a> следует, что чем меньше <span class="math inline">\(\beta\)</span>, тем меньше вероятность не отклонить нулевую гипотезу:</p>
+\tag{31.2}\]</span></span></p>
+<p>Да, мы вновь не можем знать, чему на деле равна <span class="math inline">\(\mathbb{P}(H_1)\)</span>, но нам это и здесь не важно — из формулы <a href="#eq-beta-prob-h0" class="quarto-xref"><span>31.2</span></a> следует, что чем меньше <span class="math inline">\(\beta\)</span>, тем меньше вероятность не отклонить нулевую гипотезу:</p>
 <p><span class="math display">\[
 \beta \to 0 \Rightarrow \mathbb{P}(\hat H_0) \to 0
 \]</span></p>
@@ -1021,14 +1251,14 @@ Important&nbsp;27.1
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important&nbsp;27.2
+Важность&nbsp;31.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Иначе говоря, если мы выберем в качестве статистической мощности <span class="math inline">\(1\)</span>, то мы <strong>всегда будем должны отклонять нулевую гипотезу</strong>, а значит <strong>никогда всегда будем обнаруживать какие-либо различия</strong>.</p>
 </div>
 </div>
-<div class="quote small">
+<div class="quote small pers">
 <p>— Прискорбная ситуация…<br> — В точности так…</p>
 </div>
 <div class="callout callout-style-simple callout-important">
@@ -1041,12 +1271,12 @@ Important&nbsp;27.2
 </div>
 </div>
 </div>
-<p>Если внимательно присмотреться к мыслям <a href="#imp-siglevel" class="quarto-xref"><span>27.1</span></a> и <a href="#imp-statpower" class="quarto-xref"><span>27.2</span></a>, то можно обнаружить следующее:</p>
+<p>Если внимательно присмотреться к мыслям <a href="#imp-siglevel" class="quarto-xref"><span>31.1</span></a> и <a href="#imp-statpower" class="quarto-xref"><span>31.2</span></a>, то можно обнаружить следующее:</p>
 <ul>
 <li>если принять уровень значимости равным <span class="math inline">\(0\)</span>, то мы с неизбежностью совершим ошибку II рода</li>
 <li>если принять статистическую мощность равной <span class="math inline">\(1\)</span>, то мы с неизбежностью совершим ошибку I рода</li>
 </ul>
-<p>Действительно, давайте посмотрим на следующие выкладки. Мы выяснили, что вероятность не отклонить нулевую гипотезу <span class="math inline">\(\mathbb{P}(\hat H_0)\)</span> определяется через <span class="math inline">\(\beta\)</span> (<a href="#eq-beta-prob-h0" class="quarto-xref">Уравнение&nbsp;<span>27.2</span></a>). Но, с другой стороны,</p>
+<p>Действительно, давайте посмотрим на следующие выкладки. Мы выяснили, что вероятность не отклонить нулевую гипотезу <span class="math inline">\(\mathbb{P}(\hat H_0)\)</span> определяется через <span class="math inline">\(\beta\)</span> (<a href="#eq-beta-prob-h0" class="quarto-xref">Уравнение&nbsp;<span>31.2</span></a>). Но, с другой стороны,</p>
 <p><span class="math display">\[
 \mathbb{P}(\hat H_0) = \mathbb{P}(\hat H_0 | H_0) \cdot \mathbb{P}(H_0)
 \]</span></p>
@@ -1054,13 +1284,13 @@ Important&nbsp;27.2
 <p><span class="math display">\[
 \beta \cdot \mathbb{P}(H_1) = \mathbb{P}(\hat H_0) = \mathbb{P}(\hat H_0 | H_0) \cdot \mathbb{P}(H_0) \Rightarrow \beta = \frac{1}{\mathbb{P}(H_1)} \cdot \mathbb{P}(H_0) \cdot \mathbb{P}(\hat H_0 | H_0)
 \]</span></p>
-<p>Из таблицы <a href="#tbl-stattest-probs" class="quarto-xref"><span>27.3</span></a> несложно увидеть, что<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="math inline">\(\mathbb{P}(\hat H_0|H_0) = 1 - \alpha\)</span>. Тогда,</p>
+<p>Из таблицы <a href="#tbl-stattest-probs" class="quarto-xref"><span>31.3</span></a> несложно увидеть, что<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="math inline">\(\mathbb{P}(\hat H_0|H_0) = 1 - \alpha\)</span>. Тогда,</p>
 <p><span id="eq-beta-to-alpha"><span class="math display">\[
 \beta = \frac{\mathbb{P}(H_0)}{\mathbb{P}(H_1)} \cdot (1 - \alpha)
-\tag{27.3}\]</span></span></p>
+\tag{31.3}\]</span></span></p>
 <p><span id="eq-alpha-to-beta"><span class="math display">\[
 \alpha = 1 - \beta \cdot \frac{\mathbb{P}(H_1)}{\mathbb{P}(H_0)}
-\tag{27.4}\]</span></span></p>
+\tag{31.4}\]</span></span></p>
 <p>Что мы можем в итоге пронаблюдать?</p>
 <div id="imp-alpha-beta-1" class="save-font-size callout callout-style-simple callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1068,11 +1298,11 @@ Important&nbsp;27.2
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important&nbsp;27.3
+Важность&nbsp;31.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Из формул <a href="#eq-beta-to-alpha" class="quarto-xref"><span>27.3</span></a> и <a href="#eq-alpha-to-beta" class="quarto-xref"><span>27.4</span></a> наглядно видно, что вероятности ошибок I и II рода связаны друг с другом — ибо одна выражается через другую и наоборот.</p>
+<p>Из формул <a href="#eq-beta-to-alpha" class="quarto-xref"><span>31.3</span></a> и <a href="#eq-alpha-to-beta" class="quarto-xref"><span>31.4</span></a> наглядно видно, что вероятности ошибок I и II рода связаны друг с другом — ибо одна выражается через другую и наоборот.</p>
 </div>
 </div>
 <div id="imp-alpha-beta-2" class="save-font-size callout callout-style-simple callout-important no-icon callout-titled">
@@ -1081,11 +1311,11 @@ Important&nbsp;27.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important&nbsp;27.4
+Важность&nbsp;31.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Из <a href="#eq-alpha-to-beta" class="quarto-xref"><span>27.4</span></a> видно, что если устремить статистическую мощность к единице — следовательно, вероятность ошибки II рода к нулю — то вероятность ошибки I рода будет стремиться к единице.</p>
+<p>Из <a href="#eq-alpha-to-beta" class="quarto-xref"><span>31.4</span></a> видно, что если устремить статистическую мощность к единице — следовательно, вероятность ошибки II рода к нулю — то вероятность ошибки I рода будет стремиться к единице.</p>
 </div>
 </div>
 <div id="imp-alpha-beta-3" class="save-font-size callout callout-style-simple callout-important no-icon callout-titled">
@@ -1094,11 +1324,11 @@ Important&nbsp;27.4
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important&nbsp;27.5
+Важность&nbsp;31.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Из <a href="#eq-beta-to-alpha" class="quarto-xref"><span>27.3</span></a> видно, что если устремить уровень значимости к нулю, вероятность ошибки II рода будет стремиться к единице<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>Из <a href="#eq-beta-to-alpha" class="quarto-xref"><span>31.3</span></a> видно, что если устремить уровень значимости к нулю, вероятность ошибки II рода будет стремиться к единице<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1111,22 +1341,631 @@ Important&nbsp;27.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Для порядка отметим, что закономерности, обозначенные в <a href="#imp-alpha-beta-1" class="quarto-xref"><span>27.3</span></a>, <a href="#imp-alpha-beta-2" class="quarto-xref"><span>27.4</span></a>, <a href="#imp-alpha-beta-3" class="quarto-xref"><span>27.5</span></a> справедливы для ситуации небольшого размера эффекта, то есть когда параметры генеральных совокупностей не слишком сильно отличаются.</p>
-<p>Если же мы имеем дело в большим размером эффекта, то жизнь становится значительно проще, вероятности ошибок практически перестают зависеть друг от друга. Далее мы визуализируем, как это работает.</p>
-<p>Надо ли было тогда страдать над формулами? Да, эти соотношения имеет смысл себе представлять, так как на практике мы чаще всего имеем дело со средними и малыми эффектами — особенно в нашей в сами исследовательской области.</p>
+<p>Для порядка отметим, что закономерности, обозначенные в <a href="#imp-alpha-beta-1" class="quarto-xref"><span>31.3</span></a>, <a href="#imp-alpha-beta-2" class="quarto-xref"><span>31.4</span></a>, <a href="#imp-alpha-beta-3" class="quarto-xref"><span>31.5</span></a> справедливы для ситуации небольшого размера эффекта, то есть когда параметры генеральных совокупностей не слишком сильно отличаются.</p>
+<p>Если же мы имеем дело в большим размером эффекта, то жизнь становится значительно проще, так как вероятности ошибок практически перестают зависеть друг от друга. Далее мы визуализируем, как это работает.</p>
+<p>Надо ли было тогда страдать над формулами? Да, эти соотношения имеет смысл себе представлять, так как на практике мы чаще всего имеем дело со средними и малыми эффектами — особенно в нашей с вами исследовательской области.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="алгоритм-тестирования-статистических-гипотез" class="level2" data-number="27.5">
-<h2 data-number="27.5" class="anchored" data-anchor-id="алгоритм-тестирования-статистических-гипотез"><span class="header-section-number">27.5</span> Алгоритм тестирования статистических гипотез</h2>
+<section id="prob-hyptesting-algorithm" class="level2" data-number="31.5">
+<h2 data-number="31.5" class="anchored" data-anchor-id="prob-hyptesting-algorithm"><span class="header-section-number">31.5</span> Алгоритм тестирования статистических гипотез</h2>
 <div class="lab-junior">
 
 </div>
-<section id="асимметрия-статистического-вывода" class="level3" data-number="27.5.1">
-<h3 data-number="27.5.1" class="anchored" data-anchor-id="асимметрия-статистического-вывода"><span class="header-section-number">27.5.1</span> Асимметрия статистического вывода</h3>
+<section id="prob-hyptesting-algorithm-opt1" class="level3" data-number="31.5.1">
+<h3 data-number="31.5.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt1"><span class="header-section-number">31.5.1</span> Путь первый</h3>
 <div class="lab-junior">
 
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Алгоритм тестирования статистических гипотез [Вариант 1]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Формулировка гипотез</li>
+<li>Выбор статистического критерия</li>
+<li>Выбор уровня значимости <span class="math inline">\(α\)</span></li>
+<li>Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна</li>
+<li>Определение границ критической области
+<ul>
+<li>Для <em>односторонней</em> альтернативы одно критическое значение <span class="math inline">\(t_{\text{cr}}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы два критических значения <span class="math inline">\(t_{\text{cr}1}\)</span> и <span class="math inline">\(t_{\text{cr}2}\)</span>, такие&nbsp;что <span class="math inline">\(t_{\text{cr}1} &lt; t_{\text{cr}2}\)</span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
+</ul></li>
+<li>Расчёт выборочной статистики <span class="math inline">\(t_o\)</span></li>
+<li>Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область</li>
+<li>Статистический вывод</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Статистический вывод [Вариант 1]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Если значение выборочной статистики <em>попадает</em> в границы критической области, то мы <em>имеем основания отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.
+<ul>
+<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{\text{cr}}\)</span></li>
+<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{\text{cr}}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{\text{cr}1} \vee t_o &gt; t_{\text{cr}2}\)</span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+</ul></li>
+<li>Если значение выборочной статистики <strong>не</strong> <em>попадает</em> в границы критической области, то мы <strong>не</strong> <em>имеем оснований отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.
+<ul>
+<li>Для <em>левосторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{\text{cr}}\)</span></li>
+<li>Для <em>правосторонней</em> альтернативы <span class="math inline">\(t_o &lt; t_{\text{cr}}\)</span></li>
+<li>Для <em>двусторонней</em> альтернативы <span class="math inline">\(t_o &gt; t_{\text{cr}1} \wedge t_o &lt; t_{\text{cr}2}\)</span><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="exm-hyptesting-opt1-h0-greater" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 31.1</strong></span> Студенты одной из&nbsp;академических групп первого курса факультета психологии некоторого вуза прошли тестирование на&nbsp;интеллект с&nbsp;помощью теста IQ. В тестировании принято участие 35 человек. Средний балл студентов оказался равен 102.77. Проверьте гипотезу о&nbsp;том, что&nbsp;уровень интеллекта в&nbsp;этой группе выше среднего.</p>
+</div>
+<p><strong>Шаг 1. Формулировка гипотез.</strong> В&nbsp;данном случае можно сформулировать следующие гипотезы:</p>
+<ul>
+<li><em>Теоретическая гипотеза</em>: интеллект студентов выше по сравнению со средним для их возраста</li>
+<li><em>Эмпирическая гипотеза</em>: средний балл IQ студентов больше среднего значения по данной шкале</li>
+<li><em>Статистические гипотезы</em>:
+<ul>
+<li><span class="math inline">\(H_0 : \mu \leqslant 100\)</span></li>
+<li><span class="math inline">\(H_1 : \mu &gt; 100\)</span></li>
+</ul></li>
+</ul>
+<p><strong>Шаг 2. Выбор статистического критерия.</strong> Для&nbsp;тестирования такой статистической гипотезы в&nbsp;данном случае подойдёт z-тест (z-критерий Фишера), позволяющий сравнить выборочное среднее с&nbsp;заданным значением, так как дисперсия распределения известна. Он вычисляется по&nbsp;следующей формуле:</p>
+<p><span class="math display">\[
+z = \frac{\overline X - \mu_0}{\text{se}},
+\]</span></p>
+<p>где <span class="math inline">\(\overline X\)</span>&nbsp;— выборочное среднее, <span class="math inline">\(\mu_0\)</span>&nbsp;— заданное значение параметра, <span class="math inline">\(\text{se}\)</span>&nbsp;— стандартная ошибка, вычисляемая как <span class="math inline">\(\displaystyle \text{se}= \frac{\sigma}{\sqrt{n}}\)</span>, <span class="math inline">\(\sigma\)</span>&nbsp;— стандартное отклонение.</p>
+<p><strong>Шаг 3. Выбор уровня значимости.</strong> Возьмем дефолтное значение <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p><strong>Шаг 4. Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна.</strong> z-статистика подчиняется стандартному нормальному распределению <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 5. Определение границ критической области.</strong></p>
+<p><span class="math display">\[
+z_{\text{cr}} = 1.645
+\]</span></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Таблица критических значений z-статистики для&nbsp;односторонней альтернативной гипотезы
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(z_{\text{cr}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.050</td>
+<td style="text-align: left;">±1.645</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.010</td>
+<td style="text-align: left;">±2.326</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.001</td>
+<td style="text-align: left;">±3.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 6. Расчёт выборочной статистики <span class="math inline">\(z_o\)</span>.</strong></p>
+<p><span class="math display">\[
+z_o = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} = \frac{102.77 - 100}{15 / \sqrt{35}} \approx 1.09
+\]</span></p>
+<p><strong>Шаг 7. Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область.</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 8. Статистический вывод.</strong></p>
+<p>Так как <span class="math inline">\(z_o &lt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>характерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас нет оснований отклонять нулевую гипотезу о&nbsp;равенстве выборочного среднего значению 100.</p>
+<div id="exm-hyptesting-opt1-h1-greater" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 31.2</strong></span> Студенты другой академической группы первого курса факультета психологии того&nbsp;же вуза также прошли тестирование на&nbsp;интеллект с&nbsp;помощью теста IQ. В тестировании принято участие 32 человека. Средний балл студентов оказался равен 106.19. Проверьте гипотезу о&nbsp;том, что&nbsp;уровень интеллекта в&nbsp;этой группе выше среднего.</p>
+</div>
+<p><strong>Шаг 1. Формулировка гипотез.</strong> Так как суть задачи не&nbsp;изменилась&nbsp;— иными стали только данные&nbsp;— то гипотезы останутся теми&nbsp;же:</p>
+<ul>
+<li><em>Теоретическая гипотеза</em>: интеллект студентов выше по сравнению со средним для их возраста</li>
+<li><em>Эмпирическая гипотеза</em>: средний балл IQ студентов больше среднего значения по данной шкале</li>
+<li><em>Статистические гипотезы</em>:
+<ul>
+<li><span class="math inline">\(H_0 : \mu \leqslant 100\)</span></li>
+<li><span class="math inline">\(H_1 : \mu &gt; 100\)</span></li>
+</ul></li>
+</ul>
+<p><strong>Шаг 2. Выбор статистического критерия.</strong> Поскольку гипотезы остались прежними, мы вновь сможем воспользоваться z-тестом (z-критерий Фишера):</p>
+<p><span class="math display">\[
+z = \frac{\overline X - \mu_0}{\text{se}},
+\]</span></p>
+<p>где <span class="math inline">\(\overline X\)</span>&nbsp;— выборочное среднее, <span class="math inline">\(\mu_0\)</span>&nbsp;— заданное значение параметра, <span class="math inline">\(\text{se}\)</span>&nbsp;— стандартная ошибка, вычисляемая как <span class="math inline">\(\displaystyle \text{se}= \frac{\sigma}{\sqrt{n}}\)</span>, <span class="math inline">\(\sigma\)</span>&nbsp;— стандартное отклонение.</p>
+<p><strong>Шаг 3. Выбор уровня значимости.</strong> Также оставим дефолтное значение <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p><strong>Шаг 4. Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна.</strong> z-статистика всё ещё подчиняется стандартному нормальному распределению <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 5. Определение границ критической области.</strong></p>
+<p>Не&nbsp;изменилось и&nbsp;критическое значение, так как оно определяется уровнем значимости, а он остался прежним.</p>
+<p><span class="math display">\[
+z_{\text{cr}} = 1.645
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 6. Расчёт выборочной статистики <span class="math inline">\(z_o\)</span>.</strong> А&nbsp;вот здесь начинаются изменения. Так как у&nbsp;нас появились новые данные, изменится и значение z-статистики:</p>
+<p><span class="math display">\[
+z_o = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}} = \frac{106.19 - 100}{15 / \sqrt{32}} \approx 2.33
+\]</span></p>
+<p><strong>Шаг 7. Определение, попадает&nbsp;ли наблюдаемое значение статистики в&nbsp;критическую область.</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Шаг 8. Статистический вывод.</strong></p>
+<p>Так как <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>нехарактерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>есть основания</em> отклонить нулевую гипотезу и&nbsp;<em>принять альтернативную</em>, что выборочное среднее больше 100.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 94.17391</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq4
+z = -1.8627, p-value = 0.03125
+alternative hypothesis: true mean is less than 100
+95 percent confidence interval:
+       NA 99.31855
+sample estimates:
+mean of x 
+ 94.17391 </code></pre>
+</div>
+</div>
+<div id="exr-hyptesting-opt1-h1-lower" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 31.1</strong></span> Вместе с&nbsp;коллегами студенты третьей академической группы первого курса факультета психологии уже известного нам вуза принимали участие в&nbsp;тестировании на&nbsp;интеллект с&nbsp;помощью теста IQ. Было протестировано 23 человека, их средний балл составил 94.17. Администрация страшно паникует, смотря на&nbsp;такие результаты, ибо&nbsp;считает, что&nbsp;интеллект группы ниже среднего. Есть&nbsp;ли повод для&nbsp;паники?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Алгоритм остаётся таким&nbsp;же, поэтому тезисно:</p>
+<ol type="1">
+<li><em>Гипотезы</em>:
+<ul>
+<li><em>Теоретическая</em>: интеллект студентов ниже по&nbsp;сравнению со&nbsp;средним для&nbsp;их возраста</li>
+<li><em>Эмпирическая</em>: средний балл IQ студентов ниже среднего значения по&nbsp;данной шкале</li>
+<li><em>Статистические</em>:
+<ul>
+<li><span class="math inline">\(H_0: \mu \geqslant 100\)</span></li>
+<li><span class="math inline">\(H_1: \mu &lt; 100\)</span></li>
+</ul></li>
+</ul></li>
+<li><em>Статистический критерий</em>: <span class="math inline">\(\displaystyle z = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}}\)</span></li>
+<li><em>Уровень значимости</em>: <span class="math inline">\(\alpha = 0.05\)</span></li>
+<li><em>Распределение при&nbsp;справедливости нулевой гипотезы</em>: <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span></li>
+<li><em>Критическое значение</em>: <span class="math inline">\(z_{\text{cr}} = -1.645\)</span></li>
+<li><em>Расчёт выборочной статистики</em>: <span class="math inline">\(\displaystyle z_o = \frac{94.17 - 100}{15 / \sqrt{23}} \approx -1.86\)</span></li>
+<li><em>Сравнение с&nbsp;критическим значением</em>: <span class="math inline">\(z_o &lt; z_{\text{cr}}\)</span></li>
+<li><em>Статистический вывод</em>: так как <span class="math inline">\(z_o &lt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>нехарактерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>есть основания</em> отклонить нулевую гипотезу и&nbsp;<em>принять альтернативную</em>, что выборочное среднее меньше 100.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 97.77143</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq3
+z = -0.87896, p-value = 0.1897
+alternative hypothesis: true mean is less than 100
+95 percent confidence interval:
+       NA 101.9419
+sample estimates:
+mean of x 
+ 97.77143 </code></pre>
+</div>
+</div>
+<div id="exr-hyptesting-opt1-h0-lower" class="theorem exercise">
+<p><span class="theorem-title"><strong>Задание 31.2</strong></span> Четвёртой академической группе первого курса факультета психологии всё того&nbsp;же вуза тоже пришлось участвовать в&nbsp;тестировании на&nbsp;интеллект с&nbsp;помощью теста IQ. Участие в&nbsp;этом мероприятии приняло 35 человек, а средний балл студентов оказался равен 97.77. Администрация и&nbsp;по этому поводу паникует, так&nbsp;как предполагает, что&nbsp;у&nbsp;группы интеллект ниже среднего. Так ли это?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Решение</em>. </span></p>
+<div class="cell">
+<p>Алгоритм остаётся таким&nbsp;же, поэтому тезисно:</p>
+<ol type="1">
+<li><em>Гипотезы</em>:
+<ul>
+<li><em>Теоретическая</em>: интеллект студентов ниже по&nbsp;сравнению со&nbsp;средним для&nbsp;их возраста</li>
+<li><em>Эмпирическая</em>: средний балл IQ студентов ниже среднего значения по&nbsp;данной шкале</li>
+<li><em>Статистические</em>:
+<ul>
+<li><span class="math inline">\(H_0: \mu \geqslant 100\)</span></li>
+<li><span class="math inline">\(H_1: \mu &lt; 100\)</span></li>
+</ul></li>
+</ul></li>
+<li><em>Статистический критерий</em>: <span class="math inline">\(\displaystyle z = \frac{\overline X - \mu_0}{\sigma / \sqrt{n}}\)</span></li>
+<li><em>Уровень значимости</em>: <span class="math inline">\(\alpha = 0.05\)</span></li>
+<li><em>Распределение при&nbsp;справедливости нулевой гипотезы</em>: <span class="math inline">\(z \overset{H_0}{\thicksim} \mathcal{N}(0, 1)\)</span></li>
+<li><em>Критическое значение</em>: <span class="math inline">\(z_{\text{cr}} = -1.645\)</span></li>
+<li><em>Расчёт выборочной статистики</em>: <span class="math inline">\(\displaystyle z_o = \frac{97.77 - 100}{15 / \sqrt{35}} \approx -0.88\)</span></li>
+<li><em>Сравнение с&nbsp;критическим значением</em>: <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span></li>
+<li><em>Статистический вывод</em>: так как <span class="math inline">\(z_o &gt; z_{\text{cr}}\)</span>, то по&nbsp;результатам статистического тестирования мы получили значение <span class="math inline">\(z\)</span>-статистики, <em>характерное</em> для&nbsp;случая, когда <em>нулевая гипотеза верна</em>, следовательно у&nbsp;нас <em>нет оснований</em> отклонить нулевую гипотезу о&nbsp;равенстве выборочного среднего значению 100..</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="prob-hyptesting_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Таблица критических значений z-статистики для&nbsp;двусторонней альтернативной гипотезы
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(z_{\text{cr}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.050</td>
+<td style="text-align: left;">±1.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.010</td>
+<td style="text-align: left;">±2.576</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.001</td>
+<td style="text-align: left;">±3.291</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="prob-hyptesting-algorithm-opt2" class="level3" data-number="31.5.2">
+<h3 data-number="31.5.2" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt2"><span class="header-section-number">31.5.2</span> Путь второй</h3>
+<div class="lab-junior">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Алгоритм тестирования статистических гипотез [Вариант 2]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Формулировка гипотез</li>
+<li>Выбор статистического критерия</li>
+<li>Выбор уровня значимости <span class="math inline">\(α\)</span></li>
+<li>Построение закона распределения статистики критерия при условии, что нулевая гипотеза верна</li>
+<li>Расчёт выборочной статистики</li>
+<li>Расчёт p-значения (p-value)</li>
+<li>Сопоставление уровня значимости <span class="math inline">\(α\)</span> и p-значения (p-value)</li>
+<li>Статистический вывод</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Статистический вывод [Вариант 2]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Если p-значение <em>меньше</em> уровня значимости (<span class="math inline">\(\mathsf{p}&lt; \alpha\)</span>), то мы <em>имеем основания отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.</li>
+<li>Если p-значение <em>больше</em> уровня значимости (<span class="math inline">\(\mathsf{p}&gt; \alpha\)</span>), то мы <strong>не</strong> <em>имеем оснований отклонить нулевую гипотезу</em> <span class="math inline">\(H_0\)</span> и принять альтернативную <span class="math inline">\(H_1\)</span>.</li>
+</ul>
+</div>
+</div>
+<section id="prob-hyptesting-algorithm-opt2-pval" class="level4" data-number="31.5.2.1">
+<h4 data-number="31.5.2.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-opt2-pval"><span class="header-section-number">31.5.2.1</span> p-value</h4>
+<p><span class="math display">\[
+\begin{align}
+H_1&amp;: \theta_1 &gt; \theta_2 \quad \mathsf{p}\overset{\text{def}}{=} \mathbb{P}(t \geqslant t_o \mid H_0) \\
+H_1&amp;: \theta_1 &lt; \theta_2 \quad \mathsf{p}\overset{\text{def}}{=} \mathbb{P}(t \leqslant t_o \mid H_0) \\
+H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}\overset{\text{def}}{=} 2 \min \big( \mathbb{P}(t \geqslant t_o \mid H_0), \mathbb{P}(t \leqslant t_o \mid H_0)  \big)
+\end{align}
+\]</span></p>
+<hr>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 102.7714</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq1
+z = 1.0931, p-value = 0.1372
+alternative hypothesis: true mean is greater than 100
+95 percent confidence interval:
+ 98.60096       NA
+sample estimates:
+mean of x 
+ 102.7714 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 106.1875</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  iq2
+z = 2.3335, p-value = 0.009812
+alternative hypothesis: true mean is greater than 100
+95 percent confidence interval:
+ 101.8259       NA
+sample estimates:
+mean of x 
+ 106.1875 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Эквивалентность первого и второго путей
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Заметим, что:</p>
+<ul>
+<li>если <span class="math inline">\(\mathsf{p}&lt; \alpha\)</span>, то
+<ul>
+<li><span class="math inline">\(t_{o} &lt; t_{\text{cr}}\)</span> для левосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &gt; t_{\text{cr}}\)</span> для правосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &lt; t_{\text{cr}1} \vee t_{o} &gt; t_{\text{cr}2}\)</span> для двусторонней альтернативы</li>
+</ul></li>
+<li>если <span class="math inline">\(\mathsf{p}&gt; \alpha\)</span>, то
+<ul>
+<li><span class="math inline">\(t_{o} &gt; t_{\text{cr}}\)</span> для левосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &lt; t_{\text{cr}}\)</span> для правосторонней альтернативы</li>
+<li><span class="math inline">\(t_{o} &gt; t_{\text{cr}1} \wedge t_{o} &lt; t_{\text{cr}2}\)</span> для двусторонней альтернативы</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="prob-hyptesting-errorconnection-graph" class="level3" data-number="31.5.3">
+<h3 data-number="31.5.3" class="anchored" data-anchor-id="prob-hyptesting-errorconnection-graph"><span class="header-section-number">31.5.3</span> Визуализация связи ошибок I и II рода</h3>
+<div class="lab-junior">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="prob-hyptesting_files/figure-html/error-connection-graph-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="prob-hyptesting_files/figure-html/error-connection-graph-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="prob-hyptesting-inf-asymm" class="level2" data-number="31.6">
+<h2 data-number="31.6" class="anchored" data-anchor-id="prob-hyptesting-inf-asymm"><span class="header-section-number">31.6</span> Асимметрия статистического вывода</h2>
+<div class="lab-junior">
+
+</div>
+</section>
+<section id="prob-hyptesting-algorithm-R" class="level2" data-number="31.7">
+<h2 data-number="31.7" class="anchored" data-anchor-id="prob-hyptesting-algorithm-R"><span class="header-section-number">31.7</span> Алгоритм тестирования статистических гипотез в R</h2>
+<div class="lab-senior">
+
+</div>
+<section id="prob-hyptesting-algorithm-pval-math" class="level3" data-number="31.7.1">
+<h3 data-number="31.7.1" class="anchored" data-anchor-id="prob-hyptesting-algorithm-pval-math"><span class="header-section-number">31.7.1</span> Математика вычисления p-value</h3>
+<div class="lab-senior">
+
+</div>
+<p><span class="math display">\[
+\begin{align}
+H_1&amp;: \theta_1 &gt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \geqslant t_o \mid H_0) = \int_{t_o}^{+\infty} \mathbb{p}(t) dt \\
+H_1&amp;: \theta_1 &lt; \theta_2 \quad \mathsf{p}= \mathbb{P}(t \leqslant t_o \mid H_0) = \int_{-\infty}^{t_o} \mathbb{p}(t) dt \\
+H_1&amp;: \theta_1 \neq \theta_2 \quad \mathsf{p}= 2 \min \big( \mathbb{P}(t \geqslant t_o \mid H_0), \mathbb{P}(t \leqslant t_o \mid H_0)  \big) = 2 \min \Bigg( \int_{t_o}^{+\infty} \mathbb{p}(t) dt, \int_{-\infty}^{t_o} \mathbb{p}(t) dt \Bigg)
+\end{align}
+\]</span></p>
+<hr>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  smpl1
+z = 0.69486, p-value = 0.4871
+alternative hypothesis: true mean is not equal to 100
+95 percent confidence interval:
+  97.55014 105.14105
+sample estimates:
+mean of x 
+ 101.3456 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  smpl2
+z = 3.8199, p-value = 0.0001335
+alternative hypothesis: true mean is not equal to 100
+95 percent confidence interval:
+ 103.6017 111.1926
+sample estimates:
+mean of x 
+ 107.3971 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6948608</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4871425</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.819868</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0001335231</code></pre>
+</div>
+</div>
+<hr>
+<section id="session_info" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.5.1 (2025-06-13)
+Platform: x86_64-apple-darwin20
+Running under: macOS Sequoia 15.4.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Moscow
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] latex2exp_0.9.6 lubridate_1.9.4 forcats_1.0.0   stringr_1.5.1  
+ [5] dplyr_1.1.4     purrr_1.0.4     readr_2.1.5     tidyr_1.3.1    
+ [9] tibble_3.2.1    ggplot2_3.5.2   tidyverse_2.0.0
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6       jsonlite_2.0.0     compiler_4.5.1     tidyselect_1.2.1  
+ [5] scales_1.4.0       fastmap_1.2.0      lattice_0.22-7     R6_2.6.1          
+ [9] labeling_0.4.3     generics_0.1.4     knitr_1.50         htmlwidgets_1.6.4 
+[13] pillar_1.10.2      RColorBrewer_1.1-3 tzdb_0.5.0         rlang_1.1.6       
+[17] BSDA_1.2.2         stringi_1.8.7      xfun_0.52          timechange_0.3.0  
+[21] cli_3.6.5          withr_3.0.2        magrittr_2.0.3     class_7.3-23      
+[25] digest_0.6.37      grid_4.5.1         rstudioapi_0.17.1  hms_1.1.3         
+[29] lifecycle_1.0.4    vctrs_0.6.5        proxy_0.4-27       evaluate_1.0.3    
+[33] glue_1.8.0         farver_2.1.2       e1071_1.7-16       rmarkdown_2.29    
+[37] tools_4.5.1        pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
+</div>
 </div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
@@ -1144,385 +1983,272 @@ Ruiter, J. de. (2019). Redefine or justify? Comments on the alpha debate. <em>Ps
 </div>
 </section>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Здесь использованы логические операторы: эквивалентность (равносильность, <span class="math inline">\(\Leftrightarrow\)</span>) и конъюнкция (логическое И, <span class="math inline">\(\wedge\)</span>). Подробнее см. главу «<a href="./math-logic.html">Логика и алгебра логики</a>».<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Если вы успели подзабыть, что это такое, посмотрите <a href="./desc-statintro.html#desc-statintro-statdata">этот раздел</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Это верно, так как события, описываемые ситуациями 2 и 4 (<a href="#tbl-stattest-situations" class="quarto-xref">Таблица&nbsp;<span>27.2</span></a>), составляют полную группу событий.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Это верно, так как события, описываемые ситуациями 2 и 4 (<a href="#tbl-stattest-situations" class="quarto-xref">Таблица&nbsp;<span>31.2</span></a>), составляют полную группу событий.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Так как <span class="math inline">\(\mathbb{P}(\hat H_0 | H_0) + \mathbb{P}(\hat H_1 | H_0) = \mathbb{P}(\hat H_0 | H_0) + \alpha = 1\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Внимательный читатель, конечно, возразит, что в этом случае <span class="math inline">\(\beta\)</span> будет стремится не к единице, а к отношению <span class="math inline">\(\dfrac{\mathbb{P}(H_1)}{\mathbb{P}(H_0)}\)</span>. Это справедливо, однако для небольшого размера эффекта это отношение близко к единице. О роли размера эффекта см. далее.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично — что&nbsp;встречается довольно часто — можно рассматривать модуль критического значения <span class="math inline">\(|t_{\text{cr}}|\)</span>, так&nbsp;как оба критических значения будут равны по&nbsp;модулю, но&nbsp;противоположны по знаку: <span class="math inline">\(t_{\text{cr}1} = -t_{\text{cr}2}\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &gt; |t_{\text{cr}}|\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>В&nbsp;случае, если&nbsp;распределение статистики критерия симметрично, можно упростить данное условие до&nbsp;<span class="math inline">\(|t_o| &lt; |t_{\text{cr}}|\)</span>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Скопировано!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Скопировано!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1530,198 +2256,206 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./prob-statestim.html" class="pagination-link" aria-label="Оценивание параметров в статистическом анализе">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./prob-falsepositive.html" class="pagination-link" aria-label="False Positive">
-        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
