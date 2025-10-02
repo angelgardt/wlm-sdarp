@@ -3,14 +3,402 @@
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=TRUE, warning=TRUE, error=FALSE)
 ```
 
 :::{.intro}
 Вступление
 :::
 
+## Концепция Tidy Data {#r-tidy-concept}
 
+:::{.lab-junior}
+:::
+
+
+::: {#fig-tidy-rules layout-ncol=2}
+
+![Общий вид «опрятных данных»](img/r-tidy/tidy-rules-data.png){#fig-tidy-rules-data}
+
+![По колонкам --- переменные](img/r-tidy/tidy-rules-cols.png){#fig-tidy-rules-cols}
+
+![По строкам --- наблюдения](img/r-tidy/tidy-rules-rows.png){#fig-tidy-rules-rows}
+
+![В ячейках --- значения](img/r-tidy/tidy-rules-cells.png){#fig-tidy-rules-cells}
+
+Принципы Tidy Data
+:::
+
+
+
+## Семейство пакетов `tidyverse` {#r-tidy-tidyverse}
+
+:::{.lab-junior}
+:::
+
+::::{.columns style="display: block"}
+:::{.column width="80%"}
+прекраснейший набор пакетов, существенно упрощающий жизнь
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="15%"}
+![](img/r-tidy/logos/tidyverse.svg)
+:::
+::::
+
+
+Устанавливается и подключается `tidyverse`, как и другие пакеты, с помощью функций `install.packages()` и `library()`.
+
+:::{#lst-install-tidyverse}
+```{r install-tidyverse, eval=FALSE}
+install.packages("tidyverse")
+```
+
+Установка `tidyverse`
+:::
+
+:::{#lst-load-tidyverse}
+```{r load-tidyverse}
+library(tidyverse)
+```
+
+Загрузка (подключение) `tidyverse`
+:::
+
+При подключении к текущей сессии `tidyvers` нам сообщает, какие именно пакеты были подключены, а также их версии. Например, пакеты `ggplot2` версии `r packageVersion("ggplot2")` и `stringr` версии `r packageVersion("stringr")`. Кроме того, нас известили о возникших конфликтах --- функции из разных пакетов могут иметь одинаковые названия, что может иногда ломать скрипт. Однако в случае с `tidyverse` конфликты несущественны, поэтому мы их проигнорируем.
+
+::::{.columns style="display: block"}
+:::{.column width="65%"}
+
+`tidyverse` объединяет в себе, как мы видим из выводимого при его загрузке сообщения, много разных пакетов. В дальнейшем мы не будем разбираться, из какого конкретно пакета приходит та или иная функция, но всё же стоит кратко описать, чем каждый из пакетов занимается.
+
+* `readr` содержит функции для чтения файлов данных различных форматов
+* `readxl` является частью расширенного `tidyverse` и специализируется на чтении табличных данных
+* `tibble` предоставляет новую структуру данных, которая называется `tibble`
+* `tidyr`
+* `dplyr`
+* `ggplot2` позволяет рисовать невероятные графики
+* `stringr` расширяет возможности работы со строками
+* `lubridate` корректно обрабатывать даты и время
+* `forcats` содержит функции для работы с факторами
+* `purrr`
+
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="15%"}
+
+![](img/r-tidy/logos/readr.svg)
+
+![](img/r-tidy/logos/readxl.svg)
+
+![](img/r-tidy/logos/tibble.svg)
+
+![](img/r-tidy/logos/tidyr.svg)
+
+![](img/r-tidy/logos/dplyr.svg)
+
+:::
+:::{.column width="15%"}
+
+![](img/r-tidy/logos/ggplot2.svg)
+
+![](img/r-tidy/logos/stringr.svg)
+
+![](img/r-tidy/logos/lubridate.svg)
+
+![](img/r-tidy/logos/forcats.svg)
+
+![](img/r-tidy/logos/purrr.svg)
+
+:::
+::::
+
+
+
+
+
+## Импорт данных {#r-tidy-import}
+
+:::{.lab-junior}
+:::
+
+```{r exmpl-data-create, echo=FALSE, eval=FALSE, message=FALSE}
+tibble(
+  id = paste0("r", 1:6),
+  V1 = c("Abc", "Def", "Ghi", "Jkl", "Mno", NA),
+  V2 = c(1, 8, 3, 12, 4, NA),
+  C1 = c(TRUE, TRUE, FALSE, FALSE, FALSE, TRUE),
+  C2 = c("No", "No", "Yes", "Yes", "No", "No"),
+  V3a = c(13.4, 11.8, 4.60, 3.50, -4.03, 0.78),
+  V3b = c("Msk", NA, NA, "SPb", "Ekb", "Nsk")
+  ) -> d
+
+# dir.create("../data/r-tidy")
+# file.remove(dir("data/r-tidy/", full.names = TRUE))
+
+# d %>% write_csv("data/r-tidy/ds_csv.csv")
+# d %>% write_csv2("data/r-tidy/ds_csv2.csv")
+# d %>% write_tsv("data/r-tidy/ds_tsv.tsv")
+# d %>% write_delim("data/r-tidy/ds_table.tsv", delim = " ")
+# d %>% write.table("data/r-tidy/ds_delim.txt", sep = "|", dec = ",")
+```
+
+```{r read-csv}
+ds_csv <- read_csv("data/r-tidy/ds_csv.csv")
+str(ds_csv)
+```
+
+```{r read-csv2}
+ds_csv2 <- read_csv2("data/r-tidy/ds_csv2.csv")
+str(ds_csv2)
+```
+
+```{r read-tsv}
+ds_tsv <- read_tsv("data/r-tidy/ds_tsv.tsv")
+str(ds_tsv)
+```
+
+```{r read-table}
+ds_table <- read_table("data/r-tidy/ds_table.tsv")
+str(ds_table)
+```
+
+```{r read-delim}
+ds_delim <- read_delim("data/r-tidy/ds_delim.txt",
+                       delim = "|",
+                       locale = locale(decimal_mark = ","))
+str(ds_delim)
+```
+
+
+### `tibble`
+
+:::{.lab-junior}
+:::
+
+```{r read-csv-dataframe}
+ds_dataframe <- read.csv("data/r-tidy/ds_csv.csv")
+```
+
+```{r tibble-df-class}
+class(ds_dataframe)
+class(ds_csv)
+```
+
+```{r call-tibble-dataframe}
+ds_dataframe
+ds_csv
+```
+
+
+
+:::{.callout-tip}
+###### Почистим ненужное
+
+Если вы выполняли у себя в R команды из предыдущего раздела, в Environment у вас накопилось много одинаковых объектов с разными названиями. Чтобы не тащить их дальше и не загружать лишний раз оперативную память, давайте почистим глобальное окружение известным нам способом.
+
+```{r}
+ls() ## что сейчас есть в окружении?
+rm(list = ls()) ## удалить все объекты, содержащиеся в глобальном окружении
+ls() ## проверить содержимое окружения
+```
+:::
+
+Далее мы изучим работу основных функций, которые используются в предобработке данных, на примере датасета `ds`. Чтобы не таскать аффиксы `_csv`, `_tsv` и другие, вновь прочитаем данные --- теперь просто в объект `ds`.
+
+```{r read-ds}
+ds <- read_csv("data/r-tidy/ds_csv.csv")
+```
+
+
+## Pipe (` %>% `) {#r-tidy-pipe}
+
+:::{.lab-junior}
+:::
+
+::::{.columns style="display: block"}
+:::{.column width="80%"}
+Кроме множества функций, `tidyverse` также приносит с собой новый оператор --- pipe (пайп) --- который выглядит вот так: ` %>% `.
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="15%"}
+![](img/r-tidy/logos/pipe.svg)
+:::
+::::
+
+:::{.callout-note collapse="true"}
+###### Pipe: magrittr vs native
+
+![Включение использования нативного пайпа](img/r-tidy/native-pipe.png)
+:::
+
+## Переименование переменных {#r-tidy-rename}
+
+```{r rename-basic1}
+ds %>% rename(var1 = V1,
+              var2 = V2)
+```
+
+```{r rename-basic2}
+ds %>% rename(var1 = V1,
+              var2 = V2,
+              var3 = C1,
+              var4 = C2,
+              var5 = V3a,
+              var6 = V3b)
+```
+
+```{r rename-all-function}
+ds %>% rename_all(tolower)
+```
+
+```{r rename-all-function-args-error, error=TRUE}
+ds %>% rename_all(str_replace(pattern = "V", replacement = "var"))
+```
+
+```{r rename-all-function-args}
+ds %>% rename_all(str_replace, pattern = "V", replacement = "var")
+```
+
+```{r rename-all-error, error=TRUE}
+ds %>% rename_all(str_replace, pattern = "V", replacement = "C")
+```
+
+
+Если же вы точно знаете, в каком порядке в ваших данных идут колонки, и хотите прописать новые названия просто по порядку, можно воспользоваться функцией `set_names()`. Она в качестве аргумента ожидает вектор новых названий колонок:
+
+```{r set-names1}
+ds %>% set_names(c("id", "var1", "var2", "var3", "var4", "var5", "var6"))
+```
+
+Или же можно создать вектор новых названий на лету по какому-то шаблону --- вновь пригодятся умения [работы со строками](r-strings.qmd):
+
+```{r set-names2}
+ds %>% set_names(c("id", paste0("var", 1:6)))
+```
+
+
+
+
+## Фильтрация данных {#r-tidy-subset}
+
+### Выбор столбцов {#r-tidy-select}
+
+:::{#lst-select-basic}
+```{r select-basic}
+ds %>% select(id, V1, V2, C1)
+```
+:::
+
+:::{#lst-select-range}
+```{r select-range}
+ds %>% select(id, V1:C2)
+```
+:::
+
+:::{#lst-select-starts-with}
+```{r select-starts-with}
+ds %>% select(starts_with("V"))
+```
+:::
+
+:::{#lst-select-ends-with}
+```{r select-ends-with}
+ds %>% select(ends_with("2"))
+```
+:::
+
+:::{#lst-select-matches-basic}
+```{r select-ends-matches-basic}
+ds %>% select(matches("V3"))
+```
+:::
+
+:::{#lst-select-matches-regex}
+```{r select-ends-matches-regex}
+ds %>% select(matches("V2|3"))
+```
+:::
+
+
+
+
+### Фильтрация строк {#r-tidy-filter-slice}
+
+:::{#lst-filter-onecond}
+```{r filter-onecond}
+ds %>% filter(C2 == "Yes")
+```
+:::
+
+:::{#lst-filter-twoconds-and}
+```{r filter-twoconds-and}
+ds %>% filter(C2 == "No" & V2 > 2)
+```
+:::
+
+:::{#lst-filter-twoconds-or}
+```{r filter-twoconds-or}
+ds %>% filter(C2 == "Yes" | V2 > 2)
+```
+:::
+
+:::{#lst-filter-logvar}
+```{r filter-logvar}
+ds %>% filter(C1)
+```
+:::
+
+:::{#lst-filter-logvar-comb}
+```{r filter-logvar-comb}
+ds %>% filter(!C1 & C2 == "Yes")
+```
+:::
+
+
+:::{#lst-filter-strfuns}
+```{r filter-strfuns}
+ds %>% filter(str_detect(V3b, "sk$"))
+```
+:::
+
+
+
+## Сортировка данных {#r-tidy-arrange}
+
+## Создание и изменение переменных {#r-tidy-mutate}
+
+## Агрегация данных {#r-tidy-summarise}
+
+## Объединение датасетов {#r-tidy-merge}
+
+### Объединение по строкам и столбцам {#r-tidy-binds}
+
+### Объединение по ключу {#r-tidy-joins}
+
+#### `inner_join()`
+
+#### `left_join()`
+
+#### `right_join()`
+
+#### `full_join()`
+
+#### `semi_join()`
+
+#### `anti_join()`
+
+
+## Экспорт данных {#r-tidy-export}
 
 
 

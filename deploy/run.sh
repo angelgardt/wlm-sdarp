@@ -2,6 +2,7 @@
 
 ## import functions and colors
 source deploy/modules/_set-colors.sh
+source deploy/modules/_clear-cache.sh
 source deploy/modules/_render.sh
 source deploy/modules/_deploy.sh
 source deploy/modules/_release.sh

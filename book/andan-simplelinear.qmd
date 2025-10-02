@@ -11,175 +11,650 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
+## Идея линейной регрессии {#andan-simplelinear-idea}
+
+:::{.lab-junior}
+:::
+
+## Математическая модель {#andan-simplelinear-model}
+
+:::{.lab-junior}
+:::
+
+Известно, что любая прямая задаётся уравнением вида $y = kx + b$, где $x$ и $y$ --- переменные, а $k$ и $b$ --- коэффициенты, причём $k$ называется **угловым коэффициентом (slope)** и задаёт наклон прямой, а $b$ --- **свободным членом, или интерсептом (intercept)** и определяет точку пересечения прямой с вертикальной координатной осью.
+
+Действительно, уравнение регрессионной прямой будет задаваться следующим образом:
+
+$$
+y = b_0 + b_1 x
+$$
+
+Традиционно используются немного другие обозначения, но соответствие очевидно: $b_0$ --- интерсепт, $b_1$ --- угловой коэффициент. Переменные $y$ и $x$ --- это столбцы наших данных, то есть те самые переменные, связь между которыми мы хотим смоделировать. Они носят различные имена:
+
+* $x$ именуют *независимой переменной*, *предиктором* или *регрессором*,
+* $y$ называют *зависимой переменной*, *целевой переменной* или *регрессантом*.
+
+:::{.callout-note}
+###### О терминах «независимая переменная» и «зависимая переменная» в регрессии
+
+Оговоримся, что термины «зависимая» и «независимая» в отношении переменных, включенных в регрессионную модель, носят условный характер. Как и любой статистический метод, регрессионный анализ **не позволяет сделать причинно-следственного вывода**.
+
+Математике абсолютно всё равно, что рассматривать в качестве «зависимой», а что в качестве «независимой» переменной. В этом смысле рассматриваемая в этой главе простая линейная регрессия тестирует те же гипотезы, что и корреляция --- о **взаимо**связях между двумя переменными.
+:::
+
+:::{#exr-inverse-reg}
+$x$ через $y$ используя уравнение $y = b_0 + b_1 x$. покажите, что эта связь также будет линейной.
+:::
+
+::::{.solution}
+:::{.cell}
+$$
+\begin{split}
+y &= b_0 + b_1 x\\
+b_1 x &= y - b_0 \\
+x &= \frac{1}{b_1} y - \frac{b_0}{b_1}
+\end{split}
+$$
+
+Заметим, что $\frac{1}{b_1}$ и $\frac{b_0}{b_1}$ --- это просто некоторые числа, поэтому мы их можем обозначить, скажем, так:
+
+$$
+\begin{split}
+c_1 &= \frac{1}{b_1} \\
+c_0 &= -\frac{b_0}{b_1}
+\end{split}
+$$
+
+Тогда полученное уравнение может переписать в виде
+
+$$
+x = c_0 + c_1 y,
+$$
+
+что полностью соответствует уравнению прямой.
+
+:::
+::::
+
+Окей, к тестированию гипотез, интерпретации результатов и отношениям между регрессией и корреляцией обратимся позже --- пока что мы ещё не до конца осознали саму регрессионную модель. Если бы мы занимались только математикой, то сказанного выше было бы достаточно для описания связи между двумя переменным. Мы же находимся в поле статистики.
+
+[[[связь в генеральной совокупности]]]
+
+$$
+\hat y_i = b_0 + b_1 x_i
+$$
+
+
+$$
+y_i = \beta_0 + \beta_1 x_i + \vepsilon_i
+$$
+
+$$
+y_i = \hat \beta_0 + \hat \beta_1 x_i + \hat \vepsilon_i = b_0 + b_1 x_i + e_i
+$$
+
+
+Коэффициенты линейной регрессии вычисляются по следующим формулам:
+
+$$
+b_0 = \overline y - b_1 \overline x
+$${#eq-b0-calc}
+
+$$
+b_1 = \frac{\overline{xy} - \overline x \cdot \overline y}{\sigma_X^2}
+$${#eq-b1-calc}
+
+
+## Тестирование качества модели {#andan-simplelinear-test}
+
+### Структура изменчивости данных с точки зрения регрессионной модели {#andan-simplelinear-test-datavar}
+
+$$
+\TSS = \sum_{i=1}^n (y_i - \overline y)^2
+$$
+
+$$
+\ESS = \sum_{i=1}^n (\hat y_i - \overline y)^2
+$$
+
+$$
+\RSS = \sum_{i=1}^n (y_i - \hat y_i)^2
+$$
+
+
+$$
+\MS_\text{t} = \frac{\TSS}{n-1} = \frac{\sum_{i=1}^n (y_i - \overline y)^2}{n-1} = \hat \sigma^2_Y = s^2_Y
+$$
+
+$$
+\MS_\text{e} = \hat \sigma^2_\text{e}
+$$
+
+$$
+\MS_\text{r} = \hat \sigma^2_\text{r}
+$$
+
+
+### F-критерий {#andan-simplelinear-test-fisher}
+
+$$
+\begin{split}
+H_0 &: \sigma_\text{e} \leq \sigma_\text{r} \\
+H_1 &: \sigma_\text{e} > \sigma_\text{r}
+\end{split}
+$$
+
+
+$$
+F = \frac{\MS_\text{e}}{\MS_\text{r}} = \frac{\hat \sigma^2_\text{e}}{\hat \sigma^2_\text{r}}
+\disted{H_0} F(\df_1, \df_2)
+$$
+
+
+## Тестирование значимости коэффициентов {#andan-simplelinear-test-student}
+
+
+$$
+\begin{split}
+H_0 &: \beta_1 = 0 \\
+H_1 &: \beta_1 \neq 0
+\end{split}
+$$
+
+$$
+t = \frac{b_1 - \beta_1}{\se_{b_1}} \overset{H_0}{=} \frac{b_1}{\se_{b_1}} \disted{H_0} t(n-2)
+$$
+
+$$
+\se_{b_1} = \frac{\sqrt{\frac{1}{n-2} \sum_{i=1}^n (y_i - \hat y_i)^2}}{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2}}
+$$
+
+$$
+t = \frac{r \sqrt{n-2}}{\sqrt{1 - r^2}}
+$$
+
+
+
+## Математика простой линейной регрессии {#andan-simplelinear-math}
+
 ### Аналитическое вычисление коэффициентов {#andan-simplelinear-solve-deriv}
 
 $$
-f(b_0, b_1) = \sum_{i=1}^n (y_i - \hat y_i)^2 = \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
+L(b_0, b_1) = \sum_{i=1}^n e_i^2 \rightarrow \min_{b_0, b_1}
 $$
+
+Так как $e_i = y_i - \hat y_i$, имеем
 
 $$
 \begin{split}
-f(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1x_i) (y_i - b_0 - b_1x_i) \\
-f(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - b_0 y_i - b_1 x_i y_i - b_0 y_i - b_1 x_i y_i + b_0 b_1 x_i + b_1^2 x_i^2 + b_0^2 + b_0 b_1 x_i) \\
-f(b_0, b_1) &= \sum_{i=1}^n (y_i^2 - 2 b_1 x_i y_i - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
+L(b_0, b_1) &= \sum_{i=1}^n (y_i - \hat y_i)^2 = \\
+&= \sum_{i=1}^n \big( y_i - (b_0 + b_1x_i) \big)^2 = \\
+&= \sum_{i=1}^n (y_i - b_0 - b_1x_i)^2 \rightarrow \min_{b_0, b_1}
 \end{split}
 $$
 
-$$
-\begin{split}
-\frac{f(b_0, b_1)}{\partial b_0} &= 
-\sum_{i=1}^n (-2y_i + 2b_0 + 2x_ib_1) = 
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) \\
-\frac{f(b_0, b_1)}{\partial b_1} &= 
-\sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = 
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i
-\end{split}
-$$
+Ну, поехали решать. Раскроем скобки под знаком суммы:
 
 $$
 \begin{split}
-&\cases {
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
--2 \sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&\cases{
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) = 0 \\
-\sum_{i=1}^n \big( y_i - (b_0 + b_1 x_i) \big) x_i = 0
-} \\
-&\cases{
-\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = 0 \\
-\sum_{i=1}^n y_i x_i - \sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x^2_i = 0
-} \\
-&\cases{
-\sum_{i=1}^n b_0 + \sum_{i=1}^n b_1 x_i = \sum_{i=1}^n y_i \\
-\sum_{i=1}^n b_0 x_i + \sum_{i=1}^n b_1 x_i^2 = \sum_{i=1}^n y_i x_i
-} \\
-&\cases{
+L(b_0, b_1) &= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (y_i - b_0 - b_1 x_i) \\
+L(b_0, b_1) &= \sum_{i=1}^n (
+y_i^2 - y_i b_0 - y_i b_1 x_i 
+- b_0 y_i + b_0^2 + b_0 b_1 x_i
+- b_1 x_i y_i + b_1 x_i b_0 + b_1^2 x_i^2
+)
+\end{split}
+$$
+
+Приведём подобные слагаемые и запишем их в более единообразном формате:
+
+$$
+\begin{split}
+L(b_0, b_1) &= \sum_{i=1}^n (
+y_i^2 
+- \underline{y_i b_0}
+- \underline{\underline{y_i b_1 x_i}}
+- \underline{b_0 y_i} + b_0^2 + \underline{\underline{\underline{b_0 b_1 x_i}}}
+- \underline{\underline{b_1 x_i y_i}} 
++ \underline{\underline{\underline{b_1 x_i b_0}}} 
++ b_1^2 x_i^2
+) \\
+L(b_0, b_1) &= \sum_{i=1}^n (
+y_i^2 + b_0^2 + x_i^2 b_1^2 - 2 y_i b_0 - 2  x_i y_i b_1 + 2 x_i b_1 b_0
+)
+\end{split}
+$$
+
+Чтобы найти минимум получившейся функции, необходимо взять частные производные по каждой из перменных --- $b_0$ и $b_1$:
+
+$$
+\begin{split}
+\frac{\partial L(b_0, b_1)}{\partial b_0} &= 
+\sum_{i=1}^n (2b_0 - 2y_i + 2x_ib_1) = \\
+&= -2 \sum_{i=1}^n (-b_0 + y_i - x_i b_1) = \\
+&= -2 \sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) \\
+\frac{\partial L(b_0, b_1)}{\partial b_1} &= 
+\sum_{i=1}^n (2 x_i^2 b_1 - 2 x_i y_i + 2 x_i b_0) = \\
+&= -2 \sum_{i=1}^n (-x_i^2 b_1 + x_i y_i - x_i b_0) = \\
+&= -2 \sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1)
+\end{split}
+$$
+
+Мы сразу преобразовали выражения, чтобы привести их к некоторому похожему виду. Теперь, так как мы ищем минимум функции, приравниваем обе производные *одновременно* к нулю --- то есть составляем следующую систему:
+
+$$
+\cases {
+-2 \sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) = 0 \\
+-2 \sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1) = 0
+}
+$$
+
+Разделим оба уравнения на $-2$:
+
+$$
+\cases{
+\sum_{i=1}^n ( y_i - b_0 - x_i b_1 ) = 0 \\
+\sum_{i=1}^n ( y_i - x_i b_0 - x_i^2 b_1 ) = 0
+}
+$$
+
+Раскроем суммы:
+
+$$
+\cases{
+\sum_{i=1}^n y_i - \sum_{i=1}^n b_0 - \sum_{i=1}^n x_i b_1 = 0 \\
+\sum_{i=1}^n y_i x_i - \sum_{i=1}^n x_i b_0 - \sum_{i=1}^n x_i^2 b_1 = 0
+}
+$$
+
+Оставим в левых частях только те слагаемые, которые содержат неизвестные $b_0$ и $b_1$:
+
+$$
+\cases{
+\sum_{i=1}^n b_0 + \sum_{i=1}^n x_i b_1 = \sum_{i=1}^n y_i \\
+\sum_{i=1}^n x_i b_0 + \sum_{i=1}^n x_i^2 b_1 = \sum_{i=1}^n y_i x_i
+}
+$$
+
+Упростим, там где можно:
+
+$$
+\cases{
 n b_0 + b_1 \sum_{i=1}^n x_i = \sum_{i=1}^n y_i \\
 b_0 \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
 }
-\end{split}
 $$
+
+Из первого уравнения получаем решение для $b_0$:
 
 $$
 \begin{split}
 b_0 &= \frac{\sum_{i=1}^n y_i}{n} - b_1 \frac{\sum_{i=1}^n x_i}{n} \\
-b_0 &= \overline Y - b_1 \overline X
+b_0 &= \overline y - b_1 \overline x
 \end{split}
 $$
 
+Мы получили формулу [-@eq-b0-calc].
+
+Осталось найти решение для $b_1$ --- его получим из второго уравнения, подставив выражение для $b_0$:
+
+$$
+(\overline y - b_1 \overline x) \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x^2_i = \sum_{i=1}^n y_i x_i
+$$
+
+Далее следуют алгебраические преобразования:
+
 $$
 \begin{split}
-\underline{b_1 \sum_{i=1}^n x_i^2} + 
-\overline Y \sum_{i=1}^n x_i - 
-\underline{b_1 \overline X \sum_{i=1}^n x_i} = 
+\overline y \sum_{i=1}^n x_i - 
+b_1 \overline x \sum_{i=1}^n x_i + b_1 \sum_{i=1}^n x_i^2 = 
 \sum_{i=1}^n x_i y_i \\
-b_1 \Big( \sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i \Big) = 
-\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i
+b_1 \sum_{i=1}^n x_i^2 - b_1 \overline x \sum_{i=1}^n x_i
+= \sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i \\
+b_1 \Big( \sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i \Big) = 
+\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i
 \end{split}
 $$
+
+Выразим $b_1$ и разделим обе части получившейся дроби на $n$ и преобразуем, чтобы упростить формулу:
 
 $$
 \begin{split}
 b_1 &= 
-\frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}
-{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i} = 
-\frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n}}
-{ \dfrac{\sum_{i=1}^n x_i^2 - \overline X \sum_{i=1}^n x_i}{n}} \\
-b_1 &= \frac{\overline{XY} - \overline X \cdot \overline Y}
-{\overline{X^2} - \overline X^2} = 
-\frac{\overline{XY} - \overline X \cdot \overline Y}
+\frac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}
+{\sum_{i=1}^n x_i^2 - \overline x \sum_{i=1}^n x_i} = \\
+&= \frac{
+    \dfrac{\sum_{i=1}^n x_i y_i}{n} - \dfrac{\overline y \sum_{i=1}^n x_i}{n}
+    }{
+    \dfrac{\sum_{i=1}^n x_i^2}{n} - \dfrac{\overline x \sum_{i=1}^n x_i}{n}
+    } = \\
+&= 
+\frac{\overline{xy} - \overline x \cdot \overline y}
+{\overline{x^2} - \overline x^2} = 
+\frac{\overline{xy} - \overline x \cdot \overline y}
 {\sigma_X^2}
 \end{split}
 $$
 
+Мы получили формулу [-@eq-b1-calc].
 
+
+
+### Матричное представление модели {#andan-simplelinear-model-matrix}
+
+$$
+y_i = b_0 + b_1 x_i + e_i
+$$
+
+$$
+\begin{cases}
+y_1 = b_0 + b_1 x_1 + e_1 \\
+y_2 = b_0 + b_1 x_2 + e_2 \\
+y_3 = b_0 + b_1 x_3 + e_3 \\
+\vdots \\
+y_n = b_0 + b_1 x_n + e_n
+\end{cases}
+$$
+
+
+$$
+\vm y = \vm X \vm b + \vm e
+$$
 
 ### Матричное вычисление коэффициентов {#andan-simplelinear-solve-matrix}
+
+$$
+L(\vm b) = \|\vm y - \vm X \vm b \| ^2 = \tp{(\vm y - \vm X \vm b)} (\vm y - \vm X \vm b) \to \min_{\vm b}
+$$
+
+$$
+L(\vm b) = \tp{\vm y} \vm y - 2 \tp{\vm y} \vm X \vm b + \tp{\vm b} \tp{\vm X} \vm X \vm b
+$$
+$$
+\frac{\partial L(\vm b)}{\partial \vm b} = \frac{\partial (\tp{\vm y} \vm y - 2 \tp{\vm y} \vm X \vm b + \tp{\vm b} \tp{\vm X} \vm X \vm b)}{\partial \vm b} = -2 \tp{\vm X} \vm y + 2 \tp{\vm X} \vm X \vm b
+$$
+
+$$
+\begin{split}
+-2 \tp{\vm X} \vm y + 2 \tp{\vm X} \vm X \vm b = 0 \\
+-2 (\tp{\vm X} \vm y - \tp{\vm X} \vm X \vm b) = 0 \\
+\tp{\vm X} \vm y - \tp{\vm X} \vm X \vm b = 0 \\
+\tp{\vm X} \vm X \vm b = \tp{\vm X} \vm y
+\end{split}
+$$
 
 $$
 \vm b = (\tp{\vm X} \vm X)^{-1} \tp{\vm X} \vm y
 $$
 
 
-### Угловой коэффициент и коэффициент корреляции {#andan-simplelinear-solve-cor}
+
+### Угловой коэффициент и коэффициент корреляции {#andan-simplelinear-solve-cor}
+
+:::{.lab-senior}
+:::
+
+Ранее мы отмечали, что коэффициент корреляции [связан с наклоном линии тренда](andan-cor.qmd#andan-cor-cor-interpret-slope), который, как мы теперь знаем, определяется угловым коэффициентом регрессии. Тогда, несомненно, мы можем утверждать, что коэффициент корреляции связан с угловым коэффициентов регрессии. Более того, мы можем сформулировать математически, как организована данная связь (@prp-cor-slope).
+
+:::{#prp-cor-slope}
+Коэффициент корреляции Пирсона связан с угловым коэффициентом простой линейной регрессии следующим соотношением:
 
 $$
-b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X}
+b_1 = r_{X,Y} \cdot \frac{s_Y}{s_X},
 $$
 
-Коэффициент корреляции Пирсона, как мы помним ([-@eq-cor-pearson-formula]), вычисляется как
+где $r_{XY}$ --- коэффициент корреляции Пирсона между переменными $X$ и $Y$,
+$s_X$ --- выборочное стандартное отклонение переменной $X$,
+$s_Y$ --- выборочное стандартное отклонение переменной $Y$,
+$b_1$ --- угловой коэффициент регрессионной модели, задаваемой уравнением $\hat y_i = b_0 + b_1 x_i$ ($x_i$ и $y_i$ --- наблюдения по переменным $X$ и $Y$ соответственно).
+
+:::
+
+:::{.proof}
+Как мы выяснили выше, угловой коэффициент регрессии вычисляется так (@eq-b1-calc):
 
 $$
-r_{X,Y} = \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+b_1 = \frac{\overline{xy} - \overline x \cdot \overline y}
+{\sigma_X^2}.
 $$
 
-Тогда справедливо, что
+Тогда 
 
 $$
 \begin{split}
-b_1 &= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
-\cdot \frac{s_Y}{s_X} = \\
-&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2}}
+b_1 &= \frac{ \dfrac{\sum_{i=1}^n x_i y_i}{n} - \dfrac{\overline y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline x)^2}{n} } = \\
+&= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline x)^2}{n} } = \\
+&= \frac{\sum_{i=1}^n x_i y_i - \overline y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline y) - \overline x \overset{=0}{ \boxed{\sum_{i=1}^n (y_i - \overline y)}}}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n x_i (y_i - \overline y) - \sum_{i=1}^n \overline x (y_i - \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline y) - \overline x (y_i - \overline y) \big)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{ \sqrt{\sum_{i=1}^n (x_i - \overline x)^2} \cdot \sqrt{\sum_{i=1}^n (x_i - \overline x)^2} } \cdot \overset{=1}{ \boxed{ \frac{\sqrt{\sum_{i=1}^n (y_i - \overline y)^2}}{\sqrt{\sum_{i=1}^n (y_i - \overline y)^2}} } } = \\
+&= \frac{\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}
+{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline y)^2}}
 \cdot
-\frac{\sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline Y)^2}{n-1}}}
-{\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n-1}}} = \\
-&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}
-{\sqrt{\sum_{i=1}^n (x_i - \overline X)^2} \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline y)^2}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2}} = \\
+&= r_{XY}
 \cdot
-\frac{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \cancel{ \sqrt{\sum_{i=1}^n (y_i - \overline Y)^2} }}
-{ \cancel{ \sqrt{\dfrac{1}{n-1}} } \cdot \sqrt{\sum_{i=1}^n (x_i - \overline X)^2}} = \\
-&= \frac{\sum_{i=1}^n (x_i - \overline X)(y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n \big( x_i (y_i - \overline Y) - \overline X (y_i - \overline Y) \big)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \sum_{i=1}^n \overline X (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y) - \overline X \overset{=0}{ \boxed{ \sum_{i=1}^n (y_i - \overline Y) }} }{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i (y_i - \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n (x_i y_i - x_i \overline Y)}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i - \overline X)^2} = \\
-&= \frac{ \dfrac{\sum_{i=1}^n x_i y_i - \overline Y \sum_{i=1}^n x_i}{n} }{ \dfrac{\sum_{i=1}^n (x_i - \overline X)^2}{n} } = \\
-&= \frac{\overline {XY} - \overline X \cdot \overline Y}{\sigma_X}
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline y)^2}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2}} = \\
+&= r_{XY}
+\cdot
+\frac{\sqrt{\sum_{i=1}^n (y_i - \overline y)^2} \cdot \sqrt{\dfrac{1}{n-1}}}
+{\sqrt{\sum_{i=1}^n (x_i - \overline x)^2} \cdot \sqrt{\dfrac{1}{n-1}}} = \\
+&= r_{XY}
+\cdot
+\frac{\sqrt{\dfrac{\sum_{i=1}^n (y_i - \overline y)^2}{n-1}}}
+{\sqrt{\dfrac{\sum_{i=1}^n (x_i - \overline x)^2}{n-1}}} = \\
+&= r_{XY} \cdot \frac{s_Y}{s_X} \qed
 \end{split}
 $$
+
+:::
+
+:::{#cor-equals-slope}
+Если регрессионная модель построена на стандартизированных или нормированных переменных, то угловой коэффициент модели равен коэффициенту корреляции между переменными.
+:::
+
+:::{.proof}
+Если переменные $X$ и $Y$ были стандартизированы или нормированы, то их выборочные стандартные отклонения $s_X$ и $s_Y$ равны единице. Следовательно,
+
+$$
+b_1 = r_{XY} \cdot \frac{s_X}{s_Y} = r_{XY} \cdot \frac{1}{1} = r_{XY}
+$$
+
+:::
+
+
+:::{#exr-b1-formula2}
+Заметим, что в процессе доказательства утверждения [-@prp-cor-slope] мы получили ещё одну формулу для коэффициента $b_1$:
+
+$$
+b_1 = \frac{\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2}
+$$
+
+Покажите, что данная формула эквивалентна формуле [-@eq-b1-calc].
+:::
+
+::::{.solution}
+:::{.cell}
+
+$$
+\begin{split}
+b_1 &= \frac{\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\ 
+&=\frac{\sum_{i=1}^n (x_i y_i - \overline x y_i - \overline y x_i + \overline x \cdot \overline y)}{\sum_{i=1}^n (x_i - \overline x)^2} = \\
+&= \frac{ 
+    \sum_{i=1}^n x_i y_i - \sum_{i=1}^n \overline x y_i - \sum_{i=1}^n \overline y x_i + \sum_{i=1}^n \overline x \cdot \overline y
+}{
+    \sum_{i=1}^n (x_i - \overline x)^2
+    } = \\
+&= \frac{ 
+    \dfrac{\sum_{i=1}^n x_i y_i - \sum_{i=1}^n \overline x y_i - \sum_{i=1}^n \overline y x_i + n \cdot \overline x \cdot \overline y}{n}
+    }{
+    \dfrac{\sum_{i=1}^n (x_i - \overline x)^2}{n}
+    } = \\
+&= \frac{ 
+    \dfrac{\sum_{i=1}^n x_i y_i}{n} - 
+    \dfrac{\overline x \sum_{i=1}^n y_i}{n} - 
+    \dfrac{\overline y \sum_{i=1}^n x_i}{n} + 
+    \overline x \cdot \overline y
+    }{
+    \sigma_X^2
+    } = \\
+&= \frac{\overline{xy} - \overline x \cdot \overline y - \cancel{\overline y \cdot \overline x} + \cancel{\overline x \cdot \overline y}}{\sigma_X^2} = \\
+&= \frac{\overline{xy} - \overline x \cdot \overline y}{\sigma_X^2} \qed
+\end{split}
+$$
+
+:::
+::::
+
+
+
+### Коэффициент детерминации и коэффициент корреляции {#andan-simplelinear-rsq-cor}
+
+:::{.lab-senior}
+:::
+
+:::{#prp-rsq-cor}
+Коэффициент детерминации $R^2$ простой линейной регрессии равен квадрату коэффициента корреляции $r_{XY}$ между предиктором $X$ и целевой переменной $Y$:
+
+$$
+R^2 = (r_{XY})^2
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+R^2 &= 1 - \frac{\RSS}{\TSS} = \frac{\TSS}{\TSS} - \frac{\RSS}{\TSS} = \\
+&= \frac{\TSS - \RSS}{\TSS} = \frac{\ESS}{\TSS} = \\
+&= \frac{\sum_{i=1}^n (\hat y_i - \overline y)^2}{\sum_{i=1}^n (y_i - \overline y)^2}
+= \frac{\sum_{i=1}^n \big( (b_0 + b_1 x_i) - \overline y \big)^2}{\sum_{i=1}^n (y_i - \overline y)^2} = \\
+&= \frac{ \sum_{i=1}^n ( \cancel{\overline y} - b_1 \overline x + b_1 x_i - \cancel{\overline y} )^2}{\sum_{i=1}^n (y_i - \overline y)^2}
+= \frac{\sum_{i=1}^n b_1^2 (x_i - \overline x)^2}{\sum_{i=1}^n (y_i - \overline y)^2} = \\
+&= \frac{b_1^2 \sum_{i=1}^n (x_i - \overline x)^2}{\sum_{i=1}^n (y_i - \overline y)^2}
+= \frac{
+    \left(
+    \dfrac{
+        \sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)
+    }{
+        \sum_{i=1}^n (x_i - \overline x)^2
+    } \right)^2 
+    \cdot 
+    \sum_{i=1}^n (x_i - \overline x)^2
+    }{\sum_{i=1}^n (y_i - \overline y)^2} = \\
+&= \frac{
+    \dfrac{
+        \big( \sum_{i=1}^n (x_i - \overline x)(y_i - \overline y) \big)^2
+    }{
+        \big( \sum_{i=1}^n (x_i - \overline x)^2 \big)^\cancel{2}
+    }
+    \cdot 
+    \cancel{\sum_{i=1}^n (x_i - \overline x)^2}
+    }{\sum_{i=1}^n (y_i - \overline y)^2} = \\
+&= \frac{
+    \big( \sum_{i=1}^n (x_i - \overline x)(y_i - \overline y) \big) ^2
+}{
+\sum_{i=1}^n (x_i - \overline x)^2 \cdot \sum_{i=1}^n (y_i - \overline y)^2
+} = \\
+&= \left( \frac{
+    \sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)
+    }{
+    \sqrt{\sum_{i=1}^n (x_i - \overline x)^2} \cdot \sqrt{\sum_{i=1}^n (y_i - \overline y)^2}
+    } \right)^2 = (r_{XY})^2 \qed
+\end{split}
+$$
+:::
+
+
 
 ### TSS = ESS + RSS?
 
 :::{.lab-guru}
 :::
 
+:::{.quote .small .pers}
+--- Назрел вопросик. Ты выше сказал, что общая сумма квадратов --- это объяснённая сумма квадратов плюс остаточная сумма квадратов. Но на картинке отображены не квадраты, а разницы между реальными значениями, модельными значениями и средним. Для них равенство очевидно. А вот будет ли так работать с суммами квадратов --- совершенно не факт! Что-то ты, автор, не договариваешь…<br>
+--- Ты прав. Давай разбираться.
+:::
+
 $$
 \begin{split}
-\TSS &= \sum_{i=1}^n (y_i - \overline Y)^2 = \\
-&= \sum_{i=1}^n (y_i - \hat y + \hat y - \overline Y)^2 = \\
-&= \sum_{i=1}^n \big( (y_i - \hat y_i) + (\hat y_i - \overline Y) \big)^2 = \\
-&= \sum_{i=1}^n (y_i - \hat y_i) + \sum_{i=1}^n (\hat y_i - \overline Y) + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = \\
+d_\text{t} &= y_i - \overline y \\
+d_\text{e} &= \hat y_i - \overline y \\
+d_\text{t} &= y_i - \hat y_i
+\end{split}
+$$
+
+$$
+\begin{split}
+d_\text{t} &= y_i - \overline y = \\
+&= y_i - \overline y + \hat y_i - \hat y_i = \\
+&= (\hat y_i - \overline y) + (y_i - \hat y_i) = \\
+&= d_\text{e} + d_\text{r}
+\end{split}
+$$
+
+Однако я утверждаю ([-@prp-tss]), что
+
+:::{#prp-tss}
+$$
+\TSS = \ESS + \RSS
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+\TSS &= \sum_{i=1}^n (y_i - \overline y)^2 = \\
+&= \sum_{i=1}^n (y_i - \hat y + \hat y - \overline y)^2 = \\
+&= \sum_{i=1}^n \big( (y_i - \hat y_i) + (\hat y_i - \overline y) \big)^2 = \\
+&= \sum_{i=1}^n (y_i - \hat y_i)^2 + \sum_{i=1}^n (\hat y_i - \overline y)^2 + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline y) = \\
 &= \RSS + \ESS + 2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \bar y)
 \end{split}
 $$
 
 
-Окей, осталось доказать, что $2 \sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) = 0$, и все будет найс.
+Окей, осталось доказать, что $\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline y) = 0$, и все будет найс.
 
-Так как $b_0 = \overline Y - b_1 \overline X$, а $b_1 = \dfrac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}$ имеем
+Так как $b_0 = \overline y - b_1 \overline x$, а $b_1 = \dfrac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}$ имеем
 
 $$
 \begin{split}
-\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline Y) 
-&= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \overline Y) = \\
-&= \sum_{i=1}^n (y_i - \overline Y + b_1 \overline X - b_1x_i) (\overline Y - b_1 \overline X + b_1 x_i - \overline Y) = \\
-&= \sum_{i=1}^n \big( (y_i - \overline Y) - b_1 (x_i - \overline X) \big) \cdot b_1 (x_i - \overline X) = \\ 
-&= \sum_{i=1}^n \big( b_1 (x_i - \overline X) (y_i - \overline Y) - b_1^2 (x_i - \overline X)^2 \big) = \\
-&= \sum_{i=1}^n b_1 (x_i - \overline X) (y_i - \overline Y) - \sum_{i=1}^n b_1^2 (x_i - \overline X)^2 = \\
-&= b_1 \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) - b_1^2 \sum_{i=1}^n (x_i - \overline X) = \\
-&= \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2 \cdot \cancel{ \sum_{i=1}^n (x_i - \overline X)^2} }{\Big( \sum_{i=1}^n (x_i - \overline X)^2\Big)^\cancel{2}} = \\
-& = \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline X) (y_i - \overline Y) \Big)^2}{\sum_{i=1}^n (x_i - \overline X)^2} = 0
+\sum_{i=1}^n (y_i - \hat y_i)(\hat y_i - \overline y) 
+&= \sum_{i=1}^n (y_i - b_0 - b_1 x_i) (b_0 + b_1 x_i - \overline y) = \\
+&= \sum_{i=1}^n (y_i - \overline y + b_1 \overline x - b_1x_i) (\overline y - b_1 \overline x + b_1 x_i - \overline y) = \\
+&= \sum_{i=1}^n \big( (y_i - \overline y) - b_1 (x_i - \overline x) \big) \cdot b_1 (x_i - \overline x) = \\ 
+&= \sum_{i=1}^n \big( b_1 (x_i - \overline x) (y_i - \overline y) - b_1^2 (x_i - \overline x)^2 \big) = \\
+&= \sum_{i=1}^n b_1 (x_i - \overline x) (y_i - \overline y) - \sum_{i=1}^n b_1^2 (x_i - \overline x)^2 = \\
+&= b_1 \sum_{i=1}^n (x_i - \overline x) (y_i - \overline y) - b_1^2 \sum_{i=1}^n (x_i - \overline x) = \\
+&= \frac{\Big( \sum_{i=1}^n (x_i - \overline x) (y_i - \overline y) \Big)^2}{\sum_{i=1}^n (x_i - \overline x)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline x) (y_i - \overline y) \Big)^2 \cdot \cancel{ \sum_{i=1}^n (x_i - \overline x)^2} }{\Big( \sum_{i=1}^n (x_i - \overline x)^2\Big)^\cancel{2}} = \\
+& = \frac{\Big( \sum_{i=1}^n (x_i - \overline x) (y_i - \overline y) \Big)^2}{\sum_{i=1}^n (x_i - \overline x)^2} - \frac{\Big( \sum_{i=1}^n (x_i - \overline x) (y_i - \overline y) \Big)^2}{\sum_{i=1}^n (x_i - \overline x)^2} = 0 \qed
 \end{split}
 $$
+:::
 
-При доказательстве соотношения мы использовали интерсепт $b_0$ --- соотношение справедливо для моделей с интерсептом. Если в модели интерсепта нет, то оно не выполняется.
+:::{.remark}
+При доказательстве утверждения мы использовали интерсепт $b_0$. В принципе, нам никто не запрещает построить линейную регрессию без интерсепта --- вида $y_i = b x_i + e_i$. Однако для такого случая соотношение [-@prp-tss] выполняться не будет. Оно справедливо только для моделей с интерсептом.
 
+Работая с регрессией --- как простой, так и сложной --- мы всегда будем иметь дело с моделями, содержащими интерсепт, поэтому утверждение [-@prp-tss] всегда будет верным.
+:::
 
+<!---
+:::{#exr-tss-neq}
+Покажите, что для модели без интерсепта вида $y_i = b x_i + e_i$ равенство $\TSS = \ESS + \RSS$ не выполняется.
+:::
+
+::::{.soluton}
+:::{.cell}
+afgwef
+:::
+::::
+--->
 
 ***
 

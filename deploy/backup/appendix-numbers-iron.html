@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -96,6 +150,35 @@ background-size: cover;
       }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -181,6 +264,12 @@ background-size: cover;
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Претест</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
   </div>
@@ -188,13 +277,13 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз 0 [отладка]</span></a>
+ <span class="menu-text">Квиз [отладка]</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок 0 [отладка]</span></a>
+ <span class="menu-text">Листок [отладка]</span></a>
   </div>
 </li>
       </ul>
@@ -214,6 +303,66 @@ background-size: cover;
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Типы данных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-datastructures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Структуры данных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -228,13 +377,31 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
   </div>
 </li>
       </ul>
@@ -255,13 +422,25 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
   </div>
 </li>
       </ul>
@@ -278,50 +457,69 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Методы анализа данных</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Методы анализа данных</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -400,8 +598,8 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-other-math.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические конструкции</span></span></a>
+  <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -412,8 +610,14 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -428,7 +632,17 @@ background-size: cover;
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#appendix-numbers-num-systems" id="toc-appendix-numbers-num-systems" class="nav-link active" data-scroll-target="#appendix-numbers-num-systems"><span class="header-section-number">B.1</span> Системы счисления</a></li>
+  <li><a href="#appendix-numbers-iron-strange" id="toc-appendix-numbers-iron-strange" class="nav-link active" data-scroll-target="#appendix-numbers-iron-strange"><span class="header-section-number">B.1</span> Две внезапности</a>
+  <ul>
+  <li><a href="#sin-pi" id="toc-sin-pi" class="nav-link" data-scroll-target="#sin-pi"><span class="header-section-number">B.1.1</span> <span class="math inline">\(\sin \pi\)</span></a></li>
+  <li><a href="#vs-0.82" id="toc-vs-0.82" class="nav-link" data-scroll-target="#vs-0.82"><span class="header-section-number">B.1.2</span> <span class="math inline">\(0.36 + 0.46\)</span> vs <span class="math inline">\(0.82\)</span></a></li>
+  </ul></li>
+  <li><a href="#appendix-numbers-iron-num-systems" id="toc-appendix-numbers-iron-num-systems" class="nav-link" data-scroll-target="#appendix-numbers-iron-num-systems"><span class="header-section-number">B.2</span> Системы счисления</a>
+  <ul>
+  <li><a href="#appendix-numbers-iron-bin" id="toc-appendix-numbers-iron-bin" class="nav-link" data-scroll-target="#appendix-numbers-iron-bin"><span class="header-section-number">B.2.1</span> Десятичная система счисления</a></li>
+  <li><a href="#appendix-numbers-iron-dec" id="toc-appendix-numbers-iron-dec" class="nav-link" data-scroll-target="#appendix-numbers-iron-dec"><span class="header-section-number">B.2.2</span> Двоичная система счисления</a></li>
+  <li><a href="#appendix-numbers-iron-hex" id="toc-appendix-numbers-iron-hex" class="nav-link" data-scroll-target="#appendix-numbers-iron-hex"><span class="header-section-number">B.2.3</span> Шестнадцатеричная система счисления</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -439,10 +653,233 @@ background-size: cover;
 
 
 
-<section id="appendix-numbers-num-systems" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="appendix-numbers-num-systems"><span class="header-section-number">B.1</span> Системы счисления</h2>
+<!--- {{< include other/_symbols.qmd >}} --->
+<!--- Decorations --->
+<!--- Common --->
+<!--- Logic --->
+<!--- Set theory --->
+<!--- Combinatorics --->
+<!--- Number sets--->
+<!--- Calculus --->
+<!--- Linear Algebra --->
+<!--- vectors and matrices --->
+<!--- Probability, Random Vars --->
+<!--- Distributions --->
+<!--- Other --->
+<!--- Trig --->
+<!--- Stats --->
+<!--- Letters --->
+<!--- Linear Models --->
+<div class="intro">
+<p>Хранение чисел на железе компа — дело достаточно хитрое. В большинстве случаев нам как практикам совершенно не обязательно знать, что происходит на столь низком уровне. И всё же как бы ни был высокоуровнев R, в итоге он всё равно работает на суровом железе. И когда мы себя уже довольно уверенно чувствуем с базовыми вещами в программировании, полезно узнать, как оно работает и к чему это может приводить.</p>
+</div>
+<section id="appendix-numbers-iron-strange" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="appendix-numbers-iron-strange"><span class="header-section-number">B.1</span> Две внезапности</h2>
+<p>Давайте рассмотрим несколько прецедентов, чтобы лучше понять, почему в какой-то момент может понадобиться задуматься о процессах на уровне железа.</p>
+<section id="sin-pi" class="level3" data-number="B.1.1">
+<h3 data-number="B.1.1" class="anchored" data-anchor-id="sin-pi"><span class="header-section-number">B.1.1</span> <span class="math inline">\(\sin \pi\)</span></h3>
+<p>Не секрет<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, что <span class="math inline">\(\sin \pi = 0\)</span>. Однако если мы попробуем вычислить его в R, получим</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(pi)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.224647e-16</code></pre>
+</div>
+</div>
+<p>Это какое-то число, и оно явно не <span class="math inline">\(0\)</span>. К слову, с <span class="math inline">\(\tan \pi\)</span> будет та же проблема:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tan</span>(pi)</span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.224647e-16</code></pre>
+</div>
+</div>
+<p>Получается, R не знает базовой тригонометрии? Или не умеет считать?</p>
+</section>
+<section id="vs-0.82" class="level3" data-number="B.1.2">
+<h3 data-number="B.1.2" class="anchored" data-anchor-id="vs-0.82"><span class="header-section-number">B.1.2</span> <span class="math inline">\(0.36 + 0.46\)</span> vs <span class="math inline">\(0.82\)</span></h3>
+<p>Довольно трудно оспорить, что <span class="math inline">\(0.36 + 0.46 = 0.82\)</span>, и R готов с нами в этом согласиться:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.36</span> <span class="sc">+</span> <span class="fl">0.46</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.82</code></pre>
+</div>
+</div>
+<p>Конечно же, <span class="math inline">\(0.82 = 0.82\)</span>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.82</span> <span class="sc">==</span> <span class="fl">0.82</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>И было бы логично ожидать, что <span class="math inline">\(0.36 + 0.42 == 0.82\)</span> вернет <code>TRUE</code>, но, увы, это не так:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.36</span> <span class="sc">+</span> <span class="fl">0.42</span> <span class="sc">==</span> <span class="fl">0.82</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>Можно было бы подумать, что это локальный баг, ведь</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.4</span> <span class="sc">==</span> <span class="fl">0.9</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.8</span> <span class="sc">+</span> <span class="fl">6.2</span> <span class="sc">==</span> <span class="dv">8</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3.31</span> <span class="sc">-</span> <span class="fl">12.64</span> <span class="sc">==</span> <span class="sc">-</span><span class="fl">9.33</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fl">16.12</span> <span class="sc">*</span> <span class="fl">12.16</span> <span class="sc">==</span> <span class="fl">196.0192</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>и много других примеров, которые работают так, как ожидается. Однако есть и сопоставимое количество примеров, которые работают не так, как мы ожидаем:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fl">10.10</span> <span class="sc">*</span> <span class="fl">11.11</span> <span class="sc">==</span> <span class="fl">112.221</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.555</span> <span class="sc">*</span> <span class="fl">5.055</span> <span class="sc">==</span> <span class="fl">2.805525</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fl">13.658</span> <span class="sc">-</span> <span class="fl">8.114</span> <span class="sc">==</span> <span class="fl">5.544</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">4.123</span> <span class="sc">/</span> <span class="fl">2.123</span> <span class="sc">==</span> <span class="sc">-</span><span class="fl">1.942063</span></span></code><button title="Копировать" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>Почему так происходит? Начать разговор необходимо с системы счисления.</p>
+</section>
+</section>
+<section id="appendix-numbers-iron-num-systems" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="appendix-numbers-iron-num-systems"><span class="header-section-number">B.2</span> Системы счисления</h2>
+<div id="def-num-system" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение B.1</strong></span> <strong>Система счисления (numeral system)</strong> — способ символического представления чисел.</p>
+</div>
+<p>Иначе говоря, способ их записать с использованием неких символов. Эти символы именуются <strong>цифрами</strong>. Глобально системы счисления бывают <em>позиционные</em> и <em>непозиционные</em>.</p>
+<ul>
+<li>В <strong>позиционных</strong> системах счисления значение цифры <em>зависит от её позиции</em> в записи числа.
+<ul>
+<li>Так, <span class="math inline">\(2\)</span> в числе <span class="math inline">\(42\)</span> обозначает, собственно, <span class="math inline">\(2\)</span>, а в числе <span class="math inline">\(24\)</span> — <span class="math inline">\(20\)</span>.</li>
+<li>Большинство используемых на сегодняшний день систем счисления позиционные.</li>
+</ul></li>
+<li>В <strong>непозиционных</strong> системах счисления значение цифры <em>не зависит от её позиции</em> в записи числа.
+<ul>
+<li>Наиболее известная и широко используемая сегодня непозиционная система счисления — римская: <span class="math inline">\(\text{V}\)</span> — это всегда <span class="math inline">\(5\)</span>, а <span class="math inline">\(\text{L}\)</span> — 50. И в <span class="math inline">\(\text{XLVI}\)</span> (<span class="math inline">\(46\)</span>), и в <span class="math inline">\(\text{MDLXIV}\)</span> (<span class="math inline">\(1564\)</span>).</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>Далее мы будем рассматривать только позиционные системы счисления, так как они оказались более удобными и получили наибольшее распространение.</p>
+</blockquote>
+<p>Любая позиционная система счисления характеризуется <strong>основанием</strong> — по факту, количеством цифр, используемых для записи чисел. Чтобы указать, в какой системе счисления записано некоторое число <span class="math inline">\(x\)</span>, используется запись <span class="math inline">\(x_b\)</span>, где <span class="math inline">\(b\)</span> — основание системы счисления<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Сама же система счисления с основанием <span class="math inline">\(b\)</span> будет называться <strong><span class="math inline">\(b\)</span>-ичной</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<ul>
+<li>двоичной (<span class="math inline">\(b=2\)</span>)</li>
+<li>троичной (<span class="math inline">\(b=3\)</span>)</li>
+<li>восьмеричной (<span class="math inline">\(b=8\)</span>)</li>
+<li>десятичной (<span class="math inline">\(b=10\)</span>)</li>
+<li>двенадцатеричной (<span class="math inline">\(b=12\)</span>)</li>
+<li>шестнадцатеричной (<span class="math inline">\(b=16\)</span>)</li>
+<li>двадцатеричной (<span class="math inline">\(b=20\)</span>)</li>
+<li>шестидесятеричная (<span class="math inline">\(b=60\)</span>)</li>
+<li>и т.д.</li>
+</ul>
+<p>Одно и то же число по-разному записывается в разных системах счисления:</p>
+<p><span class="math display">\[
+1111011_2 = 11120_3 = 173_8 = 123_{10} = \text{A}3_{12} = 7\text{B}_{16} = 63_{20}
+\]</span></p>
+<p>В любой позиционной системе счисления с основанием <span class="math inline">\(b\)</span> натуральное число представимо в виде суммы его цифр, помноженных на основание в некоторой степени:</p>
+<p><span id="eq-num-system-basic"><span class="math display">\[
+x = \overline{a_{n-1}a_{n-2} \ldots a_2a_1a_0} = \sum_{k=0}^{n-1} a_k b^{k},
+\tag{B.1}\]</span></span></p>
+<p>где <span class="math inline">\(a_k\)</span> — цифры (<span class="math inline">\(0 \leqslant a_k \leqslant b-1\)</span>), <span class="math inline">\(b^k\)</span> — <strong>разряды</strong>, <span class="math inline">\(n\)</span> — количество разрядов в числе. Черта в <span class="math inline">\(\overline{a_na_{n-1}a_{n-1} \ldots a_2a_1}\)</span> обозначает, что эту запись необходимо читать как одно число, а не как произведение чисел.</p>
+<p>Для чисел, не являющихся целыми, по аналогии можно сказать, что</p>
+<p><span id="eq-num-system-frac"><span class="math display">\[
+x = \overline{a_{n-1}a_{n-2} \ldots a_1a_0,a_{-1}a_{-2} \ldots a_{-(m-1)}a_{-m}} = \sum_{k=-m}^{n-1} a_k b^k
+\tag{B.2}\]</span></span></p>
+<div class="quote small">
+<p>— Очень как-то ты всё это абстрактно излагаешь. Можно какой-то конкретики?<br> — Сейчас будет.</p>
+</div>
+<p>Мы рассмотрим три системы счисления, потому что именно они используются в программировании — десятичную, двоичную и шестнадцатеричную<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Далее если основание системы счисления не указано, считаем, что число записано в <em>десятичной системе счисления</em>.</p>
+</div>
+</div>
+</div>
+<section id="appendix-numbers-iron-bin" class="level3" data-number="B.2.1">
+<h3 data-number="B.2.1" class="anchored" data-anchor-id="appendix-numbers-iron-bin"><span class="header-section-number">B.2.1</span> Десятичная система счисления</h3>
+<p>Хорошая знакомая нам десятичная система счисления устроена следующим образом:</p>
+<ul>
+<li>основание системы <span class="math inline">\(b\)</span> — <span class="math inline">\(10\)</span></li>
+<li>цифры — <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(5\)</span>, <span class="math inline">\(6\)</span>, <span class="math inline">\(7\)</span>, <span class="math inline">\(8\)</span>, <span class="math inline">\(9\)</span></li>
+</ul>
+<p>Согласно <a href="#eq-num-system-basic" class="quarto-xref"><span>B.1</span></a>, любое целое число <span class="math inline">\(x\)</span> в десятичной системе счисления можно представить как</p>
+<p><span class="math display">\[
+x = \overline{a_{n-1}a_{n-2} \ldots a_2a_1a_0} = \sum_{k=0}^{n-1} a_k 10^k
+\]</span></p>
+<p>Ну, сложно спорить с тем, что</p>
+<p><span class="math display">\[
+\begin{split}
+1_{10} &amp;= 1 \cdot 10^0 = 1\\
+14_{10} &amp;= 1 \cdot 10^1 + 4 \cdot 10^0 = 10 + 4 \\
+286_{10} &amp;= 2 \cdot 10^2 + 8 \cdot 10^1 + 6 \cdot 10^0 = 200 + 80 + 60 \\
+9753_{10} &amp;= 9\cdot 10^3 + 7 \cdot 10^2 + 5 \cdot 10^1 + 3 \cdot 10^0 = 9000 + 700 + 50 + 3 \\
+\end{split}
+\]</span></p>
+<p>Согласно <a href="#eq-num-system-frac" class="quarto-xref"><span>B.2</span></a>, дробное число<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="math inline">\(x\)</span> в десятичной системе счисления можно представить как</p>
+<p><span class="math display">\[
+x = \overline{a_{n-1}a_{n-2} \ldots a_1a_0,a_{-1}a_{-2} \ldots a_{-(m-1)}a_{-m}} = \sum_{k=-m}^{n-1} a_k 10^k
+\]</span></p>
+<p>Воистину справедливо, что</p>
+<p><span class="math display">\[
+\begin{split}
+1.5 &amp;= 1 \cdot 10^0 + 5 \cdot 10^{-1} = 1 + \frac{5}{10} \\
+98.76 &amp;= 9 \cdot 10^1 + 8 \cdot 10^0 + 7 \cdot 10^{-1} + 6 \cdot 10^{-2} = 90 + 9 + \frac{7}{10} + \frac{6}{100} \\
+222.222 &amp;= 2 \cdot 10^3 + 2 \cdot 10^1 + 2 \cdot 10^0 + 2 \cdot 10^{-1} + 2 \cdot 10^{-2} + 2 \cdot 10^{-3} = 200 + 20 + 2 + \frac{2}{10} + \frac{2}{100} + \frac{2}{1000} \\
+\end{split}
+\]</span></p>
+<p>Собственно, и всё. Более тут обсуждать нечего.</p>
+<div class="quote small">
+<p>— Зачем вообще был нужен этот раздел… Мы и так каждый день с этим имеем дело…<br> — Ровно поэтому. Слишком интуитивна для нас десятичная система счисления, ведь мы ею пользуемся каждый день, не задумываясь. Но все системы счисления работают одинаково, поэтому сначала лучше эксплицировать хорошо знакомое, чтобы дальше проще было с незнакомым.</p>
+</div>
+</section>
+<section id="appendix-numbers-iron-dec" class="level3" data-number="B.2.2">
+<h3 data-number="B.2.2" class="anchored" data-anchor-id="appendix-numbers-iron-dec"><span class="header-section-number">B.2.2</span> Двоичная система счисления</h3>
+</section>
+<section id="appendix-numbers-iron-hex" class="level3" data-number="B.2.3">
+<h3 data-number="B.2.3" class="anchored" data-anchor-id="appendix-numbers-iron-hex"><span class="header-section-number">B.2.3</span> Шестнадцатеричная система счисления</h3>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-perelman1962" class="csl-entry" role="listitem">
+Перельман, Я. П. (1962). <em>Занимательная арифметика</em>. Ленинград: Время.
+</div>
+<div id="ref-fomin1987" class="csl-entry" role="listitem">
+Фомин, С. В. (1987). <em>Системы счисления</em>. М.: Наука.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Нарисовано <a href="./appendix-formulas.html#appendix-formulas-trig">тут</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Тут же возникает вопрос: «А в какой системе счисления записать само основание, чтобы не возникло неоднозначности?». Решить этот вопрос можно по-разному — мы, руководствуясь соображениями удобства, договоримся, что основание системы счисления будет всегда записано в <em>десятичной системе счисления</em>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>В принципе, единичная (унарная) система счисления тоже существует — в ней используется единственная цифра <span class="math inline">\(1\)</span>. Получается довольно неудобная конструкция, хотя такая система счисления является простейшей и, по-видимому, была исторически первой <span class="citation" data-cites="perelman1962">(<a href="references.html#ref-perelman1962" role="doc-biblioref">Перельман, 1962</a>, c.&nbsp;61)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>О происхождении и использовании других систем счисления можно прочитать у <span class="citation" data-cites="fomin1987">Фомин (<a href="references.html#ref-fomin1987" role="doc-biblioref">1987</a>)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Здесь, безусловно, речь идет о <em>десятичных</em> дробях.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

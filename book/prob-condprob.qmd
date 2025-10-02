@@ -1,0 +1,29 @@
+# Условные вероятности и условные распределения {#prob-condprob}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+
+
+
+
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

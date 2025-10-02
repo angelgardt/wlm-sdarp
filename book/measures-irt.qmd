@@ -1,0 +1,553 @@
+# Психометрический анализ в IRT {#measures-irt}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{r pkgs, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+theme_update(legend.position = "bottom")
+library(latex2exp)
+```
+
+```{r rasch-fun, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+raschFun <- function(theta = 0, a = 1, b = 0, c = 0) {
+  c + (1 - c) * exp(a * (theta - b)) / (1 + exp(a * (theta - b)))
+}
+infoFun <- function(theta = 0, a = 1, b = 0, c = 0) {
+  prob <- raschFun(theta = theta, a = a, b = b, c = c)
+  a^2 * ((prob - c)^2 / (1 - c)^2) * ((1 - prob) / prob)
+}
+```
+
+:::{.intro}
+Вступление
+:::
+
+## Ограничения классической теории тестирования {#measures-irt-ctt-limitations}
+
+## Модели для дихотомических пунктов {#measures-irt-dichotomous}
+
+$$
+y = \frac{e^x}{1 + e^x}
+$$
+
+```{r logistic-curve, echo=FALSE}
+#| label: fig-logistic-curve
+#| fig-cap: "Логистическая кривая"
+
+tibble(x = seq(-6, 6, by = .01),
+       y = exp(x) / (1 + exp(x))) %>% 
+ggplot(aes(x, y)) +
+  geom_line()
+```
+
+### Однопараметрическая модель {#measures-irt-dichotomous-1pl}
+
+$$
+\prob (X_{is} = 1 \mid \theta_s, b_i) = \frac{e^{(\theta_s - b_i)}}{1 + e^{(\theta_s - b_i)}}
+$${#eq-1pl-prob}
+
+Это вообще будет работать? Давайте проверим.
+
+:::{.callout-note}
+###### Если лень считать руками
+Далее встретятся несколько заданий на вычисление. В принципе, можно вычислить требуемое в них руками по формулам --- это потенциально позволит лучше понять, как работают модели IRT. Если же вычислять лень, то см. @exr-1pl-raschfun --- там делается инструмент, облегчающий вычислительную жизнь.
+:::
+
+:::{#exr-1pl-raschfun}
+Создайте функцию `raschfun()`, которая вычисляет вероятность правильного решения задания по переданным ей уровню способности респондента и трудности задания.
+
+Функция должна принимать на вход:
+
+* уровень способности респондента `theta` (число)
+    * значение по умолчанию --- 0
+* трудность задания `b` (число)
+    * значение по умолчанию --- 0
+
+и возвращать вероятность, с которой данный респондент решит это задание верно (число) (см. @eq-1pl-prob).
+
+Протестируйте на представленных ниже примерах.
+
+```{r, echo=FALSE}
+raschfun <- function(theta = 0, b = 0) {
+  exp(theta - b) / (1 + exp(theta - b))
+}
+```
+```{r}
+raschfun()
+raschfun(theta = 8, b = 3)
+raschfun(theta = -2, b = 5)
+```
+:::
+
+:::{.solution}
+```{r, eval=FALSE}
+raschfun <- function(theta = 0, b = 0) {
+  exp(theta - b) / (1 + exp(theta - b))
+}
+```
+:::
+
+:::{#exr-1pl-prob1}
+Два респондента с разным уровнем способности решали одно и то же задание. Уровень способности первого $\theta_1 = 0$, а уровень способности второго --- $\theta_2 = 1$. Трудность решаемого задания $b_i = 0$. Для каждого респондента рассчитайте вероятность того, что задание будет решено им верно.
+:::
+
+::::{.solution}
+:::{.cell}
+* Дано: $\theta_1 = 0$, $\theta_2 = 1$, $b_i = 0$
+* Найти: $\prob(X_{i1} = 1 \mid \theta_1 = 0, b_i = 0)$ и $\prob(X_{i2} = 1 \mid \theta_2 = 1, b_i = 0)$
+
+$$
+\prob(X_{i1} = 1 \mid \theta_1 = 0, b_i = 0) = \frac{e^{(0-0)}}{1 + e^{(0-0)}} = \frac{1}{1 + 1} = 0.50
+$$
+
+$$
+\prob(X_{i2} = 1 \mid \theta_2 = 1, b_i = 0) = \frac{e^{(1-0)}}{1 + e^{(1-0)}} = \frac{e}{1+e} \approx 0.73
+$$
+
+```{r}
+raschfun(theta = 0, b = 0)
+raschfun(theta = 1, b = 0)
+```
+:::
+::::
+
+:::{#exr-1pl-prob2}
+Один и тот же человек с уровнем способности $\theta_s = 0$ решал два задания: трудность первого задания $b_1 = -0.5$, а трудность второго --- $b_2 = 1.5$. Для каждого задания рассчитайте вероятность того, что оно будет решено верно.
+:::
+
+::::{.solution}
+:::{.cell}
+* Дано: $\theta_s = 0$, $b_1 = -0.5$, $b_2 = 1.5$
+* Найти: $\prob(X_{1s} = 1 \mid \theta_s = 0, b_1 = -0.5)$ и $\prob(X_{2s} = 1 \mid \theta_s = 0, b_2 = 1.5)$
+
+$$
+\prob(X_{1s} = 1 \mid \theta_s = 0, b_1 = -0.5) = \frac{e^{(0-(-0.5))}}{1 + e^{(0-(-0.5))}} = \frac{e^{0.5}}{1 + e^{0.5}} \approx 0.62
+$$
+
+$$
+\prob(X_{2s} = 1 \mid \theta_s = 0, b_2 = 1.5) = \frac{e^{(0-1.5)}}{1 + e^{(0-1.5)}} = \frac{e^{-1.5}}{1 + e^{-1.5}} \approx 0.18
+$$
+```{r}
+raschfun(theta = 0, b = -.5)
+raschfun(theta = 0, b = 1.5)
+```
+:::
+::::
+
+$$
+\prob_i (\theta \mid b_i) = \frac{e^{(\theta - b_i)}}{1 + e^{(\theta - b_i)}}
+$${#eq-1pl-model}
+
+```{r exr-1pl-prob1-pic, echo=FALSE}
+#| label: fig-exr-1pl-prob1
+#| fig-cap: "Вероятность верно решить задание при разном уровне способности"
+
+tibble(theta = seq(-6, 6, by = 0.01),
+       y = raschFun(theta)) %>% 
+  ggplot(aes(theta, y)) +
+  geom_line() +
+  geom_vline(xintercept = c(0, 1), linetype = "dashed", color = "gray50") +
+  geom_hline(yintercept = c(0.5, raschFun(1)), linetype = "dashed", color = "gray50") +
+  geom_point(data = tibble(x = c(0, 1),
+                           y = c(0.5, raschFun(1))),
+             aes(x, y)) +
+  scale_x_continuous(breaks = -6:6) +
+  labs(x = TeX("\\theta"),
+       y = TeX("$P_i(\\theta \\,|\\, b_i = 0)$"))
+```
+
+```{r exr-1pl-prob2-pic, echo=FALSE}
+#| label: fig-exr-1pl-prob2
+#| fig-cap: "Вероятность верно решить задания разной трудности при одинаковом уровне способности"
+
+tibble(theta = seq(-6, 6, by = 0.01),
+       b0 = raschFun(theta),
+       b1 = raschFun(theta, b = -0.5),
+       b2 = raschFun(theta, b = 1.5)) %>% 
+  pivot_longer(cols = -theta,
+               names_to = "difficulty",
+               values_to = "y") %>% 
+  mutate(linetype = ifelse(difficulty == "b0", "dotted", "solid")) %>% 
+  ggplot() +
+  geom_line(aes(theta, y, color = difficulty, linetype = linetype)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_hline(yintercept = c(raschFun(b = -0.5), raschFun(b = 1.5)), linetype = "dashed", color = "gray50") +
+  geom_point(data = tibble(x = c(0, 0),
+                           y = c(raschFun(b = -0.5), raschFun(b = 1.5))),
+             aes(x, y)) +
+  scale_x_continuous(breaks = -6:6) +
+  scale_linetype_manual(values = c("solid" = "solid", "dotted" = "dotted")) +
+  scale_color_manual(values = c(b0 = "black", b1 = "salmon", b2 = "royalblue"),
+                     labels = c("b0" = TeX("$b_0 = 0$"),
+                                "b1" = TeX("$b_1 = -0.5$"),
+                                "b2" = TeX("$b_2 = 1.5$"))) +
+  guides(linetype = FALSE) +
+  labs(x = TeX("\\theta"),
+       y = TeX("$P_i(\\theta \\,|\\, b_i)$"),
+       color = "Трудность")
+```
+
+
+### Двухпараметрическая модель {#measures-irt-dichotomous-2pl}
+
+$$
+\prob (X_{is} = 1 \mid \theta_s, b_i, a_i) = \frac{e^{a_i(\theta_s - b_i)}}{1 + e^{a_i(\theta_s - b_i)}}
+$${#eq-2pl-prob}
+
+:::{#exr-2pl-raschfun}
+Модифицируйте функцию `raschfun()` из задания [-@exr-1pl-raschfun] так, чтобы при расчёте вероятности правильного ответа она учитывала дискриминативность задания.
+
+Функция должна принимать на вход:
+
+* уровень способности респондента `theta` (число)
+    * значение по умолчанию --- 0
+* трудность задания `b` (число)
+    * значение по умолчанию --- 0
+* дискриминативность задания `a` (число)
+    * значение по умолчанию --- 1
+
+и возвращать вероятность, с которой данный респондент решит это задание верно (число) (см. @eq-2pl-prob).
+
+Протестируйте на представленных ниже примерах.
+
+```{r, echo=FALSE}
+raschfun <- function(theta = 0, b = 0, a = 1) {
+  exp(a * (theta - b)) / (1 + exp(a * (theta - b)))
+}
+```
+```{r}
+raschfun(theta = 8, b = 3, a = .2)
+raschfun(theta = -2, b = 5, a = 1.8)
+```
+:::
+
+:::{.solution}
+```{r, eval=FALSE}
+raschfun <- function(theta = 0, b = 0, a = 1) {
+  exp(a * (theta - b)) / (1 + exp(a * (theta - b)))
+}
+```
+:::
+
+:::{#exr-2pl-prob1}
+Два респондента с разным уровнем способности решали одно и то же задание. Уровень способности первого $\theta_1 = 0$, а уровень способности второго --- $\theta_2 = 1$. Трудность решаемого задания $b_i = 0$, дискриминативность $a_i = 1$. Для каждого респондента рассчитайте вероятность того, что задание будет решено им верно.
+:::
+
+::::{.solution}
+:::{.cell}
+* Дано: $\theta_1 = 0$, $\theta_2 = 1$, $b_i = 0$, $a_i = 1$
+* Найти: $\prob(X_{i1} = 1 \mid \theta_1 = 0, b_i = 0, a_i = 1)$ и $\prob(X_{i2} = 1 \mid \theta_2 = 1, b_i = 0, a_i = 1)$
+
+$$
+\prob(X_{i1} = 1 \mid \theta_1 = 0, b_i = 0, a_i = 1) = 
+\frac{e^{1 \cdot (0-0)}}{1 + e^{1 \cdot (0-0)}} = \frac{1}{1 + 1} = 0.50
+$$
+
+$$
+\prob(X_{i2} = 1 \mid \theta_2 = 1, b_i = 0, a_i = 1) = \frac{e^{1 \cdot (1-0)}}{1 + e^{1 \cdot (1-0)}} = \frac{e}{1+e} \approx 0.73
+$$
+
+```{r}
+raschfun(theta = 0, b = 0, a = 1)
+raschfun(theta = 1, b = 0, a = 1)
+```
+:::
+::::
+
+
+:::{#exr-2pl-prob2}
+Один и тот же человек с уровнем способности $\theta_s = 0$ решал два задания: трудность первого задания $b_1 = -0.5$, а трудность второго --- $b_2 = 1.5$. Дискриминативность обоих заданий одинакова и равна $1.5$ Для каждого задания рассчитайте вероятности того, что оно будет решено верно.
+:::
+
+::::{.solution}
+:::{.cell}
+* Дано: $\theta_s = 0$, $b_1 = -0.5$, $b_2 = 1.5$, $a_1 = a_2 = a = 1.5$
+* Найти: $\prob(X_{1s} = 1 \mid \theta_s = 0, b_1 = -0.5)$ и $\prob(X_{2s} = 1 \mid \theta_s = 0, b_2 = 1.5)$
+
+$$
+\prob(X_{1s} = 1 \mid \theta_s = 0, b_1 = -0.5, a = 1.5) = \frac{e^{1.5 \cdot (0-(-0.5))}}{1 + e^{1.5 \cdot (0-(-0.5))}} = \frac{e^{0.75}}{1 + e^{0.75}} \approx 0.68
+$$
+
+$$
+\prob(X_{2s} = 1 \mid \theta_s = 0, b_2 = 1.5, a = 1.5) = \frac{e^{1.5 \cdot (0-1.5)}}{1 + e^{1.5 \cdot (0-1.5)}} = \frac{e^{-2.25}}{1 + e^{-2.25}} \approx 0.095
+$$
+
+```{r}
+raschfun(theta = 0, b = -.5, a = 1.5)
+raschfun(theta = 0, b = 1.5, a = 1.5)
+```
+:::
+::::
+
+
+$$
+\prob_i (\theta \mid b_i, a_i) = \frac{e^{a_i(\theta - b_i)}}{1 + e^{a_i(\theta - b_i)}}
+$${#eq-2pl-model}
+
+
+```{r exr-2pl-prob2-pic, echo=FALSE}
+#| label: fig-exr-2pl-prob2
+#| fig-cap: "Вероятность верно решить задания разной трудности при одинаковом уровне способности и дискриминативности ($a$ = 1.5)"
+
+tibble(theta = seq(-6, 6, by = 0.01),
+       b0 = raschFun(theta, a = 1.5),
+       b1 = raschFun(theta, b = -0.5, a = 1.5),
+       b2 = raschFun(theta, b = 1.5, a = 1.5)) %>% 
+  pivot_longer(cols = -theta,
+               names_to = "difficulty",
+               values_to = "y") %>% 
+  mutate(linetype = ifelse(difficulty == "b0", "dotted", "solid")) %>% 
+  ggplot() +
+  geom_line(aes(theta, y, color = difficulty, linetype = linetype)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
+  geom_hline(yintercept = c(raschFun(b = -0.5, a = 1.5), raschFun(b = 1.5, a = 1.5)), linetype = "dashed", color = "gray50") +
+  geom_point(data = tibble(x = c(0, 0),
+                           y = c(raschFun(b = -0.5, a = 1.5), raschFun(b = 1.5, a = 1.5))),
+             aes(x, y)) +
+  scale_x_continuous(breaks = -6:6) +
+  scale_linetype_manual(values = c("solid" = "solid", "dotted" = "dotted")) +
+  scale_color_manual(values = c(b0 = "black", b1 = "salmon", b2 = "royalblue"),
+                     labels = c("b0" = TeX("$b_0 = 0$"),
+                                "b1" = TeX("$b_1 = -0.5$"),
+                                "b2" = TeX("$b_2 = 1.5$"))) +
+  guides(linetype = FALSE) +
+  labs(x = TeX("\\theta"),
+       y = TeX("$P_i(\\theta \\,|\\, b_i, a = 1.5)$"),
+       color = "Трудность")
+```
+
+
+```{r exr-2pl-prob2-compar-pic, echo=FALSE}
+#| label: fig-exr-2pl-prob2-compar
+#| fig-cap: "Вероятность верно решить задания разной трудности при одинаковом уровне способности. Сравнение случаев с разной дискриминативностью"
+
+tibble(theta = seq(-6, 6, by = 0.01),
+       b1_a0 = raschFun(theta, b = -0.5),
+       b1_a1 = raschFun(theta, b = -0.5, a = 1.5),
+       b2_a0 = raschFun(theta, b = 1.5),
+       b2_a1 = raschFun(theta, b = 1.5, a = 1.5)) %>% 
+  pivot_longer(cols = -theta,
+               values_to = "y") %>% 
+  separate(name, into = c("difficulty", "discrimination"), sep = "_") %>% 
+  ggplot() +
+  geom_line(aes(theta, y, color = difficulty, linetype = discrimination)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
+  # geom_hline(yintercept = c(raschFun(b = -0.5, a = 1.5), raschFun(b = 1.5, a = 1.5)),
+  #            linetype = "dashed", color = "gray50") +
+  geom_point(data = tibble(x = rep(0, 4),
+                           y = c(raschFun(b = -0.5), 
+                                 raschFun(b = 1.5),
+                                 raschFun(b = -0.5, a = 1.5), 
+                                 raschFun(b = 1.5, a = 1.5)),
+                           shape = rep(c("empty", "full"), each = 2)),
+             aes(x, y, shape = shape)) +
+  scale_x_continuous(breaks = -6:6) +
+  scale_shape_manual(values = c(full = 16, empty = 1)) +
+  scale_linetype_manual(values = c(a1 = "solid", a0 = "dotted"),
+                        labels = c(a0 = TeX("$a_1 = 1$"),
+                                   a1 = TeX("$a_2 = 1.5$"))) +
+  scale_color_manual(values = c(b1 = "salmon", b2 = "royalblue"),
+                     labels = c(b1 = TeX("$b_1 = -0.5$"),
+                                b2 = TeX("$b_2 = 1.5$"))) +
+  guides(shape = FALSE) +
+  labs(x = TeX("\\theta"),
+       y = TeX("$P_i(\\theta \\,|\\, b_i, a_i)$"),
+       color = "Трудность",
+       linetype = "Дискриминативность")
+```
+
+
+
+:::{#exr-2pl-prob3}
+Два респондента с разным уровнем способности решали три задания. Уровень способности первого $\theta_1 = 0$, а уровень способности второго --- $\theta_2 = 1$. Трудность всех заданий было одинакова и равна $0$. Дискриминативности заданий были следующими: $a_1 = 0.5$, $a_2 = 2$, $a_3 = -1$. Для каждого респондента и каждого задания рассчитайте вероятность того, что это задание будет решено респондентом верно.
+:::
+
+::::{.solution}
+:::{.cell}
+* Дано:
+    * $\theta_1 = 0$, $\theta_2 = 1$
+    * $b_1 = b_2 = b_3 = b = 0$
+    * $a_1 = 0.5$, $a_2 = 2$, $a_3 = -1$
+* Найти:
+    * $\prob(X_{11} = 1 \mid \theta_1 = 0, b = 0, a_1 = 0.5)$ и $\prob(X_{12} = 1 \mid \theta_2 = 1, b = 0, a_1 = 0.5)$
+    * $\prob(X_{21} = 1 \mid \theta_1 = 0, b = 0, a_2 = 2)$ и $\prob(X_{22} = 1 \mid \theta_2 = 1, b = 0, a_2 = 2)$
+    * $\prob(X_{31} = 1 \mid \theta_1 = 0, b = 0, a_3 = -1)$ и $\prob(X_{32} = 1 \mid \theta_2 = 1, b = 0, a_3 = -1)$
+
+Для первого задания ($a_1 = 0.5$):
+
+$$
+\prob(X_{11} = 1 \mid \theta_1 = 0, b = 0, a_1 = 0.5) = 
+\frac{e^{0.5 \cdot (0-0)}}{1 + e^{0.5 \cdot (0-0)}} = \frac{1}{1 + 1} = 0.50
+$$
+
+$$
+\prob(X_{12} = 1 \mid \theta_2 = 1, b = 0, a_1 = 0.5) = 
+\frac{e^{0.5 \cdot (1-0)}}{1 + e^{0.5 \cdot (1-0)}} = \frac{e^{0.5}}{1+e^{0.5}} \approx 0.62
+$$
+
+```{r}
+raschfun(theta = 0, b = 0, a = .5)
+raschfun(theta = 1, b = 0, a = .5)
+```
+
+Для второго задания ($a_2 = 2$):
+
+$$
+\prob(X_{21} = 1 \mid \theta_1 = 0, b = 0, a_2 = 2) = 
+\frac{e^{2 \cdot (0-0)}}{1 + e^{2 \cdot (0-0)}} = \frac{1}{1 + 1} = 0.50
+$$
+
+$$
+\prob(X_{22} = 1 \mid \theta_2 = 1, b = 0, a_2 = 2) = 
+\frac{e^{2 \cdot (1-0)}}{1 + e^{2 \cdot (1-0)}} = \frac{e^2}{1+e^2} \approx 0.88
+$$
+
+```{r}
+raschfun(theta = 0, b = 0, a = 2)
+raschfun(theta = 1, b = 0, a = 2)
+```
+
+Для третьего задания ($a_2 = -1$):
+
+$$
+\prob(X_{31} = 1 \mid \theta_1 = 0, b = 0, a_3 = -1) = 
+\frac{e^{(-1) \cdot (0-0)}}{1 + e^{(-1) \cdot (0-0)}} = \frac{1}{1 + 1} = 0.50
+$$
+
+$$
+\prob(X_{32} = 1 \mid \theta_2 = 1, b = 0, a_3 = -1) = 
+\frac{e^{(-1) \cdot (1-0)}}{1 + e^{(-1) \cdot (1-0)}} = \frac{e^{-1}}{1+e^{-1}} \approx 0.27
+$$
+
+```{r}
+raschfun(theta = 0, b = 0, a = -1)
+raschfun(theta = 1, b = 0, a = -1)
+```
+
+:::
+::::
+
+```{r exr-2pl-prob3-pic, echo=FALSE}
+#| label: fig-exr-2pl-prob3
+#| fig-cap: "Дифференцирующая способность заданий при разной дискриминативности"
+
+tibble(theta = seq(-6, 6, by = 0.01),
+       a0 = raschFun(theta),
+       a1 = raschFun(theta, a = 0.5),
+       a2 = raschFun(theta, a = 2),
+       a3 = raschFun(theta, a = -1)) %>% 
+  pivot_longer(cols = -theta,
+               names_to = "discrimination",
+               values_to = "y") %>% 
+  mutate(linetype = ifelse(discrimination == "a0", "dotted", "solid")) %>% 
+  ggplot() +
+  geom_line(aes(theta, y, color = discrimination, linetype = linetype)) +
+  geom_vline(xintercept = c(0, 1), linetype = "dashed", color = "gray50") +
+  geom_hline(yintercept = c(0.5,
+                            raschFun(theta = 1, a = 0.5),
+                            raschFun(theta = 1, a = 2),
+                            raschFun(theta = 1, a = -1)),
+             linetype = "dashed", color = "gray50") +
+  geom_point(data = tibble(x = c(0, 1, 1, 1),
+                           y = c(raschFun(),
+                                 raschFun(theta = 1, a = 0.5), 
+                                 raschFun(theta = 1, a = 2), 
+                                 raschFun(theta = 1, a = -1))),
+             aes(x, y)) +
+  scale_x_continuous(breaks = -6:6) +
+  scale_linetype_manual(values = c("solid" = "solid", "dotted" = "dotted")) +
+  scale_color_manual(values = c(a0 = "black", a1 = "royalblue", a2 = "seagreen", a3 = "salmon"),
+                     labels = c("a0" = TeX("$a_0 = 0$"),
+                                "a1" = TeX("$a_1 = 0.5$"),
+                                "a2" = TeX("$a_2 = 2$"),
+                                "a3" = TeX("$a_3 = -1$"))) +
+  guides(linetype = FALSE) +
+  labs(x = TeX("\\theta"),
+       y = TeX("$P_i(\\theta \\,|\\, b_i = 0, a_i)$"),
+       color = "Дискриминативность")
+```
+
+
+
+
+
+
+### Трёхпараметрическая модель {#measures-irt-dichotomous-3pl}
+
+$$
+\prob (X_{is} = 1 \mid \theta_s, b_i, a_i, c_i) = c_i + (1 - c_i)\frac{e^{a_i(\theta_s - b_i)}}{1 + e^{a_i(\theta_s - b_i)}}
+$${#eq-3pl-prob}
+
+
+$$
+\prob_i (\theta \mid b_i, a_i, c_i) = c_i + (1 - c_i)\frac{e^{a_i(\theta - b_i)}}{1 + e^{a_i(\theta - b_i)}}
+$${#eq-3pl-model}
+
+
+
+
+## Информативность заданий {#measures-irt-info-curves}
+
+$$
+I_i(\theta \mid b_i) = \prob_i (\theta \mid b_i) \cdot (1 - \prob_i(\theta \mid b_i))
+$$
+
+$$
+I_i(\theta \mid b_i, a_i) = a_i^2 \prob_i (\theta \mid b_i, a_i) \cdot (1 - \prob_i(\theta \mid b_i, a_i))
+$$
+$$
+I_i(\theta \mid b_i, a_i, c_i) = a_i^2 \frac{(\prob_i (\theta\mid b_i, a_i, c_i) - c_i)^2}{(1 - c_i)^2} \cdot \frac{1 - \prob_i(\theta \mid b_i, a_i, c_i)}{\prob_i(\theta \mid b_i, a_i, c_i)}
+$$
+```{r info-curves, echo=FALSE}
+tibble(theta = seq(-6, 6, by = .01),
+       b0_a0__char = raschFun(theta),
+       b0_a0__info = infoFun(theta),
+       b1_a1__char = raschFun(theta, a = 1.5, b = 1.5),
+       b1_a1__info = infoFun(theta, a = 1.5, b = 1.5),
+       b2_a2__char = raschFun(theta, a = .4, b = -.8),
+       b2_a2__info = infoFun(theta, a = .4, b = -.8),
+       b3_a3__char = raschFun(theta, a = 2, b = 2.7),
+       b3_a3__info = infoFun(theta, a = 2, b = 2.7),
+       b4_a4__char = raschFun(theta, a = .7, b = -1.4),
+       b4_a4__info = infoFun(theta, a = .7, b = -1.4),
+       b5_a5__char = raschFun(theta, a = -.6, b = .3),
+       b5_a5__info = infoFun(theta, a = -.6, b = .3)) %>% 
+  pivot_longer(cols = -theta, 
+               values_to = "y") %>% 
+  separate(name, into = c("pars", "curve"), sep = "__") %>% 
+  ggplot() +
+  geom_line(aes(theta, y, color = pars)) +
+  facet_grid(curve ~ ., scale = "free_y")
+```
+
+
+
+
+$$
+I(\theta) = D^2 \sum_{i=1}^k I_i(\theta)
+$$
+
+$$
+\mathrm{SE}(\theta) = \frac{1}{\sqrt{I(\theta)}}
+$$
+
+
+
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

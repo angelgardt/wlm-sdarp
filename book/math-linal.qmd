@@ -1,4 +1,4 @@
-# Линал {#chapterid}
+# Линал {#math-linal}
 
 {{< include other/_symbols.qmd >}}
 
@@ -11,8 +11,78 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
+## Векторы {#math-linal-vectors}
+
+## Матрицы {#math-linal-matrices}
+
+### Особые матрицы {#math-linal-matrix-special}
+
+#### Нулевая матрица {#math-linal-matrix-null}
+
+$$
+\vm O = \pmatrix{
+0 & 0 & 0 & \cdots & 0 \\
+0 & 0 & 0 & \cdots & 0 \\
+0 & 0 & 0 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \cdots & 0 \\
+}
+$$
+
+#### Единичная матрица {#math-linal-matrix-identity}
+
+$$
+\vm I = \pmatrix{
+1 & 0 & 0 & \cdots & 0 \\
+0 & 1 & 0 & \cdots & 0 \\
+0 & 0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \cdots & 1 \\
+}
+$$
+
+### Операции над матрицами {#math-linal-matrix-operations}
+
+#### Сложение матриц {#math-linal-matrix-sum}
+
+* коммутативность --- $\vm A + \vm B = \vm B + \vm A$
+* ассоциативность --- $(\vm A + \vm B) + \vm C = \vm A + (\vm B + \vm C)$
+* $\vm A + \vm O = \vm O + \vm A = \vm A$
+* $\vm A + (- \vm A) = \vm O$
+
+#### Умножение матрицы на число {#math-linal-matrix-multiplication}
+
+$$
+\alpha \vm A = (\alpha a_{ij})
+$$
+
+* $1 \cdot \vm A = \vm A \cdot 1 = \vm A$
+* $(\alpha \beta) \vm A = \alpha (\beta \vm A)$
+* $(\alpha + \beta) \vm A = \alpha \vm A + \beta \vm A$
+* $\alpha (\vm A + \vm B) = \alpha \vm A + \alpha \vm B$
 
 
+
+#### Умножение матриц друг на друга {#math-linal-matrix-prod}
+
+$$
+\vm A_{m \times k} \times \vm B_{k \times n} = \vm C, c_{ij} = \sum_{l=1}^k a_{il} b_{lj}
+$$
+
+* $(\vm A \vm B) \vm C = \vm A(\vm B \vm C)$
+* $\vm A \vm B \neq \vm B \vm A$
+* $\vm A \vm I = \vm I \vm A = \vm A$
+* $(\vm A + \vm B)\vm C = \vm A \vm C + \vm B \vm C$
+* $\vm A (\vm B + \vm C) = \vm A \vm B + \vm A \vm C$
+* $(\alpha \vm A) \vm B = \vm A (\alpha \vm B) + \alpha (\vm A \vm B)$
+
+#### Транспонирование матрицы {#math-linal-matrix-transpose}
+
+* $\tp{(\tp{\vm A})} = \vm A$
+* $\tp{(\vm A \vm B)} = \tp{\vm B} \tp{\vm A}$
+* $\tp{(\vm A^{-1})} = (\tp{\vm A})^{-1}$, если существует $\vm A^{-1}$
+* $\tp{(\vm A + \vm B)} = \tp{\vm A} + \tp{\vm B}$
+* $\det \vm A = \det \tp{\vm A}$
 
 ***
 

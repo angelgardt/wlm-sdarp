@@ -1,0 +1,683 @@
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    https://shiny.posit.co/
+#
+
+library(shiny)
+library(shinyvalidate)
+library(bslib)
+library(tidyverse)
+theme_set(theme_bw())
+library(ggmosaic)
+library(latex2exp)
+
+# Define UI for application
+ui <- fluidPage(
+  # Application title
+  titlePanel(
+    "Ошибки I и II рода, уровень значимости, статистическая мощность и размер эффекта"
+  ),
+  
+  # Input area
+  sidebarLayout(
+    sidebarPanel(
+      ## Params
+      uiOutput("param_solve.for"),
+      uiOutput("param_h1"),
+      uiOutput("param_effect.size.sign"),
+      uiOutput("param_sig.level"),
+      uiOutput("param_power"),
+      uiOutput("param_effect.size"),
+      uiOutput("param_sample.size"),
+      uiOutput("param_alternative"),
+      
+      ## Settings
+      actionButton("settings_btn", label = "Показать настройки", icon = icon("gear")),
+      uiOutput("settings_h1"),
+      uiOutput("settings_sig.level"),
+      uiOutput("settings_power"),
+      uiOutput("settings_effect.size"),
+      uiOutput("settings_sample.size"),
+      uiOutput("settings_errateplot")
+    ),
+    
+    # Show a plot and values
+    mainPanel(
+      tabsetPanel(
+        id = "tabset",
+        tabPanel(title = "Масштаб оси x: z",
+                 card(
+                   textOutput("question"), 
+                 ),
+                 layout_column_wrap(
+                   value_box(title = "Ошибка I рода", value = uiOutput("box_sig.level")),
+                   value_box(title = "Ошибка II рода", value = uiOutput("box_beta")),
+                   value_box(title = "Статистическая мощность", value = uiOutput("box_power")),
+                   value_box(title = "Размер эффекта", value = uiOutput("box_effect.size")),
+                   value_box(title = "Объём выборки", value = uiOutput("box_sample.size"))
+                 ),
+                 layout_column_wrap(
+                   value_box(title = "Критическое значение", value = uiOutput("box_z.cr")),
+                   value_box(title = "Наблюдаемое значение", value = uiOutput("box_z.h1"))
+                 ),
+                 plotOutput("zPlot")),
+        tabPanel(title = "Масштаб оси x: d", plotOutput("dPlot")),
+        tabPanel(title = "Вероятность результата",
+                 layout_column_wrap(
+                   value_box(title = "TN", value = uiOutput("box_tn")),
+                   value_box(title = "FP", value = uiOutput("box_fp")),
+                   value_box(title = "FN", value = uiOutput("box_fn")),
+                   value_box(title = "TP", value = uiOutput("box_tp"))
+                 ),
+                   plotOutput("tablePlot"),
+                   plotOutput("erratePlot")
+                 )
+        )
+    )
+  )
+)
+
+# Define server logic
+server <- function(input, output) {
+  
+  ## Params
+  output$param_solve.for <- renderUI({
+    if (input$tabset != "Вероятность результата") {
+      selectInput(
+        inputId = "solve.for",
+        label = "Вычислить",
+        choices = c(
+          "Уровень значимости (α)" = "sig.level",
+          "Статистическую мощность (1-β)" = "power",
+          "Размер эффекта (d)" = "effect.size",
+          "Объём выборки (n)" = "sample.size"
+        ),
+        selected = "power"
+      )
+    }
+  })
+  output$param_h1 <- renderUI({
+    if (input$tabset == "Вероятность результата") {
+      sliderInput(
+        inputId = "h1",
+        label = "Вероятность справедливости альтернативной гипотезы (H1)",
+        min = 0,
+        max = 1,
+        value = .5
+      )
+    }
+  })
+  output$param_sig.level <- renderUI({
+    if (input$tabset == "Вероятность результата" | input$solve.for != "sig.level") {
+      sliderInput(
+        inputId = "sig.level",
+        label = "Уровень значимости (α)",
+        min = 0,
+        max = 1,
+        value = .05
+      )
+    }
+  })
+  output$param_power <- renderUI({
+    if (input$tabset == "Вероятность результата" | input$solve.for != "power") {
+      sliderInput(
+        inputId = "power",
+        label = "Статистическая мощность (1-β)",
+        min = 0,
+        max = 1,
+        value = .8
+      )
+    }
+  })
+  output$param_effect.size <- renderUI({
+    if (input$tabset != "Вероятность результата" & input$solve.for != "effect.size") {
+      if (input$alternative != "less") {
+        sliderInput(
+          inputId = "effect.size",
+          label = "Размер эффекта (d)",
+          min = 0,
+          max = 1,
+          value = .3
+        )
+      } else {
+        sliderInput(
+          inputId = "effect.size",
+          label = "Размер эффекта (d)",
+          min = -1,
+          max = 0,
+          value = -.3
+        )
+      }
+    }
+  })
+  output$param_effect.size.sign <- renderUI({
+    if (input$tabset != "Вероятность результата" & input$solve.for == "effect.size" & input$alternative == "two.sided") {
+      checkboxInput(inputId = "effect.size.sign",
+                    label = "Отрицательный эффект",
+                    value = FALSE)
+    }
+  })
+  output$param_sample.size <- renderUI({
+    if (input$tabset != "Вероятность результата" & input$solve.for != "sample.size") {
+      sliderInput(
+        inputId = "sample.size",
+        label = "Объём выборки (n)",
+        min = 2,
+        max = 300,
+        value = 30,
+        step = 1
+      )
+    }
+  })
+  output$param_alternative <- renderUI({
+    if (input$tabset != "Вероятность результата") {
+      radioButtons(
+        inputId = "alternative",
+        label = "Альтернативная гипотеза",
+        choices = c(
+          "Левосторонняя" = "less",
+          "Правосторонняя" = "greater",
+          "Двусторонняя" = "two.sided"
+        ),
+        selected = "two.sided"
+      )
+    }
+  })
+  output$question <- renderText({
+    if (input$solve.for == "sig.level") {
+      "Какова будет вероятность ложноположительного вывода при заданных статистической значимости, объёме выборки и размере эффекта?"
+    } else if (input$solve.for == "power") {
+      "Какова будет статистическая мощность при заданных уровне значимости, размере эффекта и объёме выборки?"
+    } else if (input$solve.for == "effect.size") {
+      "Какой размер эффекта будет можно обнаружить на выборке данного объема при заданных уровне значимости и статистической мощности?"
+    } else if (input$solve.for == "sample.size") {
+      "Какой объём выборки потребуется для данного размера эффекта при заданных уровне значимости и статистической мощности?"
+    }
+  })
+  
+  ## Settings
+  observeEvent(input$settings_btn, {
+    if (input$settings_btn %% 2 == 1) {
+      updateActionButton(inputId = "settings_btn", label = "Скрыть настройки")
+    } else {
+      updateActionButton(inputId = "settings_btn", label = "Показать настройки")
+    }
+  })
+  
+  output$settings_sig.level <- renderUI({
+    if (input$solve.for != "sig.level" | input$tabset == "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Уровень значимости"),
+             layout_columns(
+               numericInput(inputId = "sig.level_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+               numericInput(inputId = "sig.level_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+               numericInput(inputId = "sig.level_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+               )
+        )
+      }
+    }
+  })
+  observeEvent(input$sig.level_min, {
+    updateSliderInput(inputId = "sig.level", min = input$sig.level_min)
+  })
+  observeEvent(input$sig.level_max, {
+    updateSliderInput(inputId = "sig.level", max = input$sig.level_max)
+  })
+  observeEvent(input$sig.level_step, {
+    updateSliderInput(inputId = "sig.level", step = input$sig.level_step)
+  })
+  
+  output$settings_power <- renderUI({
+    if (input$solve.for != "power" | input$tabset == "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Статистическая мощность"),
+             layout_columns(
+               numericInput(inputId = "power_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+               numericInput(inputId = "power_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+               numericInput(inputId = "power_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$power_min, {
+    updateSliderInput(inputId = "power", min = input$power_min)
+  })
+  observeEvent(input$power_max, {
+    updateSliderInput(inputId = "power", max = input$power_max)
+  })
+  observeEvent(input$power_step, {
+    updateSliderInput(inputId = "power", step = input$power_step)
+  })
+  
+  output$settings_effect.size <- renderUI({
+    if (input$solve.for != "effect.size" & input$tabset != "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Размер эффекта"),
+             layout_columns(
+               numericInput(inputId = "effect.size_min", label = "Минимум", value = 0, min = -2, max = 2, step = .01),
+               numericInput(inputId = "effect.size_max", label = "Максимум", value = 1, min = -2, max = 2, step = .01),
+               numericInput(inputId = "effect.size_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$effect.size_min, {
+    updateSliderInput(inputId = "effect.size", min = input$effect.size_min)
+  })
+  observeEvent(input$effect.size_max, {
+    updateSliderInput(inputId = "effect.size", max = input$effect.size_max)
+  })
+  observeEvent(input$effect.size_step, {
+    updateSliderInput(inputId = "effect.size", step = input$effect.size_step)
+  })
+  
+  output$settings_sample.size <- renderUI({
+    if (input$solve.for != "sample.size" & input$tabset != "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Объём выборки"),
+             layout_columns(
+               numericInput(inputId = "sample.size_min", label = "Минимум", value = 2, min = 2, max = 10000, step = 1),
+               numericInput(inputId = "sample.size_max", label = "Максимум", value = 300, min = 2, max = 10000, step = 1)
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$sample.size_min, {
+    updateSliderInput(inputId = "sample.size", min = input$sample.size_min)
+  })
+  observeEvent(input$sample.size_max, {
+    updateSliderInput(inputId = "sample.size", max = input$sample.size_max)
+  })
+  
+  output$settings_h1 <- renderUI({
+    if (input$tabset == "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        card(markdown("#### Вероятность справедливости альтернативной гипотезы"),
+             layout_columns(
+               numericInput(inputId = "h1_min", label = "Минимум", value = 0, min = 0, max = 1, step = .01),
+               numericInput(inputId = "h1_max", label = "Максимум", value = 1, min = 0, max = 1, step = .01),
+               numericInput(inputId = "h1_step", label = "Шаг", value = .01, min = .001, max = 1, step = .001), 
+             )
+        )
+      }
+    }
+  })
+  observeEvent(input$power_min, {
+    updateSliderInput(inputId = "h1", min = input$h1_min)
+  })
+  observeEvent(input$power_max, {
+    updateSliderInput(inputId = "h1", max = input$h1_max)
+  })
+  observeEvent(input$power_step, {
+    updateSliderInput(inputId = "h1", step = input$h1_step)
+  })
+  
+  output$settings_errateplot <- renderUI({
+    if (input$tabset == "Вероятность результата") {
+      if (input$settings_btn %% 2 == 1) {
+        radioButtons(inputId = "errate_x",
+                     label = "Ось X",
+                     choices = c(
+                       "Вероятность справедливости альтернативной гипотезы" = "h1",
+                       "Уровень значимости" = "sig.level",
+                       "Статистическая мощность" = "power"),
+                     selected = "h1")
+      }
+    }
+  })
+  
+  ## Validation
+  iv <- InputValidator$new()
+  iv$add_rule("sig.level_min", sv_gte(0, message_fmt = "Значение должно быть не меньше нуля"))
+  iv$add_rule("sig.level_max", sv_lte(1, message_fmt = "Значение должно быть не больше единицы"))
+  iv$add_rule("sig.level_step", sv_gt(0, message_fmt = "Значение должно быть больше нуля"))
+  iv$enable()
+  
+  ## Computations
+  z_h1 <- reactive({
+    if (input$solve.for != "effect.size" & input$solve.for != "sample.size") {
+      input$effect.size * sqrt(input$sample.size)
+    } else if (input$solve.for == "effect.size") {
+      if (input$alternative == "less") {
+        z_cr() - qnorm(input$power)
+      } else {
+        if (input$effect.size.sign) {
+          -z_cr() - qnorm(input$power, lower.tail = FALSE)
+        }
+        z_cr() - qnorm(input$power, lower.tail = FALSE)
+      }
+    } else if (input$solve.for == "sample.size") {
+      if (input$alternative == "less") {
+        z_cr() - qnorm(input$power)
+      } else {
+        z_cr() - qnorm(input$power, lower.tail = FALSE)
+      }
+    }
+  })
+  z_cr <- reactive({
+  if (input$solve.for != "sig.level") {
+    if (input$alternative == "less") {
+      qnorm(input$sig.level)
+    } else if (input$alternative == "greater") {
+      qnorm(1 - input$sig.level)
+    } else {
+      qnorm(1 - input$sig.level/2)
+    }
+  } else {
+    if (input$alternative == "less") {
+      qnorm(input$power, mean = z_h1())
+    } else if (input$alternative == "greater") {
+      qnorm(input$power, mean = z_h1(), lower.tail = FALSE)
+    } else {
+      if (input$effect.size < 0) {
+        qnorm(input$power, mean = z_h1())
+      } else {
+        qnorm(input$power, mean = z_h1(), lower.tail = FALSE)
+      }
+    }
+  }
+  })
+  
+  values <- list(sig.level = numeric(1),
+                 beta = numeric(1),
+                 power = numeric(1),
+                 effect.size = numeric(1),
+                 sample.size = numeric(1),
+                 tn = numeric(1),
+                 fp = numeric(1),
+                 fn = numeric(1),
+                 tp = numeric(1))
+  
+  values$sig.level <- reactive({
+    if (input$solve.for != "sig.level") {
+      input$sig.level
+    } else {
+      if (input$alternative == "less") {
+        pnorm(z_cr())
+      } else if (input$alternative == "greater") {
+        pnorm(z_cr(), lower.tail = FALSE)
+      } else {
+          pnorm(-z_cr()) * 2
+      }
+    }
+  })
+  values$power <- reactive({
+    if (input$solve.for != "power") {
+      input$power
+    } else {
+      pnorm(q = z_cr(), mean = z_h1(), lower.tail = FALSE) %>% round(2)
+    }
+  })
+  values$beta <- reactive({
+    1 - values$power()
+  })
+  values$effect.size <- reactive({
+    if (input$solve.for != "effect.size") {
+      input$effect.size
+    } else {
+      z_h1() / sqrt(input$sample.size)
+    }
+  })
+  values$sample.size <- reactive({
+    if (input$solve.for != "sample.size") {
+      input$sample.size
+    } else {
+      (z_h1() / input$effect.size)^2
+    }
+  })
+  values$tn <- reactive({ (1 - input$sig.level) * (1 - input$h1) })
+  values$fp <- reactive({ input$sig.level * (1 - input$h1) })
+  values$fn <- reactive({ (1 - input$power) * input$h1 })
+  values$tp <- reactive({ input$power * input$h1 })
+  
+  ## Boxes
+  output$box_sig.level <- renderText({
+    paste0(values$sig.level() %>% round(2) %>% `*`(100), "%")
+  })
+  output$box_beta <- renderText({
+    paste0(values$beta() %>% round(2) %>% `*`(100), "%")
+  })
+  output$box_power <- renderText({
+    paste0(values$power() %>% round(2) %>% `*`(100), "%")
+  })
+  output$box_effect.size <- renderText({
+    paste0(values$effect.size() %>% round(2))
+  })
+  output$box_sample.size <- renderText({
+    values$sample.size() %>% round()
+  })
+  output$box_z.cr <- renderText({
+    z_cr() %>% round(2)
+  })
+  output$box_z.h1 <- renderText({
+    z_h1() %>% round(2)
+  })
+  output$box_tn <- renderText({
+    paste0(values$tn() %>% round(3) %>% `*`(100), "%")
+  })
+  output$box_fp <- renderText({
+    paste0(values$fp() %>% round(3) %>% `*`(100), "%")
+  })
+  output$box_fn <- renderText({
+    paste0(values$fn() %>% round(3) %>% `*`(100), "%")
+  })
+  output$box_tp <- renderText({
+    paste0(values$tp() %>% round(3) %>% `*`(100), "%")
+  })
+  
+  ## Plot
+  output$zPlot <- renderPlot({
+    
+    graph <- ggplot(NULL) +
+      stat_function(fun = dnorm) +
+      stat_function(fun = dnorm, args = list(mean = z_h1())) +
+      geom_vline(xintercept = z_h1(), linetype = "dashed") +
+      labs(x = "z", y = "Density")
+    
+    if (input$alternative == "greater") {
+      graph +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(-4, z_cr()),
+          fill = "blue",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "cyan",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "red",
+          alpha = .5
+        ) +
+        geom_vline(xintercept = z_cr(),
+                   linetype = "dotted") +
+        xlim(-4, 4)
+    } else if (input$alternative == "less") {
+      graph +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "blue",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(-4, z_cr()),
+          fill = "cyan",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          geom = "area",
+          xlim = c(-4, z_cr()),
+          fill = "red",
+          alpha = .5
+        ) +
+        geom_vline(xintercept = z_cr(),
+                   linetype = "dotted") +
+        xlim(-4, 4)
+    } else {
+      graph +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(-z_cr(), z_cr()),
+          fill = "blue",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          args = list(mean = z_h1()),
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "cyan",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          geom = "area",
+          xlim = c(-4, -z_cr()),
+          fill = "red",
+          alpha = .5
+        ) +
+        stat_function(
+          fun = dnorm,
+          geom = "area",
+          xlim = c(z_cr(), 4),
+          fill = "red",
+          alpha = .5
+        ) +
+        geom_vline(xintercept = c(-z_cr(), z_cr()),
+                   linetype = "dotted") +
+        xlim(-4, 4)
+    }
+  })
+  output$dPlot <- renderPlot({
+    ## TODO
+    plot(rnorm(30))
+  })
+  output$tablePlot <- renderPlot({
+    tibble(
+      pplt = c("H0", "H0", "H1", "H1") %>% factor(levels = c("H0", "H1"), ordered = TRUE),
+      smpl = c("H0^", "H1^", "H0^", "H1^") %>% factor(levels = c("H1^", "H0^"), ordered = TRUE),
+      prob = c(values$tn(), values$fp(), values$fn(), values$tp())
+    ) %>%
+      ggplot() +
+      geom_mosaic(aes(
+        x = product(pplt),
+        fill = smpl,
+        weight = prob),
+        show.legend = FALSE
+      ) +
+      theme_mosaic() +
+      scale_x_productlist(position = "top", 
+                          labels = TeX(c(r"($H_0$)", r"($H_1$)"))) +
+      scale_y_productlist(labels = TeX(c(r"($\hat{H}_1$)", r"($\hat{H}_0$)"))) +
+      scale_fill_manual(values = c("salmon", "royalblue")) +
+      # labs(x = "Генеральная совокупность",
+      #      y = "Выборка") +
+      theme(axis.text.x = element_text(size = 20),
+            axis.text.y = element_text(size = 20),
+            axis.title = element_text(size = 0))
+  })
+  output$erratePlot <- renderPlot({
+    
+    errate_x <- reactive({
+      if (is.null(input$errate_x)) {
+        "h1"
+      } else {
+        input$errate_x
+      }
+    })
+    
+    if (errate_x() == "sig.level") {
+      errate_ds <- tibble(
+        h1 = input$h1,
+        sig.level = seq(from = 0, to = 1, by = .01),
+        power = input$power)
+      } else if (errate_x() == "power") {
+        errate_ds <- tibble(
+          h1 = input$h1,
+          sig.level = input$sig.level,
+          power = seq(from = 0, to = 1, by = .01))
+      } else {
+        errate_ds <- tibble(
+          h1 = seq(from = 0, to = 1, by = .01),
+          sig.level = input$sig.level,
+          power = input$power)
+      }
+    
+    errate_ds %>% 
+      mutate(
+        h0 = 1 - h1,
+        not.sig.level = 1 - sig.level,
+        beta = 1 - power,
+        tn = not.sig.level * h0,
+        fp = sig.level * h0,
+        fn = beta * h1,
+        tp = power * h1
+        ) %>% 
+      pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") -> errate_ds
+    
+    if (errate_x() == "sig.level") {
+      errate_ds %>% 
+        ggplot() +
+        geom_line(aes(sig.level, prob, color = res), linewidth = 2) +
+        geom_vline(xintercept = input$sig.level,
+                   linetype = "dashed") +
+        xlab(TeX(r"($\alpha$)")) -> errate_plot
+    } else if (errate_x() == "power") {
+      errate_ds %>% 
+        ggplot() +
+        geom_line(aes(power, prob, color = res), linewidth = 2) +
+        geom_vline(xintercept = input$power,
+                   linetype = "dashed") +
+        xlab(TeX(r"($1 - \beta$)")) -> errate_plot
+    } else {
+      errate_ds %>% 
+        ggplot() +
+        geom_line(aes(h1, prob, color = res), linewidth = 2) +
+        geom_vline(xintercept = input$h1,
+                   linetype = "dashed") +
+        xlab(TeX(r"($P(H_1)$)")) -> errate_plot
+    }
+    errate_plot +
+      labs(y = "Вероятность результата",
+           color = "Результат") +
+      scale_color_discrete(
+        labels = c(fn = "False Negative",
+                   fp = "False Positive",
+                   tn = "True Negative",
+                   tp = "True Positive")) +
+      theme(legend.position = "top",
+            axis.title = element_text(size = 20),
+            axis.text = element_text(size = 14),
+            legend.title = element_text(size = 20),
+            legend.text = element_text(size = 14))
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)

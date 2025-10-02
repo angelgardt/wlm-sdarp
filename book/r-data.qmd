@@ -10,8 +10,33 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Вступление
 :::
 
+## Рабочая директория {#r-data-wd}
+
+:::{.lab-junior}
+:::
+
+
 
 ## RStudio Projects {#r-data-rstudioprojects}
+
+:::{.lab-junior}
+:::
+
+![Создание проекта. Шаг 1](img/r-data/rproject-1.png){#fig-rproj-1}
+
+![Создание проекта. Шаг 2](img/r-data/rproject-2.png){#fig-rproj-2}
+
+![Создание проекта. Шаг 3](img/r-data/rproject-3.png){#fig-rproj-3}
+
+![Создание проекта. Шаг 4](img/r-data/rproject-4.png){#fig-rproj-4}
+
+![Создание проекта. Шаг 5](img/r-data/rproject-5.png){#fig-rproj-5}
+
+## Форматы данных {#r-data-formats}
+
+:::{.lab-junior}
+:::
+
 
 
 

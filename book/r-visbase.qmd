@@ -1,4 +1,4 @@
-# Визуализация в базовом R {#r-visbase}
+# Визуализация в базовом R {#r-visbase}
 
 {{< include other/_symbols.qmd >}}
 
@@ -7,12 +7,243 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 ```
 
 :::{.intro}
-Вступление
+Безусловно, `ggplot2` --- мощная библиотека для визуализации всего чего только можно. Однако для построения разведочных визуализаций, которые никто не увидит, кроме самого аналитика, `ggplot2` может быть излишне нагружен. Хочется иметь какой-то более простой инструмент, чтобы быстренько нарисовать гистограмму или диаграмму рассеяния и оценить происходящее в данных.
+
+Базовый R также предоставляет возможность построения визуализаций. Во-первых, это ценно само по себе --- мы будем иногда обращаться к этой возможности, а во-вторых, некоторые пакеты, позволяющие строить визуализации моделей, наследуют параметры от базовых визуализаций. Так что будет правильно познакомиться с графиками в базовом R, чем мы и займёмся в этой главе.
 :::
 
+## Типы графиков {#r-visbase-graph-types}
+
+```{r}
+hist(rnorm(100))
+```
+
+```{r}
+boxplot(rnorm(100))
+```
+
+```{r}
+plot(rnorm(100))
+```
 
 
+## Настройки отображения элементов {#r-visbase-elem-pars}
 
+
+* `lwd` --- толщина линии
+* `type` --- тип соединения точек
+* `lty` --- тип линии
+* `cex` --- размер точек
+* `col` --- цвет
+* `pch` --- форма точек
+
+```{r visbase-pars}
+#| label: fig-visbase-pars
+#| fig-cap: "Параметры отображения элементов визуализации в базовом R. [Источник](https://r-graph-gallery.com/6-graph-parameters-reminder.html)"
+#| code-fold: true
+
+# initialization
+par(mar = c(3, 3, 3, 3))
+num <- 0
+num1 <- 0
+plot(
+  0,
+  0,
+  xlim = c(0, 21),
+  ylim = c(0.5, 6.5),
+  col = "white",
+  yaxt = "n",
+  ylab = "",
+  xlab = ""
+)
+
+#fill the graph
+for (i in 1:20) {
+  points(i, 1, pch = i, cex = 3)
+  points(i,
+         2,
+         col = i,
+         pch = 16,
+         cex = 3)
+  points(i,
+         3,
+         col = "black",
+         pch = 16,
+         cex = i * 0.25)
+  
+  #lty
+  if (i %in% c(seq(1, 18, 3))) {
+    num = num + 1
+    points(
+      c(i, i + 2),
+      c(4, 4),
+      col = "black",
+      lty = num,
+      type = "l",
+      lwd = 2
+    )
+    text(i + 1.1 , 4.15 , num)
+  }
+  
+  #type and lwd
+  if (i %in% c(seq(1, 20, 5))) {
+    num1 = num1 + 1
+    points(
+      c(i, i + 1, i + 2, i + 3),
+      c(5, 5, 5, 5),
+      col = "black",
+      type = c("p", "l", "b", "o")[num1],
+      lwd = 2
+    )
+    text(i + 1.1, 5.2, c("p", "l", "b", "o")[num1])
+    points(
+      c(i, i + 1, i + 2, i + 3),
+      c(6, 6, 6, 6),
+      col = "black",
+      type = "l",
+      lwd = num1
+    )
+    text(i + 1.1, 6.2, num1)
+  }
+}
+
+#add axis
+axis(
+  2,
+  at = c(1, 2, 3, 4, 5, 6),
+  labels = c("pch" , "col" , "cex" , "lty", "type" , "lwd"),
+  tick = TRUE,
+  col = "black",
+  las = 1,
+  cex.axis = 0.8
+)
+```
+
+`text()`
+
+`box()`
+
+`mtext()`
+
+
+## Поля графика {#r-visbase-margins}
+
+```{r visbase-margins}
+#| label: fig-visbase-margins
+#| fig-cap: "Поля графика в базовом R. [Источник](https://r-graph-gallery.com/74-margin-and-oma-cheatsheet.html)"
+#| code-fold: true
+
+# Margins area
+par(oma = c(3, 3, 3, 3)) # all sides have 3 lines of space
+par(mar = c(5, 4, 4, 2) + 0.1)
+
+# Plot
+plot(0:10,
+     0:10,
+     type = "n",
+     xlab = "X",
+     ylab = "Y") # type="n" hides the points
+
+# Place text in the plot and color everything plot-related red
+text(5, 5, "Plot", col = "red", cex = 2)
+box(col = "red")
+
+# Place text in the margins and label the margins, all in forestgreen
+mtext(
+  "Margins",
+  side = 3,
+  line = 2,
+  cex = 2,
+  col = "forestgreen"
+)
+mtext(
+  "par(mar=c(b,l,t,r))",
+  side = 3,
+  line = 1,
+  cex = 1,
+  col = "forestgreen"
+)
+mtext(
+  "Line 0",
+  side = 3,
+  line = 0,
+  adj = 1.0,
+  cex = 1,
+  col = "forestgreen"
+)
+mtext(
+  "Line 1",
+  side = 3,
+  line = 1,
+  adj = 1.0,
+  cex = 1,
+  col = "forestgreen"
+)
+mtext(
+  "Line 2",
+  side = 3,
+  line = 2,
+  adj = 1.0,
+  cex = 1,
+  col = "forestgreen"
+)
+mtext(
+  "Line 3",
+  side = 3,
+  line = 3,
+  adj = 1.0,
+  cex = 1,
+  col = "forestgreen"
+)
+box("figure", col = "forestgreen")
+
+# Label the outer margin area and color it blue
+# Note the 'outer=TRUE' command moves us from the figure margins to the outer margins.
+mtext(
+  "Outer Margin Area",
+  side = 1,
+  line = 1,
+  cex = 2,
+  col = "blue",
+  outer = TRUE
+)
+mtext(
+  "par(oma=c(b,l,t,r))",
+  side = 1,
+  line = 2,
+  cex = 1,
+  col = "blue",
+  outer = TRUE
+)
+mtext(
+  "Line 0",
+  side = 1,
+  line = 0,
+  adj = 0.0,
+  cex = 1,
+  col = "blue",
+  outer = TRUE
+)
+mtext(
+  "Line 1",
+  side = 1,
+  line = 1,
+  adj = 0.0,
+  cex = 1,
+  col = "blue",
+  outer = TRUE
+)
+mtext(
+  "Line 2",
+  side = 1,
+  line = 2,
+  adj = 0.0,
+  cex = 1,
+  col = "blue",
+  outer = TRUE
+)
+box("outer", col = "blue")
+```
 
 ***
 

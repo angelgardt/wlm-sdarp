@@ -230,6 +230,14 @@ $$
 $${#eq-frmapp-deriv-cot}
 
 $$
+(\sec x)' = \frac{\sin x}{\cos^2 x}
+$${#eq-frmapp-deriv-sec}
+
+$$
+(\csc x)' = -\frac{\cos x}{\sin^2 x}
+$${#eq-frmapp-deriv-sec}
+
+$$
 (\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}
 $${#eq-frmapp-deriv-arcsin}
 
@@ -244,6 +252,14 @@ $${#eq-frmapp-deriv-arctan}
 $$
 (\arccot x)' = -\frac{1}{1 + x^2}
 $${#eq-frmapp-deriv-arccot}
+
+$$
+(\arcsec x)' = \frac{1}{|x|\sqrt{x^2 - 1}}
+$${#eq-frmapp-deriv-arcsec}
+
+$$
+(\arccsc x)' = -\frac{1}{|x|\sqrt{x^2 - 1}}
+$${#eq-frmapp-deriv-arccsc}
 :::
 :::{.column}
 $$
@@ -263,6 +279,14 @@ $$
 $${#eq-frmapp-deriv-coth}
 
 $$
+(\sech x)' = -\frac{\sinh x}{\cosh^2 x}
+$${#eq-frmapp-deriv-sech}
+
+$$
+(\csch x)' = -\frac{\cosh x}{\sinh^2 x}
+$${#eq-frmapp-deriv-csch}
+
+$$
 (\arsinh)' = \frac{1}{\sqrt{x^2 + 1}}
 $${#eq-frmapp-deriv-arsinh}
 
@@ -277,6 +301,14 @@ $${#eq-frmapp-deriv-artanh}
 $$
 (\arcoth)' = \frac{1}{1 - x^2}
 $${#eq-frmapp-deriv-arcoth}
+
+$$
+(\arsech)' = -\frac{1}{x(x+1)\sqrt{\dfrac{1 - x}{1 + x}}}
+$${#eq-frmapp-deriv-arsech}
+
+$$
+(\arcsch)' = -\frac{1}{x^2\sqrt{1 + \dfrac{1}{x^2}}}
+$${#eq-frmapp-deriv-arcsch}
 :::
 ::::
 
@@ -1052,6 +1084,52 @@ $${#eq-frmapp-stp-tan}
 
 
 
+## Гиперболические функции {#appendix-formulas-hyperbolic}
 
+$$
+\sinh x = \frac{e^x - e^{-x}}{2}
+$${#eq-frmapp-def-sinh}
 
+$$
+\cosh x = \frac{e^x + e^{-x}}{2}
+$${#eq-frmapp-def-cosh}
 
+$$
+\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1}
+$${#eq-frmapp-def-tanh}
+
+$$
+\coth x = \frac{\cosh x}{\sinh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}} = \frac{e^{2x} + 1}{e^{2x} - 1}
+$${#eq-frmapp-def-sinh}
+
+$$
+\sech x = \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}}
+$${#eq-frmapp-def-sech}
+
+$$
+\csch x = \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}}
+$${#eq-frmapp-def-csch}
+
+$$
+\arsinh x = \ln (x + \sqrt{x^2 + 1})
+$${#eq-frmapp-def-arsinh}
+
+$$
+\arcosh x = \ln (x + \sqrt{x^2 - 1}), \, x \geq 1
+$${#eq-frmapp-def-arcosh}
+
+$$
+\artanh x = \ln \frac{\sqrt{1 - x^2}}{1 - x} = \frac{1}{2} \ln \frac{1 + x}{1 - x}, \, |x| < 1
+$${#eq-frmapp-def-artanh}
+
+$$
+\arcoth x = \ln \frac{\sqrt{x^2 - 1}}{x - 1} = \frac{1}{2} \ln \frac{x + 1}{x - 1}, \, |x| > 1
+$${#eq-frmapp-def-arcoth}
+
+$$
+\arsech x = \ln \frac{1 + \sqrt{1 - x^2}}{x}, \, 0 < x \leq 1
+$${#eq-frmapp-def-arsech}
+
+$$
+\arcsch x = \ln \frac{1 + \sgn x \sqrt{1 + x^2}}{x}, \, x \neq 0
+$${#eq-frmapp-def-arcsch}

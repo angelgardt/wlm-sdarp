@@ -3,415 +3,214 @@
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE, cache = FALSE)
+```
+
+```{r pkgs, echo=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+theme_update(legend.position = "bottom")
+library(latex2exp)
 ```
 
 :::{.intro}
 Вступление
 :::
 
-::::{.quote}
---- Текст цитаты <br>
---- Тоже текст цитаты <br>
+## False Positive vs False Negative {#prob-falsepositive-fp-vs-fn}
 
-:::{.quote-sign}
-Источник цитаты <br>
-Год цитаты
-:::
+<!---![Всё так. Почти.](img/prob-falsepositive/false-negative-not-problem.png)--->
 
-::::
+## Поведение p-value {#prob-falsepositive-pval}
 
-> Цитата
+### p-value, $H_0$ и $H_1$ {#prob-falsepositive-pval-h0-h1}
 
-:::{.quote .small}
---- Текст цитаты <br>
---- Тоже текст цитаты <br>
-:::
+```{r pval-h0}
+#| label: fig-pval-h0
+#| fig-cap: "Распределение p-value в 10 000 независимых экспериментов ($n = 300$) при справедливости $H_0$"
 
+n_samples <- 10000
+sample_size <- 300
+alpha <- 0.05
 
+set.seed(404)
+m0 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
 
+results <- tibble(pval = numeric(n_samples),
+                  is_lower = logical(n_samples))
 
-## Заголовок раздела {#chapterid-sectionid}
-
-:::{.lab-junior}
-:::
-
-Тест со [ссылкой](debug_quiz.qmd).
-
-
-### Заголовок подраздела {#chapterid-subsectionid}
-
-:::{.lab-junior}
-:::
-
-Тест со [ссылкой](debug_sheet.qmd).
-
-
-
-
-## Примеры `кода` {#chapterid-code-examples}
-
-:::{.lab-middle}
-:::
-
-
-### Чанк без подписи {#chapterid-code-nolst}
-
-```{r simple-chunk}
-## подключаем самую лучшую библиотеку
-library(tidyverse)
-theme_set(theme_bw()) ## устанавливаем тему
-
-head(diamonds)
-
-```
-
-
-### Чанк с подписью {#chapterid-code-lst}
-
-::: {#lst-code-example}
-
-```{r code-example, eval=FALSE}
-ds <- tibble()
-
-for (i in 1:100) {
-  if (i %% 2 == 1) {
-    read_csv(files[i]) %>% 
-      bind_rows(ds) -> ds
-  } else {
-    print('a')
-    stop()
-  }
+for (i in 1:n_samples) {
+  results$pval[i] <- t.test(m0[,i], m1[,i])$p.value
 }
-```
 
-Пример чанка с подписью
-
-:::
-
-Ссылка на чанк с подписью (@lst-for-example).
-
-
-### Аннотированный чанк {#chapterid-code-annotated}
-
-::: {#lst-code-annotated}
-
-```{r annotated-chunk}
-## большой код для агрегации
-
-diamonds %>% # <1>
-  summarise(mean_price_cut = mean(price), # <2>
-            sd_price_cut = sd(price),
-            .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>% # <3>
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive", # <4>
-                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
-                                     "average")))
-```
-1. Берем датасет `diamonds`, что нарисовать график про бриллианты
-2. Рассчитываем базовые описательные статистики
-3. Объединяем агрегированные данные с исходными
-4. Разделяем наблюдения на группы
-
-:::
-
-
-
-
-## Примеры иллюстраций {#chapterid-figures}
-
-:::{.lab-senior}
-:::
-
-
-### Импорт графического файла {#chapterid-import-pic}
-
-Ссылка на импортированную картинку (@fig-gh-soc-preview):
-
-![Превью репозитория](img/test-gh-social-preview.png){#fig-gh-soc-preview}
-
-
-### График, построенный с помощью кода {#chapterid-plot}
-
-```{r plot-huge-chunk}
-#| label: fig-huge-chunk
-#| fig-cap: "Это картинка, нарисованная большим кодом"
-
-## большой код для графика
-
-diamonds %>% # <1>
-  summarise(mean_price_cut = mean(price),
-            sd_price_cut = sd(price),
-            .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>%
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive",
-                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
-                                     "average"))) %>% 
-  ggplot(aes(clarity, price,
-             shape = price_group, color = color)) +
-  stat_summary(geom = "pointrange", 
-               fun.data = mean_cl_boot,
-               position = position_dodge(.3)) +
-  scale_shape_manual(values = c(21, 22, 23)) +
-  theme(legend.position = "bottom")
+results %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  ylim(0, n_samples/4) +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
 ```
 
 
-```{r plot-huge-chunk-annotated}
-#| label: fig-huge-chunk-annotated
-#| fig-cap: "Это картинка, нарисованная большим кодом, который аннотирован"
+```{r pval-h1}
+#| label: fig-pval-h1
+#| fig-cap: "Распределение p-value в 10 000 независимых экспериментов ($n = 300$) при справедливости $H_1$"
 
-## большой код для графика
+n_samples <- 10000
+sample_size <- 300
+alpha <- 0.05
 
-diamonds %>% # <1>
-  summarise(mean_price_cut = mean(price), # <2>
-            sd_price_cut = sd(price),
-            .by = cut) %>% 
-  right_join(diamonds, join_by(cut)) %>% # <3>
-  mutate(price_group = ifelse(price > mean_price_cut + sd_price_cut, "expensive", # <4>
-                              ifelse(price < mean_price_cut - sd_price_cut, "cheap",
-                                     "average"))) %>% 
-  ggplot(aes(clarity, price, # <5>
-             shape = price_group, color = color)) +
-  stat_summary(geom = "pointrange", 
-               fun.data = mean_cl_boot,
-               position = position_dodge(.3)) +
-  scale_shape_manual(values = c(21, 22, 23)) +
-  theme(legend.position = "bottom")
-```
-1. Берем датасет `diamonds`, что нарисовать график про бриллианты
-2. Рассчитываем базовые описательные статистики
-3. Объединяем агрегированные данные с исходными
-4. Разделяем наблюдения на группы
-5. Начинаем рисовать
+set.seed(404)
+m0 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_size * n_samples, mean = 3, sd = 10), ncol = n_samples)
 
+results <- tibble(pval = numeric(n_samples),
+                  is_lower = logical(n_samples))
 
-### Несколько изображений в одной иллюстрации {#chapterid-several-pics}
+for (i in 1:n_samples) {
+  results$pval[i] <- t.test(m0[,i], m1[,i])$p.value
+}
 
-:::{#fig-merging-joins layout-nrow=2}
-![left_join(x, y)](img/data-wrangling/left_join.png){#fig-left-join}
-
-![right_join(x, y)](img/data-wrangling/right_join.png){#fig-right-join}
-
-![full_join(x, y)](img/data-wrangling/full_join.png){#fig-full-join}
-
-![inner_join(x, y)](img/data-wrangling/inner_join.png){#fig-inner-join}
-
-Объединяющие джойны
-:::
-
-
-```{r several-plots-one-figure-plots}
-plot(0:1) -> plot1
-plot(0:2) -> plot2
-plot(0:3) -> plot3
-plot(0:4) -> plot4
-```
-
-```{r several-plots-one-figure}
-#| label: fig-several-plots-one-figure
-#| fig-cap: "Несколько картинок с помощью кода в одной иллюстрации"
-#| fig-subcap:
-#|   - "Картинка 1"
-#|   - "Кртинка 2"
-#|   - "Картинка 3"
-#|   - "Картинка 4"
-#| layout-ncol: 2
-
-print(plot1)
-print(plot2)
-print(plot3)
-print(plot4)
+results %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  ylim(0, n_samples/4) +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
 ```
 
 
-### Карта {#chapterid-map}
 
-```{r leaflet-map, echo=FALSE}
-#| code-fold: true
-#| label: fig-rbirthplace
-#| fig-cap: "Тут родился R"
+### p-value и размер эффекта {#prob-falsepositive-pval-effect-size}
 
-library(leaflet)
-leaflet() %>%
-  addTiles() %>% 
-  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+```{r pval-effect-size}
+#| label: fig-pval-effect-size
+#| fig-cap: "Название графика"
+
+n_samples <- 10000
+sample_size <- 300
+alpha <- 0.05
+
+set.seed(404)
+m0 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_size * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m2 <- matrix(rnorm(sample_size * n_samples, mean = 1.5, sd = 10), ncol = n_samples)
+m3 <- matrix(rnorm(sample_size * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m4 <- matrix(rnorm(sample_size * n_samples, mean = 2.5, sd = 10), ncol = n_samples)
+m5 <- matrix(rnorm(sample_size * n_samples, mean = 3, sd = 10), ncol = n_samples)
+m6 <- matrix(rnorm(sample_size * n_samples, mean = 3.5, sd = 10), ncol = n_samples)
+
+results <- tibble(
+  pval1 = numeric(n_samples),
+  pval2 = numeric(n_samples),
+  pval3 = numeric(n_samples),
+  pval4 = numeric(n_samples),
+  pval5 = numeric(n_samples),
+  pval6 = numeric(n_samples)
+  )
+
+for (i in 1:n_samples) {
+  results$pval1[i] <- t.test(m0[,i], m1[,i])$p.value %>% round(3)
+  results$pval2[i] <- t.test(m0[,i], m2[,i])$p.value %>% round(3)
+  results$pval3[i] <- t.test(m0[,i], m3[,i])$p.value %>% round(3)
+  results$pval4[i] <- t.test(m0[,i], m4[,i])$p.value %>% round(3)
+  results$pval5[i] <- t.test(m0[,i], m5[,i])$p.value %>% round(3)
+  results$pval6[i] <- t.test(m0[,i], m6[,i])$p.value %>% round(3)
+}
+
+results %>% 
+  pivot_longer(cols = everything(),
+               names_to = "group",
+               values_to = "pval") %>% 
+  mutate(group = str_remove(group, "pval")) %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  #ylim(0, n_samples/4) +
+  facet_wrap(~ group, scales = "free_y") +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
 ```
 
-Ссылка неа карту (@fig-rbirthplace).
 
 
-### Видео {#chapterid-video}
 
-:::{#fig-razbor}
+### p-value и объём выборки {#prob-falsepositive-pval-sample-size}
 
-{{< video https://youtu.be/WoffShoneY8?si=Du9xHiOVBHZaOYuE >}}
+```{r pval-sample-size}
+#| label: fig-pval-sample-size
+#| fig-cap: "Название графика"
 
-Разбор третьей домашки
-:::
+n_samples <- 10000
+sample_sizes <- c(10, 50, 100, 150, 200, 300)
+alpha <- 0.05
 
-Ссылка на видео (@fig-razbor).
+set.seed(404)
+m01 <- matrix(rnorm(sample_sizes[1] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m02 <- matrix(rnorm(sample_sizes[2] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m03 <- matrix(rnorm(sample_sizes[3] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m04 <- matrix(rnorm(sample_sizes[4] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m05 <- matrix(rnorm(sample_sizes[5] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m06 <- matrix(rnorm(sample_sizes[6] * n_samples, mean = 1, sd = 10), ncol = n_samples)
+m1 <- matrix(rnorm(sample_sizes[1] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m2 <- matrix(rnorm(sample_sizes[2] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m3 <- matrix(rnorm(sample_sizes[3] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m4 <- matrix(rnorm(sample_sizes[4] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m5 <- matrix(rnorm(sample_sizes[5] * n_samples, mean = 2, sd = 10), ncol = n_samples)
+m6 <- matrix(rnorm(sample_sizes[6] * n_samples, mean = 2, sd = 10), ncol = n_samples)
 
+results <- tibble(
+  pval1 = numeric(n_samples),
+  pval2 = numeric(n_samples),
+  pval3 = numeric(n_samples),
+  pval4 = numeric(n_samples),
+  pval5 = numeric(n_samples),
+  pval6 = numeric(n_samples)
+  )
 
-### Схема {#chapterid-scheme}
+for (i in 1:n_samples) {
+  results$pval1[i] <- t.test(m01[,i], m1[,i])$p.value %>% round(3)
+  results$pval2[i] <- t.test(m02[,i], m2[,i])$p.value %>% round(3)
+  results$pval3[i] <- t.test(m03[,i], m3[,i])$p.value %>% round(3)
+  results$pval4[i] <- t.test(m04[,i], m4[,i])$p.value %>% round(3)
+  results$pval5[i] <- t.test(m05[,i], m5[,i])$p.value %>% round(3)
+  results$pval6[i] <- t.test(m06[,i], m6[,i])$p.value %>% round(3)
+}
 
-```{mermaid}
-%%| label: fig-mermaidtest
-%%| fig-cap: Это схема из Mermaid
-%%| fig-align: center
-
-flowchart LR
-  A(Step 1) --> B(Step 2)
-  B --> C(Step 3)
-  C --> D(Step 4)
-  D --> E(Step 5)
-  E --> A
+results %>% 
+  pivot_longer(cols = everything(),
+               names_to = "group",
+               values_to = "pval") %>% 
+  mutate(group = str_remove(group, "pval")) %>% 
+  mutate(is_lower = pval < alpha) %>% 
+  ggplot(aes(pval, fill = is_lower)) +
+  geom_histogram(binwidth = .01) +
+  geom_vline(xintercept = .05, linetype = "dashed", color = "red3") +
+  #ylim(0, n_samples/4) +
+  facet_wrap(~ group, scales = "free_y") +
+  scale_fill_manual(values = c("TRUE" = "red3", "FALSE" = "blue3"),
+                    labels = c("TRUE" = TeX("$$p < \\alpha$$"), "FALSE" = TeX("p > $$\\alpha$$"))) +
+  labs(x = "p-value", y = "Количество", fill = "Значимость")
 ```
 
-Ссылка на схему (@fig-mermaidtest).
 
 
+***
 
+###### Session Info {#session_info .unnumbered}
 
-## Таблицы {#chapterid-tables}
-
-Ссылка на таблицу из `tibble` (@tbl-kabletable).
-
-Ссылка на таблицу из R Markdown (@tbl-markdowntable).
-
-
-### Таблица из `kable()` {#chapterid-kabletable}
-
-::: {#tbl-kabletable}
-
-```{r}
-#| echo: false
-
-tibble(A = 1:3, B = c("akjsfv", "akejrhvae", "kvuhaefrv")) %>% 
-knitr::kable()
+```{r session-info}
+sessionInfo()
 ```
-
-Это kable-таблица
-
-:::
-
-
-### Таблица из R Markdown {#chapterid-markdowntable}
-
-::: {#tbl-markdowntable}
-
-| A 	|  B  	|  C  	|          D         	|
-|---	|:---:	|:---:	|:------------------:	|
-| 1 	| abc 	|  да 	|     $\sin (2)$     	|
-| 2 	| def 	| нет 	|   $\sqrt {4+2i}$   	|
-| 3 	| ghi 	|  да 	| $e^{i\pi} + 1 = 0$ 	|
-
-Это Markdown-таблица
-
-:::
-
-## Математика {#chapterid-math}
-
-Это уравнение прямой (@eq-line):
-
-$$
-y = kx + b
-$$ {#eq-line}
-
-::: {#thm-nonbiasmean}
-Это теорема.
-:::
-
-:::{.proof}
-
-Это доказательство.
-
-$$ 
-X_1, X_2, \dots , X_n \overset{\iid}{\thicksim} (\mu, \sigma^2)
-$$
-
-:::
-
-::: {#lem-test}
-Это лемма.
-:::
-
-::: {#cor-test}
-Это следствие.
-:::
-
-::: {#prp-test}
-Это утверждение.
-:::
-
-::: {#cnj-test}
-Это conjecutre.
-:::
-
-::: {#def-test}
-Это определение.
-:::
-
-::: {#exm-test}
-Это пример.
-:::
-
-::: {#exr-test}
-Это задание.
-:::
-
-::::{.solution}
-
-:::{.cell}
-Это решение
-:::
-::::
-
-::: {.solution}
-<!--Это решение, где есть только код.-->
-```{r}
-print(0)
-```
-:::
-
-::: {.remark}
-Это замечание.
-:::
-
-
-
-
-## Блоки {#chapterid-callouts}
-
-:::{.callout-note}
-###### Заголовок заметки
-
-Текст заметки.
-:::
-
-:::{.callout-tip}
-###### Заголовок лайфхака
-
-Текст лайфхака.
-:::
-
-:::{.callout-warning}
-###### Заголовок предупреждения
-
-Текст предупреждения.
-:::
-
-:::{.callout-important}
-###### Заголовок важности
-
-Текст важности.
-:::
-
-:::{.callout-caution collapse="true"}
-###### Заголовок предупреждения
-
-Текст предупреждения.
-:::
 
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>

@@ -29,7 +29,14 @@
 
 
 <!--- Logic --->
+\newcommand{\true}{\mathsf{T}}
+\newcommand{\false}{\mathsf{F}}
+\newcommand{\and}{\wedge}
+\newcommand{\or}{\vee}
 \newcommand{\xor}{\veebar}
+\newcommand{\impl}{\Rightarrow}
+\newcommand{\repl}{\Leftarrow}
+\newcommand{\equi}{\Leftrightarrow}
 
 
 <!--- Set theory --->
@@ -88,7 +95,11 @@
   \rlap{\usebox\MBox}\color{#1}\rule[-1.2\dp\MBox]{\wd\MBox}{0.5pt}}}
 
 <!--- Distributions --->
+\newcommand{\disted}[1]{\overset{#1}{\thicksim}}
 \newcommand{\norm}{\mathcal{N}}
+\newcommand{\unif}{\mathcal{U}}
+\newcommand{\bin}{\text{Bin}}
+\newcommand{\pois}{\text{Pois}}
 
 <!--- Other --->
 \newcommand{\defin}[1]{\overset{\text{def}}{#1}}
@@ -110,11 +121,14 @@
 \DeclareMathOperator{\arcsch}{arcsch}
 
 <!--- Stats --->
+\newcommand{\pval}{\mathsf{p}}
 \newcommand{\mode}{\text{mode}}
 \newcommand{\median}{\text{median}}
 \newcommand{\mean}{\mathbb{mean}}
 \newcommand{\skewness}{\text{skew}}
 \newcommand{\kurtosis}{\text{kurt}}
+\newcommand{\df}{\text{df}}
+\newcommand{\cr}{\text{cr}}
 
 
 <!--- Letters --->
@@ -126,3 +140,5 @@
 \newcommand{\TSS}{\text{TSS}}
 \newcommand{\RSS}{\text{RSS}}
 \newcommand{\ESS}{\text{ESS}}
+\newcommand{\MS}{\text{MS}}
+\newcommand{\SS}{\text{SS}}

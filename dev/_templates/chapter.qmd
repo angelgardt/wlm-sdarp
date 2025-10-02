@@ -21,6 +21,11 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 
 ::::
 
+:::{.quote .small .pers}
+--- Не обзывайся. Я не дотошный. Я просто хочу понять.
+:::
+
+
 > Цитата
 
 :::{.quote .small}

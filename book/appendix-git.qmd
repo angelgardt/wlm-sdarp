@@ -123,3 +123,11 @@ cd36b370758a259b34845084a6cc38473cb95e27
 
 
 
+## Команды
+
+```
+git reset --soft HEAD~2
+git commit -m "new commit message"
+git push -f
+```
+

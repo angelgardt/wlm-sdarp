@@ -79,6 +79,76 @@ $$
 $$
 
 
+
+
+
+## Операции над множествами {}
+
+:::{#prp-intersection-commutative}
+$$
+A \cap B = B \cap A
+$$
+:::
+
+:::{.proof}
+$$
+\begin{split}
+A \cap B & \defin{=} \{a \mid a \in A \and a \in B\} \\
+B \cap A & \defin{=} \{a \mid a \in B \and a \in A\}
+\end{split}
+$$
+
+Согласно коммутативности конъюнкции (@prp-and-commutative), высказывания $a \in A \and a \in B$ и $a \in B \and a \in A$ равносильны, следовательно множество $B \cap A$ может быть задано как $\{a \mid a \in A \and a \in B\}$, из чего следует, что множества $A \cap B$ и $B \cap A$ совпадают, следовательно, они равны.
+
+:::
+
+
+
+:::{#prp-union-commutative}
+$$
+A \cup B = B \cup A
+$$
+:::
+
+
+:::{#prp-intersection-associative}
+
+$$
+A \cap (B \cap C) = (A \cap B) \cap C
+$$
+:::
+
+:::{#prp-union-associative}
+$$
+A \cup (B \cup C) = (A \cup B) \cup C
+$$
+:::
+
+:::{#prp-intersection-distributive}
+$$
+A \cup (B \cap C) = (A \cup B) \cap (B \cup C)
+$$
+:::
+
+:::{#prp-union-distributive}
+$$
+A \cap (B \cup C) = (A \cap B) \cup (B \cap C)
+$$
+:::
+
+:::{#prp-intersection-demorgan}
+$$
+A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)
+$$
+:::
+
+:::{#prp-union-demorgan}
+$$
+A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)
+$$
+:::
+
+
 ```{=html}
 <script type="text/javascript" src="./js/chapter.js"></script>
 ```

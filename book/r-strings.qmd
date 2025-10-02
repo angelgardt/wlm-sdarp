@@ -10,7 +10,9 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 Вступление
 :::
 
+## Дополнительные пакеты {#r-strings-ext-pkgs}
 
+Базовый R, на самом деле, состоит из набора пакетов, подключаемых при запуске автоматически.
 
 
 

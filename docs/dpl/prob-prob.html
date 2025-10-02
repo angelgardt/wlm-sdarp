@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 23&nbsp; Вероятность как математическая конструкция</title>
+<title>26&nbsp; Вероятность как математическая конструкция – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -53,17 +53,23 @@ div.csl-indent {
 <link href="./prob-randvalues.html" rel="next">
 <link href="./prob-randexpvals.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-554ea854cf0619dcc30cc54aeb8f7717.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -116,7 +122,7 @@ background-size: cover;
       }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -148,29 +154,191 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-prob.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-prob.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-prob.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="prob" class="quarto-section-identifier"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-prob.html">Теория вероятности и математическая статистика</a></li><li class="breadcrumb-item"><a href="./prob-prob.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></a></li></ol></nav>
+      <h1 class="title"><span id="prob-prob" class="quarto-section-identifier"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></h1>
                       </div>
   </div>
     
@@ -221,52 +389,23 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -283,50 +422,56 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -335,78 +480,97 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория измерений</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+  <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория измерений</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -415,51 +579,57 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -468,21 +638,51 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-hierreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-oneway-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Однофакторный дисперсионный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -501,13 +701,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -558,32 +758,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-survey-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Основы опросных методов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -598,30 +804,31 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#prob-randexp" id="toc-prob-randexp" class="nav-link active" data-scroll-target="#prob-randexp"><span class="header-section-number">23.1</span> Эксперименты со случайным исходом</a>
+  <li><a href="#prob-randexp" id="toc-prob-randexp" class="nav-link active" data-scroll-target="#prob-randexp"><span class="header-section-number">26.1</span> Эксперименты со случайным исходом</a>
   <ul>
-  <li><a href="#prob-not-freq" id="toc-prob-not-freq" class="nav-link" data-scroll-target="#prob-not-freq"><span class="header-section-number">23.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</a></li>
+  <li><a href="#prob-not-freq" id="toc-prob-not-freq" class="nav-link" data-scroll-target="#prob-not-freq"><span class="header-section-number">26.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</a></li>
   </ul></li>
-  <li><a href="#prob-events" id="toc-prob-events" class="nav-link" data-scroll-target="#prob-events"><span class="header-section-number">23.2</span> Элементарные исходы и события</a>
+  <li><a href="#prob-events" id="toc-prob-events" class="nav-link" data-scroll-target="#prob-events"><span class="header-section-number">26.2</span> Элементарные исходы и события</a>
   <ul>
-  <li><a href="#prob-omega-types" id="toc-prob-omega-types" class="nav-link" data-scroll-target="#prob-omega-types"><span class="header-section-number">23.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</a></li>
-  <li><a href="#prop-events-operations" id="toc-prop-events-operations" class="nav-link" data-scroll-target="#prop-events-operations"><span class="header-section-number">23.2.2</span> Операции над событиями</a></li>
+  <li><a href="#prob-omega-types" id="toc-prob-omega-types" class="nav-link" data-scroll-target="#prob-omega-types"><span class="header-section-number">26.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</a></li>
+  <li><a href="#prop-events-operations" id="toc-prop-events-operations" class="nav-link" data-scroll-target="#prop-events-operations"><span class="header-section-number">26.2.2</span> Операции над событиями</a></li>
   </ul></li>
-  <li><a href="#prob-lim-set" id="toc-prob-lim-set" class="nav-link" data-scroll-target="#prob-lim-set"><span class="header-section-number">23.3</span> Предел последовательности множеств</a>
+  <li><a href="#prob-lim-set" id="toc-prob-lim-set" class="nav-link" data-scroll-target="#prob-lim-set"><span class="header-section-number">26.3</span> Предел последовательности множеств</a>
   <ul>
-  <li><a href="#prob-indic-function" id="toc-prob-indic-function" class="nav-link" data-scroll-target="#prob-indic-function"><span class="header-section-number">23.3.1</span> Индикаторная функция</a></li>
-  <li><a href="#prob-get-set-lims" id="toc-prob-get-set-lims" class="nav-link" data-scroll-target="#prob-get-set-lims"><span class="header-section-number">23.3.2</span> Вычисление пределов последовательностей множеств</a></li>
+  <li><a href="#prob-indic-function" id="toc-prob-indic-function" class="nav-link" data-scroll-target="#prob-indic-function"><span class="header-section-number">26.3.1</span> Индикаторная функция</a></li>
+  <li><a href="#prob-get-set-lims" id="toc-prob-get-set-lims" class="nav-link" data-scroll-target="#prob-get-set-lims"><span class="header-section-number">26.3.2</span> Вычисление пределов последовательностей множеств</a></li>
   </ul></li>
-  <li><a href="#sigma-алгебра-событий" id="toc-sigma-алгебра-событий" class="nav-link" data-scroll-target="#sigma-алгебра-событий"><span class="header-section-number">23.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</a></li>
-  <li><a href="#prob-kolmogorov-axioms" id="toc-prob-kolmogorov-axioms" class="nav-link" data-scroll-target="#prob-kolmogorov-axioms"><span class="header-section-number">23.5</span> Система аксиом вероятности</a></li>
-  <li><a href="#prob-continuous" id="toc-prob-continuous" class="nav-link" data-scroll-target="#prob-continuous"><span class="header-section-number">23.6</span> Непрерывность вероятности</a></li>
-  <li><a href="#prob-space" id="toc-prob-space" class="nav-link" data-scroll-target="#prob-space"><span class="header-section-number">23.7</span> Вероятностное пространство</a></li>
-  <li><a href="#независимость-событий" id="toc-независимость-событий" class="nav-link" data-scroll-target="#независимость-событий"><span class="header-section-number">23.8</span> Независимость событий</a></li>
+  <li><a href="#sigma-алгебра-событий" id="toc-sigma-алгебра-событий" class="nav-link" data-scroll-target="#sigma-алгебра-событий"><span class="header-section-number">26.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</a></li>
+  <li><a href="#prob-kolmogorov-axioms" id="toc-prob-kolmogorov-axioms" class="nav-link" data-scroll-target="#prob-kolmogorov-axioms"><span class="header-section-number">26.5</span> Система аксиом вероятности</a></li>
+  <li><a href="#prob-continuous" id="toc-prob-continuous" class="nav-link" data-scroll-target="#prob-continuous"><span class="header-section-number">26.6</span> Непрерывность вероятности</a></li>
+  <li><a href="#prob-space" id="toc-prob-space" class="nav-link" data-scroll-target="#prob-space"><span class="header-section-number">26.7</span> Вероятностное пространство</a></li>
+  <li><a href="#независимость-событий" id="toc-независимость-событий" class="nav-link" data-scroll-target="#независимость-событий"><span class="header-section-number">26.8</span> Независимость событий</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -647,8 +854,8 @@ window.Quarto = {
 <div class="intro">
 <p>Озадачимся более серьезно построением «вероятности» с опорой на фундамент всей современной математики — теорию множеств.</p>
 </div>
-<section id="prob-randexp" class="level2" data-number="23.1">
-<h2 data-number="23.1" class="anchored" data-anchor-id="prob-randexp"><span class="header-section-number">23.1</span> Эксперименты со случайным исходом</h2>
+<section id="prob-randexp" class="level2" data-number="26.1">
+<h2 data-number="26.1" class="anchored" data-anchor-id="prob-randexp"><span class="header-section-number">26.1</span> Эксперименты со случайным исходом</h2>
 <div class="lab-senior">
 
 </div>
@@ -661,8 +868,8 @@ window.Quarto = {
 <li><strong>В одном повторении эксперимента некий исход может либо реализовать, либо не реализоваться</strong> <br> Данное требование позволяет ввести такую характеристику исхода случайного эксперимента как <em>частота</em>. <br> Исход <span class="math inline">\(A\)</span> имеет [относительную] частоту <span class="math inline">\(\displaystyle \frac{n(A)}{n}\)</span>, если в <span class="math inline">\(n\)</span> повторениях случайного эксперимента этот исход реализовался <span class="math inline">\(n(A)\)</span> раз.</li>
 <li><strong>Статистическая устойчивость частоты</strong> <br> Под этим понимают две вещи:
 <ul>
-<li>с ростом числа повторений случайного эксперимента относительная частота события <span class="math inline">\(A\)</span> должна приближаться к некоторому значению <span class="citation" data-cites="serdobolskaya2019">(<a href="references.html#ref-serdobolskaya2019" role="doc-biblioref">Сердобольская, 2017</a>)</span> (<a href="#fig-prob-stat-stability-1" class="quarto-xref">Иллюстрация&nbsp;<span>23.1 (a)</span></a>)</li>
-<li>в разных сериях случайных экспериментов относительная частота события <span class="math inline">\(A\)</span> (при достаточно большом количестве повторений случайного эксперимента) не должна сильно меняться <span class="citation" data-cites="erlikh2019">(<a href="references.html#ref-erlikh2019" role="doc-biblioref">Эрлих, 2017</a>)</span> (<a href="#fig-prob-stat-stability-2" class="quarto-xref">Иллюстрация&nbsp;<span>23.1 (b)</span></a>).</li>
+<li>с ростом числа повторений случайного эксперимента относительная частота события <span class="math inline">\(A\)</span> должна приближаться к некоторому значению <span class="citation" data-cites="serdobolskaya2019">(<a href="references.html#ref-serdobolskaya2019" role="doc-biblioref">Сердобольская, 2017</a>)</span> (<a href="#fig-prob-stat-stability-1" class="quarto-xref">Иллюстрация&nbsp;<span>26.1 (a)</span></a>)</li>
+<li>в разных сериях случайных экспериментов относительная частота события <span class="math inline">\(A\)</span> (при достаточно большом количестве повторений случайного эксперимента) не должна сильно меняться <span class="citation" data-cites="erlikh2019">(<a href="references.html#ref-erlikh2019" role="doc-biblioref">Эрлих, 2017</a>)</span> (<a href="#fig-prob-stat-stability-2" class="quarto-xref">Иллюстрация&nbsp;<span>26.1 (b)</span></a>).</li>
 </ul></li>
 </ol>
 <div id="fig-prob-stat-stability" class="quarto-layout-panel">
@@ -670,10 +877,10 @@ window.Quarto = {
 <div aria-describedby="fig-prob-stat-stability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-prob-stat-stability" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-prob-stat-stability-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-prob-stat-stability-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-prob-stat-stability-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="prob-prob_files/figure-html/fig-prob-stat-stability-1.png" class="img-fluid figure-img" data-ref-parent="fig-prob-stat-stability" width="672">
+<a href="prob-prob_files/figure-html/fig-prob-stat-stability-1.png" class="lightbox" data-gallery="fig-prob-stat-stability" title="Иллюстрация&nbsp;26.1&nbsp;(a): С ростом числа испытания относительная частота приближается к некоторому значению"><img src="prob-prob_files/figure-html/fig-prob-stat-stability-1.png" class="img-fluid figure-img" data-ref-parent="fig-prob-stat-stability" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-prob-stat-stability-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) С ростом числа испытания относительная частота приближается к некоторому значению
@@ -682,10 +889,10 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-prob-stat-stability" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-prob-stat-stability-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-prob-stat-stability-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-prob-stat-stability-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="prob-prob_files/figure-html/fig-prob-stat-stability-2.png" class="img-fluid figure-img" data-ref-parent="fig-prob-stat-stability" width="672">
+<a href="prob-prob_files/figure-html/fig-prob-stat-stability-2.png" class="lightbox" data-gallery="fig-prob-stat-stability" title="Иллюстрация&nbsp;26.1&nbsp;(b): В разных сериях испытаний относительная частота примерно постоянна"><img src="prob-prob_files/figure-html/fig-prob-stat-stability-2.png" class="img-fluid figure-img" data-ref-parent="fig-prob-stat-stability" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-prob-stat-stability-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) В разных сериях испытаний относительная частота примерно постоянна
@@ -696,7 +903,7 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prob-stat-stability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;23.1: Статистическая устойчивость
+Иллюстрация&nbsp;26.1: Статистическая устойчивость
 </figcaption>
 </figure>
 </div>
@@ -705,8 +912,8 @@ window.Quarto = {
 \mathbb{P}(A) \approx \frac{n(A)}{n}, \, n \to \infty
 \]</span></p>
 <p>Окей… Но ведь мы это же самое говорили, когда рассматривали статистическую интерпретацию вероятности! В чем здесь проблема?</p>
-<section id="prob-not-freq" class="level3" data-number="23.1.1">
-<h3 data-number="23.1.1" class="anchored" data-anchor-id="prob-not-freq"><span class="header-section-number">23.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</h3>
+<section id="prob-not-freq" class="level3" data-number="26.1.1">
+<h3 data-number="26.1.1" class="anchored" data-anchor-id="prob-not-freq"><span class="header-section-number">26.1.1</span> Несостоятельность <span class="math inline">\(\mathbb{P}(A) \approx \frac{n(A)}{n}\)</span> как определения вероятности</h3>
 <div class="lab-senior">
 
 </div>
@@ -722,8 +929,8 @@ window.Quarto = {
 <p>Таким образом, это выражение не может быть математическим определением, однако оно может быть теоремой теории вероятности, которую мы в виде приближенного равенства сможем использовать в эмпирической проверке расчётов. Для вычисления же самой вероятности необходимо построить математическую конструкцию вероятности. Решением этой задачи и занимается теория вероятности.</p>
 </section>
 </section>
-<section id="prob-events" class="level2" data-number="23.2">
-<h2 data-number="23.2" class="anchored" data-anchor-id="prob-events"><span class="header-section-number">23.2</span> Элементарные исходы и события</h2>
+<section id="prob-events" class="level2" data-number="26.2">
+<h2 data-number="26.2" class="anchored" data-anchor-id="prob-events"><span class="header-section-number">26.2</span> Элементарные исходы и события</h2>
 <div class="lab-senior">
 
 </div>
@@ -739,7 +946,7 @@ window.Quarto = {
 <p>Другой пример: «один раз брошен игральный кубик». В этом случае множество элементарных исходов состоит из шести элементов:</p>
 <p><span id="eq-dice-omega"><span class="math display">\[
 \Omega = \{ \omega_1, \omega_2, \omega_3, \omega_4, \omega_5, \omega_6 \},
-\tag{23.1}\]</span></span></p>
+\tag{26.1}\]</span></span></p>
 <p>где</p>
 <ul>
 <li><span class="math inline">\(\omega_1\)</span> — «выпала грань с одной точкой»,</li>
@@ -777,23 +984,23 @@ window.Quarto = {
 <p>Случайный эксперимент: «респондент заполняет опросник STAI»<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Тогда множество элементарных исходов будет таким:</p>
 <p><span id="eq-stai-omega"><span class="math display">\[
 \Omega = \{ (\omega_{1i}, \omega_{2j}) \, | \,20 \leqslant i,j \leqslant 80\},
-\tag{23.2}\]</span></span></p>
+\tag{26.2}\]</span></span></p>
 <p>где <span class="math inline">\(\omega_{1i}\)</span> — «респондент набрал <span class="math inline">\(i\)</span> баллов по шкале ситуативной тревожности», <span class="math inline">\(\omega_{2}\)</span> — «респондент набрал <span class="math inline">\(j\)</span> баллов по шкале личностной тревожности».</p>
 <p>Случайный эксперимент: «неподготовленный студент решает тест по курсу “Психодиагностика и основы психометрики” из 30 заданий, каждое из которые оценивается дихотомически». Тогда множество элементарных исходов для балла за тест будет следующим:</p>
 <p><span id="eq-psydiag-omega"><span class="math display">\[
 \Omega = \{ \omega_{i} \, | \,0 \leqslant i \leqslant 30 \},
-\tag{23.3}\]</span></span></p>
+\tag{26.3}\]</span></span></p>
 <p>где <span class="math inline">\(\omega_{i}\)</span> — «студент набрал <span class="math inline">\(i\)</span> баллов за тест».</p>
 <p>И так далее. Для каждого случайного эксперимента мы можем описать множество элементарных исходов.</p>
-<p>Однако сами элементарные исходы на часто не очень интересуют. Интереснее рассматривать «неэлементарные» исходы, так как они будут соответствовать более содержательным вопросам. Так, например, если считать, что тест по «Психодиагностике и основам психометрики» сдан, если студент набрал не менее 20 баллов, то логично интересоваться событием <span class="math inline">\(A\)</span> «тест сдан», которые состоит из следующих элементарных исходов из <span class="math inline">\(\Omega\)</span> (<a href="#eq-psydiag-omega" class="quarto-xref">Уравнение&nbsp;<span>23.3</span></a>):</p>
+<p>Однако сами элементарные исходы на часто не очень интересуют. Интереснее рассматривать «неэлементарные» исходы, так как они будут соответствовать более содержательным вопросам. Так, например, если считать, что тест по «Психодиагностике и основам психометрики» сдан, если студент набрал не менее 20 баллов, то логично интересоваться событием <span class="math inline">\(A\)</span> «тест сдан», которые состоит из следующих элементарных исходов из <span class="math inline">\(\Omega\)</span> (<a href="#eq-psydiag-omega" class="quarto-xref">Уравнение&nbsp;<span>26.3</span></a>):</p>
 <p><span class="math display">\[
 A = \{ \omega_{i} \, | \,20 \leqslant i \leqslant 30 \}
 \]</span></p>
-<p>Или же рассмотреть событие <span class="math inline">\(A\)</span> «у респондента низкая ситуативная и личностная тревожность» (<a href="#eq-stai-omega" class="quarto-xref">Уравнение&nbsp;<span>23.2</span></a>):</p>
+<p>Или же рассмотреть событие <span class="math inline">\(A\)</span> «у респондента низкая ситуативная и личностная тревожность» (<a href="#eq-stai-omega" class="quarto-xref">Уравнение&nbsp;<span>26.2</span></a>):</p>
 <p><span class="math display">\[
 A = \{ (\omega_{1i}, \omega_{2j}) \, | \,20 \leqslant i,j \leqslant 30\}
 \]</span></p>
-<p>Ну, или же вернуться к истокам, и изучить событие «на игральной кости выпало четное число очков» (<a href="#eq-dice-omega" class="quarto-xref">Уравнение&nbsp;<span>23.1</span></a>):</p>
+<p>Ну, или же вернуться к истокам, и изучить событие «на игральной кости выпало четное число очков» (<a href="#eq-dice-omega" class="quarto-xref">Уравнение&nbsp;<span>26.1</span></a>):</p>
 <p><span class="math display">\[
 A = \{ \omega_2, \omega_4, \omega_6 \}
 \]</span></p>
@@ -825,8 +1032,8 @@ A \subseteq \Omega
 \]</span></p>
 </div>
 </div>
-<section id="prob-omega-types" class="level3" data-number="23.2.1">
-<h3 data-number="23.2.1" class="anchored" data-anchor-id="prob-omega-types"><span class="header-section-number">23.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</h3>
+<section id="prob-omega-types" class="level3" data-number="26.2.1">
+<h3 data-number="26.2.1" class="anchored" data-anchor-id="prob-omega-types"><span class="header-section-number">26.2.1</span> Как может быть устроено <span class="math inline">\(\Omega\)</span>?</h3>
 <div class="lab-senior">
 
 </div>
@@ -856,19 +1063,19 @@ A \subseteq \Omega
 <p>где, скажем, <span class="math inline">\(t_\min = 0.3 \, \text{c}\)</span>, <span class="math inline">\(t_\max = 1.5 \,\text{c}\)</span>. При этом время реакции может быть абсолютно любым значением из заданного диапазона. О границах диапазона можно поразмышлять, но в данном случае это не очень существенно, важно, что внутри границ содержится бесконечно много значений, причем эта бесконечность больше, чем количество натуральных чисел <span class="math inline">\(|\mathbb{N}|\)</span>.</p>
 <p>Таким образом, если мы хотим описать эксперимент с помощью <span class="math inline">\(\Omega\)</span>, нам надо иметь в виду, что это множество может быть абсолютно любой природы с точки зрения количества элементов. Это сделает нам некоторые проблемы, но о них позже.</p>
 </section>
-<section id="prop-events-operations" class="level3" data-number="23.2.2">
-<h3 data-number="23.2.2" class="anchored" data-anchor-id="prop-events-operations"><span class="header-section-number">23.2.2</span> Операции над событиями</h3>
+<section id="prop-events-operations" class="level3" data-number="26.2.2">
+<h3 data-number="26.2.2" class="anchored" data-anchor-id="prop-events-operations"><span class="header-section-number">26.2.2</span> Операции над событиями</h3>
 <div class="lab-senior">
 
 </div>
-<p>Напомним себе, что мы пытаемся построить конструкцию вероятности, и дошли до того, что определили события как подмножества множества элементарных исходов. Чтобы далее работать с событиями, нам нужны какие-то операции над нами. Вполне естественно, раз уж мы заговорили о множествах, чтобы операции над событиями отражали операции над множествами. Ниже представлены эти соотношения (<a href="#tbl-evets-set" class="quarto-xref">Таблица&nbsp;<span>23.1</span></a>).</p>
-<div id="tbl-evets-set" class="quarto-float anchored">
+<p>Напомним себе, что мы пытаемся построить конструкцию вероятности, и дошли до того, что определили события как подмножества множества элементарных исходов. Чтобы далее работать с событиями, нам нужны какие-то операции над нами. Вполне естественно, раз уж мы заговорили о множествах, чтобы операции над событиями отражали операции над множествами. Ниже представлены эти соотношения (<a href="#tbl-evets-set" class="quarto-xref">Таблица&nbsp;<span>26.1</span></a>).</p>
+<div id="tbl-evets-set" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-evets-set-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;23.1: Соотношение событий и операций над множествами
+Таблица&nbsp;26.1: Соотношение событий и операций над множествами
 </figcaption>
 <div aria-describedby="tbl-evets-set-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 31%">
 <col style="width: 68%">
@@ -940,21 +1147,21 @@ A \subseteq \Omega
 </div>
 </section>
 </section>
-<section id="prob-lim-set" class="level2" data-number="23.3">
-<h2 data-number="23.3" class="anchored" data-anchor-id="prob-lim-set"><span class="header-section-number">23.3</span> Предел последовательности множеств</h2>
+<section id="prob-lim-set" class="level2" data-number="26.3">
+<h2 data-number="26.3" class="anchored" data-anchor-id="prob-lim-set"><span class="header-section-number">26.3</span> Предел последовательности множеств</h2>
 <div class="lab-senior">
 
 </div>
 <p>Мы движемся всё ещё движемся к построению вероятности, однако давайте на секунду остановимся и задумаемся вот на чем: когда мы построим вероятность, нам необходимо будет исследовать её аналитические свойства, чтобы понять, как она работает. Исследование любых аналитических свойств предполагает, что мы умеем считать пределы последовательностей. Так как вероятность будет стоять на множествах — в частности, событиях — нам потребуются пределы последовательностей множеств. На данный момент совершенно не ясно, как их считать. Озаботимся этим вопросом.</p>
 <p>Сходу неясно, как посчитать предел последовательности множеств, но из матана мы знаем, как считать предела числовых последовательностей. Можно ли как-то на элементах множеств создать некоторую числовую последовательность, логически отражающую свойства множеств?</p>
-<section id="prob-indic-function" class="level3" data-number="23.3.1">
-<h3 data-number="23.3.1" class="anchored" data-anchor-id="prob-indic-function"><span class="header-section-number">23.3.1</span> Индикаторная функция</h3>
+<section id="prob-indic-function" class="level3" data-number="26.3.1">
+<h3 data-number="26.3.1" class="anchored" data-anchor-id="prob-indic-function"><span class="header-section-number">26.3.1</span> Индикаторная функция</h3>
 <div class="lab-guru">
 
 </div>
 <p>Да. Сделаем мы это исходя из весьма простого соображения.</p>
 <div id="def-indic-funciton" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.1</strong></span> Функция <span class="math inline">\(\chi_A(\omega): \Omega \to \{0, 1\}\)</span> называется <strong>индикаторной функцией множества <span class="math inline">\(A\)</span></strong>, если она задана следующим образом:</p>
+<p><span class="theorem-title"><strong>Определение 26.1</strong></span> Функция <span class="math inline">\(\chi_A(\omega): \Omega \to \{0, 1\}\)</span> называется <strong>индикаторной функцией множества <span class="math inline">\(A\)</span></strong>, если она задана следующим образом:</p>
 <p><span class="math display">\[
 \chi_A(\omega) = \cases{
 1, \, \omega \in A \\
@@ -1004,14 +1211,14 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n
 \end{split}
 \]</span></p>
 <div id="def-lim-setseq" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.2</strong></span> Пределом последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span> называется множество <span class="math inline">\(A\)</span>, индикаторная функция которого является пределом индикаторных функций множеств данной последовательности:</p>
+<p><span class="theorem-title"><strong>Определение 26.2</strong></span> Пределом последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span> называется множество <span class="math inline">\(A\)</span>, индикаторная функция которого является пределом индикаторных функций множеств данной последовательности:</p>
 <p><span class="math display">\[
 A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) = \lim_{n \to \infty} \chi_{A_n} (\omega)
 \]</span></p>
 </div>
 </section>
-<section id="prob-get-set-lims" class="level3" data-number="23.3.2">
-<h3 data-number="23.3.2" class="anchored" data-anchor-id="prob-get-set-lims"><span class="header-section-number">23.3.2</span> Вычисление пределов последовательностей множеств</h3>
+<section id="prob-get-set-lims" class="level3" data-number="26.3.2">
+<h3 data-number="26.3.2" class="anchored" data-anchor-id="prob-get-set-lims"><span class="header-section-number">26.3.2</span> Вычисление пределов последовательностей множеств</h3>
 <div class="lab-senior">
 
 </div>
@@ -1043,23 +1250,23 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) 
 \]</span></p>
 <p>Тогда можно дать следующие определения.</p>
 <div id="def-limsup-setseq" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.3</strong></span> Множество <span class="math inline">\(\displaystyle \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k\)</span> называется <strong>верхним пределом</strong> последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
+<p><span class="theorem-title"><strong>Определение 26.3</strong></span> Множество <span class="math inline">\(\displaystyle \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k\)</span> называется <strong>верхним пределом</strong> последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
 <p><span class="math display">\[
 \bigcap_{n=1}^\infty \bigcup_{k = n}^\infty A_k \overset{\text{def}}{\limsup}_{n \to \infty} A_n
 \]</span></p>
 </div>
 <div id="def-liminf-setseq" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.4</strong></span> Множество <span class="math inline">\(\displaystyle \bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k\)</span> называется <strong>нижним пределом</strong> последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
+<p><span class="theorem-title"><strong>Определение 26.4</strong></span> Множество <span class="math inline">\(\displaystyle \bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k\)</span> называется <strong>нижним пределом</strong> последовательности множеств <span class="math inline">\((A_n)_{n=1}^\infty\)</span>.</p>
 <p><span class="math display">\[
 \bigcup_{n=1}^\infty \bigcap_{k = n}^\infty A_k \overset{\text{def}}{\liminf}_{n \to \infty} A_n
 \]</span></p>
 </div>
 <p>Довольно громоздкие конструкции… Давайте попробуем понять, что они обозначают по сути.</p>
-<p>В первом случае (<a href="#def-limsup-setseq" class="quarto-xref">Определение&nbsp;<span>23.3</span></a>):</p>
+<p>В первом случае (<a href="#def-limsup-setseq" class="quarto-xref">Определение&nbsp;<span>26.3</span></a>):</p>
 <p><span class="math display">\[
 \omega \in \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \Leftrightarrow \forall n = 1, 2, \ldots \exists k \geqslant n : \omega \in A_k \Leftrightarrow \exists k_1, k_2, \ldots, k_n \to \infty : \omega \in A_{k_n}, \forall n = 1, 2, \ldots
 \]</span></p>
-<p>Во втором случае (<a href="#def-liminf-setseq" class="quarto-xref">Определение&nbsp;<span>23.4</span></a>)</p>
+<p>Во втором случае (<a href="#def-liminf-setseq" class="quarto-xref">Определение&nbsp;<span>26.4</span></a>)</p>
 <p><span class="math display">\[
 \omega \in \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k \Leftrightarrow \exists n: \forall k \geqslant n \,\, \omega \in A_k \Leftrightarrow \omega \in A_n, A_{n+1}, \ldots
 \]</span></p>
@@ -1077,7 +1284,7 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) 
 \]</span></p>
 <p>Матан: всякая монотонная и ограниченная сверху и снизу последовательность имеет предел.</p>
 <div id="lem-limunion-setseq" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 23.1</strong></span> Пусть <span class="math inline">\(A_1 \subseteq A_2 \subseteq \ldots \subseteq A_n \subseteq \ldots \subseteq \Omega\)</span> — монотонная неубывающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему объединению множеств, входящих в последовательность:</p>
+<p><span class="theorem-title"><strong>Лемма 26.1</strong></span> Пусть <span class="math inline">\(A_1 \subseteq A_2 \subseteq \ldots \subseteq A_n \subseteq \ldots \subseteq \Omega\)</span> — монотонная неубывающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему объединению множеств, входящих в последовательность:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} A_n = \bigcup_{n=1}^\infty A_n
 \]</span></p>
@@ -1113,7 +1320,7 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) 
 <p><strong>Q.E.D.</strong></p>
 </div>
 <div id="lem-limintersection-setseq" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 23.2</strong></span> [<a href="#lem-limunion-setseq" class="quarto-xref">Дуальная к&nbsp;<span>23.1</span></a>] Пусть <span class="math inline">\(\Omega \supseteq A_1 \supseteq A_2 \supseteq \ldots \subseteq A_n \supseteq \ldots\)</span> — монотонная невозрастающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему пересечению множеств, входящих в последовательность:</p>
+<p><span class="theorem-title"><strong>Лемма 26.2</strong></span> [<a href="#lem-limunion-setseq" class="quarto-xref">Дуальная к&nbsp;<span>26.1</span></a>] Пусть <span class="math inline">\(\Omega \supseteq A_1 \supseteq A_2 \supseteq \ldots \subseteq A_n \supseteq \ldots\)</span> — монотонная невозрастающая последовательность <span class="math inline">\((A_n)_{n=1}^\infty\)</span>. Тогда такая последовательность имеет предел, равный общему пересечению множеств, входящих в последовательность:</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} A_n = \bigcap_{n=1}^\infty A_n
 \]</span></p>
@@ -1129,8 +1336,8 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) 
 </div>
 </section>
 </section>
-<section id="sigma-алгебра-событий" class="level2" data-number="23.4">
-<h2 data-number="23.4" class="anchored" data-anchor-id="sigma-алгебра-событий"><span class="header-section-number">23.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</h2>
+<section id="sigma-алгебра-событий" class="level2" data-number="26.4">
+<h2 data-number="26.4" class="anchored" data-anchor-id="sigma-алгебра-событий"><span class="header-section-number">26.4</span> <span class="math inline">\(\sigma\)</span>-алгебра событий</h2>
 <p>Вся кропотливая деятельность, связанная со множествами, была обусловлена необходимостью построения конструкции вероятности. Напомним ещё раз себе, что мы хотим для событий <span class="math inline">\(A\)</span> (<span class="math inline">\(A \subseteq \Omega\)</span>) «построить» вероятность <span class="math inline">\(\mathbb{P}(A)\)</span>. «Построить» значит задать функцию, которая подмножеству сопоставляет некоторое число.</p>
 <p>Задание функции начинается с задания её <strong>области определения</strong> — где вообще должна существовать та функция, которую мы желаем построить? Есть несколько соображений здравого смысла относительно области определения вероятности.</p>
 <ol type="1">
@@ -1153,7 +1360,7 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) 
 \]</span></p>
 <p>Таких требований можно придумать достаточно много, и необходимо выбрать минимальный комплекс требования, чтобы избежать переопределения понятий. В частности, нужно ли нам перечислять в пункте (3) все операции, если <span class="math inline">\(A \cap B = \overline{\overline{A} \cup \overline{B}}\)</span> и <span class="math inline">\(A \cup B = \overline{\overline{A} \cap \overline{B}}\)</span>?</p>
 <div id="def-algF" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.5</strong></span> Система <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> называется <strong>алгеброй</strong> подмножеств, если она замкнута относительно операций дополнения и объединения.</p>
+<p><span class="theorem-title"><strong>Определение 26.5</strong></span> Система <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> называется <strong>алгеброй</strong> подмножеств, если она замкнута относительно операций дополнения и объединения.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;A \in \mathcal{F}\Rightarrow \overline{A} \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}1} \\
@@ -1162,7 +1369,7 @@ A \overset{\text{def}}{\lim}_{n \to \infty} A_n \Leftrightarrow \chi_A (\omega) 
 \]</span></p>
 </div>
 <div id="cor-intersection-algF" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.1</strong></span> [Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span>]</p>
+<p><span class="theorem-title"><strong>Следствие 26.1</strong></span> [Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span>]</p>
 <p><span class="math inline">\(\mathcal{F}\)</span> также замкнута относительно пересечения множеств:</p>
 <p><span class="math display">\[
 A \cap B = \overline{\overline{A} \cup \overline{B}} \in \mathcal{F},
@@ -1170,7 +1377,7 @@ A \cap B = \overline{\overline{A} \cup \overline{B}} \in \mathcal{F},
 <p>так как <span class="math inline">\(\overline{A}, \overline{B} \in \mathcal{F}\Rightarrow \overline{A} \cup \overline{B} \in \mathcal{F}\Rightarrow \overline{\overline{A} \cup \overline{B}} \in \mathcal{F}\)</span>.</p>
 </div>
 <div id="cor-emptyomega-alfF" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.2</strong></span> [Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span>]</p>
+<p><span class="theorem-title"><strong>Следствие 26.2</strong></span> [Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span>]</p>
 <p>Пустое множество <span class="math inline">\(\varnothing\)</span> и <span class="math inline">\(\Omega\)</span> также принадлежат <span class="math inline">\(\mathcal{F}\)</span>:</p>
 <p><span class="math display">\[
 A \in \mathcal{F}\Rightarrow
@@ -1191,7 +1398,7 @@ A &amp;\neq \varnothing, \Omega, \, A \cup \overline{A} = \Omega \in \mathcal{F}
 </ul>
 </div>
 <div id="cor-finiteunion-algF" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.3</strong></span> Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span> также следует, что</p>
+<p><span class="theorem-title"><strong>Следствие 26.3</strong></span> Из требования <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span> также следует, что</p>
 <p><span class="math display">\[
 A_n \in \mathcal{F}\Rightarrow \bigcup_{k=1}^n A_k \in \mathcal{F}\,\, \forall n &lt; \infty, \, A_k \in \mathcal{F}
 \]</span></p>
@@ -1199,10 +1406,10 @@ A_n \in \mathcal{F}\Rightarrow \bigcup_{k=1}^n A_k \in \mathcal{F}\,\, \forall n
 <p>Однако из <span class="math inline">\(\enclose{circle}{\mathcal{F}2}\)</span> <em>не следует</em>, что</p>
 <p><span id="eq-infty-union-algF"><span class="math display">\[
 \enclose{circle}{\mathcal{F}2} \not \Rightarrow \bigcup_{k=1}^\infty A_k \in \mathcal{F}, \,\, A_1, A_2, \ldots \in \mathcal{F}
-\tag{23.4}\]</span></span></p>
-<p>Для задания вероятности нам необходимо, чтобы счетное объединение множеств, принадлежащих <span class="math inline">\(\mathcal{F}\)</span> также принадлежало <span class="math inline">\(\mathcal{F}\)</span>, то есть чтобы <a href="#eq-infty-union-algF" class="quarto-xref">следствие&nbsp;<span>23.4</span></a> выполнялось. Отсутствие принадлежности счетного объединения как следствия принадлежности конечного объединения требует дополнения определения данным требованием.</p>
+\tag{26.4}\]</span></span></p>
+<p>Для задания вероятности нам необходимо, чтобы счетное объединение множеств, принадлежащих <span class="math inline">\(\mathcal{F}\)</span> также принадлежало <span class="math inline">\(\mathcal{F}\)</span>, то есть чтобы <a href="#eq-infty-union-algF" class="quarto-xref">следствие&nbsp;<span>26.4</span></a> выполнялось. Отсутствие принадлежности счетного объединения как следствия принадлежности конечного объединения требует дополнения определения данным требованием.</p>
 <div id="def-sigma-algF" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.6</strong></span> Систем <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> называется <strong><span class="math inline">\(\sigma\)</span>-алгеброй</strong>, есл она замкнута относительно операций дополнения и <em>конечного и счётного</em> объединения.</p>
+<p><span class="theorem-title"><strong>Определение 26.6</strong></span> Систем <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> называется <strong><span class="math inline">\(\sigma\)</span>-алгеброй</strong>, есл она замкнута относительно операций дополнения и <em>конечного и счётного</em> объединения.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;A \in \mathcal{F}\Rightarrow \overline{A} \in \mathcal{F}&amp;&amp;&amp; \enclose{circle}{\mathcal{F}1} \\
@@ -1211,20 +1418,20 @@ A_n \in \mathcal{F}\Rightarrow \bigcup_{k=1}^n A_k \in \mathcal{F}\,\, \forall n
 \end{aligned}
 \]</span></p>
 </div>
-<p>Необходимость отдельно налагать условие <span class="math inline">\(\enclose{circle}{\mathcal{F}3}\)</span> возникает из-за того, что предельный переход в общем случае можем менять свойства объекта (см. <a href="#eq-infty-union-algF" class="quarto-xref">Уравнение&nbsp;<span>23.4</span></a>).</p>
+<p>Необходимость отдельно налагать условие <span class="math inline">\(\enclose{circle}{\mathcal{F}3}\)</span> возникает из-за того, что предельный переход в общем случае можем менять свойства объекта (см. <a href="#eq-infty-union-algF" class="quarto-xref">Уравнение&nbsp;<span>26.4</span></a>).</p>
 <div id="cor-sigma-algF-algF" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.4</strong></span> Очевидно, что если <span class="math inline">\(\mathcal{F}\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй, то <span class="math inline">\(\mathcal{F}\)</span> является алгеброй, так как</p>
+<p><span class="theorem-title"><strong>Следствие 26.4</strong></span> Очевидно, что если <span class="math inline">\(\mathcal{F}\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй, то <span class="math inline">\(\mathcal{F}\)</span> является алгеброй, так как</p>
 <p><span class="math display">\[
 \enclose{circle}{\mathcal{F}1} \wedge \enclose{circle}{\mathcal{F}2} \wedge \enclose{circle}{\mathcal{F}3} \Rightarrow \enclose{circle}{\mathcal{F}1} \wedge \enclose{circle}{\mathcal{F}2}
 \]</span></p>
 </div>
 <div id="prp-finite-algF-sigma-algF" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 23.1</strong></span> Если <span class="math inline">\(\Omega\)</span> конечно, то любая алгебра <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй подмножеств <span class="math inline">\(\Omega\)</span>.</p>
+<p><span class="theorem-title"><strong>Утверждение 26.1</strong></span> Если <span class="math inline">\(\Omega\)</span> конечно, то любая алгебра <span class="math inline">\(\mathcal{F}\)</span> подмножеств <span class="math inline">\(\Omega\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй подмножеств <span class="math inline">\(\Omega\)</span>.</p>
 </div>
 <p>Зачем мы возвели на множестве <span class="math inline">\(\Omega\)</span> какую-то конструкцию под названием <span class="math inline">\(\sigma\)</span>-алгебра <span class="math inline">\(\mathcal{F}\)</span>? Именно <span class="math inline">\(\mathcal{F}\)</span> будет являться областью определения вероятности <span class="math inline">\(\mathbb{P}(A)\)</span>.</p>
 </section>
-<section id="prob-kolmogorov-axioms" class="level2" data-number="23.5">
-<h2 data-number="23.5" class="anchored" data-anchor-id="prob-kolmogorov-axioms"><span class="header-section-number">23.5</span> Система аксиом вероятности</h2>
+<section id="prob-kolmogorov-axioms" class="level2" data-number="26.5">
+<h2 data-number="26.5" class="anchored" data-anchor-id="prob-kolmogorov-axioms"><span class="header-section-number">26.5</span> Система аксиом вероятности</h2>
 <p>Окей, мы, слава святому рандому, определились с тем, как устроена область определения вероятности <span class="math inline">\(\mathcal{D}(\mathbb{P}(A)) = \mathcal{F}\)</span>. Может хоть теперь мы уже наконец-то сможем задать вероятность?</p>
 <p>Да, мы критически близки к этому моменту. Откатимся немного назад и вспомним, с чего мы начали.</p>
 <ul>
@@ -1261,7 +1468,7 @@ A_n \in \mathcal{F}\Rightarrow \bigcup_{k=1}^n A_k \in \mathcal{F}\,\, \forall n
 </ul>
 <p>Вновь можно выдвинуть довольно много требований и вновь нам надо определиться с тем, каков будет минимальный их набор, обеспечивающий все нам необходимые. Такой набор требований был предложен А.&nbsp;Н.&nbsp;Колмогоровым <span class="citation" data-cites="kolmogorov1974">(<a href="references.html#ref-kolmogorov1974" role="doc-biblioref">Колмогоров, 1974</a>)</span> и составляет <strong>систему аксиом вероятности [Колмогорова]</strong>.</p>
 <div id="prp-kolmogorov-axioms" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 23.2</strong></span> <strong>Cистема аксиом вероятности [Колмогорова]</strong></p>
+<p><span class="theorem-title"><strong>Утверждение 26.2</strong></span> <strong>Cистема аксиом вероятности [Колмогорова]</strong></p>
 <p>Пусть <span class="math inline">\(\Omega\)</span> — множестве элементарных исходов случайного эксперимента, <span class="math inline">\(\mathcal{F}\)</span> — множество подмножеств <span class="math inline">\(\Omega\)</span>, а <span class="math inline">\(\mathbb{P}\)</span> — вероятность.</p>
 <p><span class="math inline">\(\enclose{circle}{\text{A0}}\)</span> Множество событий <span class="math inline">\(\mathcal{F}\)</span> является <span class="math inline">\(\sigma\)</span>-алгеброй.</p>
 <p><span class="math inline">\(\enclose{circle}{\text{A1}}\)</span> Любому событию <span class="math inline">\(A\)</span> из <span class="math inline">\(\mathcal{F}\)</span> ставится в соответствие неотрицательное действительное число <span class="math inline">\(\mathbb{P}(A)\)</span>, называемое вероятностью события <span class="math inline">\(A\)</span>.</p>
@@ -1279,7 +1486,7 @@ A_n \in \mathcal{F}\Rightarrow \bigcup_{k=1}^n A_k \in \mathcal{F}\,\, \forall n
 <p>Мы отмечали, что вероятность — это мера множества. Теперь, учитывая аксиому <span class="math inline">\(\enclose{circle}{\text{A2}}\)</span> мы можем сказать, что <strong>вероятность — это счётно-аддитивная мера</strong>.</p>
 <p>Из аксиом Колмоголова получается ряд следствий.</p>
 <div id="cor-prob-emptyset" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.5</strong></span> Вероятность пустого множества равна нулю.</p>
+<p><span class="theorem-title"><strong>Следствие 26.5</strong></span> Вероятность пустого множества равна нулю.</p>
 <p><span class="math display">\[
 \mathbb{P}(\varnothing) = 0
 \]</span></p>
@@ -1293,7 +1500,7 @@ p = \mathbb{P}(\varnothing) = \mathbb{P}\Big( \bigsqcup_{n=1}^\infty A_n \Big) =
 <p>Из выражения <span class="math inline">\(p = \sum_{i=1}^\infty p\)</span> следует единственно возможное решение <span class="math inline">\(p = 0\)</span>.</p>
 </div>
 <div id="cor-finite-add" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.6</strong></span> [<em>Конечная аддитивность</em>]</p>
+<p><span class="theorem-title"><strong>Следствие 26.6</strong></span> [<em>Конечная аддитивность</em>]</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\mathbb{P}(A \sqcup B) = \mathbb{P}(A) + \mathbb{P}(B) &amp;&amp;&amp; \enclose{circle}{\tilde{\text{A2}}}
@@ -1306,9 +1513,9 @@ p = \mathbb{P}(\varnothing) = \mathbb{P}\Big( \bigsqcup_{n=1}^\infty A_n \Big) =
 A \sqcup B = \bigsqcup_{k=1}^\infty A_k \overset{\enclose{circle}{\text{A2}}}{\Rightarrow} \mathbb{P}(A \sqcup B) = \sum_{k=1}^\infty \mathbb{P}(A_k) = \mathbb{P}(A) + \mathbb{P}(B)
 \]</span></p>
 </div>
-<p>Иногда <a href="#cor-finite-add" class="quarto-xref">следствие&nbsp;<span>23.6</span></a> вводится в систему аксиом вероятности в качестве отдельной аксиомы — здесь она обозначена как <span class="math inline">\(\enclose{circle}{\tilde{\text{A2}}}\)</span>. Однако, как мы видим, свойство конечной аддитивности является следствием аксиомы счётной аддитивности.</p>
+<p>Иногда <a href="#cor-finite-add" class="quarto-xref">следствие&nbsp;<span>26.6</span></a> вводится в систему аксиом вероятности в качестве отдельной аксиомы — здесь она обозначена как <span class="math inline">\(\enclose{circle}{\tilde{\text{A2}}}\)</span>. Однако, как мы видим, свойство конечной аддитивности является следствием аксиомы счётной аддитивности.</p>
 <div id="cor-compl-event-prob" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.7</strong></span> [<em>Вероятность обратного события</em>]</p>
+<p><span class="theorem-title"><strong>Следствие 26.7</strong></span> [<em>Вероятность обратного события</em>]</p>
 <p><span class="math display">\[
 \mathbb{P}(\overline{A}) = 1 - \mathbb{P}(A)
 \]</span></p>
@@ -1319,7 +1526,7 @@ A \sqcup B = \bigsqcup_{k=1}^\infty A_k \overset{\enclose{circle}{\text{A2}}}{\R
 \]</span></p>
 </div>
 <div id="cor-ord-prob" class="theorem corollary">
-<p><span class="theorem-title"><strong>Следствие 23.8</strong></span> Если <span class="math inline">\(A, B \in \mathcal{F}\)</span> и <span class="math inline">\(A \subseteq B\)</span>, то <span class="math inline">\(\mathbb{P}(A) \leqslant\mathbb{P}(B)\)</span>.</p>
+<p><span class="theorem-title"><strong>Следствие 26.8</strong></span> Если <span class="math inline">\(A, B \in \mathcal{F}\)</span> и <span class="math inline">\(A \subseteq B\)</span>, то <span class="math inline">\(\mathbb{P}(A) \leqslant\mathbb{P}(B)\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
@@ -1330,8 +1537,8 @@ B = A \sqcup (B \setminus A)
 \]</span></p>
 </div>
 </section>
-<section id="prob-continuous" class="level2" data-number="23.6">
-<h2 data-number="23.6" class="anchored" data-anchor-id="prob-continuous"><span class="header-section-number">23.6</span> Непрерывность вероятности</h2>
+<section id="prob-continuous" class="level2" data-number="26.6">
+<h2 data-number="26.6" class="anchored" data-anchor-id="prob-continuous"><span class="header-section-number">26.6</span> Непрерывность вероятности</h2>
 <p>Вероятность — это некоторая функция, а для аналитических свойств хорошо бы, чтобы функция была непрерывной. Непрерывность функции определяется как равенство предельного значения функции значению функции в точке предела:</p>
 <p><span class="math display">\[
 f(\cdot): \mathbb{R}\to \mathbb{R}: f(\lim_{n \to \infty} x_n) = \lim_{n \to \infty} f(x_n)
@@ -1341,7 +1548,7 @@ f(\cdot): \mathbb{R}\to \mathbb{R}: f(\lim_{n \to \infty} x_n) = \lim_{n \to \in
 \mathbb{P}(\lim_{n \to \infty} A_n) \overset{?}{=} \lim_{n \to \infty} \mathbb{P}(A_n)
 \]</span></p>
 <div id="lem-prob-lim-upseq" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 23.3</strong></span> Пусть <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(A_1 \subset A_2 \subset \ldots \subset A_n \subset \ldots\)</span>. Тогда <span class="math inline">\(\displaystyle \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(\lim_{n \to \infty} A_n)\)</span>.</p>
+<p><span class="theorem-title"><strong>Лемма 26.3</strong></span> Пусть <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(A_1 \subset A_2 \subset \ldots \subset A_n \subset \ldots\)</span>. Тогда <span class="math inline">\(\displaystyle \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(\lim_{n \to \infty} A_n)\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span>Разобьём последовательность множеств следующим образом:</p>
@@ -1399,7 +1606,7 @@ B_{n+p} \cap B_n = A_{n+p} \cap \underbrace{\overline{A_{n+p-1}} \cap A_n}_\varn
 \]</span></p>
 </div>
 <div id="lem-prob-lim-downseq" class="theorem lemma">
-<p><span class="theorem-title"><strong>Лемма 23.4</strong></span> <a href="#lem-prob-lim-upseq" class="quarto-xref">Дуальная к&nbsp;<span>23.3</span></a> Пусть <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\Omega \supset A_1 \supset A_2 \supset \ldots \supset A_n \supset \ldots\)</span>. Тогда <span class="math inline">\(\displaystyle \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(\lim_{n \to \infty} A_n)\)</span>.</p>
+<p><span class="theorem-title"><strong>Лемма 26.4</strong></span> <a href="#lem-prob-lim-upseq" class="quarto-xref">Дуальная к&nbsp;<span>26.3</span></a> Пусть <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\Omega \supset A_1 \supset A_2 \supset \ldots \supset A_n \supset \ldots\)</span>. Тогда <span class="math inline">\(\displaystyle \lim_{n \to \infty} \mathbb{P}(A_n) = \mathbb{P}(\lim_{n \to \infty} A_n)\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Доказательство</em>. </span><span class="math display">\[
@@ -1413,7 +1620,7 @@ B_{n+p} \cap B_n = A_{n+p} \cap \underbrace{\overline{A_{n+p-1}} \cap A_n}_\varn
 \]</span></p>
 </div>
 <div id="prp-prob-ineq-lims" class="theorem proposition">
-<p><span class="theorem-title"><strong>Утверждение 23.3</strong></span> <span class="math inline">\(\forall (A_n)_{n=1}^\infty, A_n \subset \Omega\)</span></p>
+<p><span class="theorem-title"><strong>Утверждение 26.3</strong></span> <span class="math inline">\(\forall (A_n)_{n=1}^\infty, A_n \subset \Omega\)</span></p>
 <p><span class="math display">\[
 \mathbb{P}(\liminf_{n \to \infty} A_n) \leqslant\liminf_{n \to \infty} \mathbb{P}(A_n) \leqslant\limsup_{n \to \infty} \mathbb{P}(A_n) \leqslant\mathbb{P}(\limsup_{n \to \infty} A_n)
 \]</span></p>
@@ -1475,7 +1682,7 @@ P^\ast = \lim_{m \to infty} \mathbb{P}(A_{n_m}) \leqslant\lim_{m \to \infty} B_{
 <p>то есть ??????????????????????????????????????????????????????</p>
 </div>
 <div id="thm-prob-continuity" class="theorem">
-<p><span class="theorem-title"><strong>Теорема 23.1</strong></span> Если <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\exists \lim_{n \to \infty} A_n = A\)</span>, то</p>
+<p><span class="theorem-title"><strong>Теорема 26.1</strong></span> Если <span class="math inline">\((A_n)_{n=1}^\infty \subset \mathcal{F}\)</span> и <span class="math inline">\(\exists \lim_{n \to \infty} A_n = A\)</span>, то</p>
 <p><span class="math display">\[
 \mathbb{P}(A) = \lim_{n \to \infty} \mathbb{P}(A_n)
 \]</span></p>
@@ -1485,7 +1692,7 @@ P^\ast = \lim_{m \to infty} \mathbb{P}(A_{n_m}) \leqslant\lim_{m \to \infty} B_{
 <p><span class="math display">\[
 A^\ast = A_\ast = A
 \]</span></p>
-<p>По <a href="#prp-prob-ineq-lims" class="quarto-xref">утверждению&nbsp;<span>23.3</span></a> из этого следует, что</p>
+<p>По <a href="#prp-prob-ineq-lims" class="quarto-xref">утверждению&nbsp;<span>26.3</span></a> из этого следует, что</p>
 <p><span class="math display">\[
 \begin{split}
 &amp; \mathbb{P}(A_\ast) \leqslant\liminf_{n \to \infty} (A_n) \leqslant\limsup_{n \to \infty}(A_n) \leqslant\mathbb{P}(A^\ast) \\
@@ -1502,20 +1709,20 @@ A^\ast = A_\ast = A
 \]</span></p>
 </div>
 </section>
-<section id="prob-space" class="level2" data-number="23.7">
-<h2 data-number="23.7" class="anchored" data-anchor-id="prob-space"><span class="header-section-number">23.7</span> Вероятностное пространство</h2>
+<section id="prob-space" class="level2" data-number="26.7">
+<h2 data-number="26.7" class="anchored" data-anchor-id="prob-space"><span class="header-section-number">26.7</span> Вероятностное пространство</h2>
 <div id="def-prob-space" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.7</strong></span> Тройка объектов <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>вероятностным пространством</strong>.</p>
+<p><span class="theorem-title"><strong>Определение 26.7</strong></span> Тройка объектов <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>вероятностным пространством</strong>.</p>
 <p>Здесь</p>
 <ul>
 <li><span class="math inline">\(\Omega\)</span> — некоторое множество [элементарных исходов]</li>
 <li><span class="math inline">\(\mathcal{F}\)</span> — <span class="math inline">\(\sigma\)</span>-алгебра подмножеств <span class="math inline">\(\Omega\)</span></li>
-<li><span class="math inline">\(\mathbb{P}\)</span> — функция <span class="math inline">\(\mathbb{P}(\cdot)\)</span> такая, что <span class="math inline">\(A \subseteq \Omega : A \in \mathcal{F}\mapsto \mathbb{P}(A) \in \mathbb{R}\)</span> и для неё выполняются аксиомы <span class="math inline">\(\enclose{circle}{\text{A1}}\)</span> — <span class="math inline">\(\enclose{circle}{\text{A3}}\)</span> (см. <a href="#prp-kolmogorov-axioms" class="quarto-xref">Утверждение&nbsp;<span>23.2</span></a>).</li>
+<li><span class="math inline">\(\mathbb{P}\)</span> — функция <span class="math inline">\(\mathbb{P}(\cdot)\)</span> такая, что <span class="math inline">\(A \subseteq \Omega : A \in \mathcal{F}\mapsto \mathbb{P}(A) \in \mathbb{R}\)</span> и для неё выполняются аксиомы <span class="math inline">\(\enclose{circle}{\text{A1}}\)</span> — <span class="math inline">\(\enclose{circle}{\text{A3}}\)</span> (см. <a href="#prp-kolmogorov-axioms" class="quarto-xref">Утверждение&nbsp;<span>26.2</span></a>).</li>
 </ul>
 </div>
 <p>Обратим внимание, что набор требований к вероятностному пространству и его составляющим весьма нестрогий. В частности, нет никаких ограничений на то, как должно быть устроено <span class="math inline">\(\Omega\)</span>, и нет ограничений, как должно быть устроено <span class="math inline">\(\mathcal{F}\)</span>, кроме того, что это должна быть <span class="math inline">\(\sigma\)</span>-алгебра. Это значит, что вероятностные пространства могут быть очень разными. Мы будем иметь дело с <strong>двумя базовыми типами</strong> вероятностных пространств.</p>
 <div id="def-prob-space-discrete" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.8</strong></span> Вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>дискретным</strong>, если</p>
+<p><span class="theorem-title"><strong>Определение 26.8</strong></span> Вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>дискретным</strong>, если</p>
 <ul>
 <li><span class="math inline">\(\Omega = \{\omega_1, \omega_2, \ldots, \omega_N\}, \quad N \leqslant\aleph_0\)</span></li>
 <li><span class="math inline">\(\mathcal{F}= \mathcal{F}_\max\)</span></li>
@@ -1534,7 +1741,7 @@ A^\ast = A_\ast = A
 <p><span class="proof-title"><em>Замечание</em>. </span>Если <span class="math inline">\(N &lt; \aleph_0\)</span>, а <span class="math inline">\(p_k = \frac{1}{N} \, \forall k\)</span>, то <span class="math inline">\(\mathbb{P}(A) = \frac{M}{N}, \, \forall A = \{\omega_1, \ldots, \omega_M\}\)</span>. Такое вероятностное пространство задаёт <strong>классическую вероятность</strong>.</p>
 </div>
 <div id="def-prob-space-continuous" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 23.9</strong></span> Вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>непрерывным</strong>, если</p>
+<p><span class="theorem-title"><strong>Определение 26.9</strong></span> Вероятностное пространство <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> называется <strong>непрерывным</strong>, если</p>
 <ul>
 <li><span class="math inline">\(\omega\)</span> — точка в <span class="math inline">\(n\)</span>-мерном пространстве</li>
 <li><span class="math inline">\(\Omega\)</span> — область в <span class="math inline">\(n\)</span>-мерном пространстве такая, что <span class="math inline">\(\displaystyle 0 &lt; V(\Omega) = \int_{\Omega} \mathbb{p}(x) dx &lt; \infty\)</span>, где <span class="math inline">\(\mathbb{p}(\cdot)\)</span> — некоторая весовая функция</li>
@@ -1602,8 +1809,47 @@ A^\ast = A_\ast = A
 <p>Получается противоречие, так как полученное уравнение неразрешимо ни при каких <span class="math inline">\(l\)</span>, так как есои <span class="math inline">\(l=0\)</span>, то <span class="math inline">\(\sum = 0\)</span>, а если <span class="math inline">\(l \neq 0\)</span>, то <span class="math inline">\(\sum = \infty\)</span>.</p>
 <p>Таким образом, вся история с <span class="math inline">\(\sigma\)</span>-алгебрами нужна для согласования аксиомы счетной аддитивности <span class="math inline">\(\enclose{circle}{\text{A2}}\)</span> и аксиомы нормировки <span class="math inline">\(\enclose{circle}{\text{A3}}\)</span>.</p>
 </section>
-<section id="независимость-событий" class="level2" data-number="23.8">
-<h2 data-number="23.8" class="anchored" data-anchor-id="независимость-событий"><span class="header-section-number">23.8</span> Независимость событий</h2>
+<section id="независимость-событий" class="level2" data-number="26.8">
+<h2 data-number="26.8" class="anchored" data-anchor-id="независимость-событий"><span class="header-section-number">26.8</span> Независимость событий</h2>
+<hr>
+<section id="session_info" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="session_info">Session Info</h6>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.5.1 (2025-06-13)
+Platform: x86_64-apple-darwin20
+Running under: macOS Sequoia 15.4.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Moscow
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] lubridate_1.9.4 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [5] purrr_1.0.4     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   
+ [9] ggplot2_3.5.2   tidyverse_2.0.0
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6       jsonlite_2.0.0     compiler_4.5.1     tidyselect_1.2.1  
+ [5] scales_1.4.0       yaml_2.3.10        fastmap_1.2.0      R6_2.6.1          
+ [9] labeling_0.4.3     generics_0.1.4     knitr_1.50         htmlwidgets_1.6.4 
+[13] pillar_1.10.2      RColorBrewer_1.1-3 tzdb_0.5.0         rlang_1.1.6       
+[17] stringi_1.8.7      xfun_0.52          timechange_0.3.0   cli_3.6.5         
+[21] withr_3.0.2        magrittr_2.0.3     digest_0.6.37      grid_4.5.1        
+[25] rstudioapi_0.17.1  hms_1.1.3          lifecycle_1.0.4    vctrs_0.6.5       
+[29] evaluate_1.0.3     glue_1.8.0         farver_2.1.2       rmarkdown_2.29    
+[33] tools_4.5.1        pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
+</div>
+</div>
 <script type="text/javascript" src="./js/chapter.js"></script>
 
 
@@ -1625,6 +1871,7 @@ A^\ast = A_\ast = A
 </div>
 </div>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -1638,372 +1885,255 @@ A^\ast = A_\ast = A
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Скопировано!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Скопировано!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2011,198 +2141,206 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./prob-randexpvals.html" class="pagination-link" aria-label="Случайный эксперимент и случайные величины">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./prob-randvalues.html" class="pagination-link" aria-label="Случайные величины">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

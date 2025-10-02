@@ -1,0 +1,56 @@
+# Медиация {#andan-mediation}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+$$
+Y = \beta_{10} + \beta_{11} X + \vepsilon_1
+$$
+
+$\beta_{11}$ is significant
+
+
+$$
+M = \beta_{20} + \beta_{21} X + \vepsilon_2
+$$
+
+$\beta_{21}$ is significant
+
+$$
+Y = \beta_{30} + \beta_{31} X + \beta_{32} M + \vepsilon_3
+$$
+
+$\beta_{31}$ should be smaller in absolute value than the original effect for independent variable ($\beta_{11}$)
+
+
+
+Confounding
+
+Supression
+
+Moderators
+
+Moderated mediation
+
+Mediated moderation
+
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

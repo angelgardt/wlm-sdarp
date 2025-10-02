@@ -1,4 +1,4 @@
-# Комбинаторика {#chapterid}
+# Комбинаторика {#math-combs}
 
 {{< include other/_symbols.qmd >}}
 
@@ -11,6 +11,153 @@ knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=
 :::
 
 
+## Перестановки {#math-comb-permutations}
+
+:::{.lab-middle}
+:::
+
+permutations
+
+$$
+\perm{n} = n!
+$${#eq-permutations}
+
+## Размещения {#math-comb-variations}
+
+:::{.lab-middle}
+:::
+
+variations
+
+
+### Размещения без повторений {#math-comb-variations-norep}
+
+:::{.lab-middle}
+:::
+
+Число размещений без повторений обозначается[^vari-notation] $\vari{n}{k}$.
+
+[^vari-notation]: Другое часто используемое обозначение --- $\mathsf A_n^k$
+
+$$
+\vari{n}{k} = \frac{n!}{(n-k)!}
+$${#eq-variations}
+
+
+### Размещения с повторениями {#math-comb-variations-rep}
+
+:::{.lab-senior}
+:::
+
+Число размещений c повторениями обозначается[^variR-notation] $\vari[R]{n}{k}$.
+
+[^variR-notation]: Другое часто используемое обозначение --- $\overline{\mathsf A_n^k}$
+
+$$
+\vari[R]{n}{k} = n^k
+$${#eq-variationsR}
+
+## Сочетания {#math-comb-combinations}
+
+:::{.lab-middle}
+:::
+
+combinations
+
+### Сочетаний без повторений {#math-comb-combinations-norep}
+
+:::{.lab-middle}
+:::
+
+$$
+\comb{n}{k} = \frac{n!}{k!(n-k)!}
+$${#eq-combinations}
+
+
+### Биномиальные коэффициенты {#math-comb-combinations-binom}
+
+:::{.lab-senior}
+:::
+
+У числа сочетаний без повторений есть ещё один серьёзный смысл --- оно определяет коэффициенты в формуле бинома Ньютона. Однако сначала мы постараемся понять, откуда взялся сам бином.
+
+В школе упоминались формулы сокращённого умножения, а конкретно квадрат суммы и куб суммы. Выглядят они так:
+
+$$
+\begin{split}
+(a + b)^2 &= a^2 + 2ab + b^2 \\
+(a + b)^3 &= a^3 + 3a^2b + 3 ab^2 + b^3
+\end{split}
+$$
+
+Понятно, что их можно вывести непосредственно через раскрытия скобок, однако их симметричных внешний вид позволяет задуматься о том, что они «создаются» по некоторому более общему алгоритму.
+
+:::{#exr-sqsum-cubesum}
+Выведите формулы сокращенного умножения для квадрата и куба суммы методом раскрытия скобок.
+:::
+
+::::{.solution}
+:::{.cell}
+$$
+(a+b)^2 = (a+b)(a+b) = aa + ab + ba + bb = a^2 + 2ab + b^2
+$$
+
+$$
+\begin{split}
+(a+b)^3 &= (a+b)(a+b)(a+b) = \\
+&= aaa + aab + aba + abb + baa + bab + bba + bbb = \\
+&= a^3 + 3a^2b + 3ab^2 = b^3
+\end{split}
+$$
+:::
+::::
+
+PROCEEDING
+
+
+
+
+$$
+(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k = \binom{n}{0} a^n + \binom{n}{1}a^{n-1}b + \dots + \binom{n}{k} a^{n-k}b^k + \dots + \binom{n}{n}b_n
+$${#eq-binom-newton}
+
+Здесь $\displaystyle \binom{n}{k}$ --- это обозначение **биномиального коэффициента**, то есть коэффициента, который стоит при каком-либо из слагаемых в формуле бинома Ньютона. Он тождественно равен числу сочетаний из $n$ по $k$ --- $\displaystyle \binom{n}{k} \equiv \comb{n}{k}$ --- иначе говоря, является другим обозначением той же сущности. Только индексы в другом порядке указываются.
+
+Биномиальные коэффициенты возникают при задании функции вероятности [биномиального распределения](prob-distributions.qmd#prob-dist-disc-binom). Подробнее про бином Ньютона можно почитать [в приложении](appendix-math-other.qmd#appendix-other-math-binom).
+
+:::{#exr-sum-comb}
+Докажите, что $\displaystyle \sum_{k=0}^n \comb{n}{k} = 2^n$.
+:::
+
+::::{.solution}
+:::{.cell}
+Рассмотрим случай бинома Ньютона, когда $a = b = 1$, то есть выражение $(1 + 1)^n$. С одной стороны, очевидно, что $(1 + 1)^n = 2^n$.
+
+С другой стороны, по формуле [-@eq-binom-newton] имеем следующее:
+
+$$
+(1 + 1)^n = \sum_{k=0}^n \binom{n}{k} \cdot 1^{n-k} \cdot 1^{k} = \sum_{k=0}^n \comb{n}{k}
+$$
+
+Получаем, что $\displaystyle \sum_{k=0}^n \comb{n}{k} = 2^n$. $\qed$
+
+:::
+::::
+
+
+
+### Сочетания с повторениями {#math-comb-combinations-rep}
+
+:::{.lab-senior}
+:::
+
+Число сочетаний c повторениями обозначается[^combR-notation] $\comb[R]{n}{k}$.
+
+[^combR-notation]: Другое часто используемое обозначение --- $\overline{\comb{n}{k}}$
+
+$$
+\comb[R]{n}{k} = \frac{(n+k-1)!}{k!(n-k)!}
+$${#eq-combinationsR}
 
 
 

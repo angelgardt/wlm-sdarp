@@ -1,0 +1,87 @@
+# <Сравнение средних> {#chapterid}
+
+{{< include other/_symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+:::{.intro}
+Вступление
+:::
+
+## Одновыборочный t-тест
+
+$$
+t = \frac{\overline{X} - \mu}{s / \sqrt{n}} \disted{H_0} t(n-1)
+$$
+
+## Двухвыборочный t-тест
+
+### Равные выборки и дисперсии
+
+$$
+t = \frac{\overline X_1 - \overline X_2}{s_p \sqrt{\frac{2}{n}}} \disted t(2n-2)
+$$
+
+$$
+s_p = \sqrt{\frac{s^2_{X_1} + s^2_{X_2}}{2}}
+$$
+
+
+### Равные или неравные выборки, равные дисперсии
+
+Равные дисперсии определяются как $\frac{1}{2} < \frac{s_1}{s_2} < 2$
+
+$$
+t = \frac{\overline X_1 - \overline X_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \disted{H_0} t(n_1 + n_2 - 2)
+$$
+
+$$
+s_p = \sqrt{\frac{(n_1 - 1)s^2_{X_1} + (n_2 - 1)s^2_{X_2}}{n_1 + n_2 - 2}}
+$$
+
+
+### Равные или неравные выборки, неравные дисперсии
+
+t-тест Уэлча, неравные дисперсии определяются как $s_{X_1} > 2 s_{X_2}$ или $s_{X_2} > 2 s_{X_1}$
+
+$$
+t = \frac{\overline X_1 - \overline X_2}{s_{\bar \Delta}} \disted{H_0} t(\df_p)
+$$
+
+$$
+s_{\bar \Delta} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+$$
+
+Welch–Satterthwaite equation
+
+$$
+\df_p = \frac{
+\Big( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \Big)^2
+}
+{
+\frac{(s_1^2 / n_1)^2 }{ n_1 - 1 }
++
+\frac{ (s_2^2 / n_2)^2 }{ n_2-1 }
+}
+$$
+
+### Связанные выборки
+
+$$
+t = \frac{\overline X_D - \mu_0}{s_D / \sqrt{n}} \disted{H_0} t(n-1)
+$$
+
+
+***
+
+###### Session Info {#session_info .unnumbered}
+
+```{r session-info}
+sessionInfo()
+```
+
+```{=html}
+<script type="text/javascript" src="./js/chapter.js"></script>
+```

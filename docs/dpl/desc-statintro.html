@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WLM SDARP - 18&nbsp; Введение в статистику</title>
+<title>21&nbsp; Введение в&nbsp;статистику – WLM SDARP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -53,17 +53,23 @@ div.csl-indent {
 <link href="./desc-centaltend.html" rel="next">
 <link href="./part-desc.html" rel="prev">
 <link href="./img/other/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-554ea854cf0619dcc30cc54aeb8f7717.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bef1e1614b918fe3e248ee290f415f4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-da71abce4cf4241a6e2571f4d0c31dfe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-544acd0e7c86d02b6d1c733c93f2c79b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,7 +125,7 @@ background-size: cover;
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -151,29 +157,191 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-statintro.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-statintro.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-statintro.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><span id="desc-statintro" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-desc.html">Описательная статистика</a></li><li class="breadcrumb-item"><a href="./desc-statintro.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></a></li></ol></nav>
+      <h1 class="title"><span id="desc-statintro" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></h1>
                       </div>
   </div>
     
@@ -224,52 +392,23 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Debug</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debug_pretest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Претест</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_chapter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Глава книги [отладка]</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Квиз [отладка]</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debug_sheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Листок [отладка]</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./part-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Знакомство с R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Знакомство с&nbsp;R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -286,50 +425,56 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./r-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Работа с данными</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
+  <a href="./r-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Функции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Строки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-datetime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Дата и время</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в базовом R</span></span></a>
+  <a href="./r-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Предобработка данных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-visggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-advggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;<code>ggplot2</code>&nbsp;II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-visbase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Визуализация в&nbsp;базовом&nbsp;R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./r-oop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">ООП в R</span></span></a>
   </div>
 </li>
       </ul>
@@ -338,78 +483,97 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-math.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Математика для анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Логика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./part-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория измерений</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-logic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Логика и алгебра логики</span></span></a>
+  <a href="./measures-psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Основы психометрики</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./math-settheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Теория множеств</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-combs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Комбинаторика</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Матан</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./math-linal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линал</span></span></a>
+  <a href="./measures-irt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Психометрический анализ в IRT</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Теория измерений</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./part-desc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Описательная статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-statintro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Введение в статистику</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение в&nbsp;статистику</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-centaltend.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-variation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Меры разброса</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./desc-distshape.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Глава книги</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Форма распределения</span></span></a>
   </div>
 </li>
       </ul>
@@ -418,51 +582,57 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория вероятности и математическая статистика</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randexpvals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Случайный эксперимент и случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Вероятность как математическая конструкция</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-randvalues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Случайные величины</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-cond-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  <a href="./prob-condprob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Условные вероятности и условные распределения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prob-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Распределения и&nbsp;асимптотика</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-statestim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Оценивание параметров в статистическом анализе</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-hyptesting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Тестирование статистических гипотез</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prob-falsepositive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">False Positive</span></span></a>
   </div>
 </li>
       </ul>
@@ -471,21 +641,51 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./part-andan.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Методы анализа данных</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-means.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">&lt;Сравнение средних&gt;</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-cor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Корреляционный анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./andan-simplelinear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Простая линейная регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-hierreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Иерархическая регрессия</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-oneway-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Однофакторный дисперсионный анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-moderation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Модерация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./andan-mediation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Медиация</span></span></a>
   </div>
 </li>
       </ul>
@@ -504,13 +704,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-numbers.html" class="sidebar-item-text sidebar-link">
@@ -561,32 +761,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-survey-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Основы опросных методов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./appendix-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Дизайн</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-other.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Прочие математические штуки</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-math-letters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Математические буквы</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
+  <a href="./appendix-stories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Разные сюжеты</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-keys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Ответы на листки</span></span></a>
   </div>
 </li>
       </ul>
@@ -601,37 +807,38 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#desc-statintro-research-process" id="toc-desc-statintro-research-process" class="nav-link active" data-scroll-target="#desc-statintro-research-process"><span class="header-section-number">18.1</span> Исследовательский процесс</a>
+  <li><a href="#desc-statintro-research-process" id="toc-desc-statintro-research-process" class="nav-link active" data-scroll-target="#desc-statintro-research-process"><span class="header-section-number">21.1</span> Исследовательский процесс</a>
   <ul>
-  <li><a href="#desc-statintro-research-process-quan" id="toc-desc-statintro-research-process-quan" class="nav-link" data-scroll-target="#desc-statintro-research-process-quan"><span class="header-section-number">18.1.1</span> Исследовательский процесс в количественных исследованиях</a></li>
+  <li><a href="#desc-statintro-research-process-quan" id="toc-desc-statintro-research-process-quan" class="nav-link" data-scroll-target="#desc-statintro-research-process-quan"><span class="header-section-number">21.1.1</span> Исследовательский процесс в количественных исследованиях</a></li>
   </ul></li>
-  <li><a href="#desc-statintro-what-is-stat" id="toc-desc-statintro-what-is-stat" class="nav-link" data-scroll-target="#desc-statintro-what-is-stat"><span class="header-section-number">18.2</span> Что такое статистика?</a></li>
-  <li><a href="#desc-statintro-population-sample" id="toc-desc-statintro-population-sample" class="nav-link" data-scroll-target="#desc-statintro-population-sample"><span class="header-section-number">18.3</span> Выборка и генеральная совокупность</a></li>
-  <li><a href="#desc-statintro-param-estim" id="toc-desc-statintro-param-estim" class="nav-link" data-scroll-target="#desc-statintro-param-estim"><span class="header-section-number">18.4</span> Признаки, параметры, оценки</a>
+  <li><a href="#desc-statintro-what-is-stat" id="toc-desc-statintro-what-is-stat" class="nav-link" data-scroll-target="#desc-statintro-what-is-stat"><span class="header-section-number">21.2</span> Что такое статистика?</a></li>
+  <li><a href="#desc-statintro-population-sample" id="toc-desc-statintro-population-sample" class="nav-link" data-scroll-target="#desc-statintro-population-sample"><span class="header-section-number">21.3</span> Выборка и генеральная совокупность</a></li>
+  <li><a href="#desc-statintro-param-estim" id="toc-desc-statintro-param-estim" class="nav-link" data-scroll-target="#desc-statintro-param-estim"><span class="header-section-number">21.4</span> Признаки, параметры, оценки</a>
   <ul>
-  <li><a href="#desc-statintro-why-do-we-need-stat" id="toc-desc-statintro-why-do-we-need-stat" class="nav-link" data-scroll-target="#desc-statintro-why-do-we-need-stat"><span class="header-section-number">18.4.1</span> Зачем нужна статистика?</a></li>
-  <li><a href="#desc-statintro-stat-modelling" id="toc-desc-statintro-stat-modelling" class="nav-link" data-scroll-target="#desc-statintro-stat-modelling"><span class="header-section-number">18.4.2</span> Этапы статистического моделирования</a></li>
-  <li><a href="#desc-statintro-statdata" id="toc-desc-statintro-statdata" class="nav-link" data-scroll-target="#desc-statintro-statdata"><span class="header-section-number">18.4.3</span> Характеристики статистических данных</a></li>
+  <li><a href="#desc-statintro-why-do-we-need-stat" id="toc-desc-statintro-why-do-we-need-stat" class="nav-link" data-scroll-target="#desc-statintro-why-do-we-need-stat"><span class="header-section-number">21.4.1</span> Зачем нужна статистика?</a></li>
+  <li><a href="#desc-statintro-stat-modelling" id="toc-desc-statintro-stat-modelling" class="nav-link" data-scroll-target="#desc-statintro-stat-modelling"><span class="header-section-number">21.4.2</span> Этапы статистического моделирования</a></li>
+  <li><a href="#desc-statintro-statdata" id="toc-desc-statintro-statdata" class="nav-link" data-scroll-target="#desc-statintro-statdata"><span class="header-section-number">21.4.3</span> Характеристики статистических данных</a></li>
   </ul></li>
-  <li><a href="#desc-statintro-saple-representativity" id="toc-desc-statintro-saple-representativity" class="nav-link" data-scroll-target="#desc-statintro-saple-representativity"><span class="header-section-number">18.5</span> Репрезентативность выборки</a>
+  <li><a href="#desc-statintro-saple-representativity" id="toc-desc-statintro-saple-representativity" class="nav-link" data-scroll-target="#desc-statintro-saple-representativity"><span class="header-section-number">21.5</span> Репрезентативность выборки</a>
   <ul>
-  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">18.5.1</span> Способы формирования репрезентативной выборки</a></li>
-  <li><a href="#desc-statintro-probability-sampling" id="toc-desc-statintro-probability-sampling" class="nav-link" data-scroll-target="#desc-statintro-probability-sampling"><span class="header-section-number">18.5.2</span> Вероятностная выборка</a></li>
-  <li><a href="#desc-statintro-nonprobability-sampling" id="toc-desc-statintro-nonprobability-sampling" class="nav-link" data-scroll-target="#desc-statintro-nonprobability-sampling"><span class="header-section-number">18.5.3</span> Невероятностная выборка</a>
+  <li><a href="#desc-statintro-sample-types" id="toc-desc-statintro-sample-types" class="nav-link" data-scroll-target="#desc-statintro-sample-types"><span class="header-section-number">21.5.1</span> Способы формирования репрезентативной выборки</a></li>
+  <li><a href="#desc-statintro-probability-sampling" id="toc-desc-statintro-probability-sampling" class="nav-link" data-scroll-target="#desc-statintro-probability-sampling"><span class="header-section-number">21.5.2</span> Вероятностная выборка</a></li>
+  <li><a href="#desc-statintro-nonprobability-sampling" id="toc-desc-statintro-nonprobability-sampling" class="nav-link" data-scroll-target="#desc-statintro-nonprobability-sampling"><span class="header-section-number">21.5.3</span> Невероятностная выборка</a>
   <ul class="collapse">
-  <li><a href="#convenience-sampling" id="toc-convenience-sampling" class="nav-link" data-scroll-target="#convenience-sampling"><span class="header-section-number">18.5.3.1</span> Convenience sampling</a></li>
-  <li><a href="#voluntary-response-sampling" id="toc-voluntary-response-sampling" class="nav-link" data-scroll-target="#voluntary-response-sampling"><span class="header-section-number">18.5.3.2</span> Voluntary response sampling</a></li>
-  <li><a href="#purposive-sampling" id="toc-purposive-sampling" class="nav-link" data-scroll-target="#purposive-sampling"><span class="header-section-number">18.5.3.3</span> Purposive sampling</a></li>
-  <li><a href="#snowball-sampling" id="toc-snowball-sampling" class="nav-link" data-scroll-target="#snowball-sampling"><span class="header-section-number">18.5.3.4</span> Snowball sampling</a></li>
-  <li><a href="#quota-sampling" id="toc-quota-sampling" class="nav-link" data-scroll-target="#quota-sampling"><span class="header-section-number">18.5.3.5</span> Quota sampling</a></li>
+  <li><a href="#convenience-sampling" id="toc-convenience-sampling" class="nav-link" data-scroll-target="#convenience-sampling"><span class="header-section-number">21.5.3.1</span> Convenience sampling</a></li>
+  <li><a href="#voluntary-response-sampling" id="toc-voluntary-response-sampling" class="nav-link" data-scroll-target="#voluntary-response-sampling"><span class="header-section-number">21.5.3.2</span> Voluntary response sampling</a></li>
+  <li><a href="#purposive-sampling" id="toc-purposive-sampling" class="nav-link" data-scroll-target="#purposive-sampling"><span class="header-section-number">21.5.3.3</span> Purposive sampling</a></li>
+  <li><a href="#snowball-sampling" id="toc-snowball-sampling" class="nav-link" data-scroll-target="#snowball-sampling"><span class="header-section-number">21.5.3.4</span> Snowball sampling</a></li>
+  <li><a href="#quota-sampling" id="toc-quota-sampling" class="nav-link" data-scroll-target="#quota-sampling"><span class="header-section-number">21.5.3.5</span> Quota sampling</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#desc-statintro-kinds-of-stat" id="toc-desc-statintro-kinds-of-stat" class="nav-link" data-scroll-target="#desc-statintro-kinds-of-stat"><span class="header-section-number">18.6</span> Виды статистики</a></li>
+  <li><a href="#desc-statintro-kinds-of-stat" id="toc-desc-statintro-kinds-of-stat" class="nav-link" data-scroll-target="#desc-statintro-kinds-of-stat"><span class="header-section-number">21.6</span> Виды статистики</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -658,15 +865,15 @@ window.Quarto = {
 <p>Итак, мы вплотную подошли к изучению статистики, однако прежде чем мы начнем разговор собственно о статистике, нам необходимо разобраться, что вообще это такое, когда́ оно нам жизненно необходимо и заче́м оно нам жизненно необходимо, чтобы первично сориентироваться в том, о чем мы будем говорить на протяжении всех последующих глав.</p>
 <p>Так и поступим.</p>
 </div>
-<section id="desc-statintro-research-process" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="desc-statintro-research-process"><span class="header-section-number">18.1</span> Исследовательский процесс</h2>
+<section id="desc-statintro-research-process" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="desc-statintro-research-process"><span class="header-section-number">21.1</span> Исследовательский процесс</h2>
 <div class="lab-junior">
 
 </div>
-<p>Прежде всего, давайте сориентируемся в том, как устроен исследовательский процесс. В самом общем виде его можно разбить на различные этапы — я предлагаю рассмотреть следующую схему (<a href="#fig-research-process-qq" class="quarto-xref">Иллюстрация&nbsp;<span>18.1</span></a>):</p>
+<p>Прежде всего, давайте сориентируемся в том, как устроен исследовательский процесс. В самом общем виде его можно разбить на различные этапы — я предлагаю рассмотреть следующую схему (<a href="#fig-research-process-qq" class="quarto-xref">Иллюстрация&nbsp;<span>21.1</span></a>):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-research-process-qq" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-research-process-qq" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-research-process-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -699,7 +906,7 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-research-process-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;18.1: Соотношение качественных и количественных исследований в исследовательском процессе
+Иллюстрация&nbsp;21.1: Соотношение качественных и количественных исследований в исследовательском процессе
 </figcaption>
 </figure>
 </div>
@@ -709,20 +916,20 @@ window.Quarto = {
 <p>Имея результаты теоретического обзора и исследовательский вопрос мы можем пойти двумя путями:</p>
 <ul>
 <li>если интересующая нас область достаточно хорошо исследована, наш исследовательский вопрос достаточно конкретный и обзор литературы позволяет нам сразу сформулировать к нему <strong>гипотезы</strong>, то мы можем перейти к планированию <strong>количественного исследования</strong>;</li>
-<li>если же интересующий нас феномен изучен недостаточно, мы не вполне пониманием, что мы собираемся исследовать и как сие организовано «в сознании людей», нам стоит сначала провести <strong>качественное исследование</strong>, чтобы получить больше информации для формулирования гипотез — именно этот путь представлен на <a href="#fig-research-process-qq" class="quarto-xref">иллюстрации&nbsp;<span>18.1</span></a>.</li>
+<li>если же интересующий нас феномен изучен недостаточно, мы не вполне пониманием, что мы собираемся исследовать и как сие организовано «в сознании людей», нам стоит сначала провести <strong>качественное исследование</strong>, чтобы получить больше информации для формулирования гипотез — именно этот путь представлен на <a href="#fig-research-process-qq" class="quarto-xref">иллюстрации&nbsp;<span>21.1</span></a>.</li>
 </ul>
 <p>Безусловно, качественные и количественные исследования существенно различаются собственной методологией, о чем подробнее можно прочитать в <a href="./appendix-research-design.html">приложении</a>. Однако как качественное, так и количественное исследование заканчивается написанием отчёта какого-либо формата — статьи, курсовой, дипломной работы или внутреннего отчета организации — и приводит нас к <strong>новым идеям, гипотезам и исследованиям</strong>. Так, цикл исследовательского процесса замыкается и может повторяться бесконечно, ибо научное познание не имеет пределов.</p>
-<p>Часто качественные и количественные исследования рассматривают изолированно друг от друга, что, на мой взгляд, не вполне соответствует исследовательской реальности. Конечно, исследования обоих типов могут проводится независимо друг от друга, если того требуют исследуемые феномены. Тем не менее, это вовсе не значит, что они никогда не встречаются друг с другом. Напротив, совмещение качественной и количественной методологии часто встречается в индустрии примерно в той логике, которая представлена на <a href="#fig-research-process-qq" class="quarto-xref">иллюстрации&nbsp;<span>18.1</span></a>, и именно поэтому мы уделили несколько абзацев её рассмотрению.</p>
+<p>Часто качественные и количественные исследования рассматривают изолированно друг от друга, что, на мой взгляд, не вполне соответствует исследовательской реальности. Конечно, исследования обоих типов могут проводится независимо друг от друга, если того требуют исследуемые феномены. Тем не менее, это вовсе не значит, что они никогда не встречаются друг с другом. Напротив, совмещение качественной и количественной методологии часто встречается в индустрии примерно в той логике, которая представлена на <a href="#fig-research-process-qq" class="quarto-xref">иллюстрации&nbsp;<span>21.1</span></a>, и именно поэтому мы уделили несколько абзацев её рассмотрению.</p>
 <p>И всё же в силу того, что мы сосредоточены в этой книжке на изучении статистики и анализа количественных данных, далее мы будем рассматривать именно количественные исследования и начнем с того, что разберемся как в них устроен исследовательский процесс.</p>
-<section id="desc-statintro-research-process-quan" class="level3" data-number="18.1.1">
-<h3 data-number="18.1.1" class="anchored" data-anchor-id="desc-statintro-research-process-quan"><span class="header-section-number">18.1.1</span> Исследовательский процесс в количественных исследованиях</h3>
+<section id="desc-statintro-research-process-quan" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="desc-statintro-research-process-quan"><span class="header-section-number">21.1.1</span> Исследовательский процесс в количественных исследованиях</h3>
 <div class="lab-junior">
 
 </div>
-<p>Итак, пусть мы решили, что проводим количественное исследование. Какие этапы нам предстоит пройти, прежде чем мы получим ответ на наш исследовательский вопрос? Снова представим процес в виде схемы (<a href="#fig-research-process-quan" class="quarto-xref">Иллюстрация&nbsp;<span>18.2</span></a>):</p>
+<p>Итак, пусть мы решили, что проводим количественное исследование. Какие этапы нам предстоит пройти, прежде чем мы получим ответ на наш исследовательский вопрос? Снова представим процес в виде схемы (<a href="#fig-research-process-quan" class="quarto-xref">Иллюстрация&nbsp;<span>21.2</span></a>):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-research-process-quan" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-research-process-quan" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-research-process-quan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -779,7 +986,7 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-research-process-quan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;18.2: Исследовательский процесс в количественных исследованиях
+Иллюстрация&nbsp;21.2: Исследовательский процесс в количественных исследованиях
 </figcaption>
 </figure>
 </div>
@@ -788,56 +995,56 @@ window.Quarto = {
 <p>Мы вновь начинаем с <strong>идеи</strong> исследования или <strong>исследовательского вопроса</strong>, прочитываем необходимую <strong>литературу</strong>, при необходимости определяем исследуемые <strong>конструкты</strong> и приходим к <strong>теоретическим гипотезам</strong> нашего исследования.</p>
 </section>
 </section>
-<section id="desc-statintro-what-is-stat" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="desc-statintro-what-is-stat"><span class="header-section-number">18.2</span> Что такое статистика?</h2>
+<section id="desc-statintro-what-is-stat" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="desc-statintro-what-is-stat"><span class="header-section-number">21.2</span> Что такое статистика?</h2>
 <div class="lab-junior">
 
 </div>
 <p>Чем же в итоге занимается статистика? Что она изучает?</p>
 <div id="def-statistics" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 18.1</strong></span> <strong>Статистика</strong> — это междисциплинарная область знаний, а также практической деятельности, изучающая массовые явления, а также принципы и методы работы с данными, характеризующими эти явления <span class="citation" data-cites="sirotin2018">(<a href="references.html#ref-sirotin2018" role="doc-biblioref">Сиротин, 2018</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Определение 21.1</strong></span> <strong>Статистика</strong> — это междисциплинарная область знаний, а также практической деятельности, изучающая массовые явления, а также принципы и методы работы с данными, характеризующими эти явления <span class="citation" data-cites="sirotin2018">(<a href="references.html#ref-sirotin2018" role="doc-biblioref">Сиротин, 2018</a>)</span>.</p>
 </div>
 <p>Это, пожалуй, наиболее общее определение, которое весьма красиво звучит, но явно требует пояснений.</p>
 <p>Массовые явления затрагивают огромные количества людей. Огромность этих масс, конечно, различна. Скажем, базовые перцептивные закономерности, связанные с тем, как устроена зрительная система, охватывают <em>всех людей</em>. Уровень удовлетворенности жизнью россиян охватывает только <em>население России</em>. Городские блага петербуржцев — только для <em>жителей Санкт-Петербурга</em>. Учебная мотивация студентов психологического факультета некоторого вуза — это только про <em>студентов-психологов этого вуза</em>. Однако так или иначе эти группы составляет не 5–10 человек, а десятки, сотни, тысячи или миллионы.</p>
 <p>Собственно, статистика и возникает именно тогда, когда нам нужно изучать большие — очень большие — группы людей. Можно было бы, наверно, озадачится изучением всех представителей интересующей нас группы, однако это требует много времени и денег — ни того, ни другого, как правило, в наличии не присутствует. Приходится ограничиваться рассмотрением <em>части интересующей нас группы людей</em>.</p>
 </section>
-<section id="desc-statintro-population-sample" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="desc-statintro-population-sample"><span class="header-section-number">18.3</span> Выборка и генеральная совокупность</h2>
+<section id="desc-statintro-population-sample" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="desc-statintro-population-sample"><span class="header-section-number">21.3</span> Выборка и генеральная совокупность</h2>
 <div class="lab-junior">
 
 </div>
 <p>Одним из ключевых понятий статистики является <strong>генеральная совокупность (population)</strong> — множество всех [существующих] исследуемых объектов, а также сведения о них. <strong>Объемом генеральной совокупности</strong> (<span class="math inline">\(N\)</span>) называют число объектов, составляющих генеральную совокупность. Как мы отметили выше, <span class="math inline">\(N\)</span> в подавляющем большинстве случаев крайне велико, поэтому мы не можем работать с генеральной совокупностью целиком — в ходе исследования мы работаем с <em>выборкой</em>.</p>
 <p><strong>Выборка, или выборочная совокупность (sample)</strong> — это некоторая часть генеральной совокупности, формируемая в ходе проведения исследований. Выборка характеризуется <strong>объёмом</strong> (<span class="math inline">\(n\)</span>), при этом объем выборки всегда существенно меньше объёма генеральной совокупности (<span class="math inline">\(n \ll N\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>).</p>
-<p>Получается следующая логика (<a href="#fig-sampling-inference" class="quarto-xref">Иллюстрация&nbsp;<span>18.3</span></a>):</p>
+<p>Получается следующая логика (<a href="#fig-sampling-inference" class="quarto-xref">Иллюстрация&nbsp;<span>21.3</span></a>):</p>
 <ol type="1">
 <li>мы <strong>формируем выборку (sampling)</strong> из генеральной совокупности</li>
 <li>изучаем получившуюся выборку в исследовании</li>
 <li>по полученным результатам <strong>делаем выводы (inference)</strong> о генеральной совокупности</li>
 </ol>
-<div id="fig-sampling-inference" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-sampling-inference" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampling-inference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/desc-statintro/sampling-inference.png" class="img-fluid figure-img">
+<a href="img/desc-statintro/sampling-inference.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Иллюстрация&nbsp;21.3: Выборка и генеральная совокупность"><img src="img/desc-statintro/sampling-inference.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-inference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;18.3: Выборка и генеральная совокупность
+Иллюстрация&nbsp;21.3: Выборка и генеральная совокупность
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="desc-statintro-param-estim" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="desc-statintro-param-estim"><span class="header-section-number">18.4</span> Признаки, параметры, оценки</h2>
+<section id="desc-statintro-param-estim" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="desc-statintro-param-estim"><span class="header-section-number">21.4</span> Признаки, параметры, оценки</h2>
 <div class="lab-junior">
 
 </div>
-<p>В ходе исследования мы изучаем <strong>признаки</strong>, которыми обладают интересующие нас объекты рассматриваемой генеральной совокупности. Эти признаки выражаются <em>количественно</em> в определённых <strong>показателях</strong>. В качестве примеров признаков показателей, рассматриваемых в психологически исследованиях, можно привести следующие (<a href="#tbl-features" class="quarto-xref">Таблица&nbsp;<span>18.1</span></a>):</p>
-<div id="tbl-features" class="quarto-float anchored">
+<p>В ходе исследования мы изучаем <strong>признаки</strong>, которыми обладают интересующие нас объекты рассматриваемой генеральной совокупности. Эти признаки выражаются <em>количественно</em> в определённых <strong>показателях</strong>. В качестве примеров признаков показателей, рассматриваемых в психологически исследованиях, можно привести следующие (<a href="#tbl-features" class="quarto-xref">Таблица&nbsp;<span>21.1</span></a>):</p>
+<div id="tbl-features" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;18.1: Примеры признаков и показателей в психологических исследованиях
+Таблица&nbsp;21.1: Примеры признаков и показателей в психологических исследованиях
 </figcaption>
 <div aria-describedby="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 66%">
@@ -884,7 +1091,7 @@ window.Quarto = {
 </div>
 <p>Признаки могут быть очень разными, как и показатели, которыми мы их пытаемся измерить, однако независимо от того, какой признак и с помощью какого показателя мы пытаемся изучать, <em>генеральная совокупность характеризуется некоторым параметром</em>.</p>
 <div id="def-parameter" class="theorem definition">
-<p><span class="theorem-title"><strong>Определение 18.2</strong></span> <strong>Параметр</strong> (<span class="math inline">\(\theta\)</span>) — относительно постоянная [от одной совокупности к другой] величина, характеризующая генеральную совокупность по некоторому показателю.</p>
+<p><span class="theorem-title"><strong>Определение 21.2</strong></span> <strong>Параметр</strong> (<span class="math inline">\(\theta\)</span>) — относительно постоянная [от одной совокупности к другой] величина, характеризующая генеральную совокупность по некоторому показателю.</p>
 </div>
 <p>Что это значит? Что по сути есть этот <em>параметр</em>? Это значит, что <em>в принципе</em> существуют</p>
 <ul>
@@ -912,14 +1119,14 @@ window.Quarto = {
 <p>Аналогично дело обстоит с любыми другими параметрами.</p>
 <p>Что же делать? Собственно за этим мы и формируем выборку. Мы не можем измерить величину параметра точно, но можем <em>предсказать её с определённой статистической точностью</em>, измеряя показатели на выборке.</p>
 <p>Выборка имеет ограниченный объём, и, измерив величину показателя у каждого объекта выборки, мы получим <strong>[выборочную] оценку параметра (estimation)</strong> (<span class="math inline">\(\hat \theta\)</span>) — эмпирический (измеримый) аналог параметра. В частности, если у нас есть выборка из 100 студентов-психологов Москвы, вполне возможно за некоторое время собрать данных по уровню их нейротизма с помощью опросника BFI и вычислить среднее арифметическое по этим 100 наблюдениям.</p>
-<p>Далее мы часто будем говорить о параметрах генеральной совокупности и выборочных оценках, сейчас же приведем несколько примеров и обозначений, чтобы придать теоретическим речам некоторое фактическое содержание (<a href="#tbl-param-estim" class="quarto-xref">Таблица&nbsp;<span>18.2</span></a>).</p>
-<div id="tbl-param-estim" class="quarto-float anchored">
+<p>Далее мы часто будем говорить о параметрах генеральной совокупности и выборочных оценках, сейчас же приведем несколько примеров и обозначений, чтобы придать теоретическим речам некоторое фактическое содержание (<a href="#tbl-param-estim" class="quarto-xref">Таблица&nbsp;<span>21.2</span></a>).</p>
+<div id="tbl-param-estim" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-param-estim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Таблица&nbsp;18.2: Примеры параметров и выборочных оценок
+Таблица&nbsp;21.2: Примеры параметров и выборочных оценок
 </figcaption>
 <div aria-describedby="tbl-param-estim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 52%">
 <col style="width: 47%">
@@ -949,8 +1156,8 @@ window.Quarto = {
 </figure>
 </div>
 <p>Параметры генеральной совокупности традиционно обозначают греческими буквами. Для выборочных оценок используют соответствующие греческим латинские буквы или же надевают на греческие шляпку ( <span class="math inline">\(\hat \,\)</span> ), чтобы отличать их от параметров.</p>
-<section id="desc-statintro-why-do-we-need-stat" class="level3" data-number="18.4.1">
-<h3 data-number="18.4.1" class="anchored" data-anchor-id="desc-statintro-why-do-we-need-stat"><span class="header-section-number">18.4.1</span> Зачем нужна статистика?</h3>
+<section id="desc-statintro-why-do-we-need-stat" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="desc-statintro-why-do-we-need-stat"><span class="header-section-number">21.4.1</span> Зачем нужна статистика?</h3>
 <div class="lab-junior">
 
 </div>
@@ -970,8 +1177,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="desc-statintro-stat-modelling" class="level3" data-number="18.4.2">
-<h3 data-number="18.4.2" class="anchored" data-anchor-id="desc-statintro-stat-modelling"><span class="header-section-number">18.4.2</span> Этапы статистического моделирования</h3>
+<section id="desc-statintro-stat-modelling" class="level3" data-number="21.4.2">
+<h3 data-number="21.4.2" class="anchored" data-anchor-id="desc-statintro-stat-modelling"><span class="header-section-number">21.4.2</span> Этапы статистического моделирования</h3>
 <div class="lab-middle">
 
 </div>
@@ -1013,8 +1220,8 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="desc-statintro-statdata" class="level3" data-number="18.4.3">
-<h3 data-number="18.4.3" class="anchored" data-anchor-id="desc-statintro-statdata"><span class="header-section-number">18.4.3</span> Характеристики статистических данных</h3>
+<section id="desc-statintro-statdata" class="level3" data-number="21.4.3">
+<h3 data-number="21.4.3" class="anchored" data-anchor-id="desc-statintro-statdata"><span class="header-section-number">21.4.3</span> Характеристики статистических данных</h3>
 <div class="lab-junior">
 
 </div>
@@ -1040,8 +1247,8 @@ window.Quarto = {
 <p>Разумеется, можем. И не только можем, но и обязаны, если мы хорошие исследователи, а мы именно такие. Нам необходимо позаботиться о <em>качестве выборки</em> нашего исследования. Помимо объёма, к которому мы будем ещё неоднократно возвращаться при обсуждении статистических методов, выборка характеризуется ещё и <em>репрезентативностью</em>.</p>
 </section>
 </section>
-<section id="desc-statintro-saple-representativity" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="desc-statintro-saple-representativity"><span class="header-section-number">18.5</span> Репрезентативность выборки</h2>
+<section id="desc-statintro-saple-representativity" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="desc-statintro-saple-representativity"><span class="header-section-number">21.5</span> Репрезентативность выборки</h2>
 <div class="lab-junior">
 
 </div>
@@ -1076,32 +1283,32 @@ window.Quarto = {
 <p>Здесь надо остановиться подробнее. Если у нас есть ресурсы набрать много людей в выборку (скажем, раза в 2–3 больше, чем достаточный объем выборки), то можно просто случайным образом откуда-то доставать людей — и всё будет хорошо. Закон больших чисел и центральная предельная теорема говорят, что наша выборка будет репрезентативной. Пока примем это как данность, позже поговорим об это подробнее.</p>
 <p>Если мы всё же не можем набрать много человеков, то надо набрать выборку достаточного объема и проверить репрезентативна ли она — отражает ли выборка те группировки объектов, которые есть в генеральной совокупности.</p>
 <p><em>Идеальная выборка</em> — это когда каждый человек имеет равную вероятность попасть в число респонтентов / испытуемых. Полностью случайный отбор трудно достижим — это очень дорого и логистически сложно — но к нему нужно стремиться. Сам метод сбора данных также может деформировать выборку (например, онлайн опросы отсекают пенсионеров), поэтому думать о сборе данных необходимо уже на этапе планирования исследования.</p>
-<section id="desc-statintro-sample-types" class="level3" data-number="18.5.1">
-<h3 data-number="18.5.1" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">18.5.1</span> Способы формирования репрезентативной выборки</h3>
+<section id="desc-statintro-sample-types" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="desc-statintro-sample-types"><span class="header-section-number">21.5.1</span> Способы формирования репрезентативной выборки</h3>
 <div class="lab-junior">
 
 </div>
 </section>
-<section id="desc-statintro-probability-sampling" class="level3" data-number="18.5.2">
-<h3 data-number="18.5.2" class="anchored" data-anchor-id="desc-statintro-probability-sampling"><span class="header-section-number">18.5.2</span> Вероятностная выборка</h3>
+<section id="desc-statintro-probability-sampling" class="level3" data-number="21.5.2">
+<h3 data-number="21.5.2" class="anchored" data-anchor-id="desc-statintro-probability-sampling"><span class="header-section-number">21.5.2</span> Вероятностная выборка</h3>
 <p><strong>Вероятностная выборка (probability sampling)</strong> подразумевает, что каждый представитель генеральной совокупности может оказаться в выборке. Именно такие способы преимущественно используются в количественных исследованиях, так как позволяют сформировать репрезентативную выборку.</p>
-<section id="desc-statintro-simple-random-sample" class="level5" data-number="18.5.2.0.1">
-<h5 data-number="18.5.2.0.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">18.5.2.0.1</span> Простая случайная выборка</h5>
+<section id="desc-statintro-simple-random-sample" class="level5" data-number="21.5.2.0.1">
+<h5 data-number="21.5.2.0.1" class="anchored" data-anchor-id="desc-statintro-simple-random-sample"><span class="header-section-number">21.5.2.0.1</span> Простая случайная выборка</h5>
 <div class="lab-junior">
 
 </div>
 <p>Самый простой способ, которым можно набрать репрезентативную выборку — это <strong>простая случайная выборка (simple random sample)</strong>.</p>
-<p>Пусть у нас есть некоторая генеральная совокупность (<a href="#fig-simple-random-sample-1" class="quarto-xref">Иллюстрация&nbsp;<span>18.4 (a)</span></a>). Мы можем извлечь из неё достаточно большое количество наблюдений случайным образом, и получить репрезентативную выборку (<a href="#fig-simple-random-sample-4" class="quarto-xref">Иллюстрация&nbsp;<span>18.4 (d)</span></a>).</p>
-<p>Хотя это, пожалуй, самый простой способ формирования выборки, поскольку он не требует учета каких-либо характеристик изучаемых объектов, у него есть один существенный недостаток: обязательное условие репрезентативности выборки — её <em>большой объем</em>. В случае если у нас нет ресурсов для сбора данных большом количестве объектов или от большого количества респондентов, репрезентативность находится по угрозой (иллюстрации <a href="#fig-simple-random-sample-2" class="quarto-xref"><span>18.4 (b)</span></a> и <a href="#fig-simple-random-sample-3" class="quarto-xref"><span>18.4 (c)</span></a>).</p>
+<p>Пусть у нас есть некоторая генеральная совокупность (<a href="#fig-simple-random-sample-1" class="quarto-xref">Иллюстрация&nbsp;<span>21.4 (a)</span></a>). Мы можем извлечь из неё достаточно большое количество наблюдений случайным образом, и получить репрезентативную выборку (<a href="#fig-simple-random-sample-4" class="quarto-xref">Иллюстрация&nbsp;<span>21.4 (d)</span></a>).</p>
+<p>Хотя это, пожалуй, самый простой способ формирования выборки, поскольку он не требует учета каких-либо характеристик изучаемых объектов, у него есть один существенный недостаток: обязательное условие репрезентативности выборки — её <em>большой объем</em>. В случае если у нас нет ресурсов для сбора данных большом количестве объектов или от большого количества респондентов, репрезентативность находится по угрозой (иллюстрации <a href="#fig-simple-random-sample-2" class="quarto-xref"><span>21.4 (b)</span></a> и <a href="#fig-simple-random-sample-3" class="quarto-xref"><span>21.4 (c)</span></a>).</p>
 <div id="fig-simple-random-sample" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simple-random-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-simple-random-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-simple-random-sample-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-random-sample-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-simple-random-sample-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-simple-random-sample-1.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-simple-random-sample-1.png" class="lightbox" data-gallery="fig-simple-random-sample" title="Иллюстрация&nbsp;21.4&nbsp;(a): Генеральная совокупность"><img src="desc-statintro_files/figure-html/fig-simple-random-sample-1.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-simple-random-sample-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Генеральная совокупность
@@ -1110,10 +1317,10 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-simple-random-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-simple-random-sample-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-random-sample-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-simple-random-sample-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-simple-random-sample-2.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-simple-random-sample-2.png" class="lightbox" data-gallery="fig-simple-random-sample" title="Иллюстрация&nbsp;21.4&nbsp;(b): Выборка малого объема"><img src="desc-statintro_files/figure-html/fig-simple-random-sample-2.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-simple-random-sample-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Выборка малого объема
@@ -1124,10 +1331,10 @@ window.Quarto = {
 </div>
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-simple-random-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-simple-random-sample-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-random-sample-3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-simple-random-sample-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-simple-random-sample-3.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-simple-random-sample-3.png" class="lightbox" data-gallery="fig-simple-random-sample" title="Иллюстрация&nbsp;21.4&nbsp;(c): Выборка среднего объема"><img src="desc-statintro_files/figure-html/fig-simple-random-sample-3.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-simple-random-sample-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) Выборка среднего объема
@@ -1136,10 +1343,10 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-simple-random-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-simple-random-sample-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-random-sample-4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-simple-random-sample-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-simple-random-sample-4.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-simple-random-sample-4.png" class="lightbox" data-gallery="fig-simple-random-sample" title="Иллюстрация&nbsp;21.4&nbsp;(d): Выборка большого объема"><img src="desc-statintro_files/figure-html/fig-simple-random-sample-4.png" class="img-fluid figure-img" data-ref-parent="fig-simple-random-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-simple-random-sample-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (d) Выборка большого объема
@@ -1150,29 +1357,29 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simple-random-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;18.4: Простая случайная выборка
+Иллюстрация&nbsp;21.4: Простая случайная выборка
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="desc-statintro-stratified-sample" class="level5" data-number="18.5.2.0.2">
-<h5 data-number="18.5.2.0.2" class="anchored" data-anchor-id="desc-statintro-stratified-sample"><span class="header-section-number">18.5.2.0.2</span> Стратифицированная выборка</h5>
+<section id="desc-statintro-stratified-sample" class="level5" data-number="21.5.2.0.2">
+<h5 data-number="21.5.2.0.2" class="anchored" data-anchor-id="desc-statintro-stratified-sample"><span class="header-section-number">21.5.2.0.2</span> Стратифицированная выборка</h5>
 <div class="lab-junior">
 
 </div>
 <p><strong>Стратифицированная выборка (stratified sample)</strong> применима, когда генеральная совокупность разбивается на несколько обособленных и различных по своей природе групп (страт). Например, по полу, уровню образования, возрастной группе и т.&nbsp;д. Далее из каждой группы случайным образом извлекается несколько объектов, которые попадают в выборку.</p>
 <p>Из каждой страты можно извлечь одинаковое количество объектов или рассчитать количество представителей каждой страты в итоговой выборке пропорционально объему каждой страты. Последний вариант обеспечит дополнительную репрезентативность с точки зрения соотношения представителей разных стран в выборке, если это необходимо с точки зрения дизайна исследования.</p>
-<p>Например, у нашей генеральной совокупности есть четыре страты (<a href="#fig-stratified-sample-1" class="quarto-xref">Иллюстрация&nbsp;<span>18.5 (a)</span></a>). Тогда мы можем разделить её на четыре «подгенеральных совокупности» (subpopulations) соответственно (<a href="#fig-stratified-sample-2" class="quarto-xref">Иллюстрация&nbsp;<span>18.5 (b)</span></a>). Из каждой такой «подгенеральной совокупности» будем извлекать случайную выборку — в данном случае пропорционально объему страты (<a href="#fig-stratified-sample-3" class="quarto-xref">Иллюстрация&nbsp;<span>18.5 (c)</span></a>). Выбранные объекты составят итоговую выборку исследования.</p>
+<p>Например, у нашей генеральной совокупности есть четыре страты (<a href="#fig-stratified-sample-1" class="quarto-xref">Иллюстрация&nbsp;<span>21.5 (a)</span></a>). Тогда мы можем разделить её на четыре «подгенеральных совокупности» (subpopulations) соответственно (<a href="#fig-stratified-sample-2" class="quarto-xref">Иллюстрация&nbsp;<span>21.5 (b)</span></a>). Из каждой такой «подгенеральной совокупности» будем извлекать случайную выборку — в данном случае пропорционально объему страты (<a href="#fig-stratified-sample-3" class="quarto-xref">Иллюстрация&nbsp;<span>21.5 (c)</span></a>). Выбранные объекты составят итоговую выборку исследования.</p>
 <div class="cell" data-layout="[[50,50],[100]]">
 <div id="fig-stratified-sample" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stratified-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stratified-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stratified-sample-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stratified-sample-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stratified-sample-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-stratified-sample-1.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-stratified-sample-1.png" class="lightbox" data-gallery="fig-stratified-sample" title="Иллюстрация&nbsp;21.5&nbsp;(a): Генеральная совокупность"><img src="desc-statintro_files/figure-html/fig-stratified-sample-1.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stratified-sample-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Генеральная совокупность
@@ -1181,10 +1388,10 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stratified-sample" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-stratified-sample-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stratified-sample-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stratified-sample-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-stratified-sample-2.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-stratified-sample-2.png" class="lightbox" data-gallery="fig-stratified-sample" title="Иллюстрация&nbsp;21.5&nbsp;(b): Генеральная совокупность, разделенная по стратам"><img src="desc-statintro_files/figure-html/fig-stratified-sample-2.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stratified-sample-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Генеральная совокупность, разделенная по стратам
@@ -1195,10 +1402,10 @@ window.Quarto = {
 </div>
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-stratified-sample" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-stratified-sample-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-stratified-sample-3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-stratified-sample-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="desc-statintro_files/figure-html/fig-stratified-sample-3.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672">
+<a href="desc-statintro_files/figure-html/fig-stratified-sample-3.png" class="lightbox" data-gallery="fig-stratified-sample" title="Иллюстрация&nbsp;21.5&nbsp;(c): Итоговая выборка с учетом страт (простая случайная из каждой страты пропорционально её объему)"><img src="desc-statintro_files/figure-html/fig-stratified-sample-3.png" class="img-fluid figure-img" data-ref-parent="fig-stratified-sample" width="672"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-stratified-sample-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) Итоговая выборка с учетом страт (простая случайная из каждой страты пропорционально её объему)
@@ -1209,67 +1416,67 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stratified-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Иллюстрация&nbsp;18.5: Стратифицированная выборка
+Иллюстрация&nbsp;21.5: Стратифицированная выборка
 </figcaption>
 </figure>
 </div>
 </div>
 </section>
-<section id="desc-statintro-cluster-sample" class="level5" data-number="18.5.2.0.3">
-<h5 data-number="18.5.2.0.3" class="anchored" data-anchor-id="desc-statintro-cluster-sample"><span class="header-section-number">18.5.2.0.3</span> Групповая выборка</h5>
+<section id="desc-statintro-cluster-sample" class="level5" data-number="21.5.2.0.3">
+<h5 data-number="21.5.2.0.3" class="anchored" data-anchor-id="desc-statintro-cluster-sample"><span class="header-section-number">21.5.2.0.3</span> Групповая выборка</h5>
 <div class="lab-junior">
 
 </div>
 <p>Генеральная совокупность разбивается на несколько обособленных, но одинаковых групп (кластеров). Например, население города группируется по району проживания Выбираются случайным образом несколько групп Из каждой группы случайным образом выбираются несколько объектов, которые попадают в выборку. Пусть мы разделили нашу генеральную совокупность на 8 кластеров: Кластеры у нас примерно одинаковые по характеристикам между собой — по крайне мере, мы так предполагаем. Выберем случайно четыре кластера, которые примут участие в исследовании: Теперь из этих кластеров наберем выборку (допустим, по 20 наблюдений из кластера) случайным образом (объекты, попавшие в итоговую выборку отмечены черным контуром, не попавшие — серым): Такой подход к формированию выборки позволяет экономить драгоценные ресурсы при проведении исследования.</p>
 </section>
-<section id="desc-statintro-systematic-sample" class="level5" data-number="18.5.2.0.4">
-<h5 data-number="18.5.2.0.4" class="anchored" data-anchor-id="desc-statintro-systematic-sample"><span class="header-section-number">18.5.2.0.4</span> Систематическая выборка</h5>
+<section id="desc-statintro-systematic-sample" class="level5" data-number="21.5.2.0.4">
+<h5 data-number="21.5.2.0.4" class="anchored" data-anchor-id="desc-statintro-systematic-sample"><span class="header-section-number">21.5.2.0.4</span> Систематическая выборка</h5>
 <div class="lab-middle">
 
 </div>
 <p>Случайная систематическая выборка Линейная систематическая выборка Круговая систематическая выборка</p>
 </section>
 </section>
-<section id="desc-statintro-nonprobability-sampling" class="level3" data-number="18.5.3">
-<h3 data-number="18.5.3" class="anchored" data-anchor-id="desc-statintro-nonprobability-sampling"><span class="header-section-number">18.5.3</span> Невероятностная выборка</h3>
+<section id="desc-statintro-nonprobability-sampling" class="level3" data-number="21.5.3">
+<h3 data-number="21.5.3" class="anchored" data-anchor-id="desc-statintro-nonprobability-sampling"><span class="header-section-number">21.5.3</span> Невероятностная выборка</h3>
 <div class="lab-middle">
 
 </div>
 <p>non-probability sampling</p>
-<section id="convenience-sampling" class="level4" data-number="18.5.3.1">
-<h4 data-number="18.5.3.1" class="anchored" data-anchor-id="convenience-sampling"><span class="header-section-number">18.5.3.1</span> Convenience sampling</h4>
+<section id="convenience-sampling" class="level4" data-number="21.5.3.1">
+<h4 data-number="21.5.3.1" class="anchored" data-anchor-id="convenience-sampling"><span class="header-section-number">21.5.3.1</span> Convenience sampling</h4>
 <div class="lab-middle">
 
 </div>
 </section>
-<section id="voluntary-response-sampling" class="level4" data-number="18.5.3.2">
-<h4 data-number="18.5.3.2" class="anchored" data-anchor-id="voluntary-response-sampling"><span class="header-section-number">18.5.3.2</span> Voluntary response sampling</h4>
+<section id="voluntary-response-sampling" class="level4" data-number="21.5.3.2">
+<h4 data-number="21.5.3.2" class="anchored" data-anchor-id="voluntary-response-sampling"><span class="header-section-number">21.5.3.2</span> Voluntary response sampling</h4>
 <div class="lab-middle">
 
 </div>
 </section>
-<section id="purposive-sampling" class="level4" data-number="18.5.3.3">
-<h4 data-number="18.5.3.3" class="anchored" data-anchor-id="purposive-sampling"><span class="header-section-number">18.5.3.3</span> Purposive sampling</h4>
+<section id="purposive-sampling" class="level4" data-number="21.5.3.3">
+<h4 data-number="21.5.3.3" class="anchored" data-anchor-id="purposive-sampling"><span class="header-section-number">21.5.3.3</span> Purposive sampling</h4>
 <div class="lab-middle">
 
 </div>
 </section>
-<section id="snowball-sampling" class="level4" data-number="18.5.3.4">
-<h4 data-number="18.5.3.4" class="anchored" data-anchor-id="snowball-sampling"><span class="header-section-number">18.5.3.4</span> Snowball sampling</h4>
+<section id="snowball-sampling" class="level4" data-number="21.5.3.4">
+<h4 data-number="21.5.3.4" class="anchored" data-anchor-id="snowball-sampling"><span class="header-section-number">21.5.3.4</span> Snowball sampling</h4>
 <div class="lab-middle">
 
 </div>
 </section>
-<section id="quota-sampling" class="level4" data-number="18.5.3.5">
-<h4 data-number="18.5.3.5" class="anchored" data-anchor-id="quota-sampling"><span class="header-section-number">18.5.3.5</span> Quota sampling</h4>
+<section id="quota-sampling" class="level4" data-number="21.5.3.5">
+<h4 data-number="21.5.3.5" class="anchored" data-anchor-id="quota-sampling"><span class="header-section-number">21.5.3.5</span> Quota sampling</h4>
 <div class="lab-middle">
 
 </div>
 </section>
 </section>
 </section>
-<section id="desc-statintro-kinds-of-stat" class="level2" data-number="18.6">
-<h2 data-number="18.6" class="anchored" data-anchor-id="desc-statintro-kinds-of-stat"><span class="header-section-number">18.6</span> Виды статистики</h2>
+<section id="desc-statintro-kinds-of-stat" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="desc-statintro-kinds-of-stat"><span class="header-section-number">21.6</span> Виды статистики</h2>
 <div class="lab-junior">
 
 </div>
@@ -1323,372 +1530,255 @@ window.Quarto = {
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Скопировано!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Скопировано!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1696,185 +1786,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./part-desc.html" class="pagination-link" aria-label="Описательная статистика">
@@ -1883,11 +1949,43 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./desc-centaltend.html" class="pagination-link" aria-label="Меры центральной тенденции">
-        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Меры центральной тенденции</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

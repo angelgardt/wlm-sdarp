@@ -1,15 +1,618 @@
-# Визуализация в `ggplot2` {#r-visggplot}
+# Визуализация в `ggplot2` I {#r-visggplot}
 
 {{< include other/_symbols.qmd >}}
 
 ```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=TRUE, warning=TRUE, error=FALSE)
+```
+
+```{r pkgs, echo=FALSE, message=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
 ```
 
 :::{.intro}
 Вступление
 :::
 
+:::{.callout-warning}
+## Потребуется базовое представление о статистических данных
+
+Чтобы уверенно понять, что происходит в этой главе, нужно базово представлять, что являют собой статистические данных и что такое описательные статистики. 
+:::
+
+
+
+## Задачи визуализации {#r-visggplot-why}
+
+:::{.lab-junior}
+:::
+
+
+### Квартет Анскомба {#r-visggplot-anscombe}
+
+:::{.lab-junior}
+:::
+
+Квартет Анскомба[^anscombe-name] (Anscombe's quartet) --- это датасет, предложенный Ф. Дж. Анскомбом [@anscombe1973] для демонстрации важности использования визуализаций при изучении данных. В R он хранится в переменной `anscombe` (@lst-anscombe-dataset) из пакета `datasets`, доступного по умолчанию[^basic-pkgs].
+
+[^anscombe-name]: В другом варианте, Энскомба.
+[^basic-pkgs]: Мы [говорили](r-strings.qmd#r-strings-ext-pkgs), что базовый R состоит из нескольких пакетов, автоматически подключаемых при запуске. `datasets` является один таких пакетов.
+
+:::{#lst-anscombe-dataset}
+```{r}
+anscombe
+```
+
+Датасет «Квартет Анскомба»
+:::
+
+
+По сути он состоит из четырёх датасетов, каждый из которых содержит две переменные --- `x` и `y`. Если внимательно на него посмотреть, то можно обнаружить, что значения переменной `x` в трёх первых датасетах одинаковые. В чётвертом же они совсем другие. Однако переменная `y` во всех четырёх датасетах содержит разные значения. Это приводит нас к следующей незамысловатой идее --- **четыре датасета содержат данные о различных закономерностях между `x` и `y`.** Ну, давайте проверим, так ли это.
+
+В том варианте, в котором он храниться в R, с ним не очень удобно работать, поэтому сделаем простую предобработку (@lst-anscombe-preproc).
+
+:::{#lst-anscombe-preproc}
+```{r}
+library(tidyverse)
+
+anscombe %>% #<1>
+  mutate(id = 1:nrow(anscombe)) %>% #<2>
+  pivot_longer(cols = -id) %>% #<3>
+  mutate(dataset = str_extract(name, "\\d$"), #<4>
+         name = str_remove(name, "\\d$")) %>% #<5>
+  pivot_wider(names_from = name, #<6>
+              values_from = value) %>% 
+  select(-id) -> quartet #<7>
+```
+1. Берём исходный датасет
+2. Создаём техническую переменную `id` для перехода между широким и длинным форматами
+3. Переводим данные в длинный формат --- названия колонок по умолчанию переходят в переменную `name`, значения --- в переменную `value`
+4. Создаём новую переменную `dataset`, которая будет задавать, к какому из «субдатасетов» относится наблюдение --- вытаскиваем номер датасета из названия колонок
+5. Удаляем из названия колонок номер датасета --- теперь это отдельная переменная
+6. Переводим данные в широкий формат --- возвращаем на место названия колонок и значения
+7. Удаляем техническую переменную `id`, сохряняем результат предобработки в новую переменную `quartet`.
+
+Предобработка квартета Анскомба для последующей визуализации
+:::
+
+Посмотрим, что получилось (@lst-quartet-done). Теперь в колонке `dataset` содержится номер датасета, а в переменных `x` и `y` собственно значения переменных, которые мы хотим изучить.
+
+:::{#lst-quartet-done}
+```{r}
+quartet
+```
+
+Предобработанный квартет Анскомба
+:::
+
+Посчитаем базовые описательные статистики --- среднее и стандартное отклонение --- по обеим переменным и корреляцию между ними в каждом из датасетов. Вот что получается (@tbl-quartet-desc).
+
+:::{#tbl-quartet-desc}
+```{r}
+#| code-fold: true
+
+quartet %>% 
+  summarise(
+    n = n(),
+    mean_x = mean(x),
+    mean_y = mean(y),
+    sd_x = sd(x),
+    sd_y = sd(y),
+    cor_xy = cor(x, y),
+    .by = dataset
+    ) %>% 
+  knitr::kable(digits = 2)
+```
+
+Описательные статистики квартета Анскомба
+:::
+
+Так, подождите… Мы видели, что значения, по крайней мере, переменной `y` были разными во всех четырёх датасетах. Теперь же мы видим, что ситуация во всех датасетах одинаковая --- так нам говорят описательные статистики и корреляции. Тогда может быть различия не столь существенны, и данные разных датасетов описывают одни и те же закономерности? Возможно, и так --- всё же изучать данные, просто смотря на числа в датасете, не самая лучшая идея. Давайте визуализируем данные (@fig-anscombe), чтобы точно увидеть, что в них происходит.
+
+```{r anscombe-vis, message=FALSE}
+#| label: fig-anscombe
+#| fig-cap: "Визуализация квартета Анскомба"
+#| code-fold: true
+
+quartet %>% 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~ dataset)
+```
+
+Как можно наблюдать, в четырёх датасетах у нас совершенно разные закономерности. Значит ли это, что описательные статистики бессмысленны? Пожалуй, нет. Однако мы явно наблюдали, что их может быть недостаточно, чтобы составить полное представление о том, что происходит в данных.
+
+
+### Datasaurus {#r-visggplot-datasaurus}
+
+:::{.lab-junior}
+:::
+
+Кроме квартета Анскомба, есть ещё один пример недостаточности описательных статистик --- даже более яркий, чем рассмотренный квартет. Это датасет `datasaurus_dozen` из пакета `datasauRus` [@datasaurus]. Не будет подробно останавливаться на коде --- его можно найти, раскрыв соответствующие блоки --- посмотрим на суть. Датасет состоит из тринадцати «субдатасетов», в каждом из которых есть переменные `x` и `y` . Посчитаем вновь среднее и стандартное отклонение по обеим переменным, а также корреляцию между ними (@tbl-datasaurus-desc). Вновь видим, что описательные статистики и корреляции практически равны --- различия в сотых.
+
+:::{#tbl-datasaurus-desc}
+```{r}
+#| code-fold: true
+
+datasauRus::datasaurus_dozen %>% 
+  summarise(
+    mean_x = mean(x),
+    sd_x = sd(x),
+    mean_y = mean(y),
+    sd_y = sd(y),
+    cor_xy = cor(x, y),
+    .by = dataset
+    ) %>% 
+  knitr::kable(digits = 2)
+```
+
+Описательные статики по `datasaurus`
+:::
+
+Логично было бы ожидать после этого очень схожих паттернов взаимосвязей между переменными, однако если мы нарисуем то, что представленно в датасетах, мы довольно сильно удивимся (@fig-datasaurus). Закономерности не просто разные, а *абсолютно* разные. 
+
+```{r datasaurus-vis, message=FALSE}
+#| label: fig-datasaurus
+#| fig-cap: "Визуализация `datasaurus`"
+#| code-fold: true
+
+datasauRus::datasaurus_dozen %>% 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  facet_wrap(~ dataset)
+```
+
+:::{.callout-tip}
+###### Чиселки --- это хорошо, но картинки нагляднее
+
+Всё это нас приводит к следующей важной мысли:
+
+* описательные статистики, безусловно, важны, так как предоставляют базовую информацию о данных
+* однако они недостаточны, так как одни и те же значения могут получаться в разных ситуациях
+* помимо описательных статистики при изучении данных *критически* необходима их визуализация
+* в противном случае мы рискуем упустить существенную часть информацию о них, составить некорректное представление об изучаемых закономерностях и некорректно спланировать и провести статистический анализ
+* графически, к тому же, информацию часто воспринять проще, чем копаться в больших таблицах чисел
+
+:::
+
+
+
+## Виды визуализаций {#r-visggplot2-graphs}
+
+:::{.lab-junior}
+:::
+
+```{r exmpl-graphs, echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
+## bar plot
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(cut, n)) +
+  geom_col() +
+  xlab("Cut") + ylab("Count") -> exmpl_barplot
+
+## sunburts
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(cut, n, fill = color)) +
+  geom_col(position = position_dodge()) +
+  coord_polar() +
+  xlab("Cut") + ylab("Count") +
+  labs(fill = 'Color') -> exmpl_sunburts
+
+## pie chart
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(n = n(),
+            prop = (n / nrow(diamonds) * 100) %>% round(1) %>% paste0("%")) %>% 
+  ggplot(aes("", n, fill = cut)) +
+  geom_bar(stat = 'identity', width = 1) +
+  geom_text(aes(label = prop), position = position_stack(vjust = 0.5)) +
+  coord_polar('y', start = 0) + 
+  xlab(NULL) + ylab(NULL) +
+  labs(fill = 'Cut') +
+  theme(axis.text.x = element_text(size = 0)) -> exmpl_piechart
+
+## line plot
+matrix(AirPassengers, ncol = 12) %>% as_tibble() %>% mutate(year = 1949:1960) -> for_line_graph
+colnames(for_line_graph) <- c(month.abb, 'year')
+for_line_graph %>% 
+  pivot_longer(-year) %>% 
+  mutate(name = factor(name, ordered = TRUE, levels = month.abb)) %>% 
+  filter(year < 1952) %>% 
+  ggplot(aes(name, value, group = year, color = factor(year))) +
+  geom_line(linetype = 'solid') +
+  labs(x = "Month", y = 'Number of passangers',
+       color = "Year") -> exmpl_lineplot
+
+## histogram
+diamonds %>% ggplot(aes(price)) +
+  geom_histogram(binwidth = 1000) +
+  xlab('Price') + ylab('Count') -> exmpl_histogram
+
+## density plot
+diamonds %>% ggplot(aes(price, fill = cut)) +
+  geom_density(alpha=0.5) +
+  xlab('Price') + ylab('Density') -> exmpl_density
+
+## dot plot
+set.seed(480)
+diamonds %>% 
+  slice(sample(1:nrow(diamonds), 20)) %>% 
+  ggplot(aes(cut)) +
+  geom_dotplot() +
+  xlab('Price') + ylab('') +
+  theme(axis.text.y = element_text(size = 0)) -> exmpl_dotplot
+
+## box plot
+diamonds %>% slice(sample(1:nrow(diamonds), 300)) %>% 
+  ggplot(aes(color, price)) +
+  geom_boxplot() +
+  xlab('Color') + ylab("Price") -> exmpl_boxplot
+
+## violin plot
+diamonds %>% slice(sample(1:nrow(diamonds), 300)) %>% 
+  ggplot(aes(color, price)) +
+  geom_violin() +
+  stat_summary(fun.data = mean_cl_boot, geom = "pointrange") +
+  xlab('Color') + ylab("Price") -> exmpl_violin
+
+## error bar
+diamonds %>% 
+  ggplot(aes(cut, price)) +
+  stat_summary(fun = mean, geom = 'point') +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width = 0.5) +
+  xlab('Cut') + ylab("Price") -> exmpl_errorbar
+
+## scatter plot
+diamonds %>% slice(sample(1:nrow(diamonds), 50)) %>% 
+  ggplot(aes(x, y, color = color)) +
+  geom_point() +
+  labs(color = "Color") -> exmpl_scatterplot
+
+## bubble plot
+diamonds %>% slice(sample(1:nrow(diamonds), 100)) %>% 
+  ggplot(aes(x, y, color = color, size = z)) +
+  geom_point(alpha=0.5) +
+  labs(color = "Color") +
+  theme(legend.position = "bottom") -> exmpl_bubbleplot
+```
+
+```{r exmpl-graphs-figure, echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
+#| label: fig-exmpl-graphs
+#| fig-cap: "Основные виды графиков"
+#| fig-subcap:
+#|   - "Столбчатая диаграмма (Bar plot, Bar graph)"
+#|   - "Dot plot"
+#|   - "Гистограмма (Histogram)"
+#|   - "График плотности распределения (Density plot)"
+#|   - "Ящик с усами (Boxplot)"
+#|   - "Violin plot"
+#|   - "Линейная диаграмма (Line graph, Line plot)"
+#|   - "График интервальных оценок (Error bar)"
+#|   - "Диаграмма рассеяния (Scatter plot)"
+#|   - "Пузырьковая диаграмма (Bubble plot)"
+#|   - "Круговая диаграмма (Pie chart)"
+#|   - "Лучевая диаграмма (Sunburts)"
+#| layout-ncol: 2
+
+print(exmpl_barplot)
+print(exmpl_dotplot)
+
+print(exmpl_histogram)
+print(exmpl_density)
+
+print(exmpl_boxplot)
+print(exmpl_violin)
+
+print(exmpl_lineplot)
+print(exmpl_errorbar)
+
+print(exmpl_scatterplot)
+print(exmpl_bubbleplot)
+
+print(exmpl_piechart)
+print(exmpl_sunburts)
+```
+
+Больше примеров визуализаций можно найти в [The R Graph Gallery](https://r-graph-gallery.com/).
+
+
+:::{.callout-note}
+### Histogram vs Bar plot
+
+text
+:::
+
+:::{.callout-warning}
+### Аналитик, не рисуй pie chart!
+
+text
+:::
+
+
+
+
+
+
+
+## Пакет `ggplot2` {#r-visggplot2-pkg}
+
+:::{.lab-junior}
+:::
+
+```{r, echo=FALSE, warning=FALSE}
+detach("package:tidyverse", unload = TRUE)
+detach("package:forcats", unload = TRUE)
+detach("package:ggplot2", unload = TRUE)
+detach("package:lubridate", unload = TRUE)
+detach("package:readr", unload = TRUE)
+detach("package:stringr", unload = TRUE)
+detach("package:tidyr", unload = TRUE)
+detach("package:dplyr", unload = TRUE)
+detach("package:purrr", unload = TRUE)
+detach("package:tibble", unload = TRUE)
+```
+
+Пакет, которым мы будем постоянно использоваться для создания визуализаций, называется `ggplot2`. Он является частью `tidyverse`, поэтому подключается вместе со всеми остальными:
+
+```{r}
+library(tidyverse)
+```
+
+Мы уже видели это сообщение. В частности, в нём сказано, что подключён пакет `ggplot2` версии `r packageVersion("ggplot2")`. Также, если вы установили `tidyverse`, то не нужно устанавливать `ggplot2` отдельно.
+
+Если же вы по каким-либо причинам не хотите устанавливать `tidyverse`, то можно установить `ggplot2` отдельно с помощью знакомой нам команды `install.packages("tidyverse")`. Также можно и подключить только `ggplot2`, не загружая в рабочую сессию весь `tidyverse` через `library(ggplot2)`. В общем всё стандартно как и для любого другого пакета.
+
+
+:::{.callout-note appearance="minimal" collapse="true"}
+###### Откуда `2` в названии пакета?
+
+Нет ощущения, что если пакет называется `ggplot2`, то он --- вторая версия некоего пакета `ggplot`? Однако пакет `ggplot` вроде как нигде не существует…
+
+Тем не менее, он всё же существовал, как сообщает [источник](https://info201.github.io/ggplot2.html), но был плох, и разработчики решили переписать всё с нуля, создав ныне известный `ggplot2`. Вторая попытка, как мы увидим, оказалось значительно успешнее и мощнее и обрела невероятную популярность.
+:::
+
+
+### Датасет `diamonds` {#r-visggplot2-diamonds}
+
+:::{.lab-junior}
+:::
+
+Кроме функций из пакета `ggplot2`, мы будем в примерах использовать датасет `diamonds`, который тоже содержится в этом пакете. При подключенном пакете он доступен по собственному названию (@lst-diamonds-data), из которого следует, что это данные про бриллианты.
+
+:::{#lst-diamonds-data}
+```{r}
+diamonds
+```
+
+Датасет `diamonds`
+:::
+
+Давайте сориентируемся в нём, чтобы понимать, что мы будет рисовать. Датасет содержит `r nrow(diamonds)` наблюдений и `r ncol(diamonds)` переменных. В нём содержится информация о цене бриллиантов и их характеристиках. Ниже приведено описание переменных.
+
+:::{.callout-note appearance="simple"}
+###### Описание переменных датасета `diamonds`
+
+* `price` --- цена бриллианта (в долларах США)
+* `carat` --- вес бриллианта (в каратах[^diam-carat])
+* `cut` --- качество огранки бриллианта (значения: `Fair`, `Good`, `Very Good`, `Premium`, `Ideal`)
+* `color` --- цвет бриллианта (значения: `D` --- лучший, `E`, `F`, `G`, `H`, `I`, `J` --- худший)
+* `clarity` --- чистота бриллианта (значения: `I1` --- худшая, `SI2`, `SI1`, `VS2`, `VS1`, `VVS2`, `VVS1`, `IF` --- лучшая)
+* `x` --- длина бриллианта (в мм)
+* `y` --- ширина бриллианта (в мм)
+* `z` --- глубина бриллианта (в мм)
+* `depth` --- показатель глубины (вычисляется как $\frac{2z}{x+y}$)
+* `table` --- отношение ширины площадки[^diam-table] к ширине камня в области рундиста[^diam-rundist] (в процентах)
+
+[^diam-carat]: Мера веса драгоценных камней: 1 карат равен 0.2 грамма.
+[^diam-table]: Площадка --- элемент огранки бриллианта, самая большая верхняя грань.
+[^diam-rundist]: Рундист --- элемент огранки бриллианта, разделяющий его верхнюю (корона) и нижнюю (павильон) части; место, в котором камень имеет наибольшую ширину.
+:::
+
+Переменные `carat`, `depth`, `table`, `price`, `×`, `y` и `z` --- числовые; `cut`, `color`, `clarity` --- упорядоченные факторы[^ord_factor].
+
+[^ord_factor]: Если вы успели подзабыть, что это такое, см. [раздел про упорядоченные факторы](r-datastructures.qmd#r-datastructures-factor-ordered).
+
+Проверим, есть ли в данных пропущенные значения:
+
+```{r}
+diamonds %>% sapply(is.na) %>% apply(2, sum)
+```
+
+Нет. Ну, и хорошо.
+
+
+
+## Грамматика графиков {#r-visggplot2-grammar}
+
+:::{.lab-junior}
+:::
+
+Знакомство с `ggplot2` невозможно без обсуждения идеи, которая за ним стоит. Описать в коде построение картинки --- задача довольно непростая, и для её решения можно придумать много вариантов. В `ggplot2` используется концепция «грамматики графиков», или **The Grammar of Graphics** [@grammar-of-graphs], которая определяет принцип работы всего пакета. Мы не будем погружаться в истоки, а посмотрим на развитие этой концепции автором пакета Хадли Викхамом, разработавшим подход **A Layered Grammar of Graphics** [@layered-grammar-hadley], который и лёг в основу работы `ggplot2`.
+
+Согласно этой концепции [@ggplot2-hadley], график состоит из нескольких относительно независимых друг от друга **слоёв**, которые управляют определёнными аспектами визуализации. Всего можно выделить семь слоёв (@fig-plot-layers):
+
+* **data** задаёт, какие данные мы будем визуализировать,
+* **mapping** описывает, какие переменные и с помощью чего будут отображены на графике,
+* **layers** определяет, как именно будут отображены данные --- здесь есть два варианта:
+    * **geoms** --- описать геометрические элементы, которые будут отображать исходные данные,
+    * **stats** --- описать статистические преобразования, результаты которых будут отображены на графике
+* **scales** позволяет настроить отображение всего того, что мы задали на предыдущих слоях,
+* **facets** даёт возможность разбить график на подграфики, чтобы закономерности данных лучше считывались,
+* **coordinates** управляет координатной системой,
+* **theme** управляет оформлением практически всех элементов графика для их тончайшей настройки, чтобы навести невероятную красоту.
+
+![Концептуальная схема строения визуализации в подходе A Layered Grammar of Graphics [по @ggplot2-hadley]](img/r-visggplot/plot-layers.png){#fig-plot-layers}
+
+Первые три слоя --- data, mapping и layers --- являются обязательными, чтобы визуализация вообще построилась. Остальные факультативны --- используются, если нам нужно исправить поведение пакета, заданное по умолчанию.
+
+:::{.quote .small .pers}
+--- Чё-т эт как-т абстрактно всё слишком… Ничё не понял…
+:::
+
+Концепция, действительно, звучит в некоторой мере абстрактно --- на то она и концепция. Однако, как мы увидим далее, все элементы, обозначенные выше, представлены функциями пакета `ggplot2`.
+
+:::{.quote .small .pers}
+--- Ладно, ладно… Погнали уже рисовать!
+:::
+
+
+
+## Базовый алгоритм построения визуализации {#r-visggplot2-basics}
+
+```{r}
+ggplot()
+```
+
+```{r}
+ggplot(data = diamonds)
+```
+
+```{r}
+ggplot(data = diamonds,
+       mapping = aes(x = price))
+```
+
+```{r}
+ggplot(data = diamonds,
+       mapping = aes(x = price)) +
+  geom_histogram()
+```
+
+
+
+## Эстетики (aesthetics) {#r-visggplot-aes}
+
+:::{.lab-junior}
+:::
+
+### Цвет {#r-visggplot-aes-color}
+
+:::{.lab-junior}
+:::
+
+В R встроено безумное количество цветов --- `r colors() %>% length()`. Полный список можно получить, вызвав функцию `colors()`. Если хочется увидеть всё цветовое разнообразие, разверните заметку ниже.
+
+:::{.callout-note appearance="simple" collapse="true"}
+###### Все цвета, доступные в R
+
+```{r colors-pic, echo=FALSE, cache=TRUE}
+#| fig-height: 100
+
+clrs <- colors()
+names(clrs) <- colors()
+
+ggplot(NULL, aes(1, clrs %>% factor(ordered = TRUE, levels = colors()), fill = clrs)) +
+  geom_col() +
+  scale_x_continuous(breaks = NULL) +
+  labs(x = NULL, y = NULL) +
+  guides(fill = "none") +
+  scale_fill_manual(values = clrs) +
+  theme_bw()
+```
+:::
+
+
+### Форма {#r-visggplot-aes-shape}
+
+:::{.lab-junior}
+:::
+
+```{r shapes, echo=FALSE, cache=TRUE}
+#| label: fig-shapes
+#| fig-cap: "Формы точек, доступные в R"
+#| fig-height: 3
+
+tibble(x = rep(1:13, times = 2),
+       y = rep(c(1.5, 1), each = 13),
+       shape = factor(0:25)) %>% 
+  ggplot(aes(x = x,
+             y = y,
+             shape = shape,
+             label = shape)) +
+  geom_point(size = 10, fill = "royalblue") +
+  geom_text(aes(y = y-.2)) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(limits = c(.5, 1.7),
+                     breaks = NULL) +
+  scale_shape_manual(values = 0:25) +
+  labs(x = NULL, y = NULL) +
+  guides(shape = "none") +
+  theme_bw()
+```
+
+
+### Тип линии {#r-visggplot-aes-linetype}
+
+:::{.lab-junior}
+:::
+
+```{r linetypes, echo=FALSE, cache=TRUE}
+#| label: fig-linetypes
+#| fig-cap: "Типы линии, доступные в R"
+#| fig-height: 3
+
+tibble(x = rep(1:2, each = 7),
+       y = rep(0:6, times = 2),
+       lty = rep(c("blank", "solid", "dashed", "dotted", "dotdash", "longdash", "twodash"), 
+                   times = 2) %>% 
+         factor(ordered = TRUE,
+                levels = c("blank", "solid", "dashed", "dotted", "dotdash", "longdash", "twodash"))) %>% 
+  ggplot(aes(x = x,
+             y = lty,
+             linetype = lty)) +
+  geom_line() +
+  scale_x_continuous(breaks = NULL) +
+  scale_linetype_manual(values = c("blank" = "blank",
+                                   "solid" = "solid",
+                                   "dashed" = "dashed",
+                                   "dotted" = "dotted",
+                                   "dotdash" = "dotdash",
+                                   "longdash" = "longdash",
+                                   "twodash" = "twodash")) +
+  labs(x = NULL, y = NULL) +
+  guides(linetype = "none") +
+  theme_bw()
+```
+
+
+## Геомы (geoms) {#r-visggplot-geoms}
+
+:::{.lab-junior}
+:::
+
+
+
+
+## Статы (stats) {#r-visggplot-stats}
+
+:::{.lab-junior}
+:::
+
+
+
+## Фасеты (facets) {#r-visggplot-facets}
+
+:::{.lab-junior}
+:::
+
+
+
+## Шкалы (scales) {#r-visggplot-scales}
+
+:::{.lab-junior}
+:::
+
+
+
+## Тема (theme) {#r-visggplot-theme}
+
+:::{.lab-junior}
+:::
 
 
 

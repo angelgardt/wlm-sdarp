@@ -19,24 +19,26 @@ book:
     - index.qmd
     - common-intro.qmd
     - common-signs.qmd
-    - part: Debug
-      chapters: 
-      - debug_pretest.qmd
-      - debug_chapter.qmd
-      - debug_quiz.qmd
-      - debug_sheet.qmd
+    # - part: Debug
+    #   chapters: 
+    #   - debug_pretest.qmd
+    #   - debug_chapter.qmd
+    #   - debug_quiz.qmd
+    #   - debug_sheet.qmd
     - part: part-r.qmd
       chapters:
       - r-intro.qmd
+      - r-basics.qmd
       - r-datatypes.qmd
       - r-datastructures.qmd
-      - r-functions.qmd
       - r-data.qmd
-      - r-tidy.qmd
+      - r-functions.qmd
       - r-strings.qmd
       - r-datetime.qmd
-      - r-visbase.qmd
+      - r-tidy.qmd
       - r-visggplot.qmd
+      - r-advggplot.qmd
+      - r-visbase.qmd
       - r-oop.qmd
     - part: part-math.qmd
       chapters: 
@@ -46,6 +48,9 @@ book:
         - math-calculus.qmd
         - math-linal.qmd
     - part: part-measures.qmd
+      chapters: 
+        - measures-psychometrics.qmd
+        - measures-irt.qmd
     - part: part-desc.qmd
       chapters:
       - desc-statintro.qmd
@@ -58,14 +63,20 @@ book:
         - prob-randexpvals.qmd
         - prob-prob.qmd
         - prob-randvalues.qmd
-        - prob-cond-prob.qmd
+        - prob-condprob.qmd
+        - prob-distributions.qmd
         - prob-statestim.qmd
         - prob-hyptesting.qmd
         - prob-falsepositive.qmd
     - part: part-andan.qmd
       chapters:
+        - andan-means.qmd
         - andan-cor.qmd
         - andan-simplelinear.qmd
+        - andan-hierreg.qmd
+        - andan-oneway-anova.qmd
+        - andan-moderation.qmd
+        - andan-mediation.qmd
     - common-outro.qmd
     - references.qmd
   appendices:
@@ -77,10 +88,11 @@ book:
     - appendix-formulas.qmd
     - appendix-git.qmd
     - appendix-research-design.qmd
+    - appendix-survey-methods.qmd
     - appendix-design.qmd
     - appendix-math-other.qmd
     - appendix-math-letters.qmd
-    - appendix-history.qmd
+    - appendix-stories.qmd
     - appendix-keys.qmd
     
   favicon: img/other/favicon.png
@@ -112,5 +124,6 @@ format:
       light: [style/css/light.scss, style/css/common.scss]
       dark: [style/css/dark.scss, style/css/common.scss]
     code-overflow: wrap
+    lightbox: true
 
 editor: source
