@@ -1,6 +1,8 @@
 library(tidyverse)
 theme_set(theme_bw())
 
+### archive -----
+
 # n <- 1000
 # set.seed(616)
 # tibble(
@@ -70,7 +72,7 @@ theme_set(theme_bw())
 #              x = 0, y = 0)
 
 
-
+### cor values & scatterplots -----
 
 set.seed(2525)
 n <- 500
@@ -118,6 +120,7 @@ cors_tibble %>%
     theme(strip.text = element_text(face = "bold"))
 
 
+### cor = 1 & trend line angle -----
 
 cors_tibble %>%
   pivot_longer(cols = -x) %>%
@@ -167,7 +170,7 @@ cors_tibble %>%
   theme(strip.text = element_text(face = "bold"))
 
 
-
+### cor values & slope -----
 
 cors_tibble %>%
   pivot_longer(cols = -x) %>%
@@ -221,6 +224,7 @@ cors_tibble %>%
   theme(strip.text = element_text(face = "bold"))
 
 
+### cor = 0 & non-linearity -----
 
 set.seed(20)
 n <- 500
@@ -254,6 +258,8 @@ cor_quad %>%
     geom_function(fun = function(x) x^2,
                   color = "red") +
     geom_smooth(method = "lm", se = FALSE)
+
+
 
 
 

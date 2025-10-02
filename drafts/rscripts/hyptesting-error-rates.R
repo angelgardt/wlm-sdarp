@@ -1,5 +1,6 @@
 library(tidyverse)
 theme_set(theme_bw())
+theme_update(legend.position = "bottom")
 
 tibble(
   h1 = seq(from = 0, to = 1, by = .01),
@@ -14,8 +15,8 @@ tibble(
   fp = sig.level * h0,
   fn = beta * h1,
   tp = power * h1
-  ) %>% 
-  pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>% 
+  ) %>%
+  pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>%
   ggplot() +
   geom_line(aes(h1, prob, color = res))
 
@@ -34,8 +35,8 @@ tibble(
   fp = sig.level * h0,
   fn = beta * h1,
   tp = power * h1
-  ) %>% 
-  pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>% 
+  ) %>%
+  pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>%
   ggplot() +
   geom_line(aes(sig.level, prob, color = res))
 
@@ -53,9 +54,10 @@ tibble(
   fp = sig.level * h0,
   fn = beta * h1,
   tp = power * h1
-) %>% 
-  pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>% 
+) %>%
+  pivot_longer(cols = tn:tp, names_to = "res", values_to = "prob") %>%
   ggplot() +
   geom_line(aes(power, prob, color = res)) +
   scale_x_continuous(limits = c(0, 1)) +
   scale_y_continuous(limits = c(0, 1))
+

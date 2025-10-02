@@ -2,7 +2,7 @@ library(tidyverse)
 theme_set(theme_bw())
 theme_update(legend.position = "bottom")
 
-## cover percentage
+## cover percentage -----
 n_sim <- 1000
 n_sample <- 100
 mu <- 0
@@ -54,7 +54,7 @@ ggplot(NULL) +
 
 
 
-## capture percentage
+### capture percentage -----
 n_sim <- 1000
 n_sample <- 100
 mu <- 0
@@ -107,7 +107,7 @@ ggplot(NULL) +
     geom_vline(xintercept = mean(ci_captures))
 
 
-
+### confidence interval & p-value -----
 
 set.seed(123)
 sample <- rnorm(n = 100, mean = 0, sd = 1)
@@ -136,5 +136,6 @@ tibble(
     geom_line() +
     geom_vline(xintercept = c(ci$ymin, ci$ymax), linetype = "dashed") +
     geom_hline(yintercept = .05, linetype = "dotted") +
-    geom_pointrange(aes(y = 0, x = ci$y, xmin = ci$ymin, xmax = ci$ymax))
+    geom_pointrange(data = ci,
+                    aes(y = 0, x = y, xmin = ymin, xmax = ymax))
 
