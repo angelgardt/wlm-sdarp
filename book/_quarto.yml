@@ -1,0 +1,34 @@
+project: 
+  type: book
+  preview: 
+    port: 5050
+
+# metadata-files: 
+#   - _metadata.yml
+
+book: 
+  title: "WLM SDARP"
+  date: today
+  
+  chapters: 
+    - index.qmd
+  
+  # favicon: img/favicon.png
+
+bibliography: references.bib
+
+format:
+  html: 
+    # include-in-header: 
+    #   - ../shared/includes/lab-labels.html
+    # title-block-banner: img/title-block-banner.jpg
+    title-block-banner-color: "#fafafa"
+    toc: true
+    toc-depth: 4
+    # theme: 
+    #   - ../shared/css/common.scss
+    
+# filters: 
+#   - ../shared/filters/custom-callouts.lua
+
+editor: source
