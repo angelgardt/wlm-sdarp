@@ -1,0 +1,40 @@
+# .github/CODEOWNERS
+# Owners are automatically requested for review on PRs affecting their files
+# Format: path_pattern  @github_username
+
+# ===========================================
+# ROOT CONFIGURATION — Owner review required
+# ===========================================
+/_quarto*.yml                 @angelgardt
+/.github/**                   @angelgardt
+/scripts/**                   @angelgardt
+/renv.lock                    @angelgardt
+
+# ===========================================
+# BOOK CONTENT — Owner + language reviewers
+# ===========================================
+/book/**                      @angelgardt
+/book/chapters/ru/**          @angelgardt
+/book/chapters/en/**          @angelgardt
+/book/chapters/rd/**          @angelgardt
+/book/_meta/**                @angelgardt
+/book/_langs/**               @angelgardt
+
+# ===========================================
+# ASSESSMENT — Owner + pedagogy reviewer
+# ===========================================
+/assessment/**                @angelgardt
+
+# ===========================================
+# SHARED RESOURCES
+# ===========================================
+/shared/css/**                @angelgardt
+/shared/img/**                @angelgardt
+/shared/includes/**           @angelgardt
+
+# ===========================================
+# DOCUMENTATION
+# ===========================================
+/README.md                    @angelgardt
+/CONTRIBUTING.md              @angelgardt
+/LICENSE                      @angelgardt
