@@ -10,9 +10,6 @@ book:
   title: "WLM SDARP"
   date: today
   
-  chapters: 
-    - index.qmd
-  
   # favicon: img/favicon.png
 
 bibliography: references.bib
