@@ -10,7 +10,7 @@ book:
   title: "WLM SDARP"
   date: today
   
-  # favicon: img/favicon.png
+  favicon: img/favicon.png
 
 bibliography: references.bib
 

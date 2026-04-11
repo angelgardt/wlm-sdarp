@@ -6,11 +6,9 @@ lang: ru
 
 project: 
   output-dir: _site/rd
-  resources: 
-    - ../shared/img/
 
 book: 
-  subtitle: "Миръ линейныхъ моделей: статистика и анализъ данныхъ в Аръ для психологовъ"
+  subtitle: "Міръ линейныхъ моделей: статистика и анализъ данныхъ в Аръ для психологовъ"
   author: 
     - name: "Антонъ Ангельгардтъ"
       email: "anton.angelgardt@gmail.com"
@@ -19,4 +17,4 @@ book:
   
 format:
   html:
-    cover-image: cover-rd.jpg
+    cover-image: img/cover-rd.jpg

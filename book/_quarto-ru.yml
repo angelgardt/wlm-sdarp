@@ -6,8 +6,6 @@ lang: ru
 
 project: 
   output-dir: _site/ru
-  resources: 
-    - ../shared/img/
 
 book: 
   subtitle: "Мир линейных моделей: статистика и анализ данных в R для психологов"
@@ -19,4 +17,4 @@ book:
   
 format:
   html:
-    cover-image: cover-ru.jpg
+    cover-image: img/cover-ru.jpg
