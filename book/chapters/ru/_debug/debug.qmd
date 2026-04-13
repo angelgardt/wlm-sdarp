@@ -1,0 +1,702 @@
+---
+title: "Глава [отладка]"
+---
+
+{{< include ../../../../shared/includes/math-symbols.qmd >}}
+
+:::{.intro}
+Текст введения. 
+
+Значимость этих проблем крайне не ясна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+
+Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий.
+:::
+
+## Текст {#debug-text}
+
+Значимость этих проблем крайне не ясна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+
+Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий [@knuth84].
+
+> Это цитата, оформленная средствами Markdown из коробки.
+
+
+## Лейблы {#debug-labs .lab-junior}
+
+Просто тестовый текст.
+
+### Раздел для нешарящих {#debug-labs-novice .lab-novice}
+
+Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий в значительной степени обуславливает создание направлений прогрессивного развития.
+
+### Раздел для чуть шарящих {#debug-labs-junior .lab-junior}
+
+С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+
+### Раздел для  шарящих {#debug-labs-middle .lab-middle}
+
+Товарищи! новая модель организационной деятельности в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что укрепление и развитие структуры способствует подготовки и реализации направлений прогрессивного развития.
+
+### Раздел для нормально шарящих {#debug-labs-senior .lab-senior}
+
+Не следует, однако забывать, что начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке модели развития.
+
+### Раздел для крайне шарящих с очень длинным заголовком о невероятно важном содержании раздела {#debug-labs-expert .lab-expert}
+
+Таким образом новая модель организационной деятельности способствует подготовки и реализации соответствующий условий активизации. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют от нас анализа систем массового участия.
+
+
+
+## Layout {#debug-layout}
+
+Здесь даны базовые лэйауты. Больше инфы см. <https://quarto.org/docs/authoring/article-layout.html>.
+
+Для чанков есть cell option `#| column: screen`.
+
+:::{.column-body}
+![Дебажная картина. .column-body (дефолт)](img/debug-pic.jpg)
+:::
+
+:::{.column-body-outset}
+![Дебажная картина. .column-body-outset](img/debug-pic.jpg)
+:::
+
+:::{.column-page}
+![Дебажная картина. .column-page](img/debug-pic.jpg)
+:::
+
+:::{.column-page-inset}
+![Дебажная картина. .column-page-inset](img/debug-pic.jpg)
+:::
+
+:::{.column-screen}
+![Дебажная картина. .column-screen](img/debug-pic.jpg)
+:::
+
+:::{.column-screen-inset}
+![Дебажная картина. .column-screen-inset](img/debug-pic.jpg)
+:::
+
+:::{.column-margin}
+![Дебажная картина. .column-margin](img/debug-pic.jpg)
+:::
+
+
+
+
+
+## Callouts {#debug-callout}
+
+Это текст для отсмотра кроссреф-ссылок на:
+
+- @nte-debug-id
+- @tip-debug-id
+- @cau-debug-id
+- @wrn-debug-id
+- @imp-debug-id
+- @nte-debug-title-id
+- @tip-debug-title-id
+- @cau-debug-title-id
+- @wrn-debug-title-id
+- @imp-debug-title-id
+
+### Notes {#debug-callout-note}
+
+:::{.callout-note}
+Это заметка без заголовка и без id.
+:::
+
+:::{.callout-note #nte-debug-id}
+Это заметка без заголовка, но с id.
+:::
+
+:::{.callout-note title="Заголовок заметки"}
+Это заметка с заголовком, но без id.
+:::
+
+:::{.callout-note #nte-debug-title-id title="Заголовок заметки"}
+Это заметка с заголовком и с id.
+:::
+
+#### Стилевые варианты {#debug-callout-note-appearance}
+
+:::{.callout-note appearance="default" collapse=false title="Заголовок заметки"}
+Это развернутая заметка с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note appearance="default" collapse=true title="Заголовок заметки"}
+Это свернутая заметка с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note appearance="simple" collapse=false title="Заголовок заметки"}
+Это развернутая заметка с заголовком в простом оформлении.
+:::
+
+:::{.callout-note appearance="simple" collapse=true title="Заголовок заметки"}
+Это свернутая заметка с заголовком в простом оформлении.
+:::
+
+:::{.callout-note appearance="minimal" collapse=false title="Заголовок заметки"}
+Это развернутая заметка с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note appearance="minimal" collapse=true title="Заголовок заметки"}
+Это свернутая заметка с заголовком в минимальном оформлении.
+:::
+
+
+
+### Tips {#debug-callout-tip}
+
+:::{.callout-tip}
+Это совет без заголовка и без id.
+:::
+
+:::{.callout-tip #tip-debug-id}
+Это совет без заголовка, но с id.
+:::
+
+:::{.callout-tip title="Заголовок совета"}
+Это совет с заголовком, но без id.
+:::
+
+:::{.callout-tip #tip-debug-title-id title="Заголовок совета"}
+Это совет с заголовком и с id.
+:::
+
+#### Стилевые варианты {#debug-callout-tip-appearance}
+
+:::{.callout-tip appearance="default" collapse=false title="Заголовок совета"}
+Это развернутый совет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-tip appearance="default" collapse=true title="Заголовок совета"}
+Это свернутый совет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-tip appearance="simple" collapse=false title="Заголовок совета"}
+Это развернутый совет с заголовком в простом оформлении.
+:::
+
+:::{.callout-tip appearance="simple" collapse=true title="Заголовок совета"}
+Это свернутый совет с заголовком в простом оформлении.
+:::
+
+:::{.callout-tip appearance="minimal" collapse=false title="Заголовок совета"}
+Это развернутый совет с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-tip appearance="minimal" collapse=true title="Заголовок совета"}
+Это свернутый совет с заголовком в минимальном оформлении.
+:::
+
+
+
+### Warnings {#debug-callout-warning}
+
+:::{.callout-warning}
+Это предупреждение без заголовка и без id.
+:::
+
+:::{.callout-warning #wrn-debug-id}
+Это предупреждение без заголовка, но с id.
+:::
+
+:::{.callout-warning title="Заголовок предупреждения"}
+Это предупреждение с заголовком, но без id.
+:::
+
+:::{.callout-warning #wrn-debug-title-id title="Заголовок предупреждения"}
+Это предупреждение с заголовком и с id.
+:::
+
+#### Стилевые варианты {#debug-callout-warning-appearance}
+
+:::{.callout-warning appearance="default" collapse=false title="Заголовок предупреждения"}
+Это развернутое предупреждение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-warning appearance="default" collapse=true title="Заголовок предупреждения"}
+Это свернутое предупреждение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-warning appearance="simple" collapse=false title="Заголовок предупреждения"}
+Это развернутое предупреждение с заголовком в простом оформлении.
+:::
+
+:::{.callout-warning appearance="simple" collapse=true title="Заголовок предупреждения"}
+Это свернутое предупреждение с заголовком в простом оформлении.
+:::
+
+:::{.callout-warning appearance="minimal" collapse=false title="Заголовок предупреждения"}
+Это развернутое предупреждение с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-warning appearance="minimal" collapse=true title="Заголовок предупреждения"}
+Это свернутое предупреждение с заголовком в минимальном оформлении.
+:::
+
+
+
+### Cautions {#debug-callout-caution}
+
+:::{.callout-caution}
+Это предостережение без заголовка и без id.
+:::
+
+:::{.callout-caution #cau-debug-id}
+Это предостережение без заголовка, но с id.
+:::
+
+:::{.callout-caution title="Заголовок предостережения"}
+Это предостережение с заголовком, но без id.
+:::
+
+:::{.callout-caution #cau-debug-title-id title="Заголовок предостережения"}
+Это предостережение с заголовком и с id.
+:::
+
+#### Стилевые варианты {#debug-callout-caution-appearance}
+
+:::{.callout-caution appearance="default" collapse=false title="Заголовок предостережения"}
+Это развернутое предостережение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-caution appearance="default" collapse=true title="Заголовок предостережения"}
+Это свернутое предостережение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-caution appearance="simple" collapse=false title="Заголовок предостережения"}
+Это развернутое предостережение с заголовком в простом оформлении.
+:::
+
+:::{.callout-caution appearance="simple" collapse=true title="Заголовок предостережения"}
+Это свернутое предостережение с заголовком в простом оформлении.
+:::
+
+:::{.callout-caution appearance="minimal" collapse=false title="Заголовок предостережения"}
+Это развернутое предостережение с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-caution appearance="minimal" collapse=true title="Заголовок предостережения"}
+Это свернутое предостережение с заголовком в минимальном оформлении.
+:::
+
+
+
+### Important {#debug-callout-important}
+
+:::{.callout-important}
+Это важность без заголовка и без id.
+:::
+
+:::{.callout-important #imp-debug-id}
+Это важность без заголовка, но с id.
+:::
+
+:::{.callout-important title="Заголовок важности"}
+Это важность с заголовком, но без id.
+:::
+
+:::{.callout-important #imp-debug-title-id title="Заголовок важности"}
+Это важность с заголовком и с id.
+:::
+
+#### Стилевые варианты {#debug-callout-important-appearance}
+
+:::{.callout-important appearance="default" collapse=false title="Заголовок важности"}
+Это развернутая важность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-important appearance="default" collapse=true title="Заголовок важности"}
+Это свернутая важность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-important appearance="simple" collapse=false title="Заголовок важности"}
+Это развернутая важность с заголовком в простом оформлении.
+:::
+
+:::{.callout-important appearance="simple" collapse=true title="Заголовок важности"}
+Это свернутая важность с заголовком в простом оформлении.
+:::
+
+:::{.callout-important appearance="minimal" collapse=false title="Заголовок важности"}
+Это развернутая важность с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-important appearance="minimal" collapse=true title="Заголовок важности"}
+Это свернутая важность с заголовком в минимальном оформлении.
+:::
+
+
+### Default {#debug-callout-default}
+
+:::{.callout appearance="default" collapse=false title="Заголовок дефолтного коллаута"}
+Некоторый текст для дефолтного коллаута в дефолтном оформлении.
+:::
+
+:::{.callout appearance="simple" collapse=false title="Заголовок дефолтного коллаута"}
+Некоторый текст для дефолтного коллаута в простом оформлении.
+
+У дефолтного колаута нет иконки, поэтому минимальное оформление будет совпадать с простым.
+:::
+
+
+
+### Custom {#debug-callout-custom}
+
+Это текст для отсмотра кроссреф-ссылок на:
+
+- @hst-debug-id
+- @prs-debug-id
+- @dts-debug-id
+- @hst-debug-title-id
+- @prs-debug-title-id
+- @dts-debug-title-id
+
+#### History {#debug-callout-history}
+
+:::{.callout-history}
+Это история без заголовка и без id.
+:::
+
+:::{.callout-history #hst-debug-id}
+Это история без заголовка, но с id.
+:::
+
+:::{.callout-history title="Заголовок истории"}
+Это история с заголовком, но без id.
+:::
+
+:::{.callout-history #hst-debug-title-id title="Заголовок истории"}
+Это история с заголовком и с id.
+:::
+
+##### Стилевые варианты {#debug-callout-history-appearance}
+
+:::{.callout-history appearance="default" collapse=false title="Заголовок истории"}
+Это развернутая история с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-history appearance="default" collapse=true title="Заголовок истории"}
+Это свернутая история с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-history appearance="simple" collapse=false title="Заголовок истории"}
+Это развернутая история с заголовком в простом оформлении.
+:::
+
+:::{.callout-history appearance="simple" collapse=true title="Заголовок истории"}
+Это свернутая история с заголовком в простом оформлении.
+:::
+
+:::{.callout-history appearance="minimal" collapse=false title="Заголовок истории"}
+Это развернутая история с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-history appearance="minimal" collapse=true title="Заголовок истории"}
+Это свернутая история с заголовком в минимальном оформлении.
+:::
+
+
+#### Person {#debug-callout-person}
+
+:::{.callout-person}
+Это личность без заголовка и без id.
+:::
+
+:::{.callout-person #prs-debug-id}
+Это личность без заголовка, но с id.
+:::
+
+:::{.callout-person title="Заголовок личности"}
+Это личность с заголовком, но без id.
+:::
+
+:::{.callout-person #prs-debug-title-id title="Заголовок личности"}
+Это личность с заголовком и с id.
+:::
+
+##### Стилевые варианты {#debug-callout-person-appearance}
+
+:::{.callout-person appearance="default" collapse=false title="Заголовок личности"}
+Это развернутая личность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-person appearance="default" collapse=true title="Заголовок личности"}
+Это свернутая личность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-person appearance="simple" collapse=false title="Заголовок личности"}
+Это развернутая личность с заголовком в простом оформлении.
+:::
+
+:::{.callout-person appearance="simple" collapse=true title="Заголовок личности"}
+Это свернутая личность с заголовком в простом оформлении.
+:::
+
+:::{.callout-person appearance="minimal" collapse=false title="Заголовок личности"}
+Это развернутая личность с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-person appearance="minimal" collapse=true title="Заголовок личности"}
+Это свернутая личность с заголовком в минимальном оформлении.
+:::
+
+
+#### Dataset {#debug-callout-dataset}
+
+:::{.callout-dataset}
+Это датасет без заголовка и без id.
+:::
+
+:::{.callout-dataset #dts-debug-id}
+Это датасет без заголовка, но с id.
+:::
+
+:::{.callout-dataset title="Заголовок личности"}
+Это датасет с заголовком, но без id.
+:::
+
+:::{.callout-dataset #dts-debug-title-id title="Заголовок личности"}
+Это датасет с заголовком и с id.
+:::
+
+##### Стилевые варианты {#debug-callout-dataset-appearance}
+
+:::{.callout-dataset appearance="default" collapse=false title="Заголовок датасета"}
+Это развернутый датасет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-dataset appearance="default" collapse=true title="Заголовок датасета"}
+Это свернутый датасет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-dataset appearance="simple" collapse=false title="Заголовок датасета"}
+Это развернутый датасет с заголовком в простом оформлении.
+:::
+
+:::{.callout-dataset appearance="simple" collapse=true title="Заголовок датасета"}
+Это свернуты датасет с заголовком в простом оформлении.
+:::
+
+:::{.callout-dataset appearance="minimal" collapse=false title="Заголовок датасета"}
+Это развернутый датасет с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-dataset appearance="minimal" collapse=true title="Заголовок датасета"}
+Это свернутый датасет с заголовком в минимальном оформлении.
+:::
+
+
+
+<!---
+:::{.callout-note .clt-history}
+Некоторый текст для кастомного коллаута.
+:::
+
+:::{.callout-note .clt-history title="Кастомный callout"}
+Некоторый текст для кастомного коллаута с заголовком.
+:::
+
+:::{.callout-note .clt-history #nte-cltcustomdebug title="Кастомный callout"}
+Некоторый текст для кастомного коллаута с заголовком и id.
+:::
+
+:::{.callout-note .clt-history title="Кастомный callout" collapse=false}
+Некоторый текст для кастомного коллаута с заголовком и id.
+:::
+
+:::{.callout-note .clt-history title="Кастомный callout" appearance="simple" collapse=false}
+Некоторый текст для кастомного коллаута с заголовком и id.
+:::
+
+:::{.callout-note .clt-history title="Кастомный callout" appearance="minimal" collapse=false}
+Некоторый текст для кастомного коллаута с заголовком и id.
+:::
+--->
+
+
+
+## Maths {#debug-maths}
+
+### Блоки {#debug-maths-blocks}
+
+:::{#thm-debug}
+Это теорема.
+:::
+
+:::{.proof}
+Это доказательство.
+:::
+
+:::{#lem-debug}
+Это лемма.
+:::
+
+:::{#cor-debug}
+Это следствие.
+:::
+
+:::{#prp-debug}
+Это утверждение (предложение).
+:::
+
+:::{#cnj-debug}
+Это гипотеза (предположение).
+:::
+
+:::{#def-debug}
+Это определение.
+:::
+
+:::{#exm-debug}
+Это пример.
+:::
+
+:::{#exr-debug}
+Это упражнение (задание).
+:::
+
+:::{.solution}
+Это ненумерованное решение.
+:::
+
+:::{#sol-debug}
+Это нумерованное решение.
+:::
+
+:::{.remark}
+Это ненумерованное замечание.
+:::
+
+:::{#rem-debug}
+Это нумерованное замечание.
+:::
+
+:::{#alg-debug}
+Это алгоритм.
+:::
+
+### Кастомные символы (includes) {#debug-maths-includes}
+
+Это inline-формула с кастомными символами: $f(x) \defin{=} g(x) \toas h(x)$, которая сама по себе совершенно ничего не значит.
+
+$$
+\circled{2} : \expect (X) \underset{\boxed{1}}{\defin{=}} \int_{-\infty}^{+\infty} x \dens_X (x) \, dx
+$$
+
+
+
+## Код {#debug-code}
+
+```{r}
+#| label: debug-code-table
+#| lst-label: lst-debug-code-table
+#| lst-cap: "Чанк кода с заголовком, генерирующий таблицу"
+#| tbl-cap: "Таблица описательных статистик, сгенерированная кодом"
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+set.seed(123) # <1>
+n_col <- 10; n_row <- 30 # <2>
+sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>% # <3>
+  matrix(nrow = n_row) %>% # <4>
+  as_tibble() %>% # <5>
+  mutate(group = rep(c("group1", "group2"), each = n_row/2)) %>% # <6>
+  pivot_longer(cols = -group) %>% # <7>
+  summarise(n = n(), # <8>
+            mean = mean(value), # <8>
+            sd = sd(value), # <8>
+            skew = moments::skewness(value), # <8>
+            kurt = moments::kurtosis(value) - 3, # <8>
+            .by = group) %>% # <8>
+  mutate(across(is.numeric, round, digits = 2)) %>% # <9>
+  knitr::kable() # <10>
+```
+1. Ставим зерно датчика случайных чисел для воспроизводимости.
+2. Задаём количество строк и столбцов будущей матрицы данных.
+3. Генерируем данные.
+4. Сворачиваем в матрицу.
+5. Приводим к тибблу.
+6. Добавляем переменную `group`.
+7. Приводим к длинному формату.
+8. Рассчитываем описательные статистики с учётом группировки.
+9. Округляем числовые значения до двух знаков после запятой.
+10. Форматируем в таблицу.
+
+
+```{r}
+#| label: debug-code-figure
+#| lst-label: lst-debug-code-figure
+#| lst-cap: "Чанк кода с заголовком, генерирующий рисунок"
+#| fig-cap: "Распределения баллов по группам"
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+set.seed(321)
+n_col <- 10; n_row <- 30
+sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>%
+  matrix(nrow = n_row) %>%
+  as_tibble() %>%
+  mutate(group = rep(c("group1", "group2"), each = n_row/2)) %>%
+  pivot_longer(cols = -group) %>%
+  ggplot() +
+  geom_histogram(aes(x = value, fill = group)) +
+  facet_wrap(~ name) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+
+
+## Диаграммы (Mermaid) {#debug-mermaid}
+
+See <https://quarto.org/docs/authoring/diagrams.html>
+
+```{mermaid}
+flowchart LR
+  A["Блок А"]
+  B["Блок Б"]
+  C["Блок Ц"]
+  
+  A --> B
+  B --> C
+```
+
+```{mermaid}
+gitGraph
+   commit
+   commit
+   branch develop
+   commit
+   commit
+   commit
+   checkout main
+   commit
+   commit
+   merge develop
+```
+
+
+## Картинки {#debug-pics}
+
+:::{#fig-debug}
+![Первая картинка](img/debug-pic.jpg){#fig-debug-1}
+
+![Вторая картинка](img/debug-pic.jpg){#fig-debug-2}
+
+Дебажные картинки в обычном лэйауте
+:::
+
+:::{#fig-debug layout-ncol=2}
+![Левая картинка](img/debug-pic.jpg){#fig-debug-1}
+
+![Правая картинка](img/debug-pic.jpg){#fig-debug-2}
+
+Дебажные картинки в  лэйауте на 2 колонки
+:::

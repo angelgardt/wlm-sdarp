@@ -14,7 +14,10 @@ book:
       email: "anton.angelgardt@gmail.com"
   chapters: 
     - index.qmd
-  
+    - part: chapters/ru/_debug/_debug.qmd
+      chapters: 
+        - chapters/ru/_debug/debug.qmd
+
 format:
   html:
     cover-image: img/cover-ru.jpg
