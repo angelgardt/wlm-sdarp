@@ -1,0 +1,24 @@
+<!-- {{< include ../../../../shared/includes/math-symbols.qmd >}} -->
+
+<!-- Decorations -->
+\newcommand{\circled}[1]{\enclose{circle}{#1}}
+<!-- \newcommand{\boxed}[1]{\enclose{box}{#1}} -->
+
+<!-- Common -->
+\newcommand{\const}{\text{const}}
+\newcommand{\fix}{\text{fix}}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
+
+
+\newcommand{\defin}[1]{\overset{\text{def}}{#1}}
+\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
+\newcommand{\toprob}{\overset{p}{\to}}
+\newcommand{\todist}{\overset{d}{\to}}
+
+<!-- Logic -->
+\newcommand{\true}{\mathsf{T}}
+\newcommand{\false}{\mathsf{F}}
