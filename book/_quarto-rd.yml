@@ -1,0 +1,20 @@
+lang: ru
+# language: _langs/_lang-rd.yml
+# 
+# metadata-files: 
+#   - _meta/_meta-rd.yml
+
+project: 
+  output-dir: _site/rd
+
+book: 
+  subtitle: "Міръ линейныхъ моделей: статистика и анализъ данныхъ в Аръ для психологовъ"
+  author: 
+    - name: "Антонъ Ангельгардтъ"
+      email: "anton.angelgardt@gmail.com"
+  chapters: 
+    - index.qmd
+  
+format:
+  html:
+    cover-image: img/cover-rd.jpg
