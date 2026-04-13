@@ -18,6 +18,9 @@ title: "Глава [отладка]"
 
 Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий [@knuth84].
 
+> Это цитата, оформленная средствами Markdown из коробки.
+
+
 ## Лейблы {#debug-labs .lab-junior}
 
 Просто тестовый текст.
@@ -577,6 +580,8 @@ title: "Глава [отладка]"
 
 ### Кастомные символы (includes) {#debug-maths-includes}
 
+Это inline-формула с кастомными символами: $f(x) \defin{=} g(x) \toas h(x)$, которая сама по себе совершенно ничего не значит.
+
 $$
 \circled{2} : \expect (X) \underset{\boxed{1}}{\defin{=}} \int_{-\infty}^{+\infty} x \dens_X (x) \, dx
 $$
@@ -584,6 +589,69 @@ $$
 
 
 ## Код {#debug-code}
+
+```{r}
+#| label: debug-code-table
+#| lst-label: lst-debug-code-table
+#| lst-cap: "Чанк кода с заголовком, генерирующий таблицу"
+#| tbl-cap: "Таблица описательных статистик, сгенерированная кодом"
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+set.seed(123) # <1>
+n_col <- 10; n_row <- 30 # <2>
+sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>% # <3>
+  matrix(nrow = n_row) %>% # <4>
+  as_tibble() %>% # <5>
+  mutate(group = rep(c("group1", "group2"), each = n_row/2)) %>% # <6>
+  pivot_longer(cols = -group) %>% # <7>
+  summarise(n = n(), # <8>
+            mean = mean(value), # <8>
+            sd = sd(value), # <8>
+            skew = moments::skewness(value), # <8>
+            kurt = moments::kurtosis(value) - 3, # <8>
+            .by = group) %>% # <8>
+  mutate(across(is.numeric, round, digits = 2)) %>% # <9>
+  knitr::kable() # <10>
+```
+1. Ставим зерно датчика случайных чисел для воспроизводимости.
+2. Задаём количество строк и столбцов будущей матрицы данных.
+3. Генерируем данные.
+4. Сворачиваем в матрицу.
+5. Приводим к тибблу.
+6. Добавляем переменную `group`.
+7. Приводим к длинному формату.
+8. Рассчитываем описательные статистики с учётом группировки.
+9. Округляем числовые значения до двух знаков после запятой.
+10. Форматируем в таблицу.
+
+
+```{r}
+#| label: debug-code-figure
+#| lst-label: lst-debug-code-figure
+#| lst-cap: "Чанк кода с заголовком, генерирующий рисунок"
+#| fig-cap: "Распределения баллов по группам"
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+set.seed(321)
+n_col <- 10; n_row <- 30
+sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>%
+  matrix(nrow = n_row) %>%
+  as_tibble() %>%
+  mutate(group = rep(c("group1", "group2"), each = n_row/2)) %>%
+  pivot_longer(cols = -group) %>%
+  ggplot() +
+  geom_histogram(aes(x = value, fill = group)) +
+  facet_wrap(~ name) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
 
 
 ## Диаграммы (Mermaid) {#debug-mermaid}
