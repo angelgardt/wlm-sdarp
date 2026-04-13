@@ -2,7 +2,9 @@
 title: "Глава [отладка]"
 ---
 
+<!---
 {{< include ../../../../shared/includes/math-symbols.qmd >}}
+--->
 
 :::{.intro}
 Текст введения. 
