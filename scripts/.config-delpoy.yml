@@ -1,0 +1,34 @@
+script:
+  version: 0.0.1
+repo-name: wlm-sdarp
+
+gh-pages:
+  branch: gh-pages
+
+valid:
+  versions:
+    - alpha
+    - beta
+    - stable
+  projects:
+    - book
+    - assessment
+  profiles:
+    - ru
+    - rd
+    - en
+
+colors:
+  enabled: true
+  info: "cyan"
+  success: "green"
+  warning: "yellow"
+  error: "red"
+  reset: "reset"
+  bold: "bold"
+
+archive:
+  policy: minor
+  tag-prefix: "v"
+
+temp: _tmp-deploy
