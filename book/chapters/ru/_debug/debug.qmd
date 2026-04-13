@@ -682,3 +682,21 @@ gitGraph
    merge develop
 ```
 
+
+## Картинки {#debug-pics}
+
+:::{#fig-debug}
+![Первая картинка](img/debug-pic.jpg){#fig-debug-1}
+
+![Вторая картинка](img/debug-pic.jpg){#fig-debug-2}
+
+Дебажные картинки в обычном лэйауте
+:::
+
+:::{#fig-debug layout-ncol=2}
+![Левая картинка](img/debug-pic.jpg){#fig-debug-1}
+
+![Правая картинка](img/debug-pic.jpg){#fig-debug-2}
+
+Дебажные картинки в  лэйауте на 2 колонки
+:::
