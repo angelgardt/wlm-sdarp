@@ -16,7 +16,6 @@ valid:
   profiles:
     - ru
     - rd
-    - en
 
 colors:
   enabled: true
