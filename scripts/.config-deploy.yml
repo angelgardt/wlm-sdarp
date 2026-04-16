@@ -9,9 +9,12 @@ valid:
   version:
     format: "[MAJOR].[MINOR].[PATCH]"
     stage:
-      - alpha
-      - beta
-      - stable
+      - name: alpha
+        branch: dev
+      - name: beta
+        branch: beta
+      - name: stable
+        branch: master
   projects:
     - book
     - assessment

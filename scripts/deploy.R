@@ -3,11 +3,15 @@
 # WLM SDARP — GitHub Pages Deployment Script
 # ==============================================================================
 # Usage:
-#   Rscript scripts/deploy.R -v               ## to see script version
-#   Rscript scripts/deploy.R -h               ## to see help
-#   Rscript scripts/deploy.R --help           ## to see help
-#   Rscript scripts/deploy.R --dry-run        ## to run test deploy without pushing to GitHub
-#   Rscript scripts/deploy.R                  ## to run deploy
+#   ## to see script version
+#     Rscript scripts/deploy.R -v
+#   ## to see help
+#     Rscript scripts/deploy.R -h
+#     Rscript scripts/deploy.R --help
+#   ## to run deploy
+#     Rscript scripts/deploy.R --project book --profile ru
+#   ## to run test deploy without pushing to GitHub
+#     Rscript scripts/deploy.R --project book --profile ru --dry-run
 # ==============================================================================
 
 # --- Load dependencies --------------------------------------------------------
@@ -18,24 +22,20 @@ suppressPackageStartupMessages({
   library(yaml)
 })
 
-# --- Read config & meta -----------------------------------------------
-config <- read_yaml("scripts/.config-deploy.yml")
-meta <- read_yaml("book/_metadata.yml")
-
-# SCRIPT_VERSION <- config$script$version
-# REPO_NAME <- config$`repo-name`
-# GH_PAGES_BRANCH <- config$`gh-pages`$branch
-# VALID_VERSIONS <- config$valid$versions
-# VALID_PROJECTS <- config$valid$projects
-# VALID_PROFILES <- config$valid$profiles
-# TEMP_DIR <- config$temp
 
 # --- Documentation for docopt --------------------------------------------------
 doc <- "
 Deploy projects of WLM SDARP to GitHub Pages.
-Just run the command
-    Rscript scripts/deploy.R
-and follow the instructions.
+Run the command
+    to see script version
+      Rscript scripts/deploy.R -v
+    to see help
+      Rscript scripts/deploy.R -h
+      Rscript scripts/deploy.R --help
+    to run deploy
+      Rscript scripts/deploy.R --project book --profile ru
+    to run test deploy without pushing to GitHub
+      Rscript scripts/deploy.R --project book --profile ru --dry-run
 
 Usage:
   deploy.R [options]
@@ -43,26 +43,11 @@ Usage:
 Options:
   -h --help            Show this message
   -v                   Show script version
+  --profile=<prof>     Language profile
+  --project=<proj>     Quarto project to deploy
   --dry-run            Test run without git push
 "
 
-# --- Parse args -------------------------------------------------------
-opts <- docopt(doc)
-
-# Handle -v flag (script version)
-if (isTRUE(opts$`-v`)) {
-  cat(sprintf("deploy.R version %s\n", config$script$version))
-  quit(status = 0)
-}
-
-### ____TESTING____
-# if (isTRUE(opts$`--dry-run`)) {
-#   cat("dry-run\n")
-#   quit(status = 0)
-# }
-# 
-# cat("go\n")
-# quit(status = 0)
 
 # --- Helpers --------------------------------------------------
 
@@ -114,7 +99,6 @@ get_repo_url <- function() {
 }
 
 # --- Set logging ----------------------------------------------------------
-
 LOGDIR <- "scripts/logs/deploy"
 if (!fs::dir_exists(LOGDIR)) {
   fs::dir_create(LOGDIR, recurse = TRUE)
@@ -123,13 +107,48 @@ if (!fs::dir_exists(LOGDIR)) {
 LOGFILE <- fs::path(LOGDIR, Sys.time(), ext = "log")
 fs::file_create(LOGFILE)
 
+
+# --- Read config & meta -----------------------------------------------
+CONFIG_PATH <- "scripts/.config-deploy.yml"
+META_PATH <- "book/_metadata.yml"
+
+if (fs::file_exists(CONFIG_PATH)) {
+  CONFIG <- read_yaml("scripts/.config-deploy.yml")
+} else {
+  log_error("No config file")
+  quit(status = 1)
+}
+
+if (fs::file_exists(META_PATH)) {
+  META <- read_yaml("book/_metadata.yml")
+} else {
+  log_error("No meta file")
+  quit(status = 1)
+}
+
+
+# --- Parse args -------------------------------------------------------
+opts <- docopt(doc)
+
+# Handle -v flag (script version)
+if (isTRUE(opts$`-v`)) {
+  cat(sprintf("deploy.R version %s\n", CONFIG$script$version))
+  quit(status = 0)
+}
+
+
 # --- Validate version & stage ----------------------------------------------------------
+cat("\n=== Version Validation ===\n")
+cat(sprintf("  Version found in metadata: %s\n", META$version))
 
 VERSION_PATTERN <- "^[[:digit:]]+\\.[[:digit:]]+\\.[[:digit:]]+"
-STAGE_PATTERN <- "-?(alpha|beta|stable)$"
+STAGES <- Map(\(x) x$name, 
+              CONFIG$valid$version$stage) |> 
+  unlist()
+STAGE_PATTERN <- paste0("-?(", paste0(STAGES, collapse = "|"), ")")
 
-if (grepl(paste0(VERSION_PATTERN, STAGE_PATTERN), meta$version)) {
-  log_success("Version successfully validated!")
+if (grepl(paste0(VERSION_PATTERN, STAGE_PATTERN), META$version)) {
+  log_success("Version validated successfully")
 } else {
   msg <- "Unknown version format.
   Only these are available:
@@ -140,87 +159,113 @@ if (grepl(paste0(VERSION_PATTERN, STAGE_PATTERN), meta$version)) {
   log_error(msg)
 }
 
+VERSION <- sub(pattern = STAGE_PATTERN, replacement = "", x = META$version)
+STAGE <- sub(pattern = VERSION_PATTERN, replacement = "", x = META$version) |>
+  sub(pattern = "-", replacement = "", x = _)
 
-# --- Get arguments for deploy ----------------------------------------------------------
+
+# --- Validate inputs -------------------------------------------------
+cat("\n=== Input Validation ===\n")
 
 DRY_RUN <- isTRUE(opts$`--dry-run`)
-VERSION <- sub(pattern = STAGE_PATTERN, 
-               replacement = "", 
-               x = meta$version)
-STAGE <- sub(pattern = VERSION_PATTERN, 
-             replacement = "", 
-             x = meta$version) |> 
-  sub(pattern = "^-", 
-      replacement = "", 
-      x = _)
 
-cat("Select project:\n")
-cat(paste(1:length(config$valid$projects), config$valid$projects, sep = ". "), sep = "\n")
-PROJECT <- config$valid$projects[as.numeric(readline())]
+PROFILE <- opts$`--profile`
+if (!PROFILE %in% CONFIG$valid$profiles) {
+  stop_with_error(sprintf("Invalid --profile. Allowed: %s", 
+                          paste(CONFIG$valid$profiles, collapse = ", ")))
+}
 
-cat("Select profile:\n")
-cat(paste(1:length(config$valid$profiles), config$valid$profiles, sep = ". "), sep = "\n")
-PROFILE <- config$valid$profiles[as.numeric(readline())]
+PROJECT <- opts$`--project`
+if (!PROJECT %in% CONFIG$valid$projects) {
+  stop_with_error(sprintf("Invalid --project. Allowed: %s", 
+                          paste(CONFIG$valid$projects, collapse = ", ")))
+}
 
-cat("Project:", PROJECT)
-cat("Profile:", PROJECT)
+if (STAGE == "stable") {
+  TAG <- paste0(CONFIG$archive$`tag-prefix`, VERSION)
+} else {
+  TAG <- NULL
+}
 
-quit(status = 0)
+log_success("Inputs validated successfully!")
+
+
+# --- Summary presentation ------------------------------------------
+cat("\n=== Deployment Summary ===\n")
+cat(sprintf("  Project: %s\n", PROJECT))
+cat(sprintf("  Profile: %s\n", PROFILE))
+cat(sprintf("  Version: %s\n", VERSION))
+cat(sprintf("  Stage: %s\n", STAGE))
+if (!is.null(TAG)) cat(sprintf("  Tag: %s\n", TAG))
+cat(sprintf("  Dry run: %s\n", ifelse(DRY_RUN, "YES (no push)", "NO")))
+
 
 # --- Validate branch ----------------------------------------------------------
+cat("\n=== Branch Validation ===\n")
+BRANCHES <- Map(\(x) x$branch, CONFIG$valid$version$stage) |> unlist()
 
+CURRENT_BRANCH <- get_current_branch()
+log_info(sprintf("Current branch: %s", CURRENT_BRANCH))
 
-current_branch <- get_current_branch()
-log_info(sprintf("Current branch: %s", current_branch))
-
-if (current_branch == "dev") {
-  if (version != "alpha") {
-    stop_with_error(sprintf(
-      "Only alpha versions can be deployed from %s.\n For %s, switch to master: git checkout master",
-      current_branch, version
-    ))
-  }
-  log_info("Alpha deploy from dev branch — allowed")
-} else if (current_branch == "master") {
-  if (version == "alpha") {
-    log_info("Warning: alpha deploy from master. Usually alpha is deployed from */dev.")
-  }
-  log_info(sprintf("%s deploy from master — allowed", version))
-} else {
-  stop_with_error(
-    "Deploy is only allowed from '*/dev' or 'master'.\n",
-    sprintf("Current branch: %s\n", current_branch),
-    "Switch to: git checkout dev  or  git checkout master",
+CURRENT_BRANCH <- "beta"
+if (!CURRENT_BRANCH %in% BRANCHES) {
+  stop_with_error(sprintf(
+    "Deployment from the %s branch is prohibited!\n
+    Switch to %s to deploy %s respectively.",
+    CURRENT_BRANCH, 
+    paste(BRANCHES, collapse = ", "),
+    paste(STAGES, collapse = ", ")
+    )
   )
+} else if (CURRENT_BRANCH != BRANCHES[which(STAGES == STAGE)]) {
+  stop_with_error(sprintf(
+    "Only %s versions can be deployed from %s.\n For %s, switch to %s",
+    STAGES[which(BRANCHES == CURRENT_BRANCH)],
+    CURRENT_BRANCH, 
+    STAGE,
+    BRANCHES[which(STAGES == STAGE)]
+    )
+  )
+} else {
+  log_info(sprintf("%s deploy from %s branch — allowed",
+                   STAGE, 
+                   CURRENT_BRANCH))
+  log_success("Branch validated successfully!")
 }
+
 
 # --- Check project exists -------------------------------------------------
+cat("\n=== Check project folder exists ===\n")
 
-project_path <- fs::path(project)
-if (!fs::dir_exists(project_path)) {
-  stop_with_error(sprintf("Project folder not found: %s", project_path))
+PROJECT_PATH <- fs::path(PROJECT)
+if (!fs::dir_exists(PROJECT_PATH)) {
+  stop_with_error(sprintf("Project folder not found: %s", PROJECT_PATH))
 }
+log_success("All good!")
 
 # --- Check profile config exists -------------------------------------------------
+cat("\n=== Check profile config exists ===\n")
 
-profile_config <- fs::path(project, sprintf("_quarto-%s.yml", profile))
-if (!fs::file_exists(profile_config)) {
-  stop_with_error(sprintf("Profile config not found: %s", profile_config))
+PROFILE_CONFIG <- fs::path(PROJECT, sprintf("_quarto-%s.yml", PROFILE))
+if (!fs::file_exists(PROFILE_CONFIG)) {
+  stop_with_error(sprintf("Profile config not found: %s", PROFILE_CONFIG))
 }
+log_success("All good!")
+
 
 # --- Step 1: Render project -------------------------------------------------
 
-log_info(sprintf("=== STEP 1: Rendering project %s (profile: %s) ===", project, profile))
+log_info(sprintf("=== STEP 1: Rendering project %s (profile: %s) ===", PROJECT, PROFILE))
 
 render_result <- run_cmd(
   "quarto",
-  c("render", project, "--profile", profile),
+  c("render", PROJECT, "--profile", PROFILE),
   echo = TRUE
 )
 
 # Verify _site/<profile> was created
-site_path <- fs::path(project, "_site", profile)
-if (!fs::dir_exists(site_path)) {
+SITE_PATH <- fs::path(PROJECT, "_site", PROFILE)
+if (!fs::dir_exists(SITE_PATH)) {
   stop_with_error(sprintf("_site folder not created after render: %s", site_path))
 }
 
@@ -230,13 +275,13 @@ log_success("Rendering completed")
 
 log_info("=== STEP 2: Preparing temp folder ===")
 
-deploy_temp <- fs::path(TEMP_DIR, sprintf("gh-pages-deploy-%s", Sys.getpid()))
+DEPLOY_TEMP <- fs::path(CONFIG$temp, sprintf("gh-pages-deploy-%s", Sys.getpid()))
 
-if (fs::dir_exists(deploy_temp)) {
-  fs::dir_delete(deploy_temp)
+if (fs::dir_exists(DEPLOY_TEMP)) {
+  fs::dir_delete(DEPLOY_TEMP)
 }
 
-repo_url <- get_repo_url()
+REPO_URL <- get_repo_url()
 if (repo_url == "") {
   stop_with_error("Could not get repository URL. Check git remote")
 }
@@ -244,56 +289,57 @@ if (repo_url == "") {
 # Clone gh-pages with depth 1 for speed
 run_cmd(
   "git",
-  c("clone", "--depth", "1", "--branch", GH_PAGES_BRANCH, repo_url, deploy_temp),
+  c("clone", "--depth", "1", "--branch", CONFIG$`gh-pages`$branch,
+    REPO_URL, DEPLOY_TEMP),
   echo = TRUE
 )
 
-log_success(sprintf("gh-pages cloned to: %s", deploy_temp))
+log_success(sprintf("gh-pages cloned to: %s", DEPLOY_TEMP))
 
 # --- Step 3: Copy artifacts ---------------------------------------------------
 
 log_info("=== STEP 3: Copying artifacts ===")
 
 # Determine subpath inside version/
-target_subpath <- fs::path(project, profile)
-target_path <- fs::path(deploy_temp, version, target_subpath)
+TARGET_SUBPATH <- fs::path(PROJECT, PROFILE)
+TARGET_PATH <- fs::path(DEPLOY_TEMP, STAGE, TARGET_SUBPATH)
 
 # Create target folder
-fs::dir_create(target_path, recursive = TRUE)
+fs::dir_create(TARGET_PATH, recurse = TRUE)
 
 # Remove old content (full replacement)
-if (fs::dir_exists(target_path)) {
-  fs::dir_delete(target_path)
+if (fs::dir_exists(TARGET_PATH)) {
+  fs::dir_delete(TARGET_PATH)
 }
 
 # Copy _site to target folder
-fs::dir_copy(site_path, target_path)
+fs::dir_copy(SITE_PATH, TARGET_PATH)
 
-log_success(sprintf("Artifacts copied to: %s", fs::path_rel(target_path, deploy_temp)))
+log_success(sprintf("Artifacts copied to: %s", fs::path_rel(TARGET_PATH, DEPLOY_TEMP)))
 
 # --- Step 4: Archive to prev/ (stable with tag only) --------------------------
 
-if (version == "stable" && !is.null(tag)) { ## ADD CHECK FOR MINOR!!! - smth like str_detect(tag, "\.0$")
-  log_info(sprintf("=== STEP 4: Archiving to prev/%s ===", tag))
-  
-  if (project == "book") {
-    prev_subpath <- fs::path("book", profile)
-  } else {
-    prev_subpath <- "assessment"
-  }
-  
-  prev_path <- fs::path(deploy_temp, "prev", tag, prev_subpath)
-  fs::dir_create(prev_path, recursive = TRUE)
-  fs::dir_copy(site_path, prev_path)
-  
-  log_success(sprintf("Archive created: %s", fs::path_rel(prev_path, deploy_temp)))
-}
+# if (STAGE == "stable" && !is.null(TAG)) { ## ADD CHECK FOR MINOR!!! - smth like str_detect(tag, "\.0$")
+#   log_info(sprintf("=== STEP 4: Archiving to prev/%s ===", tag))
+#   
+#   if (project == "book") {
+#     prev_subpath <- fs::path("book", profile)
+#   } else {
+#     prev_subpath <- "assessment"
+#   }
+#   
+#   prev_path <- fs::path(deploy_temp, "prev", tag, prev_subpath)
+#   fs::dir_create(prev_path, recursive = TRUE)
+#   fs::dir_copy(site_path, prev_path)
+#   
+#   log_success(sprintf("Archive created: %s", fs::path_rel(prev_path, deploy_temp)))
+# }
 
 # --- Step 5: Git commit и push -------------------------------------------------
 
 log_info("=== STEP 5: Commit and push to gh-pages ===")
 
-setwd(deploy_temp)
+setwd(DEPLOY_TEMP)
 
 # Configure git user (if not set globally)
 run_cmd("git", c("config", "user.name", "Deploy Script"), 
@@ -305,28 +351,28 @@ run_cmd("git", c("config", "user.email", "deploy@wlm-sdarp.local"),
 run_cmd("git", c("add", "-A"), echo = TRUE)
 
 # Check if there are changes to commit
-status_result <- run_cmd("git", c("status", "--porcelain"), echo = FALSE, error_on_status = FALSE)
+STATUS_RESULT <- run_cmd("git", c("status", "--porcelain"), echo = FALSE, error_on_status = FALSE)
 
-if (trimws(status_result$stdout) == "") {
+if (trimws(STATUS_RESULT$stdout) == "") {
   log_info("No changes. Skipping commit.")
 } else {
-  commit_hash <- get_current_commit_hash()
-  commit_msg <- sprintf(
-    "deploy: %s/%s (%s) from %s@%s",
-    version, project, profile, current_branch, commit_hash
+  COMMIT_HASH <- get_current_commit_hash()
+  COMMIT_MSG <- sprintf(
+    "deploy: %s-%s/%s (%s) from %s@%s",
+    VERSION, STAGE, PROJECT, PROFILE, CURRENT_BRANCH, COMMIT_HASH
   )
   
-  if (!is.null(tag)) {
-    commit_msg <- sprintf("%s [tag: %s]", commit_msg, tag)
+  if (!is.null(TAG)) {
+    COMMIT_MSG <- sprintf("%s [tag: %s]", COMMIT_MSG, TAG)
   }
   
-  run_cmd("git", c("commit", "-m", commit_msg), echo = TRUE)
+  run_cmd("git", c("commit", "-m", COMMIT_MSG), echo = TRUE)
   
   if (dry_run) {
     log_info("DRY RUN: skipping git push")
   } else {
-    run_cmd("git", c("push", "origin", GH_PAGES_BRANCH), echo = TRUE)
-    log_success("Changes pushed to gh-pages")
+    run_cmd("git", c("push", "origin", CONFIG$`gh-pages`$branch), echo = TRUE)
+    log_success(sprintf("Changes pushed to %s", CONFIG$`gh-pages`$branch))
   }
 }
 
@@ -336,8 +382,8 @@ setwd("../..")
 
 log_info("=== STEP 6: Cleanup ===")
 
-fs::dir_delete(TEMP_DIR)
-log_success(sprintf("Temp folder deleted: %s", deploy_temp))
+fs::dir_delete(DEPLOY_TEMP)
+log_success(sprintf("Temp folder deleted: %s", DEPLOY_TEMP))
 
 # --- Final summary ------------------------------------------------------------
 
@@ -345,19 +391,20 @@ cat("\n")
 log_success("=== DEPLOYMENT COMPLETED ===\n")
 
 # Build URL for viewing
-page_path <- fs::path(version, project, profile, "")
+PAGE_PATH <- fs::path(STAGE, PROJECT, PROFILE, "")
 
-pages_url <- sprintf("https://angelgardt.github.io/%s/%s", REPO_NAME, page_path)
+PAGES_URL <- sprintf("https://angelgardt.github.io/%s/%s", CONFIG$`repo-name`, PAGE_PATH)
 
-cat(sprintf("\nProject: %s\n", project))
-cat(sprintf("Profile: %s\n", profile))
-cat(sprintf("Version: %s\n", version))
-if (!is.null(tag)) {
-  cat(sprintf("Tag: %s\n", tag))
+cat(sprintf("\nProject: %s\n", PROJECT))
+cat(sprintf("Profile: %s\n", PROFILE))
+cat(sprintf("Version: %s\n", VERSION))
+cat(sprintf("STAGE: %s\n", STAGE))
+if (!is.null(TAG)) {
+  cat(sprintf("Tag: %s\n", TAG))
 }
-cat(sprintf("URL: %s\n", pages_url))
+cat(sprintf("URL: %s\n", PAGES_URL))
 
-if (dry_run) {
+if (DRY_RUN) {
   cat("\nThis was a dry run (--dry-run). Changes were NOT pushed to repository.\n")
 }
 
