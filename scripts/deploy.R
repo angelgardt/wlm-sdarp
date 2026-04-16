@@ -3,9 +3,11 @@
 # WLM SDARP — GitHub Pages Deployment Script
 # ==============================================================================
 # Usage:
-#   Rscript scripts/deploy.R --stage alpha --profile ru --project book
-#   Rscript scripts/deploy.R --stage stable --profile ru --project book --tag v0.3.0
-#   Rscript scripts/deploy.R --stage beta --profile en --project assessment
+#   Rscript scripts/deploy.R -v               ## to see script version
+#   Rscript scripts/deploy.R -h               ## to see help
+#   Rscript scripts/deploy.R --help           ## to see help
+#   Rscript scripts/deploy.R --dry-run        ## to run test deploy without pushing to GitHub
+#   Rscript scripts/deploy.R                  ## to run deploy
 # ==============================================================================
 
 # --- Load dependencies --------------------------------------------------------
@@ -17,31 +19,31 @@ suppressPackageStartupMessages({
 })
 
 # --- Read config & Set constants -----------------------------------------------
-config <- read_yaml("scripts/.deploy-config.yml")
+config <- read_yaml("scripts/.config-deploy.yml")
+meta <- read_yaml("book/_metadata.yml")
 
-SCRIPT_VERSION <- config$script$version
-REPO_NAME <- config$`repo-name`
-GH_PAGES_BRANCH <- config$`gh-pages`$branch
-VALID_VERSIONS <- config$valid$versions
-VALID_PROJECTS <- config$valid$projects
-VALID_PROFILES <- config$valid$profiles
-TEMP_DIR <- config$temp
+# SCRIPT_VERSION <- config$script$version
+# REPO_NAME <- config$`repo-name`
+# GH_PAGES_BRANCH <- config$`gh-pages`$branch
+# VALID_VERSIONS <- config$valid$versions
+# VALID_PROJECTS <- config$valid$projects
+# VALID_PROFILES <- config$valid$profiles
+# TEMP_DIR <- config$temp
 
 # --- Documentation for docopt --------------------------------------------------
 doc <- "
-Deploy projects of WLM SDARP to GitHub Pages
+Deploy projects of WLM SDARP to GitHub Pages.
+Just run the command
+    Rscript scripts/deploy.R
+and follow the instructions.
 
 Usage:
   deploy.R [options]
 
 Options:
-  --version=<ver>      Deploy stage: alpha, beta, stable
-  --profile=<prof>     Language profile: ru, en, rd, eo, isv
-  --project=<proj>     Project to deploy: book, assessment
-  --tag=<tag>          Version tag for archiving in prev/ (stable only)
-  --dry-run            Test run without git push
   -h --help            Show this message
   -v                   Show script version
+  --dry-run            Test run without git push
 "
 
 # --- Parse args -------------------------------------------------------
@@ -49,22 +51,34 @@ opts <- docopt(doc)
 
 # Handle -v flag (script version)
 if (isTRUE(opts$`-v`)) {
-  cat(sprintf("deploy.R version %s\n", SCRIPT_VERSION))
+  cat(sprintf("deploy.R version %s\n", config$script$version))
   quit(status = 0)
 }
+
+### ____TESTING____
+# if (isTRUE(opts$`--dry-run`)) {
+#   cat("dry-run\n")
+#   quit(status = 0)
+# }
+# 
+# cat("go\n")
+# quit(status = 0)
 
 # --- Helpers --------------------------------------------------
 
 log_info <- function(...) {
   cat(sprintf("[INFO] %s\n", paste0(...)), file = stderr())
+  cat(sprintf("[INFO] %s\n", paste0(...)), file = LOGDIR, append = TRUE)
 }
 
 log_success <- function(...) {
   cat(sprintf("[OK] %s\n", paste0(...)), file = stderr())
+  cat(sprintf("[OK] %s\n", paste0(...)), file = LOGDIR, append = TRUE)
 }
 
 log_error <- function(...) {
   cat(sprintf("[ERROR] %s\n", paste0(...)), file = stderr())
+  cat(sprintf("[ERROR] %s\n", paste0(...)), file = LOGDIR, append = TRUE)
 }
 
 stop_with_error <- function(...) {
