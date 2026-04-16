@@ -154,8 +154,18 @@ STAGE <- sub(pattern = VERSION_PATTERN,
       replacement = "", 
       x = _)
 
+cat("Select project:\n")
+cat(paste(1:length(config$valid$projects), config$valid$projects, sep = ". "), sep = "\n")
+PROJECT <- config$valid$projects[as.numeric(readline())]
 
+cat("Select profile:\n")
+cat(paste(1:length(config$valid$profiles), config$valid$profiles, sep = ". "), sep = "\n")
+PROFILE <- config$valid$profiles[as.numeric(readline())]
 
+cat("Project:", PROJECT)
+cat("Profile:", PROJECT)
+
+quit(status = 0)
 
 # --- Validate branch ----------------------------------------------------------
 
