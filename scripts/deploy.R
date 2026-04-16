@@ -137,6 +137,8 @@ if (isTRUE(opts$`-v`)) {
 }
 
 
+# --- Step 0: Validation -------------------------------------------------
+
 # --- Validate version & stage ----------------------------------------------------------
 cat("\n=== Version Validation ===\n")
 cat(sprintf("  Version found in metadata: %s\n", META$version))
@@ -207,7 +209,6 @@ BRANCHES <- Map(\(x) x$branch, CONFIG$valid$version$stage) |> unlist()
 CURRENT_BRANCH <- get_current_branch()
 log_info(sprintf("Current branch: %s", CURRENT_BRANCH))
 
-CURRENT_BRANCH <- "beta"
 if (!CURRENT_BRANCH %in% BRANCHES) {
   stop_with_error(sprintf(
     "Deployment from the %s branch is prohibited!\n
@@ -219,7 +220,7 @@ if (!CURRENT_BRANCH %in% BRANCHES) {
   )
 } else if (CURRENT_BRANCH != BRANCHES[which(STAGES == STAGE)]) {
   stop_with_error(sprintf(
-    "Only %s versions can be deployed from %s.\n For %s, switch to %s",
+    "Only %s versions can be deployed from %s branch.\n For %s, switch to %s",
     STAGES[which(BRANCHES == CURRENT_BRANCH)],
     CURRENT_BRANCH, 
     STAGE,
@@ -242,6 +243,7 @@ if (!fs::dir_exists(PROJECT_PATH)) {
   stop_with_error(sprintf("Project folder not found: %s", PROJECT_PATH))
 }
 log_success("All good!")
+
 
 # --- Check profile config exists -------------------------------------------------
 cat("\n=== Check profile config exists ===\n")
@@ -266,10 +268,11 @@ render_result <- run_cmd(
 # Verify _site/<profile> was created
 SITE_PATH <- fs::path(PROJECT, "_site", PROFILE)
 if (!fs::dir_exists(SITE_PATH)) {
-  stop_with_error(sprintf("_site folder not created after render: %s", site_path))
+  stop_with_error(sprintf("_site folder not created after render: %s", SITE_PATH))
 }
 
 log_success("Rendering completed")
+
 
 # --- Step 2: Prepare temp folder for gh-pages ---------------------------------
 
