@@ -18,7 +18,7 @@ suppressPackageStartupMessages({
   library(yaml)
 })
 
-# --- Read config & Set constants -----------------------------------------------
+# --- Read config & meta -----------------------------------------------
 config <- read_yaml("scripts/.config-deploy.yml")
 meta <- read_yaml("book/_metadata.yml")
 
@@ -68,17 +68,17 @@ if (isTRUE(opts$`-v`)) {
 
 log_info <- function(...) {
   cat(sprintf("[INFO] %s\n", paste0(...)), file = stderr())
-  cat(sprintf("[INFO] %s\n", paste0(...)), file = LOGDIR, append = TRUE)
+  cat(sprintf("[INFO] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
 }
 
 log_success <- function(...) {
   cat(sprintf("[OK] %s\n", paste0(...)), file = stderr())
-  cat(sprintf("[OK] %s\n", paste0(...)), file = LOGDIR, append = TRUE)
+  cat(sprintf("[OK] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
 }
 
 log_error <- function(...) {
   cat(sprintf("[ERROR] %s\n", paste0(...)), file = stderr())
-  cat(sprintf("[ERROR] %s\n", paste0(...)), file = LOGDIR, append = TRUE)
+  cat(sprintf("[ERROR] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
 }
 
 stop_with_error <- function(...) {
@@ -113,44 +113,49 @@ get_repo_url <- function() {
   trimws(result$stdout)
 }
 
-# --- Validate required arguments ----------------------------------------------
+# --- Set logging ----------------------------------------------------------
 
-validate_required_arg <- function(arg_name, arg_value) {
-  if (is.null(arg_value)) {
-    stop_with_error(sprintf("--%s is required, but not specified", arg_name))
-  }
+LOGDIR <- "scripts/logs/deploy"
+if (!fs::dir_exists(LOGDIR)) {
+  fs::dir_create(LOGDIR, recurse = TRUE)
 }
 
-validate_required_arg("version", opts$`--version`)
-validate_required_arg("profile", opts$`--profile`)
-validate_required_arg("project", opts$`--project`)
+LOGFILE <- fs::path(LOGDIR, Sys.time(), ext = "log")
+fs::file_create(LOGFILE)
 
-# --- Validate inputs -------------------------------------------------
+# --- Validate version & stage ----------------------------------------------------------
 
-version <- opts$`--version`
-if (!version %in% VALID_VERSIONS) {
-  stop_with_error(sprintf("Invalid --version. Allowed: %s", 
-                          paste(VALID_VERSIONS, collapse = ", ")))
+VERSION_PATTERN <- "^[[:digit:]]+\\.[[:digit:]]+\\.[[:digit:]]+"
+STAGE_PATTERN <- "-?(alpha|beta|stable)$"
+
+if (grepl(paste0(VERSION_PATTERN, STAGE_PATTERN), meta$version)) {
+  log_success("Version successfully validated!")
+} else {
+  msg <- "Unknown version format.
+  Only these are available:
+    [MAJOR].[MINOR].[PATCH]-alpha
+    [MAJOR].[MINOR].[PATCH]-beta
+    [MAJOR].[MINOR].[PATCH]-stable
+  "
+  log_error(msg)
 }
 
-profile <- opts$`--profile`
-if (!profile %in% VALID_PROFILES) {
-  stop_with_error(sprintf("Invalid --profile. Allowed: %s", 
-                          paste(VALID_PROFILES, collapse = ", ")))
-}
 
-project <- opts$`--project`
-if (!project %in% VALID_PROJECTS) {
-  stop_with_error(sprintf("Invalid --project. Allowed: %s", 
-                          paste(VALID_PROJECTS, collapse = ", ")))
-}
+# --- Get arguments for deploy ----------------------------------------------------------
 
-tag <- opts$`--tag`
-if (!is.null(tag) && version != "stable") {
-  stop_with_error("--tag can only be used with --version stable")
-}
+DRY_RUN <- isTRUE(opts$`--dry-run`)
+VERSION <- sub(pattern = STAGE_PATTERN, 
+               replacement = "", 
+               x = meta$version)
+STAGE <- sub(pattern = VERSION_PATTERN, 
+             replacement = "", 
+             x = meta$version) |> 
+  sub(pattern = "^-", 
+      replacement = "", 
+      x = _)
 
-dry_run <- isTRUE(opts$`--dry-run`)
+
+
 
 # --- Validate branch ----------------------------------------------------------
 

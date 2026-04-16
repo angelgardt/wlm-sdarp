@@ -6,10 +6,12 @@ gh-pages:
   branch: gh-pages
 
 valid:
-  versions:
-    - alpha
-    - beta
-    - stable
+  version:
+    format: "[MAJOR].[MINOR].[PATCH]"
+    stage:
+      - alpha
+      - beta
+      - stable
   projects:
     - book
     - assessment
