@@ -81,19 +81,19 @@ run_cmd <- function(cmd, args, echo = TRUE, error_on_status = TRUE) {
 }
 
 get_current_branch <- function() {
-  result <- run_cmd("git", c("rev-parse", "--abbrev-ref", "HEAD"), 
+  result <- run_cmd("git", c("rev-parse", "--abbrev-ref", "HEAD"),
                     echo = FALSE, error_on_status = TRUE)
   trimws(result$stdout)
 }
 
 get_current_commit_hash <- function() {
-  result <- run_cmd("git", c("rev-parse", "--short", "HEAD"), 
+  result <- run_cmd("git", c("rev-parse", "--short", "HEAD"),
                     echo = FALSE, error_on_status = TRUE)
   trimws(result$stdout)
 }
 
 get_repo_url <- function() {
-  result <- run_cmd("git", c("config", "--get", "remote.origin.url"), 
+  result <- run_cmd("git", c("config", "--get", "remote.origin.url"),
                     echo = FALSE, error_on_status = TRUE)
   trimws(result$stdout)
 }
@@ -144,8 +144,8 @@ cat("\n=== Version Validation ===\n")
 cat(sprintf("  Version found in metadata: %s\n", META$version))
 
 VERSION_PATTERN <- "^[[:digit:]]+\\.[[:digit:]]+\\.[[:digit:]]+"
-STAGES <- Map(\(x) x$name, 
-              CONFIG$valid$version$stage) |> 
+STAGES <- Map(\(x) x$name,
+              CONFIG$valid$version$stage) |>
   unlist()
 STAGE_PATTERN <- paste0("-?(", paste0(STAGES, collapse = "|"), ")")
 
@@ -173,13 +173,13 @@ DRY_RUN <- isTRUE(opts$`--dry-run`)
 
 PROFILE <- opts$`--profile`
 if (!PROFILE %in% CONFIG$valid$profiles) {
-  stop_with_error(sprintf("Invalid --profile. Allowed: %s", 
+  stop_with_error(sprintf("Invalid --profile. Allowed: %s",
                           paste(CONFIG$valid$profiles, collapse = ", ")))
 }
 
 PROJECT <- opts$`--project`
 if (!PROJECT %in% CONFIG$valid$projects) {
-  stop_with_error(sprintf("Invalid --project. Allowed: %s", 
+  stop_with_error(sprintf("Invalid --project. Allowed: %s",
                           paste(CONFIG$valid$projects, collapse = ", ")))
 }
 
@@ -213,7 +213,7 @@ if (!CURRENT_BRANCH %in% BRANCHES) {
   stop_with_error(sprintf(
     "Deployment from the %s branch is prohibited!\n
     Switch to %s to deploy %s respectively.",
-    CURRENT_BRANCH, 
+    CURRENT_BRANCH,
     paste(BRANCHES, collapse = ", "),
     paste(STAGES, collapse = ", ")
     )
@@ -222,14 +222,14 @@ if (!CURRENT_BRANCH %in% BRANCHES) {
   stop_with_error(sprintf(
     "Only %s versions can be deployed from %s branch.\n For %s, switch to %s",
     STAGES[which(BRANCHES == CURRENT_BRANCH)],
-    CURRENT_BRANCH, 
+    CURRENT_BRANCH,
     STAGE,
     BRANCHES[which(STAGES == STAGE)]
     )
   )
 } else {
   log_info(sprintf("%s deploy from %s branch — allowed",
-                   STAGE, 
+                   STAGE,
                    CURRENT_BRANCH))
   log_success("Branch validated successfully!")
 }
@@ -285,7 +285,7 @@ if (fs::dir_exists(DEPLOY_TEMP)) {
 }
 
 REPO_URL <- get_repo_url()
-if (repo_url == "") {
+if (REPO_URL == "") {
   stop_with_error("Could not get repository URL. Check git remote")
 }
 
@@ -298,6 +298,7 @@ run_cmd(
 )
 
 log_success(sprintf("gh-pages cloned to: %s", DEPLOY_TEMP))
+
 
 # --- Step 3: Copy artifacts ---------------------------------------------------
 
@@ -324,30 +325,35 @@ log_success(sprintf("Artifacts copied to: %s", fs::path_rel(TARGET_PATH, DEPLOY_
 
 # if (STAGE == "stable" && !is.null(TAG)) { ## ADD CHECK FOR MINOR!!! - smth like str_detect(tag, "\.0$")
 #   log_info(sprintf("=== STEP 4: Archiving to prev/%s ===", tag))
-#   
+#
 #   if (project == "book") {
 #     prev_subpath <- fs::path("book", profile)
 #   } else {
 #     prev_subpath <- "assessment"
 #   }
-#   
+#
 #   prev_path <- fs::path(deploy_temp, "prev", tag, prev_subpath)
 #   fs::dir_create(prev_path, recursive = TRUE)
 #   fs::dir_copy(site_path, prev_path)
-#   
+#
 #   log_success(sprintf("Archive created: %s", fs::path_rel(prev_path, deploy_temp)))
 # }
+
 
 # --- Step 5: Git commit и push -------------------------------------------------
 
 log_info("=== STEP 5: Commit and push to gh-pages ===")
 
+
+LOGDIR_PREFIX <- getwd()
 setwd(DEPLOY_TEMP)
+LOGDIR_ <- LOGDIR
+LOGDIR <- paste0(LOGDIR_PREFIX, DEPLOY_TEMP)
 
 # Configure git user (if not set globally)
-run_cmd("git", c("config", "user.name", "Deploy Script"), 
+run_cmd("git", c("config", "user.name", "Deploy Script"),
         echo = FALSE, error_on_status = FALSE)
-run_cmd("git", c("config", "user.email", "deploy@wlm-sdarp.local"), 
+run_cmd("git", c("config", "user.email", "deploy@wlm-sdarp.local"),
         echo = FALSE, error_on_status = FALSE)
 
 # Add all changes
@@ -364,14 +370,14 @@ if (trimws(STATUS_RESULT$stdout) == "") {
     "deploy: %s-%s/%s (%s) from %s@%s",
     VERSION, STAGE, PROJECT, PROFILE, CURRENT_BRANCH, COMMIT_HASH
   )
-  
+
   if (!is.null(TAG)) {
     COMMIT_MSG <- sprintf("%s [tag: %s]", COMMIT_MSG, TAG)
   }
-  
+
   run_cmd("git", c("commit", "-m", COMMIT_MSG), echo = TRUE)
-  
-  if (dry_run) {
+
+  if (DRY_RUN) {
     log_info("DRY RUN: skipping git push")
   } else {
     run_cmd("git", c("push", "origin", CONFIG$`gh-pages`$branch), echo = TRUE)
@@ -380,6 +386,7 @@ if (trimws(STATUS_RESULT$stdout) == "") {
 }
 
 setwd("../..")
+LOGDIR <- LOGDIR_
 
 # --- Step 6: Cleanup ----------------------------------------------------------
 
@@ -387,6 +394,7 @@ log_info("=== STEP 6: Cleanup ===")
 
 fs::dir_delete(DEPLOY_TEMP)
 log_success(sprintf("Temp folder deleted: %s", DEPLOY_TEMP))
+
 
 # --- Final summary ------------------------------------------------------------
 
