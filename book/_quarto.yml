@@ -24,7 +24,12 @@ format:
     toc-depth: 4
     # theme: 
     #   - ../shared/css/common.scss
-    
+  pdf:
+    pdf-engine: xelatex
+    output-file: "book.pdf"
+
+
+
 # filters: 
 #   - ../shared/filters/custom-callouts.lua
 
