@@ -54,3 +54,4 @@ __pycache__/
 *.pyo
 manim_cache/
 media/
+.positai
