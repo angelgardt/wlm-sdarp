@@ -1,0 +1,23 @@
+lang: ru
+# language: _langs/_lang-ru.yml
+#
+# metadata-files:
+#   - _meta/_meta-ru.yml
+
+project:
+  output-dir: _site/ru
+
+book:
+  subtitle: "Мир линейных моделей: статистика и анализ данных в R для психологов"
+  author:
+    - name: "Антон Ангельгардт"
+      email: "anton.angelgardt@gmail.com"
+  chapters:
+    - index.qmd
+    # - part: chapters/ru/_debug/_debug.qmd
+    #   chapters:
+    #     - chapters/ru/_debug/debug.qmd
+
+format:
+  html:
+    cover-image: img/cover-ru.jpg
