@@ -1,0 +1,38 @@
+script:
+  version: 0.0.1
+repo-name: wlm-sdarp
+
+gh-pages:
+  branch: gh-pages
+
+valid:
+  version:
+    format: "[MAJOR].[MINOR].[PATCH]"
+    stage:
+      - name: alpha
+        branch: dev
+      - name: beta
+        branch: beta
+      - name: stable
+        branch: master
+  projects:
+    - book
+    - assessment
+  profiles:
+    - ru
+    - rd
+
+colors:
+  enabled: true
+  info: "cyan"
+  success: "green"
+  warning: "yellow"
+  error: "red"
+  reset: "reset"
+  bold: "bold"
+
+archive:
+  policy: minor
+  tag-prefix: "v"
+
+temp: _tmp-deploy

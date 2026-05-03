@@ -1,4 +1,57 @@
+# ==========
+## OS
+# ==========
+.DS_Store
+Thumbs.db
+*.log
+
+# ==========
+## Temporary Files
+# ==========
+_tmp-*/
+
+# ==========
+## Just in case
+# ==========
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========
+## R & RStudio
+# ==========
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+.Rprofile.user
+.Ruserdata
+
+# ==========
+## renv
+# ==========
+renv/library/
+renv/staging/
+renv/python/
+renv/cache/
+
+# ==========
+## Quarto Internals
+# ==========
+.quarto/
+_site/
+_freeze/
+*.tmp, *.bak
+*.knit.md
+*.utf8.md
+
+# ================================
+# Python / Manim
+# ================================
+__pycache__/
+*.pyc
+*.pyo
+manim_cache/
+media/
+.positai
