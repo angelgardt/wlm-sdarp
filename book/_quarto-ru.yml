@@ -1,8 +1,8 @@
 lang: ru
-# language: _langs/_lang-ru.yml
-#
-# metadata-files:
-#   - _meta/_meta-ru.yml
+language: _langs/_lang-ru.yml
+
+metadata-files:
+  - _meta/_meta-ru.yml
 
 project:
   output-dir: _site/ru

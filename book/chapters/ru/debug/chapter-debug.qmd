@@ -350,9 +350,11 @@ title: "Глава [отладка]"
 - @hst-debug-id
 - @prs-debug-id
 - @dts-debug-id
+- @mth-debug-id
 - @hst-debug-title-id
 - @prs-debug-title-id
 - @dts-debug-title-id
+- @mth-debug-title-id
 
 #### History {#debug-callout-history}
 
