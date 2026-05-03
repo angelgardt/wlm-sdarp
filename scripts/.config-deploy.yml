@@ -36,3 +36,4 @@ archive:
   tag-prefix: "v"
 
 temp: _tmp-deploy
+last-archived: ""
