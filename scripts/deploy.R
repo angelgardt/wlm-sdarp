@@ -51,31 +51,38 @@ Options:
 
 # --- Helpers --------------------------------------------------
 
-log_info <- function(...) {
+log_info <- function(..., to_file = TRUE) {
   cat(sprintf("[INFO] %s\n", paste0(...)), file = stderr())
-  cat(sprintf("[INFO] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
+  if (to_file)
+  {
+    cat(sprintf("[INFO] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
+  }
 }
 
-log_success <- function(...) {
+log_success <- function(..., to_file = TRUE) {
   cat(sprintf("[OK] %s\n", paste0(...)), file = stderr())
-  cat(sprintf("[OK] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
+  if (to_file) {
+    cat(sprintf("[OK] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
+  }
 }
 
-log_error <- function(...) {
+log_error <- function(..., to_file = TRUE) {
   cat(sprintf("[ERROR] %s\n", paste0(...)), file = stderr())
-  cat(sprintf("[ERROR] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
+  if (to_file) {
+    cat(sprintf("[ERROR] %s\n", paste0(...)), file = LOGFILE, append = TRUE)
+  }
 }
 
-stop_with_error <- function(...) {
-  log_error(...)
+stop_with_error <- function(..., to_file = TRUE) {
+  log_error(..., to_file = to_file)
   quit(status = 1)
 }
 
-run_cmd <- function(cmd, args, echo = TRUE, error_on_status = TRUE) {
-  if (echo) log_info(sprintf("Running: %s %s", cmd, paste(args, collapse = " ")))
+run_cmd <- function(cmd, args, echo = TRUE, error_on_status = TRUE, to_file = TRUE) {
+  if (echo) log_info(sprintf("Running: %s %s", cmd, paste(args, collapse = " ")), to_file = to_file)
   result <- processx::run(cmd, args, echo = echo, error_on_status = error_on_status)
   if (error_on_status && result$status != 0) {
-    stop_with_error(sprintf("Command failed: %s %s", cmd, paste(args, collapse = " ")))
+    stop_with_error(sprintf("Command failed: %s %s", cmd, paste(args, collapse = " ")), to_file = to_file)
   }
   return(result)
 }
@@ -344,26 +351,22 @@ log_success(sprintf("Artifacts copied to: %s", fs::path_rel(TARGET_PATH, DEPLOY_
 
 log_info("=== STEP 5: Commit and push to gh-pages ===")
 
-
-LOGDIR_PREFIX <- getwd()
 setwd(DEPLOY_TEMP)
-LOGDIR_ <- LOGDIR
-LOGDIR <- paste0(LOGDIR_PREFIX, DEPLOY_TEMP)
 
 # Configure git user (if not set globally)
 run_cmd("git", c("config", "user.name", "Deploy Script"),
-        echo = FALSE, error_on_status = FALSE)
+        echo = FALSE, error_on_status = FALSE, to_file = FALSE)
 run_cmd("git", c("config", "user.email", "deploy@wlm-sdarp.local"),
-        echo = FALSE, error_on_status = FALSE)
+        echo = FALSE, error_on_status = FALSE, to_file = FALSE)
 
 # Add all changes
-run_cmd("git", c("add", "-A"), echo = TRUE)
+run_cmd("git", c("add", "-A"), echo = TRUE, to_file = FALSE)
 
 # Check if there are changes to commit
-STATUS_RESULT <- run_cmd("git", c("status", "--porcelain"), echo = FALSE, error_on_status = FALSE)
+STATUS_RESULT <- run_cmd("git", c("status", "--porcelain"), echo = FALSE, error_on_status = FALSE, to_file = FALSE)
 
 if (trimws(STATUS_RESULT$stdout) == "") {
-  log_info("No changes. Skipping commit.")
+  log_info("No changes. Skipping commit.", to_file = FALSE)
 } else {
   COMMIT_HASH <- get_current_commit_hash()
   COMMIT_MSG <- sprintf(
@@ -375,18 +378,18 @@ if (trimws(STATUS_RESULT$stdout) == "") {
     COMMIT_MSG <- sprintf("%s [tag: %s]", COMMIT_MSG, TAG)
   }
 
-  run_cmd("git", c("commit", "-m", COMMIT_MSG), echo = TRUE)
+  run_cmd("git", c("commit", "-m", COMMIT_MSG), echo = TRUE, to_file = FALSE)
 
   if (DRY_RUN) {
-    log_info("DRY RUN: skipping git push")
+    log_info("DRY RUN: skipping git push", to_file = FALSE)
   } else {
-    run_cmd("git", c("push", "origin", CONFIG$`gh-pages`$branch), echo = TRUE)
-    log_success(sprintf("Changes pushed to %s", CONFIG$`gh-pages`$branch))
+    run_cmd("git", c("push", "origin", CONFIG$`gh-pages`$branch), echo = TRUE, to_file = FALSE)
+    log_success(sprintf("Changes pushed to %s", CONFIG$`gh-pages`$branch), to_file = FALSE)
   }
 }
 
 setwd("../..")
-LOGDIR <- LOGDIR_
+
 
 # --- Step 6: Cleanup ----------------------------------------------------------
 
