@@ -489,6 +489,51 @@ title: "Глава [отладка]"
 :::
 
 
+#### Миф {#debug-callout-myth}
+
+:::{.callout-myth}
+Это датасет без заголовка и без id.
+:::
+
+:::{.callout-myth #mth-debug-id}
+Это датасет без заголовка, но с id.
+:::
+
+:::{.callout-myth title="Заголовок мифа"}
+Это датасет с заголовком, но без id.
+:::
+
+:::{.callout-myth #mth-debug-title-id title="Заголовок мифа"}
+Это датасет с заголовком и с id.
+:::
+
+##### Стилевые варианты {#debug-callout-myth-appearance}
+
+:::{.callout-myth appearance="default" collapse=false title="Заголовок мифа"}
+Это развернутый датасет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-myth appearance="default" collapse=true title="Заголовок мифа"}
+Это свернутый датасет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-myth appearance="simple" collapse=false title="Заголовок мифа"}
+Это развернутый датасет с заголовком в простом оформлении.
+:::
+
+:::{.callout-myth appearance="simple" collapse=true title="Заголовок мифа"}
+Это свернуты датасет с заголовком в простом оформлении.
+:::
+
+:::{.callout-myth appearance="minimal" collapse=false title="Заголовок мифа"}
+Это развернутый датасет с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-myth appearance="minimal" collapse=true title="Заголовок мифа"}
+Это свернутый датасет с заголовком в минимальном оформлении.
+:::
+
+
 
 <!---
 :::{.callout-note .clt-history}
