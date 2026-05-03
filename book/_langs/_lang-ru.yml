@@ -105,6 +105,8 @@ crossref-prs-title: "Личность"
 crossref-prs-prefix: "Личность"
 crossref-dts-title: "Датасет"
 crossref-dts-prefix: "Датасет"
+crossref-mth-title: "Миф"
+crossref-mth-prefix: "Миф"
 
 environment-proof-title: "Доказательство"
 environment-remark-title: "Замечание"

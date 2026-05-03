@@ -25,7 +25,7 @@ format:
     theme:
       - ../shared/css/common.scss
 
-# filters:
-#   - ../shared/filters/custom-callouts.lua
+filters:
+  - custom-callouts
 
 editor: source

@@ -54,3 +54,52 @@
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Shared base */
+.callout.callout-style-default,
+.callout.callout-style-simple,
+.callout.callout-style-minimal {
+  &.callout-history,
+  &.callout-person,
+  &.callout-dataset,
+  &.callout-myth {
+    border-radius: 0.5rem;
+  }
+}
+
+/* HISTORY */
+.callout.callout-history {
+  --callout-color: 120, 120, 120;
+}
+
+/* PERSON */
+.callout.callout-person {
+  --callout-color: 80, 110, 180;
+}
+
+/* DATASET */
+.callout.callout-dataset {
+  --callout-color: 40, 150, 90;
+}
+
+/* MYTH */
+.callout.callout-myth {
+  --callout-color: 180, 80, 120;
+}
+
+/* Optional title tuning */
+.callout.callout-myth .callout-title {
+  font-weight: 700;
+}
