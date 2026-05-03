@@ -14,9 +14,9 @@ book:
       email: "anton.angelgardt@gmail.com"
   chapters:
     - index.qmd
-    - part: chapters/ru/_debug/_debug.qmd
+    - part: chapters/ru/debug/part-debug.qmd
       chapters:
-        - chapters/ru/_debug/debug.qmd
+        - chapters/ru/debug/chapter-debug.qmd
 
 
 format:
