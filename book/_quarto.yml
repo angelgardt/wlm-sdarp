@@ -1,31 +1,31 @@
-project: 
+project:
   type: book
-  preview: 
+  preview:
     port: 5050
 
-# metadata-files: 
+# metadata-files:
 #   - _metadata.yml
 
-book: 
+book:
   title: "WLM SDARP"
   date: today
-  
+
   favicon: img/favicon.png
 
 bibliography: references.bib
 
 format:
-  html: 
-    # include-in-header: 
-    #   - ../shared/includes/lab-labels.html
+  html:
+    include-in-header:
+      - ../shared/includes/lvl-labels.html
     # title-block-banner: img/title-block-banner.jpg
     title-block-banner-color: "#fafafa"
     toc: true
     toc-depth: 4
-    # theme: 
-    #   - ../shared/css/common.scss
-    
-# filters: 
+    theme:
+      - ../shared/css/common.scss
+
+# filters:
 #   - ../shared/filters/custom-callouts.lua
 
 editor: source
