@@ -330,21 +330,29 @@ log_success(sprintf("Artifacts copied to: %s", fs::path_rel(TARGET_PATH, DEPLOY_
 
 # --- Step 4: Archive to prev/ (stable with tag only) --------------------------
 
-# if (STAGE == "stable" && !is.null(TAG)) { ## ADD CHECK FOR MINOR!!! - smth like str_detect(tag, "\.0$")
-#   log_info(sprintf("=== STEP 4: Archiving to prev/%s ===", tag))
-#
-#   if (project == "book") {
-#     prev_subpath <- fs::path("book", profile)
-#   } else {
-#     prev_subpath <- "assessment"
-#   }
-#
-#   prev_path <- fs::path(deploy_temp, "prev", tag, prev_subpath)
-#   fs::dir_create(prev_path, recursive = TRUE)
-#   fs::dir_copy(site_path, prev_path)
-#
-#   log_success(sprintf("Archive created: %s", fs::path_rel(prev_path, deploy_temp)))
-# }
+if (STAGE == "stable" && !is.null(TAG)) {
+
+  version_separated <- as.integer(strsplit(VERSION, "\\.")[[1]])
+  should_archive <- (length(version_separated >= 3) && version_separated[3] == 0)
+
+  if (should_archive) {
+    log_info(sprintf("=== STEP 4: Archiving stable version %s to prev/ ===", TAG))
+    archive_subpath <- fs::path(PROJECT, PROFILE)
+    archive_path <- fs::path(DEPLOY_TEMP, "prev", TAG, archive_subpath)
+
+    fs::dir_create(archive_path, recursive = TRUE)
+
+    if (fs::dir_exists(archive_path) &&
+        length(fs::dir_ls(archive_path)) > 0) {
+      stop_with_error(sprintf("Archive for %s already exists. Check version or stage", TAG), to_file = FALSE)
+      } else {
+        fs::dir_copy(SITE_PATH, archive_path)
+        log_success(sprintf("Archive created: %s", fs::path_rel(archive_path, DEPLOY_TEMP)))
+      }
+  } else {
+      log_info(sprintf("Version %s is a patch release, skipping archive", TAG), to_file = FALSE)
+  }
+}
 
 
 # --- Step 5: Git commit и push -------------------------------------------------
@@ -412,7 +420,7 @@ PAGES_URL <- sprintf("https://angelgardt.github.io/%s/%s", CONFIG$`repo-name`, P
 cat(sprintf("\nProject: %s\n", PROJECT))
 cat(sprintf("Profile: %s\n", PROFILE))
 cat(sprintf("Version: %s\n", VERSION))
-cat(sprintf("STAGE: %s\n", STAGE))
+cat(sprintf("Stage: %s\n", STAGE))
 if (!is.null(TAG)) {
   cat(sprintf("Tag: %s\n", TAG))
 }
