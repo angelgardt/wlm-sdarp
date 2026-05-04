@@ -1,10 +1,10 @@
 ---
-name: 🐛 Bug Report
-description: Report a bug or error in the project
+name: "\U0001F41B Bug Report"
+about: Template for bug reports
 title: "[BUG] "
-labels: ["🐛 bug", "status:triage"]
-assignees:
-  - angelgardt
+labels: bug
+assignees: angelgardt
+
 ---
 
 ## 📝 Description
@@ -30,6 +30,7 @@ assignees:
 - **OS:** [e.g., macOS 14, Windows 11, Ubuntu 22.04]
 - **R version:** `R --version`
 - **Quarto version:** `quarto --version`
+- **Device:** [if rendering issue, e.g., PC, MacBook, Laptop, Tablet, iPad, Smartphone, iPhone]
 - **Browser:** [if rendering issue, e.g., Chrome 120, Firefox 115]
 - **Project branch:** [e.g., dev, master, feature/...]
 
