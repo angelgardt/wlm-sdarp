@@ -1,10 +1,9 @@
 ---
-name: "\U0001F41B Bug Report"
-about: Template for bug reports
+name: "Bug Report"
+about: Report a bug or error in the project
 title: "[BUG] "
 labels: bug
 assignees: angelgardt
-
 ---
 
 ## 📝 Description
