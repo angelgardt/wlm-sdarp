@@ -1,5 +1,5 @@
 ---
-name: "Translation/i18n""
+name: "Translation/i18n"
 about: Translation or localization tasks
 title: "[I18N] "
 labels: i18n

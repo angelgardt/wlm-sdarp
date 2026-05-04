@@ -1,5 +1,5 @@
 ---
-name: Testing/QA
+name: "Testing/QA"
 about: Testing tasks and quality assurance
 title: "[TEST] "
 labels: test

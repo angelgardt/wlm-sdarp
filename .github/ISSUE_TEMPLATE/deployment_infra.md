@@ -1,5 +1,5 @@
 ---
-name: "Deployment/Infrastructure""
+name: "Deployment/Infrastructure"
 about: CI/CD, deployment scripts, or infrastructure tasks
 title: "[DEPLOY] "
 labels: deploy
