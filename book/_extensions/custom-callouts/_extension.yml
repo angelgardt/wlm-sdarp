@@ -1,0 +1,10 @@
+name: custom-callouts
+version: 3.0.0
+quarto-required: ">=1.4.0"
+
+contributes:
+  filters:
+    - callouts.lua
+  formats:
+    html:
+      css: custom-callouts.scss

@@ -4,13 +4,45 @@ title: "Глава [отладка]"
 
 {{< include ../../../../shared/includes/math-symbols.qmd >}}
 
-:::{.intro}
+::::{.intro}
 Текст введения. 
 
 Значимость этих проблем крайне не ясна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
 
-Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий.
+:::{.callout-note title="Objectives"}
+**Level 1**
+
+- objective 1
+- objective 2
+- objective 3
+
+**Level 2**
+
+- objective 1
+- objective 2
+- objective 3
 :::
+
+Повседневная практика показывает, что укрепление и развитие структуры представляет собой интересный эксперимент проверки новых предложений. С другой стороны постоянный количественный рост и сфера нашей активности позволяет оценить значение форм развития.
+
+:::{.callout-note title="Outcomes"}
+**Level 1**
+
+- outcome 1
+- outcome 2
+- outcome 3
+
+**Level 2**
+
+- outcome 1
+- outcome 2
+- outcome 3
+:::
+
+Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий.
+::::
+
+
 
 ## Текст {#debug-text}
 
@@ -19,6 +51,10 @@ title: "Глава [отладка]"
 Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий [@knuth84].
 
 > Это цитата, оформленная средствами Markdown из коробки.
+
+:::{.blockquote}
+Это цитата, оформленная через блочную разметку.
+:::
 
 
 ## Лейблы {#debug-labs .lab-junior}
@@ -115,7 +151,15 @@ title: "Глава [отладка]"
 :::
 
 :::{.callout-note #nte-debug-title-id title="Заголовок заметки"}
-Это заметка с заголовком и с id.
+Это заметка с заголовком и с id. Дальше текст для теста hover preview.
+
+Не следует, однако забывать, что начало повседневной работы по формированию позиции играет важную роль в формировании модели развития. Не следует, однако забывать, что укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Равным образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют определения и уточнения направлений прогрессивного развития.
+
+С другой стороны рамки и место обучения кадров представляет собой интересный эксперимент проверки существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Не следует, однако забывать, что рамки и место обучения кадров способствует подготовки и реализации форм развития. Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий способствует подготовки и реализации форм развития.
+
+Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения форм развития. Идейные соображения высшего порядка, а также рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения систем массового участия. Разнообразный и богатый опыт укрепление и развитие структуры требуют определения и уточнения форм развития. Товарищи! постоянный количественный рост и сфера нашей активности требуют определения и уточнения существенных финансовых и административных условий.
+
+Разнообразный и богатый опыт рамки и место обучения кадров влечет за собой процесс внедрения и модернизации модели развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль в формировании модели развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. С другой стороны дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание форм развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Равным образом дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки дальнейших направлений развития.
 :::
 
 #### Стилевые варианты {#debug-callout-note-appearance}
@@ -343,178 +387,197 @@ title: "Глава [отладка]"
 
 
 
-### Custom {#debug-callout-custom}
+## Кастомные блоки (колауты) {#debug-callout-custom}
 
 Это текст для отсмотра кроссреф-ссылок на:
 
 - @hst-debug-id
 - @prs-debug-id
 - @dts-debug-id
+- @mth-debug-id
 - @hst-debug-title-id
 - @prs-debug-title-id
 - @dts-debug-title-id
+- @mth-debug-title-id
 
-#### History {#debug-callout-history}
+### History {#debug-callout-history}
 
-:::{.callout-history}
+:::{.callout-note .history}
 Это история без заголовка и без id.
 :::
 
-:::{.callout-history #hst-debug-id}
+:::{.callout-note .history #hst-debug-id}
 Это история без заголовка, но с id.
 :::
 
-:::{.callout-history title="Заголовок истории"}
+:::{.callout-note .history title="Заголовок истории"}
 Это история с заголовком, но без id.
 :::
 
-:::{.callout-history #hst-debug-title-id title="Заголовок истории"}
+:::{.callout-note .history #hst-debug-title-id title="Заголовок истории"}
 Это история с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-history-appearance}
+#### Стилевые варианты {#debug-callout-history-appearance}
 
-:::{.callout-history appearance="default" collapse=false title="Заголовок истории"}
+:::{.callout-note .history appearance="default" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-history appearance="default" collapse=true title="Заголовок истории"}
+:::{.callout-note .history appearance="default" collapse=true title="Заголовок истории"}
 Это свернутая история с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-history appearance="simple" collapse=false title="Заголовок истории"}
+:::{.callout-note .history appearance="simple" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в простом оформлении.
 :::
 
-:::{.callout-history appearance="simple" collapse=true title="Заголовок истории"}
+:::{.callout-note .history appearance="simple" collapse=true title="Заголовок истории"}
 Это свернутая история с заголовком в простом оформлении.
 :::
 
-:::{.callout-history appearance="minimal" collapse=false title="Заголовок истории"}
+:::{.callout-note .history appearance="minimal" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-history appearance="minimal" collapse=true title="Заголовок истории"}
+:::{.callout-note .history appearance="minimal" collapse=true title="Заголовок истории"}
 Это свернутая история с заголовком в минимальном оформлении.
 :::
 
 
-#### Person {#debug-callout-person}
+### Person {#debug-callout-person}
 
-:::{.callout-person}
+:::{.callout-note .person}
 Это личность без заголовка и без id.
 :::
 
-:::{.callout-person #prs-debug-id}
+:::{.callout-note .person #prs-debug-id}
 Это личность без заголовка, но с id.
 :::
 
-:::{.callout-person title="Заголовок личности"}
+:::{.callout-note .person title="Заголовок личности"}
 Это личность с заголовком, но без id.
 :::
 
-:::{.callout-person #prs-debug-title-id title="Заголовок личности"}
+:::{.callout-note .person #prs-debug-title-id title="Заголовок личности"}
 Это личность с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-person-appearance}
+#### Стилевые варианты {#debug-callout-person-appearance}
 
-:::{.callout-person appearance="default" collapse=false title="Заголовок личности"}
+:::{.callout-note .person appearance="default" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-person appearance="default" collapse=true title="Заголовок личности"}
+:::{.callout-note .person appearance="default" collapse=true title="Заголовок личности"}
 Это свернутая личность с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-person appearance="simple" collapse=false title="Заголовок личности"}
+:::{.callout-note .person appearance="simple" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в простом оформлении.
 :::
 
-:::{.callout-person appearance="simple" collapse=true title="Заголовок личности"}
+:::{.callout-note .person appearance="simple" collapse=true title="Заголовок личности"}
 Это свернутая личность с заголовком в простом оформлении.
 :::
 
-:::{.callout-person appearance="minimal" collapse=false title="Заголовок личности"}
+:::{.callout-note .person appearance="minimal" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-person appearance="minimal" collapse=true title="Заголовок личности"}
+:::{.callout-note .person appearance="minimal" collapse=true title="Заголовок личности"}
 Это свернутая личность с заголовком в минимальном оформлении.
 :::
 
 
-#### Dataset {#debug-callout-dataset}
+### Dataset {#debug-callout-dataset}
 
-:::{.callout-dataset}
+:::{.callout-note .dataset}
 Это датасет без заголовка и без id.
 :::
 
-:::{.callout-dataset #dts-debug-id}
+:::{.callout-note .dataset #dts-debug-id}
 Это датасет без заголовка, но с id.
 :::
 
-:::{.callout-dataset title="Заголовок личности"}
+:::{.callout-note .dataset title="Заголовок датасета"}
 Это датасет с заголовком, но без id.
 :::
 
-:::{.callout-dataset #dts-debug-title-id title="Заголовок личности"}
+:::{.callout-note .dataset #dts-debug-title-id title="Заголовок датасета"}
 Это датасет с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-dataset-appearance}
+#### Стилевые варианты {#debug-callout-dataset-appearance}
 
-:::{.callout-dataset appearance="default" collapse=false title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="default" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-dataset appearance="default" collapse=true title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="default" collapse=true title="Заголовок датасета"}
 Это свернутый датасет с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-dataset appearance="simple" collapse=false title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="simple" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в простом оформлении.
 :::
 
-:::{.callout-dataset appearance="simple" collapse=true title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="simple" collapse=true title="Заголовок датасета"}
 Это свернуты датасет с заголовком в простом оформлении.
 :::
 
-:::{.callout-dataset appearance="minimal" collapse=false title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="minimal" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-dataset appearance="minimal" collapse=true title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="minimal" collapse=true title="Заголовок датасета"}
 Это свернутый датасет с заголовком в минимальном оформлении.
 :::
 
 
+### Myth {#debug-callout-myth}
 
-<!---
-:::{.callout-note .clt-history}
-Некоторый текст для кастомного коллаута.
+:::{.callout-note .myth}
+Это миф без заголовка и без id.
 :::
 
-:::{.callout-note .clt-history title="Кастомный callout"}
-Некоторый текст для кастомного коллаута с заголовком.
+:::{.callout-note .myth #mth-debug-id}
+Это миф без заголовка, но с id.
 :::
 
-:::{.callout-note .clt-history #nte-cltcustomdebug title="Кастомный callout"}
-Некоторый текст для кастомного коллаута с заголовком и id.
+:::{.callout-note .myth title="Заголовок мифа"}
+Это миф с заголовком, но без id.
 :::
 
-:::{.callout-note .clt-history title="Кастомный callout" collapse=false}
-Некоторый текст для кастомного коллаута с заголовком и id.
+:::{.callout-note .myth #mth-debug-title-id title="Заголовок мифа"}
+Это миф с заголовком и с id.
 :::
 
-:::{.callout-note .clt-history title="Кастомный callout" appearance="simple" collapse=false}
-Некоторый текст для кастомного коллаута с заголовком и id.
+#### Стилевые варианты {#debug-callout-dataset-appearance}
+
+:::{.callout-note .myth appearance="default" collapse=false title="Заголовок мифа"}
+Это развернутый миф с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-note .clt-history title="Кастомный callout" appearance="minimal" collapse=false}
-Некоторый текст для кастомного коллаута с заголовком и id.
+:::{.callout-note .myth appearance="default" collapse=true title="Заголовок мифа"}
+Это свернутый миф с заголовком в дефолтном оформлении.
 :::
---->
+
+:::{.callout-note .myth appearance="simple" collapse=false title="Заголовок мифа"}
+Это развернутый миф с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .myth appearance="simple" collapse=true title="Заголовок мифа"}
+Это свернуты миф с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .myth appearance="minimal" collapse=false title="Заголовок мифа"}
+Это развернутый миф с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note .myth appearance="minimal" collapse=true title="Заголовок мифа"}
+Это свернутый миф с заголовком в минимальном оформлении.
+:::
 
 
 
@@ -577,6 +640,7 @@ title: "Глава [отладка]"
 :::{#alg-debug}
 Это алгоритм.
 :::
+
 
 ### Кастомные символы (includes) {#debug-maths-includes}
 
