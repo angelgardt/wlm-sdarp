@@ -25,6 +25,28 @@ format:
     theme:
       - ../shared/css/common.scss
 
+crossref:
+  custom:
+    - key: mth
+      kind: float
+      reference-prefix: "Миф"
+      caption-prefix: "Миф"
+
+    - key: hst
+      kind: float
+      reference-prefix: "История"
+      caption-prefix: "История"
+
+    - key: prs
+      kind: float
+      reference-prefix: "Персона"
+      caption-prefix: "Персона"
+
+    - key: dts
+      kind: float
+      reference-prefix: "Датасет"
+      caption-prefix: "Датасет"
+
 filters:
   - custom-callouts
 

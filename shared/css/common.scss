@@ -9,7 +9,26 @@
 
 /*-- scss:rules --*/
 
-/* Labs */
+/* CUSTOM BLOCKS & ELEMENTS */
+
+.intro {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: solid 1px;
+}
+
+div.blockquote {
+  padding: .625rem 1.25rem;
+  border-left-width: .25rem;
+  border-left-style: solid;
+  border-left-color: #e9ecef;
+  ::before {
+    content: "<chat-left-quote>";
+  }
+}
+
+
+/* LABS */
 
 .lab-novice:first-child::after,
 .lab-junior:first-child::after,
@@ -37,6 +56,8 @@
 .lab-expert:first-child::after { content: var(--lab-expert); background-color: #fca5a5; }
 
 
+
+/* CUSTOMIZE */
 /* Customize theorems */
 
 .theorem, .proof {
@@ -53,16 +74,6 @@
     margin-bottom: 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
