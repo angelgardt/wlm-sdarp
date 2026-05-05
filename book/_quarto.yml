@@ -35,18 +35,13 @@ crossref:
       kind: float
       reference-prefix: "History"
       caption-prefix: "History"
-
     - key: prs
       kind: float
       reference-prefix: "Person"
       caption-prefix: "Person"
-
     - key: dts
       kind: float
       reference-prefix: "Dataset"
       caption-prefix: "Dataset"
-
-# filters:
-#   - custom-callouts
 
 editor: source

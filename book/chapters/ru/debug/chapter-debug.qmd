@@ -402,180 +402,180 @@ title: "Глава [отладка]"
 
 ### History {#debug-callout-history}
 
-:::{.callout-history}
+:::{.callout-note .history}
 Это история без заголовка и без id.
 :::
 
-:::{.callout-history #hst-debug-id}
+:::{.callout-note .history #hst-debug-id}
 Это история без заголовка, но с id.
 :::
 
-:::{.callout-history title="Заголовок истории"}
+:::{.callout-note .history title="Заголовок истории"}
 Это история с заголовком, но без id.
 :::
 
-:::{.callout-history #hst-debug-title-id title="Заголовок истории"}
+:::{.callout-note .history #hst-debug-title-id title="Заголовок истории"}
 Это история с заголовком и с id.
 :::
 
 #### Стилевые варианты {#debug-callout-history-appearance}
 
-:::{.callout-history appearance="default" collapse=false title="Заголовок истории"}
+:::{.callout-note .history appearance="default" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-history appearance="default" collapse=true title="Заголовок истории"}
+:::{.callout-note .history appearance="default" collapse=true title="Заголовок истории"}
 Это свернутая история с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-history appearance="simple" collapse=false title="Заголовок истории"}
+:::{.callout-note .history appearance="simple" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в простом оформлении.
 :::
 
-:::{.callout-history appearance="simple" collapse=true title="Заголовок истории"}
+:::{.callout-note .history appearance="simple" collapse=true title="Заголовок истории"}
 Это свернутая история с заголовком в простом оформлении.
 :::
 
-:::{.callout-history appearance="minimal" collapse=false title="Заголовок истории"}
+:::{.callout-note .history appearance="minimal" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-history appearance="minimal" collapse=true title="Заголовок истории"}
+:::{.callout-note .history appearance="minimal" collapse=true title="Заголовок истории"}
 Это свернутая история с заголовком в минимальном оформлении.
 :::
 
 
 ### Person {#debug-callout-person}
 
-:::{.callout-person}
+:::{.callout-note .person}
 Это личность без заголовка и без id.
 :::
 
-:::{.callout-person #prs-debug-id}
+:::{.callout-note .person #prs-debug-id}
 Это личность без заголовка, но с id.
 :::
 
-:::{.callout-person title="Заголовок личности"}
+:::{.callout-note .person title="Заголовок личности"}
 Это личность с заголовком, но без id.
 :::
 
-:::{.callout-person #prs-debug-title-id title="Заголовок личности"}
+:::{.callout-note .person #prs-debug-title-id title="Заголовок личности"}
 Это личность с заголовком и с id.
 :::
 
 #### Стилевые варианты {#debug-callout-person-appearance}
 
-:::{.callout-person appearance="default" collapse=false title="Заголовок личности"}
+:::{.callout-note .person appearance="default" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-person appearance="default" collapse=true title="Заголовок личности"}
+:::{.callout-note .person appearance="default" collapse=true title="Заголовок личности"}
 Это свернутая личность с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-person appearance="simple" collapse=false title="Заголовок личности"}
+:::{.callout-note .person appearance="simple" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в простом оформлении.
 :::
 
-:::{.callout-person appearance="simple" collapse=true title="Заголовок личности"}
+:::{.callout-note .person appearance="simple" collapse=true title="Заголовок личности"}
 Это свернутая личность с заголовком в простом оформлении.
 :::
 
-:::{.callout-person appearance="minimal" collapse=false title="Заголовок личности"}
+:::{.callout-note .person appearance="minimal" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-person appearance="minimal" collapse=true title="Заголовок личности"}
+:::{.callout-note .person appearance="minimal" collapse=true title="Заголовок личности"}
 Это свернутая личность с заголовком в минимальном оформлении.
 :::
 
 
 ### Dataset {#debug-callout-dataset}
 
-:::{.callout-dataset}
+:::{.callout-note .dataset}
 Это датасет без заголовка и без id.
 :::
 
-:::{.callout-dataset #dts-debug-id}
+:::{.callout-note .dataset #dts-debug-id}
 Это датасет без заголовка, но с id.
 :::
 
-:::{.callout-dataset title="Заголовок датасета"}
+:::{.callout-note .dataset title="Заголовок датасета"}
 Это датасет с заголовком, но без id.
 :::
 
-:::{.callout-dataset #dts-debug-title-id title="Заголовок датасета"}
+:::{.callout-note .dataset #dts-debug-title-id title="Заголовок датасета"}
 Это датасет с заголовком и с id.
 :::
 
 #### Стилевые варианты {#debug-callout-dataset-appearance}
 
-:::{.callout-dataset appearance="default" collapse=false title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="default" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-dataset appearance="default" collapse=true title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="default" collapse=true title="Заголовок датасета"}
 Это свернутый датасет с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-dataset appearance="simple" collapse=false title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="simple" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в простом оформлении.
 :::
 
-:::{.callout-dataset appearance="simple" collapse=true title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="simple" collapse=true title="Заголовок датасета"}
 Это свернуты датасет с заголовком в простом оформлении.
 :::
 
-:::{.callout-dataset appearance="minimal" collapse=false title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="minimal" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-dataset appearance="minimal" collapse=true title="Заголовок датасета"}
+:::{.callout-note .dataset appearance="minimal" collapse=true title="Заголовок датасета"}
 Это свернутый датасет с заголовком в минимальном оформлении.
 :::
 
 
 ### Myth {#debug-callout-myth}
 
-:::{.callout-myth}
+:::{.callout-note .myth}
 Это миф без заголовка и без id.
 :::
 
-:::{.callout-myth #mth-debug-id}
+:::{.callout-note .myth #mth-debug-id}
 Это миф без заголовка, но с id.
 :::
 
-:::{.callout-myth title="Заголовок мифа"}
+:::{.callout-note .myth title="Заголовок мифа"}
 Это миф с заголовком, но без id.
 :::
 
-:::{.callout-myth #mth-debug-title-id title="Заголовок мифа"}
+:::{.callout-note .myth #mth-debug-title-id title="Заголовок мифа"}
 Это миф с заголовком и с id.
 :::
 
 #### Стилевые варианты {#debug-callout-dataset-appearance}
 
-:::{.callout-myth appearance="default" collapse=false title="Заголовок мифа"}
+:::{.callout-note .myth appearance="default" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-myth appearance="default" collapse=true title="Заголовок мифа"}
+:::{.callout-note .myth appearance="default" collapse=true title="Заголовок мифа"}
 Это свернутый миф с заголовком в дефолтном оформлении.
 :::
 
-:::{.callout-myth appearance="simple" collapse=false title="Заголовок мифа"}
+:::{.callout-note .myth appearance="simple" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в простом оформлении.
 :::
 
-:::{.callout-myth appearance="simple" collapse=true title="Заголовок мифа"}
+:::{.callout-note .myth appearance="simple" collapse=true title="Заголовок мифа"}
 Это свернуты миф с заголовком в простом оформлении.
 :::
 
-:::{.callout-myth appearance="minimal" collapse=false title="Заголовок мифа"}
+:::{.callout-note .myth appearance="minimal" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в минимальном оформлении.
 :::
 
-:::{.callout-myth appearance="minimal" collapse=true title="Заголовок мифа"}
+:::{.callout-note .myth appearance="minimal" collapse=true title="Заголовок мифа"}
 Это свернутый миф с заголовком в минимальном оформлении.
 :::
 
