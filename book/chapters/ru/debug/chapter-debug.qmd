@@ -9,7 +9,7 @@ title: "Глава [отладка]"
 
 Значимость этих проблем крайне не ясна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
 
-:::{.callout-note title="Objectives"}
+:::{.callout-note .objectives title="Objectives" collapse=true appearance="simple"}
 **Level 1**
 
 - objective 1
@@ -553,7 +553,11 @@ title: "Глава [отладка]"
 Это миф с заголовком и с id.
 :::
 
+<<<<<<< HEAD:book/chapters/ru/debug/chapter-debug.qmd
 #### Стилевые варианты {#debug-callout-dataset-appearance}
+=======
+#### Стилевые варианты {#debug-callout-myth-appearance}
+>>>>>>> style/setup:book/chapters/ru/_debug/debug.qmd
 
 :::{.callout-note .myth appearance="default" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в дефолтном оформлении.
