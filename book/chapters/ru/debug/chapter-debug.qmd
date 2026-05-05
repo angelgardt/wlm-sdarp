@@ -553,11 +553,8 @@ title: "Глава [отладка]"
 Это миф с заголовком и с id.
 :::
 
-<<<<<<< HEAD:book/chapters/ru/debug/chapter-debug.qmd
-#### Стилевые варианты {#debug-callout-dataset-appearance}
-=======
+
 #### Стилевые варианты {#debug-callout-myth-appearance}
->>>>>>> style/setup:book/chapters/ru/_debug/debug.qmd
 
 :::{.callout-note .myth appearance="default" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в дефолтном оформлении.

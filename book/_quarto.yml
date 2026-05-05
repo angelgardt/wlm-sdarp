@@ -6,6 +6,8 @@ project:
 # metadata-files:
 #   - _metadata.yml
 
+brand: ../shared/style/_brand.yml
+
 book:
   title: "WLM SDARP"
   date: today
@@ -23,7 +25,7 @@ format:
     toc: true
     toc-depth: 4
     theme:
-      - ../shared/css/common.scss
+      - ../shared/style/common.scss
 
 crossref:
   custom:
