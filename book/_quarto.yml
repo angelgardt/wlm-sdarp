@@ -29,25 +29,24 @@ crossref:
   custom:
     - key: mth
       kind: float
-      reference-prefix: "Миф"
-      caption-prefix: "Миф"
-
+      reference-prefix: "Myth"
+      caption-prefix: "Myth"
     - key: hst
       kind: float
-      reference-prefix: "История"
-      caption-prefix: "История"
+      reference-prefix: "History"
+      caption-prefix: "History"
 
     - key: prs
       kind: float
-      reference-prefix: "Персона"
-      caption-prefix: "Персона"
+      reference-prefix: "Person"
+      caption-prefix: "Person"
 
     - key: dts
       kind: float
-      reference-prefix: "Датасет"
-      caption-prefix: "Датасет"
+      reference-prefix: "Dataset"
+      caption-prefix: "Dataset"
 
-filters:
-  - custom-callouts
+# filters:
+#   - custom-callouts
 
 editor: source

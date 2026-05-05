@@ -387,7 +387,7 @@ title: "Глава [отладка]"
 
 
 
-### Custom {#debug-callout-custom}
+## Кастомные блоки (колауты) {#debug-callout-custom}
 
 Это текст для отсмотра кроссреф-ссылок на:
 
@@ -400,7 +400,7 @@ title: "Глава [отладка]"
 - @dts-debug-title-id
 - @mth-debug-title-id
 
-#### History {#debug-callout-history}
+### History {#debug-callout-history}
 
 :::{.callout-history}
 Это история без заголовка и без id.
@@ -418,7 +418,7 @@ title: "Глава [отладка]"
 Это история с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-history-appearance}
+#### Стилевые варианты {#debug-callout-history-appearance}
 
 :::{.callout-history appearance="default" collapse=false title="Заголовок истории"}
 Это развернутая история с заголовком в дефолтном оформлении.
@@ -445,7 +445,7 @@ title: "Глава [отладка]"
 :::
 
 
-#### Person {#debug-callout-person}
+### Person {#debug-callout-person}
 
 :::{.callout-person}
 Это личность без заголовка и без id.
@@ -463,7 +463,7 @@ title: "Глава [отладка]"
 Это личность с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-person-appearance}
+#### Стилевые варианты {#debug-callout-person-appearance}
 
 :::{.callout-person appearance="default" collapse=false title="Заголовок личности"}
 Это развернутая личность с заголовком в дефолтном оформлении.
@@ -490,7 +490,7 @@ title: "Глава [отладка]"
 :::
 
 
-#### Dataset {#debug-callout-dataset}
+### Dataset {#debug-callout-dataset}
 
 :::{.callout-dataset}
 Это датасет без заголовка и без id.
@@ -500,15 +500,15 @@ title: "Глава [отладка]"
 Это датасет без заголовка, но с id.
 :::
 
-:::{.callout-dataset title="Заголовок личности"}
+:::{.callout-dataset title="Заголовок датасета"}
 Это датасет с заголовком, но без id.
 :::
 
-:::{.callout-dataset #dts-debug-title-id title="Заголовок личности"}
+:::{.callout-dataset #dts-debug-title-id title="Заголовок датасета"}
 Это датасет с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-dataset-appearance}
+#### Стилевые варианты {#debug-callout-dataset-appearance}
 
 :::{.callout-dataset appearance="default" collapse=false title="Заголовок датасета"}
 Это развернутый датасет с заголовком в дефолтном оформлении.
@@ -535,7 +535,7 @@ title: "Глава [отладка]"
 :::
 
 
-#### Миф {#debug-callout-myth}
+### Myth {#debug-callout-myth}
 
 :::{.callout-myth}
 Это миф без заголовка и без id.
@@ -553,7 +553,7 @@ title: "Глава [отладка]"
 Это миф с заголовком и с id.
 :::
 
-##### Стилевые варианты {#debug-callout-myth-appearance}
+#### Стилевые варианты {#debug-callout-dataset-appearance}
 
 :::{.callout-myth appearance="default" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в дефолтном оформлении.
@@ -578,34 +578,6 @@ title: "Глава [отладка]"
 :::{.callout-myth appearance="minimal" collapse=true title="Заголовок мифа"}
 Это свернутый миф с заголовком в минимальном оформлении.
 :::
-
-
-
-<!---
-:::{.callout-note .clt-history}
-Некоторый текст для кастомного коллаута.
-:::
-
-:::{.callout-note .clt-history title="Кастомный callout"}
-Некоторый текст для кастомного коллаута с заголовком.
-:::
-
-:::{.callout-note .clt-history #nte-cltcustomdebug title="Кастомный callout"}
-Некоторый текст для кастомного коллаута с заголовком и id.
-:::
-
-:::{.callout-note .clt-history title="Кастомный callout" collapse=false}
-Некоторый текст для кастомного коллаута с заголовком и id.
-:::
-
-:::{.callout-note .clt-history title="Кастомный callout" appearance="simple" collapse=false}
-Некоторый текст для кастомного коллаута с заголовком и id.
-:::
-
-:::{.callout-note .clt-history title="Кастомный callout" appearance="minimal" collapse=false}
-Некоторый текст для кастомного коллаута с заголовком и id.
-:::
---->
 
 
 
@@ -668,6 +640,7 @@ title: "Глава [отладка]"
 :::{#alg-debug}
 Это алгоритм.
 :::
+
 
 ### Кастомные символы (includes) {#debug-maths-includes}
 
