@@ -1,0 +1,76 @@
+/*-- scss:defaults --*/
+
+//
+// Color system — Light Theme
+// Optimized for readability, accessibility and psychological comfort
+//
+
+//
+// Grayscale — linear progression, WCAG-compliant
+//
+$white:    #ffffff !default;
+$gray-100: #f8f9fa !default;  // фон секций
+$gray-200: #e9ecef !default;  // границы, разделители
+$gray-300: #dee2e6 !default;  // неактивные элементы
+$gray-400: #ced4da !default;  // плейсхолдеры, disabled
+$gray-500: #adb5bd !default;  // второстепенный текст
+$gray-600: #6c757d !default;  // подписи, мета-информация
+$gray-700: #495057 !default;  // основной текст (альтернатива)
+$gray-800: #343a40 !default;  // заголовки
+$gray-900: #212529 !default;  // основной текст
+$black:    #000000 !default;
+
+//
+// Semantic colors — desaturated, harmonious, psychology-appropriate
+//
+
+
+/*
+$blue:    #2c3e50 !default;  // основной акцент: надёжность, спокойствие
+$indigo:  #5a4fcf !default;  // мягкий индиго для вторичных акцентов
+$purple:  #7b5ea7 !default;  // приглушённый фиолетовый (когнитивные темы)
+$pink:    #c95a7a !default;  // сдержанный розовый (без визуального шума)
+$red:     #c0392b !default;  // глубокий красный для ошибок/важных предупреждений
+$orange:  #b34700 !default;  // жжёный апельсин — заметен, но не «кричит»
+$yellow:  #9a7b0f !default;  // тёмное золото — читаемо на белом фоне
+$green:   #168a6d !default;  // спокойный зелёный (успех, экологичность)
+$teal:    #179299 !default;  // отличимый от зелёного, для нейтральных акцентов
+$cyan:    #2980b9 !default;  // глубокий циан для ссылок и инфо-блоков
+*/
+
+
+$blue:    #2a5c82 !default;  // основной: глубокий морской синий
+$indigo:  #5a4fcf !default;  // индиго: теоретические блоки, формулы
+$purple:  #8565b0 !default;  // фиолетовый: когнитивные/нейро-темы
+$pink:    #d45b7c !default;  // розовый: эмоциональные/соц. исследования
+$red:     #c23a2e !default;  // красный: критические предупреждения, ошибки
+$orange:  #c45a20 !default;  // оранжевый: гипотезы, акцентные заметки
+$yellow:  #9e7d0a !default;  // тёмное золото: рекомендации, лайфхаки
+$green:   #1e8a6e !default;  // изумрудный: успех, практика, экология
+$teal:    #1b8a8f !default;  // бирюзовый: нейтральные акценты, медиация
+$cyan:    #3491c7 !default;  // циан: ссылки, инфо-блоки, интерактив
+
+
+//
+// Custom colors
+//
+$brown:   #6d4c41 !default;      // тёплый коричневый для цитат, исторических справок
+$slategray: #546e7a !default;    // современный slate для рамок, иллюстраций
+
+//
+// Set element colors
+//
+$body-bg: $gray-100;
+
+$callout-note-color: $blue;
+$callout-tip-color: $green;
+$callout-warning-color: $yellow;
+$callout-caution-color: $orange;
+$callout-important-color: $red;
+$callout-default-color: $gray-600;
+$callout-outcomes-color: $gray-900;
+$callout-history-color: $brown;
+$callout-person-color: $slategray;
+$callout-dataset-color: $teal;
+$callout-myth-color: $purple;
+$callout-header-shift: -85%;

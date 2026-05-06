@@ -2,6 +2,58 @@
 title: "Глава [отладка]"
 ---
 
+<!-- CALLOUT COLORS DEBUG -->
+::::{layout-ncol=2}
+
+:::{.callout-note}
+callout
+:::
+
+:::{.callout-tip}
+callout
+:::
+
+:::{.callout-warning}
+callout
+:::
+
+:::{.callout-caution}
+callout
+:::
+
+:::{.callout-important}
+callout
+:::
+
+:::{.callout appearance="default"}
+callout
+:::
+
+:::{.callout-note .history}
+callout
+:::
+
+:::{.callout-note .person}
+callout
+:::
+
+:::{.callout-note .dataset}
+callout
+:::
+
+:::{.callout-note .myth}
+callout
+:::
+
+::::
+
+:::{.callout-note .objectives}
+callout
+:::
+
+
+
+<!-- CONTENT DEBUG -->
 {{< include ../../../../shared/includes/math-symbols.qmd >}}
 
 ::::{.intro}
@@ -729,8 +781,8 @@ flowchart LR
   B["Блок Б"]
   C["Блок Ц"]
   
-  A --> B
-  B --> C
+  A --o B
+  B --o C
 ```
 
 ```{mermaid}

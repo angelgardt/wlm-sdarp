@@ -25,8 +25,8 @@ format:
     toc: true
     toc-depth: 4
     theme:
-      light: [../shared/style/light.scss, ../shared/style/common.scss]
-      dark: [../shared/style/dark.scss, ../shared/style/common.scss]
+      light: [../shared/style/variables_light.scss, ../shared/style/rules.scss]
+      dark: [../shared/style/variables_dark.scss, ../shared/style/rules.scss]
 
 crossref:
   custom:

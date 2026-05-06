@@ -1,54 +1,5 @@
 /*-- scss:defaults --*/
 
-//
-// Color system — Light Theme
-// Optimized for readability, accessibility and psychological comfort
-//
-
-//
-// Grayscale — linear progression, WCAG-compliant
-//
-$white:    #ffffff !default;
-$gray-100: #f8f9fa !default;  // фон секций
-$gray-200: #e9ecef !default;  // границы, разделители
-$gray-300: #dee2e6 !default;  // неактивные элементы
-$gray-400: #ced4da !default;  // плейсхолдеры, disabled
-$gray-500: #adb5bd !default;  // второстепенный текст
-$gray-600: #6c757d !default;  // подписи, мета-информация
-$gray-700: #495057 !default;  // основной текст (альтернатива)
-$gray-800: #343a40 !default;  // заголовки
-$gray-900: #212529 !default;  // основной текст
-$black:    #000000 !default;
-
-//
-// Semantic colors — desaturated, harmonious, psychology-appropriate
-//
-$blue:    #2c3e50 !default;  // основной акцент: надёжность, спокойствие
-$indigo:  #5a4fcf !default;  // мягкий индиго для вторичных акцентов
-$purple:  #7b5ea7 !default;  // приглушённый фиолетовый (когнитивные темы)
-$pink:    #c95a7a !default;  // сдержанный розовый (без визуального шума)
-$red:     #c0392b !default;  // глубокий красный для ошибок/важных предупреждений
-$orange:  #b34700 !default;  // жжёный апельсин — заметен, но не «кричит»
-$yellow:  #9a7b0f !default;  // тёмное золото — читаемо на белом фоне
-$green:   #168a6d !default;  // спокойный зелёный (успех, экологичность)
-$teal:    #179299 !default;  // отличимый от зелёного, для нейтральных акцентов
-$cyan:    #2980b9 !default;  // глубокий циан для ссылок и инфо-блоков
-
-//
-// Custom colors
-//
-$brown:   #6d4c41 !default;      // тёплый коричневый для цитат, исторических справок
-$slategray: #546e7a !default;    // современный slate для рамок, иллюстраций
-
-
-$callout-note-color: $cyan;
-$callout-default-color: $gray-600;
-$callout-outcomes-color: $gray-900;
-$callout-history-color: $brown;
-$callout-person-color: $slategray;
-$callout-dataset-color: $teal;
-$callout-myth-color: $purple;
-
 
 
 
@@ -58,6 +9,74 @@ $callout-myth-color: $purple;
 
 /*-- scss:rules --*/
 
+/* CUSTOM BLOCKS & ELEMENTS */
+
+.intro {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: solid 1px;
+}
+
+div.blockquote {
+  padding: .625rem 1.25rem;
+  border-left-width: .25rem;
+  border-left-style: solid;
+  border-left-color: #e9ecef;
+  ::before {
+    content: "<chat-left-quote>";
+  }
+}
+
+
+/* LABS */
+
+.lab-novice:first-child::after,
+.lab-junior:first-child::after,
+.lab-middle:first-child::after,
+.lab-senior:first-child::after,
+.lab-expert:first-child::after
+{
+  display: block;
+  width: fit-content;
+  border: solid 1px;
+  border-radius: .25rem;
+  padding-top: 0;
+  padding-bottom: .1rem;
+  padding-left: .3rem;
+  padding-right: .3rem;
+  margin-top: .2rem;
+  font-size: 1rem;
+  font-variant-caps: all-small-caps;
+}
+
+.lab-novice:first-child::after { content: var(--lab-novice); background-color: #fef08a; }
+.lab-junior:first-child::after { content: var(--lab-junior); background-color: #5eead4; }
+.lab-middle:first-child::after { content: var(--lab-middle); background-color: #93c5fd; }
+.lab-senior:first-child::after { content: var(--lab-senior); background-color: #d8b4fe; }
+.lab-expert:first-child::after { content: var(--lab-expert); background-color: #fca5a5; }
+
+
+
+/* CUSTOMIZE */
+/* Customize theorems */
+
+.theorem, .proof {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+
 /* CALLOUTS */
 
 /* Note */
@@ -65,7 +84,54 @@ $callout-myth-color: $purple;
   border-left-color: $callout-note-color !important;
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-note-color, -90%) !important;
+      background-color: shift-color($callout-note-color, $callout-header-shift) !important;
+    }
+  }
+}
+
+/* Tip */
+.callout-tip {
+  border-left-color: $callout-tip-color !important;
+  &.callout-style-default {
+    .callout-header {
+      background-color: shift-color($callout-tip-color, $callout-header-shift) !important;
+    }
+  }
+}
+
+/* Warning */
+.callout-warning {
+  border-left-color: $callout-warning-color !important;
+  &.callout-style-default {
+    .callout-header {
+      background-color: shift-color($callout-warning-color, $callout-header-shift) !important;
+    }
+  }
+}
+
+/* Caution */
+.callout-caution {
+  border-left-color: $callout-caution-color !important;
+  .callout-header > .callout-icon-container {
+    padding-top: .1em !important;
+    .callout-icon::before {
+      // background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill: rgb(11.7, 99, 227.7)" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>');
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-octagon" viewBox="0 0 16 16"><path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/><path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg>');
+    }
+  }
+  &.callout-style-default {
+    .callout-header {
+      background-color: shift-color($callout-caution-color, $callout-header-shift) !important;
+    }
+  }
+}
+
+/* Important */
+.callout-important {
+  border-left-color: $callout-important-color !important;
+  &.callout-style-default {
+    .callout-header {
+      background-color: shift-color($callout-important-color, $callout-header-shift) !important;
     }
   }
 }
@@ -75,7 +141,7 @@ $callout-myth-color: $purple;
   border-left-color: $callout-default-color !important;
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-default-color, -90%) !important;
+      background-color: shift-color($callout-default-color, $callout-header-shift) !important;
     }
   }
   &.callout-style-simple {
@@ -95,7 +161,7 @@ $callout-myth-color: $purple;
   }
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-history-color, -90%) !important;
+      background-color: shift-color($callout-history-color, $callout-header-shift) !important;
     }
   }
 }
@@ -109,7 +175,7 @@ $callout-myth-color: $purple;
   }
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-person-color, -90%) !important;
+      background-color: shift-color($callout-person-color, $callout-header-shift) !important;
     }
   }
 }
@@ -123,7 +189,7 @@ $callout-myth-color: $purple;
   }
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-dataset-color, -90%) !important;
+      background-color: shift-color($callout-dataset-color, $callout-header-shift) !important;
     }
   }
 }
@@ -137,7 +203,7 @@ $callout-myth-color: $purple;
   }
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-myth-color, -90%) !important;
+      background-color: shift-color($callout-myth-color, $callout-header-shift) !important;
     }
   }
 }
@@ -152,7 +218,7 @@ $callout-myth-color: $purple;
   }
   &.callout-style-default {
     .callout-header {
-      background-color: shift-color($callout-outcomes-color, -90%) !important;
+      background-color: shift-color($callout-outcomes-color, $callout-header-shift) !important;
     }
   }
 }
