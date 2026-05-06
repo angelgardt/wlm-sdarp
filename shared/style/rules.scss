@@ -1,12 +1,4 @@
-/*-- scss:defaults --*/
-
-
-
-
-
-
-
-
+@import './_variables_light';
 /*-- scss:rules --*/
 
 /* CUSTOM BLOCKS & ELEMENTS */
@@ -22,8 +14,14 @@ div.blockquote {
   border-left-width: .25rem;
   border-left-style: solid;
   border-left-color: #e9ecef;
-  ::before {
-    content: "<chat-left-quote>";
+  blockquote.blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: right;
+    ::before {
+      content: "— ";
+    }
   }
 }
 
@@ -49,11 +47,26 @@ div.blockquote {
   font-variant-caps: all-small-caps;
 }
 
-.lab-novice:first-child::after { content: var(--lab-novice); background-color: #fef08a; }
-.lab-junior:first-child::after { content: var(--lab-junior); background-color: #5eead4; }
-.lab-middle:first-child::after { content: var(--lab-middle); background-color: #93c5fd; }
-.lab-senior:first-child::after { content: var(--lab-senior); background-color: #d8b4fe; }
-.lab-expert:first-child::after { content: var(--lab-expert); background-color: #fca5a5; }
+.lab-novice:first-child::after {
+  content: var(--lab-novice);
+  background-color: $lab-novice-color;
+}
+.lab-junior:first-child::after {
+  content: var(--lab-junior);
+  background-color: $lab-junior-color;
+}
+.lab-middle:first-child::after {
+  content: var(--lab-middle);
+  background-color: $lab-middle-color;
+}
+.lab-senior:first-child::after {
+  content: var(--lab-senior);
+  background-color: $lab-senior-color;
+}
+.lab-expert:first-child::after {
+  content: var(--lab-expert);
+  background-color: $lab-expert-color;
+}
 
 
 
