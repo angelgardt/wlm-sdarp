@@ -1,14 +1,3 @@
-color:
-  palette:
-    dark-grey: "#222222"
-    blue: "#ddeaf1"
-  background:
-    light: "#ffffff"
-    dark: "#202020"
-  foreground:
-    light: "#000000"
-    dark: "#ffffff"
-
 typography:
   fonts:
     - family: Montserrat
