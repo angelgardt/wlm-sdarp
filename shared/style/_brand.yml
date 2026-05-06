@@ -2,4 +2,11 @@ typography:
   fonts:
     - family: Montserrat
       source: google
+    - family: Open Sans
+      source: google
+    - family: Source Code Pro
+      source: google
+  base: Open Sans
   headings: Montserrat
+  monospace: Source Code Pro
+
