@@ -1,7 +1,16 @@
-@import './_variables_light';
+// @import './_variables_fonts';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/*-- scss: defaults --*/
+
+$font-family-sans-serif: "Raleway";
+$font-family-monospace: "Source Code Pro";
+
 /*-- scss:rules --*/
 
-/* CUSTOM BLOCKS & ELEMENTS */
+// CUSTOM BLOCKS & ELEMENTS
 
 .intro {
   padding-left: 1rem;
@@ -9,6 +18,7 @@
   border-bottom: solid 1px;
 }
 
+/*
 div.blockquote {
   padding: .625rem 1.25rem;
   border-left-width: .25rem;
@@ -26,7 +36,7 @@ div.blockquote {
 }
 
 
-/* LABS */
+// LABS
 
 .lab-novice:first-child::after,
 .lab-junior:first-child::after,
@@ -70,8 +80,8 @@ div.blockquote {
 
 
 
-/* CUSTOMIZE */
-/* Customize theorems */
+// CUSTOMIZE
+// Customize theorems
 
 .theorem, .proof {
   border-width: 1px;
@@ -90,9 +100,9 @@ div.blockquote {
 
 
 
-/* CALLOUTS */
+// CALLOUTS
 
-/* Note */
+// Note
 .callout-note {
   border-left-color: $callout-note-color !important;
   &.callout-style-default {
@@ -102,7 +112,7 @@ div.blockquote {
   }
 }
 
-/* Tip */
+// Tip
 .callout-tip {
   border-left-color: $callout-tip-color !important;
   &.callout-style-default {
@@ -112,7 +122,7 @@ div.blockquote {
   }
 }
 
-/* Warning */
+// Warning
 .callout-warning {
   border-left-color: $callout-warning-color !important;
   &.callout-style-default {
@@ -122,7 +132,7 @@ div.blockquote {
   }
 }
 
-/* Caution */
+// Caution
 .callout-caution {
   border-left-color: $callout-caution-color !important;
   .callout-header > .callout-icon-container {
@@ -139,7 +149,7 @@ div.blockquote {
   }
 }
 
-/* Important */
+// Important
 .callout-important {
   border-left-color: $callout-important-color !important;
   &.callout-style-default {
@@ -149,7 +159,7 @@ div.blockquote {
   }
 }
 
-/* Default */
+// Default
 .callout-none {
   border-left-color: $callout-default-color !important;
   &.callout-style-default {
@@ -165,7 +175,7 @@ div.blockquote {
   }
 }
 
-/* History */
+// History
 .callout-note.history {
   border-left-color: $callout-history-color !important;
   .callout-header > .callout-icon-container > .callout-icon::before {
@@ -179,7 +189,7 @@ div.blockquote {
   }
 }
 
-/* Person */
+// Person
 .callout-note.person {
   border-left-color: $callout-person-color !important;
   .callout-header > .callout-icon-container > .callout-icon::before {
@@ -193,7 +203,7 @@ div.blockquote {
   }
 }
 
-/* Dataset */
+// Dataset
 .callout-note.dataset {
   border-left-color: $callout-dataset-color !important;
   .callout-header > .callout-icon-container > .callout-icon::before {
@@ -207,7 +217,7 @@ div.blockquote {
   }
 }
 
-/* Myth */
+// Myth
 .callout-note.myth {
   border-left-color: $callout-myth-color !important;
   .callout-header > .callout-icon-container > .callout-icon::before {
@@ -222,7 +232,7 @@ div.blockquote {
 }
 
 
-/* Objectives & Outcomes */
+// Objectives & Outcomes
 .callout-note.objectives, .callout-note.outcomes {
   border-left-color: $callout-outcomes-color !important;
   .callout-header > .callout-icon-container > .callout-icon::before {
@@ -235,3 +245,4 @@ div.blockquote {
     }
   }
 }
+*/

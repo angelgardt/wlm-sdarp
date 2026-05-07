@@ -12,14 +12,6 @@ book:
   author:
     - name: "Антон Ангельгардт"
       email: "anton.angelgardt@gmail.com"
-  navbar:
-    left:
-      - text: "Книга"
-        #icon: book-fill
-        href: ""
-      - text: "Тесты"
-        #icon: check-square
-        href: ""
   chapters:
     - index.qmd
     - part: chapters/ru/debug/part-debug.qmd

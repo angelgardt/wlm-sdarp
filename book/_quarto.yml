@@ -11,10 +11,16 @@ book:
   title: "WLM SDARP"
   date: today
   favicon: img/favicon.png
+  navbar:
+    left:
+      - text: "Book"
+        href: ""
+      - text: "Tests"
+        href: ""
 
 bibliography: references.bib
 
-brand: ../shared/style/_brand.yml
+# brand: ../shared/style/_brand.yml
 
 crossref:
   custom:
@@ -43,9 +49,9 @@ format:
     title-block-banner-color: "#fafafa"
     toc: true
     toc-depth: 4
-    theme: ../shared/style/test.scss
-    # theme:
-    #   light: [../shared/style/rules.scss]
-    #   dark: [../shared/style/variables_dark.scss, ../shared/style/rules.scss]
+    # theme: ../shared/style/test.scss
+    theme:
+      light: [../shared/style/theme_general.scss, ../shared/style/theme_light.scss]
+      dark: [../shared/style/theme_general.scss, ../shared/style/theme_dark.scss]
 
 editor: source
