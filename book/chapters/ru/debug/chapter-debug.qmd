@@ -2,6 +2,58 @@
 title: "Глава [отладка]"
 ---
 
+<!-- CALLOUT COLORS DEBUG -->
+::::{layout-ncol=2}
+
+:::{.callout-note}
+callout
+:::
+
+:::{.callout-tip}
+callout
+:::
+
+:::{.callout-warning}
+callout
+:::
+
+:::{.callout-caution}
+callout
+:::
+
+:::{.callout-important}
+callout
+:::
+
+:::{.callout appearance="default"}
+callout
+:::
+
+:::{.callout-note .history}
+callout
+:::
+
+:::{.callout-note .person}
+callout
+:::
+
+:::{.callout-note .dataset}
+callout
+:::
+
+:::{.callout-note .myth}
+callout
+:::
+
+::::
+
+:::{.callout-note .objectives}
+callout
+:::
+
+
+
+<!-- CONTENT DEBUG -->
 {{< include ../../../../shared/includes/math-symbols.qmd >}}
 
 ::::{.intro}
@@ -9,7 +61,7 @@ title: "Глава [отладка]"
 
 Значимость этих проблем крайне не ясна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
 
-:::{.callout-note .objectives title="Objectives" collapse=true appearance="simple"}
+:::{.callout-note .objectives title="Objectives" collapse=true}
 **Level 1**
 
 - objective 1
@@ -25,7 +77,7 @@ title: "Глава [отладка]"
 
 Повседневная практика показывает, что укрепление и развитие структуры представляет собой интересный эксперимент проверки новых предложений. С другой стороны постоянный количественный рост и сфера нашей активности позволяет оценить значение форм развития.
 
-:::{.callout-note title="Outcomes"}
+:::{.callout-note .outcomes title="Outcomes" collapse=true}
 **Level 1**
 
 - outcome 1
@@ -48,12 +100,14 @@ title: "Глава [отладка]"
 
 Значимость этих проблем крайне не ясна, что укрепление и развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
 
-Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подгото вки и реализации существенных финансовых и административных условий [@knuth84].
+Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности способствует подготовки и реализации существенных финансовых и административных условий [@knuth84].
 
 > Это цитата, оформленная средствами Markdown из коробки.
 
 :::{.blockquote}
 Это цитата, оформленная через блочную разметку.
+
+> Автор. Год.
 :::
 
 
@@ -553,11 +607,8 @@ title: "Глава [отладка]"
 Это миф с заголовком и с id.
 :::
 
-<<<<<<< HEAD:book/chapters/ru/debug/chapter-debug.qmd
-#### Стилевые варианты {#debug-callout-dataset-appearance}
-=======
+
 #### Стилевые варианты {#debug-callout-myth-appearance}
->>>>>>> style/setup:book/chapters/ru/_debug/debug.qmd
 
 :::{.callout-note .myth appearance="default" collapse=false title="Заголовок мифа"}
 Это развернутый миф с заголовком в дефолтном оформлении.
@@ -732,8 +783,8 @@ flowchart LR
   B["Блок Б"]
   C["Блок Ц"]
   
-  A --> B
-  B --> C
+  A --o B
+  B --o C
 ```
 
 ```{mermaid}

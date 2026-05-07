@@ -6,24 +6,15 @@ project:
 # metadata-files:
 #   - _metadata.yml
 
+
 book:
   title: "WLM SDARP"
   date: today
-
   favicon: img/favicon.png
 
 bibliography: references.bib
 
-format:
-  html:
-    include-in-header:
-      - ../shared/includes/lvl-labels.html
-    # title-block-banner: img/title-block-banner.jpg
-    title-block-banner-color: "#fafafa"
-    toc: true
-    toc-depth: 4
-    theme:
-      - ../shared/css/common.scss
+brand: ../shared/style/_brand.yml
 
 crossref:
   custom:
@@ -43,5 +34,18 @@ crossref:
       kind: float
       reference-prefix: "Dataset"
       caption-prefix: "Dataset"
+
+format:
+  html:
+    include-in-header:
+      - ../shared/includes/lvl-labels.html
+    title-block-banner: img/title-block-banner.jpg
+    title-block-banner-color: "#fafafa"
+    toc: true
+    toc-depth: 4
+    theme: ../shared/style/test.scss
+    # theme:
+    #   light: [../shared/style/rules.scss]
+    #   dark: [../shared/style/variables_dark.scss, ../shared/style/rules.scss]
 
 editor: source
