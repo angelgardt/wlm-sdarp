@@ -1,3 +1,74 @@
+meta:
+  name: WLM SDARP
+  link:
+    home: ""
+    github: ""
+color:
+  palette:
+    white:           "#ffffff"
+    gray-100:        "#f8f9fa" # фон секций
+    gray-200:        "#e9ecef" # границы, разделители
+    gray-300:        "#dee2e6" # неактивные элементы
+    gray-400:        "#ced4da" # плейсхолдеры, disabled
+    gray-500:        "#adb5bd" # второстепенный текст
+    gray-600:        "#6c757d" # подписи, мета-информация
+    gray-700:        "#495057" # основной текст (альтернатива)
+    gray-800:        "#343a40" # заголовки
+    gray-900:        "#212529" # основной текст
+    black:           "#000000"
+    blue-light:      "#2a5c82" # основной: глубокий морской синий
+    indigo-light:    "#5a4fcf" # индиго: теоретические блоки, формулы
+    purple-light:    "#8565b0" # фиолетовый: когнитивные/нейро-темы
+    pink-light:      "#d45b7c" # розовый: эмоциональные/соц. исследования
+    red-light:       "#c23a2e" # красный: критические предупреждения, ошибки
+    orange-light:    "#c45a20" # оранжевый: гипотезы, акцентные заметки
+    yellow-light:    "#9e7d0a" # тёмное золото: рекомендации, лайфхаки
+    green-light:     "#1e8a6e" # изумрудный: успех, практика, экология
+    teal-light:      "#1b8a8f" # бирюзовый: нейтральные акценты, медиация
+    cyan-light:      "#3491c7" # циан: ссылки, инфо-блоки, интерактив
+    wine-light:      "#6b1d2e" # винный: клинические разделы, глубокий анализ, акцентные предупреждения
+    brown-light:     "#7a5647" # тёплый коричневый для цитат, исторических справок
+    slate-light:     "#5f7480"
+    blue-dark:       "#4a88b5" # основной: глубокий морской синий
+    indigo-dark:     "#7b73e0" # индиго: теоретические блоки, формулы
+    purple-dark:     "#a585d0" # фиолетовый: когнитивные/нейро-темы
+    pink-dark:       "#e07a99" # розовый: эмоциональные/соц. исследования
+    red-dark:        "#d95a4e" # красный: критические предупреждения, ошибки
+    orange-dark:     "#e07a45" # оранжевый: гипотезы, акцентные заметки
+    yellow-dark:     "#c4a030" # тёмное золото: рекомендации, лайфхаки
+    green-dark:      "#3cb08f" # изумрудный: успех, практика, экология
+    teal-dark:       "#35aeb3" # бирюзовый: нейтральные акценты, медиация
+    cyan-dark:       "#5ab4e0" # циан: ссылки, инфо-блоки, интерактив
+    wine-dark:       "#a84559" # винный: клинические разделы, глубокий анализ, акцентные предупреждения
+    brown-dark:      "#a07a6a" # тёплый коричневый для цитат, исторических справок
+    slate-dark:      "#8a9ea8"
+  background:
+    light:     gray-100
+    dark:      gray-900
+  foreground:
+    light:     gray-900
+    dark:      gray-100
+  primary:
+    light:     blue-light
+    dark:      blue-dark
+  secondary:
+    light:    slate-light
+    dark:     slate-dark
+  success:
+    light:    green-light
+    dark:     green-dark
+  info:
+    light:    cyan-light
+    dark:     cyan-dark
+  warning:
+    light:    yellow-light
+    dark:     yellow-dark
+  danger:
+    light:    red-light
+    dark:     red-dark
+
+
+
 typography:
   fonts:
     - family: Montserrat

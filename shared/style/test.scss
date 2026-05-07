@@ -1,0 +1,20 @@
+$callout-myth-color: var(--brand-orange-dark);
+/*-- scss:rules --*/
+
+.callout-note.dataset {
+  border-left-color: $primary !important;
+  /*&.callout-style-default {
+    .callout-header {
+      background-color: shift-color($callout-dataset-color, $callout-header-shift) !important;
+    }
+  }*/
+}
+
+.callout-note.myth {
+  border-left-color: $callout-myth-color !important;
+  /*&.callout-style-default {
+    .callout-header {
+      background-color: shift-color($callout-dataset-color, $callout-header-shift) !important;
+    }
+  }*/
+}
