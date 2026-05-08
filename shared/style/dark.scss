@@ -1,0 +1,48 @@
+//
+/*-- scss:defaults --*/
+//
+
+
+//
+// Color system (Dark Theme)
+// Optimized for readability, accessibility and psychological comfort
+//
+
+
+// Grayscale
+
+$white:    #ffffff !default;
+$gray-900: #f8f9fa !default;  // фон секций
+$gray-800: #e9ecef !default;  // границы, разделители
+$gray-700: #dee2e6 !default;  // неактивные элементы
+$gray-600: #ced4da !default;  // плейсхолдеры, disabled
+$gray-500: #adb5bd !default;  // второстепенный текст
+$gray-400: #6c757d !default;  // подписи, мета-информация
+$gray-300: #495057 !default;  // основной текст (альтернатива)
+$gray-200: #343a40 !default;  // заголовки
+$gray-100: #212529 !default;  // основной текст
+$black:    #000000 !default;
+
+
+// Semantic colors
+
+$blue:    #4a88b5 !default;  // основной: глубокий морской синий
+$indigo:  #7b73e0 !default;  // индиго: теоретические блоки, формулы
+$purple:  #a585d0 !default;  // фиолетовый: когнитивные/нейро-темы
+$pink:    #e07a99 !default;  // розовый: эмоциональные/соц. исследования
+$red:     #d95a4e !default;  // красный: критические предупреждения, ошибки
+$orange:  #e07a45 !default;  // оранжевый: гипотезы, акцентные заметки
+$yellow:  #c4a030 !default;  // тёмное золото: рекомендации, лайфхаки
+$green:   #3cb08f !default;  // изумрудный: успех, практика, экология
+$teal:    #35aeb3 !default;  // бирюзовый: нейтральные акценты, медиация
+$cyan:    #5ab4e0 !default;  // циан: ссылки, инфо-блоки, интерактив
+
+
+
+// Custom colors
+
+$wine:    #a84559 !default;  // винный: клинические разделы, глубокий анализ, акцентные предупреждения
+$brown:   #a07a6a !default;  // тёплый коричневый для цитат, исторических справок
+$slate:   #8a9ea8 !default;  // современный slate для рамок, иллюстраций
+
+

@@ -46,12 +46,24 @@ format:
     include-in-header:
       - ../shared/includes/lvl-labels.html
     title-block-banner: img/title-block-banner.jpg
-    title-block-banner-color: "#fafafa"
+    title-block-banner-color: "#f8f9fa"
     toc: true
     toc-depth: 4
-    # theme: ../shared/style/test.scss
+    # theme:
+    #   light:
+    #     - ../shared/style/_variables_light.scss
+    #     - ../shared/style/test.scss
+    #   dark:
+    #     - ../shared/style/_variables_dark.scss
+    #     - ../shared/style/test.scss
     theme:
-      light: [../shared/style/theme_general.scss, ../shared/style/theme_light.scss]
-      dark: [../shared/style/theme_general.scss, ../shared/style/theme_dark.scss]
+      light:
+        - ../shared/style/light.scss
+        - ../shared/style/common.scss
+        #- ../shared/style/rules.scss
+      dark:
+        - ../shared/style/dark.scss
+        - ../shared/style/common.scss
+        #- ../shared/style/rules.scss
 
 editor: source

@@ -1,0 +1,120 @@
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+//
+/*-- scss:defaults --*/
+//
+
+$font-family-sans-serif: "Raleway";
+$font-family-monospace: "Source Code Pro";
+$font-family-heading: "Montserrat";
+$font-family-navbar: "Montserrat";
+$font-weight-navbar: 400;
+$font-weight-navbar-title: 600;
+$font-family-labs: "Montserrat";
+
+
+
+//
+/*-- scss:rules --*/
+//
+
+// Navbar
+
+nav.navbar {
+  font-family: $font-family-navbar;
+  font-weight: $font-weight-navbar;
+  .navbar-title {
+    font-weight: $font-weight-navbar-title;
+  }
+}
+
+
+// Headings
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+}
+
+
+// Level Labels
+
+.lab-novice:first-child::after,
+.lab-junior:first-child::after,
+.lab-middle:first-child::after,
+.lab-senior:first-child::after,
+.lab-expert:first-child::after
+{
+  display: block;
+  width: fit-content;
+  border: solid 1px;
+  border-radius: .25rem;
+  padding-top: 0;
+  padding-bottom: .1rem;
+  padding-left: .3rem;
+  padding-right: .3rem;
+  margin-top: .2rem;
+  font-family: $font-family-labs;
+  font-size: 1rem;
+  font-variant-caps: all-small-caps;
+}
+
+.lab-novice:first-child::after {content: var(--lab-novice)}
+.lab-junior:first-child::after {content: var(--lab-junior)}
+.lab-middle:first-child::after {content: var(--lab-middle)}
+.lab-senior:first-child::after {content: var(--lab-senior)}
+.lab-expert:first-child::after {content: var(--lab-expert)}
+
+// Element customization
+
+.theorem, .proof {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Callouts
+
+.callout-caution > .callout-header > .callout-icon-container {
+    padding-top: .1em !important;
+}
+
+div.callout-none .callout-toggle::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{colorToRGB($body-color)}" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+
+
+// Custom elements
+
+.intro {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: solid 1px;
+}
+
+div.blockquote {
+  padding: .625rem 1.25rem;
+  border-left-width: .25rem;
+  border-left-style: solid;
+  blockquote.blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: right;
+    ::before {
+      content: "— ";
+    }
+  }
+}
