@@ -739,6 +739,12 @@ $$
 x_i^m \quad x_1\ip{m} \quad x_k\ib{m}
 $$
 
+$$
+\seq{x}{n} \quad \seqq{x}{k_n}
+$$
+
+
+
 ## Код {#debug-code}
 
 ```{r}

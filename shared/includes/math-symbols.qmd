@@ -45,6 +45,13 @@
 
 
 
+<!-- Calculus & Analysis -->
+\newcommand{\seq}[2]{({#1}_{#2})}
+\newcommand{\seqq}[2]{({#1}_{#2})_{{#2}=1}^\infty}
+
+
+
+
 <!-- Linear Algebra -->
 \newcommand{\ip}[1]{^{(#1)}}
 \newcommand{\ib}[1]{^{[#1]}}
