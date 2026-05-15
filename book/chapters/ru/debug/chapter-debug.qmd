@@ -717,7 +717,27 @@ $$
 \circled{2} : \expect (X) \underset{\boxed{1}}{\defin{=}} \int_{-\infty}^{+\infty} x \dens_X (x) \, dx
 $$
 
+$$
+\varphi \, \bs{\varphi} \, a \, \bs{a} \, \mathrm{a} \, \mathbf{a}
+$$
 
+$$
+\mbb{P}(x) \quad \mcal{D}(x) \quad \msf{p} \quad \mrm{P}
+$$
+$$
+\setN \quad 
+\setNo \quad 
+\setZ \quad 
+\setQ \quad 
+\setI \quad 
+\setR \quad 
+\setC \quad 
+\setIm
+$$
+
+$$
+x_i^m \quad x_1\ip{m} \quad x_k\ib{m}
+$$
 
 ## Код {#debug-code}
 

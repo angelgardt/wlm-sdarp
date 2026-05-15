@@ -4,21 +4,56 @@
 \newcommand{\circled}[1]{\enclose{circle}{#1}}
 <!-- \newcommand{\boxed}[1]{\enclose{box}{#1}} -->
 
-<!-- Common -->
-\newcommand{\const}{\text{const}}
-\newcommand{\fix}{\text{fix}}
-\DeclareMathOperator{\sgn}{sgn}
+
+
+<!-- Shortcuts -->
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
 \newcommand{\rb}{\right]}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mcal}{\mathcal}
+\newcommand{\msf}{\mathsf}
 
 
+
+<!-- Common -->
+\newcommand{\const}{\text{const}}
+\newcommand{\fix}{\text{fix}}
+\DeclareMathOperator{\sgn}{sgn}
 \newcommand{\defin}[1]{\overset{\text{def}}{#1}}
-\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
-\newcommand{\toprob}{\overset{p}{\to}}
-\newcommand{\todist}{\overset{d}{\to}}
+
+
 
 <!-- Logic -->
 \newcommand{\true}{\mathsf{T}}
 \newcommand{\false}{\mathsf{F}}
+
+
+
+<!-- Sets of Numbers -->
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setNo}{\mathbb{N}_0}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setC}{\mathbb{C}}
+\newcommand{\setIm}{i\mathbb{R}}
+
+
+
+<!-- Linear Algebra -->
+\newcommand{\ip}[1]{^{(#1)}}
+\newcommand{\ib}[1]{^{[#1]}}
+\newcommand{\v}{\mathbf}
+\newcommand{\tp}{\mathrm{T}}
+
+
+<!-- Probability Theory -->
+\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
+\newcommand{\toprob}{\overset{p}{\to}}
+\newcommand{\todist}{\overset{d}{\to}}
+
