@@ -6,9 +6,10 @@ Thumbs.db
 *.log
 
 # ==========
-## Temporary Files
+## Temporary Files & Drafts
 # ==========
 _tmp-*/
+drafts/
 
 # ==========
 ## Just in case
@@ -54,3 +55,4 @@ __pycache__/
 *.pyo
 manim_cache/
 media/
+.positai

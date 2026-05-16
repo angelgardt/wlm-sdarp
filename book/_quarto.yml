@@ -1,36 +1,73 @@
-project: 
+project:
   type: book
-  preview: 
+  preview:
     port: 5050
 
-# metadata-files: 
+# metadata-files:
 #   - _metadata.yml
 
-book: 
+
+book:
   title: "WLM SDARP"
   date: today
-  
   favicon: img/favicon.png
+  navbar:
+    left:
+      - text: "Book"
+        href: ""
+      - text: "Tests"
+        href: ""
 
 bibliography: references.bib
 
+crossref:
+  chapters: true
+  custom:
+    - key: mth
+      kind: float
+      reference-prefix: "Myth"
+      caption-prefix: "Myth"
+    - key: hst
+      kind: float
+      reference-prefix: "History"
+      caption-prefix: "History"
+    - key: prs
+      kind: float
+      reference-prefix: "Person"
+      caption-prefix: "Person"
+    - key: dts
+      kind: float
+      reference-prefix: "Dataset"
+      caption-prefix: "Dataset"
+    - key: cse
+      kind: float
+      reference-prefix: "Case"
+      caption-prefix: "Case"
+    - key: sch
+      kind: float
+      reference-prefix: "Scheme"
+      caption-prefix: "Scheme"
+    - key: vid
+      kind: float
+      reference-prefix: "Video"
+      caption-prefix: "Video"
+
+
 format:
-  html: 
-    # include-in-header: 
-    #   - ../shared/includes/lab-labels.html
-    # title-block-banner: img/title-block-banner.jpg
-    title-block-banner-color: "#fafafa"
+  html:
+    include-in-header:
+      - ../shared/includes/lvl-labels.html
+    title-block-banner: img/title-block-banner.jpg
+    title-block-banner-color: "#f8f9fa"
+    lightbox: true
     toc: true
     toc-depth: 4
-    # theme: 
-    #   - ../shared/css/common.scss
-  pdf:
-    pdf-engine: xelatex
-    output-file: "book.pdf"
-
-
-
-# filters: 
-#   - ../shared/filters/custom-callouts.lua
+    theme:
+      light:
+        - ../shared/style/light.scss
+        - ../shared/style/common.scss
+      dark:
+        - ../shared/style/dark.scss
+        - ../shared/style/common.scss
 
 editor: source
