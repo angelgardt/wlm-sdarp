@@ -20,47 +20,64 @@
 
 
 <!-- Common -->
-\newcommand{\const}{\text{const}}
-\newcommand{\fix}{\text{fix}}
-\DeclareMathOperator{\sgn}{sgn}
-\newcommand{\defin}[1]{\overset{\text{def}}{#1}}
+\newcommand{\const}{\text{const}}                   <!-- constant -->
+\newcommand{\fix}{\text{fix}}                       <!-- fixed -->
+\DeclareMathOperator{\sgn}{sgn}                     <!-- signum function -->
+\newcommand{\defin}[1]{\overset{\text{def}}{#1}}    <!-- by definition -->
 
 
 
 <!-- Logic -->
-\newcommand{\true}{\mathsf{T}}
-\newcommand{\false}{\mathsf{F}}
+\newcommand{\true}{\mathsf{T}}     <!-- True (logical constant) -->
+\newcommand{\false}{\mathsf{F}}    <!-- False (logical constant) -->
 
 
 
 <!-- Sets of Numbers -->
-\newcommand{\setN}{\mathbb{N}}
-\newcommand{\setNo}{\mathbb{N}_0}
-\newcommand{\setZ}{\mathbb{Z}}
-\newcommand{\setQ}{\mathbb{Q}}
-\newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}
-\newcommand{\setR}{\mathbb{R}}
-\newcommand{\setC}{\mathbb{C}}
-\newcommand{\setIm}{i\mathbb{R}}
+\newcommand{\setN}{\mathbb{N}}                         <!-- Natural Numbers -->
+\newcommand{\setNo}{\mathbb{N}_0}                      <!-- Non Negative Integer Numbers -->
+\newcommand{\setZ}{\mathbb{Z}}                         <!-- Integer Numbers -->
+\newcommand{\setQ}{\mathbb{Q}}                         <!-- Rational Numbers -->
+\newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}      <!-- Irrational Numbers -->
+\newcommand{\setR}{\mathbb{R}}                         <!-- Real Numbers -->
+\newcommand{\setC}{\mathbb{C}}                         <!-- Complex Numbers -->
+\newcommand{\setIm}{i\mathbb{R}}                       <!-- Imaginary Numbers -->
 
 
 
 <!-- Calculus & Analysis -->
-\newcommand{\seq}[2]{({#1}_{#2})}
-\newcommand{\seqq}[2]{({#1}_{#2})_{{#2}=1}^\infty}
-
+\newcommand{\seq}[2]{({#1}_{#2})}                       <!-- Sequence (no indices) -->
+\newcommand{\seqq}[2]{({#1}_{#2})_{{#2}=1}^\infty}      <!-- Sequence (with indices) -->
 
 
 
 <!-- Linear Algebra -->
-\newcommand{\ip}[1]{^{(#1)}}
-\newcommand{\ib}[1]{^{[#1]}}
-\newcommand{\v}{\mathbf}
-\newcommand{\tp}{\mathrm{T}}
+\newcommand{\ip}[1]{^{(#1)}}                      <!-- Upper index in parentheses -->
+\newcommand{\ib}[1]{^{[#1]}}                      <!-- Upper index in brackets -->
+\newcommand{\v}{\mathbf}                          <!-- Vector, matrix (bold font) -->
+\newcommand{\tp}{\mathrm{T}}                      <!-- Marix transposition (use with ^) -->
+
 
 
 <!-- Probability Theory -->
-\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
-\newcommand{\toprob}{\overset{p}{\to}}
-\newcommand{\todist}{\overset{d}{\to}}
+\newcommand{\prob}{\mathbb{P}}                  <!-- Probability -->
+\newcommand{\expect}{\mathbb{E}}                <!-- Expectation (expected value) -->
+\newcommand{\dens}[1]{f_{#1}}                   <!-- Density function -->
+\newcommand{\pval}{\mathsf{p}}                  <!-- p-value -->
+\newcommand{\toas}{\overset{\text{a.s.}}{\to}}  <!-- Convergence almost sure -->
+\newcommand{\toprob}{\overset{p}{\to}}          <!-- Convergeence by probability -->
+\newcommand{\todist}{\overset{d}{\to}}          <!-- Convergeence by distribution -->
+
+
+
+<!-- Distributions -->
+\newcommand{\df}{\text{df}}
+\newcommand{\norm}[2]{\mathcal{N}(#1, \, #2)}
+\newcommand{\pois}[1]{\text{Pois}(#1)}
+
+
+<!-- Linear Models -->
+
+
+
 

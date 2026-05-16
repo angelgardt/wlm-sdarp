@@ -20,9 +20,8 @@ book:
 
 bibliography: references.bib
 
-# brand: ../shared/style/_brand.yml
-
 crossref:
+  chapters: true
   custom:
     - key: mth
       kind: float
@@ -40,6 +39,19 @@ crossref:
       kind: float
       reference-prefix: "Dataset"
       caption-prefix: "Dataset"
+    - key: cse
+      kind: float
+      reference-prefix: "Case"
+      caption-prefix: "Case"
+    - key: sch
+      kind: float
+      reference-prefix: "Scheme"
+      caption-prefix: "Scheme"
+    - key: vid
+      kind: float
+      reference-prefix: "Video"
+      caption-prefix: "Video"
+
 
 format:
   html:
@@ -47,15 +59,9 @@ format:
       - ../shared/includes/lvl-labels.html
     title-block-banner: img/title-block-banner.jpg
     title-block-banner-color: "#f8f9fa"
+    lightbox: true
     toc: true
     toc-depth: 4
-    # theme:
-    #   light:
-    #     - ../shared/style/_variables_light.scss
-    #     - ../shared/style/test.scss
-    #   dark:
-    #     - ../shared/style/_variables_dark.scss
-    #     - ../shared/style/test.scss
     theme:
       light:
         - ../shared/style/light.scss

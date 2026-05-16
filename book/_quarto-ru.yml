@@ -17,6 +17,8 @@ book:
     - part: chapters/ru/debug/part-debug.qmd
       chapters:
         - chapters/ru/debug/chapter-debug.qmd
+  appendices:
+    - chapters/ru/debug/apx-debug.qmd
 
 
 format:
