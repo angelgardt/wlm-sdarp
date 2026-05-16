@@ -1,14 +1,21 @@
-// Fonts
+//
+// Fonts import
+//
 
+// Headings
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+// Monospace
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+// Main text
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-//
+
+// //
 /*-- scss:defaults --*/
-//
+// //
 
-$font-family-sans-serif: "Raleway";
+$font-family-sans-serif: "Open Sans";
 $font-family-monospace: "Source Code Pro";
 $font-family-heading: "Montserrat";
 $font-family-navbar: "Montserrat";
@@ -18,9 +25,9 @@ $font-family-labs: "Montserrat";
 
 
 
-//
+// //
 /*-- scss:rules --*/
-//
+// //
 
 // Navbar
 
@@ -68,6 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 .lab-senior:first-child::after {content: var(--lab-senior)}
 .lab-expert:first-child::after {content: var(--lab-expert)}
 
+
 // Element customization
 
 .theorem, .proof {
@@ -84,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
   }
 }
+
 
 // Callouts
 

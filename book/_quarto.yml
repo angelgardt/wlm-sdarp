@@ -60,10 +60,8 @@ format:
       light:
         - ../shared/style/light.scss
         - ../shared/style/common.scss
-        #- ../shared/style/rules.scss
       dark:
         - ../shared/style/dark.scss
         - ../shared/style/common.scss
-        #- ../shared/style/rules.scss
 
 editor: source
