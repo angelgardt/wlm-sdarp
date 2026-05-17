@@ -48,36 +48,42 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // Level Labels
+$lab-heading-highest: 2;
+$lab-heading-lowest: 3;
 
-.lab-novice:first-child::after,
-.lab-junior:first-child::after,
-.lab-middle:first-child::after,
-.lab-senior:first-child::after,
-.lab-expert:first-child::after
-{
-  display: block;
-  width: fit-content;
-  border: solid 1px;
-  border-radius: .25rem;
-  padding-top: 0;
-  padding-bottom: .1rem;
-  padding-left: .3rem;
-  padding-right: .3rem;
-  margin-top: .2rem;
-  font-family: $font-family-labs;
-  font-size: 1rem;
-  font-variant-caps: all-small-caps;
+@for $i from $lab-heading-highest through $lab-heading-lowest {
+  h#{$i}.lab-novice:first-child::after,
+  h#{$i}.lab-junior:first-child::after,
+  h#{$i}.lab-middle:first-child::after,
+  h#{$i}.lab-senior:first-child::after,
+  h#{$i}.lab-expert:first-child::after
+  {
+    display: block;
+    width: fit-content;
+    border: solid 1px;
+    border-radius: .25rem;
+    padding-top: 0;
+    padding-bottom: .1rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    margin-top: .2rem;
+    font-family: $font-family-labs;
+    font-size: 1rem;
+    font-variant-caps: all-small-caps;
+  }
+
+  h#{$i}.lab-novice:first-child::after {content: var(--lab-novice)}
+  h#{$i}.lab-junior:first-child::after {content: var(--lab-junior)}
+  h#{$i}.lab-middle:first-child::after {content: var(--lab-middle)}
+  h#{$i}.lab-senior:first-child::after {content: var(--lab-senior)}
+  h#{$i}.lab-expert:first-child::after {content: var(--lab-expert)}
 }
 
-.lab-novice:first-child::after {content: var(--lab-novice)}
-.lab-junior:first-child::after {content: var(--lab-junior)}
-.lab-middle:first-child::after {content: var(--lab-middle)}
-.lab-senior:first-child::after {content: var(--lab-senior)}
-.lab-expert:first-child::after {content: var(--lab-expert)}
 
 
 // Element customization
 
+// border for theorems
 .theorem, .proof {
   border-width: 1px;
   border-style: solid;
@@ -92,6 +98,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
   }
 }
+
+// reduce caption font size for folded code
+div.cell div[data-code-fold="true"]{
+  figcaption.quarto-float-lst {
+    font-size: .7em;
+  }
+  summary {
+    font-size: .7em;
+  }
+}
+
 
 
 // Callouts
