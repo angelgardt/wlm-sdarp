@@ -1,11 +1,7 @@
 ---
-# title: "Глава [отладка]"
-# identifier: sec-debug
-# label: sec-debug
 # abstract-title: "Абстракт"
 author: "Антон Ангельгардт"
 abstract: "Тут можно написать аннотацию к главе"
-citation: true
 ---
 
 # Глава [отладка] {#sec-debug}
@@ -16,6 +12,7 @@ citation: true
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = TRUE, warning = TRUE, error = TRUE, cache = TRUE)
 ```
 
+<!---
 ::::{.intro}
 Текст введения.
 
@@ -91,36 +88,36 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = TRUE, warning = TRUE, 
 
 | Тип    | Кроссреф |
 |:-------|:---------|
-| Глава (Chapter) | @sec-debug |
-| Раздел (Section) | @sec-debug-text |
-| Приложение (Appendix) | @sec-apx-debug |
-| Заметка (Note) | @nte-debug-id |
-| Совет (Tip) | @tip-debug-id |
-| Внимание (Warning)  | @wrn-debug-id |
-| Нюанс (Caution) | @cau-debug-id |
-| Важность (Important)| @imp-debug-id |
-| История (History) | @hst-debug-id |
-| Личность (Person) | @prs-debug-id |
-| Датасет (Dataset) | @dts-debug-id |
-| Миф (Myth) | @mth-debug-id |
-| Кейс (Case) | @cse-debug-id |
-| Определение (Definition) | @def-debug |
-| Лемма (Lemma) | @lem-debug |
-| Теорема (Theorem) | @thm-debug |
-| Следствие (Corollary) | @cor-debug |
-| Утверждение (Proposition) | @prp-debug |
-| Алгоритм (Algorithm) | @alg-debug |
-| Пример (Example) | @exm-debug |
-| Задача (Exercise) | @exr-debug |
+| Глава (Chapter)            | @sec-debug |
+| Раздел (Section)           | @sec-debug-text |
+| Приложение (Appendix)      | @sec-apx-debug |
+| Заметка (Note)             | @nte-debug-id |
+| Совет (Tip)                | @tip-debug-id |
+| Внимание (Warning)         | @wrn-debug-id |
+| Нюанс (Caution)            | @cau-debug-id |
+| Важность (Important)       | @imp-debug-id |
+| История (History)          | @hst-debug-id |
+| Личность (Person)          | @prs-debug-id |
+| Датасет (Dataset)          | @dts-debug-id |
+| Миф (Myth)                 | @mth-debug-id |
+| Кейс (Case)                | @cse-debug-id |
+| Определение (Definition)   | @def-debug |
+| Лемма (Lemma)              | @lem-debug |
+| Теорема (Theorem)          | @thm-debug |
+| Следствие (Corollary)      | @cor-debug |
+| Утверждение (Proposition)  | @prp-debug |
+| Алгоритм (Algorithm)       | @alg-debug |
+| Пример (Example)           | @exm-debug |
+| Задача (Exercise)          | @exr-debug |
 | Предположение (Conjecture) | @cnj-debug |
-| Уравнение (Equation) | @eq-debug |
-| Замечание (Remark) | @rem-debug |
-| Решение (Solution) | @sol-debug |
-| График (Figure) | @fig-debug |
-| Таблица (Table) | @tbl-debug |
-| Код (Listing) | @lst-debug |
-| Схема (Scheme) | @sch-debug |
-| Видео (Video) | @vid-debug |
+| Уравнение (Equation)       | @eq-debug  |
+| Замечание (Remark)         | @rem-debug |
+| Решение (Solution)         | @sol-debug |
+| Иллюстрация (Figure)       | @fig-debug |
+| Таблица (Table)            | @tbl-debug |
+| Код (Listing)              | @lst-debug |
+| Схема (Scheme)             | @sch-debug |
+| Видео (Video)              | @vid-debug |
 
 
 
@@ -137,7 +134,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = TRUE, warning = TRUE, 
 
 > Автор. Год.
 :::
-
+--->
 
 
 ## Лейблы уровней {#sec-debug-labs .lab-junior}
@@ -145,6 +142,10 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = TRUE, warning = TRUE, 
 Обычно вешаются на заголовок второго уровня, но если потребуется, и третьего тоже.
 
 ### Раздел для нешарящих {#debug-labs-novice .lab-novice}
+
+Идейные соображения высшего порядка, а также реализация намеченных плановых заданий в значительной степени обуславливает создание направлений прогрессивного развития.
+
+### Раздел для нешарящих (ещё один) {#debug-labs-novice .lab-novice}
 
 Идейные соображения высшего порядка, а также реализация намеченных плановых заданий в значительной степени обуславливает создание направлений прогрессивного развития.
 
@@ -165,7 +166,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = TRUE, warning = TRUE, 
 Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют от нас анализа систем массового участия.
 
 
-
+<!---
 ## Callouts {#sec-debug-callout}
 
 ### Цветовая палитра колаутов
@@ -912,6 +913,7 @@ $$
 #| label: chunk-name
 #| lst-label: lst-debug
 #| lst-cap: "Код с кроссрефом"
+#| code-fold: true
 
 (1:10) %*% t(10:1)
 ```
@@ -1018,10 +1020,11 @@ plot1 <- plot(rnorm(100), rnorm(100))
 ```{r}
 #| label: fig-debug
 #| lst-label: lst-debug-code-figure
-#| lst-cap: "Код построения графика (≈нумерованного)"
+#| lst-cap: "Код построения графика (нумерованного)"
 #| fig-cap: "Нумерованная визуализация, построенная кодом"
 #| warning: false
 #| message: false
+#| code-fold: true
 
 library(tidyverse)
 
@@ -1096,8 +1099,6 @@ gitGraph
 
 ### Карты
 
-Ссылка на карту @map-debug.
-
 ```{r, echo=FALSE}
 #| label: fig-map-debug
 #| lst-label: lst-debug-map
@@ -1157,3 +1158,4 @@ leaflet() %>%
 ![Дебажная картина. `.column-screen-inset`](img/debug-pic.jpg)
 :::
 
+--->
