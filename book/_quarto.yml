@@ -19,6 +19,7 @@ book:
         href: ""
 
 bibliography: references.bib
+csl: ../shared/refs/apa.csl
 
 crossref:
   chapters: true
@@ -57,6 +58,8 @@ format:
   html:
     include-in-header:
       - ../shared/includes/lvl-labels.html
+    include-after-body:
+      - ../shared/includes/level-filter.html
     title-block-banner: img/title-block-banner.jpg
     title-block-banner-color: "#f8f9fa"
     lightbox: true
