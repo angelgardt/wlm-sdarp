@@ -96,6 +96,13 @@ $lab-heading-lowest: 3;
   padding-right: .5rem;
 }
 
+.solution.folded{
+  p:first-child::after {
+    content: "Управляшка";
+    float: right;
+  }
+}
+
 // reduce caption font size for folded code
 div.cell div[data-code-fold="true"]{
   figcaption.quarto-float-lst {
