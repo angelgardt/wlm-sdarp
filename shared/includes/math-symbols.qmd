@@ -16,6 +16,8 @@
 \newcommand{\mbb}{\mathbb}
 \newcommand{\mcal}{\mathcal}
 \newcommand{\msf}{\mathsf}
+\newcommand{\vphi}{\varphi}
+\newcommand{\vepsilon}{\varepsilon}
 
 
 
@@ -30,6 +32,9 @@
 <!-- Logic -->
 \newcommand{\true}{\mathsf{T}}     <!-- True (logical constant) -->
 \newcommand{\false}{\mathsf{F}}    <!-- False (logical constant) -->
+\newcommand{\impl}{\Rightarrow}         <!-- Implication -->
+\newcommand{\repl}{\Leftarrow}          <!-- Replication -->
+\newcommand{\equi}{\Leftrightarrow}     <!-- Equivalence -->
 
 
 
@@ -48,6 +53,10 @@
 <!-- Calculus & Analysis -->
 \newcommand{\seq}[2]{({#1}_{#2})}                       <!-- Sequence (no indices) -->
 \newcommand{\seqq}[2]{({#1}_{#2})_{{#2}=1}^\infty}      <!-- Sequence (with indices) -->
+\newcommand{\dom}{\mathcal{D}}                          <!-- Domain -->
+\newcommand{\img}{\mathcal{E}}                          <!-- Image -->
+\newcommand{\tto}{\longrightarrow}                      <!-- Long arrow -->
+\newcommand{\xto}{\xrightarrow}                         <!-- Scalable arrow -->
 
 
 

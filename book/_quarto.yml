@@ -58,9 +58,9 @@ format:
   html:
     include-in-header:
       - ../shared/includes/lvl-labels.html
-    include-after-body:
-      - text: |
-          <script type="text/javascript" src="../../../assets/js/level-filter.js"></script>
+    # include-after-body:
+    #   - text: |
+    #       <script type="text/javascript" src="../../../assets/js/level-filter.js"></script>
     title-block-banner: img/title-block-banner.jpg
     title-block-banner-color: "#f8f9fa"
     lightbox: true

@@ -17,6 +17,9 @@ book:
     - part: chapters/ru/debug/part-debug.qmd
       chapters:
         - chapters/ru/debug/chapter-debug.qmd
+    - part: "Черновики (Drafts)"
+      chapters:
+        - chapters/ru/drafts/calculus.qmd
   appendices:
     - chapters/ru/debug/apx-debug.qmd
 
