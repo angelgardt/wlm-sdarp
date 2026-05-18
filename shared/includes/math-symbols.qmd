@@ -22,6 +22,11 @@
 \newcommand{\msf}{\mathsf}
 \newcommand{\vphi}{\varphi}
 \newcommand{\vepsilon}{\varepsilon}
+\newcommand{\ty}{\infty}
+\newcommand{\pty}{{+\infty}}
+\newcommand{\nty}{{-\infty}}
+\newcommand{\geq}{\geqslant}
+\newcommand{\leq}{\leqslant}
 
 
 
@@ -45,10 +50,22 @@
 
 
 
+<!-- Sets -->
+\newcommand{\nothing}{\varnothing}                        <!-- Empty set -->
+\newcommand{\subs}{\subseteq}                             <!-- Redef subseteq as subset -->
+\newcommand{\subp}{\subset}                               <!-- Redef subset as proper subset -->
+\newcommand{\symdif}{\,\triangle\,}                       <!-- Symmetrical difference -->
+\newcommand{\intcc}[2]{\left[{#1}, \, {#2}\right]}    <!-- [a,b] -->
+\newcommand{\intoo}[2]{\left]{#1}, \, {#2}\right[}    <!-- ]a,b[ -->
+\newcommand{\intco}[2]{\left[{#1}, \, {#2}\right[}    <!-- [a,b[ -->
+\newcommand{\intoc}[2]{\left]{#1}, \, {#2}\right]}    <!-- ]a,b] -->
+
+
+
 <!-- Sets of Numbers & Constants-->
 \newcommand{\setN}{\mathbb{N}}                         <!-- Natural Numbers -->
-\newcommand{\setNp}{\mathbb{N}^\star}                  <!-- Positive Integer Numbers -->
 \newcommand{\setNo}{\mathbb{N}_0}                      <!-- Non Negative Integer Numbers -->
+\newcommand{\setZp}{\mathbb{Z}^{+}}                  <!-- Positive Integer Numbers -->
 \newcommand{\setZ}{\mathbb{Z}}                         <!-- Integer Numbers -->
 \newcommand{\setQ}{\mathbb{Q}}                         <!-- Rational Numbers -->
 \newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}      <!-- Irrational Numbers -->
