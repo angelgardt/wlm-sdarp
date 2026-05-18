@@ -21,6 +21,7 @@ book:
       chapters:
         - chapters/ru/drafts/draft-calculus.qmd
         - chapters/ru/drafts/draft-statmethods.qmd
+    - chapters/ru/frontmatter/fm-notation.qmd
   appendices:
     - chapters/ru/debug/apx-debug.qmd
 

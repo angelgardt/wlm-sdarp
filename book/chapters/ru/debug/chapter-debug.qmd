@@ -895,7 +895,6 @@ plot(1:10, 10:1)
 Это алгоритм.
 :::
 
-<!---
 ### Кастомные символы (includes) {#debug-maths-includes}
 
 Это inline-формула с кастомными символами: $f(x) \defin{=} g(x) \toas h(x)$, которая сама по себе совершенно ничего не значит.
@@ -906,6 +905,14 @@ $$
 
 $$
 \varphi \, \bs{\varphi} \, a \, \bs{a} \, \mathrm{a} \, \mathbf{a}
+$$
+
+$$
+\frac{\d f}{\d x} \, i \, \i \, e \, \e \quad \uppi \, \pi \, \upalpha \, \alpha
+$$
+
+$$
+\dens{\normm}(x | \mu, \sigma) = \frac{1}{\sqrt{2 \uppi} \, \sigma} \e^{-\tfrac{(x - \mu)^2}{2\sigma^2}}
 $$
 
 $$
@@ -936,6 +943,7 @@ $$
 $$
 
 
+<!---
 
 ## Код {#sec-debug-code}
 

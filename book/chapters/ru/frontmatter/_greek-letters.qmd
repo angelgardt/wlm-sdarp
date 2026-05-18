@@ -1,0 +1,26 @@
+| Основное начертание                      | Прямое строчное начертание | Полужирное начертание | Название |
+|:-----:|:-----:|:-----:|:-----:|
+| $[\mathrm A]$ $\alpha$                   | $\upalpha$                 |                   $\boldsymbol \alpha$                               |альфа|
+| $[\mathrm B]$ $\beta$                    | $\upbeta$                  |                   $\boldsymbol \beta$                                |бета|
+| $\Gamma$      $\gamma$                   | $\upgamma$                 | $\mathbf \Gamma$  $\boldsymbol \gamma$                               |гамма|
+| $\Delta$      $\delta$                   | $\updelta$                 | $\mathbf \Delta$  $\boldsymbol \delta$                               |дельта|
+| $[\mathrm E]$ $\varepsilon$ $(\epsilon)$ | $\upvarepsilon$            |                   $\boldsymbol \varepsilon$ $(\boldsymbol \epsilon)$ |эпсилон|
+| $[\mathrm Z]$ $\zeta$                    | $\upzeta$                  |                   $\boldsymbol \zeta$                                |дзета|
+| $[\mathrm H]$ $\eta$                     | $\upeta$                   |                   $\boldsymbol \eta$                                 |эта|
+| $\Theta$      $\theta$                   | $\uptheta$                 | $\mathbf \Theta$  $\boldsymbol \theta$                               |тета|
+| $[\mathrm I]$ $\iota$                    | $\upiota$                  |                   $\boldsymbol \iota$                                |йота|
+| $[\mathrm K]$ $\kappa$ $(\varkappa)$     | $\upkappa$                 |                   $\boldsymbol \kappa$ $(\boldsymbol \varkappa)$     |каппа|
+| $\Lambda$     $\lambda$                  | $\uplambda$                | $\mathbf \Lambda$ $\boldsymbol \lambda$                              |лямбда|
+| $[\mathrm M]$ $\mu$                      | $\upmu$                    |                   $\boldsymbol \mu$                                  |мю|
+| $[\mathrm N]$ $\nu$                      | $\upnu$                    |                   $\boldsymbol \nu$                                  |ню|
+| $\Xi$         $\xi$                      | $\upxi$                    | $\mathbf \Xi$     $\boldsymbol \xi$                                  |кси|
+| $[\mathrm O]$ $[o]$                      |                            |                                                                      |омикрон|
+| $\Pi$         $\pi$                      | $\uppi$                    | $\mathbf \Pi$     $\boldsymbol \pi$                                  |пи|
+| $[\mathrm P]$ $\rho$                     | $\uprho$                   |                   $\boldsymbol \rho$                                 |ро|
+| $\Sigma$      $\sigma$                   | $\upsigma$                 | $\mathbf \Sigma$  $\boldsymbol \sigma$                               |сигма|
+| $[\mathrm T]$ $\tau$                     | $\uptau$                   |                   $\boldsymbol \tau$                                 |тау|
+| $[\mathrm Y]$ $[\upsilon]$               |                            |                                                                      |ипсилон|
+| $\Phi$        $\varphi$ $(\phi)$         | $\upphi$                   | $\mathbf \Phi$    $\boldsymbol \varphi$ $\boldsymbol \phi$           |фи|
+| $[\mathrm X]$ $\chi$                     | $\upchi$                   |                   $\boldsymbol \chi$                                 |хи|
+| $\Psi$        $\psi$                     | $\uppsi$                   | $\mathbf \Psi$    $\boldsymbol \psi$                                 |пси|
+| $\Omega$      $\omega$                   | $\upomega$                 | $\mathbf \Omega$  $\boldsymbol \omega$                               |омега|

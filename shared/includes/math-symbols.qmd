@@ -1,5 +1,9 @@
 <!-- {{< include ../../../../shared/includes/math-symbols.qmd >}} -->
 
+\usepackage{upgreek}
+
+
+
 <!-- Decorations -->
 \newcommand{\circled}[1]{\enclose{circle}{#1}}
 <!-- \newcommand{\boxed}[1]{\enclose{box}{#1}} -->
@@ -38,8 +42,9 @@
 
 
 
-<!-- Sets of Numbers -->
+<!-- Sets of Numbers & Constants-->
 \newcommand{\setN}{\mathbb{N}}                         <!-- Natural Numbers -->
+\newcommand{\setNp}{\mathbb{N}^\star}                  <!-- Positive Integer Numbers -->
 \newcommand{\setNo}{\mathbb{N}_0}                      <!-- Non Negative Integer Numbers -->
 \newcommand{\setZ}{\mathbb{Z}}                         <!-- Integer Numbers -->
 \newcommand{\setQ}{\mathbb{Q}}                         <!-- Rational Numbers -->
@@ -47,6 +52,8 @@
 \newcommand{\setR}{\mathbb{R}}                         <!-- Real Numbers -->
 \newcommand{\setC}{\mathbb{C}}                         <!-- Complex Numbers -->
 \newcommand{\setIm}{i\mathbb{R}}                       <!-- Imaginary Numbers -->
+\newcommand{\e}{\mathrm{e}}                            <!-- Euler number -->
+\newcommand{\i}{\mathrm{i}}                            <!-- Imaginary unit -->
 
 
 
@@ -57,6 +64,7 @@
 \newcommand{\img}{\mathcal{E}}                          <!-- Image -->
 \newcommand{\tto}{\longrightarrow}                      <!-- Long arrow -->
 \newcommand{\xto}{\xrightarrow}                         <!-- Scalable arrow -->
+\newcommand{\d}{\mathrm{d}}                             <!-- differential -->
 
 
 
@@ -81,6 +89,7 @@
 
 <!-- Distributions -->
 \newcommand{\df}{\text{df}}
+\newcommand{\normm}{\mathcal{N}}
 \newcommand{\norm}[2]{\mathcal{N}(#1, \, #2)}
 \newcommand{\pois}[1]{\text{Pois}(#1)}
 
