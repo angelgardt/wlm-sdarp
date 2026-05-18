@@ -34,8 +34,11 @@
 
 
 <!-- Logic -->
-\newcommand{\true}{\mathsf{T}}     <!-- True (logical constant) -->
-\newcommand{\false}{\mathsf{F}}    <!-- False (logical constant) -->
+\newcommand{\true}{\mathsf{T}}          <!-- True (logical constant) -->
+\newcommand{\false}{\mathsf{F}}         <!-- False (logical constant) -->
+\newcommand{\and}{\wedge}               <!-- Conjunction -->
+\newcommand{\or}{\vee}                  <!-- Disjunction -->
+\newcommand{\xor}{\veebar}              <!-- Exclusive disjunction -->
 \newcommand{\impl}{\Rightarrow}         <!-- Implication -->
 \newcommand{\repl}{\Leftarrow}          <!-- Replication -->
 \newcommand{\equi}{\Leftrightarrow}     <!-- Equivalence -->
@@ -51,15 +54,15 @@
 \newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}      <!-- Irrational Numbers -->
 \newcommand{\setR}{\mathbb{R}}                         <!-- Real Numbers -->
 \newcommand{\setC}{\mathbb{C}}                         <!-- Complex Numbers -->
-\newcommand{\setIm}{i\mathbb{R}}                       <!-- Imaginary Numbers -->
+\newcommand{\setIm}{\i\mathbb{R}}                       <!-- Imaginary Numbers -->
 \newcommand{\e}{\mathrm{e}}                            <!-- Euler number -->
 \newcommand{\i}{\mathrm{i}}                            <!-- Imaginary unit -->
 
 
 
 <!-- Calculus & Analysis -->
-\newcommand{\seq}[2]{({#1}_{#2})}                       <!-- Sequence (no indices) -->
-\newcommand{\seqq}[2]{({#1}_{#2})_{{#2}=1}^\infty}      <!-- Sequence (with indices) -->
+\newcommand{\seq}[2]{\left({#1}_{#2}\right)}                        <!-- Sequence (no indices) -->
+\newcommand{\seqq}[3][1]{\left({#2}_{#3}\right)_{{#3}={#1}}^\infty} <!-- Sequence (with indices) -->
 \newcommand{\dom}{\mathcal{D}}                          <!-- Domain -->
 \newcommand{\img}{\mathcal{E}}                          <!-- Image -->
 \newcommand{\tto}{\longrightarrow}                      <!-- Long arrow -->

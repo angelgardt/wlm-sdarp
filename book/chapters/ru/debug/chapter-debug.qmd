@@ -935,11 +935,31 @@ x_i^m \quad x_1\ip{m} \quad x_k\ib{m}
 $$
 
 $$
-\seq{x}{n} \quad \seqq{x}{k_n}
+\seq{x}{n} \quad \seqq{x}{k_n} \quad \seqq[m]{x}{k_n}
 $$
 
 $$
 \norm{\mu}{\sigma^2}, \,\, \pois{\lambda}
+$$
+
+$$
+(a, b] \qquad [b, +\infty) \qquad [a]
+$$
+
+$$
+\begin{bmatrix}
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+\end{bmatrix}
+\qquad
+\begin{pmatrix}
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+\end{pmatrix}
 $$
 
 

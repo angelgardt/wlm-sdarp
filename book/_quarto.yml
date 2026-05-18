@@ -53,11 +53,11 @@ crossref:
       reference-prefix: "Video"
       caption-prefix: "Video"
 
-
 format:
   html:
     include-in-header:
       - ../shared/includes/lvl-labels.html
+      - ../shared/includes/brackets-thickness-fix.html
     # include-after-body:
     #   - text: |
     #       <script type="text/javascript" src="../../../assets/js/level-filter.js"></script>
