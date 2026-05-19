@@ -1,0 +1,17 @@
+---
+author: "Антон Ангельгардт"
+---
+
+# Числа {#ch-apx-numbers}
+
+{{< include ../../../../shared/includes/math-symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = TRUE, cache = TRUE)
+```
+
+:::{.intro}
+приложение о числах
+:::
+
+## Натуральные числа {#sec-numbers-setN}

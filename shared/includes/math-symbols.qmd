@@ -33,7 +33,6 @@
 <!-- Common -->
 \newcommand{\const}{\text{const}}                   <!-- constant -->
 \newcommand{\fix}{\text{fix}}                       <!-- fixed -->
-\DeclareMathOperator{\sgn}{sgn}                     <!-- signum function -->
 \newcommand{\defin}[1]{\overset{\text{def}}{#1}}    <!-- by definition -->
 
 
@@ -42,11 +41,22 @@
 \newcommand{\true}{\mathsf{T}}          <!-- True (logical constant) -->
 \newcommand{\false}{\mathsf{F}}         <!-- False (logical constant) -->
 \newcommand{\and}{\wedge}               <!-- Conjunction -->
+\newcommand{\andd}{\bigwedge}           <!-- Conjunction -->
 \newcommand{\or}{\vee}                  <!-- Disjunction -->
+\newcommand{\orr}{\bigvee}              <!-- Disjunction -->
 \newcommand{\xor}{\veebar}              <!-- Exclusive disjunction -->
 \newcommand{\impl}{\Rightarrow}         <!-- Implication -->
 \newcommand{\repl}{\Leftarrow}          <!-- Replication -->
 \newcommand{\equi}{\Leftrightarrow}     <!-- Equivalence -->
+
+
+
+<!-- Functions -->
+\newcommand{\floor}[1]{\left \lfloor{#1} \right \rfloor}     <!-- Floor -->
+\newcommand{\ceil}[1]{\left \lceil{#1} \right \rceil}        <!-- Ceil -->
+\DeclareMathOperator{\sgn}{sgn}                     <!-- signum function -->
+\DeclareMathOperator{\inta}{int}                    <!-- Integer part -->
+\DeclareMathOperator{\fraca}{frac}                  <!-- Fractional part -->
 
 
 

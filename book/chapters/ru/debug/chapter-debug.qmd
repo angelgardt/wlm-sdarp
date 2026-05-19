@@ -943,7 +943,7 @@ $$
 $$
 
 $$
-(a, b] \qquad [b, +\infty) \qquad [a]
+\intoo{\frac{1}{a}}{\frac{1}{2b}} \quad \intco{-\frac{2c}{a}}{\frac{2c}{3b}}
 $$
 
 $$
