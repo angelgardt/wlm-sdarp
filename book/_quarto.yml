@@ -55,6 +55,9 @@ crossref:
 
 format:
   html:
+    grid:
+      margin-width: 450px
+      body-width: 900px
     include-in-header:
       - ../shared/includes/lvl-labels.html
       - ../shared/includes/brackets-thickness-fix.html
