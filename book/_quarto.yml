@@ -6,26 +6,23 @@ project:
 # metadata-files:
 #   - _metadata.yml
 
+
 book:
   title: "WLM SDARP"
   date: today
-
   favicon: img/favicon.png
+  navbar:
+    left:
+      - text: "Book"
+        href: ""
+      - text: "Tests"
+        href: ""
 
 bibliography: references.bib
-
-format:
-  html:
-    include-in-header:
-      - ../shared/includes/lvl-labels.html
-    # title-block-banner: img/title-block-banner.jpg
-    title-block-banner-color: "#fafafa"
-    toc: true
-    toc-depth: 4
-    theme:
-      - ../shared/css/common.scss
+csl: ../shared/refs/apa.csl
 
 crossref:
+  chapters: true
   custom:
     - key: mth
       kind: float
@@ -43,5 +40,46 @@ crossref:
       kind: float
       reference-prefix: "Dataset"
       caption-prefix: "Dataset"
+    - key: cse
+      kind: float
+      reference-prefix: "Case"
+      caption-prefix: "Case"
+    - key: sch
+      kind: float
+      reference-prefix: "Scheme"
+      caption-prefix: "Scheme"
+    - key: vid
+      kind: float
+      reference-prefix: "Video"
+      caption-prefix: "Video"
+
+math-macros:
+  '\setNo': '\mathbb{N}_0'
+  '\setN': '\mathbb{N}'
+  '\setZp': '\mathbb{Z}_{>0}'
+
+format:
+  html:
+    grid:
+      margin-width: 450px
+      body-width: 900px
+    include-in-header:
+      - ../shared/includes/lvl-labels.html
+      - ../shared/includes/brackets-thickness-fix.html
+    # include-after-body:
+    #   - text: |
+    #       <script type="text/javascript" src="../../../assets/js/level-filter.js"></script>
+    title-block-banner: img/title-block-banner.jpg
+    title-block-banner-color: "#f8f9fa"
+    lightbox: true
+    toc: true
+    toc-depth: 4
+    theme:
+      light:
+        - ../shared/style/light.scss
+        - ../shared/style/common.scss
+      dark:
+        - ../shared/style/dark.scss
+        - ../shared/style/common.scss
 
 editor: source

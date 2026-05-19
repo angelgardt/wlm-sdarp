@@ -1,0 +1,154 @@
+//
+// Fonts import
+//
+
+// Headings
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+// Monospace
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+// Main text
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+// //
+/*-- scss:defaults --*/
+// //
+
+$font-family-sans-serif: "Open Sans";
+$font-family-monospace: "Source Code Pro";
+$font-family-heading: "Montserrat";
+$font-family-navbar: "Montserrat";
+$font-weight-navbar: 400;
+$font-weight-navbar-title: 600;
+$font-family-labs: "Montserrat";
+
+
+
+// //
+/*-- scss:rules --*/
+// //
+
+// Navbar
+
+nav.navbar {
+  font-family: $font-family-navbar;
+  font-weight: $font-weight-navbar;
+  .navbar-title {
+    font-weight: $font-weight-navbar-title;
+  }
+}
+
+
+// Headings
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+}
+
+h1::first-letter {
+  text-transform: uppercase;
+}
+
+
+// Level Labels
+$lab-heading-highest: 2;
+$lab-heading-lowest: 3;
+
+@for $i from $lab-heading-highest through $lab-heading-lowest {
+  h#{$i}.lab-novice:first-child::after,
+  h#{$i}.lab-junior:first-child::after,
+  h#{$i}.lab-middle:first-child::after,
+  h#{$i}.lab-senior:first-child::after,
+  h#{$i}.lab-expert:first-child::after
+  {
+    display: block;
+    width: fit-content;
+    border: solid 1px;
+    border-radius: .25rem;
+    padding-top: 0;
+    padding-bottom: .1rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    margin-top: .2rem;
+    font-family: $font-family-labs;
+    font-size: 1rem;
+    font-variant-caps: all-small-caps;
+  }
+
+  h#{$i}.lab-novice:first-child::after {content: var(--lab-novice)}
+  h#{$i}.lab-junior:first-child::after {content: var(--lab-junior)}
+  h#{$i}.lab-middle:first-child::after {content: var(--lab-middle)}
+  h#{$i}.lab-senior:first-child::after {content: var(--lab-senior)}
+  h#{$i}.lab-expert:first-child::after {content: var(--lab-expert)}
+}
+
+
+
+// Element customization
+
+// border for theorems
+.theorem, .proof {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.solution.folded{
+  p:first-child::after {
+    content: "Управляшка";
+    float: right;
+  }
+}
+
+// reduce caption font size for folded code
+div.cell div[data-code-fold="true"]{
+  figcaption.quarto-float-lst {
+    font-size: .7em;
+  }
+  summary {
+    font-size: .7em;
+  }
+}
+
+
+
+// Callouts
+
+.callout-caution > .callout-header > .callout-icon-container {
+    padding-top: .1em !important;
+}
+
+div.callout-none .callout-toggle::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{colorToRGB($body-color)}" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+
+
+// Custom elements
+
+.intro {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: solid 1px;
+}
+
+div.blockquote {
+  padding: .625rem 1.25rem;
+  border-left-width: .25rem;
+  border-left-style: solid;
+  blockquote.blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: right;
+    ::before {
+      content: "— ";
+    }
+  }
+}

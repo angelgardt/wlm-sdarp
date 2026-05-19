@@ -1,0 +1,28 @@
+| Стандартное (курсивное) | Прямое | Полужирное | Полужирное курсивное | Красивое | Рукописное | Контурное (ажурное) | Готическое | Без засечек | Название |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| $A$ $a$ | $\mathrm A$ $\mathrm a$ | $\mathbf A$ $\mathbf a$ | $\bs A$ $\boldsymbol a$ | $\mathcal A$ | $\mathscr A$ | $\mathbb A$ $\mathbb a$ | $\mathfrak A$ $\mathfrak a$ | $\mathsf A$ $\mathsf a$ |а|
+| $B$ $b$ | $\mathrm B$ $\mathrm b$ | $\mathbf B$ $\mathbf b$ | $\bs B$ $\boldsymbol b$ | $\mathcal B$ | $\mathscr B$ | $\mathbb B$ $\mathbb b$ | $\mathfrak B$ $\mathfrak b$ | $\mathsf B$ $\mathsf b$ |бэ|
+| $C$ $c$ | $\mathrm C$ $\mathrm c$ | $\mathbf C$ $\mathbf c$ | $\bs C$ $\boldsymbol c$ | $\mathcal C$ | $\mathscr C$ | $\mathbb C$ $\mathbb c$ | $\mathfrak C$ $\mathfrak c$ | $\mathsf C$ $\mathsf c$ |цэ|
+| $D$ $d$ | $\mathrm D$ $\mathrm d$ | $\mathbf D$ $\mathbf d$ | $\bs D$ $\boldsymbol d$ | $\mathcal D$ | $\mathscr D$ | $\mathbb D$ $\mathbb d$ | $\mathfrak D$ $\mathfrak d$ | $\mathsf D$ $\mathsf d$ |дэ|
+| $E$ $e$ | $\mathrm E$ $\mathrm e$ | $\mathbf E$ $\mathbf e$ | $\bs E$ $\boldsymbol e$ | $\mathcal E$ | $\mathscr E$ | $\mathbb E$ $\mathbb e$ | $\mathfrak E$ $\mathfrak e$ | $\mathsf E$ $\mathsf e$ |е|
+| $F$ $f$ | $\mathrm F$ $\mathrm f$ | $\mathbf F$ $\mathbf f$ | $\bs F$ $\boldsymbol f$ | $\mathcal F$ | $\mathscr F$ | $\mathbb F$ $\mathbb f$ | $\mathfrak F$ $\mathfrak f$ | $\mathsf F$ $\mathsf f$ |эф|
+| $G$ $g$ | $\mathrm G$ $\mathrm g$ | $\mathbf G$ $\mathbf g$ | $\bs G$ $\boldsymbol g$ | $\mathcal G$ | $\mathscr G$ | $\mathbb G$ $\mathbb g$ | $\mathfrak G$ $\mathfrak g$ | $\mathsf G$ $\mathsf g$ |жэ|
+| $H$ $h$ | $\mathrm H$ $\mathrm h$ | $\mathbf H$ $\mathbf h$ | $\bs H$ $\boldsymbol h$ | $\mathcal H$ | $\mathscr H$ | $\mathbb H$ $\mathbb h$ | $\mathfrak H$ $\mathfrak h$ | $\mathsf H$ $\mathsf h$ |аш|
+| $I$ $i$ | $\mathrm I$ $\mathrm i$ | $\mathbf I$ $\mathbf i$ | $\bs I$ $\boldsymbol i$ | $\mathcal I$ | $\mathscr I$ | $\mathbb I$ $\mathbb i$ | $\mathfrak I$ $\mathfrak i$ | $\mathsf I$ $\mathsf i$ |и|
+| $J$ $j$ | $\mathrm J$ $\mathrm j$ | $\mathbf J$ $\mathbf j$ | $\bs J$ $\boldsymbol j$ | $\mathcal J$ | $\mathscr J$ | $\mathbb J$ $\mathbb j$ | $\mathfrak J$ $\mathfrak j$ | $\mathsf J$ $\mathsf j$ |жи|
+| $K$ $k$ | $\mathrm K$ $\mathrm k$ | $\mathbf K$ $\mathbf k$ | $\bs K$ $\boldsymbol k$ | $\mathcal K$ | $\mathscr K$ | $\mathbb K$ $\mathbb k$ | $\mathfrak K$ $\mathfrak k$ | $\mathsf K$ $\mathsf k$ |ка|
+| $L$ $l$ | $\mathrm L$ $\mathrm l$ | $\mathbf L$ $\mathbf l$ | $\bs L$ $\boldsymbol l$ | $\mathcal L$ | $\mathscr L$ | $\mathbb L$ $\mathbb l$ | $\mathfrak L$ $\mathfrak l$ | $\mathsf L$ $\mathsf l$ |эль|
+| $M$ $m$ | $\mathrm M$ $\mathrm m$ | $\mathbf M$ $\mathbf m$ | $\bs M$ $\boldsymbol m$ | $\mathcal M$ | $\mathscr M$ | $\mathbb M$ $\mathbb m$ | $\mathfrak M$ $\mathfrak m$ | $\mathsf M$ $\mathsf m$ |эм|
+| $N$ $n$ | $\mathrm N$ $\mathrm n$ | $\mathbf N$ $\mathbf n$ | $\bs N$ $\boldsymbol n$ | $\mathcal N$ | $\mathscr N$ | $\mathbb N$ $\mathbb n$ | $\mathfrak N$ $\mathfrak n$ | $\mathsf N$ $\mathsf n$ |эн|
+| $O$ $o$ | $\mathrm O$ $\mathrm o$ | $\mathbf O$ $\mathbf o$ | $\bs O$ $\boldsymbol o$ | $\mathcal O$ | $\mathscr O$ | $\mathbb O$ $\mathbb o$ | $\mathfrak O$ $\mathfrak o$ | $\mathsf O$ $\mathsf o$ |о|
+| $P$ $p$ | $\mathrm P$ $\mathrm p$ | $\mathbf P$ $\mathbf p$ | $\bs P$ $\boldsymbol p$ | $\mathcal P$ | $\mathscr P$ | $\mathbb P$ $\mathbb p$ | $\mathfrak P$ $\mathfrak p$ | $\mathsf P$ $\mathsf p$ |пэ|
+| $Q$ $q$ | $\mathrm Q$ $\mathrm q$ | $\mathbf Q$ $\mathbf q$ | $\bs Q$ $\boldsymbol q$ | $\mathcal Q$ | $\mathscr Q$ | $\mathbb Q$ $\mathbb q$ | $\mathfrak Q$ $\mathfrak q$ | $\mathsf Q$ $\mathsf q$ |ку|
+| $R$ $r$ | $\mathrm R$ $\mathrm r$ | $\mathbf R$ $\mathbf r$ | $\bs R$ $\boldsymbol r$ | $\mathcal R$ | $\mathscr R$ | $\mathbb R$ $\mathbb r$ | $\mathfrak R$ $\mathfrak r$ | $\mathsf R$ $\mathsf r$ |эр|
+| $S$ $s$ | $\mathrm S$ $\mathrm s$ | $\mathbf S$ $\mathbf s$ | $\bs S$ $\boldsymbol s$ | $\mathcal S$ | $\mathscr S$ | $\mathbb S$ $\mathbb s$ | $\mathfrak S$ $\mathfrak s$ | $\mathsf S$ $\mathsf s$ |эс|
+| $T$ $t$ | $\mathrm T$ $\mathrm t$ | $\mathbf T$ $\mathbf t$ | $\bs T$ $\boldsymbol t$ | $\mathcal T$ | $\mathscr T$ | $\mathbb T$ $\mathbb t$ | $\mathfrak T$ $\mathfrak t$ | $\mathsf T$ $\mathsf t$ |тэ|
+| $U$ $u$ | $\mathrm U$ $\mathrm u$ | $\mathbf U$ $\mathbf u$ | $\bs U$ $\boldsymbol u$ | $\mathcal U$ | $\mathscr U$ | $\mathbb U$ $\mathbb u$ | $\mathfrak U$ $\mathfrak u$ | $\mathsf U$ $\mathsf u$ |у|
+| $V$ $v$ | $\mathrm V$ $\mathrm v$ | $\mathbf V$ $\mathbf v$ | $\bs V$ $\boldsymbol v$ | $\mathcal V$ | $\mathscr V$ | $\mathbb V$ $\mathbb v$ | $\mathfrak V$ $\mathfrak v$ | $\mathsf V$ $\mathsf v$ |вэ|
+| $W$ $w$ | $\mathrm W$ $\mathrm w$ | $\mathbf W$ $\mathbf w$ | $\bs W$ $\boldsymbol w$ | $\mathcal W$ | $\mathscr W$ | $\mathbb W$ $\mathbb w$ | $\mathfrak W$ $\mathfrak w$ | $\mathsf W$ $\mathsf w$ |дубль вэ|
+| $X$ $x$ | $\mathrm X$ $\mathrm x$ | $\mathbf X$ $\mathbf x$ | $\bs X$ $\boldsymbol x$ | $\mathcal X$ | $\mathscr X$ | $\mathbb X$ $\mathbb x$ | $\mathfrak X$ $\mathfrak x$ | $\mathsf X$ $\mathsf x$ |икс|
+| $Y$ $y$ | $\mathrm Y$ $\mathrm y$ | $\mathbf Y$ $\mathbf y$ | $\bs Y$ $\boldsymbol y$ | $\mathcal Y$ | $\mathscr Y$ | $\mathbb Y$ $\mathbb y$ | $\mathfrak Y$ $\mathfrak y$ | $\mathsf Y$ $\mathsf y$ |игрек|
+| $Z$ $z$ | $\mathrm Z$ $\mathrm z$ | $\mathbf Z$ $\mathbf z$ | $\bs Z$ $\boldsymbol z$ | $\mathcal Z$ | $\mathscr Z$ | $\mathbb Z$ $\mathbb z$ | $\mathfrak Z$ $\mathfrak z$ | $\mathsf Z$ $\mathsf z$ |зет|

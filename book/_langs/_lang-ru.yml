@@ -1,20 +1,16 @@
+##
+## page elements
+##
+
 toc-title-document: "Содержание"
 toc-title-website: "На этой странице"
-
-related-formats-title: "Other Formats"
-related-notebooks-title: "Notebooks"
-source-notebooks-prefix: "Source"
 
 section-title-abstract: "Аннотация"
 section-title-appendices: "Приложения"
 section-title-footnotes: "Сноски"
 section-title-references: "Ссылки"
-section-title-reuse: "Reuse"
 section-title-copyright: "Копирайт"
-section-title-citation: "Цитата"
-
-appendix-attribution-cite-as: "For attribution, please cite this work as:"
-appendix-attribution-bibtex: "BibTeX citation:"
+section-title-citation: "Цитирование"
 
 title-block-author-single: "Автор"
 title-block-author-plural: "Авторы"
@@ -23,7 +19,38 @@ title-block-affiliation-plural: "Аффилиация"
 title-block-published: "Опубликовано"
 title-block-modified: "Изменено"
 
-code-summary: "Код"
+toggle-sidebar: "Боковое меню"
+toggle-dark-mode: "Тёмная тема"
+toggle-reader-mode: "Режим чтения"
+
+back-to-top: "Вернуться наверх"
+
+
+
+##
+## search
+##
+
+search-no-results-text: "Ничего не найдено"
+search-matching-documents-text: "шт. совпадений найдено"
+search-copy-link-title: "Скопировать ссылку на поиск"
+search-hide-matches-text: "Скрыть другие совпадения"
+search-more-match-text: "совпадение найдено ещё"
+search-more-matches-text: "шт. совпадений найдено ещё"
+search-clear-button-title: "Очистить"
+search-detached-cancel-button-title: "Отмена"
+search-submit-button-title: "Искать"
+search: "Поиск"
+
+
+
+##
+## code & repo elements
+##
+
+repo-action-links-edit: "Редактировать страницу"
+repo-action-links-source: "Посмотреть исходник"
+repo-action-links-issue: "Сказать об ошибке"
 
 code-tools-menu-caption: "Код"
 code-tools-show-all-code: "Показать весь код"
@@ -31,96 +58,121 @@ code-tools-hide-all-code: "Скрыть весь код"
 code-tools-view-source: "Посмотреть исходник"
 code-tools-source-code: "Глядеть репозиторий"
 
-code-line: "Line"
-code-lines: "Lines"
+code-summary: "Код"
+
+code-line: "Строка"
+code-lines: "Строки"
 
 copy-button-tooltip: "Копировать"
 copy-button-tooltip-success: "Скопировано!"
 
-repo-action-links-edit: "Редактировать страницу"
-repo-action-links-source: "Посмотреть исходник"
-repo-action-links-issue: "Сказать об ошибке"
 
-back-to-top: "Вернуться наверх"
 
-search-no-results-text: "Ничего не найдено"
-search-matching-documents-text: "matching documents"
-search-copy-link-title: "Copy link to search"
-search-hide-matches-text: "Hide additional matches"
-search-more-match-text: "more match in this document"
-search-more-matches-text: "more matches in this document"
-search-clear-button-title: "Очистить"
-search-detached-cancel-button-title: "Отмена"
-search-submit-button-title: "Отправить"
-search: "Поиск"
+##
+## crossref
+##
 
-toggle-sidebar: "Toggle sidebar navigation"
-toggle-dark-mode: "Toggle dark mode"
-toggle-reader-mode: "Toggle reader mode"
-toggle-navigation: "Toggle navigation"
-
+## book blocks
+crossref-ch-title: "Глава"
 crossref-ch-prefix: "Глава"
+crossref-sec-title: "Раздел"
 crossref-sec-prefix: "Раздел"
+crossref-apx-title: "Приложение"
 crossref-apx-prefix: "Приложение"
 
+## illustrations
 crossref-fig-title: "Иллюстрация"
+crossref-fig-prefix: "Илл."
+crossref-sch-title: "Схема"
+crossref-sch-prefix: "Схема"
+crossref-vid-title: "Видео"
+crossref-vid-prefix: "Видео"
+
+## tables & code listing
 crossref-tbl-title: "Таблица"
+crossref-tbl-prefix: "Табл."
 crossref-lst-title: "Код"
+crossref-lst-prefix: "Код"
+
+## math
+crossref-def-title: "Определение"
+crossref-def-prefix: "Опр."
+crossref-lem-title: "Лемма"
+crossref-lem-prefix: "Лем."
+crossref-thm-title: "Теорема"
+crossref-thm-prefix: "Теор."
+crossref-cor-title: "Следствие"
+crossref-cor-prefix: "Сл."
+crossref-prp-title: "Утверждение"
+crossref-prp-prefix: "Утв."
+crossref-alg-title: "Алгоритм"
+crossref-alg-prefix: "Алг."
+crossref-exm-title: "Пример"
+crossref-exm-prefix: "Прим."
+crossref-exr-title: "Задача"
+crossref-exr-prefix: "Здч."
+crossref-cnj-title: "Предположение"
+crossref-cnj-prefix: "Прп."
+crossref-eq-prefix: "Ур."
+environment-proof-title: "Доказательство"
+environment-remark-title: "Замечание"
+crossref-rem-title: "Замечание"
+crossref-rem-prefix: "Зам."
+environment-solution-title: "Решение"
+crossref-sol-title: "Решение"
+crossref-sol-prefix: "Реш."
+
+## callouts
+callout-note-title: "Заметка"
+crossref-nte-title: "Заметка"
+crossref-nte-prefix: "Заметка"
+callout-tip-title: "Совет"
+crossref-tip-title: "Совет"
+crossref-tip-prefix: "Совет"
+callout-warning-title: "Предупреждение"
+crossref-wrn-title: "Предупреждение"
+crossref-wrn-prefix: "Предупреждение"
+callout-caution-title: "Осторожность"
+crossref-cau-title: "Осторожность"
+crossref-cau-prefix: "Осторожность"
+callout-important-title: "Важность"
+crossref-imp-title: "Важность"
+crossref-imp-prefix: "Важность"
+callout-history-title: "История"
+crossref-hst-title: "История"
+crossref-hst-prefix: "История"
+callout-person-title: "Персона"
+crossref-prs-title: "Персона"
+crossref-prs-prefix: "Персона"
+callout-dataset-title: "Датасет"
+crossref-dts-title: "Датасет"
+crossref-dts-prefix: "Датасет"
+callout-myth-title: "Миф"
+crossref-mth-title: "Миф"
+crossref-mth-prefix: "Миф"
+callout-case-title: "Миф"
+crossref-cse-title: "Кейс"
+crossref-cse-prefix: "Кейс"
 
 crossref-lof-title: "Список иллюстраций"
 crossref-lot-title: "Список таблиц"
 crossref-lol-title: "Список кода"
 
-crossref-thm-title: "Теорема"
-crossref-lem-title: "Лемма"
-crossref-cor-title: "Следствие"
-crossref-prp-title: "Утверждение"
-crossref-cnj-title: "Предположение"
-crossref-def-title: "Определение"
-crossref-exm-title: "Пример"
-crossref-exr-title: "Задание"
-crossref-alg-title: "Алгоритм"
-crossref-eq-prefix: "Уравнение"
-environment-proof-title: "Доказательство"
-environment-remark-title: "Замечание"
-environment-solution-title: "Решение"
 
-callout-note-title: "Заметка"
-crossref-nte-title: "Заметка"
-crossref-nte-prefix: "Заметка"
 
-callout-tip-title: "Совет"
-crossref-tip-title: "Совет"
-crossref-tip-prefix: "Совет"
+##
+## NOT LOCALIZED
+##
+section-title-reuse: "Reuse"
 
-callout-warning-title: "Предупреждение"
-crossref-wrn-title: "Предупреждение"
-crossref-wrn-prefix: "Предупреждение"
+related-formats-title: "Other Formats"
+related-notebooks-title: "Notebooks"
+source-notebooks-prefix: "Source"
 
-callout-caution-title: "Предостережение"
-crossref-cau-title: "Предостережение"
-crossref-cau-prefix: "Предостережение"
+appendix-attribution-cite-as: "For attribution, please cite this work as:"
+appendix-attribution-bibtex: "BibTeX citation:"
 
-callout-important-title: "Важность"
-crossref-imp-title: "Важность"
-crossref-imp-prefix: "Важность"
-
-callout-history-title: "История"
-crossref-hst-title: "История"
-crossref-hst-prefix: "История"
-
-callout-person-title: "Личность"
-crossref-prs-title: "Личность"
-crossref-prs-prefix: "Личность"
-
-callout-dataset-title: "Датасет"
-crossref-dts-title: "Датасет"
-crossref-dts-prefix: "Датасет"
-
-callout-myth-title: "Миф"
-crossref-mth-title: "Миф"
-crossref-mth-prefix: "Миф"
-
+toggle-navigation: "Toggle navigation"
 
 listing-page-order-by: "Order By"
 listing-page-order-by-default: "Default"

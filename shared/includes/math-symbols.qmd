@@ -1,24 +1,131 @@
 <!-- {{< include ../../../../shared/includes/math-symbols.qmd >}} -->
 
+\usepackage{upgreek}
+
+
+
 <!-- Decorations -->
 \newcommand{\circled}[1]{\enclose{circle}{#1}}
 <!-- \newcommand{\boxed}[1]{\enclose{box}{#1}} -->
 
-<!-- Common -->
-\newcommand{\const}{\text{const}}
-\newcommand{\fix}{\text{fix}}
-\DeclareMathOperator{\sgn}{sgn}
+
+
+<!-- Shortcuts -->
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left[}
 \newcommand{\rb}{\right]}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mcal}{\mathcal}
+\newcommand{\msf}{\mathsf}
+\newcommand{\vphi}{\varphi}
+\newcommand{\vepsilon}{\varepsilon}
+\newcommand{\ty}{\infty}
+\newcommand{\pty}{{+\infty}}
+\newcommand{\nty}{{-\infty}}
+\newcommand{\geq}{\geqslant}
+\newcommand{\leq}{\leqslant}
 
 
-\newcommand{\defin}[1]{\overset{\text{def}}{#1}}
-\newcommand{\toas}{\overset{\text{a.s.}}{\to}}
-\newcommand{\toprob}{\overset{p}{\to}}
-\newcommand{\todist}{\overset{d}{\to}}
+
+<!-- Common -->
+\newcommand{\const}{\text{const}}                   <!-- constant -->
+\newcommand{\fix}{\text{fix}}                       <!-- fixed -->
+\newcommand{\defin}[1]{\overset{\text{def}}{#1}}    <!-- by definition -->
+
+
 
 <!-- Logic -->
-\newcommand{\true}{\mathsf{T}}
-\newcommand{\false}{\mathsf{F}}
+\newcommand{\true}{\mathsf{T}}          <!-- True (logical constant) -->
+\newcommand{\false}{\mathsf{F}}         <!-- False (logical constant) -->
+\newcommand{\and}{\wedge}               <!-- Conjunction -->
+\newcommand{\andd}{\bigwedge}           <!-- Conjunction -->
+\newcommand{\or}{\vee}                  <!-- Disjunction -->
+\newcommand{\orr}{\bigvee}              <!-- Disjunction -->
+\newcommand{\xor}{\veebar}              <!-- Exclusive disjunction -->
+\newcommand{\impl}{\Rightarrow}         <!-- Implication -->
+\newcommand{\repl}{\Leftarrow}          <!-- Replication -->
+\newcommand{\equi}{\Leftrightarrow}     <!-- Equivalence -->
+
+
+
+<!-- Functions -->
+\newcommand{\floor}[1]{\left \lfloor{#1} \right \rfloor}     <!-- Floor -->
+\newcommand{\ceil}[1]{\left \lceil{#1} \right \rceil}        <!-- Ceil -->
+\DeclareMathOperator{\sgn}{sgn}                     <!-- signum function -->
+\DeclareMathOperator{\inta}{int}                    <!-- Integer part -->
+\DeclareMathOperator{\fraca}{frac}                  <!-- Fractional part -->
+
+
+
+<!-- Sets -->
+\newcommand{\nothing}{\varnothing}                        <!-- Empty set -->
+\newcommand{\subs}{\subseteq}                             <!-- Redef subseteq as subset -->
+\newcommand{\subp}{\subset}                               <!-- Redef subset as proper subset -->
+\newcommand{\symdif}{\,\triangle\,}                       <!-- Symmetrical difference -->
+\newcommand{\intcc}[2]{\left[{#1}, \, {#2}\right]}        <!-- [a,b] -->
+\newcommand{\intoo}[2]{\left]{#1}, \, {#2}\right[}        <!-- ]a,b[ -->
+\newcommand{\intco}[2]{\left[{#1}, \, {#2}\right[}        <!-- [a,b[ -->
+\newcommand{\intoc}[2]{\left]{#1}, \, {#2}\right]}        <!-- ]a,b] -->
+
+
+
+<!-- Sets of Numbers & Constants-->
+\newcommand{\setN}{\mathbb{N}}                         <!-- Natural Numbers -->
+\newcommand{\setNo}{\mathbb{N}_0}                      <!-- Non Negative Integer Numbers -->
+\newcommand{\setZp}{\mathbb{Z}^{+}}                    <!-- Positive Integer Numbers -->
+\newcommand{\setZ}{\mathbb{Z}}                         <!-- Integer Numbers -->
+\newcommand{\setQ}{\mathbb{Q}}                         <!-- Rational Numbers -->
+\newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}      <!-- Irrational Numbers -->
+\newcommand{\setR}{\mathbb{R}}                         <!-- Real Numbers -->
+\newcommand{\setC}{\mathbb{C}}                         <!-- Complex Numbers -->
+\newcommand{\setIm}{\i\mathbb{R}}                       <!-- Imaginary Numbers -->
+\newcommand{\e}{\mathrm{e}}                            <!-- Euler number -->
+\newcommand{\i}{\mathrm{i}}                            <!-- Imaginary unit -->
+
+
+
+<!-- Calculus & Analysis -->
+\newcommand{\seq}[2]{\left({#1}_{#2}\right)}                        <!-- Sequence (no indices) -->
+\newcommand{\seqq}[3][1]{\left({#2}_{#3}\right)_{{#3}={#1}}^\infty} <!-- Sequence (with indices) -->
+\newcommand{\dom}{\mathcal{D}}                          <!-- Domain -->
+\newcommand{\img}{\mathcal{E}}                          <!-- Image -->
+\newcommand{\tto}{\longrightarrow}                      <!-- Long arrow -->
+\newcommand{\xto}{\xrightarrow}                         <!-- Scalable arrow -->
+\newcommand{\d}{\mathrm{d}}                             <!-- differential -->
+
+
+
+<!-- Linear Algebra -->
+\newcommand{\ip}[1]{^{(#1)}}                      <!-- Upper index in parentheses -->
+\newcommand{\ib}[1]{^{[#1]}}                      <!-- Upper index in brackets -->
+\newcommand{\v}{\mathbf}                          <!-- Vector, matrix (bold font) -->
+\newcommand{\tp}{\mathrm{T}}                      <!-- Marix transposition (use with ^) -->
+
+
+
+<!-- Probability Theory -->
+\newcommand{\prob}{\mathbb{P}}                  <!-- Probability -->
+\newcommand{\expect}{\mathbb{E}}                <!-- Expectation (expected value) -->
+\newcommand{\dens}[1]{f_{#1}}                   <!-- Density function -->
+\newcommand{\pval}{\mathsf{p}}                  <!-- p-value -->
+\newcommand{\toas}{\overset{\text{a.s.}}{\to}}  <!-- Convergence almost sure -->
+\newcommand{\toprob}{\overset{p}{\to}}          <!-- Convergeence by probability -->
+\newcommand{\todist}{\overset{d}{\to}}          <!-- Convergeence by distribution -->
+
+
+
+<!-- Distributions -->
+\newcommand{\df}{\text{df}}
+\newcommand{\normm}{\mathcal{N}}
+\newcommand{\norm}[2]{\mathcal{N}(#1, \, #2)}
+\newcommand{\pois}[1]{\text{Pois}(#1)}
+
+
+<!-- Linear Models -->
+
+
+
+

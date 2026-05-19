@@ -1,0 +1,253 @@
+//
+/*-- scss:defaults --*/
+//
+
+
+//
+// Color system (Dark Theme)
+//
+
+
+// Grayscale
+
+$white:    #fdfdfd !default;
+$gray-900: #f8f9fa !default;  // фон секций
+$gray-800: #e9ecef !default;  // границы, разделители
+$gray-700: #dee2e6 !default;  // неактивные элементы
+$gray-600: #ced4da !default;  // плейсхолдеры, disabled
+$gray-500: #adb5bd !default;  // второстепенный текст
+$gray-400: #6c757d !default;  // подписи, мета-информация
+$gray-300: #495057 !default;  // основной текст (альтернатива)
+$gray-200: #343a40 !default;  // заголовки
+$gray-100: #212529 !default;  // основной текст
+$black:    #050505 !default;
+
+
+// Semantic colors
+
+$blue:    #4a88b5 !default;  // основной: глубокий морской синий
+$indigo:  #7b73e0 !default;  // индиго: теоретические блоки, формулы
+$purple:  #a585d0 !default;  // фиолетовый: когнитивные/нейро-темы
+$pink:    #e07a99 !default;  // розовый: эмоциональные/соц. исследования
+$red:     #d95a4e !default;  // красный: критические предупреждения, ошибки
+$orange:  #e07a45 !default;  // оранжевый: гипотезы, акцентные заметки
+$yellow:  #c4a030 !default;  // тёмное золото: рекомендации, лайфхаки
+$green:   #3cb08f !default;  // изумрудный: успех, практика, экология
+$teal:    #35aeb3 !default;  // бирюзовый: нейтральные акценты, медиация
+$cyan:    #5ab4e0 !default;  // циан: ссылки, инфо-блоки, интерактив
+$wine:    #a84559 !default;  // винный: клинические разделы, глубокий анализ, акцентные предупреждения
+$brown:   #a07a6a !default;  // тёплый коричневый для цитат, исторических справок
+$slate:   #8a9ea8 !default;  // современный slate для рамок, иллюстраций
+
+// Semantic colors variation
+
+$blue2:   #245a73;
+$indigo2: #3a358a;
+$purple2: #4d3385;
+$pink2:   #963050;
+$red2:    #8a2a1e;
+$orange2: #8a3a1c;
+$yellow2: #7a5c15;
+$green2:  #206b52;
+$teal2:   #206b6f;
+$cyan2:   #2a5a8a;
+$wine2:   #7a2538;
+$brown2:  #6b4535;
+$slate2:  #4a5f6b;
+
+
+
+// Page elements
+
+$body-bg:    $gray-100;
+$body-color: $white;
+$navbar-bg:  $black;
+$navbar-fg:  $gray-900;
+
+
+// Custom elements
+
+$lab-novice-color: $yellow2;
+$lab-junior-color: $teal2;
+$lab-middle-color: $blue2;
+$lab-senior-color: $purple2;
+$lab-expert-color: $red2;
+
+// Callouts
+
+$callout-color-note: $blue;
+$callout-color-tip: $green;
+$callout-color-warning: $yellow;
+$callout-color-caution: $orange;
+$callout-color-important: $red;
+$callout-color-none: $gray-600;
+$callout-color-objectives: $gray-900;
+$callout-color-outcomes: $gray-900;
+$callout-color-history: $brown;
+$callout-color-person: $slate;
+$callout-color-dataset: $teal;
+$callout-color-myth: $purple;
+$callout-color-case: $cyan;
+$callout-header-scale: 70%;
+
+$callout-icon-caution: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-octagon" viewBox="0 0 16 16"><path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/><path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg>';
+$callout-icon-none: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/></svg>';
+$callout-icon-objectives: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/><path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/></svg>';
+$callout-icon-outcomes: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/><path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/></svg>';
+$callout-icon-history: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/></svg>';
+$callout-icon-person: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>';
+$callout-icon-dataset: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database" viewBox="0 0 16 16"><path d="M4.318 2.687C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4c0-.374.356-.875 1.318-1.313M13 5.698V7c0 .374-.356.875-1.318 1.313C10.766 8.729 9.464 9 8 9s-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777A5 5 0 0 0 13 5.698M14 4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13zm-1 4.698V10c0 .374-.356.875-1.318 1.313C10.766 11.729 9.464 12 8 12s-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777A5 5 0 0 0 13 8.698m0 3V13c0 .374-.356.875-1.318 1.313C10.766 14.729 9.464 15 8 15s-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13s3.022-.289 4.096-.777c.324-.147.633-.323.904-.525"/></svg>';
+$callout-icon-myth: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-diamond" viewBox="0 0 16 16"><path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.48 1.48 0 0 1 0-2.098zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/><path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg>';
+$callout-icon-case: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/></svg>';
+
+
+
+
+// //
+/*-- scss:rules --*/
+// //
+
+// Level labels
+.lab-novice:first-child::after {background-color: $lab-novice-color}
+.lab-junior:first-child::after {background-color: $lab-junior-color}
+.lab-middle:first-child::after {background-color: $lab-middle-color}
+.lab-senior:first-child::after {background-color: $lab-senior-color}
+.lab-expert:first-child::after {background-color: $lab-expert-color}
+
+
+// Callouts
+
+$callouts: (
+  "caution":
+    (
+      "parent": "none",
+      "color": $callout-color-caution,
+      "icon": $callout-icon-caution,
+    ),
+  "none":
+    (
+      "parent": "none",
+      "color": $callout-color-none,
+      "icon": $callout-icon-none,
+    ),
+  "objectives":
+    (
+      "parent": "note",
+      "color": $callout-color-objectives,
+      "icon": $callout-icon-objectives,
+    ),
+  "outcomes":
+    (
+      "parent": "note",
+      "color": $callout-color-outcomes,
+      "icon": $callout-icon-outcomes,
+    ),
+  "history":
+    (
+      "parent": "note",
+      "color": $callout-color-history,
+      "icon": $callout-icon-history,
+    ),
+  "person":
+    (
+      "parent": "note",
+      "color": $callout-color-person,
+      "icon": $callout-icon-person,
+    ),
+  "dataset":
+    (
+      "parent": "note",
+      "color": $callout-color-dataset,
+      "icon": $callout-icon-dataset,
+    ),
+  "myth":
+    (
+      "parent": "note",
+      "color": $callout-color-myth,
+      "icon": $callout-icon-myth,
+    ),
+  "case":
+    (
+      "parent": "note",
+      "color": $callout-color-case,
+      "icon": $callout-icon-case,
+    )
+);
+
+@each $name, $info in $callouts {
+  $shifted-color: #{shift-color(
+      quarto-map.get($info, "color"),
+      $callout-icon-scale
+    )};
+  $shifted-color-svg: str-replace($shifted-color, "#", "%23");
+
+  $parent: #{quarto-map.get($info, "parent")};
+
+  @if $parent == "none" {
+    div.callout-#{$name}.callout {
+      border-left-color: shift-color(
+        quarto-map.get($info, "color"),
+        $callout-border-scale
+      );
+    }
+
+    div.callout-#{$name}.callout-style-default > .callout-header {
+      background-color: shift-color(quarto-map.get($info, "color"), $callout-header-scale);
+    }
+
+    div.callout-#{$name}.callout-titled .callout-icon::before {
+      background-image: #{"url('data:image/svg+xml," +
+        str-replace(
+          quarto-map.get($info, "icon"),
+          'fill="currentColor"',
+          'style="fill: #{$shifted-color-svg}"'
+        ) +
+        "');"};
+    }
+
+    div.callout-#{$name}:not(.callout-titled) .callout-icon::before {
+    background-image: #{"url('data:image/svg+xml," +
+      str-replace(
+        quarto-map.get($info, "icon"),
+        'fill="currentColor"',
+        'style="fill: #{$shifted-color-svg}"'
+      ) +
+      "');"};
+    }
+  } @else {
+    div.callout-#{$parent}.#{$name}.callout {
+      border-left-color: shift-color(
+        quarto-map.get($info, "color"),
+        $callout-border-scale
+      );
+    }
+
+    div.callout-#{$parent}.#{$name}.callout-style-default > .callout-header {
+      background-color: shift-color(quarto-map.get($info, "color"), $callout-header-scale);
+    }
+
+    div.callout-#{$parent}.#{$name}.callout-titled .callout-icon::before {
+      background-image: #{"url('data:image/svg+xml," +
+        str-replace(
+          quarto-map.get($info, "icon"),
+          'fill="currentColor"',
+          'style="fill: #{$shifted-color-svg}"'
+        ) +
+        "');"};
+    }
+
+    div.callout-#{$parent}.#{$name}.callout-titled .callout-icon::before {
+    background-image: #{"url('data:image/svg+xml," +
+      str-replace(
+        quarto-map.get($info, "icon"),
+        'fill="currentColor"',
+        'style="fill: #{$shifted-color-svg}"'
+      ) +
+      "');"};
+    }
+  }
+}
+
+
+
+// Further

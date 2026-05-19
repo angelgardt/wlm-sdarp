@@ -1,15 +1,23 @@
-project: 
+project:
   type: website
+  preview:
+    port: 5050
 
-website: 
-  title: "WLM SDARP // Assessment"
-  navbar: 
+website:
+  title: "WLM SDARP"
+  navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - text: "Home"
+        href: index.qmd
+      - text: "Book"
+        href: ""
+      - text: "Tests"
+        href: ""
+  navbar:
+    left:
 
-format: 
-  html: 
-    # theme: 
+format:
+  html:
+    # theme:
     #   - ../shared/css/common.scss
     toc: true
