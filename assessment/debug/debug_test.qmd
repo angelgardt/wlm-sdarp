@@ -1,0 +1,45 @@
+---
+title: "Отладка теста"
+---
+
+{{< include ../../shared/includes/math-symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = FALSE, cache = TRUE)
+```
+
+
+
+:::{.panel-tabset .assessment-test}
+
+## {{< meta labs.novice >}}
+тест для новисов
+
+### {.task}
+
+### {.task}
+
+
+## {{< meta labs.junior >}}
+тест для джунов
+
+### {.task}
+
+### {.task}
+
+
+## {{< meta labs.middle >}}
+
+тест для миддлов
+
+
+## {{< meta labs.senior >}}
+
+тест для сен иоров
+
+
+## {{< meta labs.expert >}}
+
+тест для експертов
+
+:::

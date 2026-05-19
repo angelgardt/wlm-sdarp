@@ -1,0 +1,23 @@
+lang: ru
+# language: _langs/_lang-ru.yml
+
+metadata-files:
+  - _meta/_meta-ru.yml
+
+project:
+  output-dir: _site/ru
+
+website:
+  sidebar:
+    contents:
+      - section: "Debug"
+        contents:
+          - debug/debug_test.qmd
+      - section: "Претесты"
+      - section: "Тесты"
+      - section: "Листки"
+
+
+# format:
+#   html:
+#     cover-image: img/cover-ru.jpg

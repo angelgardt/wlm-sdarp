@@ -72,6 +72,7 @@ $lab-junior-color: $teal2;
 $lab-middle-color: $blue2;
 $lab-senior-color: $purple2;
 $lab-expert-color: $red2;
+$lab-level-color-shift: -70%;
 
 // Callouts
 
@@ -113,6 +114,42 @@ $callout-icon-case: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="
 .lab-middle:first-child::after {background-color: $lab-middle-color}
 .lab-senior:first-child::after {background-color: $lab-senior-color}
 .lab-expert:first-child::after {background-color: $lab-expert-color}
+
+// Level assessment
+.panel-tabset.assessment-test {
+  .nav-tabs .nav-item {
+    &:nth-child(1) .nav-link {
+      background-color: shift-color($lab-novice-color, $lab-level-color-shift);
+      &.active {
+        background-color: $lab-novice-color;
+      }
+    }
+    &:nth-child(2) .nav-link {
+      background-color: shift-color($lab-junior-color, $lab-level-color-shift);
+      &.active {
+        background-color: $lab-junior-color
+      }
+    }
+    &:nth-child(3) .nav-link {
+      background-color: shift-color($lab-middle-color, $lab-level-color-shift);
+      &.active {
+        background-color: $lab-middle-color
+      }
+    }
+    &:nth-child(4) .nav-link {
+      background-color: shift-color($lab-senior-color, $lab-level-color-shift);
+      &.active {
+        background-color: $lab-senior-color
+      }
+    }
+    &:nth-child(5) .nav-link {
+      background-color: shift-color($lab-expert-color, $lab-level-color-shift);
+      &.active {
+        background-color: $lab-expert-color
+      }
+    }
+  }
+}
 
 
 // Callouts

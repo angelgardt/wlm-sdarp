@@ -83,6 +83,25 @@ $lab-heading-lowest: 3;
   h#{$i}.lab-expert:first-child::after {content: var(--lab-expert)}
 }
 
+// Level assessment
+.panel-tabset.assessment-test {
+  .nav-tabs .nav-item .nav-link {
+    border: solid 1px;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-family: $font-family-labs;
+    font-size: 1rem;
+    font-variant-caps: all-small-caps;
+  }
+  .tab-content {
+    // border-radius: .25rem;
+  }
+}
+
+
+
+
 
 
 // Element customization

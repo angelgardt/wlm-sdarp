@@ -3,21 +3,36 @@ project:
   preview:
     port: 5050
 
+# metadata-files:
+#   - _metadata.yml
+
+
 website:
   title: "WLM SDARP"
   navbar:
     left:
-      - text: "Home"
-        href: index.qmd
+      # - text: "Home"
+      #   href: index.qmd
       - text: "Book"
         href: ""
       - text: "Tests"
         href: ""
-  navbar:
-    left:
+
 
 format:
   html:
-    # theme:
-    #   - ../shared/css/common.scss
+    grid:
+      body-width: 900px
+    include-in-header:
+      - ../shared/includes/lvl-labels.html
+      - ../shared/includes/brackets-thickness-fix.html
+    number-sections: true
+    number-depth: 3
     toc: true
+    theme:
+      light:
+        - ../../shared/style/common.scss
+        - ../../shared/style/light.scss
+      dark:
+        - ../../shared/style/dark.scss
+        - ../../shared/style/common.scss
