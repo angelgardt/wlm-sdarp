@@ -53,6 +53,11 @@ crossref:
       reference-prefix: "Video"
       caption-prefix: "Video"
 
+math-macros:
+  '\setNo': '\mathbb{N}_0'
+  '\setN': '\mathbb{N}'
+  '\setZp': '\mathbb{Z}_{>0}'
+
 format:
   html:
     grid:
