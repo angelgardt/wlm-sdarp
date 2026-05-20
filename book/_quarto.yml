@@ -63,6 +63,7 @@ format:
     grid:
       margin-width: 450px
       body-width: 900px
+      gutter-width: 2em
     include-in-header:
       - ../shared/includes/lvl-labels.html
       - ../shared/includes/brackets-thickness-fix.html

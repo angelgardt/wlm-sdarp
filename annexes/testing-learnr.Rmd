@@ -1,0 +1,53 @@
+---
+title: "testing-learnr"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(nycflights13)
+library(Lahman)
+
+tutorial_options(
+  exercise.timelimit = 60,
+  # A simple checker function that just returns the message in the check chunk
+  exercise.checker = function(check_code, ...) {
+    list(
+      message = eval(parse(text = check_code)),
+      correct = logical(0),
+      type = "info",
+      location = "append"
+    )
+  }
+)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+This code computes the answer to one plus one,
+change it so it computes two plus two:
+
+```{r addition, exercise=TRUE}
+1 + 1
+```
+
+```{r summariseex4, exercise = TRUE}
+
+```
+
+```{r summariseex4-solution}
+flights %>%
+  group_by(carrier) %>%
+  summarise(avg_delay = mean(dep_delay, na.rm = TRUE)) %>%
+  mutate(rank = min_rank(desc(avg_delay))) %>%
+  filter(rank == 1)
+```
+
+<div id="summariseex4-hint">
+**Hint:** Use`min_rank(desc(avg_delay))` to rank `avg_delay` (for example) such that the largest delay receives rank one.
+</div>
+
+```{r summariseex4-check}
+"Great work! Frontier airlines (`F9`) was the highest average departure delay."
+```
