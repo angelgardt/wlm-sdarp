@@ -90,11 +90,11 @@
 <!-- Calculus & Analysis -->
 \newcommand{\seq}[2]{\left({#1}_{#2}\right)}                        <!-- Sequence (no indices) -->
 \newcommand{\seqq}[3][1]{\left({#2}_{#3}\right)_{{#3}={#1}}^\infty} <!-- Sequence (with indices) -->
-\newcommand{\dom}{\mathcal{D}}                          <!-- Domain -->
-\newcommand{\img}{\mathcal{E}}                          <!-- Image -->
-\newcommand{\tto}{\longrightarrow}                      <!-- Long arrow -->
-\newcommand{\xto}{\xrightarrow}                         <!-- Scalable arrow -->
-\newcommand{\d}{\mathrm{d}}                             <!-- differential -->
+\newcommand{\dom}{\mathcal{D}}                            <!-- Domain -->
+\newcommand{\img}{\mathcal{E}}                            <!-- Image -->
+\newcommand{\tto}[1][]{\underset{#1}{\longrightarrow}}    <!-- Long arrow -->
+\newcommand{\xto}{\xrightarrow}                           <!-- Scalable arrow -->
+\newcommand{\d}{\mathrm{d}}                               <!-- Differential -->
 
 
 
@@ -107,13 +107,15 @@
 
 
 <!-- Probability Theory -->
-\newcommand{\prob}{\mathbb{P}}                  <!-- Probability -->
-\newcommand{\expect}{\mathbb{E}}                <!-- Expectation (expected value) -->
-\newcommand{\dens}[1]{f_{#1}}                   <!-- Density function -->
-\newcommand{\pval}{\mathsf{p}}                  <!-- p-value -->
-\newcommand{\toas}{\overset{\text{a.s.}}{\to}}  <!-- Convergence almost sure -->
-\newcommand{\toprob}{\overset{p}{\to}}          <!-- Convergeence by probability -->
-\newcommand{\todist}{\overset{d}{\to}}          <!-- Convergeence by distribution -->
+\newcommand{\prob}{\mathbb{P}}                    <!-- Probability -->
+\newcommand{\expect}{\mathbb{E}}                  <!-- Expectation (expected value) -->
+\newcommand{\disp}{\mathbb{D}}                    <!-- Variance -->
+\newcommand{\dens}[1]{f_{#1}}                     <!-- Density function -->
+\newcommand{\disted}[1][]{\overset{#1}{\thicksim}}  <!-- Distributed -->
+\newcommand{\pval}{\mathsf{p}}                    <!-- p-value -->
+\newcommand{\toas}[1][]{\underset{#1}{\overset{\text{a.s.}}{\longrightarrow}}} <!-- Convergence almost sure -->
+\newcommand{\toprob}[1][]{\underset{#1}{\overset{p}{\longrightarrow}}} <!-- Convergeence by probability -->
+\newcommand{\todist}[1][]{\underset{#1}{\overset{d}{\longrightarrow}}} <!-- Convergeence by distribution -->
 
 
 
