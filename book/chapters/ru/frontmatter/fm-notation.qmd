@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 
 ## Лейблы {#seq-notation-labs}
 
+
 ### Раздел для начинающих {#seq-notation-labs-novice .lab-novice}
 
 ### Раздел для что-то слышавших {#seq-notation-labs-junior .lab-junior}
@@ -279,7 +280,7 @@ $$
 
 
 
-### Множества {#sec-notation-math-symbols-sets}
+### Теория множеств {#sec-notation-math-symbols-settheory}
 
 | Знак, символ, запись | Значение, словесный эквивалент | Комментарии |
 |:-----:|:-----|:-----|
@@ -355,6 +356,42 @@ $$
 Таким образом, в этой традиции отрезок будет обозначен как $\intcc{a}{b}$, а интервал как $\intoo{a}{b}$.
 
 :::
+
+
+
+### Комбинаторика {#sec-notation-math-symbols-combinatorics}
+
+| Знак, символ, запись | Значение, словесный эквивалент | Комментарии |
+|:-----:|:-----|:-----|
+| $\perm{n}$ |||
+| $\vari{n}{k}$ |||
+| $\vari[R]{n}{k}$ |||
+| $\comb{n}{k}$ |||
+| $\comb[R]{n}{k}$ |||
+
+
+
+
+
+
+### Математический анализ {#sec-notation-math-symbols-calculus}
+
+### Линейная алгебра {#sec-notation-math-symbols-linal}
+
+### Теория вероятности и математическая статистика {#sec-notation-math-symbols-prob}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ***

@@ -54,9 +54,9 @@
 <!-- Functions -->
 \newcommand{\floor}[1]{\left \lfloor{#1} \right \rfloor}     <!-- Floor -->
 \newcommand{\ceil}[1]{\left \lceil{#1} \right \rceil}        <!-- Ceil -->
-\DeclareMathOperator{\sgn}{sgn}                     <!-- signum function -->
-\DeclareMathOperator{\inta}{int}                    <!-- Integer part -->
-\DeclareMathOperator{\fraca}{frac}                  <!-- Fractional part -->
+\DeclareMathOperator{\sgn}{sgn}                              <!-- signum function -->
+\DeclareMathOperator{\inta}{int}                             <!-- Integer part -->
+\DeclareMathOperator{\fraca}{frac}                           <!-- Fractional part -->
 
 
 
@@ -72,6 +72,13 @@
 
 
 
+<!-- Sets -->
+\newcommand{\perm}[1]{\mathrm{P}_{#1}}                         <!-- Permutations -->
+\newcommand{\vari}[3][]{^{\mathrm{#1}}\mathrm{V}_{#2}^{#3}}    <!-- Variations -->
+\newcommand{\comb}[3][]{^{\mathrm{#1}}\mathrm{C}_{#2}^{#3}}    <!-- Combinations -->
+
+
+
 <!-- Sets of Numbers & Constants-->
 \newcommand{\setN}{\mathbb{N}}                         <!-- Natural Numbers -->
 \newcommand{\setNo}{\mathbb{N}_0}                      <!-- Non Negative Integer Numbers -->
@@ -81,7 +88,7 @@
 \newcommand{\setI}{\mathbb{R}\setminus\mathbb{Q}}      <!-- Irrational Numbers -->
 \newcommand{\setR}{\mathbb{R}}                         <!-- Real Numbers -->
 \newcommand{\setC}{\mathbb{C}}                         <!-- Complex Numbers -->
-\newcommand{\setIm}{\i\mathbb{R}}                       <!-- Imaginary Numbers -->
+\newcommand{\setIm}{\i\mathbb{R}}                      <!-- Imaginary Numbers -->
 \newcommand{\e}{\mathrm{e}}                            <!-- Euler number -->
 \newcommand{\i}{\mathrm{i}}                            <!-- Imaginary unit -->
 
@@ -107,23 +114,23 @@
 
 
 <!-- Probability Theory -->
-\newcommand{\prob}{\mathbb{P}}                    <!-- Probability -->
-\newcommand{\expect}{\mathbb{E}}                  <!-- Expectation (expected value) -->
-\newcommand{\disp}{\mathbb{D}}                    <!-- Variance -->
-\newcommand{\dens}[1]{f_{#1}}                     <!-- Density function -->
+\newcommand{\prob}{\mathbb{P}}                      <!-- Probability -->
+\newcommand{\expect}{\mathbb{E}}                    <!-- Expectation (expected value) -->
+\newcommand{\disp}{\mathbb{D}}                      <!-- Variance -->
+\newcommand{\dens}[1]{f_{#1}}                       <!-- Density function -->
 \newcommand{\disted}[1][]{\overset{#1}{\thicksim}}  <!-- Distributed -->
-\newcommand{\pval}{\mathsf{p}}                    <!-- p-value -->
+\newcommand{\pval}{\mathsf{p}}                      <!-- p-value -->
 \newcommand{\toas}[1][]{\underset{#1}{\overset{\text{a.s.}}{\longrightarrow}}} <!-- Convergence almost sure -->
-\newcommand{\toprob}[1][]{\underset{#1}{\overset{p}{\longrightarrow}}} <!-- Convergeence by probability -->
-\newcommand{\todist}[1][]{\underset{#1}{\overset{d}{\longrightarrow}}} <!-- Convergeence by distribution -->
+\newcommand{\toprob}[1][]{\underset{#1}{\overset{p}{\longrightarrow}}}         <!-- Convergence by probability -->
+\newcommand{\todist}[1][]{\underset{#1}{\overset{d}{\longrightarrow}}}         <!-- Convergence by distribution -->
 
 
 
 <!-- Distributions -->
-\newcommand{\df}{\text{df}}
-\newcommand{\normm}{\mathcal{N}}
-\newcommand{\norm}[2]{\mathcal{N}(#1, \, #2)}
-\newcommand{\pois}[1]{\text{Pois}(#1)}
+\newcommand{\df}{\text{df}}                        <!-- Degrees of freedom -->
+\newcommand{\normm}{\mathcal{N}}                   <!-- Normal distribution -->
+\newcommand{\norm}[2]{\mathcal{N}(#1, \, #2)}      <!-- Normal distribution with parameters -->
+\newcommand{\pois}[1]{\text{Pois}(#1)}             <!-- Poisson distribution -->
 
 
 <!-- Linear Models -->
