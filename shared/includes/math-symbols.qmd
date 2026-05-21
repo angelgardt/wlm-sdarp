@@ -102,7 +102,7 @@
 \newcommand{\tto}[1][]{\underset{#1}{\longrightarrow}}    <!-- Long arrow -->
 \newcommand{\xto}{\xrightarrow}                           <!-- Scalable arrow -->
 \newcommand{\d}{\mathrm{d}}                               <!-- Differential -->
-
+\newcommand{\jacmat}{\mathbf{J}}                          <!-- Jacobi matrix -->
 
 
 <!-- Linear Algebra -->
