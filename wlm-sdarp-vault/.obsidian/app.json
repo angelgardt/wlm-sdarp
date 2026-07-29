@@ -1,0 +1,9 @@
+{
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "showInlineTitle": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./_attachments",
+  "trashOption": "local",
+  "showUnsupportedFiles": true
+}

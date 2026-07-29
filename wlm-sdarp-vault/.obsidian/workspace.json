@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "e3e1c499ca0fe338",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b2e4baea3a41cdd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63c9736364a32f30",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b17b5bad6208e2bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "1487dd4b82631b69",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "efb96e99ec159824",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "24a3d75ec2ebad14",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9e90ed921cee5be9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "70d91c2b3da31c31",
+    "type": "split",
+    "children": [
+      {
+        "id": "40c917bca3c633cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "739e4321817c733a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "90f15873b6978387",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "81a8cd563cc66f94",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "abb7cbd4966ed40a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "89783933035de3a1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "DBs/ASSESSMENT/Untitled.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Untitled"
+            }
+          },
+          {
+            "id": "8d007f3e69ac8d6e",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obisidian-dataloom:Create loom": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-kanban:Create new board": false,
+      "notion-bases:Notion bases": false
+    }
+  },
+  "active": "efb96e99ec159824",
+  "lastOpenFiles": [
+    "DBs/CHAPTERS",
+    "DBs/LEARNING OUTCOMES",
+    "DBs/LEARNING OBJECTIVES",
+    "DBs/ASSESSMENT/CONTROLS",
+    "DBs/ASSESSMENT/Untitled.md",
+    "DBs/ASSESSMENT/ITEMS",
+    "DBs/ASSESSMENT",
+    "DBs/TAXONOMIES/FINK",
+    "DBs/TAXONOMIES/SOLO",
+    "DBs/TAXONOMIES/BLOOM",
+    "DBs/COMPETENCIES/C001.md",
+    "DBs/COMPETENCIES/_database.md",
+    "DBs/TOPICS/_database.md",
+    "DBs/TOPICS/T1.md",
+    "DBs",
+    "DBs/PERSONAS/_database.md",
+    "WLM SDARP.md",
+    "DBs/TAXONOMIES",
+    "Personas.md",
+    "DBs/TOPICS/T30.md",
+    "DBs/TOPICS/T29.md",
+    "DBs/TOPICS/T28.md",
+    "DBs/TOPICS/T27.md",
+    "DBs/TOPICS/T26.md",
+    "DBs/TOPICS/T25.md",
+    "DBs/TOPICS/T24.md",
+    "DBs/TOPICS/T23.md",
+    "DBs/TOPICS/T22.md",
+    "DBs/TOPICS/T21.md",
+    "DBs/TOPICS/T20.md",
+    "DBs/TOPICS/T19.md",
+    "DBs/TOPICS/T18.md",
+    "DBs/TOPICS/T17.md",
+    "DBs/TOPICS/T16.md",
+    "DBs/TOPICS/T15.md",
+    "DBs/TOPICS/T14.md"
+  ]
+}
