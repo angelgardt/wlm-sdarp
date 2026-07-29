@@ -1,0 +1,34 @@
+lang: ru
+language: _langs/_lang-ru.yml
+
+metadata-files:
+  - _meta/_meta-ru.yml
+
+project:
+  output-dir: _site/ru
+
+book:
+  subtitle: "Мир линейных моделей: байесовская статистика и анализ данных в R для психологов"
+  author:
+    - name: "Антон Ангельгардт"
+      email: "anton.angelgardt@gmail.com"
+  chapters:
+    - index.qmd
+  #   - part: chapters/ru/debug/part-debug.qmd
+  #     chapters:
+  #       - chapters/ru/debug/chapter-debug.qmd
+  #   - part: "Черновики (Drafts)"
+  #     chapters:
+  #       - chapters/ru/ch-drafts/draft-math-basic.qmd
+  #       - chapters/ru/ch-drafts/draft-calculus.qmd
+  #       - chapters/ru/ch-drafts/draft-mathstat.qmd
+  #       - chapters/ru/ch-drafts/draft-statmethods.qmd
+  #   - chapters/ru/frontmatter/fm-notation.qmd
+  # appendices:
+  #   - chapters/ru/debug/apx-debug.qmd
+  #   - chapters/ru/appendices/apx-numbers.qmd
+
+
+format:
+  html:
+    cover-image: img/cover-ru.jpg

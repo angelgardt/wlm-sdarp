@@ -3,17 +3,23 @@ project:
   preview:
     port: 5050
 
-# metadata-files:
-#   - _metadata.yml
+metadata-files:
+  - _metadata.yml
 
 
 book:
-  title: "WLM SDARP I"
+  title: "WLM SDARP III"
   date: today
   favicon: img/favicon.png
   navbar:
     left:
-      - text: "Book"
+      - text: "Book 0"
+        href: ""
+      - text: "Book I"
+        href: ""
+      - text: "Book II"
+        href: ""
+      - text: "Book III"
         href: ""
       - text: "Tests"
         href: ""

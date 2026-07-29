@@ -1,0 +1,14 @@
+date-format: "D MMMM YYYY"
+version-info:
+  title: "Информация о версии"
+  version-text: "Версия"
+  stable-text: "Стабильный релиз"
+  stable-message: "Текущий стабильный релиз находится [здесь]"
+  alpha-message: "Эта **альфа-версия** находится в процессе активной разработки и может быть нестабильной."
+  beta-message: "Эта **бета-версия** находится на стадии тестирования и вычитки, поэтому может содержать ошибки и неполный контент."
+labs:
+  novice: "Novice"
+  junior: "Junior"
+  middle: "Middle"
+  senior: "Senior"
+  expert: "Expert"
