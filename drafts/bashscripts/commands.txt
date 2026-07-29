@@ -1,9 +1,0 @@
-## make file executable
-chmod u+x deploy/modules/_set-colors.sh
-
-## rename files
-cd chapters/appendices
-for f in appendix-*.qmd; do mv "$f" "${f#appendix-}"; done
-
-## change line in document
-find chapters -type f -name "*.qmd" -exec sed -i '' 's|{{< include other/_symbols.qmd >}}|{{< include ../../other/_symbols.qmd >}}|g' {} +
