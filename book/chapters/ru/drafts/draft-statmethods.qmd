@@ -1,0 +1,45 @@
+---
+author: "Антон Ангельгардт"
+---
+
+# Черновики статметодов {#ch-draft-statmethods}
+
+{{< include ../../../../shared/includes/math-symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = TRUE, cache = TRUE)
+```
+
+```{r pkgs}
+library(tidyverse)
+theme_set(theme_minimal())
+```
+
+
+## t-тест
+
+:::{.callout-note .myth #mth-ttest-normdist title="t-тест требует нормального распределения зависимой переменной на выборке"}
+
+В оригинальной работе У. Госсета, где был предложен одновыборочный t-тест Стьюдента [@student1908], отсутствует требование нормальности выборочного распределения. Автор отмечает, что его рассуждения исходят из того, что выборки набираются *из генеральной совокупности с нормальным распределением* признака.
+
+Из нормального распределения в генеральной совокупности *не следует* нормальное распределение на выборке, так как в силу неопределенности и вариативности статистических данных возможны существенные отклонения от нормального распределения.
+
+У. Госсет прямо указывает при описании содержания статьи [@student1908, 2]:
+
+> The paper is divided into the following nine sections:
+>
+> I. The equation is determined of the curve which represents the frequency distribution of standard deviations of [samples drawn from a normal population]{.mark}.
+
+Section I вновь начинается с такого же условия [@student1908, 3]:
+
+> [Samples]{.mark} of $n$ individuals [are drawn out of a population distributed normally]{.mark}, to find an equation which shall represent the frequency of the standard deviations of these samples.
+
+Таким образом, у t-теста **нет требований к нормальности выборочного распределения**.
+
+:::
+
+
+
+
+
+

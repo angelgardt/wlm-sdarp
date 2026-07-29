@@ -1,0 +1,429 @@
+---
+author: "Антон Ангельгардт"
+---
+
+# Черновики матана {#ch-draft-calculus}
+
+{{< include ../../../../shared/includes/math-symbols.qmd >}}
+
+```{r opts, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE, error = TRUE, cache = TRUE)
+```
+
+```{r pkgs}
+library(tidyverse)
+theme_set(theme_minimal())
+```
+
+## Непрерывность
+
+:::{#thm-continuos-composition}
+**Непрерывность сложной функции**
+
+Пусть функция $\vphi$ непрерывна в точке $t_0 \in T$, функция $f$ непрерывна в точке $x_0 = \vphi(t_0) \in X$. Тогда сложная функция $f(\vphi)$ непрерывна в точке $t_0$.
+:::
+
+:::{.proof}
+Рассмотрим последовательность $\seq{t}{n}$ такую, что $t_n \underset{n \to +\infty}{\tto} t_0$, $t_n \in T$. Тогда $\vphi (t_n) \underset{n \to +\infty}{\tto} \vphi(t_0) = x_0$, так как $\vphi$ непрерывна в $t_0$. Обозначим $x_n = \vphi(t_n)$. Тогда $x_n \in X$, $x_n \underset{n \to +\infty}{\tto} x_0$, следовательно, $f(x_n) \underset{n \to +\infty}{\tto} f(x_0)$, так как $f$ непрерывна в точке $x_0$. Получили, что 
+
+$$
+\forall \seq{t}{n}, \, 
+t_n \in T, \,
+t_n \underset{n \to +\infty}{\tto} t_0 : f \big( \vphi( t_n) \big) \underset{n \to +\infty}{\tto} f \big( \vphi (t_0) \big)
+$$
+
+По определению, функция $f(\vphi)$ непрерывна в точке $t_0$.
+:::
+
+
+## Экстремумы
+
+:::{#thm-extremum-firstcondition}
+**Первое достаточное условие экстремума**
+
+:::
+
+:::{#thm-inflection-firstcondition}
+**Первое достаточное условие перегиба**
+
+:::
+
+:::{#thm-intermediate-value}
+**О промежуточном значении**
+
+:::
+
+
+## Исследование функции
+
+:::{#alg-fun-analysis}
+**Исследование функции**
+
+1. Область определения
+1. Симметрия (в частности, чётность/нечётность)
+1. Точки разрыва, промежутки непрерывности
+1. Нули, промежутки знакопостоянства
+1. Экстремумы, промежутки монотонности
+1. Выпуклость, точки перегиба
+1. Асимптоты
+1. Периодичность
+1. Множество значений
+1. Обратная функция
+:::
+
+:::{#exm-fun-analysis-gaussian}
+**Гауссова функция (Gaussian function)**
+
+Исследуйте функцию $f(x) = e^{-x^2}$.
+:::
+
+Поскольку нам жуткие экзамены по матану не сдавать, несколько считерим и построим график функции, дабы иметь возможность сначала визуально изучить, с чем имеем дело (@fig-fun-analysis-gaussian). Довольно симпатичная кривая.
+
+```{r}
+#| label: fig-fun-analysis-gaussian
+#| fig-cap: "График гауссианы"
+#| fig-column: margin
+#| lst-label: lst-fun-analysis-gaussian
+#| lst-cap: "Код построения графика"
+#| code-fold: true
+#| echo: true
+
+ggplot() +
+  geom_vline(xintercept = 0, color = "gray") +
+  geom_hline(yintercept = 0, color = "gray") +
+  geom_function(fun = function(x) {exp(-x^2)}) +
+  scale_x_continuous(breaks = -3:3, limits = c(-3, 3)) +
+  scale_y_continuous(breaks = -3:3, limits = c(-3, 3)) +
+  coord_fixed() +
+  theme_minimal()
+```
+
+:::{#sol-fun-analysis-gaussian}
+(к @exm-fun-analysis-gaussian).
+:::
+
+
+:::{#exr-fun-analysis-gaussian-param}
+**Гауссова функция с параметрами**
+
+Исследуйте функцию 
+$$
+f(x|a,b,c) = ae^{-\tfrac{(x-b)^2}{2c^2}}, \, a, b, c \in \setR
+$$
+:::
+
+:::{#sol-fun-analysis-gaussian-param}
+(к @exr-fun-analysis-gaussian-param)
+
+Функция похожа на гауссиану, но является её обобщением. Соответственно, данная функция, на самом деле, является множеством функций --- при различных значениях параметров функции будут разными. Значит, придется рассматривать различные случаи.
+
+Оговорим, что будем рассматривать $a \in \setR \setminus \{0\}$, так как при $a = 0$ функция $f(x) \equiv 0$, что является тривиальным случаем,$c \in \setR \setminus \{0\}$, так как при $c = 0$ в показателе экспоненты возникает деление на ноль, что нехорошо.
+
+*Область значений*. Функция $f(x)$ является композицией полинома $(x-b)^2$, линейной функции $u \mapsto -\dfrac{u}{2c^2}$ и экспоненты $v \mapsto ae^v$. Каждая из функций определена на всём $\setR$, следовательно, их композиция также определена на всём $\setR$.
+
+*Симметрия*. Область определения симметрична, но в общем случае функция не является ни чётной, ни нечётной, поскольку 
+
+$$
+f(-x) = ae^{-\tfrac{(-x-b)^2}{2c^2}} = ae^{-\tfrac{(-(x+b))^2}{2c^2}} = ae^{-\tfrac{(x+b)^2}{2c^2}} \neq f(x), \, f(-x) \neq -f(x)
+$$
+
+Однако при $b = 0$ функция становится чётной:
+
+$$
+f(-x|a, b = 0, c) = ae^{-\tfrac{(-x-0)^2}{2c^2}} = ae^{-\tfrac{(-x)^2}{2c^2}} = ae^{-\tfrac{x^2}{2c^2}} = f(x|a, b = 0, c)
+$$
+
+Кроме того, заметим, что функция симметрична относительно прямой $x = b$, так как $f(b + h) = g(b - h)$:
+
+$$
+f(b - h) = ae^{-\tfrac{((b - h)-b)^2}{2c^2}} = 
+ae^{-\tfrac{(- h)^2}{2c^2}} = ae^{-\tfrac{h^2}{2c^2}} = 
+ae^{-\tfrac{((b + h)-b)^2}{2c^2}} = f(b+h)
+$$
+
+*Точки разрыва, промежутки непрерывности*. $f(x) \in C(\setR)$, так как $e^x$ и $x^2$ непрерывны на $\setR$,  $f(x)$ является их композицией, а композиция непрерывных функций непрерывна (@thm-continuos-composition).
+
+*Нули, промежутки знакопостоянства*. Поскольку $e^u > 0 \, \forall u \in \setR$, то $\sgn f(x|a,b,c) = \sgn (a \cdot e^u) = \sgn a$. Следовательно, 
+
+- при $a > 0$: $f(x) > 0 \, \forall x \in \setR$,
+- при $a < 0$: $f(x) < 0 \, \forall x \in \setR$.
+
+Ситуация $f(x|a,b,c) = 0$ имеет место только при $a = 0$, однако мы оговорили выше, что не рассматриваем данный случай ввиду его тривиальности.
+
+*Экстремумы, промежутки монотонности*. Вычислим $f'(x)$:
+
+$$
+f'(x) = a \cdot \lp e^{-\tfrac{(x-b)^2}{2c^2}} \rp' = 
+a e^{-\tfrac{(x-b)^2}{2c^2}} \cdot \lp -\frac{2(x-b)}{2c^2}\rp = 
+- \frac{x-b}{c^2} f(x)
+$$
+
+Так как $f(x) \neq 0$, $\sgn f(x) = \sgn a$, $c^2 > 0$, то $\sgn f'(x) = \sgn \big( -a(x-b) \big)$. Следовательно, 
+
+- при $a > 0$:
+  - при $x < b$: $(x - b) < 0, \, -a(x-b) > 0 \impl f'(x) > 0$, $f(x)$ (строго) возрастает;
+  - при $x > b$: $(x - b) > 0, \, -a(x-b) < 0 \impl f'(x) < 0$, $f(x)$ (строго) убывает;
+- при $a < 0$:
+  - при $x < b$: $(x - b) < 0, \, -a(x-b) < 0 \impl f'(x) < 0$, $f(x)$ (строго) убывает;
+  - при $x > b$: $(x - b) > 0, \, -a(x-b) > 0 \impl f'(x) > 0$, $f(x)$ (строго) возрастает.
+
+По @thm-extremum-firstcondition точка $x = b$ является точкой экстремума, причём при $a > 0$ --- строгого глобального максимума, а при $a < 0$ --- строгого глобального минимума. В частности, можно убедиться, что $f'(x) = 0 \equi x = b$. Значение функции в точке экстремума $f(b) = ae^{-\tfrac{(b-b)^2}{2c^2}} = ae^0 = a$.
+
+*Выпуклость, точки перегиба*. Вычислим вторую производную $f''(x)$:
+
+$$
+\begin{split}
+f''(x) = \lp -\frac{x-b}{c^2}f(x) \rp' =
+-\frac{1}{c^2} f(x) - \frac{x-b}{c^2} f'(x) = \\
+= -\frac{1}{c^2} f(x) + \frac{(x-b)^2}{c^4} f(x) = 
+\frac{(x-b)^2 - c^2}{c^4} f(x)
+\end{split}
+$$
+
+Аналогично знаку первой производной $\sgn f''(x) = \sgn \bigg( a \big( (x-b)^2 - c^2 \big) \bigg)$. Значит:
+
+- при $a > 0$:
+  - при $|x - b| > c$: $a \big( (x-b)^2 - c^2 \big) > 0 \impl f''(x) > 0$, $f(x)$ выпукла вниз;
+  - при $|x - b| < c$: $a \big( (x-b)^2 - c^2 \big) < 0 \impl f''(x) < 0$, $f(x)$ выпукла вверх;
+- при $a < 0$:
+  - при $|x - b| > c$: $a \big( (x-b)^2 - c^2 \big) < 0 \impl f''(x) < 0$, $f(x)$ выпукла вверх;
+  - при $|x - b| < c$: $a \big( (x-b)^2 - c^2 \big) > 0 \impl f''(x) > 0$, $f(x)$ выпукла вниз.
+
+По @thm-inflection-firstcondition точки $x_1 = b + c$ и $x_2 = b - c$ являются точками перегиба. В частности, можно убедиться, что $g''(x) = 0 \equi x = b \pm c$. Значения функции в точках перегиба: $f(x_1) = f(x_2) = a e^{-\tfrac{(b \pm c-b)^2}{2c^2}} = ae^{-\tfrac{(\pm c)^2}{2c^2}} = ae^{-\tfrac{1}{2}} = \dfrac{a}{\sqrt{e}}$.
+
+*Асимптоты*. Для поиска горизонтальных асимптот рассмотрим поведение функции на $\pm \infty$.
+
+$$
+\begin{split}
+\lim_{x \to +\infty} g(x) &= \lim_{x \to +\infty} ae^{-\tfrac{(x-b)^2}{2c^2}} = 
+a \lim_{x \to +\infty} e^{-\tfrac{(x-b)^2}{2c^2}} = \\
+&= \begin{bmatrix}
+u = -\tfrac{(x-b)^2}{2c^2} \\
+x \to +\infty \\
+(x-b)^2 \to +\infty \\
+u \to -\infty
+\end{bmatrix} =
+a \lim_{u \to -\infty} e^u = a \cdot 0 = 0
+\end{split}
+$$
+
+$$
+\begin{split}
+\lim_{x \to -\infty} g(x) &= \lim_{x \to -\infty} ae^{-\tfrac{(x-b)^2}{2c^2}} = 
+a \lim_{x \to -\infty} e^{-\tfrac{(x-b)^2}{2c^2}} = \\
+&= \begin{bmatrix}
+u = -\tfrac{(x-b)^2}{2c^2} \\
+x \to -\infty \\
+(x-b)^2 \to +\infty \\
+u \to -\infty
+\end{bmatrix} =
+a \lim_{u \to -\infty} e^u = a \cdot 0 = 0
+\end{split}
+$$
+
+Получаем, что $\displaystyle \lim_{x \to +\infty} g(x) = \lim_{x \to -\infty} g(x) = 0$, значит у графика функции есть только одна двусторонняя асимптота $y = 0$.
+
+Вертикальные асимптоты отсутствуют, так как функция $f$ непрерывная на всех области определения. Наклонных асимптот также нет, поскольку $\displaystyle \lim_{x \to \pm \infty} \frac{g(x)}{x} = 0$, a $\displaystyle \lim_{x \to \pm \infty} (g(x) - 0 \cdot x) = 0$ --- уже найденная горизонтальная.
+
+*Периодичность*. Функция не является периодической.
+
+Предположим, что функция является периодической: $\exists T > 0: f(x + T) = f(x) \, \forall x \in \setR$. Значит будет выполнено $f(x + nT) = f(x) \, \forall x \in \setR, \, \forall n \in \setN$. В частности, при $x = 0$: $f(nT) = f(0) = ae^{-\tfrac{-b^2}{2c^2}} \, \forall n \in \setN$. Заметим, что $f(0) \neq 0$, так как $e^u > 0, a \neq 0$. Рассмотрим последовательность $\seq{x}{n}$, $x_n = nT$. Поскольку $x_n \in \setR \, \forall n \in \setN$, то получаем последовательность $\seq{y}{n}$ значений функции $y_n = f(x_n)$. По изученной асимптотике $f$ имеем, $\displaystyle x_n \underset{n \to +\infty}{\tto} +\infty \impl \lim_{n \to +\infty} y_n = 0$. Но $y_n = f(x_n) = f(nT) = f(0)$, значит последовательность $\seq{y}{n}$ стационарна и $\displaystyle \lim_{n \to +\infty} y_n = f(0) \neq 0$. Получили противоречие, следовательно, исходное предположение неверно, и функция не является периодической.
+
+*Множество значений*. Из непрерывности, асимптотики ($y = 0$) и глобального экстремума ($f(b) = a$) по @thm-intermediate-value следуют два возможных множества значений:
+
+- при $a > 0$: $(0, a]$;
+- при $a < 0$: $[a, 0)$.
+
+*Обратная функция* на всей области определения не существует, поскольку функция не является биекцией (так как не является инъекцией). При сужении области определения до $(-\infty, b]$ или $[b, +\infty)$ можно задать обратную функцию $f^{-1}(y)$:
+
+$$
+y = ae^{-\tfrac{(x-b)^2}{2c^2}} \impl 
+\frac{y}{a} = e^{-\tfrac{(x-b)^2}{2c^2}} \impl 
+\ln \left| \frac{y}{a} \right| = -\frac{(x-b)^2}{2c^2}
+$$
+
+Так как $\displaystyle 0 < \left| \frac{y}{a} \right| \leq 1$, $\displaystyle \ln \left| \frac{y}{a} \right| \leq 0$, $\displaystyle -\frac{(x-b)^2}{2c^2} \geq 0$,
+
+$$
+(x-b)^2 = -2c^2 \ln \left| \frac{y}{a} \right| \impl x = b \pm |c| \sqrt{-2 \ln \left| \frac{y}{a} \right|}
+$$
+
+$$
+f^{-1}(y) = \cases{
+b - |c| \sqrt{-2 \ln \left| \dfrac{y}{a} \right|}, \, x \in (-\infty, b] \\
+b + |c| \sqrt{-2 \ln \left| \dfrac{y}{a} \right|}, \, x \in (b, +\infty] \\
+}; \,
+\begin{split}
+a > 0: y \in (0, a] \\ a < 0 : y \in [a, 0)
+\end{split}
+$$
+
+Соберем всё тезисно воедино:
+
+$$
+f(x|a,b,c) = ae^{-\tfrac{(x-b)^2}{2c^2}}, \, a \in \setR \setminus \{0\}, \, b \in \setR, \, c \in \setR \setminus \{0\}
+$$
+
+1. *Область определения*: $\dom(f) = \setR$.
+1. *Симметрия*: общего вида.
+    - Симметрична относительно $x = b$.
+    - При $b = 0$ --- чётная.
+1. *Точки разрыва, промежутки непрерывности*: $f(x) \in C(\setR)$
+1. *Нули, промежутки знакопостоянства*
+    - $f(x) \neq 0 \, \forall x \in \setR$
+    - $a > 0 \impl f(x) > 0$
+    - $a < 0 \impl f(x) < 0$
+1. *Экстремумы, промежутки монотонности*
+    - $a > 0$: $f \uparrow$ на $(-\infty, b]$, $f \downarrow$ на $[b, +\infty)$
+        - $\displaystyle \arg \max_\dom f(x) = b$, $\displaystyle  \max_\dom f(x) = a$
+    - $a < 0$: $f \downarrow$ на $(-\infty, b]$, $f \uparrow$ на $[b, +\infty)$
+        - $\displaystyle \arg \min_\dom f(x) = b$, $\displaystyle  \min_\dom f(x) = a$
+1. *Выпуклость, точки перегиба*
+    - $x_1 = b + c$, $x_2 = b - c$; $f(x_1) = f(x_2) = \dfrac{a}{\sqrt{e}}$
+    - $a > 0$: $f \smile$ на $(-\infty, b-c) \cup (b+c, +\infty)$, $f \frown$ на $(b-c, b+c)$
+    - $a < 0$: $f \frown$ на $(-\infty, b-c) \cup (b+c, +\infty)$, $f \smile$ на $(b-c, b+c)$
+1. *Асимптоты*
+    - горизонтальная двусторонняя $y = 0$
+    - вертикальных нет
+    - наклонных нет
+1. *Периодичность*: непериодическая
+1. *Множество значений*: 
+    - $a > 0$: $\img(f) = (0, a]$
+    - $a < 0$: $\img(f) = [a, 0)$
+1. *Обратная функция*:
+
+$$
+f^{-1}(y) = \cases{
+b - |c| \sqrt{-2 \ln \left| \dfrac{y}{a} \right|}, \, x \in (-\infty, b] \\
+b + |c| \sqrt{-2 \ln \left| \dfrac{y}{a} \right|}, \, x \in (b, +\infty] \\
+}; \,
+\begin{split}
+a > 0: y \in (0, a] \\ a < 0 : y \in [a, 0)
+\end{split}
+$$
+
+:::
+
+
+
+## Интеграл Пуассона
+
+:::{#exr-antideriv-fixed-gaussian}
+Найдите первообразную функции $f(x) = xe^{-x^2}$.
+:::
+
+:::{#sol-antideriv-fixed-gaussian}
+(к @exr-antideriv-fixed-gaussian)
+
+Воспользуемся заменой переменной:
+
+$$
+\int xe^{-x^2} \, \d x = 
+\begin{bmatrix} 
+t = -x^2 \\ 
+\d t = -2x \, \d x \\
+x \, \d x = \dfrac{\d t}{-2}
+\end{bmatrix} = 
+\int e^t \frac{\d t}{-2} = -\frac{1}{2} \int e^t \, \d t = 
+-\frac{1}{2} e^t + C = -\frac{1}{2} e^{-x^2} + C
+$$
+
+:::
+
+:::{#exm-jacobian-cartesiaan-to-polar}
+Как будет определяться элементарная площадь $\d S$ при переходе от декартовых координат к полярным?
+:::
+
+:::{#sol-jacobian-cartesiaan-to-polar}
+(к @exm-jacobian-cartesiaan-to-polar)
+
+Вычислим якобиан перехода элементарной площади $\d S = \d x \, \d y$ от декартовых координат $(x,\, y)$ к полярным координатам $(r,\, \vphi)$.
+
+Переход задаётся следующими функциями:
+
+$$
+\begin{split}
+x = r \, \cos \vphi \\
+y = r \, \sin \vphi
+\end{split}
+$$
+
+Матрица Якоби имеет следующий вид:
+
+$$
+\jacmat = 
+\begin{pmatrix}
+\dfrac{\partial x}{\partial r} & \dfrac{\partial x}{\partial \vphi} \\
+\dfrac{\partial y}{\partial r} & \dfrac{\partial y}{\partial \vphi} \\
+\end{pmatrix} = 
+\begin{pmatrix}
+\cos \vphi & -r \sin \vphi \\
+\sin \vphi & r \cos \vphi \\
+\end{pmatrix}
+$$
+
+Тогда якобиан будет равен:
+
+$$
+\begin{split}
+\det \jacmat &= \cos \vphi \, r \cos \vphi - (-r \sin \vphi) \, \sin \vphi = \\
+&= r \cos^2 \vphi + r \sin^2 \vphi = r (\cos^2 \vphi + \sin^2 \vphi) = r
+\end{split}
+$$
+
+Следовательно, элементарная площадь при переходе от декартовых координат к полярным определяется следующим образом:
+
+$$
+\d S = \d x \, \d y = \det \jacmat \, \d r \, \d \vphi = r \, \d r \, \d \vphi
+$$
+
+:::
+
+:::{#exm-int-poisson}
+Вычислим значение несобственного интеграла
+
+$$
+\int_{\nty}^{\pty} e^{-t^2} \, \d t
+$$
+
+:::
+
+:::{#sol-int-poisson}
+(к @exm-int-poisson)
+
+Поскольку данный интеграл не берется в элементарных функциях, прибегнем к следующей идее: возведем изначальный интеграл в квадрат и посмотрим, возможно ли это как-либо преобразовать, чтобы свести задачу к решаемой известными методами. Если получим интеграл, берущийся в элементарных функциях, вычислим его и из полученного значения извлечем квадратный корень.
+
+Пусть $J := \int_{-\ty}^{+\ty} e^{-t^2} \, \d t$, тогда 
+
+$$
+\begin{split}
+J^2 &= \lp \int_{\nty}^{\pty} e^{-t^2} \, \d t \rp ^2 = \\
+&= \lp \int_{\nty}^{\pty} e^{-x^2} \, \d x \rp \cdot \lp \int_{\nty}^{\pty} e^{-y^2} \, \d y \rp = \\
+&= \iint_{\setR^2} e^{-(x^2+y^2)} \, \d x \d y
+\end{split}
+$$
+
+Перейдём к полярным координатам $(r, \vphi)$, $r \in \intco{0}{\pty}$, $\vphi \in \intco{0}{2 \uppi}$ --- используем результаты из @sol-jacobian-cartesiaan-to-polar:
+
+$$
+J^2 = \iint_{\setR^2} e^{-r^2} \, r \, \d r \d \vphi = \int_{0}^{2\uppi} \d \vphi \cdot \int_{0}^{\pty} e^{-r^2} r \, \d r
+$$
+
+$$
+\int_{0}^{2\uppi} \d \vphi = \int_{0}^{2\uppi} 1 \cdot \d \vphi = \vphi \big|_{0}^{2\uppi} = 2\uppi - 0 = 2 \uppi
+$$
+
+Опираясь на @sol-int-poisson сразу запишем:
+
+$$
+\int_{0}^{\pty} e^{-r^2} r \, \d r = -\frac{1}{2} e^{-r^2} \Bigg|_{0}^\pty = 
+-\frac{1}{2} \lp \lim_{r \to \pty} e^{-r^2} - e^{0^2} \rp = -\frac{1}{2} (0-1) = \frac{1}{2} 
+$$
+
+$$
+J^2 = 2\uppi \cdot \frac{1}{2} = \uppi \impl J = \sqrt{\uppi}
+$$
+
+:::
+
+
