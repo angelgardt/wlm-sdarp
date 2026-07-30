@@ -40,8 +40,14 @@ book:
     #     - chapters/ru/ch-drafts/draft-calculus.qmd
     - chapters/ru/frontmatter/fm-preface.qmd
     - chapters/ru/frontmatter/fm-notation.qmd
+    - part: chapters/ru/basics/part-basics.qmd
+      chapters:
+        - chapters/ru/basics/elementary.qmd
+        - chapters/ru/basics/sets.qmd
+        - chapters/ru/basics/calculus.qmd
+        - chapters/ru/basics/linal.qmd
   appendices:
-    - chapters/ru/debug/apx-debug.qmd
+    # - chapters/ru/debug/apx-debug.qmd
     - chapters/ru/appendices/apx-numbers.qmd
 
 
