@@ -1,5 +1,5 @@
 script:
-  version: 0.0.1
+  version: 0.0.2
 repo-name: wlm-sdarp
 
 gh-pages:
@@ -16,7 +16,10 @@ valid:
       - name: stable
         branch: master
   projects:
-    - book
+    - book0
+    - bookI
+    - bookII
+    - bookIII
     - assessment
   profiles:
     - ru
