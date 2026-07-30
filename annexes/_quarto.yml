@@ -1,0 +1,30 @@
+project:
+  type: website
+  preview:
+    port: 5500
+
+website:
+  title: "WLM SDARP"
+  favicon: img/favicon.png
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Хаб"
+      - about.qmd
+
+format:
+  html:
+    title-block-banner: img/title-block-banner.jpg
+    title-block-banner-color: "#f8f9fa"
+    theme:
+      light:
+        - ../shared/style/light.scss
+        - ../shared/style/common.scss
+      dark:
+        - ../shared/style/dark.scss
+        - ../shared/style/common.scss
+    # css: styles.css
+    toc: true
+
+
+

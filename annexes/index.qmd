@@ -1,0 +1,17 @@
+---
+title: "WLM SDARP | HUB"
+---
+
+## Книги
+
+{{< include _book0-ru.qmd >}}
+
+{{< include _bookI-ru.qmd >}}
+
+{{< include _bookII-ru.qmd >}}
+
+{{< include _bookIII-ru.qmd >}}
+
+
+
+
