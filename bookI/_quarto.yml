@@ -13,9 +13,18 @@ book:
   favicon: img/favicon.png
   navbar:
     left:
-      - text: "Book"
+      - text: "Book0"
+        href: ""
+      - text: "BookI"
+        href: ""
+      - text: "BookII"
+        href: ""
+      - text: "BookII"
         href: ""
       - text: "Tests"
+        href: ""
+    right:
+      - text: "Annexes"
         href: ""
 
 bibliography: references.bib

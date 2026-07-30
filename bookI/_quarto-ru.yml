@@ -19,8 +19,6 @@ book:
         - chapters/ru/debug/chapter-debug.qmd
     - part: "Черновики (Drafts)"
       chapters:
-        - chapters/ru/ch-drafts/draft-math-basic.qmd
-        - chapters/ru/ch-drafts/draft-calculus.qmd
         - chapters/ru/ch-drafts/draft-mathstat.qmd
         - chapters/ru/ch-drafts/draft-statmethods.qmd
     - chapters/ru/frontmatter/fm-notation.qmd

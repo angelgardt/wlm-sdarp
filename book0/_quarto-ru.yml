@@ -8,25 +8,41 @@ project:
   output-dir: _site/ru
 
 book:
-  subtitle: "Мир линейных моделей: математика для анализа данных"
+  subtitle: "Мир линейных моделей: математика для статистики и анализа данных"
   author:
     - name: "Антон Ангельгардт"
       email: "anton.angelgardt@gmail.com"
+  navbar:
+    left:
+      - text: "Хаб"
+        href: ""
+      - text: "Книга 0"
+        href: ""
+      - text: "Книга I"
+        href: ""
+      - text: "Книга II"
+        href: ""
+      - text: "Книга III"
+        href: ""
+      - text: "Тесты"
+        href: ""
+      - text: "Дополнения"
+        href: ""
+
   chapters:
     - index.qmd
-  #   - part: chapters/ru/debug/part-debug.qmd
-  #     chapters:
-  #       - chapters/ru/debug/chapter-debug.qmd
-  #   - part: "Черновики (Drafts)"
-  #     chapters:
-  #       - chapters/ru/ch-drafts/draft-math-basic.qmd
-  #       - chapters/ru/ch-drafts/draft-calculus.qmd
-  #       - chapters/ru/ch-drafts/draft-mathstat.qmd
-  #       - chapters/ru/ch-drafts/draft-statmethods.qmd
-  #   - chapters/ru/frontmatter/fm-notation.qmd
-  # appendices:
-  #   - chapters/ru/debug/apx-debug.qmd
-  #   - chapters/ru/appendices/apx-numbers.qmd
+    # - part: chapters/ru/debug/part-debug.qmd
+    #   chapters:
+    #     - chapters/ru/debug/chapter-debug.qmd
+    # - part: "Черновики (Drafts)"
+    #   chapters:
+    #     - chapters/ru/ch-drafts/draft-math-basic.qmd
+    #     - chapters/ru/ch-drafts/draft-calculus.qmd
+    - chapters/ru/frontmatter/fm-preface.qmd
+    - chapters/ru/frontmatter/fm-notation.qmd
+  appendices:
+    - chapters/ru/debug/apx-debug.qmd
+    - chapters/ru/appendices/apx-numbers.qmd
 
 
 format:

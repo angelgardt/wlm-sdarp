@@ -12,17 +12,11 @@ book:
   date: today
   favicon: img/favicon.png
   navbar:
-    left:
-      - text: "Book 0"
-        href: ""
-      - text: "Book I"
-        href: ""
-      - text: "Book II"
-        href: ""
-      - text: "Book III"
-        href: ""
-      - text: "Tests"
-        href: ""
+    title: "WLM SDARP"
+    # right:
+    #   - text: "RU"
+    #     icon: globe2
+
 
 bibliography: references.bib
 csl: ../shared/refs/apa.csl
@@ -81,6 +75,7 @@ format:
     lightbox: true
     toc: true
     toc-depth: 4
+    number-sections: true
     theme:
       light:
         - ../shared/style/light.scss
