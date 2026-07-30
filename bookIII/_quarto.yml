@@ -1,7 +1,7 @@
 project:
   type: book
   preview:
-    port: 5050
+    port: 5053
 
 metadata-files:
   - _metadata.yml
