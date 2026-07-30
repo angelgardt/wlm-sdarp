@@ -1,0 +1,14 @@
+---
+type:
+author:
+title:
+subtitle:
+citekey:
+journal:
+year:
+volume:
+number:
+pages:
+month:
+note:
+---

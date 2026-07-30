@@ -11,10 +11,65 @@
             "id": "63c9736364a32f30",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "bases",
+              "state": {
+                "file": "DBs/RESOURCES/RESOURCES.base",
+                "viewName": "All"
+              },
+              "icon": "lucide-table",
+              "title": "RESOURCES"
+            }
+          },
+          {
+            "id": "9fd829c2aa8294eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WLM SDARP.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "WLM SDARP"
+            }
+          },
+          {
+            "id": "c4a22c7c5b4b7776",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_templates/Booklet Template.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Booklet Template"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "58ebe372e2295340",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fdd04b33e8cc682d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_templates/Inbook Template.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Inbook Template"
             }
           }
         ]
@@ -165,8 +220,18 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
+            }
+          },
+          {
+            "id": "f798cfb5f8841915",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
@@ -185,14 +250,34 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obisidian-dataloom:Create loom": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-kanban:Create new board": false,
       "notion-bases:Notion bases": false
     }
   },
-  "active": "efb96e99ec159824",
+  "active": "9fd829c2aa8294eb",
   "lastOpenFiles": [
+    "_templates/Inbook Template.md",
+    "WLM SDARP.md",
+    "_templates/BibTex Templates.md",
+    "_templates/Booklet Template.md",
+    "_templates/Manual Template.md",
+    "_templates/Article Template.md",
+    "_templates/Book Editors Template.md",
+    "_templates/Book Template.md",
+    "_templates/Incollection Template.md",
+    "DBs/RESOURCES/RESOURCES.base",
+    "DBs/RESOURCES/Book Eds Template__.md",
+    "DBs/RESOURCES/misc-test.md",
+    "DBs/RESOURCES/unpublished-test.md",
+    "DBs/RESOURCES/techreport-test.md",
+    "DBs/RESOURCES/proceedings-test.md",
+    "DBs/RESOURCES/phdthesis-test.md",
+    "DBs/RESOURCES/mastersthesis-test.md",
+    "DBs/RESOURCES/inproceedings-test.md",
+    "_templates",
+    "DBs/Untitled.md",
+    "DBs/RESOURCES",
     "DBs/CHAPTERS",
     "DBs/LEARNING OUTCOMES",
     "DBs/LEARNING OBJECTIVES",
@@ -201,33 +286,11 @@
     "DBs/ASSESSMENT/ITEMS",
     "DBs/ASSESSMENT",
     "DBs/TAXONOMIES/FINK",
-    "DBs/TAXONOMIES/SOLO",
-    "DBs/TAXONOMIES/BLOOM",
     "DBs/COMPETENCIES/C001.md",
     "DBs/COMPETENCIES/_database.md",
     "DBs/TOPICS/_database.md",
     "DBs/TOPICS/T1.md",
-    "DBs",
     "DBs/PERSONAS/_database.md",
-    "WLM SDARP.md",
-    "DBs/TAXONOMIES",
-    "Personas.md",
-    "DBs/TOPICS/T30.md",
-    "DBs/TOPICS/T29.md",
-    "DBs/TOPICS/T28.md",
-    "DBs/TOPICS/T27.md",
-    "DBs/TOPICS/T26.md",
-    "DBs/TOPICS/T25.md",
-    "DBs/TOPICS/T24.md",
-    "DBs/TOPICS/T23.md",
-    "DBs/TOPICS/T22.md",
-    "DBs/TOPICS/T21.md",
-    "DBs/TOPICS/T20.md",
-    "DBs/TOPICS/T19.md",
-    "DBs/TOPICS/T18.md",
-    "DBs/TOPICS/T17.md",
-    "DBs/TOPICS/T16.md",
-    "DBs/TOPICS/T15.md",
-    "DBs/TOPICS/T14.md"
+    "Personas.md"
   ]
 }

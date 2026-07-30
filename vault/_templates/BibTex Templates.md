@@ -1,6 +1,50 @@
 ---
 tags:
 ---
+## Ссылки
+- https://bibtex.eu/types/
+- https://www.bibtex.com/format/templates/
+	- https://www.bibtex.com/t/template-article/
+	- https://www.bibtex.com/t/template-book/
+	- https://www.bibtex.com/t/template-incollection/
+	- https://www.bibtex.com/t/template-manual/
+	- https://www.bibtex.com/t/template-booklet/
+	- 
+
+## Когда что использовать
+- [[Article Template]]
+	- ![[Article Template#^29cdd8]]
+- [[Book Template]]
+	- ![[Book Template#^1d3dc5]]
+- [[Book Editors Template]]
+	- ![[Book Editors Template#^a7ded6]]
+- [[Inbook Template]]
+	- ![[Inbook Template#^5d1037]]
+- [[Manual Template]]
+	- ![[Manual Template#^5d1037]]
+- [[Booklet Template]]
+	- ![[Booklet Template#^5d1037]]
+- [[proceedings-test]]
+- [[inproceedings-test]]
+- [[techreport-test]]
+- [[mastersthesis-test]]
+- [[phdthesis-test]]
+- [[unpublished-test]]
+- [[misc-test]]
+- 
+
+| Тип           | Применение |
+| ------------- | ---------- |
+| inproceedings |            |
+| matersthesis  |            |
+| phdthesis     |            |
+| proceedings   |            |
+| techreport    |            |
+| unpublished   |            |
+| misc          |            |
+| online ?      |            |
+|               |            |
+
 ## Из дефолтного шаблона Quarto Book
 ```
 @article{knuth84,

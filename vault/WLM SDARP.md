@@ -24,6 +24,7 @@
 
 ***
 ### Other
+- [[BibTex Templates]]
 - https://drive.google.com/drive/folders/1bLtOwefNcTZ2M4ocNsPJGbU1Gmh2EBi2?usp=sharing
 - https://miro.com/app/board/uXjVKX_3D_o=/?share_link_id=812676314395 \[Password: wlm-sdarp-board]
 - Photo by [Shubham Dhage](https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-black-and-white-photo-of-a-bunch-of-cubes-gC_aoAjQl2Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
